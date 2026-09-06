@@ -1,0 +1,15 @@
+# Material de referencia del curso (no forma parte del informe)
+ejemplos/
+
+# Sistema operativo
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Editores
+.idea/
+*.swp
+
+# Exportaciones del informe
+*.pdf
+!docs/**/*.pdf
