@@ -4,13 +4,13 @@
 
 ### 1.1.1. Descripción de la Startup
 
-Sanuvi nace con el propósito de contribuir al seguimiento y control del tratamiento de la anemia infantil en el Perú. En un contexto donde las familias pueden enfrentar dificultades para mantener la continuidad del tratamiento y el personal de salud requiere información organizada para realizar un seguimiento adecuado de sus pacientes, ofrecemos una solución tecnológica que facilita la coordinación entre ambos actores.
+Sanuvi nace con el propósito de contribuir al seguimiento y control del tratamiento de la anemia infantil en el Perú. En un contexto donde las familias pueden enfrentar dificultades para mantener la continuidad del tratamiento y el personal de salud requiere información organizada para realizar un seguimiento adecuado de sus pacientes, ofrecemos una solución tecnológica que busca facilitar este proceso y fortalecer la coordinación entre las familias y los profesionales de salud.
 
-Nuestra solución es una plataforma digital compuesta por una aplicación móvil dirigida a madres y cuidadores, y una plataforma web orientada al personal de salud. La aplicación móvil permite gestionar la información del niño, registrar el cumplimiento del tratamiento, consultar su evolución, registrar su alimentación y gestionar sus citas de control. Además, incorpora elementos de gamificación como rachas, puntos e insignias para incentivar la constancia durante el proceso de tratamiento.
+Nuestra propuesta busca facilitar el acompañamiento de los niños durante su tratamiento, brindando a las familias herramientas accesibles que les permitan mantener un seguimiento más organizado de su progreso. Asimismo, busca proporcionar al personal de salud información relevante para conocer la evolución de sus pacientes y realizar un seguimiento oportuno, favoreciendo una atención más organizada y eficiente.
 
-Por otro lado, la plataforma dirigida al personal de salud facilita la gestión de pacientes, el registro y actualización de información clínica, el seguimiento de los niveles de hemoglobina, la gestión de tratamientos y citas, así como la comunicación con las madres y cuidadores. También permite visualizar información e indicadores que facilitan el seguimiento de los pacientes y la identificación de aquellos que requieren mayor atención.
+Nos enfocamos en apoyar a las familias y al personal de salud involucrado en el seguimiento de la anemia infantil, ofreciendo una alternativa digital que facilite la continuidad del tratamiento y la gestión de la información de los pacientes. Creemos que la transformación digital puede contribuir a fortalecer el seguimiento de la anemia, facilitando la comunicación y el acceso a información relevante para quienes participan en el proceso de recuperación.
 
-En Sanuvi, creemos que la tecnología puede contribuir a mejorar la continuidad del tratamiento de la anemia infantil mediante herramientas accesibles y centradas en las necesidades de sus usuarios. Buscamos facilitar el seguimiento de los pacientes, fortalecer la participación de las apoderadas de los infantes y proporcionar al personal de salud información que contribuya a una atención más oportuna y eficiente.
+En Sanuvi, aspiramos a contribuir a la transformación digital del seguimiento de la anemia infantil en el Perú, promoviendo una atención más organizada, conectada y centrada en las necesidades de cada paciente. Buscamos generar un impacto positivo en la continuidad del tratamiento y apoyar a las familias y profesionales de salud en el seguimiento de los niños con anemia.
 
 **Misión**
 
