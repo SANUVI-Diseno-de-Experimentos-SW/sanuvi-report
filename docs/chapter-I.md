@@ -89,9 +89,16 @@ En esta sección, aplicaremos la herramienta Lean UX para presentar la visión d
 
 #### 1.2.2.1. Lean UX Problem Statements
 
-> Incluir domain, customer segments, pain points, gap, vision/strategy e initial segment.
+Sanuvi fue diseñado para facilitar el seguimiento y control del tratamiento de la anemia infantil en el Perú, brindando a las familias y al personal de salud herramientas que permitan un seguimiento más organizado de los niños durante su tratamiento. A través de nuestro servicio, se busca fortalecer la coordinación entre madres/cuidadores y profesionales de salud, permitiendo que estos últimos tengan información relevante para conocer la evolución de sus pacientes y realizar un seguimiento oportuno, favoreciendo una atención más organizada y eficiente.
 
-<!-- COMPLETAR -->
+Sin embargo, se ha identificado un factor crítico que afecta significativamente la efectividad del tratamiento: actualmente, las madres y cuidadores dependen de procesos manuales desorganizados (cuadernos, apuntes informales, memoria) para mantener registros del tratamiento de sus hijos. Esta situación genera problemas importantes: la adherencia al tratamiento alcanza apenas el 26.8% de cumplimiento, lo que significa que la mayoría de los niños no sigue correctamente la terapia indicada. Además, se observa que incluso después de seis meses de suplementación con hierro, muchos niños continúan presentando niveles bajos de hemoglobina (<11 g/dL), evidenciando un fracaso del tratamiento.
+
+Esta problemática es especialmente crítica en regiones como Apurímac (34.02%), Huancavelica (31.53%) y Ayacucho (23.59%), donde la prevalencia de anemia es mayor, impactando directamente en la continuidad del proceso de recuperación de miles de niños menores de cinco años.
+
+Asimismo, las soluciones existentes no resuelven adecuadamente la necesidad de una herramienta accesible y sencilla que conecte a las madres/cuidadores con el personal de salud, permitiendo un registro continuo del progreso del tratamiento y facilitar la comunicación bidireccional sin requerir conocimientos técnicos avanzados de las familias.
+
+**¿Cómo podríamos mejorar la adherencia al tratamiento de la anemia infantil y facilitar el seguimiento continuo entre madres/cuidadores y personal de salud, para aumentar la tasa de cumplimiento del tratamiento y reducir el fracaso terapéutico, sin exigir conocimientos técnicos avanzados a los usuarios?**
+
 
 #### 1.2.2.2. Lean UX Assumptions
 
