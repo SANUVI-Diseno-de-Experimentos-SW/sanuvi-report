@@ -6,11 +6,11 @@
 
 Sanuvi nace con el propósito de contribuir al seguimiento y control del tratamiento de la anemia infantil en el Perú. En un contexto donde las familias pueden enfrentar dificultades para mantener la continuidad del tratamiento y el personal de salud requiere información organizada para realizar un seguimiento adecuado de sus pacientes, ofrecemos una solución tecnológica que facilita la coordinación entre ambos actores.
 
-Nuestra solución es una plataforma digital compuesta por una aplicación móvil dirigida a madres y cuidadores y una plataforma web orientada al personal de salud. La aplicación móvil permite gestionar la información del niño, registrar el cumplimiento del tratamiento, consultar su evolución, registrar su alimentación y gestionar sus citas de control. Además, incorpora elementos de gamificación como rachas, puntos e insignias para incentivar la constancia durante el proceso de tratamiento.
+Nuestra solución es una plataforma digital compuesta por una aplicación móvil dirigida a madres y cuidadores, y una plataforma web orientada al personal de salud. La aplicación móvil permite gestionar la información del niño, registrar el cumplimiento del tratamiento, consultar su evolución, registrar su alimentación y gestionar sus citas de control. Además, incorpora elementos de gamificación como rachas, puntos e insignias para incentivar la constancia durante el proceso de tratamiento.
 
 Por otro lado, la plataforma dirigida al personal de salud facilita la gestión de pacientes, el registro y actualización de información clínica, el seguimiento de los niveles de hemoglobina, la gestión de tratamientos y citas, así como la comunicación con las madres y cuidadores. También permite visualizar información e indicadores que facilitan el seguimiento de los pacientes y la identificación de aquellos que requieren mayor atención.
 
-En Sanuvi, creemos que la tecnología puede contribuir a mejorar la continuidad del tratamiento de la anemia infantil mediante herramientas accesibles y centradas en las necesidades de sus usuarios. Buscamos facilitar el seguimiento de los pacientes, fortalecer la participación de las apodedaras de los infantes y proporcionar al personal de salud información que contribuya a una atención más oportuna y eficiente.
+En Sanuvi, creemos que la tecnología puede contribuir a mejorar la continuidad del tratamiento de la anemia infantil mediante herramientas accesibles y centradas en las necesidades de sus usuarios. Buscamos facilitar el seguimiento de los pacientes, fortalecer la participación de las apoderadas de los infantes y proporcionar al personal de salud información que contribuya a una atención más oportuna y eficiente.
 
 **Misión**
 
@@ -18,11 +18,9 @@ Nuestra misión es contribuir a mejorar el seguimiento del tratamiento de la ane
 
 **Visión**
 
-Visualizamos un futuro donde las familias y el personal de salud cuenten con herramientas digitales que faciliten el seguimiento continuo de los niños con anemia. Aspiramos a que Sanuvi contribuya a la transformación digital del seguimiento de la anemia infantil en el Perú, promoviendo una atención más organizada, conectada y centrada en las necesidades de cada paciente infante.
+Visualizamos un futuro donde las familias y el personal de salud cuenten con herramientas digitales que faciliten el seguimiento continuo de los niños con anemia. Aspiramos a que Sanuvi contribuya a la transformación digital del seguimiento de la anemia infantil en el Perú, promoviendo una atención más organizada, conectada y centrada en las necesidades de cada paciente.
 
 ### 1.1.2. Perfiles de integrantes del equipo
-
-> Para cada integrante: foto, nombres y apellidos, código de estudiante, descripción de carrera y un párrafo con los principales conocimientos técnicos y habilidades que aporta al equipo.
 
 <table>
   <tr>
@@ -53,49 +51,41 @@ Visualizamos un futuro donde las familias y el personal de salud cuenten con her
   </tr>
 </table>
 
-<!-- COMPLETAR: repetir el bloque por cada integrante -->
-
 ## 1.2. Solution Profile
 
 ### 1.2.1. Antecedentes y problemática
 
-> Enunciado del problema, puntos más importantes que debe resolver la solución, objetivos y restricciones que delimitan el alcance. Elaborado aplicando la técnica **5 W's y 2 H's**.
+**What (¿Qué ocurre?)**
 
-**What (¿Qué?)**
+La persistencia de la anemia infantil en niños menores de cinco años, a pesar de la disponibilidad de tratamientos con hierro, lo cual evidencia deficiencias tanto en la adherencia al tratamiento como en su efectividad clínica. En este contexto, una gran proporción de pacientes no sigue adecuadamente las indicaciones médicas, lo que limita la recuperación y contribuye a la continuidad del problema (Choque-Medrano & Gutarra-Vilchez, 2025). Diversos estudios muestran que la adherencia al tratamiento es baja, alcanzando solo el 26,8 % de cumplimiento, mientras que la mayoría de los niños no sigue correctamente la terapia indicada, lo que constituye una barrera crítica para el control de la anemia. Asimismo, el problema se agrava debido al fracaso del tratamiento, definido como la persistencia de niveles bajos de hemoglobina (<11 g/dL) incluso después de seis meses de suplementación con hierro, lo que indica que las intervenciones no están logrando los resultados esperados en todos los pacientes (Sulca Orellana, 2021)
 
-<!-- COMPLETAR -->
+**Who (¿Quiénes se ven afectados?)**
 
-**Who (¿Quién?)**
+La anemia en el Perú afecta principalmente a niños menores de cinco años, especialmente menores de tres años, gestantes y adolescentes, considerados grupos vulnerables (UNICEF, 2025) . Asimismo, la prevalencia en la población infantil atendida en servicios de salud varía según factores como edad, altitud y criterios diagnósticos (Hernández-Vásquez et al., 2025)
 
-<!-- COMPLETAR -->
+**Where (¿Dónde sucede?)**
 
-**Where (¿Dónde?)**
+El problema de la anemia se presenta en el Perú, a nivel nacional, en gestantes que acceden a los establecimientos de salud registrados en el Sistema de Información del Estado Nutricional (HIS). Durante el periodo de enero a marzo de 2025, se evaluaron 144,577 gestantes, de las cuales 26,306 presentaron anemia, lo que representa una prevalencia del 18.20% a nivel nacional (Instituto Nacional de Salud [INS], 2025). A nivel departamental, se observan diferencias significativas en la distribución de la anemia. Por ejemplo, regiones como Apurímac (34.02%), Huancavelica (31.53%) y Ayacucho (23.59%) presentan mayores porcentajes de anemia en gestantes, evidenciando una mayor vulnerabilidad en zonas andinas.
 
-<!-- COMPLETAR -->
+**When (¿Desde cuándo y con qué frecuencia?)**
 
-**When (¿Cuándo?)**
+De acuerdo con McCarthy et al. (2022), el problema de la anemia por deficiencia de hierro se presenta principalmente durante los primeros 1000 días de vida, los cuales comprenden desde el embarazo hasta los primeros años de vida del niño, etapa considerada crítica debido al rápido crecimiento y desarrollo, especialmente a nivel cerebral. Según los autores, durante este periodo los requerimientos de hierro aumentan significativamente; por ejemplo, en el embarazo pueden alcanzar hasta 7.5 mg/día en el tercer trimestre, lo que incrementa el riesgo de desarrollar anemia si no se cubren adecuadamente dichas necesidades . Asimismo, en la infancia temprana, particularmente entre los 6 y 24 meses, la demanda de hierro es una de las más altas del ciclo de vida, lo que convierte a esta etapa en un momento crítico para la aparición de la enfermedad. Por otro lado, según Ambreen et al. (2025), la anemia también se manifiesta durante el periodo de tratamiento clínico, el cual se desarrolla a lo largo del tiempo y requiere seguimiento continuo. En su estudio, el análisis se llevó a cabo en diferentes fases comprendidas entre enero y junio de 2023 y octubre de 2023 a marzo de 2024, lo que evidencia que la adherencia al tratamiento es un proceso prolongado y no inmedia.
 
-<!-- COMPLETAR -->
+**Why (¿Por qué es un problema?)**
 
-**Why (¿Por qué?)**
+De acuerdo con Martinez-Torres et al. (2023), la anemia en niños se origina por una combinación de múltiples factores de riesgo, lo que la convierte en un problema complejo de salud pública. Entre las principales causas se encuentran las deficiencias nutricionales, especialmente la falta de hierro, así como la carencia de vitamina B12 y ácido fólico, las cuales afectan directamente la producción de glóbulos rojos. Asimismo, según los autores, existen factores ambientales y sociales que incrementan el riesgo de anemia, como la pobreza, la mala alimentación, el acceso limitado a servicios de salud y la exposición a contaminantes como el plomo, los cuales influyen negativamente en el estado nutricional y la salud infantil.
 
-<!-- COMPLETAR -->
+**How (¿Cómo se aborda la anemia?)**
 
-**How (¿Cómo?)**
+De acuerdo con el Comité Nacional de Hematología y Nutrición (2017), el abordaje de la anemia por deficiencia de hierro se basa en tres pilares fundamentales: diagnóstico, tratamiento y prevención, los cuales permiten una intervención integral orientada a corregir la deficiencia y evitar su recurrencia. En primer lugar, según la guía, es necesario realizar un diagnóstico adecuado, que incluya evaluación clínica y estudios de laboratorio como hemoglobina y ferritina, con el fin de determinar la causa y severidad de la anemia. Posteriormente, el tratamiento se centra en la suplementación con hierro, principalmente por vía oral, en dosis controladas, con el objetivo de normalizar los niveles de hemoglobina y reponer las reservas del organismo. Asimismo, la prevención constituye un componente esencial, incluyendo estrategias como la alimentación rica en hierro, la lactancia materna, la fortificación de alimentos y la suplementación en grupos de riesgo, como niños pequeños y gestantes. Sin embargo, según Bustamante et al. (2025), este enfoque tradicional centrado en el hierro debe ser reconsiderado, ya que la anemia es un problema multifactorial que no siempre se debe exclusivamente a la deficiencia de este mineral . En este sentido, los autores señalan que la suplementación y fortificación universal no siempre han demostrado ser efectivas, presentando resultados limitados en la reducción de la prevalencia de anemia.
 
-<!-- COMPLETAR -->
+**How Much (¿Cuánto impacto tiene la anemia?)**
 
-**How much (¿Cuánto?)**
-
-<!-- COMPLETAR -->
-
-**Objetivos y restricciones del proyecto**
-
-<!-- COMPLETAR -->
+De acuerdo con Merino Loor et al. (2022), la anemia constituye un problema de salud pública de gran magnitud a nivel mundial, afectando aproximadamente a 1620 millones de personas, lo que equivale al 24% de la población global, siendo los niños menores de cinco años uno de los grupos más vulnerables, con una prevalencia cercana al 42%. En el contexto nacional, según datos del Instituto Nacional de Salud (INS, 2023), el impacto de los problemas nutricionales asociados a la anemia es significativo en la población infantil. Durante el 2023, se evaluaron 1,740,365 niños menores de 5 años en el Perú, de los cuales el 15.9% presentó desnutrición crónica y el 36.8% se encontraba en riesgo, evidenciando una alta vulnerabilidad nutricional que favorece la aparición de anemia. Además, se identificó la presencia de otras condiciones como sobrepeso (5.8%) y obesidad (1.7%), lo que refleja una doble carga de malnutrición en el país. Asimismo, de acuerdo con Zavaleta y Astete-Robilliard (2017), la anemia tiene consecuencias importantes a largo plazo, ya que afecta el desarrollo cognitivo, motor y conductual en los niños, incluso después de haber sido tratada . Los autores señalan que esta condición puede generar un menor desempeño escolar, limitaciones en el desarrollo intelectual y dificultades en la conducta a lo largo del ciclo de vida.
 
 ### 1.2.2. Lean UX Process
 
-> Visión del modelo de negocio que será soportado por el producto de software.
+En esta sección, aplicaremos la herramienta Lean UX para presentar la visión del modelo de negocio que nuestro producto de software utilizará durante todo el desarrollo de la aplicación. Esta herramienta está dividida en cuatro partes: El desarrollo del problema (Problem Statement), los supuestos del problema (Assumptions), las hipótesis (Hypothesis Statements) y el gráfico que resuma el desarrollo del Lean UX (Lean UX Canvas).
 
 #### 1.2.2.1. Lean UX Problem Statements
 
