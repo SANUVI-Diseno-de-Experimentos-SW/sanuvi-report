@@ -104,13 +104,13 @@ Por ello, existe una oportunidad de mejorar la adherencia al tratamiento mediant
 
 **Business Assumptions**
 
-1. Creemos que existe una necesidad real de mejorar el seguimiento del tratamiento de la anemia infantil por parte de las familias y del personal de salud.
+1. Creemos que existe una necesidad real de mejorar el seguimiento del tratamiento de la anemia infantil por parte de los apoderados del paciente y del personal de salud.
 
 2. Creemos que mejorar el seguimiento y control del tratamiento puede contribuir a que los establecimientos de salud gestionen de manera más organizada la atención de los pacientes con anemia.
 
 3. Creemos que los establecimientos de salud constituyen un contexto viable para la adopción de una solución digital orientada al seguimiento del tratamiento de la anemia infantil.
 
-4. Creemos que facilitar la coordinación entre las familias y el personal de salud puede generar suficiente valor para justificar la adopción de Sanuvi.
+4. Creemos que facilitar la coordinación entre los apoderados del paciente y el personal de salud puede generar suficiente valor para justificar la adopción de Sanuvi.
 
 5. Creemos que el seguimiento continuo de los pacientes puede proporcionar información útil para que el personal de salud tome mejores decisiones sobre el seguimiento de los tratamientos.
 
@@ -118,15 +118,15 @@ Por ello, existe una oportunidad de mejorar la adherencia al tratamiento mediant
 
 7. Creemos que las principales barreras para la adopción de Sanuvi estarán relacionadas con la disposición de los usuarios y las condiciones reales en las que se realiza el seguimiento del tratamiento.
 
-8. Creemos que Sanuvi puede ser una solución sostenible si demuestra que genera valor tanto para las familias como para los establecimientos de salud.
+8. Creemos que Sanuvi puede ser una solución sostenible si demuestra que genera valor tanto para los apoderados del paciente como para los establecimientos de salud.
 
 **User Assumptions**
 
-#### Usuario 1: Madre, padre o cuidador
+#### Usuario 1: Madre, padre o apoderado del paciente
 
 - *¿Quién es el usuario?*
 
-Creemos que las madres, padres o cuidadores responsables del tratamiento de niños con anemia constituyen uno de los principales grupos de usuarios de Sanuvi.
+Creemos que las madres, padres o apoderado responsables del tratamiento de niños con anemia constituyen uno de los principales grupos de usuarios de Sanuvi.
 
 - *¿Qué busca conseguir?*
 
@@ -197,35 +197,35 @@ Creemos que existen diferencias entre los profesionales en cuanto a sus responsa
 
 **Features Assumption**
 
-- Creemos que un registro del cumplimiento de las indicaciones del tratamiento permitirá a las familias llevar un seguimiento más organizado de las actividades indicadas y favorecerá la adherencia al tratamiento de sus hijos.
+- Creemos que un registro del cumplimiento de las indicaciones del tratamiento permitirá a los apoderados del paciente llevar un seguimiento más organizado de las actividades indicadas y favorecerá la adherencia al tratamiento de sus hijos.
 
-- Creemos que los recordatorios de las indicaciones y actividades del tratamiento ayudarán a las familias a cumplir oportunamente con las actividades indicadas y favorecerán la continuidad del tratamiento.
+- Creemos que los recordatorios de las indicaciones y actividades del tratamiento ayudarán a los apoderados del paciente a cumplir oportunamente con las actividades indicadas y favorecerán la continuidad del tratamiento.
 
-- Creemos que un registro organizado del seguimiento del tratamiento permitirá a las familias conocer y mantener un mayor control sobre las actividades realizadas durante el tratamiento de sus hijos.
+- Creemos que un registro organizado del seguimiento del tratamiento permitirá a los apoderados del paciente conocer y mantener un mayor control sobre las actividades realizadas durante el tratamiento de sus hijos.
 
-- Creemos que el registro de los controles de hemoglobina permitirá a las familias y al personal de salud consultar la evolución del niño y facilitará el seguimiento de su tratamiento.
+- Creemos que el registro de los controles de hemoglobina permitirá a los apoderados del paciente y al personal de salud consultar la evolución del niño y facilitará el seguimiento de su tratamiento.
 
 - Creemos que una herramienta para registrar y consultar la adherencia de los niños permitirá al personal de salud verificar periódicamente el cumplimiento del tratamiento y realizar un seguimiento más continuo.
 
-- Creemos que un canal de comunicación entre las familias y el personal de salud facilitará la coordinación durante el tratamiento y favorecerá la continuidad del seguimiento de los niños.
+- Creemos que un canal de comunicación entrelos apoderados del paciente y el personal de salud facilitará la coordinación durante el tratamiento y favorecerá la continuidad del seguimiento de los niños.
 
-- Creemos que una visualización del progreso del tratamiento permitirá a las familias y al personal de salud comprender de manera más clara la evolución y el cumplimiento de las indicaciones.
+- Creemos que una visualización del progreso del tratamiento permitirá a los apoderados del paciente de y al personal de salud comprender de manera más clara la evolución y el cumplimiento de las indicaciones.
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
 - Creemos que lograremos aumentar la adherencia al tratamiento de los niños con anemia si las madres, padres o cuidadores logran cumplir de manera continua las indicaciones del tratamiento de sus hijos mediante un registro del cumplimiento del tratamiento.
 
-- Creemos que lograremos aumentar la continuidad con la que las familias cumplen las indicaciones del tratamiento si las madres, padres o cuidadores logran cumplir oportunamente las indicaciones mediante recordatorios del tratamiento.
+- Creemos que lograremos aumentar la continuidad con la que los apoderados del paciente cumplen las indicaciones del tratamiento si las madres, padres o cuidadores logran cumplir oportunamente las indicaciones mediante recordatorios del tratamiento.
 
-- Creemos que lograremos aumentar la frecuencia con la que las familias realizan el seguimiento del tratamiento de sus hijos si las madres, padres o cuidadores logran mantener un seguimiento continuo del tratamiento mediante un registro organizado del seguimiento.
+- Creemos que lograremos aumentar la frecuencia con la que los apoderados del paciente realizan el seguimiento del tratamiento de sus hijos si las madres, padres o cuidadores logran mantener un seguimiento continuo del tratamiento mediante un registro organizado del seguimiento.
 
 - Creemos que lograremos aumentar la frecuencia con la que el personal de salud verifica la adherencia y evolución de los niños si los profesionales logran verificar periódicamente la adherencia de sus pacientes mediante un registro y consulta de adherencia.
 
 - Creemos que lograremos aumentar la frecuencia con la que el personal de salud verifica la adherencia y evolución de los niños si los profesionales logran conocer la situación y evolución de sus pacientes mediante el registro de controles de hemoglobina.
 
-- Creemos que lograremos aumentar la continuidad de la comunicación entre las familias y el personal de salud durante el tratamiento si ambos usuarios logran mantener una comunicación continua durante el tratamiento mediante un canal de comunicación.
+- Creemos que lograremos aumentar la continuidad de la comunicación entre los apoderados del paciente y el personal de salud durante el tratamiento si ambos usuarios logran mantener una comunicación continua durante el tratamiento mediante un canal de comunicación.
 
-- Creemos que lograremos aumentar la continuidad del seguimiento del tratamiento si las familias y el personal de salud logran comprender la evolución y el cumplimiento de las indicaciones mediante una visualización del progreso del tratamiento.
+- Creemos que lograremos aumentar la continuidad del seguimiento del tratamiento si los apoderados del paciente y el personal de salud logran comprender la evolución y el cumplimiento de las indicaciones mediante una visualización del progreso del tratamiento.
 
 #### 1.2.2.4. Lean UX Canvas
 
