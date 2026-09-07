@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/img/introduction/logo-upc.png" width="60" alt="UPC Logo">
+<img src="./assets/img/readme/UPC_logo.png" width="200" alt="UPC Logo">
 
 Universidad Peruana de Ciencias Aplicadas
 
@@ -12,13 +12,13 @@ Carrera de Ingeniería de Software
 
 NRC
 
-**[NRC]**
+**9082**
 
 **Informe del Trabajo Final**
 
 Docente
 
-**[Apellidos, Nombres del docente]**
+**Juan Fernando Ysen Paiba**
 
 Startup
 
@@ -36,7 +36,7 @@ Producto
     <th style="border: none; text-align: left;">Apellidos y Nombres</th>
   </tr>
   <tr><td style="border: none;">U201822697</td><td style="border: none;">Quijandria Araneda, Vicente</td></tr>
-  <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
+  <tr><td style="border: none;">U20231C426</td><td style="border: none;">Baca Camargo, Vitaly Arturo</td></tr>
   <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
   <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
   <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
@@ -90,7 +90,7 @@ feature/chapter-VIII
 | Apellidos y Nombres | Usuario de GitHub |
 |---------------------|-------------------|
 | Quijandria Araneda, Vicente | vquijandria |
-| [Apellidos, Nombres] | [usuario] |
+| Baca Camargo, Vitaly Arturo| Mr-Code |
 | [Apellidos, Nombres] | [usuario] |
 | [Apellidos, Nombres] | [usuario] |
 | [Apellidos, Nombres] | [usuario] |
