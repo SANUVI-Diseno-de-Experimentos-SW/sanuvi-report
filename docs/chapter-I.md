@@ -192,6 +192,8 @@ Creemos que existen diferencias entre los profesionales en cuanto a sus responsa
 - *Conocer oportunamente la evolución del niño durante el tratamiento.*
 - *Contar con confianza sobre el estado del seguimiento de sus pacientes.*
 - *Mantener una comunicación continua con los apoderados del paciente durante el tratamiento.*
+- *Verificar periódicamente la adherencia y evolución de los niños bajo su seguimiento.*
+- *Sentirse seguros de que conocen la situación y evolución de los niños bajo su seguimiento.*
 
 **Features**
 
