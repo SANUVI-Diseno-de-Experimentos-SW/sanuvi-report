@@ -229,7 +229,9 @@ Creemos que existen diferencias entre los profesionales en cuanto a sus responsa
 
 #### 1.2.2.4. Lean UX Canvas
 
-<img src="../assets/img/chapter-I/lean-ux-canvas.png" alt="Lean UX Canvas">
+<img src="../assets/img/chapter-I/Lean Ux Canvas.jpeg" alt="Lean UX Canvas">
+
+Enlace de Miro: [https://miro.com/welcomeonboard/KzVjQmRTK0NETHhmTj](https://miro.com/welcomeonboard/KzVjQmRTK0NETHhmTjZNNytpNUZXU2h0amdIaUNXRjRSMGV0RDhEWTl1T2VUVjRDSWszeFlJZGprOHdkd0xibHBIeGJENC83Q2w3OGt2YUFkbnJER3ZmdzQ3QVkzWmFoalVhN1FnMGw5YWhOK0tUaXZMMCtVZXRDV3pHS0ErNDZnbHpza3F6REdEcmNpNEFOMmJXWXBBPT0hdjE=?share_link_id=475679318914)
 
 <!-- COMPLETAR: explicación del canvas -->
 
