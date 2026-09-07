@@ -56,8 +56,9 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 
 | Versión | Fecha | Autor | Descripción de modificación |
 |---------|-------|-------|-----------------------------|
-| 1.0 | [DD/MM/AAAA] | [Apellidos, Nombres] | Se creó la estructura base del informe según el Final Project Statement del curso 1ASI0732. |
-|  |  |  |  |
+| 1.0 | [05/09/2026] | Quijandria Araneda, Vicente | Se creó la estructura base del informe según el Final Project Statement del curso 1ASI0732. |
+| 1.1 | [06/09/2026] | Baca Camargo, Vitaly Arturo  | Avance del Capítulo I con definición de Startup Profile, 5W+2H y estructura general. Se añadieron y corrigieron perfiles del equipo.  |
+| 1.2 | [07/09/2026] | Baca Camargo, Vitaly Arturo  | Incorporación de Lean UX Canvas, assumptions y outcomes y ajustes al Lean UX Canvas, definición de segmentos objetivo y consolidación de contenido del Capítulo I.  |
 
 <div style="page-break-after: always;"></div>
 
