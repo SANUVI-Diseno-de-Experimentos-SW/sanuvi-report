@@ -122,7 +122,28 @@ Asimismo, las soluciones existentes no resuelven adecuadamente la necesidad de u
 
 **User Assumptions**
 
-<!-- COMPLETAR -->
+#### Usuario 1: Madre, padre o cuidador
+
+- *¿Quién es el usuario?*
+
+Creemos que las madres, padres o cuidadores responsables del tratamiento de niños con anemia constituyen uno de los principales grupos de usuarios de Sanuvi.
+
+- *¿Qué busca conseguir?*
+
+Creemos que estos usuarios buscan cumplir adecuadamente con las indicaciones del tratamiento y mantener un seguimiento de las actividades relacionadas con la atención de sus hijos.
+
+- *¿En qué contexto utiliza el producto?*
+  
+Creemos que utilizarán Sanuvi principalmente durante su rutina cotidiana de cuidado del niño y en los momentos relacionados con el seguimiento de su tratamiento.
+
+- *¿Qué dificultades puede tener?*
+
+Creemos que pueden tener dificultades para mantener la continuidad del seguimiento del tratamiento y para recordar u organizar la información relacionada con las indicaciones recibidas.
+
+- *¿Qué características del usuario son relevantes?*
+  
+Creemos que existen diferencias entre los cuidadores en cuanto a sus rutinas, disponibilidad de tiempo, familiaridad con herramientas digitales y formas actuales de organizar el seguimiento del tratamiento.
+
 
 **Business Outcomes**
 
