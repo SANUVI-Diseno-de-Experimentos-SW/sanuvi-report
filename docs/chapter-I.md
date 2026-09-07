@@ -104,7 +104,21 @@ Asimismo, las soluciones existentes no resuelven adecuadamente la necesidad de u
 
 **Business Assumptions**
 
-<!-- COMPLETAR -->
+1. Creemos que existe una necesidad real de mejorar el seguimiento del tratamiento de la anemia infantil por parte de las familias y del personal de salud.
+
+2. Creemos que mejorar el seguimiento y control del tratamiento puede contribuir a que los establecimientos de salud gestionen de manera más organizada la atención de los pacientes con anemia.
+
+3. Creemos que los establecimientos de salud constituyen un contexto viable para la adopción de una solución digital orientada al seguimiento del tratamiento de la anemia infantil.
+
+4. Creemos que facilitar la coordinación entre las familias y el personal de salud puede generar suficiente valor para justificar la adopción de Sanuvi.
+
+5. Creemos que el seguimiento continuo de los pacientes puede proporcionar información útil para que el personal de salud tome mejores decisiones sobre el seguimiento de los tratamientos.
+
+6. Creemos que Sanuvi puede integrarse al proceso de seguimiento que actualmente realizan los establecimientos de salud sin reemplazar las responsabilidades del personal sanitario.
+
+7. Creemos que las principales barreras para la adopción de Sanuvi estarán relacionadas con la disposición de los usuarios y las condiciones reales en las que se realiza el seguimiento del tratamiento.
+
+8. Creemos que Sanuvi puede ser una solución sostenible si demuestra que genera valor tanto para las familias como para los establecimientos de salud.
 
 **User Assumptions**
 
