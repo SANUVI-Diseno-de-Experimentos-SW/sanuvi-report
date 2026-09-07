@@ -144,6 +144,28 @@ Creemos que pueden tener dificultades para mantener la continuidad del seguimien
   
 Creemos que existen diferencias entre los cuidadores en cuanto a sus rutinas, disponibilidad de tiempo, familiaridad con herramientas digitales y formas actuales de organizar el seguimiento del tratamiento.
 
+#### Usuario 2: Personal de salud
+
+- *¿Quién es el usuario?*
+
+Creemos que el personal de salud responsable del seguimiento de niños con anemia constituye otro grupo principal de usuarios de Sanuvi.
+
+- *¿Qué busca conseguir?*
+  
+Creemos que estos usuarios buscan realizar un seguimiento organizado de sus pacientes y disponer de información que les permita conocer la evolución del tratamiento.
+
+- *¿En qué contexto utiliza el producto?*
+
+Creemos que utilizarán Sanuvi como parte de sus actividades habituales de seguimiento y atención de pacientes con anemia infantil.
+
+- *¿Qué dificultades puede tener?*
+
+Creemos que pueden enfrentar dificultades para mantener organizada y actualizada la información necesaria para realizar el seguimiento de sus pacientes.
+
+- *¿Qué características del usuario son relevantes?*
+
+Creemos que existen diferencias entre los profesionales en cuanto a sus responsabilidades, carga de trabajo, procesos de seguimiento y familiaridad con herramientas digitales.
+
 
 **Business Outcomes**
 
