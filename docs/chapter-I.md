@@ -213,9 +213,19 @@ Creemos que existen diferencias entre los profesionales en cuanto a sus responsa
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
-> Formato: *Creemos que [business outcome] se logrará si [user] alcanza [user outcome] con [feature].*
+- Creemos que lograremos aumentar la adherencia al tratamiento de los niños con anemia si las madres, padres o cuidadores logran cumplir de manera continua las indicaciones del tratamiento de sus hijos mediante un registro del cumplimiento del tratamiento.
 
-<!-- COMPLETAR -->
+- Creemos que lograremos aumentar la continuidad con la que las familias cumplen las indicaciones del tratamiento si las madres, padres o cuidadores logran cumplir oportunamente las indicaciones mediante recordatorios del tratamiento.
+
+- Creemos que lograremos aumentar la frecuencia con la que las familias realizan el seguimiento del tratamiento de sus hijos si las madres, padres o cuidadores logran mantener un seguimiento continuo del tratamiento mediante un registro organizado del seguimiento.
+
+- Creemos que lograremos aumentar la frecuencia con la que el personal de salud verifica la adherencia y evolución de los niños si los profesionales logran verificar periódicamente la adherencia de sus pacientes mediante un registro y consulta de adherencia.
+
+- Creemos que lograremos aumentar la frecuencia con la que el personal de salud verifica la adherencia y evolución de los niños si los profesionales logran conocer la situación y evolución de sus pacientes mediante el registro de controles de hemoglobina.
+
+- Creemos que lograremos aumentar la continuidad de la comunicación entre las familias y el personal de salud durante el tratamiento si ambos usuarios logran mantener una comunicación continua durante el tratamiento mediante un canal de comunicación.
+
+- Creemos que lograremos aumentar la continuidad del seguimiento del tratamiento si las familias y el personal de salud logran comprender la evolución y el cumplimiento de las indicaciones mediante una visualización del progreso del tratamiento.
 
 #### 1.2.2.4. Lean UX Canvas
 
