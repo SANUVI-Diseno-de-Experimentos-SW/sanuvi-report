@@ -65,7 +65,7 @@ La anemia en el Perú afecta principalmente a niños menores de cinco años, esp
 
 **Where (¿Dónde sucede?)**
 
-El problema de la anemia se presenta en el Perú, a nivel nacional, en gestantes que acceden a los establecimientos de salud registrados en el Sistema de Información del Estado Nutricional (HIS). Durante el periodo de enero a marzo de 2025, se evaluaron 144,577 gestantes, de las cuales 26,306 presentaron anemia, lo que representa una prevalencia del 18.20% a nivel nacional (Instituto Nacional de Salud [INS], 2025). A nivel departamental, se observan diferencias significativas en la distribución de la anemia. Por ejemplo, regiones como Apurímac (34.02%), Huancavelica (31.53%) y Ayacucho (23.59%) presentan mayores porcentajes de anemia en gestantes, evidenciando una mayor vulnerabilidad en zonas andinas.
+El problema de la anemia en gestantes constituye una situación relevante de salud pública en el Perú. De acuerdo con los registros del Sistema de Información del Estado Nutricional (SIEN/HIS) del Instituto Nacional de Salud (INS), durante el periodo de enero a marzo de 2025 se evaluaron 144 577 gestantes a nivel nacional, de las cuales 26 306 fueron diagnosticadas con anemia, alcanzando una prevalencia de 18,20 %. Asimismo, la distribución de esta problemática presenta diferencias entre los departamentos del país. Apurímac registró una prevalencia de 34,02 %, seguido de Huancavelica con 31,53 % y Ayacucho con 23,59 %, evidenciando una mayor concentración del problema en determinadas regiones del país (Instituto Nacional de Salud [INS], 2025).
 
 **When (¿Desde cuándo y con qué frecuencia?)**
 
