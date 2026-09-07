@@ -195,9 +195,21 @@ Creemos que existen diferencias entre los profesionales en cuanto a sus responsa
 - *Verificar periódicamente la adherencia y evolución de los niños bajo su seguimiento.*
 - *Sentirse seguros de que conocen la situación y evolución de los niños bajo su seguimiento.*
 
-**Features**
+**Features Assumption**
 
-<!-- COMPLETAR -->
+- Creemos que un registro del cumplimiento de las indicaciones del tratamiento permitirá a las familias llevar un seguimiento más organizado de las actividades indicadas y favorecerá la adherencia al tratamiento de sus hijos.
+
+- Creemos que los recordatorios de las indicaciones y actividades del tratamiento ayudarán a las familias a cumplir oportunamente con las actividades indicadas y favorecerán la continuidad del tratamiento.
+
+- Creemos que un registro organizado del seguimiento del tratamiento permitirá a las familias conocer y mantener un mayor control sobre las actividades realizadas durante el tratamiento de sus hijos.
+
+- Creemos que el registro de los controles de hemoglobina permitirá a las familias y al personal de salud consultar la evolución del niño y facilitará el seguimiento de su tratamiento.
+
+- Creemos que una herramienta para registrar y consultar la adherencia de los niños permitirá al personal de salud verificar periódicamente el cumplimiento del tratamiento y realizar un seguimiento más continuo.
+
+- Creemos que un canal de comunicación entre las familias y el personal de salud facilitará la coordinación durante el tratamiento y favorecerá la continuidad del seguimiento de los niños.
+
+- Creemos que una visualización del progreso del tratamiento permitirá a las familias y al personal de salud comprender de manera más clara la evolución y el cumplimiento de las indicaciones.
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
