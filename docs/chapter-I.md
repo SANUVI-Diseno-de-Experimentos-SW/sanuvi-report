@@ -26,7 +26,7 @@ Visualizamos un futuro donde las familias y el personal de salud cuenten con her
 
 <table>
   <tr>
-    <td width="140"><img src="../assets/img/chapter-I/member-01.png" width="120" alt="Foto integrante"></td>
+    <td width="140"><img src="../assets/img/chapter-I/Vitaly.jpeg" width="120" alt="Foto integrante"></td>
     <td>
       <b>Vitaly Arturo Baca Camargo</b> — <code>u20231c426</code><br>
       <i>Ingeniería de Software</i><br><br>
