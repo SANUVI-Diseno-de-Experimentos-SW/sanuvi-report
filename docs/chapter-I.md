@@ -169,7 +169,11 @@ Creemos que existen diferencias entre los profesionales en cuanto a sus responsa
 
 **Business Outcomes**
 
-<!-- COMPLETAR -->
+- *Aumentar la adherencia al tratamiento de los niños con anemia.*
+- *Aumentar la continuidad con la que las familias cumplen las indicaciones del tratamiento.*
+- *Aumentar la frecuencia con la que las familias realizan el seguimiento del tratamiento de sus hijos.*
+- *Aumentar la frecuencia con la que el personal de salud verifica la adherencia y evolución de los niños.*
+- *Aumentar la continuidad de la comunicación entre las familias y el personal de salud durante el tratamiento.*
 
 **User Outcomes**
 
