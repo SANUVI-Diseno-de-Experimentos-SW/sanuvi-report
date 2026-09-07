@@ -170,14 +170,28 @@ Creemos que existen diferencias entre los profesionales en cuanto a sus responsa
 **Business Outcomes**
 
 - *Aumentar la adherencia al tratamiento de los niños con anemia.*
-- *Aumentar la continuidad con la que las familias cumplen las indicaciones del tratamiento.*
-- *Aumentar la frecuencia con la que las familias realizan el seguimiento del tratamiento de sus hijos.*
+- *Aumentar la continuidad con la que los apoderados del paciente. cumplen las indicaciones del tratamiento.*
+- *Aumentar la frecuencia con la que los apoderados del paciente. realizan el seguimiento del tratamiento de sus hijos.*
 - *Aumentar la frecuencia con la que el personal de salud verifica la adherencia y evolución de los niños.*
-- *Aumentar la continuidad de la comunicación entre las familias y el personal de salud durante el tratamiento.*
+- *Aumentar la continuidad de la comunicación entre las apoderados y el personal de salud durante el tratamiento.*
 
 **User Outcomes**
 
-<!-- COMPLETAR -->
+#### Usuario 1: Madre, padre o cuidador
+
+- *Cumplir de manera continua las indicaciones del tratamiento de su hijo.*
+- *Dar seguimiento al tratamiento de su hijo de manera organizada.*
+- *Conocer cómo está avanzando el tratamiento de su hijo.*
+- *Sentirse seguros de que están cumpliendo adecuadamente con el tratamiento de su hijo.*
+- *Contar con mayor claridad sobre las indicaciones que deben seguir durante el tratamiento.*
+
+#### Usuario 2: Personal de Salud
+
+- *Realizar el seguimiento de los niños con anemia de manera continua.*
+- *Verificar el cumplimiento de las indicaciones del tratamiento por parte de los apoderados del paciente.*
+- *Conocer oportunamente la evolución del niño durante el tratamiento.*
+- *Contar con confianza sobre el estado del seguimiento de sus pacientes.*
+- *Mantener una comunicación continua con los apoderados del paciente durante el tratamiento.*
 
 **Features**
 
