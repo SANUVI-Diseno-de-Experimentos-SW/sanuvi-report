@@ -233,16 +233,16 @@ Creemos que existen diferencias entre los profesionales en cuanto a sus responsa
 
 Enlace de Miro: [https://miro.com/welcomeonboard/KzVjQmRTK0NETHhmTj](https://miro.com/welcomeonboard/KzVjQmRTK0NETHhmTjZNNytpNUZXU2h0amdIaUNXRjRSMGV0RDhEWTl1T2VUVjRDSWszeFlJZGprOHdkd0xibHBIeGJENC83Q2w3OGt2YUFkbnJER3ZmdzQ3QVkzWmFoalVhN1FnMGw5YWhOK0tUaXZMMCtVZXRDV3pHS0ErNDZnbHpza3F6REdEcmNpNEFOMmJXWXBBPT0hdjE=?share_link_id=475679318914)
 
-<!-- COMPLETAR: explicación del canvas -->
 
 ## 1.3. Segmentos objetivo
 
-> Descripción de los segmentos asociados al dominio del problema, incluyendo características demográficas e información estadística de sustento.
+Sanuvi identifica dos segmentos objetivo vinculados al problema de la baja 
+adherencia al tratamiento de anemia en el Perú.
 
-### Segmento Objetivo 1: [Nombre del segmento]
+### Segmento Objetivo 1. Madres, padres o cuidadores de niños con anemia
 
-<!-- COMPLETAR -->
+Las madres, padres o cuidadores responsables del tratamiento de niños con anemia en el Perú, quienes participan directamente en el cumplimiento de las indicaciones y actividades relacionadas con el tratamiento de sus hijos. Este segmento enfrenta dificultades para mantener de manera continua y organizada el seguimiento del tratamiento, lo que puede dificultar el cumplimiento de las indicaciones y la adherencia. Buscan contar con mayor claridad y organización para acompañar adecuadamente el tratamiento de sus hijos.
 
-### Segmento Objetivo 2: [Nombre del segmento]
+### Segmento Objetivo 2. Personal de salud responsable del seguimiento
 
-<!-- COMPLETAR -->
+El personal de salud encargado de la atención y seguimiento de niños con anemia en establecimientos de salud del Perú, quienes necesitan realizar un seguimiento continuo de sus pacientes, verificar la adherencia al tratamiento y conocer su evolución. Este segmento enfrenta dificultades para mantener un seguimiento periódico y organizado de la información relacionada con sus pacientes, así como para mantener una coordinación continua con las familias durante el tratamiento.
