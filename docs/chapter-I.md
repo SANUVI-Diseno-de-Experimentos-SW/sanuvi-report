@@ -97,7 +97,7 @@ La Norma Técnica de Salud N.° 213-MINSA/DGIESP-2024 define la adherencia al su
 
 Por ello, existe una oportunidad de mejorar la adherencia al tratamiento mediante un seguimiento más continuo y organizado, fortaleciendo también la coordinación entre las familias y el personal de salud.
 
-**¿Cómo podríamos mejorar la adherencia al tratamiento de la anemia infantil y facilitar el seguimiento continuo entre madres/cuidadores y personal de salud, para aumentar la tasa de cumplimiento del tratamiento y reducir el fracaso terapéutico, sin exigir conocimientos técnicos avanzados a los usuarios?**
+**¿Cómo podríamos mejorar la adherencia al tratamiento de la anemia infantil y fortalecer la continuidad y coordinación del seguimiento entre las familias y el personal de salud, para favorecer el cumplimiento de las indicaciones durante el tratamiento?**
 
 
 #### 1.2.2.2. Lean UX Assumptions
