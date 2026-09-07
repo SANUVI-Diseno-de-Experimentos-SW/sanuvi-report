@@ -28,9 +28,27 @@ Visualizamos un futuro donde las familias y el personal de salud cuenten con her
   <tr>
     <td width="140"><img src="../assets/img/chapter-I/member-01.png" width="120" alt="Foto integrante"></td>
     <td>
-      <b>[Apellidos, Nombres]</b> — <code>[Código]</code><br>
-      <i>[Carrera]</i><br><br>
-      [Párrafo con conocimientos técnicos y habilidades que aporta al equipo.]
+      <b>Vitaly Arturo Baca Camargo</b> — <code>u20231c426</code><br>
+      <i>Ingeniería de Software</i><br><br>
+      <strong>Perfil</strong>
+      <br> <br>
+      Estudiante de Ingeniería de Software con interés en la resolución de problemas en diversos sectores mediante el uso de tecnología. Apasionado por el diseño de interfaces de usuario Movil (UI) y enfocado en el desarrollo de soluciones arquitectónicas eficientes y escalables, orientadas a mejorar la experiencia del usuario y el rendimiento de los sistemas.
+      <br><br>
+      <strong>Habilidades Técnicas:</strong>
+      <ul>
+        <li>Java, Node.js</li>
+        <li>MongoDB, MySql</li>
+        <li>kotlin, Flutter</li>
+        <li>Git, Git Flow</li>
+        <li>Raliway, Vercel</li>
+      </ul>
+      <strong>Habilidades Sociales:</strong>
+       <ul>
+        <li> Trabajo en equipo y colaboración en entornos ágile</li>
+        <li> Comunicación efectiva para coordinación técnica y funcional</li>
+        <li> Pensamiento analítico y resolución de problemas</li>
+        <li> Adaptabilidad y aprendizaje continuo</li>
+      </ul>
     </td>
   </tr>
 </table>
