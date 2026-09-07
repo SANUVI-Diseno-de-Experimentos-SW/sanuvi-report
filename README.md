@@ -12,13 +12,13 @@ Carrera de Ingeniería de Software
 
 NRC
 
-**9082**
+**[NRC]**
 
 **Informe del Trabajo Final**
 
 Docente
 
-**Juan Fernando Ysen Paiba**
+**[Nombre del Profesor]**
 
 Startup
 
@@ -36,7 +36,7 @@ Producto
     <th style="border: none; text-align: left;">Apellidos y Nombres</th>
   </tr>
   <tr><td style="border: none;">U201822697</td><td style="border: none;">Quijandria Araneda, Vicente</td></tr>
-  <tr><td style="border: none;">U20231C426</td><td style="border: none;">Baca Camargo, Vitaly Arturo</td></tr>
+  <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
   <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
   <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
   <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
@@ -90,7 +90,7 @@ feature/chapter-VIII
 | Apellidos y Nombres | Usuario de GitHub |
 |---------------------|-------------------|
 | Quijandria Araneda, Vicente | vquijandria |
-| Baca Camargo, Vitaly Arturo| Mr-Code |
+| [Apellidos, Nombres] | [usuario] |
 | [Apellidos, Nombres] | [usuario] |
 | [Apellidos, Nombres] | [usuario] |
 | [Apellidos, Nombres] | [usuario] |
