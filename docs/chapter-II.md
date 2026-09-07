@@ -20,7 +20,7 @@
 
 > Competitive Analysis Landscape.
 
-| | | **Ferova** | **[Competidor 1]** | **[Competidor 2]** | **[Competidor 3]** |
+| | | **Sanuvi** | **[Competidor 1]** | **[Competidor 2]** | **[Competidor 3]** |
 |---|---|---|---|---|---|
 | **Perfil** | Overview | | | | |
 | | Ventaja competitiva ¿Qué valor ofrece a los clientes? | | | | |
