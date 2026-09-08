@@ -44,25 +44,114 @@
 
 > Preguntas generales y preguntas específicas por segmento objetivo.
 
-**Segmento 1: [Nombre del segmento]**
+**Segmento 1: Madres, padres o cuidadores de niños con anemia**
 
-*Preguntas generales*
+<h4>Preguntas Personales:</h4> 
 
-<!-- COMPLETAR -->
+- ¿Cuál es su nombre?<br>
+- ¿Qué edad tiene?<br>
+- ¿Cuál es su estado civil?<br>
+- ¿Cuál es su ocupación?<br>
+- ¿En qué distrito vive?<br>
+- ¿Cuál es su relación con el niño (madre, padre, cuidador)?<br>
 
-*Preguntas específicas*
+<h4>Contexto y antecedentes:</h4> 
 
-<!-- COMPLETAR -->
+- ¿Su hijo(a) ha sido diagnosticado con anemia? ¿Hace cuánto tiempo?<br>
+- ¿Cómo fue su experiencia al recibir el diagnóstico?<br>
 
-**Segmento 2: [Nombre del segmento]**
+<h4>Comportamiento y uso actual:</h4> 
 
-*Preguntas generales*
+- ¿Cómo realiza actualmente el seguimiento del tratamiento?<br>
+- ¿Con qué frecuencia administra el suplemento de hierro?<br>
+- ¿Ha olvidado alguna vez una dosis? ¿Por qué?<br>
+- ¿Cómo controla las citas médicas?<br>
 
-<!-- COMPLETAR -->
+<h4>Frustraciones:</h4> 
 
-*Preguntas específicas*
+- ¿Qué es lo más difícil de seguir el tratamiento contra la anemia?<br>
+- ¿Qué problemas ha tenido con las indicaciones médicas?<br>
 
-<!-- COMPLETAR -->
+<h4>Objetivos:</h4> 
+
+- ¿Qué le gustaría lograr con el tratamiento de su hijo?<br>
+
+<h4>Tecnología y canales digitales:</h4> 
+
+- ¿Qué tipo de celular utiliza?<br>
+- ¿Qué aplicaciones usa con frecuencia?<br>
+- ¿Qué tan cómoda/o se siente usando aplicaciones móviles?<br>
+
+<h4>Preferencias y comportamiento digital:</h4> 
+
+- ¿Qué tipo de contenido le resulta más fácil de entender? (texto, imágenes, videos)<br>
+
+<h4>Necesidades:</h4> 
+
+- ¿Qué tipo de ayuda le gustaría recibir para mejorar el tratamiento?<br>
+- ¿Qué funcionalidades le gustaría en una app? (recordatorios, dietas, seguimiento, contacto con médicos)<br>
+
+<h4>Confianza y percepción:</h4> 
+
+- ¿Qué le generaría confianza al usar una aplicación de salud y qué le haría dejar de usarla?<br>
+
+<h4>Personalidad e influencias:</h4> 
+
+- ¿Se considera una persona organizada o más improvisada?<br>
+- ¿Suele seguir indicaciones médicas al pie de la letra?<br>
+
+
+**Segmento 2: Personal de salud responsable del seguimiento**
+
+<h4>Preguntas Personales:</h4> 
+
+- ¿Cuál es su nombre?<br>
+- ¿Qué edad tiene?<br>
+- ¿Cuál es su profesión o especialidad?<br>
+- ¿Dónde trabaja actualmente?<br>
+- ¿Cuántos años de experiencia tiene?<br>
+
+<h4>Nutrición y manejo alimenticio:</h4> 
+
+- ¿Qué recomendaciones nutricionales suele brindar a pacientes con anemia?<br>
+- ¿Qué tan importante considera la alimentación en el tratamiento de la anemia?<br>
+- ¿Qué problemas ha identificado en la alimentación de los pacientes (costumbres, acceso a alimentos, desconocimiento, etc.)?<br>
+
+<h4>Comportamiento actual:</h4> 
+
+- ¿Cómo realiza el seguimiento de pacientes con anemia?<br>
+- ¿Qué herramientas utiliza actualmente? (Papel, Excel, etc.)<br>
+- ¿Cómo organiza la información de sus pacientes?<br>
+
+<h4>Frustraciones:</h4> 
+
+- ¿Qué tan frecuente es el abandono del tratamiento?<br>
+
+<h4>Objetivos:</h4> 
+
+- ¿Qué le gustaría mejorar en el seguimiento de pacientes?<br>
+- ¿Qué resultados considera ideales en un tratamiento exitoso?<br>
+
+<h4>Tecnología y herramientas:</h4> 
+
+- ¿Qué herramientas tecnológicas usa con mayor frecuencia?<br>
+- ¿Qué tan cómodo se siente usando nuevas tecnologías?<br>
+
+<h4>Necesidades:</h4> 
+
+- ¿Qué información necesita para hacer un mejor seguimiento?<br>
+- ¿Qué funcionalidades considera esenciales en una app? (alertas, reportes, historial, teleconsultas, etc.)<br>
+
+<h4>Confianza y adopción:</h4> 
+
+- ¿Qué le generaría confianza para usar una aplicación médica?<br>
+- ¿Qué barreras ve en la implementación de una solución digital?<br>
+
+<h4>Personalidad y trabajo:</h4> 
+
+- ¿Se considera una persona organizada en el manejo de pacientes?<br>
+- ¿Qué tan importante es la eficiencia en su trabajo diario?<br>
+
 
 ### 2.2.2. Registro de entrevistas
 
