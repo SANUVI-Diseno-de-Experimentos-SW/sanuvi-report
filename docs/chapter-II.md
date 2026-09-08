@@ -28,7 +28,13 @@ pero sin adaptación al sistema de salud peruano ni al dominio de anemia.
 
 ### 2.1.1. Análisis competitivo
 
-> Competitive Analysis Landscape.
+**¿Por qué llevar a cabo este análisis?**  
+> El objetivo de este análisis es evaluar las oportunidades reales de 
+competir en el mercado de salud digital materno-infantil en el Perú, 
+identificando las características de producto, segmentos objetivo y 
+estrategias de los principales actores. A través de este estudio, Sanuvi 
+busca tomar decisiones informadas para diseñar una propuesta de valor 
+diferenciada que permita a Ferova destacar frente a soluciones existentes.
 
 | | | **Sanuvi** | **[Competidor 1]** | **[Competidor 2]** | **[Competidor 3]** |
 |---|---|---|---|---|---|
