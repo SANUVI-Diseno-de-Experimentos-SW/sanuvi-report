@@ -89,11 +89,10 @@
 <h4>Necesidades:</h4> 
 
 - ¿Qué tipo de ayuda le gustaría recibir para mejorar el tratamiento?<br>
-- ¿Qué funcionalidades le gustaría en una app? (recordatorios, dietas, seguimiento, contacto con médicos)<br>
 
 <h4>Confianza y percepción:</h4> 
 
-- ¿Qué le generaría confianza al usar una aplicación de salud y qué le haría dejar de usarla?<br>
+- ¿Qué le generaría confianza al usar una aplicación movil de salud y qué le haría dejar de usarla?<br>
 
 <h4>Personalidad e influencias:</h4> 
 
@@ -140,11 +139,10 @@
 <h4>Necesidades:</h4> 
 
 - ¿Qué información necesita para hacer un mejor seguimiento?<br>
-- ¿Qué funcionalidades considera esenciales en una app? (alertas, reportes, historial, teleconsultas, etc.)<br>
 
 <h4>Confianza y adopción:</h4> 
 
-- ¿Qué le generaría confianza para usar una aplicación médica?<br>
+- ¿Qué le generaría confianza para usar una aplicación web médica?<br>
 - ¿Qué barreras ve en la implementación de una solución digital?<br>
 
 <h4>Personalidad y trabajo:</h4> 
