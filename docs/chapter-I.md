@@ -211,6 +211,13 @@ Creemos que existen diferencias entre los profesionales en cuanto a sus responsa
 
 - Creemos que una visualización del progreso del tratamiento permitirá a los apoderados del paciente de y al personal de salud comprender de manera más clara la evolución y el cumplimiento de las indicaciones.
 
+- Creemos que un registro de las dosis diarias del tratamiento permitirá a los apoderados del paciente llevar un control continuo de las dosis administradas y favorecerá el cumplimiento de las indicaciones del tratamiento.
+
+- Creemos que un registro de alimentos hibidores e inhibidores de la absorción del hierro permitirá a los apoderados del paciente conocer qué alimentos pueden acompañar o dificultar el aprovechamiento del hierro durante el tratamiento y favorecerá el cumplimiento de las recomendaciones nutricionales.
+
+- Creemos que una herramienta para gestionar las citas en los establecimientos de salud permitirá a los apoderados del paciente mantener la continuidad de sus controles y facilitará el seguimiento del tratamiento de sus hijos.
+  
+
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
 - Creemos que lograremos aumentar la adherencia al tratamiento de los niños con anemia si las madres, padres o cuidadores logran cumplir de manera continua las indicaciones del tratamiento de sus hijos mediante un registro del cumplimiento del tratamiento.
@@ -226,6 +233,12 @@ Creemos que existen diferencias entre los profesionales en cuanto a sus responsa
 - Creemos que lograremos aumentar la continuidad de la comunicación entre los apoderados del paciente y el personal de salud durante el tratamiento si ambos usuarios logran mantener una comunicación continua durante el tratamiento mediante un canal de comunicación.
 
 - Creemos que lograremos aumentar la continuidad del seguimiento del tratamiento si los apoderados del paciente y el personal de salud logran comprender la evolución y el cumplimiento de las indicaciones mediante una visualización del progreso del tratamiento.
+  
+- Creemos que lograremos aumentar la adherencia al tratamiento de los niños con anemia si las madres, padres o cuidadores logran cumplir de manera continua las indicaciones de dosificación del tratamiento mediante un registro de las dosis diarias administradas.
+
+- Creemos que lograremos aumentar la continuidad con la que las familias cumplen las indicaciones del tratamiento si las madres, padres o cuidadores cuentan con mayor claridad sobre las recomendaciones alimentarias relacionadas con el tratamiento mediante un registro de alimentos facilitadores e inhibidores de la absorción del hierro.
+  
+- Creemos que lograremos aumentar la frecuencia con la que el personal de salud verifica la adherencia y evolución de los niños si las familias logran mantener un seguimiento continuo del tratamiento mediante una herramienta para gestionar las citas en los establecimientos de salud.
 
 #### 1.2.2.4. Lean UX Canvas
 
