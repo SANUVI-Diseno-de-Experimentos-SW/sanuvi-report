@@ -2,19 +2,29 @@
 
 ## 2.1. Competidores
 
-> Identificación y descripción de los principales competidores directos (3 como mínimo) con modelos de negocio basados en productos digitales similares, o competidores indirectos con ofertas parcialmente similares.
+Ferova presenta tres competidores relevantes en el mercado de salud digital orientado al seguimiento de tratamientos y adherencia terapéutica:
 
-**Competidor 1: [Nombre]**
+- **App ALMA — MINSA** (competidor directo): Es la aplicación oficial del 
+Ministerio de Salud del Perú para el seguimiento del crecimiento y 
+tratamiento de anemia en niños menores de 36 meses. Permite a los padres 
+registrar fechas de control, vacunas, inicio de gotitas de hierro y 
+recetas ricas en hierro. Está disponible únicamente en Android y se 
+distribuye de forma gratuita a través del Plan Multisectorial contra la 
+Anemia del MINSA.
 
-<!-- COMPLETAR -->
+- **Medisafe** (competidor indirecto): Es una plataforma de gestión de 
+medicamentos con más de 10 millones de usuarios a nivel global. Permite 
+configurar recordatorios de dosis, gestionar múltiples perfiles de 
+pacientes y notificar a cuidadores en caso de olvido. No está adaptada 
+al contexto peruano ni tiene enfoque en anemia materno-infantil, pero 
+compite indirectamente como herramienta general de adherencia terapéutica.
 
-**Competidor 2: [Nombre]**
-
-<!-- COMPLETAR -->
-
-**Competidor 3: [Nombre]**
-
-<!-- COMPLETAR -->
+- **MyTherapy** (competidor indirecto): Es una aplicación de recordatorio 
+de medicamentos desarrollada por Smartpatient GmbH con enfoque en 
+pacientes con enfermedades crónicas. Incorpora un sistema de recompensas 
+visuales por cumplimiento, diario de salud imprimible y notificación 
+automática a familiares. Tiene alta presencia en Europa y Latinoamérica 
+pero sin adaptación al sistema de salud peruano ni al dominio de anemia.
 
 ### 2.1.1. Análisis competitivo
 
