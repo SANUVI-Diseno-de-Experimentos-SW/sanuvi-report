@@ -4,21 +4,23 @@
 
 ### 1.1.1. Descripción de la Startup
 
-Sanuvi nace con el propósito de contribuir al seguimiento y control del tratamiento de la anemia infantil en el Perú. En un contexto donde las familias pueden enfrentar dificultades para mantener la continuidad del tratamiento y el personal de salud requiere información organizada para realizar un seguimiento adecuado de sus pacientes, ofrecemos una solución tecnológica que busca facilitar este proceso y fortalecer la coordinación entre las familias y los profesionales de salud.
+Sanuvi es una startup que nace con el propósito de contribuir al seguimiento y control del tratamiento de la anemia infantil en el Perú. Para ello, desarrolla Ferova, un aplicativo digital orientado a facilitar el seguimiento del tratamiento y fortalecer la coordinación entre las familias y el personal de salud.
 
-Nuestra propuesta busca facilitar el acompañamiento de los niños durante su tratamiento, brindando a las familias herramientas accesibles que les permitan mantener un seguimiento más organizado de su progreso. Asimismo, busca proporcionar al personal de salud información relevante para conocer la evolución de sus pacientes y realizar un seguimiento oportuno, favoreciendo una atención más organizada y eficiente.
+En un contexto donde las familias pueden presentar dificultades para mantener de manera continua y organizada el cumplimiento de las indicaciones del tratamiento, mientras que el personal de salud requiere información organizada para realizar un seguimiento adecuado de sus pacientes, Sanuvi busca ofrecer una alternativa digital que facilite este proceso.
 
-Nos enfocamos en apoyar a las familias y al personal de salud involucrado en el seguimiento de la anemia infantil, ofreciendo una alternativa digital que facilite la continuidad del tratamiento y la gestión de la información de los pacientes. Creemos que la transformación digital puede contribuir a fortalecer el seguimiento de la anemia, facilitando la comunicación y el acceso a información relevante para quienes participan en el proceso de recuperación.
+A través de Ferova, las familias y cuidadores pueden contar con herramientas que les ayuden a organizar y mantener el seguimiento del tratamiento de sus hijos, mientras que el personal de salud puede disponer de información relacionada con la adherencia y evolución de los niños bajo su seguimiento. De esta manera, la propuesta busca favorecer la continuidad del tratamiento y fortalecer la coordinación entre ambos grupos de usuarios.
 
-En Sanuvi, aspiramos a contribuir a la transformación digital del seguimiento de la anemia infantil en el Perú, promoviendo una atención más organizada, conectada y centrada en las necesidades de cada paciente. Buscamos generar un impacto positivo en la continuidad del tratamiento y apoyar a las familias y profesionales de salud en el seguimiento de los niños con anemia.
+Sanuvi está enfocada en apoyar a las madres, padres y cuidadores de niños con anemia, así como al personal de salud responsable de su seguimiento. Su propuesta parte de la oportunidad de aprovechar la tecnología para facilitar el cumplimiento de las indicaciones, mejorar el seguimiento del tratamiento y promover una comunicación más continua entre las familias y los profesionales de salud.
+
+En Sanuvi, aspiramos a contribuir a la transformación digital del seguimiento de la anemia infantil en el Perú, promoviendo procesos más organizados, conectados y centrados en las necesidades de los niños y de las personas responsables de su tratamiento.
 
 **Misión**
 
-Nuestra misión es contribuir a mejorar el seguimiento del tratamiento de la anemia infantil mediante una solución digital que facilite la gestión de la información, el cumplimiento del tratamiento y la comunicación entre las madres o cuidadoras y el personal de salud. Buscamos proporcionar herramientas accesibles e intuitivas que permitan realizar un seguimiento más organizado y favorecer la continuidad del proceso de recuperación de los niños.
+Nuestra misión es contribuir a mejorar el seguimiento del tratamiento de la anemia infantil mediante soluciones digitales como Ferova, facilitando la organización de la información, el cumplimiento de las indicaciones y la comunicación entre las familias y el personal de salud. Buscamos desarrollar herramientas accesibles e intuitivas que favorezcan la continuidad del tratamiento y el seguimiento de los niños.
 
 **Visión**
 
-Visualizamos un futuro donde las familias y el personal de salud cuenten con herramientas digitales que faciliten el seguimiento continuo de los niños con anemia. Aspiramos a que Sanuvi contribuya a la transformación digital del seguimiento de la anemia infantil en el Perú, promoviendo una atención más organizada, conectada y centrada en las necesidades de cada paciente.
+Nuestra visión es que Sanuvi se convierta en una startup que contribuya a la transformación digital del seguimiento de la anemia infantil en el Perú, promoviendo una atención más organizada, conectada y centrada en las necesidades de los niños, sus familias y el personal de salud.
 
 ### 1.1.2. Perfiles de integrantes del equipo
 
@@ -89,7 +91,7 @@ En esta sección, aplicaremos la herramienta Lean UX para presentar la visión d
 
 #### 1.2.2.1. Lean UX Problem Statements
 
-Sanuvi surge con el propósito de contribuir al seguimiento y control del tratamiento de la anemia infantil en el Perú, con especial énfasis en favorecer la adherencia al tratamiento por parte de las familias y cuidadores. El problema se presenta cuando las familias tienen dificultades para mantener de manera continua y organizada el cumplimiento de las indicaciones del tratamiento, mientras que el personal de salud enfrenta dificultades para realizar un seguimiento periódico y verificar la adherencia y evolución de los niños.
+Las familias y cuidadores de niños con anemia pueden presentar dificultades para mantener de manera continua y organizada el cumplimiento de las indicaciones del tratamiento, mientras que el personal de salud puede enfrentar dificultades para realizar un seguimiento periódico y verificar la adherencia y evolución de los niños.
 
 Actualmente, las madres, padres y cuidadores pueden depender de procesos manuales y poco organizados, como cuadernos, apuntes informales o la memoria, para recordar y mantener información relacionada con el tratamiento de sus hijos. Estas condiciones pueden dificultar el cumplimiento continuo de las indicaciones y, por tanto, la adherencia al tratamiento.
 
@@ -110,15 +112,15 @@ Por ello, existe una oportunidad de mejorar la adherencia al tratamiento mediant
 
 3. Creemos que los establecimientos de salud constituyen un contexto viable para la adopción de una solución digital orientada al seguimiento del tratamiento de la anemia infantil.
 
-4. Creemos que facilitar la coordinación entre los apoderados del paciente y el personal de salud puede generar suficiente valor para justificar la adopción de Sanuvi.
+4. Creemos que facilitar la coordinación entre los apoderados del paciente y el personal de salud puede generar suficiente valor para justificar la adopción de Ferova.
 
 5. Creemos que el seguimiento continuo de los pacientes puede proporcionar información útil para que el personal de salud tome mejores decisiones sobre el seguimiento de los tratamientos.
 
-6. Creemos que Sanuvi puede integrarse al proceso de seguimiento que actualmente realizan los establecimientos de salud sin reemplazar las responsabilidades del personal sanitario.
+6. Creemos que Ferova puede integrarse al proceso de seguimiento que actualmente realizan los establecimientos de salud sin reemplazar las responsabilidades del personal sanitario.
 
-7. Creemos que las principales barreras para la adopción de Sanuvi estarán relacionadas con la disposición de los usuarios y las condiciones reales en las que se realiza el seguimiento del tratamiento.
+7. Creemos que las principales barreras para la adopción de Ferova estarán relacionadas con la disposición de los usuarios y las condiciones reales en las que se realiza el seguimiento del tratamiento.
 
-8. Creemos que Sanuvi puede ser una solución sostenible si demuestra que genera valor tanto para los apoderados del paciente como para los establecimientos de salud.
+8. Creemos que Ferova puede ser una solución sostenible si demuestra que genera valor tanto para los apoderados del paciente como para los establecimientos de salud.
 
 **User Assumptions**
 
@@ -126,7 +128,7 @@ Por ello, existe una oportunidad de mejorar la adherencia al tratamiento mediant
 
 - *¿Quién es el usuario?*
 
-Creemos que las madres, padres o apoderado responsables del tratamiento de niños con anemia constituyen uno de los principales grupos de usuarios de Sanuvi.
+Creemos que las madres, padres o apoderado responsables del tratamiento de niños con anemia constituyen uno de los principales grupos de usuarios de Ferova.
 
 - *¿Qué busca conseguir?*
 
@@ -134,7 +136,7 @@ Creemos que estos usuarios buscan cumplir adecuadamente con las indicaciones del
 
 - *¿En qué contexto utiliza el producto?*
   
-Creemos que utilizarán Sanuvi principalmente durante su rutina cotidiana de cuidado del niño y en los momentos relacionados con el seguimiento de su tratamiento.
+Creemos que utilizarán Ferova principalmente durante su rutina cotidiana de cuidado del niño y en los momentos relacionados con el seguimiento de su tratamiento.
 
 - *¿Qué dificultades puede tener?*
 
@@ -148,7 +150,7 @@ Creemos que existen diferencias entre los cuidadores en cuanto a sus rutinas, di
 
 - *¿Quién es el usuario?*
 
-Creemos que el personal de salud responsable del seguimiento de niños con anemia constituye otro grupo principal de usuarios de Sanuvi.
+Creemos que el personal de salud responsable del seguimiento de niños con anemia constituye otro grupo principal de usuarios de Ferova.
 
 - *¿Qué busca conseguir?*
   
@@ -156,7 +158,7 @@ Creemos que estos usuarios buscan realizar un seguimiento organizado de sus paci
 
 - *¿En qué contexto utiliza el producto?*
 
-Creemos que utilizarán Sanuvi como parte de sus actividades habituales de seguimiento y atención de pacientes con anemia infantil.
+Creemos que utilizarán Ferova como parte de sus actividades habituales de seguimiento y atención de pacientes con anemia infantil.
 
 - *¿Qué dificultades puede tener?*
 
