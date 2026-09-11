@@ -176,22 +176,50 @@ diferenciada que permita a Ferova destacar frente a soluciones existentes.
 
 > Mínimo 3 entrevistas por segmento. Para cada una: nombre y apellidos, edad, distrito, captura del video, timing (inicio y duración) y resumen de la entrevista.
 
-**Entrevista 1 — Segmento [N]**
+**Entrevista 1 — Segmento 1**
 
 | Campo | Dato |
 |-------|------|
-| Nombres y apellidos | [Nombre] |
-| Edad | [Edad] |
-| Distrito | [Distrito] |
-| Fecha | [DD/MM/AAAA] |
-| Timing | [inicio] — duración [mm:ss] |
-| Enlace del video | [URL] |
+| Nombres y apellidos | Evelyn Párraga|
+| Edad | 48 años |
+| Distrito | Ate |
+| Fecha | 10/09/2026 |
+| Timing | [00:00] — duración [09:04] |
+| Enlace del video | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210836_upc_edu_pe/IQDqgUqQf0DhTrR9BXmWWYF1Ab2k9s88SsAiYEkuqUwc1QA?e=PgGyvD&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D] |
 
-<img src="../assets/img/chapter-II/interview-01.png" alt="Captura entrevista 1">
+<img src="./assets/img/chapter-II/evelynParraga.jpeg" alt="Captura entrevista 1">
 
 *Resumen:* <!-- COMPLETAR -->
 
-<!-- COMPLETAR: repetir por cada entrevista -->
+**Entrevista 2 — Segmento 2**
+
+| Campo | Dato |
+|-------|------|
+| Nombres y apellidos | Glady Párraga Echegaray |
+| Edad | 68 años |
+| Distrito | Agustino |
+| Fecha | 10/09/2026 |
+| Timing | [09:05] — duración [17:44] |
+| Enlace del video | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210836_upc_edu_pe/IQDqgUqQf0DhTrR9BXmWWYF1Ab2k9s88SsAiYEkuqUwc1QA?e=PgGyvD&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D] |
+
+<img src="./assets/img/chapter-II/gladysParraga.jpeg" alt="Captura entrevista 2">
+
+*Resumen:* <!-- COMPLETAR -->
+
+**Entrevista 3 — Segmento 2**
+
+| Campo | Dato |
+|-------|------|
+| Nombres y apellidos | Hugo Rojas Párraga |
+| Edad | 72 años |
+| Distrito | Villa del Salvador |
+| Fecha | 10/09/2026 |
+| Timing | [17:45] — duración [32:44] |
+| Enlace del video | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210836_upc_edu_pe/IQDqgUqQf0DhTrR9BXmWWYF1Ab2k9s88SsAiYEkuqUwc1QA?e=PgGyvD&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D] |
+
+<img src="./assets/img/chapter-II/hugoRojas.jpeg" alt="Captura entrevista 3">
+
+*Resumen:* <!-- COMPLETAR -->
 
 ### 2.2.3. Análisis de entrevistas
 
