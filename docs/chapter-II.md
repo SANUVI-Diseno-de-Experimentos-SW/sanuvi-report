@@ -57,7 +57,86 @@ diferenciada que permita a Ferova destacar frente a soluciones existentes.
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
-<!-- COMPLETAR: estrategias derivadas del análisis SWOT y tácticas concretas -->
+Una vez identificados los actores del mercado, el siguiente paso es definir cómo Ferova se abrirá paso entre ellos. No basta con conocer a la competencia: se necesita un plan de acción que aproveche las ventajas propias y blinde las debilidades. Para lograrlo utilizamos la **Matriz CAME** (Corregir, Afrontar, Mantener, Explotar), una herramienta que permite traducir el análisis FODA de la sección anterior en decisiones estratégicas concretas.
+
+A través de este análisis establecemos tácticas ofensivas para explotar nuestra especialización en el dominio de la anemia materno-infantil peruana, y acciones de supervivencia para mitigar los riesgos de ser una solución nueva sin reconocimiento de marca. Este enfoque asegura que cada funcionalidad de Ferova Family y Ferova Clinic tenga un propósito estratégico detrás.
+
+**Matriz CAME para el desarrollo de estrategias basándonos en el análisis FODA**
+
+<table border="1" cellpadding="8" cellspacing="0" style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <th style="text-align: left;">Análisis FODA cruzado</th>
+    <th style="text-align: left;">Oportunidades (O)</th>
+    <th style="text-align: left;">Amenazas (A)</th>
+  </tr>
+  <tr>
+    <td>
+      <b>Fortalezas (F)</b><br>
+      1. Enfoque especializado en el seguimiento del tratamiento de la anemia materno-infantil en el contexto peruano.<br>
+      2. Diseño de doble cara: Ferova Family para madres y cuidadores, Ferova Clinic para el personal de salud, lo que habilita continuidad y coordinación del seguimiento.<br>
+      3. Gratuidad para ambos actores, sin barrera de suscripción frente a los modelos freemium de la competencia.
+    </td>
+    <td>
+      <b>Estrategia (FO) — Estrategias Ofensivas</b><br>
+      1. Alianza con postas y redes de salud del MINSA como canal de adopción: capacitar al personal de enfermería en Ferova Clinic para que las madres lleguen referidas desde la propia consulta, aprovechando un canal de confianza ya existente.<br>
+      2. Posicionar Ferova Clinic como el panel de seguimiento que hoy no existe en el mercado, con semáforo de riesgo y visibilidad en tiempo real de la adherencia — ninguno de los tres competidores analizados ofrece una vista para el personal de salud.<br>
+      3. Capitalizar la gratuidad para ambos actores en la negociación con establecimientos públicos, donde el presupuesto es una restricción real y las licencias por usuario son un bloqueo de entrada.<br>
+      4. Comunicar la especialización peruana como eje de posicionamiento: valores de referencia de hemoglobina ajustados por altitud, guía nutricional con alimentos locales y alineación con el Plan Multisectorial contra la Anemia.
+    </td>
+    <td>
+      <b>Estrategia (FA) — Estrategias Defensivas</b><br>
+      1. Blindar la especialización local como barrera de entrada: el ajuste de hemoglobina por altitud, la guía nutricional regional y la terminología del sistema de salud peruano no son replicables con rapidez por una app internacional.<br>
+      2. Diseñar las funcionalidades críticas con modo offline y sincronización diferida, para que la conectividad intermitente en zonas periurbanas y rurales no expulse al usuario hacia alternativas más simples.<br>
+      3. Formalizar convenios con establecimientos de salud que incorporen Ferova al flujo de trabajo de seguimiento, elevando el costo de sustitución en caso de que ALMA incorpore funcionalidades similares con respaldo institucional.<br>
+      4. Difundir resultados de pilotos y testimonios del personal de enfermería para construir reputación verificable frente al respaldo institucional que ALMA ya posee.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Debilidades (D)</b><br>
+      1. Bajo reconocimiento de marca: solución nueva que aún requiere validar su aceptación y utilidad con los usuarios.<br>
+      2. Adopción condicionada por la conectividad y por la familiaridad de las madres con herramientas digitales.<br>
+      3. Cobertura de plataforma limitada: Ferova Family está disponible únicamente en Android.<br>
+      4. Ausencia de respaldo institucional propio y de presencia en tiendas comparable a la de los competidores globales.
+    </td>
+    <td>
+      <b>Estrategia (DO) — Reorientación</b><br>
+      1. Validación rápida con Lean UX: ejecutar las entrevistas y pruebas de usabilidad documentadas en la sección 2.2 para generar evidencia de utilidad y material de respaldo publicable antes de escalar.<br>
+      2. Onboarding asistido por la enfermera durante la consulta en la posta, convirtiendo la baja familiaridad digital de las madres en un momento de acompañamiento en lugar de una barrera de registro.<br>
+      3. Priorizar en el roadmap la ampliación de cobertura a iOS y a navegador móvil, cerrando la debilidad de plataforma que hoy comparte con ALMA.<br>
+      4. Generar contenido de autoridad dirigido a decisores de establecimientos de salud (guías de implementación, casos de uso, indicadores de adherencia) para compensar la falta de reconocimiento de marca con credibilidad técnica.
+    </td>
+    <td>
+      <b>Estrategia (DA) — Supervivencia</b><br>
+      1. Concentrar el esfuerzo en el núcleo funcional — registro de dosis, controles de hemoglobina, alertas y comunicación madre-enfermera — sin competir en amplitud de catálogo con Medisafe ni MyTherapy, cuya madurez de producto es superior.<br>
+      2. Establecer una política explícita de tratamiento de datos sensibles de salud de menores: consentimiento informado, anonimización en reportes agregados y respaldos, requisito indispensable para operar junto al sistema de salud público.<br>
+      3. Buscar respaldo institucional o académico que compense la ausencia de marca y aporte legitimidad frente a los establecimientos de salud y a las familias.<br>
+      4. Formalizar un plan de gestión de incidentes y comunicación con establecimientos y familias, para contener el impacto reputacional de cualquier falla en un dominio donde la confianza es el activo principal.
+    </td>
+  </tr>
+</table>
+
+**Enfoque estratégico de Ferova**
+
+Ferova se posiciona como una solución especializada en el seguimiento del tratamiento de la anemia materno-infantil, con una propuesta de valor centrada en la conexión entre madres y personal de salud, la gamificación motivacional y la detección temprana del abandono terapéutico. Su diferenciación frente a los competidores se sostiene en tres ejes: **especialización de dominio**, **contexto local** y **visibilidad en tiempo real**. A continuación se detallan las estrategias y tácticas específicas frente a cada actor del mercado.
+
+**1. Frente a App ALMA — MINSA**
+
+- **Estrategia de complementariedad activa:** posicionarse no como rival de ALMA sino como su complemento técnico — mientras ALMA informa, Ferova conecta. La táctica es acercarse directamente al personal de enfermería de las postas como canal de adopción, generando tracción desde el sistema de salud hacia las madres.
+- **Cierre de la brecha de seguimiento:** ALMA no cuenta con un panel para personal de salud. Ferova cubre exactamente esa ausencia con el semáforo de riesgo y la detección temprana de abandono, convirtiéndose en la herramienta que el personal de salud necesita y que ALMA, en su alcance actual, no ofrece.
+- **Ventaja de cobertura de actores:** ALMA se limita a una app informativa para padres en Android. Ferova cubre a los dos actores del tratamiento con una app móvil para las familias y una aplicación web para el personal de salud, accesible desde cualquier navegador del establecimiento sin necesidad de instalación.
+
+**2. Frente a Medisafe**
+
+- **Estrategia de especialización en dominio:** Medisafe es una herramienta genérica de adherencia. Ferova es la única solución diseñada específicamente para la anemia materno-infantil en el Perú, con valores de referencia de hemoglobina por altitud, alineación con las guías del MINSA y orientación nutricional local. Esa especialización constituye una barrera de entrada que una app internacional no puede replicar con facilidad.
+- **Táctica de adopción institucional:** mientras Medisafe depende de que el usuario la descargue por cuenta propia, Ferova llega a las madres a través de la enfermera que las atiende en la posta — un canal de confianza que ningún competidor internacional posee.
+- **Táctica de gratuidad frente al freemium:** las funcionalidades de seguimiento que Medisafe reserva a su plan de pago (USD 4.99/mes) forman parte del núcleo gratuito de Ferova, eliminando la fricción económica en un segmento de bajos ingresos.
+
+**3. Frente a MyTherapy**
+
+- **Estrategia de gamificación contextual:** MyTherapy premia el cumplimiento con recompensas visuales genéricas. Ferova vincula la motivación directamente con la salud real del niño — la madre no solo ve que cumplió, sino cómo ese cumplimiento se refleja en la evolución de la hemoglobina de su hijo. Esa conexión entre esfuerzo y resultado clínico no es replicable con una app genérica.
+- **Táctica de red de soporte formal:** MyTherapy notifica a familiares. Ferova incorpora al personal de salud como red de apoyo formal, con capacidad de intervenir ante una alerta de abandono, algo que el modelo de notificación de MyTherapy no contempla.
+- **Táctica de contextualización del diario de salud:** frente al diario imprimible genérico de MyTherapy, Ferova ofrece un diario nutricional orientado a alimentos facilitadores e inhibidores de la absorción del hierro, con productos de consumo habitual en el Perú.
 
 ## 2.2. Entrevistas
 
