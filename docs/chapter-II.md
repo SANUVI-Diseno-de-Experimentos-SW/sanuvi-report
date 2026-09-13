@@ -396,6 +396,74 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
 </tbody>
 </table>
 
+<table>
+<colgroup>
+</colgroup>
+<thead>
+  <tr>
+    <th colspan="2">Entrevista #3<br></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Nombre</td>
+    <td>Alessandro Daniel</td>
+  </tr>
+  <tr>
+    <td>Apellidos</td>
+    <td>Bravo Castillo</td>
+  </tr>
+  <tr>
+    <td>Edad</td>
+    <td>28 años</td>
+  </tr>
+  <tr>
+    <td>Distrito</td>
+    <td>Pueblo Libre</td>
+  </tr>
+  <tr>
+    <td>Fecha</td>
+    <td>12/09/2026</td>
+  </tr>
+  <tr>
+    <td>Aplicaciones Usadas</td>
+    <td>Bloc de notas digital y WhatsApp</td>
+  </tr>
+  <tr>
+    <td>Motivacion</td>
+    <td>Lograr que su hijo mejore y se estabilice</td>
+  </tr>
+  <tr>
+    <td>Frustracion</td>
+    <td>Olvidar la dosis exacta del suplemento de hierro y dificultad para reagendar citas médicas</td>
+  </tr>
+  <tr>
+    <td>Evidencia</td>
+    <td><div align="center"><img src="../assets/img/chapter-II/alessadroBravo.jpeg" alt="Captura entrevista 1"></div></td>
+  </tr>
+  <tr>
+    <td>Link</td>
+    <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+		<p>
+			<a target="_blank" style="word-break: break-all; overflow-wrap: break-word;" href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c197_upc_edu_pe/IQCZgEdGHIflRoJ1MJWVJ-JVAcRQu1cglvOD8FMHMhGvw7w?e=FIv3Zm&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D">
+				https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c197_upc_edu_pe/IQCZgEdGHIflRoJ1MJWVJ-JVAcRQu1cglvOD8FMHMhGvw7w?e=FIv3Zm&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+			</a>
+		</p>
+	</td>
+  </tr>
+  <tr>
+    <td>Duracion<br></td>
+    <td>00:00 min - 05:18 min</td>
+  </tr>
+  <tr>
+    <td>Resumen</td>
+    <td>
+		Alessandro Daniel Bravo Castillo es un padre de 28 años que reside en Pueblo Libre y busca estabilizar la salud de su hijo, diagnosticado con anemia hace un año y medio. Utiliza un dispositivo móvil Android (S26), apoyándose principalmente en un bloc de notas digital y WhatsApp. Prefiere el contenido en formato de video para informarse y valora altamente la seguridad de los datos al tratarse de información de un menor. Requiere herramientas tecnológicas que le ofrezcan recordatorios precisos para la dosis de hierro de su hijo y facilidades para reagendar sus citas médicas.
+	</td>
+  </tr>
+</tbody>
+</table>
+
 ##### **Segmento objetivo 2: Personal de salud responsable del seguimiento**
 ---
 
