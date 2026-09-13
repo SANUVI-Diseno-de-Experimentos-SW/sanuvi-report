@@ -303,7 +303,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Evidencia</td>
-    <td><div align="center"><img src="./assets/img/chapter-II/evelynParraga.jpeg" alt="Captura entrevista 1"></div></td>
+    <td><div align="center"><img src="../assets/img/chapter-II/evelynParraga.jpeg" alt="Captura entrevista 1"></div></td>
   </tr>
   <tr>
     <td>Link</td>
@@ -374,7 +374,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Evidencia</td>
-    <td><div align="center"><img src="./assets/img/chapter-II/gladysParraga.jpeg" alt="Captura entrevista 2"></div></td>
+    <td><div align="center"><img src="../assets/img/chapter-II/gladysParraga.jpeg" alt="Captura entrevista 2"></div></td>
   </tr>
   <tr>
     <td>Link</td>
@@ -444,7 +444,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Evidencia</td>
-    <td><div align="center"><img src="./assets/img/chapter-II/hugoRojas.jpeg" alt="Captura entrevista 3"></div></td>
+    <td><div align="center"><img src="../assets/img/chapter-II/hugoRojas.jpeg" alt="Captura entrevista 3"></div></td>
   </tr>
   <tr>
     <td>Link</td>
