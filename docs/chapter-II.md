@@ -439,7 +439,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Evidencia</td>
-    <td><div align="center"><img src="../assets/img/chapter-II/alessadroBravo.png" alt="Captura entrevista 1"></div></td>
+    <td><div align="center"><img src="assets/img/chapter-II/alessandroBravo.png" alt="Captura entrevista 1"></div></td>
   </tr>
   <tr>
     <td>Link</td>
