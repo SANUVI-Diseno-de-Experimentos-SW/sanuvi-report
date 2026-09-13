@@ -328,6 +328,74 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
 </tbody>
 </table>
 
+<table>
+<colgroup>
+</colgroup>
+<thead>
+  <tr>
+    <th colspan="2">Entrevista #2<br></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Nombre</td>
+    <td>Paola Alejandra</td>
+  </tr>
+  <tr>
+    <td>Apellidos</td>
+    <td>Schmidt Herrera</td>
+  </tr>
+  <tr>
+    <td>Edad</td>
+    <td>55 años</td>
+  </tr>
+  <tr>
+    <td>Distrito</td>
+    <td>Chorrillos</td>
+  </tr>
+  <tr>
+    <td>Fecha</td>
+    <td>13/09/2026</td>
+  </tr>
+  <tr>
+    <td>Aplicaciones Usadas</td>
+    <td>Whatsapp, ChatGPT e Instagram</td>
+  </tr>
+  <tr>
+    <td>Motivacion</td>
+    <td>Buscar la mejora de salud de su hijo</td>
+  </tr>
+  <tr>
+    <td>Frustracion</td>
+    <td>El temor de olvidarse de algo relacionado al tratamiento</td>
+  </tr>
+  <tr>
+    <td>Evidencia</td>
+    <td><div align="center"><img src="../assets/img/chapter-II/paolaSchmidt.png" alt="Captura entrevista 2"></div></td>
+  </tr>
+  <tr>
+    <td>Link</td>
+    <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+		<p>
+			<a target="_blank" style="word-break: break-all; overflow-wrap: break-word;" href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u201822697_upc_edu_pe/IQCN2HZDd5xoRKwT7rIHVhFKAXDcEhFoRnr8F4trvWUMhnQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=WDvrw6">
+				https://upcedupe-my.sharepoint.com/:v:/g/personal/u201822697_upc_edu_pe/IQCN2HZDd5xoRKwT7rIHVhFKAXDcEhFoRnr8F4trvWUMhnQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=WDvrw6
+			</a>
+		</p>
+	</td>
+  </tr>
+  <tr>
+    <td>Duracion<br></td>
+    <td>9:04 min - 15:04 min</td>
+  </tr>
+  <tr>
+    <td>Resumen</td>
+    <td>
+		Paola Schmidt es una mujer de 55 años que vive en Chorrillos, quien trabaja como ama de casa y se preocupa por que su hijo se recupere de la anemia. Ella considera que las aplicaciones de salud móviles son muy importantes y que le servirian mucho para poder manejar el tratamiento de su hijo.
+</td>
+  </tr>
+</tbody>
+</table>
+
 ##### **Segmento objetivo 2: Personal de salud responsable del seguimiento**
 ---
 
