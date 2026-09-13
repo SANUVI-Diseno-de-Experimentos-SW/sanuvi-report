@@ -176,50 +176,219 @@ diferenciada que permita a Ferova destacar frente a soluciones existentes.
 
 > Mínimo 3 entrevistas por segmento. Para cada una: nombre y apellidos, edad, distrito, captura del video, timing (inicio y duración) y resumen de la entrevista.
 
-**Entrevista 1 — Segmento 1**
+En esta sección presentamos los registros de las entrevistas que hicimos para cada segmento objetivo de nuestra aplicación.
 
-| Campo | Dato |
-|-------|------|
-| Nombres y apellidos | Evelyn Párraga|
-| Edad | 48 años |
-| Distrito | Ate |
-| Fecha | 10/09/2026 |
-| Timing | [00:00] — duración [09:04] |
-| Enlace del video | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210836_upc_edu_pe/IQDqgUqQf0DhTrR9BXmWWYF1Ab2k9s88SsAiYEkuqUwc1QA?e=PgGyvD&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D] |
+##### **Segmento objetivo 1: Madres, padres o cuidadores de niños con anemia** 
+---
 
-<img src="./assets/img/chapter-II/evelynParraga.jpeg" alt="Captura entrevista 1">
+<table>
+<colgroup>
+</colgroup>
+<thead>
+  <tr>
+    <th colspan="2">Entrevista #1<br></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Nombre</td>
+    <td>Evelyn</td>
+  </tr>
+  <tr>
+    <td>Apellidos</td>
+    <td>Párraga</td>
+  </tr>
+  <tr>
+    <td>Edad</td>
+    <td>48 años</td>
+  </tr>
+  <tr>
+    <td>Distrito</td>
+    <td>Ate</td>
+  </tr>
+  <tr>
+    <td>Fecha</td>
+    <td>10/09/2026</td>
+  </tr>
+  <tr>
+    <td>Aplicaciones Usadas</td>
+    <td>Whatsapp, Tiktok y Facebook</td>
+  </tr>
+  <tr>
+    <td>Motivacion</td>
+    <td>Mantener la salud de su hijo</td>
+  </tr>
+  <tr>
+    <td>Frustracion</td>
+    <td>El temor de olvidarse de la correcta alimentación de su hijo</td>
+  </tr>
+  <tr>
+    <td>Evidencia</td>
+    <td><div align="center"><img src="./assets/img/chapter-II/evelynParraga.jpeg" alt="Captura entrevista 1"></div></td>
+  </tr>
+  <tr>
+    <td>Link</td>
+    <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+		<p>
+			<a target="_blank" style="word-break: break-all; overflow-wrap: break-word;" href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210836_upc_edu_pe/IQDqgUqQf0DhTrR9BXmWWYF1Ab2k9s88SsAiYEkuqUwc1QA?e=PgGyvD&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D">
+				https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210836_upc_edu_pe/IQDqgUqQf0DhTrR9BXmWWYF1Ab2k9s88SsAiYEkuqUwc1QA?e=PgGyvD&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+			</a>
+		</p>
+	</td>
+  </tr>
+  <tr>
+    <td>Duracion<br></td>
+    <td>00:00 min - 09:04 min</td>
+  </tr>
+  <tr>
+    <td>Resumen</td>
+    <td>
+		Evelyn Párraga es una mujer de 48 años que vive en Ate, quien trabaja como secretaria y se preocupa por que su hijo no recaiga en anemia. Ella considera que las aplicaciones de salud móviles son muy importantes y que debería aplicarse una buena recolección de métricas y que estas sean fiables, además de recordatorios para citas y para llevar una buena alimentación. Evelyn considera que la administración de hierro adicional es muy importante.
+</td>
+  </tr>
+</tbody>
+</table>
 
-*Resumen:* <!-- COMPLETAR -->
+##### **Segmento objetivo 2: Personal de salud responsable del seguimiento**
+---
 
-**Entrevista 2 — Segmento 2**
+<table>
+<colgroup>
+</colgroup>
+<thead>
+  <tr>
+    <th colspan="2">Entrevista #2<br></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Nombre</td>
+    <td>Glady</td>
+  </tr>
+  <tr>
+    <td>Apellidos</td>
+    <td>Echegaray Párraga</td>
+  </tr>
+  <tr>
+    <td>Edad</td>
+    <td>68 años</td>
+  </tr>
+  <tr>
+    <td>Distrito</td>
+    <td>Agustino</td>
+  </tr>
+  <tr>
+    <td>Fecha</td>
+    <td>10/09/2026</td>
+  </tr>
+  <tr>
+    <td>Aplicaciones Usadas</td>
+    <td>WhatsApp</td>
+  </tr>
+  <tr>
+    <td>Motivacion</td>
+    <td>Mejorar la recuperación del paciente (anémicos)</td>
+  </tr>
+  <tr>
+    <td>Frustracion</td>
+    <td>Falta de manejo de aparatos tecnológicos en su entorno</td>
+  </tr>
+  <tr>
+    <td>Evidencia</td>
+    <td><div align="center"><img src="./assets/img/chapter-II/gladysParraga.jpeg" alt="Captura entrevista 2"></div></td>
+  </tr>
+  <tr>
+    <td>Link</td>
+    <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+		<p>
+			<a target="_blank" style="word-break: break-all; overflow-wrap: break-word;" href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210836_upc_edu_pe/IQDqgUqQf0DhTrR9BXmWWYF1Ab2k9s88SsAiYEkuqUwc1QA?e=PgGyvD&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D">
+				https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210836_upc_edu_pe/IQDqgUqQf0DhTrR9BXmWWYF1Ab2k9s88SsAiYEkuqUwc1QA?e=PgGyvD&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+			</a>
+		</p>
+	</td>
+  </tr>
+  <tr>
+    <td>Duracion<br></td>
+    <td>09:05 min - 17:44 min</td>
+  </tr>
+  <tr>
+    <td>Resumen</td>
+    <td>
+		Gladys Echegaray Párraga tiene 68 años, trabaja en El Agustino en el hospital Hipólito Unanue como enfermera, atiende a todo tipo de pacientes y también a anémicos. Ella considera que la alimentación es tan importante como la suplementación de hierro y otros nutrientes necesarios para la recuperación. En su hospital pocos empleados administrativos manejan aparatos tecnológicos, por lo tanto ella no maneja ninguno. Solo se siente cómoda con WhatsApp pero estaría dispuesta a aprender a usar una app móvil de salud si esta app viene con capacitaciones o un tutorial muy claro de cómo usarse.
+</td>
+  </tr>
+</tbody>
+</table>
 
-| Campo | Dato |
-|-------|------|
-| Nombres y apellidos | Glady Párraga Echegaray |
-| Edad | 68 años |
-| Distrito | Agustino |
-| Fecha | 10/09/2026 |
-| Timing | [09:05] — duración [17:44] |
-| Enlace del video | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210836_upc_edu_pe/IQDqgUqQf0DhTrR9BXmWWYF1Ab2k9s88SsAiYEkuqUwc1QA?e=PgGyvD&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D] |
+---
 
-<img src="./assets/img/chapter-II/gladysParraga.jpeg" alt="Captura entrevista 2">
-
-*Resumen:* <!-- COMPLETAR -->
-
-**Entrevista 3 — Segmento 2**
-
-| Campo | Dato |
-|-------|------|
-| Nombres y apellidos | Hugo Rojas Párraga |
-| Edad | 72 años |
-| Distrito | Villa del Salvador |
-| Fecha | 10/09/2026 |
-| Timing | [17:45] — duración [32:44] |
-| Enlace del video | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210836_upc_edu_pe/IQDqgUqQf0DhTrR9BXmWWYF1Ab2k9s88SsAiYEkuqUwc1QA?e=PgGyvD&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D] |
-
-<img src="./assets/img/chapter-II/hugoRojas.jpeg" alt="Captura entrevista 3">
-
-*Resumen:* <!-- COMPLETAR -->
+<table>
+<colgroup>
+</colgroup>
+<thead>
+  <tr>
+    <th colspan="2">Entrevista #3<br></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Nombre</td>
+    <td>Hugo</td>
+  </tr>
+  <tr>
+    <td>Apellidos</td>
+    <td>Rojas Olivera</td>
+  </tr>
+  <tr>
+    <td>Edad</td>
+    <td>72 años</td>
+  </tr>
+  <tr>
+    <td>Distrito</td>
+    <td>Villa del Salvador</td>
+  </tr>
+  <tr>
+    <td>Fecha</td>
+    <td>10/09/2026</td>
+  </tr>
+  <tr>
+    <td>Aplicaciones Usadas</td>
+    <td>WhatsApp, YouTube, Facebook, ChatGPT</td>
+  </tr>
+  <tr>
+    <td>Motivacion</td>
+    <td>Estandarizar el uso de aplicaciones de salud en hospitales y clínicas</td>
+  </tr>
+  <tr>
+    <td>Frustracion</td>
+    <td>Falta de apoyo tecnológico en otros hospitales y perdida del seguimiento de pacientes</td>
+  </tr>
+  <tr>
+    <td>Evidencia</td>
+    <td><div align="center"><img src="./assets/img/chapter-II/hugoRojas.jpeg" alt="Captura entrevista 3"></div></td>
+  </tr>
+  <tr>
+    <td>Link</td>
+    <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+		<p>
+			<a target="_blank" style="word-break: break-all; overflow-wrap: break-word;" href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210836_upc_edu_pe/IQDqgUqQf0DhTrR9BXmWWYF1Ab2k9s88SsAiYEkuqUwc1QA?e=PgGyvD&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D">
+				https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210836_upc_edu_pe/IQDqgUqQf0DhTrR9BXmWWYF1Ab2k9s88SsAiYEkuqUwc1QA?e=PgGyvD&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+			</a>
+		</p>
+	</td>
+  </tr>
+  <tr>
+    <td>Duracion<br></td>
+    <td>17:45 min - 32:44 min</td>
+  </tr>
+  <tr>
+    <td>Resumen</td>
+    <td>
+		Hugo Rojas Olivera tiene 72 años y trabaja como director ejecutivo del hospital de emergencias de Villa El Salvador y se ha especializado en pediatría. Considera que es imposible que un niño se sane si no tiene su suplementación de hierro, y que la alimentación alta en nutrientes es clave. Considera que la app móvil es vital e importante si se orienta a que se estandarice en todos los hospitales, clínicas y seguros o al menos en la mayoría de ellas. En su hospital la tecnología es común pues es moderno y está cómodo usando WhatsApp, YouTube, Facebook y ChatGPT.
+</td>
+  </tr>
+</tbody>
+</table>
 
 ### 2.2.3. Análisis de entrevistas
 
