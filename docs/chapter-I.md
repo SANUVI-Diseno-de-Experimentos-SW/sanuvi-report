@@ -51,6 +51,32 @@ Nuestra visión es que Sanuvi se convierta en una startup que contribuya a la tr
       </ul>
     </td>
   </tr>
+  <tr>
+    <td width="140"><img src="../assets/img/chapter-I/vicente-quijandria.png" width="120" alt="Foto integrante"></td>
+    <td>
+      <b>Vicente Quijandria Araneda</b> — <code>U201822697</code><br>
+      <i>Ingeniería de Software</i><br><br>
+      <strong>Perfil</strong>
+      <br><br>
+      Me motiva entender un problema a fondo antes de escribir la primera línea de código, sin importar el rubro del que venga. Trabajo principalmente en el desarrollo de aplicaciones móviles, donde me interesa tanto la interfaz que ve el usuario como la arquitectura que la sostiene: busco que las soluciones escalen sin sacrificar fluidez ni claridad para quien las usa.
+      <br><br>
+      <strong>Habilidades Técnicas:</strong>
+      <ul>
+        <li>Desarrollo móvil: Kotlin, Flutter</li>
+        <li>Backend y APIs: Java, Node.js</li>
+        <li>Bases de datos: MySQL, MongoDB</li>
+        <li>Control de versiones: Git, Git F
+        <li>Despliegue: Railway, Vercel</li>
+      </ul>
+      <strong>Habilidades Sociales:</strong>
+      <ul>
+        <li>Coordinación con el equipo en ciclos de trabajo ágiles</li>
+        <li>Explicar decisiones técnicas a p
+        <li>Análisis de requerimientos y descomposición de problemas</li>
+        <li>Disposición a aprender herramientas nuevas según lo pida el proyecto</li>
+      </ul>
+    </td>
+  </tr>
 </table>
 
 ## 1.2. Solution Profile
