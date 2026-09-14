@@ -697,11 +697,21 @@ Estas tareas se basan en las actividades descritas por Hugo y Gladys: seguimient
 
 ### 2.3.3. User Journey Mapping
 
-> Un User Journey Map As-Is por cada User Persona identificado.
+**User Journey Mapping — María López**
 
-<img src="../assets/img/chapter-II/user-journey-01.png" alt="User Journey Map 1">
+<div align="center">
+<img src="../assets/img/chapter-II/User Journey Mapping - María López.png" alt="User Persona 2" width=800>
+</div>
 
-<!-- COMPLETAR -->
+Este journey está sustentado especialmente en que las familias actualmente recurren a cuadernos, calendarios, planificadores, celular o memoria, y manifiestan dificultades con los olvidos, las citas, las indicaciones y la comunicación.
+
+**User Journey Mapping — Carlos Rojas**
+
+<div align="center">
+<img src="../assets/img/chapter-II/User Journey Mapping - Carlos Rojas.png" alt="User Persona 2" width=800>
+</div>
+
+Este journey refleja las diferencias encontradas entre Hugo y Gladys: Hugo trabaja con historia clínica electrónica y utiliza WhatsApp para comunicarse con las madres, mientras Gladys señala que realiza el seguimiento mediante historias clínicas físicas y que existen limitaciones de infraestructura tecnológica en algunas áreas.
 
 ### 2.3.4. Empathy Mapping
 
