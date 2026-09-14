@@ -574,9 +574,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
 
 ### 2.2.3. Análisis de entrevistas
 
-> Análisis por segmento con sustento estadístico (porcentajes por hallazgo), análisis comparativo y conclusiones que sirven de base para los arquetipos.
-
-<!-- COMPLETAR -->
+En esta sección se presenta el análisis de la información recopilada mediante las entrevistas realizadas a los segmentos de familias responsables de menores con anemia y personal de salud. Para cada segmento se identifican características objetivas y subjetivas, considerando los comportamientos, prácticas, necesidades, dificultades y percepciones expresadas por los entrevistados. Finalmente, se realiza una contrastación entre ambos segmentos para identificar coincidencias, diferencias y oportunidades relevantes para el proyecto.
 
 ## 2.3. Needfinding
 
