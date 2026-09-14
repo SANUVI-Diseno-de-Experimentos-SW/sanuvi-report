@@ -732,11 +732,20 @@ Lo siguiente a evaluar como parte del needfinding es a nuestros segmentos objeti
 
 ### 2.3.5. As-is Scenario Mapping
 
-> Escenario actual (As-Is) por cada User Persona: fases, doing, thinking, feeling.
+Los siguientes Scenario Maps (As-Is) representan el recorrido actual de los dos perfiles de usuario identificados a partir de las entrevistas. Para cada persona se describen las principales fases de su interacción con el proceso de seguimiento de la anemia, considerando las actividades que realiza, lo que piensa y las emociones que experimenta. Esta representación permite identificar las dificultades presentes en el proceso actual y establecer una base para la identificación de oportunidades de mejora.
 
-<img src="../assets/img/chapter-II/as-is-scenario-01.png" alt="As-Is Scenario Map 1">
+**As-is Scenario Mapping — María López**
 
-<!-- COMPLETAR -->
+<div align="center">
+<img src="../assets/img/chapter-II/AS IS -  María López.jpg" alt="User Persona 2" width=950>
+</div>
+
+**As-is Scenario Mapping — Carlos Rojas**
+
+
+<div align="center">
+<img src="../assets/img/chapter-II/AS IS - Carlos Rojas.jpg" alt="User Persona 2" width=950>
+</div>
 
 ## 2.4. Ubiquitous Language
 
