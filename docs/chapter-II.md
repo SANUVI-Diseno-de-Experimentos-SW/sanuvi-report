@@ -576,6 +576,62 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
 
 En esta sección se presenta el análisis de la información recopilada mediante las entrevistas realizadas a los segmentos de familias responsables de menores con anemia y personal de salud. Para cada segmento se identifican características objetivas y subjetivas, considerando los comportamientos, prácticas, necesidades, dificultades y percepciones expresadas por los entrevistados. Finalmente, se realiza una contrastación entre ambos segmentos para identificar coincidencias, diferencias y oportunidades relevantes para el proyecto.
 
+**Análisis de Características Objetivas y Subjetivas**
+
+**Segmento 1: Madres, padres y apoderados de menores con anemia**
+
+El análisis de las entrevistas evidencia que el seguimiento del tratamiento de la anemia forma parte de las actividades cotidianas de las familias. El 100% de los entrevistados administra suplementos de hierro de manera periódica y realiza algún tipo de seguimiento mediante herramientas personales como cuadernos, calendarios, planificadores o la memoria. Asimismo, los tres entrevistados manifestaron haber olvidado alguna dosis en algún momento, evidenciando que mantener la constancia del tratamiento puede representar una dificultad.
+
+Respecto al control de las citas médicas, los entrevistados utilizan principalmente medios personales para organizarlas. Se mencionaron el uso de calendarios, planificadores, anotaciones y el celular. Además, el 100% utiliza un teléfono y aplicaciones de comunicación, destacando WhatsApp como una de las herramientas utilizadas con mayor frecuencia. Esto evidencia que existe familiaridad con herramientas digitales que pueden formar parte de sus actividades de seguimiento.
+
+A nivel subjetivo, el 67% de los entrevistados manifestó explícitamente interés en recibir recordatorios para evitar olvidar las dosis, mientras que también se identificó la necesidad de facilitar la gestión de las citas y la comunicación con el personal médico. Dos entrevistados señalaron dificultades relacionadas con la comunicación o la posibilidad de resolver dudas oportunamente, especialmente respecto al tratamiento y las indicaciones que deben seguir.
+
+En conjunto, se observa que las familias buscan que el menor se recupere de la anemia y mantenga una evolución favorable, pero enfrentan dificultades para mantener la constancia, organizar el tratamiento, resolver dudas y gestionar las actividades relacionadas con las citas médicas.
+
+**Segmento 2: Personal de salud**
+
+El análisis de las entrevistas evidencia que el seguimiento de los pacientes con anemia se basa principalmente en el control periódico de los niveles de hemoglobina, acompañado de la evaluación clínica, orientación nutricional y administración de suplementos de hierro. Ambos entrevistados señalaron la importancia de realizar controles periódicos para verificar la evolución del paciente y determinar si el tratamiento está logrando resultados adecuados.
+
+Respecto a la gestión de la información, se identifican diferencias entre los entrevistados. El 50% utiliza una historia clínica electrónica y herramientas digitales de comunicación, mientras que el otro 50% continúa realizando el seguimiento mediante historias clínicas físicas en papel. Esta diferencia evidencia que el nivel de digitalización puede variar dependiendo de la institución y del entorno donde desarrolla sus actividades el personal de salud.
+
+A nivel objetivo, ambos entrevistados consideran la alimentación y la suplementación con hierro como elementos importantes del tratamiento. También señalan la necesidad de realizar un seguimiento continuo hasta alcanzar niveles adecuados de hemoglobina. En uno de los casos se menciona además el uso de WhatsApp para intercambiar resultados y mantener comunicación con las madres, lo que evidencia que algunas herramientas digitales ya son utilizadas como apoyo al seguimiento.
+
+A nivel subjetivo, se identifican necesidades relacionadas con la digitalización y accesibilidad de la información. Uno de los entrevistados considera importante facilitar la obtención de citas de manera digital, mientras que el otro manifiesta la necesidad de contar con herramientas que incluyan instrucciones y orientación para facilitar la adopción de nuevas tecnologías.
+
+También se identifican dificultades relacionadas con el abandono del tratamiento y el acceso de las familias a los servicios de salud. Una de las entrevistadas señala que el abandono puede ser frecuente debido a factores como la falta de tiempo para acudir al hospital, realizar consultas o recoger medicamentos. Por otro lado, también se menciona que las condiciones económicas de algunas familias pueden dificultar el mantenimiento de una alimentación adecuada.
+
+En conjunto, se observa que el personal de salud busca realizar un seguimiento continuo y disponer de información confiable sobre la evolución de sus pacientes, pero existen diferencias en el nivel de digitalización de sus entornos de trabajo y oportunidades para facilitar el acceso a información, citas y herramientas de seguimiento.
+
+**Análisis Comparativo**
+
+El análisis comparativo de ambos segmentos permite identificar que las familias y el personal de salud participan directamente en el seguimiento del tratamiento de la anemia, aunque desde perspectivas diferentes. Las familias se encargan principalmente del cumplimiento cotidiano del tratamiento y del cuidado del menor, mientras que el personal de salud realiza controles clínicos y evalúa la evolución mediante indicadores como los niveles de hemoglobina.
+
+Ambos segmentos coinciden en la importancia de mantener un seguimiento continuo. Sin embargo, presentan dificultades diferentes. En las familias destacan los olvidos de las dosis, la organización de las citas, las dudas sobre las indicaciones y la comunicación con el personal de salud. En el personal de salud destacan el abandono del tratamiento, el acceso de las familias a los controles y las diferencias en la disponibilidad de herramientas tecnológicas.
+
+Respecto al uso de tecnología, ambos segmentos muestran una oportunidad de mejora, aunque con diferentes necesidades. Las familias ya utilizan teléfonos inteligentes y aplicaciones de comunicación, mientras que el personal de salud presenta diferentes niveles de digitalización según su entorno laboral. Esto permite identificar una oportunidad para facilitar la conexión entre el seguimiento realizado por las familias y la información utilizada por los profesionales de salud.
+
+En cuanto a las necesidades, ambos segmentos requieren información confiable y accesible, pero aplicada a diferentes momentos del proceso. Las familias necesitan apoyo para organizar y mantener el tratamiento, mientras que el personal de salud necesita disponer de información que facilite el seguimiento y la toma de decisiones.
+
+**Conclusiones y Definición de Arquetipos**
+
+A partir del análisis realizado, se definen los siguientes perfiles de usuario:
+
+a) **Arquetipo: “El apoderado responsable del menor”**
+
+**Característica principal:** Responsable de administrar y acompañar el tratamiento del menor con anemia, coordinando sus actividades de cuidado y controles médicos.
+
+**Necesidad principal:** Contar con herramientas que faciliten la organización y seguimiento del tratamiento, las citas y la evolución del menor.
+
+**Principal dificultad:** Mantener la constancia del tratamiento, recordar las dosis, resolver dudas y coordinar las citas médicas.
+
+b) **Arquetipo: “El profesional de salud”**
+
+**Característica principal:** Encargado de realizar el seguimiento clínico de los pacientes con anemia y evaluar su evolución durante el tratamiento.
+
+**Necesidad principal:** Disponer de información organizada y accesible sobre los pacientes para facilitar el seguimiento, los controles y la toma de decisiones.
+
+**Principal dificultad:** El abandono del tratamiento, las dificultades de acceso de algunas familias a los controles y las diferencias en la disponibilidad de herramientas tecnológicas según el establecimiento de salud.
+
 ## 2.3. Needfinding
 
 ### 2.3.1. User Personas
