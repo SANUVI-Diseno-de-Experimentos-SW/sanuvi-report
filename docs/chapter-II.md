@@ -715,11 +715,20 @@ Este journey refleja las diferencias encontradas entre Hugo y Gladys: Hugo traba
 
 ### 2.3.4. Empathy Mapping
 
-> Un Empathy Map por cada User Persona identificado.
+Lo siguiente a evaluar como parte del needfinding es a nuestros segmentos objetivos a través de empathy maps, con el objetivo de conocer mejor a nuestros segmentos objetivos e identificar sus necesidades profundas.
 
-<img src="../assets/img/chapter-II/empathy-map-01.png" alt="Empathy Map 1">
+**Empathy Mapping — María López**
 
-<!-- COMPLETAR -->
+<div align="center">
+<img src="../assets/img/chapter-II/Empathy Mapping — María López.png" alt="User Persona 2" width=800>
+</div>
+
+**Empathy Mapping — Carlos Rojas**
+
+<div align="center">
+<img src="../assets/img/chapter-II/Empathy Mapping — Carlos Rojas.png" alt="User Persona 2" width=800>
+</div>
+
 
 ### 2.3.5. As-is Scenario Mapping
 
