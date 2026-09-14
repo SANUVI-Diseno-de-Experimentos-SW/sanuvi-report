@@ -260,69 +260,60 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
 ##### **Segmento objetivo 1: Madres, padres o cuidadores de niños con anemia** 
 ---
 
+
 <table>
 <colgroup>
 </colgroup>
 <thead>
   <tr>
-    <th colspan="2">Entrevista #1<br></th>
+    <th colspan="2">Entrevista #3<br></th>
   </tr>
 </thead>
 <tbody>
   <tr>
     <td>Nombre</td>
-    <td>Evelyn</td>
+    <td>Milagros</td>
   </tr>
   <tr>
     <td>Apellidos</td>
-    <td>Párraga</td>
+    <td>Vera</td>
   </tr>
   <tr>
     <td>Edad</td>
-    <td>48 años</td>
+    <td>45 años</td>
   </tr>
   <tr>
     <td>Distrito</td>
-    <td>Ate</td>
-  </tr>
-  <tr>
-    <td>Fecha</td>
-    <td>10/09/2026</td>
+    <td>San Clemente, Pisco</td>
   </tr>
   <tr>
     <td>Aplicaciones Usadas</td>
-    <td>Whatsapp, Tiktok y Facebook</td>
+    <td>WhatsApp, Facebook, TikTok</td>
   </tr>
   <tr>
     <td>Motivacion</td>
-    <td>Mantener la salud de su hijo</td>
+    <td>Recuperar la salud de su hijo y asegurarse de que no tenga problemas en su crecimiento o desarrollo.</td>
   </tr>
   <tr>
     <td>Frustracion</td>
-    <td>El temor de olvidarse de la correcta alimentación de su hijo</td>
+    <td>Falta de claridad en las indicaciones médicas y poca información sobre qué alimentos ayudan en el tratamiento. Además, dificultad para recordar las dosis diariamente.</td>
   </tr>
   <tr>
     <td>Evidencia</td>
-    <td><div align="center"><img src="../assets/img/chapter-II/evelynParraga.jpeg" alt="Captura entrevista 1"></div></td>
+    <td><div align="center"><img src="resources/images/chapter-II/Interviews/Evidencia Milagros Vera.png" alt="Entrevista"></div></td>
   </tr>
   <tr>
     <td>Link</td>
-    <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
-		<p>
-			<a target="_blank" style="word-break: break-all; overflow-wrap: break-word;" href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210836_upc_edu_pe/IQDqgUqQf0DhTrR9BXmWWYF1Ab2k9s88SsAiYEkuqUwc1QA?e=PgGyvD&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D">
-				https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210836_upc_edu_pe/IQDqgUqQf0DhTrR9BXmWWYF1Ab2k9s88SsAiYEkuqUwc1QA?e=PgGyvD&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
-			</a>
-		</p>
-	</td>
+		
   </tr>
   <tr>
     <td>Duracion<br></td>
-    <td>00:00 min - 09:04 min</td>
+    <td>9:33 min - 14:47 min</td>
   </tr>
   <tr>
     <td>Resumen</td>
     <td>
-		Evelyn Párraga es una mujer de 48 años que vive en Ate, quien trabaja como secretaria y se preocupa por que su hijo no recaiga en anemia. Ella considera que las aplicaciones de salud móviles son muy importantes y que debería aplicarse una buena recolección de métricas y que estas sean fiables, además de recordatorios para citas y para llevar una buena alimentación. Evelyn considera que la administración de hierro adicional es muy importante.
+		Milagros es una madre de 45 años que vive en Pisco y se preocupa mucho por la salud de su hijo diagnosticado con anemia. Aunque intenta seguir el tratamiento, tiene dificultades para ser constante debido a olvidos y falta de herramientas de apoyo. Además, siente que la información médica no siempre es clara, especialmente en temas de alimentación. Usa aplicaciones como WhatsApp, Facebook y TikTok, y prefiere contenido visual como videos. Busca una solución simple que le ayude con recordatorios, seguimiento del tratamiento y orientación práctica para mejorar la alimentación de su hijo.
 </td>
   </tr>
 </tbody>
@@ -375,13 +366,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Link</td>
-    <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
-		<p>
-			<a target="_blank" style="word-break: break-all; overflow-wrap: break-word;" href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u201822697_upc_edu_pe/IQCN2HZDd5xoRKwT7rIHVhFKAXDcEhFoRnr8F4trvWUMhnQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=WDvrw6">
-				https://upcedupe-my.sharepoint.com/:v:/g/personal/u201822697_upc_edu_pe/IQCN2HZDd5xoRKwT7rIHVhFKAXDcEhFoRnr8F4trvWUMhnQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=WDvrw6
-			</a>
-		</p>
-	</td>
+		
   </tr>
   <tr>
     <td>Duracion<br></td>
@@ -443,13 +428,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Link</td>
-    <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
-		<p>
-			<a target="_blank" style="word-break: break-all; overflow-wrap: break-word;" href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c197_upc_edu_pe/IQCZgEdGHIflRoJ1MJWVJ-JVAcRQu1cglvOD8FMHMhGvw7w?e=FIv3Zm&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D">
-				https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c197_upc_edu_pe/IQCZgEdGHIflRoJ1MJWVJ-JVAcRQu1cglvOD8FMHMhGvw7w?e=FIv3Zm&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
-			</a>
-		</p>
-	</td>
+		
   </tr>
   <tr>
     <td>Duracion<br></td>
@@ -514,13 +493,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Link</td>
-    <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
-		<p>
-			<a target="_blank" style="word-break: break-all; overflow-wrap: break-word;" href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210836_upc_edu_pe/IQDqgUqQf0DhTrR9BXmWWYF1Ab2k9s88SsAiYEkuqUwc1QA?e=PgGyvD&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D">
-				https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210836_upc_edu_pe/IQDqgUqQf0DhTrR9BXmWWYF1Ab2k9s88SsAiYEkuqUwc1QA?e=PgGyvD&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
-			</a>
-		</p>
-	</td>
+		
   </tr>
   <tr>
     <td>Duracion<br></td>
@@ -584,13 +557,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Link</td>
-    <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
-		<p>
-			<a target="_blank" style="word-break: break-all; overflow-wrap: break-word;" href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210836_upc_edu_pe/IQDqgUqQf0DhTrR9BXmWWYF1Ab2k9s88SsAiYEkuqUwc1QA?e=PgGyvD&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D">
-				https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210836_upc_edu_pe/IQDqgUqQf0DhTrR9BXmWWYF1Ab2k9s88SsAiYEkuqUwc1QA?e=PgGyvD&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
-			</a>
-		</p>
-	</td>
+		
   </tr>
   <tr>
     <td>Duracion<br></td>
