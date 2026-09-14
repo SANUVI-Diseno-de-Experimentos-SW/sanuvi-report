@@ -749,10 +749,27 @@ Los siguientes Scenario Maps (As-Is) representan el recorrido actual de los dos 
 
 ## 2.4. Ubiquitous Language
 
-> Glosario del lenguaje ubicuo del dominio, en inglés, con su definición.
+En esta sección se presentan los principales términos del dominio de Sanuvi, definidos en inglés y acompañados de su significado en español. Estos términos serán utilizados de manera consistente en la comunicación del equipo, documentación, diseño y desarrollo de la solución.
 
-| Término (EN) | Definición |
-|--------------|------------|
-| [Term] | [Definición] |
+| Término (EN)              | Definición                                                                                                                                         |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Patient**               | Menor diagnosticado con anemia que recibe tratamiento y seguimiento dentro del sistema.                                                            |
+| **Caregiver**             | Madre, padre o apoderado responsable del cuidado y seguimiento del tratamiento del paciente.                                                       |
+| **Health Professional**   | Profesional de salud encargado de atender, registrar y realizar el seguimiento de los pacientes con anemia.                                        |
+| **Anemia**                | Condición de salud caracterizada por niveles insuficientes de hemoglobina, que requiere evaluación y seguimiento médico.                           |
+| **Treatment**             | Conjunto de indicaciones médicas destinadas al tratamiento de la anemia, incluyendo la suplementación con hierro y los controles correspondientes. |
+| **Iron Supplement**       | Suplemento de hierro indicado como parte del tratamiento de la anemia.                                                                             |
+| **Dose**                  | Cantidad del suplemento de hierro que debe administrarse al paciente según las indicaciones del tratamiento.                                       |
+| **Dose Confirmation**     | Registro que indica que la dosis correspondiente del tratamiento fue administrada al paciente.                                                     |
+| **Hemoglobin Control**    | Control mediante el cual se registra y evalúa el nivel de hemoglobina del paciente durante su seguimiento.                                         |
+| **Medical Record**        | Registro que contiene la información clínica, antecedentes, controles y evolución del paciente.                                                    |
+| **Appointment**           | Cita programada para la atención o control del paciente por parte del personal de salud.                                                           |
+| **Treatment Adherence**   | Cumplimiento de las indicaciones establecidas para mantener la continuidad del tratamiento.                                                        |
+| **Treatment Abandonment** | Interrupción del tratamiento o de los controles indicados antes de completar el proceso establecido.                                               |
+| **Treatment Progress**    | Evolución del paciente durante el tratamiento, considerando sus controles y resultados clínicos.                                                   |
+| **Nutritional Diary**     | Registro de los alimentos consumidos por el paciente para realizar seguimiento de su alimentación durante el tratamiento.                          |
+| **Patient Assignment**    | Asociación de un paciente con el profesional de salud responsable de realizar su seguimiento.                                                      |
+| **Recovery**              | Estado en el que el paciente presenta una evolución favorable y cumple las condiciones clínicas establecidas para finalizar el tratamiento.        |
+| **Achievement**           | Reconocimiento obtenido por el paciente o cuidador al alcanzar determinados hitos relacionados con el seguimiento del tratamiento.                 |
+| **Streak**                | Cantidad consecutiva de días en los que se mantiene el cumplimiento o registro del tratamiento.                                                    |
 
-<!-- COMPLETAR -->
