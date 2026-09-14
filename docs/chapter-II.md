@@ -658,11 +658,42 @@ Carlos Rojas representa el perfil del personal de salud encargado del seguimient
 
 ### 2.3.2. User Task Matrix
 
-| Tarea | [User Persona 1] Frecuencia | [User Persona 1] Importancia | [User Persona 2] Frecuencia | [User Persona 2] Importancia |
-|-------|------|------|------|------|
-| [Tarea] | | | | |
+La sección User Task Matrix permite identificar y comparar las principales tareas que realizan los usuarios representados en las User Personas. Las tareas se organizan considerando su frecuencia y nivel de importancia dentro del proceso actual de seguimiento del tratamiento de la anemia.
 
-<!-- COMPLETAR: explicación de la matriz -->
+**Usuario: Apoderado del menor con anemia**
+
+| USER TASK                                                     | Frecuencia | Importancia |
+| ------------------------------------------------------------- | ---------- | ----------- |
+| Administrar el suplemento de hierro al menor                  | Alta       | Crítica     |
+| Recordar y controlar las dosis del tratamiento                | Alta       | Crítica     |
+| Realizar seguimiento del tratamiento                          | Alta       | Crítica     |
+| Controlar las citas médicas                                   | Media      | Alta        |
+| Preparar o proporcionar alimentos adecuados al menor          | Alta       | Alta        |
+| Consultar indicaciones sobre alimentación y tratamiento       | Media      | Alta        |
+| Resolver dudas con el personal de salud                       | Media      | Alta        |
+| Observar la evolución del menor durante el tratamiento        | Media      | Alta        |
+| Registrar o anotar información relacionada con el tratamiento | Alta       | Importante  |
+| Mantener la continuidad del tratamiento                       | Alta       | Crítica     |
+
+Estas tareas se desprenden de las actividades descritas por los tres entrevistados. Por ejemplo, los padres mencionan administrar el hierro, realizar anotaciones o utilizar la memoria para llevar el control, gestionar citas, atender la alimentación y comunicarse con el personal de salud cuando surgen dudas.
+
+**Usuario: Profesional de salud**
+
+| USER TASK                                                      | Frecuencia | Importancia |
+| -------------------------------------------------------------- | ---------- | ----------- |
+| Realizar seguimiento de pacientes con anemia                   | Alta       | Crítica     |
+| Controlar los niveles de hemoglobina                           | Media      | Crítica     |
+| Registrar información clínica del paciente                     | Alta       | Crítica     |
+| Revisar la evolución del paciente                              | Media      | Alta        |
+| Brindar orientación nutricional                                | Media      | Alta        |
+| Indicar y realizar seguimiento de la suplementación con hierro | Media      | Crítica     |
+| Gestionar controles y citas de los pacientes                   | Media      | Alta        |
+| Mantener comunicación con madres y cuidadores                  | Media      | Alta        |
+| Consultar el historial del paciente                            | Media      | Alta        |
+| Identificar dificultades o abandono del tratamiento            | Media      | Crítica     |
+
+Estas tareas se basan en las actividades descritas por Hugo y Gladys: seguimiento mediante controles de hemoglobina, registro en historias clínicas, orientación nutricional, suplementación de hierro, comunicación con las familias y evaluación de la evolución del paciente.
+
 
 ### 2.3.3. User Journey Mapping
 
