@@ -300,7 +300,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Evidencia</td>
-    <td><div align="center"><img src="resources/images/chapter-II/Interviews/Evidencia Milagros Vera.png" alt="Entrevista"></div></td>
+    <td><div align="center"><img src="../assets/img/chapter-II/Evidencia Milagros Vera.png" alt="Entrevista"></div></td>
   </tr>
   <tr>
     <td>Link</td>
@@ -308,7 +308,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Duracion<br></td>
-    <td>9:33 min - 14:47 min</td>
+    <td></td>
   </tr>
   <tr>
     <td>Resumen</td>
