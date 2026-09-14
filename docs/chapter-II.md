@@ -142,8 +142,6 @@ Ferova se posiciona como una solución especializada en el seguimiento del trata
 
 ### 2.2.1. Diseño de entrevistas
 
-> Preguntas generales y preguntas específicas por segmento objetivo.
-
 **Segmento 1: Madres, padres o cuidadores de niños con anemia**
 
 <h4>Preguntas Personales:</h4> 
@@ -252,8 +250,6 @@ Ferova se posiciona como una solución especializada en el seguimiento del trata
 
 
 ### 2.2.2. Registro de entrevistas
-
-> Mínimo 3 entrevistas por segmento. Para cada una: nombre y apellidos, edad, distrito, captura del video, timing (inicio y duración) y resumen de la entrevista.
 
 En esta sección presentamos los registros de las entrevistas que hicimos para cada segmento objetivo de nuestra aplicación.
 
@@ -634,13 +630,31 @@ b) **Arquetipo: “El profesional de salud”**
 
 ## 2.3. Needfinding
 
+Para crear un producto que cumpla con las necesidades específicas de un cliente, nuestro equipo se dedicará a identificar los User persona, User Task Matrix, User Journey Maps, Empathy Mapping y As-is Scenario Mapping.
+
+
 ### 2.3.1. User Personas
 
-> Un User Persona por segmento objetivo, elaborado en UXPressia.
+A partir del análisis de las entrevistas realizadas, se definieron dos User Personas que representan los principales perfiles involucrados en el seguimiento del tratamiento de la anemia infantil. Estas personas sintetizan las características, necesidades, motivaciones y dificultades identificadas en los participantes, permitiendo comprender de manera más clara las perspectivas de los usuarios y orientar el diseño de la solución.
 
-<img src="../assets/img/chapter-II/user-persona-01.png" alt="User Persona 1">
+**User Persona 1: María López — Apoderada del menor**
 
-<!-- COMPLETAR -->
+<div align="center">
+<img src="../assets/img/chapter-II/María López.png" alt="User Persona 1" width=700>
+</div>
+
+<br>
+
+María López representa el perfil de las madres, padres o apoderados responsables del cuidado de un menor con anemia. Se caracteriza por asumir directamente el seguimiento cotidiano del tratamiento, utilizando recursos personales para organizar las dosis y las citas médicas. Sus principales dificultades están relacionadas con los olvidos, las dudas sobre las indicaciones, la comunicación con el personal de salud y la organización de las actividades asociadas al tratamiento. A partir de las entrevistas, también se identifica su interés por contar con herramientas digitales sencillas que le permitan llevar un seguimiento más organizado y acceder a información confiable.
+
+**User Persona 2: Carlos Rojas — Profesional de salud**
+
+<div align="center">
+<img src="../assets/img/chapter-II/Carlos Rojas.png" alt="User Persona 2" width=700>
+</div>
+
+<br>
+Carlos Rojas representa el perfil del personal de salud encargado del seguimiento de pacientes con anemia. Su actividad se centra en el control de la evolución del paciente, el seguimiento de los niveles de hemoglobina y la orientación relacionada con el tratamiento y la alimentación. Las entrevistas evidencian la necesidad de disponer de información organizada y accesible, así como de facilitar procesos como la gestión de citas y la comunicación con las familias. Asimismo, se identifican diferencias en el nivel de digitalización de los establecimientos de salud y barreras relacionadas con la disponibilidad de infraestructura y capacitación tecnológica.
 
 ### 2.3.2. User Task Matrix
 
