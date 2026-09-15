@@ -77,6 +77,32 @@ Nuestra visión es que Sanuvi se convierta en una startup que contribuya a la tr
       </ul>
     </td>
   </tr>
+  <tr>
+    <td width="140"><img src="../assets/img/chapter-I/gabriel-penaranda.png" width="120" alt="Foto integrante"></td>
+    <td>
+      <b>Gabriel Augusto Peñaranda Caldas</b> — <code>U202201836</code><br>
+      <i>Ingeniería de Software</i><br><br>
+      <strong>Perfil</strong>
+      <br><br>
+      Estudiante de Ingeniería de Software con una profunda pasión por la infraestructura tecnológica. Me destaco en el conocimiento avanzado de sistemas operativos y en el diseño e implementación de Cloud infrastructure y Cloud architecture. Además, cuento con un sólido manejo de JavaScript para el desarrollo full-stack (frontend y backend), buscando siempre construir plataformas escalables, seguras y de alto rendimiento.
+      <br><br>
+      <strong>Habilidades Técnicas:</strong>
+      <ul>
+        <li>Desarrollo Full-Stack: JavaScript, Node.js</li>
+        <li>Cloud Architecture & Infrastructure (AWS, GCP, Azure)</li>
+        <li>Administración de Sistemas Operativos (Linux, Windows Server)</li>
+        <li>Control de versiones: Git, Git Flow</li>
+        <li>Despliegue y DevOps</li>
+      </ul>
+      <strong>Habilidades Sociales:</strong>
+      <ul>
+        <li>Resolución analítica de problemas complejos</li>
+        <li>Trabajo colaborativo en equipos ágiles</li>
+        <li>Comunicación efectiva de decisiones técnicas a nivel de infraestructura</li>
+        <li>Adaptabilidad y aprendizaje continuo de nuevas tecnologías cloud</li>
+      </ul>
+    </td>
+  </tr>
 </table>
 
 ## 1.2. Solution Profile

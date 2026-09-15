@@ -36,7 +36,7 @@ Producto
     <th style="border: none; text-align: left;">Apellidos y Nombres</th>
   </tr>
   <tr><td style="border: none;">U201822697</td><td style="border: none;">Quijandria Araneda, Vicente</td></tr>
-  <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
+  <tr><td style="border: none;">U202201836</td><td style="border: none;">Peñaranda Caldas, Gabriel Augusto</td></tr>
   <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
   <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
   <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
@@ -90,7 +90,7 @@ feature/chapter-VIII
 | Apellidos y Nombres | Usuario de GitHub |
 |---------------------|-------------------|
 | Quijandria Araneda, Vicente | vquijandria |
-| [Apellidos, Nombres] | [usuario] |
+| Peñaranda Caldas, Gabriel Augusto | gabrielpenaranda |
 | [Apellidos, Nombres] | [usuario] |
 | [Apellidos, Nombres] | [usuario] |
 | [Apellidos, Nombres] | [usuario] |
