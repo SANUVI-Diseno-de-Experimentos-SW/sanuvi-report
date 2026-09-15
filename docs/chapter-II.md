@@ -584,6 +584,12 @@ A nivel subjetivo, el 67% de los entrevistados manifestó explícitamente inter�
 
 En conjunto, se observa que las familias buscan que el menor se recupere de la anemia y mantenga una evolución favorable, pero enfrentan dificultades para mantener la constancia, organizar el tratamiento, resolver dudas y gestionar las actividades relacionadas con las citas médicas.
 
+
+<div align="center">
+<img src="../assets/img/chapter-II/madre.png" alt="User Persona 1" width=700>
+</div>
+
+
 **Segmento 2: Personal de salud**
 
 El análisis de las entrevistas evidencia que el seguimiento de los pacientes con anemia se basa principalmente en el control periódico de los niveles de hemoglobina, acompañado de la evaluación clínica, orientación nutricional y administración de suplementos de hierro. Ambos entrevistados señalaron la importancia de realizar controles periódicos para verificar la evolución del paciente y determinar si el tratamiento está logrando resultados adecuados.
@@ -597,6 +603,11 @@ A nivel subjetivo, se identifican necesidades relacionadas con la digitalizació
 También se identifican dificultades relacionadas con el abandono del tratamiento y el acceso de las familias a los servicios de salud. Una de las entrevistadas señala que el abandono puede ser frecuente debido a factores como la falta de tiempo para acudir al hospital, realizar consultas o recoger medicamentos. Por otro lado, también se menciona que las condiciones económicas de algunas familias pueden dificultar el mantenimiento de una alimentación adecuada.
 
 En conjunto, se observa que el personal de salud busca realizar un seguimiento continuo y disponer de información confiable sobre la evolución de sus pacientes, pero existen diferencias en el nivel de digitalización de sus entornos de trabajo y oportunidades para facilitar el acceso a información, citas y herramientas de seguimiento.
+
+<div align="center">
+<img src="../assets/img/chapter-II/enfermeros.png" alt="User Persona 1" width=700>
+</div>
+
 
 **Análisis Comparativo**
 
