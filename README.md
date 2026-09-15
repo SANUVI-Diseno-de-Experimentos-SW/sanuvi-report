@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/img/introduction/UPC_logo.png" width="200" alt="UPC Logo">
+<img src="./assets/img/readme/UPC_logo.png" width="200" alt="UPC Logo">
 
 Universidad Peruana de Ciencias Aplicadas
 
@@ -18,7 +18,9 @@ NRC
 
 Docente
 
+**[Nombre del Profesor]**
 **Juan Fernando Ysen Paiba**
+
 
 Startup
 

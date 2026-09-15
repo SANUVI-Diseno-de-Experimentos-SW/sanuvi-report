@@ -4,117 +4,312 @@
 
 ### 1.1.1. Descripción de la Startup
 
-> Descripción de la startup: nombre, origen del nombre, misión, visión, propuesta de valor y el producto **Ferova**.
+Sanuvi es una startup que nace con el propósito de contribuir al seguimiento y control del tratamiento de la anemia infantil en el Perú. Para ello, desarrolla Ferova, un aplicativo digital orientado a facilitar el seguimiento del tratamiento y fortalecer la coordinación entre las familias y el personal de salud.
 
-<!-- COMPLETAR -->
+En un contexto donde las familias pueden presentar dificultades para mantener de manera continua y organizada el cumplimiento de las indicaciones del tratamiento, mientras que el personal de salud requiere información organizada para realizar un seguimiento adecuado de sus pacientes, Sanuvi busca ofrecer una alternativa digital que facilite este proceso.
+
+A través de Ferova, las familias y cuidadores pueden contar con herramientas que les ayuden a organizar y mantener el seguimiento del tratamiento de sus hijos, mientras que el personal de salud puede disponer de información relacionada con la adherencia y evolución de los niños bajo su seguimiento. De esta manera, la propuesta busca favorecer la continuidad del tratamiento y fortalecer la coordinación entre ambos grupos de usuarios.
+
+Sanuvi está enfocada en apoyar a las madres, padres y cuidadores de niños con anemia, así como al personal de salud responsable de su seguimiento. Su propuesta parte de la oportunidad de aprovechar la tecnología para facilitar el cumplimiento de las indicaciones, mejorar el seguimiento del tratamiento y promover una comunicación más continua entre las familias y los profesionales de salud.
+
+En Sanuvi, aspiramos a contribuir a la transformación digital del seguimiento de la anemia infantil en el Perú, promoviendo procesos más organizados, conectados y centrados en las necesidades de los niños y de las personas responsables de su tratamiento.
+
+**Misión**
+
+Nuestra misión es contribuir a mejorar el seguimiento del tratamiento de la anemia infantil mediante soluciones digitales como Ferova, facilitando la organización de la información, el cumplimiento de las indicaciones y la comunicación entre las familias y el personal de salud. Buscamos desarrollar herramientas accesibles e intuitivas que favorezcan la continuidad del tratamiento y el seguimiento de los niños.
+
+**Visión**
+
+Nuestra visión es que Sanuvi se convierta en una startup que contribuya a la transformación digital del seguimiento de la anemia infantil en el Perú, promoviendo una atención más organizada, conectada y centrada en las necesidades de los niños, sus familias y el personal de salud.
 
 ### 1.1.2. Perfiles de integrantes del equipo
 
-> Para cada integrante: foto, nombres y apellidos, código de estudiante, descripción de carrera y un párrafo con los principales conocimientos técnicos y habilidades que aporta al equipo.
-
 <table>
   <tr>
-    <td width="140"><img src="../assets/img/chapter-I/member-01.png" width="120" alt="Foto integrante"></td>
+    <td width="140"><img src="../assets/img/chapter-I/Vitaly.jpeg" width="120" alt="Foto integrante"></td>
     <td>
-      <b>[Apellidos, Nombres]</b> — <code>[Código]</code><br>
-      <i>[Carrera]</i><br><br>
-      [Párrafo con conocimientos técnicos y habilidades que aporta al equipo.]
+      <b>Vitaly Arturo Baca Camargo</b> — <code>u20231c426</code><br>
+      <i>Ingeniería de Software</i><br><br>
+      <strong>Perfil</strong>
+      <br> <br>
+      Estudiante de Ingeniería de Software con interés en la resolución de problemas en diversos sectores mediante el uso de tecnología. Apasionado por el diseño de interfaces de usuario Movil (UI) y enfocado en el desarrollo de soluciones arquitectónicas eficientes y escalables, orientadas a mejorar la experiencia del usuario y el rendimiento de los sistemas.
+      <br><br>
+      <strong>Habilidades Técnicas:</strong>
+      <ul>
+        <li>Java, Node.js</li>
+        <li>MongoDB, MySql</li>
+        <li>kotlin, Flutter</li>
+        <li>Git, Git Flow</li>
+        <li>Raliway, Vercel</li>
+      </ul>
+      <strong>Habilidades Sociales:</strong>
+       <ul>
+        <li> Trabajo en equipo y colaboración en entornos ágile</li>
+        <li> Comunicación efectiva para coordinación técnica y funcional</li>
+        <li> Pensamiento analítico y resolución de problemas</li>
+        <li> Adaptabilidad y aprendizaje continuo</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="140"><img src="../assets/img/chapter-I/vicente-quijandria.png" width="120" alt="Foto integrante"></td>
+    <td>
+      <b>Vicente Quijandria Araneda</b> — <code>U201822697</code><br>
+      <i>Ingeniería de Software</i><br><br>
+      <strong>Perfil</strong>
+      <br><br>
+      Me motiva entender un problema a fondo antes de escribir la primera línea de código, sin importar el rubro del que venga. Trabajo principalmente en el desarrollo de aplicaciones móviles, donde me interesa tanto la interfaz que ve el usuario como la arquitectura que la sostiene: busco que las soluciones escalen sin sacrificar fluidez ni claridad para quien las usa.
+      <br><br>
+      <strong>Habilidades Técnicas:</strong>
+      <ul>
+        <li>Desarrollo móvil: Kotlin, Flutter</li>
+        <li>Backend y APIs: Java, Node.js</li>
+        <li>Bases de datos: MySQL, MongoDB</li>
+        <li>Control de versiones: Git, Git F
+        <li>Despliegue: Railway, Vercel</li>
+      </ul>
+      <strong>Habilidades Sociales:</strong>
+      <ul>
+        <li>Coordinación con el equipo en ciclos de trabajo ágiles</li>
+        <li>Explicar decisiones técnicas a p
+        <li>Análisis de requerimientos y descomposición de problemas</li>
+        <li>Disposición a aprender herramientas nuevas según lo pida el proyecto</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="140"><img src="../assets/img/chapter-I/gabriel-perfil.jpeg" width="120" alt="Foto integrante"></td>
+    <td>
+      <b>Gabriel Augusto Peñaranda Caldas</b> — <code>U202201836</code><br>
+      <i>Ingeniería de Software</i><br><br>
+      <strong>Perfil</strong>
+      <br><br>
+      Estudiante de Ingeniería de Software con una profunda pasión por la infraestructura tecnológica. Me destaco en el conocimiento avanzado de sistemas operativos y en el diseño e implementación de Cloud infrastructure y Cloud architecture. Además, cuento con un sólido manejo de JavaScript para el desarrollo full-stack (frontend y backend), buscando siempre construir plataformas escalables, seguras y de alto rendimiento.
+      <br><br>
+      <strong>Habilidades Técnicas:</strong>
+      <ul>
+        <li>Desarrollo Full-Stack: JavaScript, Node.js</li>
+        <li>Cloud Architecture & Infrastructure (AWS, GCP, Azure)</li>
+        <li>Administración de Sistemas Operativos (Linux, Windows Server)</li>
+        <li>Control de versiones: Git, Git Flow</li>
+        <li>Despliegue y DevOps</li>
+      </ul>
+      <strong>Habilidades Sociales:</strong>
+      <ul>
+        <li>Resolución analítica de problemas complejos</li>
+        <li>Trabajo colaborativo en equipos ágiles</li>
+        <li>Comunicación efectiva de decisiones técnicas a nivel de infraestructura</li>
+        <li>Adaptabilidad y aprendizaje continuo de nuevas tecnologías cloud</li>
+      </ul>
     </td>
   </tr>
 </table>
-
-<!-- COMPLETAR: repetir el bloque por cada integrante -->
 
 ## 1.2. Solution Profile
 
 ### 1.2.1. Antecedentes y problemática
 
-> Enunciado del problema, puntos más importantes que debe resolver la solución, objetivos y restricciones que delimitan el alcance. Elaborado aplicando la técnica **5 W's y 2 H's**.
+**What (¿Qué ocurre?)**
 
-**What (¿Qué?)**
+La persistencia de la anemia infantil en niños menores de cinco años, a pesar de la disponibilidad de tratamientos con hierro, lo cual evidencia deficiencias tanto en la adherencia al tratamiento como en su efectividad clínica. En este contexto, una gran proporción de pacientes no sigue adecuadamente las indicaciones médicas, lo que limita la recuperación y contribuye a la continuidad del problema (Choque-Medrano & Gutarra-Vilchez, 2025). Asimismo, el problema se agrava debido al fracaso del tratamiento, definido como la persistencia de niveles bajos de hemoglobina (<11 g/dL) incluso después de seis meses de suplementación con hierro, lo que indica que las intervenciones no están logrando los resultados esperados en todos los pacientes (Sulca Orellana, 2021)
 
-<!-- COMPLETAR -->
+**Who (¿Quiénes se ven afectados?)**
 
-**Who (¿Quién?)**
+La anemia en el Perú afecta principalmente a niños menores de cinco años, especialmente menores de tres años, gestantes y adolescentes, considerados grupos vulnerables (UNICEF, 2025) . Asimismo, la prevalencia en la población infantil atendida en servicios de salud varía según factores como edad, altitud y criterios diagnósticos (Hernández-Vásquez et al., 2025)
 
-<!-- COMPLETAR -->
+**Where (¿Dónde sucede?)**
 
-**Where (¿Dónde?)**
+El problema de la anemia en gestantes constituye una situación relevante de salud pública en el Perú. De acuerdo con los registros del Sistema de Información del Estado Nutricional (SIEN/HIS) del Instituto Nacional de Salud (INS), durante el periodo de enero a marzo de 2025 se evaluaron 144 577 gestantes a nivel nacional, de las cuales 26 306 fueron diagnosticadas con anemia, alcanzando una prevalencia de 18,20 %. Asimismo, la distribución de esta problemática presenta diferencias entre los departamentos del país. Apurímac registró una prevalencia de 34,02 %, seguido de Huancavelica con 31,53 % y Ayacucho con 23,59 %, evidenciando una mayor concentración del problema en determinadas regiones del país (Instituto Nacional de Salud [INS], 2025).
 
-<!-- COMPLETAR -->
+**When (¿Desde cuándo y con qué frecuencia?)**
 
-**When (¿Cuándo?)**
+De acuerdo con McCarthy et al. (2022), el problema de la anemia por deficiencia de hierro se presenta principalmente durante los primeros 1000 días de vida, los cuales comprenden desde el embarazo hasta los primeros años de vida del niño, etapa considerada crítica debido al rápido crecimiento y desarrollo, especialmente a nivel cerebral. Según los autores, durante este periodo los requerimientos de hierro aumentan significativamente; por ejemplo, en el embarazo pueden alcanzar hasta 7.5 mg/día en el tercer trimestre, lo que incrementa el riesgo de desarrollar anemia si no se cubren adecuadamente dichas necesidades . Asimismo, en la infancia temprana, particularmente entre los 6 y 24 meses, la demanda de hierro es una de las más altas del ciclo de vida, lo que convierte a esta etapa en un momento crítico para la aparición de la enfermedad. Por otro lado, según Ambreen et al. (2025), la anemia también se manifiesta durante el periodo de tratamiento clínico, el cual se desarrolla a lo largo del tiempo y requiere seguimiento continuo. En su estudio, el análisis se llevó a cabo en diferentes fases comprendidas entre enero y junio de 2023 y octubre de 2023 a marzo de 2024, lo que evidencia que la adherencia al tratamiento es un proceso prolongado y no inmedia.
 
-<!-- COMPLETAR -->
+**Why (¿Por qué es un problema?)**
 
-**Why (¿Por qué?)**
+De acuerdo con Martinez-Torres et al. (2023), la anemia en niños se origina por una combinación de múltiples factores de riesgo, lo que la convierte en un problema complejo de salud pública. Entre las principales causas se encuentran las deficiencias nutricionales, especialmente la falta de hierro, así como la carencia de vitamina B12 y ácido fólico, las cuales afectan directamente la producción de glóbulos rojos. Asimismo, según los autores, existen factores ambientales y sociales que incrementan el riesgo de anemia, como la pobreza, la mala alimentación, el acceso limitado a servicios de salud y la exposición a contaminantes como el plomo, los cuales influyen negativamente en el estado nutricional y la salud infantil.
 
-<!-- COMPLETAR -->
+**How (¿Cómo se aborda la anemia?)**
 
-**How (¿Cómo?)**
+De acuerdo con el Comité Nacional de Hematología y Nutrición (2017), el abordaje de la anemia por deficiencia de hierro se basa en tres pilares fundamentales: diagnóstico, tratamiento y prevención, los cuales permiten una intervención integral orientada a corregir la deficiencia y evitar su recurrencia. En primer lugar, según la guía, es necesario realizar un diagnóstico adecuado, que incluya evaluación clínica y estudios de laboratorio como hemoglobina y ferritina, con el fin de determinar la causa y severidad de la anemia. Posteriormente, el tratamiento se centra en la suplementación con hierro, principalmente por vía oral, en dosis controladas, con el objetivo de normalizar los niveles de hemoglobina y reponer las reservas del organismo. Asimismo, la prevención constituye un componente esencial, incluyendo estrategias como la alimentación rica en hierro, la lactancia materna, la fortificación de alimentos y la suplementación en grupos de riesgo, como niños pequeños y gestantes. Sin embargo, según Bustamante et al. (2025), este enfoque tradicional centrado en el hierro debe ser reconsiderado, ya que la anemia es un problema multifactorial que no siempre se debe exclusivamente a la deficiencia de este mineral . En este sentido, los autores señalan que la suplementación y fortificación universal no siempre han demostrado ser efectivas, presentando resultados limitados en la reducción de la prevalencia de anemia.
 
-<!-- COMPLETAR -->
+**How Much (¿Cuánto impacto tiene la anemia?)**
 
-**How much (¿Cuánto?)**
-
-<!-- COMPLETAR -->
-
-**Objetivos y restricciones del proyecto**
-
-<!-- COMPLETAR -->
+De acuerdo con Merino Loor et al. (2022), la anemia constituye un problema de salud pública de gran magnitud a nivel mundial, afectando aproximadamente a 1620 millones de personas, lo que equivale al 24% de la población global, siendo los niños menores de cinco años uno de los grupos más vulnerables, con una prevalencia cercana al 42%. En el contexto nacional, según datos del Instituto Nacional de Salud (INS, 2023), el impacto de los problemas nutricionales asociados a la anemia es significativo en la población infantil. Durante el 2023, se evaluaron 1,740,365 niños menores de 5 años en el Perú, de los cuales el 15.9% presentó desnutrición crónica y el 36.8% se encontraba en riesgo, evidenciando una alta vulnerabilidad nutricional que favorece la aparición de anemia. Además, se identificó la presencia de otras condiciones como sobrepeso (5.8%) y obesidad (1.7%), lo que refleja una doble carga de malnutrición en el país. Asimismo, de acuerdo con Zavaleta y Astete-Robilliard (2017), la anemia tiene consecuencias importantes a largo plazo, ya que afecta el desarrollo cognitivo, motor y conductual en los niños, incluso después de haber sido tratada . Los autores señalan que esta condición puede generar un menor desempeño escolar, limitaciones en el desarrollo intelectual y dificultades en la conducta a lo largo del ciclo de vida.
 
 ### 1.2.2. Lean UX Process
 
-> Visión del modelo de negocio que será soportado por el producto de software.
+En esta sección, aplicaremos la herramienta Lean UX para presentar la visión del modelo de negocio que nuestro producto de software utilizará durante todo el desarrollo de la aplicación. Esta herramienta está dividida en cuatro partes: El desarrollo del problema (Problem Statement), los supuestos del problema (Assumptions), las hipótesis (Hypothesis Statements) y el gráfico que resuma el desarrollo del Lean UX (Lean UX Canvas).
 
 #### 1.2.2.1. Lean UX Problem Statements
 
-> Incluir domain, customer segments, pain points, gap, vision/strategy e initial segment.
+Las familias y cuidadores de niños con anemia pueden presentar dificultades para mantener de manera continua y organizada el cumplimiento de las indicaciones del tratamiento, mientras que el personal de salud puede enfrentar dificultades para realizar un seguimiento periódico y verificar la adherencia y evolución de los niños.
 
-<!-- COMPLETAR -->
+Actualmente, las madres, padres y cuidadores pueden depender de procesos manuales y poco organizados, como cuadernos, apuntes informales o la memoria, para recordar y mantener información relacionada con el tratamiento de sus hijos. Estas condiciones pueden dificultar el cumplimiento continuo de las indicaciones y, por tanto, la adherencia al tratamiento.
+
+La Norma Técnica de Salud N.° 213-MINSA/DGIESP-2024 define la adherencia al suplemento de hierro como el grado de cumplimiento del régimen de suplementación o tratamiento respecto a la dosis y el tiempo indicado, considerando adecuada una adherencia de 75 % o más. Asimismo, establece que el seguimiento debe permitir verificar la adherencia al suplemento de hierro y contempla acciones como visitas domiciliarias y teleorientación para realizar dicha verificación. (Ministerio de Salud [MINSA], 2024).
+
+Por ello, existe una oportunidad de mejorar la adherencia al tratamiento mediante un seguimiento más continuo y organizado, fortaleciendo también la coordinación entre las familias y el personal de salud.
+
+**¿Cómo podríamos mejorar la adherencia al tratamiento de la anemia infantil y fortalecer la continuidad y coordinación del seguimiento entre las familias y el personal de salud, para favorecer el cumplimiento de las indicaciones durante el tratamiento?**
+
 
 #### 1.2.2.2. Lean UX Assumptions
 
 **Business Assumptions**
 
-<!-- COMPLETAR -->
+1. Creemos que existe una necesidad real de mejorar el seguimiento del tratamiento de la anemia infantil por parte de los apoderados del paciente y del personal de salud.
+
+2. Creemos que mejorar el seguimiento y control del tratamiento puede contribuir a que los establecimientos de salud gestionen de manera más organizada la atención de los pacientes con anemia.
+
+3. Creemos que los establecimientos de salud constituyen un contexto viable para la adopción de una solución digital orientada al seguimiento del tratamiento de la anemia infantil.
+
+4. Creemos que facilitar la coordinación entre los apoderados del paciente y el personal de salud puede generar suficiente valor para justificar la adopción de Ferova.
+
+5. Creemos que el seguimiento continuo de los pacientes puede proporcionar información útil para que el personal de salud tome mejores decisiones sobre el seguimiento de los tratamientos.
+
+6. Creemos que Ferova puede integrarse al proceso de seguimiento que actualmente realizan los establecimientos de salud sin reemplazar las responsabilidades del personal sanitario.
+
+7. Creemos que las principales barreras para la adopción de Ferova estarán relacionadas con la disposición de los usuarios y las condiciones reales en las que se realiza el seguimiento del tratamiento.
+
+8. Creemos que Ferova puede ser una solución sostenible si demuestra que genera valor tanto para los apoderados del paciente como para los establecimientos de salud.
 
 **User Assumptions**
 
-<!-- COMPLETAR -->
+#### Usuario 1: Madre, padre o apoderado del paciente
+
+- *¿Quién es el usuario?*
+
+Creemos que las madres, padres o apoderado responsables del tratamiento de niños con anemia constituyen uno de los principales grupos de usuarios de Ferova.
+
+- *¿Qué busca conseguir?*
+
+Creemos que estos usuarios buscan cumplir adecuadamente con las indicaciones del tratamiento y mantener un seguimiento de las actividades relacionadas con la atención de sus hijos.
+
+- *¿En qué contexto utiliza el producto?*
+  
+Creemos que utilizarán Ferova principalmente durante su rutina cotidiana de cuidado del niño y en los momentos relacionados con el seguimiento de su tratamiento.
+
+- *¿Qué dificultades puede tener?*
+
+Creemos que pueden tener dificultades para mantener la continuidad del seguimiento del tratamiento y para recordar u organizar la información relacionada con las indicaciones recibidas.
+
+- *¿Qué características del usuario son relevantes?*
+  
+Creemos que existen diferencias entre los cuidadores en cuanto a sus rutinas, disponibilidad de tiempo, familiaridad con herramientas digitales y formas actuales de organizar el seguimiento del tratamiento.
+
+#### Usuario 2: Personal de salud
+
+- *¿Quién es el usuario?*
+
+Creemos que el personal de salud responsable del seguimiento de niños con anemia constituye otro grupo principal de usuarios de Ferova.
+
+- *¿Qué busca conseguir?*
+  
+Creemos que estos usuarios buscan realizar un seguimiento organizado de sus pacientes y disponer de información que les permita conocer la evolución del tratamiento.
+
+- *¿En qué contexto utiliza el producto?*
+
+Creemos que utilizarán Ferova como parte de sus actividades habituales de seguimiento y atención de pacientes con anemia infantil.
+
+- *¿Qué dificultades puede tener?*
+
+Creemos que pueden enfrentar dificultades para mantener organizada y actualizada la información necesaria para realizar el seguimiento de sus pacientes.
+
+- *¿Qué características del usuario son relevantes?*
+
+Creemos que existen diferencias entre los profesionales en cuanto a sus responsabilidades, carga de trabajo, procesos de seguimiento y familiaridad con herramientas digitales.
+
 
 **Business Outcomes**
 
-<!-- COMPLETAR -->
+- *Aumentar la adherencia al tratamiento de los niños con anemia.*
+- *Aumentar la continuidad con la que los apoderados del paciente. cumplen las indicaciones del tratamiento.*
+- *Aumentar la frecuencia con la que los apoderados del paciente. realizan el seguimiento del tratamiento de sus hijos.*
+- *Aumentar la frecuencia con la que el personal de salud verifica la adherencia y evolución de los niños.*
+- *Aumentar la continuidad de la comunicación entre las apoderados y el personal de salud durante el tratamiento.*
 
 **User Outcomes**
 
-<!-- COMPLETAR -->
+#### Usuario 1: Madre, padre o cuidador
 
-**Features**
+- *Cumplir de manera continua las indicaciones del tratamiento de su hijo.*
+- *Dar seguimiento al tratamiento de su hijo de manera organizada.*
+- *Conocer cómo está avanzando el tratamiento de su hijo.*
+- *Sentirse seguros de que están cumpliendo adecuadamente con el tratamiento de su hijo.*
+- *Contar con mayor claridad sobre las indicaciones que deben seguir durante el tratamiento.*
 
-<!-- COMPLETAR -->
+#### Usuario 2: Personal de Salud
+
+- *Realizar el seguimiento de los niños con anemia de manera continua.*
+- *Verificar el cumplimiento de las indicaciones del tratamiento por parte de los apoderados del paciente.*
+- *Conocer oportunamente la evolución del niño durante el tratamiento.*
+- *Contar con confianza sobre el estado del seguimiento de sus pacientes.*
+- *Mantener una comunicación continua con los apoderados del paciente durante el tratamiento.*
+- *Verificar periódicamente la adherencia y evolución de los niños bajo su seguimiento.*
+- *Sentirse seguros de que conocen la situación y evolución de los niños bajo su seguimiento.*
+
+**Features Assumption**
+
+- Creemos que un registro del cumplimiento de las indicaciones del tratamiento permitirá a los apoderados del paciente llevar un seguimiento más organizado de las actividades indicadas y favorecerá la adherencia al tratamiento de sus hijos.
+
+- Creemos que los recordatorios de las indicaciones y actividades del tratamiento ayudarán a los apoderados del paciente a cumplir oportunamente con las actividades indicadas y favorecerán la continuidad del tratamiento.
+
+- Creemos que un registro organizado del seguimiento del tratamiento permitirá a los apoderados del paciente conocer y mantener un mayor control sobre las actividades realizadas durante el tratamiento de sus hijos.
+
+- Creemos que el registro de los controles de hemoglobina permitirá a los apoderados del paciente y al personal de salud consultar la evolución del niño y facilitará el seguimiento de su tratamiento.
+
+- Creemos que una herramienta para registrar y consultar la adherencia de los niños permitirá al personal de salud verificar periódicamente el cumplimiento del tratamiento y realizar un seguimiento más continuo.
+
+- Creemos que un canal de comunicación entrelos apoderados del paciente y el personal de salud facilitará la coordinación durante el tratamiento y favorecerá la continuidad del seguimiento de los niños.
+
+- Creemos que una visualización del progreso del tratamiento permitirá a los apoderados del paciente de y al personal de salud comprender de manera más clara la evolución y el cumplimiento de las indicaciones.
+
+- Creemos que un registro de las dosis diarias del tratamiento permitirá a los apoderados del paciente llevar un control continuo de las dosis administradas y favorecerá el cumplimiento de las indicaciones del tratamiento.
+
+- Creemos que un registro de alimentos hibidores e inhibidores de la absorción del hierro permitirá a los apoderados del paciente conocer qué alimentos pueden acompañar o dificultar el aprovechamiento del hierro durante el tratamiento y favorecerá el cumplimiento de las recomendaciones nutricionales.
+
+- Creemos que una herramienta para gestionar las citas en los establecimientos de salud permitirá a los apoderados del paciente mantener la continuidad de sus controles y facilitará el seguimiento del tratamiento de sus hijos.
+  
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
-> Formato: *Creemos que [business outcome] se logrará si [user] alcanza [user outcome] con [feature].*
+- Creemos que lograremos aumentar la adherencia al tratamiento de los niños con anemia si las madres, padres o cuidadores logran cumplir de manera continua las indicaciones del tratamiento de sus hijos mediante un registro del cumplimiento del tratamiento.
 
-<!-- COMPLETAR -->
+- Creemos que lograremos aumentar la continuidad con la que los apoderados del paciente cumplen las indicaciones del tratamiento si las madres, padres o cuidadores logran cumplir oportunamente las indicaciones mediante recordatorios del tratamiento.
+
+- Creemos que lograremos aumentar la frecuencia con la que los apoderados del paciente realizan el seguimiento del tratamiento de sus hijos si las madres, padres o cuidadores logran mantener un seguimiento continuo del tratamiento mediante un registro organizado del seguimiento.
+
+- Creemos que lograremos aumentar la frecuencia con la que el personal de salud verifica la adherencia y evolución de los niños si los profesionales logran verificar periódicamente la adherencia de sus pacientes mediante un registro y consulta de adherencia.
+
+- Creemos que lograremos aumentar la frecuencia con la que el personal de salud verifica la adherencia y evolución de los niños si los profesionales logran conocer la situación y evolución de sus pacientes mediante el registro de controles de hemoglobina.
+
+- Creemos que lograremos aumentar la continuidad de la comunicación entre los apoderados del paciente y el personal de salud durante el tratamiento si ambos usuarios logran mantener una comunicación continua durante el tratamiento mediante un canal de comunicación.
+
+- Creemos que lograremos aumentar la continuidad del seguimiento del tratamiento si los apoderados del paciente y el personal de salud logran comprender la evolución y el cumplimiento de las indicaciones mediante una visualización del progreso del tratamiento.
+  
+- Creemos que lograremos aumentar la adherencia al tratamiento de los niños con anemia si las madres, padres o cuidadores logran cumplir de manera continua las indicaciones de dosificación del tratamiento mediante un registro de las dosis diarias administradas.
+
+- Creemos que lograremos aumentar la continuidad con la que las familias cumplen las indicaciones del tratamiento si las madres, padres o cuidadores cuentan con mayor claridad sobre las recomendaciones alimentarias relacionadas con el tratamiento mediante un registro de alimentos facilitadores e inhibidores de la absorción del hierro.
+  
+- Creemos que lograremos aumentar la frecuencia con la que el personal de salud verifica la adherencia y evolución de los niños si las familias logran mantener un seguimiento continuo del tratamiento mediante una herramienta para gestionar las citas en los establecimientos de salud.
 
 #### 1.2.2.4. Lean UX Canvas
 
-<img src="../assets/img/chapter-I/lean-ux-canvas.png" alt="Lean UX Canvas">
+<img src="../assets/img/chapter-I/Lean UX Canvas.jpeg" alt="Lean UX Canvas">
 
-<!-- COMPLETAR: explicación del canvas -->
+Enlace de Miro: [https://miro.com/welcomeonboard/KzVjQmRTK0NETHhmTj](https://miro.com/welcomeonboard/KzVjQmRTK0NETHhmTjZNNytpNUZXU2h0amdIaUNXRjRSMGV0RDhEWTl1T2VUVjRDSWszeFlJZGprOHdkd0xibHBIeGJENC83Q2w3OGt2YUFkbnJER3ZmdzQ3QVkzWmFoalVhN1FnMGw5YWhOK0tUaXZMMCtVZXRDV3pHS0ErNDZnbHpza3F6REdEcmNpNEFOMmJXWXBBPT0hdjE=?share_link_id=475679318914)
+
 
 ## 1.3. Segmentos objetivo
 
-> Descripción de los segmentos asociados al dominio del problema, incluyendo características demográficas e información estadística de sustento.
+Sanuvi identifica dos segmentos objetivo vinculados al problema de la baja 
+adherencia al tratamiento de anemia en el Perú.
 
-### Segmento Objetivo 1: [Nombre del segmento]
+### Segmento Objetivo 1. Madres, padres o cuidadores de niños con anemia
 
-<!-- COMPLETAR -->
+Las madres, padres o cuidadores responsables del tratamiento de niños con anemia en el Perú, quienes participan directamente en el cumplimiento de las indicaciones y actividades relacionadas con el tratamiento de sus hijos. Este segmento enfrenta dificultades para mantener de manera continua y organizada el seguimiento del tratamiento, lo que puede dificultar el cumplimiento de las indicaciones y la adherencia. Buscan contar con mayor claridad y organización para acompañar adecuadamente el tratamiento de sus hijos.
 
-### Segmento Objetivo 2: [Nombre del segmento]
+### Segmento Objetivo 2. Personal de salud responsable del seguimiento
 
-<!-- COMPLETAR -->
+El personal de salud encargado de la atención y seguimiento de niños con anemia en establecimientos de salud del Perú, incluyendo profesionales como médicos, enfermeros y nutricionistas, responsables de realizar el seguimiento de sus pacientes, verificar la adherencia al tratamiento y conocer su evolución. Este segmento puede enfrentar dificultades para mantener organizada y actualizada la información necesaria para realizar un seguimiento periódico de los pacientes, así como para mantener una coordinación continua con las familias durante el tratamiento.
