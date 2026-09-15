@@ -37,7 +37,7 @@ Producto
   </tr>
   <tr><td style="border: none;">U201822697</td><td style="border: none;">Quijandria Araneda, Vicente</td></tr>
   <tr><td style="border: none;">U20231C426</td><td style="border: none;">Baca Camargo, Vitaly Arturo</td></tr>
-  <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
+  <tr><td style="border: none;">U202210836</td><td style="border: none;">Peñaranda Caldas, Gabriel Augusto</td></tr>
   <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
   <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
 </table>
