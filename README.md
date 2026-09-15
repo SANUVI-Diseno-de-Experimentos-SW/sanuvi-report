@@ -39,7 +39,7 @@ Producto
   <tr><td style="border: none;">U20231C426</td><td style="border: none;">Baca Camargo, Vitaly Arturo</td></tr>
   <tr><td style="border: none;">U202210836</td><td style="border: none;">Peñaranda Caldas, Gabriel Augusto</td></tr>
   <tr><td style="border: none;">U20231c197</td><td style="border: none;">Apaza bocanegra, Elizabeth Noelia</td></tr>
-  <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
+  <tr><td style="border: none;">U201517312</td><td style="border: none;">Damián Pereira, Luis Alberto</td></tr>
 </table>
 
 **Período 2026-20**
@@ -97,7 +97,7 @@ feature/chapter-VIII
 | Baca Camargo, Vitaly Arturo| Mr-Code |
 | Peñaranda Caldas,Gabriel Augusto | gapc2024 |
 | Apaza Bocanegra, Elizabeth Noelia| Elizabeth-Apaza |
-| [Apellidos, Nombres] | [usuario] |
+| Damián Pereira, Luis Alberto | luisdamian8 |
 
 ### Entrega AV1
 
