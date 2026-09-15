@@ -2,143 +2,785 @@
 
 ## 2.1. Competidores
 
-> Identificación y descripción de los principales competidores directos (3 como mínimo) con modelos de negocio basados en productos digitales similares, o competidores indirectos con ofertas parcialmente similares.
+Ferova presenta tres competidores relevantes en el mercado de salud digital orientado al seguimiento de tratamientos y adherencia terapéutica:
 
-**Competidor 1: [Nombre]**
+- **App ALMA — MINSA** (competidor directo): Es la aplicación oficial del 
+Ministerio de Salud del Perú para el seguimiento del crecimiento y 
+tratamiento de anemia en niños menores de 36 meses. Permite a los padres 
+registrar fechas de control, vacunas, inicio de gotitas de hierro y 
+recetas ricas en hierro. Está disponible únicamente en Android y se 
+distribuye de forma gratuita a través del Plan Multisectorial contra la 
+Anemia del MINSA.
 
-<!-- COMPLETAR -->
+- **Medisafe** (competidor indirecto): Es una plataforma de gestión de 
+medicamentos con más de 10 millones de usuarios a nivel global. Permite 
+configurar recordatorios de dosis, gestionar múltiples perfiles de 
+pacientes y notificar a cuidadores en caso de olvido. No está adaptada 
+al contexto peruano ni tiene enfoque en anemia materno-infantil, pero 
+compite indirectamente como herramienta general de adherencia terapéutica.
 
-**Competidor 2: [Nombre]**
-
-<!-- COMPLETAR -->
-
-**Competidor 3: [Nombre]**
-
-<!-- COMPLETAR -->
+- **MyTherapy** (competidor indirecto): Es una aplicación de recordatorio 
+de medicamentos desarrollada por Smartpatient GmbH con enfoque en 
+pacientes con enfermedades crónicas. Incorpora un sistema de recompensas 
+visuales por cumplimiento, diario de salud imprimible y notificación 
+automática a familiares. Tiene alta presencia en Europa y Latinoamérica 
+pero sin adaptación al sistema de salud peruano ni al dominio de anemia.
 
 ### 2.1.1. Análisis competitivo
 
-> Competitive Analysis Landscape.
+**¿Por qué llevar a cabo este análisis?**  
+> El objetivo de este análisis es evaluar las oportunidades reales de 
+competir en el mercado de salud digital materno-infantil en el Perú, 
+identificando las características de producto, segmentos objetivo y 
+estrategias de los principales actores. A través de este estudio, Sanuvi 
+busca tomar decisiones informadas para diseñar una propuesta de valor 
+diferenciada que permita a Ferova destacar frente a soluciones existentes.
 
-| | | **Ferova** | **[Competidor 1]** | **[Competidor 2]** | **[Competidor 3]** |
-|---|---|---|---|---|---|
-| **Perfil** | Overview | | | | |
-| | Ventaja competitiva ¿Qué valor ofrece a los clientes? | | | | |
-| **Perfil de Marketing** | Mercado objetivo | | | | |
-| | Estrategias de marketing | | | | |
-| **Perfil de Producto** | Productos & Servicios | | | | |
-| | Precios & Costos | | | | |
-| | Canales de distribución (Web y/o Móvil) | | | | |
-| **Análisis SWOT** | Fortalezas | | | | |
-| | Debilidades | | | | |
-| | Oportunidades | | | | |
-| | Amenazas | | | | |
+| | <div align="center">**SANUVI (Nombre del Startup)** <br><img src="../assets/img/chapter-II/Ferova.png" alt="Logo Ferova" width="80"></div> | <div align="center">**App ALMA — MINSA (Competidor Directo)** <br><img src="../assets/img/chapter-II/ALMA MINSA.jpg" alt="Logo ALMA MINSA" width="80"></div> | <div align="center">**Medisafe (Competidor Indirecto)** <br><img src="../assets/img/chapter-II/Medisafe.webp" alt="Logo Medisafe" width="80"></div> | <div align="center">**MyTherapy (Competidor Indirecto)** <br><img src="../assets/img/chapter-II/MyTherapy.png" alt="Logo MyTherapy" width="80"></div> |
+|:---|:---|:---|:---|:---|
+| **Perfil** | | | | |
+| Overview | Aplicaciones digitales desarrollado por Sanuvi para facilitar el seguimiento y control del tratamiento de la anemia infantil. Está dirigido a madres, padres o cuidadores de niños con anemia y al personal de salud responsable de su seguimiento. | App oficial del MINSA para el seguimiento del crecimiento y tratamiento de anemia en niños menores de 36 meses. Orientada a padres de familia como herramienta informativa. | App de recordatorio de medicamentos para pacientes con tratamientos crónicos. Permite notificar a cuidadores y gestionar múltiples perfiles. | App de recordatorio de medicamentos con diario de salud, gráficas de adherencia y sistema de recompensas visuales por cumplimiento. |
+| Ventaja competitiva | Enfoque especializado en el seguimiento del tratamiento de la anemia infantil en el contexto peruano. Ferova busca conectar las necesidades de las familias con las del personal de salud, facilitando el cumplimiento de las indicaciones, el seguimiento de la adherencia y la coordinación durante el tratamiento. | Es la app oficial del MINSA, gratuita y diseñada específicamente para el contexto peruano de anemia infantil. | Más de 10 millones de usuarios, base de datos de 30,000 interacciones medicamentosas, disponible en Android e iOS. | Sistema de recompensas que mejora la motivación, interfaz intuitiva y notificación automática a familiares si se olvida la dosis. |
+| **Perfil de Marketing** | | | | |
+| Mercado objetivo | Madres, padres o cuidadores responsables del tratamiento de niños con anemia y personal de salud involucrado en su seguimiento en establecimientos de salud del Perú. | Padres de familia con hijos menores de 36 meses en el Perú, usuarios del sistema de salud del MINSA. | Pacientes con enfermedades crónicas a nivel global que requieren gestión de múltiples medicamentos. | Pacientes con tratamientos crónicos a nivel global, especialmente en Europa y Latinoamérica. |
+| Estrategias de marketing | Alianza con postas de salud del MINSA, difusión a través del personal de salud, redes sociales y campaña de salud pública. | Difusión oficial a través del Ministerio de Salud, postas de salud y campañas nacionales contra la anemia. | Google Play y App Store, partnerships con farmacias, médicos y aseguradoras. | Google Play y App Store, partnerships con hospitales y centros de salud europeos. |
+| **Perfil de Producto** | | | | |
+| Productos & Servicios | **Ferova Family:** registro de dosis diarias administradas, seguimiento del cumplimiento del tratamiento, gestión de citas, información sobre alimentos facilitadores e inhibidores de la absorción del hierro y comunicación con el personal de salud. <br><br>**Ferova Clinic:** registro y consulta de información relacionada con la adherencia, controles de hemoglobina, seguimiento de la evolución de los niños y comunicación con las familias. | Control de crecimiento, vacunas, inicio de gotitas de hierro, recetas ricas en hierro, fechas de control de hemoglobina. Orientado a información y recordatorio de citas. | Recordatorio de medicamentos, control de salud (presión, peso), alertas de recarga, perfil de médico, historial de dosis. | Recordatorio de medicamentos, diario de salud imprimible, gráficas de adherencia, recompensas visuales por cumplimiento. |
+| Precios & Costos | Gratuito para madres y personal de salud. | Gratuito. | Freemium — versión premium a $4.99/mes o $39.99/año. | Freemium — funciones avanzadas de pago por suscripción. |
+| Canales de distribución (Web y/o Móvil) | **Ferova Family:** aplicación móvil dirigida a madres, padres o cuidadores. (Android)<br><br> **Ferova Clinic:** aplicación web dirigida al personal de salud responsable del seguimiento de los niños con anemia. (Chrome o otros navegadores)<br><br>**WebSite:** Landing Page estático (Chrome o otros navegadores). | Google Play (solo Android). | Google Play y App Store. | Google Play y App Store. |
+| **Análisis SWOT** | | | | |
+| Fortalezas | Enfoque especializado en el seguimiento del tratamiento de la anemia infantil. Considera tanto a las familias como al personal de salud, facilitando la continuidad y coordinación del seguimiento. | App oficial respaldada por el MINSA. Gratuita. Reconocida a nivel nacional. Diseñada específicamente para anemia infantil. | Gran base de usuarios global. Interfaz robusta y madura. Soporte multiidioma. Integración con EHR (HL7 FHIR). | Interfaz muy intuitiva. Sistema de recompensas motivador. Notificación a familiares. Alta calificación en tiendas (4.7/5). |
+| Debilidades | Solución nueva que requiere validar su aceptación y utilidad con los usuarios. Su adopción puede verse condicionada por la conectividad y familiaridad con herramientas digitales. | Solo informativa — no conecta con el personal de salud. Sin panel para enfermeras. Sin seguimiento de adherencia en tiempo real. Sin gamificación. Solo Android. | No adaptada al contexto peruano. Sin enfoque en anemia ni salud materno-infantil. Sin conexión con personal de salud. | Sin adaptación al sistema de salud latinoamericano. Sin conexión con personal de salud. Sin enfoque en anemia infantil. |
+| Oportunidades | Creciente uso de herramientas digitales aplicadas al ámbito de la salud. Posibilidad de establecer alianzas con establecimientos de salud para fortalecer el seguimiento de la anemia infantil. | Puede evolucionar incorporando un módulo para enfermeras con el respaldo institucional del MINSA. | Expansión a mercados latinoamericanos con apps especializadas por condición crónica. | Expansión con módulos para enfermedades prevalentes en Latinoamérica. |
+| Amenazas | Posible resistencia de usuarios a incorporar nuevas herramientas digitales. Existencia de aplicaciones de salud que podrían incorporar funcionalidades similares. | Puede actualizarse e incorporar funcionalidades similares a Ferova al contar con el respaldo institucional del MINSA. | Competidores locales con mejor adaptación cultural y al sistema de salud peruano. | Competidores locales con mejor contextualización al entorno latinoamericano. |
+
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
-<!-- COMPLETAR: estrategias derivadas del análisis SWOT y tácticas concretas -->
+Una vez identificados los actores del mercado, el siguiente paso es definir cómo Ferova se abrirá paso entre ellos. No basta con conocer a la competencia: se necesita un plan de acción que aproveche las ventajas propias y blinde las debilidades. Para lograrlo utilizamos la **Matriz CAME** (Corregir, Afrontar, Mantener, Explotar), una herramienta que permite traducir el análisis FODA de la sección anterior en decisiones estratégicas concretas.
+
+A través de este análisis establecemos tácticas ofensivas para explotar nuestra especialización en el dominio de la anemia materno-infantil peruana, y acciones de supervivencia para mitigar los riesgos de ser una solución nueva sin reconocimiento de marca. Este enfoque asegura que cada funcionalidad de Ferova Family y Ferova Clinic tenga un propósito estratégico detrás.
+
+**Matriz CAME para el desarrollo de estrategias basándonos en el análisis FODA**
+
+<table border="1" cellpadding="8" cellspacing="0" style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <th style="text-align: left;">Análisis FODA cruzado</th>
+    <th style="text-align: left;">Oportunidades (O)</th>
+    <th style="text-align: left;">Amenazas (A)</th>
+  </tr>
+  <tr>
+    <td>
+      <b>Fortalezas (F)</b><br>
+      1. Enfoque especializado en el seguimiento del tratamiento de la anemia materno-infantil en el contexto peruano.<br>
+      2. Diseño de doble cara: Ferova Family para madres y cuidadores, Ferova Clinic para el personal de salud, lo que habilita continuidad y coordinación del seguimiento.<br>
+      3. Gratuidad para ambos actores, sin barrera de suscripción frente a los modelos freemium de la competencia.
+    </td>
+    <td>
+      <b>Estrategia (FO) — Estrategias Ofensivas</b><br>
+      1. Alianza con postas y redes de salud del MINSA como canal de adopción: capacitar al personal de enfermería en Ferova Clinic para que las madres lleguen referidas desde la propia consulta, aprovechando un canal de confianza ya existente.<br>
+      2. Posicionar Ferova Clinic como el panel de seguimiento que hoy no existe en el mercado, con semáforo de riesgo y visibilidad en tiempo real de la adherencia — ninguno de los tres competidores analizados ofrece una vista para el personal de salud.<br>
+      3. Capitalizar la gratuidad para ambos actores en la negociación con establecimientos públicos, donde el presupuesto es una restricción real y las licencias por usuario son un bloqueo de entrada.<br>
+      4. Comunicar la especialización peruana como eje de posicionamiento: valores de referencia de hemoglobina ajustados por altitud, guía nutricional con alimentos locales y alineación con el Plan Multisectorial contra la Anemia.
+    </td>
+    <td>
+      <b>Estrategia (FA) — Estrategias Defensivas</b><br>
+      1. Blindar la especialización local como barrera de entrada: el ajuste de hemoglobina por altitud, la guía nutricional regional y la terminología del sistema de salud peruano no son replicables con rapidez por una app internacional.<br>
+      2. Diseñar las funcionalidades críticas con modo offline y sincronización diferida, para que la conectividad intermitente en zonas periurbanas y rurales no expulse al usuario hacia alternativas más simples.<br>
+      3. Formalizar convenios con establecimientos de salud que incorporen Ferova al flujo de trabajo de seguimiento, elevando el costo de sustitución en caso de que ALMA incorpore funcionalidades similares con respaldo institucional.<br>
+      4. Difundir resultados de pilotos y testimonios del personal de enfermería para construir reputación verificable frente al respaldo institucional que ALMA ya posee.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Debilidades (D)</b><br>
+      1. Bajo reconocimiento de marca: solución nueva que aún requiere validar su aceptación y utilidad con los usuarios.<br>
+      2. Adopción condicionada por la conectividad y por la familiaridad de las madres con herramientas digitales.<br>
+      3. Cobertura de plataforma limitada: Ferova Family está disponible únicamente en Android.<br>
+      4. Ausencia de respaldo institucional propio y de presencia en tiendas comparable a la de los competidores globales.
+    </td>
+    <td>
+      <b>Estrategia (DO) — Reorientación</b><br>
+      1. Validación rápida con Lean UX: ejecutar las entrevistas y pruebas de usabilidad documentadas en la sección 2.2 para generar evidencia de utilidad y material de respaldo publicable antes de escalar.<br>
+      2. Onboarding asistido por la enfermera durante la consulta en la posta, convirtiendo la baja familiaridad digital de las madres en un momento de acompañamiento en lugar de una barrera de registro.<br>
+      3. Priorizar en el roadmap la ampliación de cobertura a iOS y a navegador móvil, cerrando la debilidad de plataforma que hoy comparte con ALMA.<br>
+      4. Generar contenido de autoridad dirigido a decisores de establecimientos de salud (guías de implementación, casos de uso, indicadores de adherencia) para compensar la falta de reconocimiento de marca con credibilidad técnica.
+    </td>
+    <td>
+      <b>Estrategia (DA) — Supervivencia</b><br>
+      1. Concentrar el esfuerzo en el núcleo funcional — registro de dosis, controles de hemoglobina, alertas y comunicación madre-enfermera — sin competir en amplitud de catálogo con Medisafe ni MyTherapy, cuya madurez de producto es superior.<br>
+      2. Establecer una política explícita de tratamiento de datos sensibles de salud de menores: consentimiento informado, anonimización en reportes agregados y respaldos, requisito indispensable para operar junto al sistema de salud público.<br>
+      3. Buscar respaldo institucional o académico que compense la ausencia de marca y aporte legitimidad frente a los establecimientos de salud y a las familias.<br>
+      4. Formalizar un plan de gestión de incidentes y comunicación con establecimientos y familias, para contener el impacto reputacional de cualquier falla en un dominio donde la confianza es el activo principal.
+    </td>
+  </tr>
+</table>
+
+**Enfoque estratégico de Ferova**
+
+Ferova se posiciona como una solución especializada en el seguimiento del tratamiento de la anemia materno-infantil, con una propuesta de valor centrada en la conexión entre madres y personal de salud, la gamificación motivacional y la detección temprana del abandono terapéutico. Su diferenciación frente a los competidores se sostiene en tres ejes: **especialización de dominio**, **contexto local** y **visibilidad en tiempo real**. A continuación se detallan las estrategias y tácticas específicas frente a cada actor del mercado.
+
+**1. Frente a App ALMA — MINSA**
+
+- **Estrategia de complementariedad activa:** posicionarse no como rival de ALMA sino como su complemento técnico — mientras ALMA informa, Ferova conecta. La táctica es acercarse directamente al personal de enfermería de las postas como canal de adopción, generando tracción desde el sistema de salud hacia las madres.
+- **Cierre de la brecha de seguimiento:** ALMA no cuenta con un panel para personal de salud. Ferova cubre exactamente esa ausencia con el semáforo de riesgo y la detección temprana de abandono, convirtiéndose en la herramienta que el personal de salud necesita y que ALMA, en su alcance actual, no ofrece.
+- **Ventaja de cobertura de actores:** ALMA se limita a una app informativa para padres en Android. Ferova cubre a los dos actores del tratamiento con una app móvil para las familias y una aplicación web para el personal de salud, accesible desde cualquier navegador del establecimiento sin necesidad de instalación.
+
+**2. Frente a Medisafe**
+
+- **Estrategia de especialización en dominio:** Medisafe es una herramienta genérica de adherencia. Ferova es la única solución diseñada específicamente para la anemia materno-infantil en el Perú, con valores de referencia de hemoglobina por altitud, alineación con las guías del MINSA y orientación nutricional local. Esa especialización constituye una barrera de entrada que una app internacional no puede replicar con facilidad.
+- **Táctica de adopción institucional:** mientras Medisafe depende de que el usuario la descargue por cuenta propia, Ferova llega a las madres a través de la enfermera que las atiende en la posta — un canal de confianza que ningún competidor internacional posee.
+- **Táctica de gratuidad frente al freemium:** las funcionalidades de seguimiento que Medisafe reserva a su plan de pago (USD 4.99/mes) forman parte del núcleo gratuito de Ferova, eliminando la fricción económica en un segmento de bajos ingresos.
+
+**3. Frente a MyTherapy**
+
+- **Estrategia de gamificación contextual:** MyTherapy premia el cumplimiento con recompensas visuales genéricas. Ferova vincula la motivación directamente con la salud real del niño — la madre no solo ve que cumplió, sino cómo ese cumplimiento se refleja en la evolución de la hemoglobina de su hijo. Esa conexión entre esfuerzo y resultado clínico no es replicable con una app genérica.
+- **Táctica de red de soporte formal:** MyTherapy notifica a familiares. Ferova incorpora al personal de salud como red de apoyo formal, con capacidad de intervenir ante una alerta de abandono, algo que el modelo de notificación de MyTherapy no contempla.
+- **Táctica de contextualización del diario de salud:** frente al diario imprimible genérico de MyTherapy, Ferova ofrece un diario nutricional orientado a alimentos facilitadores e inhibidores de la absorción del hierro, con productos de consumo habitual en el Perú.
 
 ## 2.2. Entrevistas
 
 ### 2.2.1. Diseño de entrevistas
 
-> Preguntas generales y preguntas específicas por segmento objetivo.
+**Segmento 1: Madres, padres o cuidadores de niños con anemia**
 
-**Segmento 1: [Nombre del segmento]**
+<h4>Preguntas Personales:</h4> 
 
-*Preguntas generales*
+- ¿Cuál es su nombre?<br>
+- ¿Qué edad tiene?<br>
+- ¿Cuál es su estado civil?<br>
+- ¿Cuál es su ocupación?<br>
+- ¿En qué distrito vive?<br>
+- ¿Cuál es su relación con el niño (madre, padre, cuidador)?<br>
 
-<!-- COMPLETAR -->
+<h4>Contexto y antecedentes:</h4> 
 
-*Preguntas específicas*
+- ¿Su hijo(a) ha sido diagnosticado con anemia? ¿Hace cuánto tiempo?<br>
+- ¿Cómo fue su experiencia al recibir el diagnóstico?<br>
 
-<!-- COMPLETAR -->
+<h4>Comportamiento y uso actual:</h4> 
 
-**Segmento 2: [Nombre del segmento]**
+- ¿Cómo realiza actualmente el seguimiento del tratamiento?<br>
+- ¿Con qué frecuencia administra el suplemento de hierro?<br>
+- ¿Ha olvidado alguna vez una dosis? ¿Por qué?<br>
+- ¿Cómo controla las citas médicas?<br>
 
-*Preguntas generales*
+<h4>Frustraciones:</h4> 
 
-<!-- COMPLETAR -->
+- ¿Qué es lo más difícil de seguir el tratamiento contra la anemia?<br>
+- ¿Qué problemas ha tenido con las indicaciones médicas?<br>
 
-*Preguntas específicas*
+<h4>Objetivos:</h4> 
 
-<!-- COMPLETAR -->
+- ¿Qué le gustaría lograr con el tratamiento de su hijo?<br>
+
+<h4>Tecnología y canales digitales:</h4> 
+
+- ¿Qué tipo de celular utiliza?<br>
+- ¿Qué aplicaciones usa con frecuencia?<br>
+- ¿Qué tan cómoda/o se siente usando aplicaciones móviles?<br>
+
+<h4>Preferencias y comportamiento digital:</h4> 
+
+- ¿Qué tipo de contenido le resulta más fácil de entender? (texto, imágenes, videos)<br>
+
+<h4>Necesidades:</h4> 
+
+- ¿Qué tipo de ayuda le gustaría recibir para mejorar el tratamiento?<br>
+
+<h4>Confianza y percepción:</h4> 
+
+- ¿Qué le generaría confianza al usar una aplicación movil de salud y qué le haría dejar de usarla?<br>
+
+<h4>Personalidad e influencias:</h4> 
+
+- ¿Se considera una persona organizada o más improvisada?<br>
+- ¿Suele seguir indicaciones médicas al pie de la letra?<br>
+
+
+**Segmento 2: Personal de salud responsable del seguimiento**
+
+<h4>Preguntas Personales:</h4> 
+
+- ¿Cuál es su nombre?<br>
+- ¿Qué edad tiene?<br>
+- ¿Cuál es su profesión o especialidad?<br>
+- ¿Dónde trabaja actualmente?<br>
+- ¿Cuántos años de experiencia tiene?<br>
+
+<h4>Nutrición y manejo alimenticio:</h4> 
+
+- ¿Qué recomendaciones nutricionales suele brindar a pacientes con anemia?<br>
+- ¿Qué tan importante considera la alimentación en el tratamiento de la anemia?<br>
+- ¿Qué problemas ha identificado en la alimentación de los pacientes (costumbres, acceso a alimentos, desconocimiento, etc.)?<br>
+
+<h4>Comportamiento actual:</h4> 
+
+- ¿Cómo realiza el seguimiento de pacientes con anemia?<br>
+- ¿Qué herramientas utiliza actualmente? (Papel, Excel, etc.)<br>
+- ¿Cómo organiza la información de sus pacientes?<br>
+
+<h4>Frustraciones:</h4> 
+
+- ¿Qué tan frecuente es el abandono del tratamiento?<br>
+
+<h4>Objetivos:</h4> 
+
+- ¿Qué le gustaría mejorar en el seguimiento de pacientes?<br>
+- ¿Qué resultados considera ideales en un tratamiento exitoso?<br>
+
+<h4>Tecnología y herramientas:</h4> 
+
+- ¿Qué herramientas tecnológicas usa con mayor frecuencia?<br>
+- ¿Qué tan cómodo se siente usando nuevas tecnologías?<br>
+
+<h4>Necesidades:</h4> 
+
+- ¿Qué información necesita para hacer un mejor seguimiento?<br>
+
+<h4>Confianza y adopción:</h4> 
+
+- ¿Qué le generaría confianza para usar una aplicación web médica?<br>
+- ¿Qué barreras ve en la implementación de una solución digital?<br>
+
+<h4>Personalidad y trabajo:</h4> 
+
+- ¿Se considera una persona organizada en el manejo de pacientes?<br>
+- ¿Qué tan importante es la eficiencia en su trabajo diario?<br>
+
 
 ### 2.2.2. Registro de entrevistas
 
-> Mínimo 3 entrevistas por segmento. Para cada una: nombre y apellidos, edad, distrito, captura del video, timing (inicio y duración) y resumen de la entrevista.
+En esta sección presentamos los registros de las entrevistas que hicimos para cada segmento objetivo de nuestra aplicación.
 
-**Entrevista 1 — Segmento [N]**
+##### **Segmento objetivo 1: Madres, padres o cuidadores de niños con anemia** 
+---
 
-| Campo | Dato |
-|-------|------|
-| Nombres y apellidos | [Nombre] |
-| Edad | [Edad] |
-| Distrito | [Distrito] |
-| Fecha | [DD/MM/AAAA] |
-| Timing | [inicio] — duración [mm:ss] |
-| Enlace del video | [URL] |
 
-<img src="../assets/img/chapter-II/interview-01.png" alt="Captura entrevista 1">
+<table>
+<colgroup>
+</colgroup>
+<thead>
+  <tr>
+    <th colspan="2">Entrevista #3<br></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Nombre</td>
+    <td>Milagros</td>
+  </tr>
+  <tr>
+    <td>Apellidos</td>
+    <td>Vera</td>
+  </tr>
+  <tr>
+    <td>Edad</td>
+    <td>45 años</td>
+  </tr>
+  <tr>
+    <td>Distrito</td>
+    <td>San Clemente, Pisco</td>
+  </tr>
+  <tr>
+    <td>Aplicaciones Usadas</td>
+    <td>WhatsApp, Facebook, TikTok</td>
+  </tr>
+  <tr>
+    <td>Motivacion</td>
+    <td>Recuperar la salud de su hijo y asegurarse de que no tenga problemas en su crecimiento o desarrollo.</td>
+  </tr>
+  <tr>
+    <td>Frustracion</td>
+    <td>Falta de claridad en las indicaciones médicas y poca información sobre qué alimentos ayudan en el tratamiento. Además, dificultad para recordar las dosis diariamente.</td>
+  </tr>
+  <tr>
+    <td>Evidencia</td>
+    <td><div align="center"><img src="../assets/img/chapter-II/Evidencia Milagros Vera.png" alt="Entrevista"></div></td>
+  </tr>
+  <tr>
+    <td>Link</td>
+		
+  </tr>
+  <tr>
+    <td>Duracion<br></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Resumen</td>
+    <td>
+		Milagros es una madre de 45 años que vive en Pisco y se preocupa mucho por la salud de su hijo diagnosticado con anemia. Aunque intenta seguir el tratamiento, tiene dificultades para ser constante debido a olvidos y falta de herramientas de apoyo. Además, siente que la información médica no siempre es clara, especialmente en temas de alimentación. Usa aplicaciones como WhatsApp, Facebook y TikTok, y prefiere contenido visual como videos. Busca una solución simple que le ayude con recordatorios, seguimiento del tratamiento y orientación práctica para mejorar la alimentación de su hijo.
+</td>
+  </tr>
+</tbody>
+</table>
 
-*Resumen:* <!-- COMPLETAR -->
+<table>
+<colgroup>
+</colgroup>
+<thead>
+  <tr>
+    <th colspan="2">Entrevista #2<br></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Nombre</td>
+    <td>Paola Alejandra</td>
+  </tr>
+  <tr>
+    <td>Apellidos</td>
+    <td>Schmidt Herrera</td>
+  </tr>
+  <tr>
+    <td>Edad</td>
+    <td>55 años</td>
+  </tr>
+  <tr>
+    <td>Distrito</td>
+    <td>Chorrillos</td>
+  </tr>
+  <tr>
+    <td>Fecha</td>
+    <td>13/09/2026</td>
+  </tr>
+  <tr>
+    <td>Aplicaciones Usadas</td>
+    <td>Whatsapp, ChatGPT e Instagram</td>
+  </tr>
+  <tr>
+    <td>Motivacion</td>
+    <td>Buscar la mejora de salud de su hijo</td>
+  </tr>
+  <tr>
+    <td>Frustracion</td>
+    <td>El temor de olvidarse de algo relacionado al tratamiento</td>
+  </tr>
+  <tr>
+    <td>Evidencia</td>
+    <td><div align="center"><img src="../assets/img/chapter-II/paolaSchmidt.png" alt="Captura entrevista 2"></div></td>
+  </tr>
+  <tr>
+    <td>Link</td>
+		
+  </tr>
+  <tr>
+    <td>Duracion<br></td>
+    <td>9:04 min - 15:04 min</td>
+  </tr>
+  <tr>
+    <td>Resumen</td>
+    <td>
+		Paola Schmidt es una mujer de 55 años que vive en Chorrillos, quien trabaja como ama de casa y se preocupa por que su hijo se recupere de la anemia. Ella considera que las aplicaciones de salud móviles son muy importantes y que le servirian mucho para poder manejar el tratamiento de su hijo.
+</td>
+  </tr>
+</tbody>
+</table>
 
-<!-- COMPLETAR: repetir por cada entrevista -->
+<table>
+<colgroup>
+</colgroup>
+<thead>
+  <tr>
+    <th colspan="2">Entrevista #3<br></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Nombre</td>
+    <td>Alessandro Daniel</td>
+  </tr>
+  <tr>
+    <td>Apellidos</td>
+    <td>Bravo Castillo</td>
+  </tr>
+  <tr>
+    <td>Edad</td>
+    <td>28 años</td>
+  </tr>
+  <tr>
+    <td>Distrito</td>
+    <td>Pueblo Libre</td>
+  </tr>
+  <tr>
+    <td>Fecha</td>
+    <td>12/09/2026</td>
+  </tr>
+  <tr>
+    <td>Aplicaciones Usadas</td>
+    <td>Bloc de notas digital y WhatsApp</td>
+  </tr>
+  <tr>
+    <td>Motivacion</td>
+    <td>Lograr que su hijo mejore y se estabilice</td>
+  </tr>
+  <tr>
+    <td>Frustracion</td>
+    <td>Olvidar la dosis exacta del suplemento de hierro y dificultad para reagendar citas médicas</td>
+  </tr>
+  <tr>
+    <td>Evidencia</td>
+    <td><div align="center"><img src="../assets/img/chapter-II/alessandroBravo.png" alt="Captura entrevista 1"></div></td>
+  </tr>
+  <tr>
+    <td>Link</td>
+		
+  </tr>
+  <tr>
+    <td>Duracion<br></td>
+    <td>00:00 min - 05:18 min</td>
+  </tr>
+  <tr>
+    <td>Resumen</td>
+    <td>
+		Alessandro Daniel Bravo Castillo es un padre de 28 años que reside en Pueblo Libre y busca estabilizar la salud de su hijo, diagnosticado con anemia hace un año y medio. Utiliza un dispositivo móvil Android (S26), apoyándose principalmente en un bloc de notas digital y WhatsApp. Prefiere el contenido en formato de video para informarse y valora altamente la seguridad de los datos al tratarse de información de un menor. Requiere herramientas tecnológicas que le ofrezcan recordatorios precisos para la dosis de hierro de su hijo y facilidades para reagendar sus citas médicas.
+	</td>
+  </tr>
+</tbody>
+</table>
+
+##### **Segmento objetivo 2: Personal de salud responsable del seguimiento**
+---
+
+<table>
+<colgroup>
+</colgroup>
+<thead>
+  <tr>
+    <th colspan="2">Entrevista #2<br></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Nombre</td>
+    <td>Glady</td>
+  </tr>
+  <tr>
+    <td>Apellidos</td>
+    <td>Echegaray Párraga</td>
+  </tr>
+  <tr>
+    <td>Edad</td>
+    <td>68 años</td>
+  </tr>
+  <tr>
+    <td>Distrito</td>
+    <td>Agustino</td>
+  </tr>
+  <tr>
+    <td>Fecha</td>
+    <td>10/09/2026</td>
+  </tr>
+  <tr>
+    <td>Aplicaciones Usadas</td>
+    <td>WhatsApp</td>
+  </tr>
+  <tr>
+    <td>Motivacion</td>
+    <td>Mejorar la recuperación del paciente (anémicos)</td>
+  </tr>
+  <tr>
+    <td>Frustracion</td>
+    <td>Falta de manejo de aparatos tecnológicos en su entorno</td>
+  </tr>
+  <tr>
+    <td>Evidencia</td>
+    <td><div align="center"><img src="../assets/img/chapter-II/gladysParraga.jpeg" alt="Captura entrevista 2"></div></td>
+  </tr>
+  <tr>
+    <td>Link</td>
+		
+  </tr>
+  <tr>
+    <td>Duracion<br></td>
+    <td>09:05 min - 17:44 min</td>
+  </tr>
+  <tr>
+    <td>Resumen</td>
+    <td>
+		Gladys Echegaray Párraga tiene 68 años, trabaja en El Agustino en el hospital Hipólito Unanue como enfermera, atiende a todo tipo de pacientes y también a anémicos. Ella considera que la alimentación es tan importante como la suplementación de hierro y otros nutrientes necesarios para la recuperación. En su hospital pocos empleados administrativos manejan aparatos tecnológicos, por lo tanto ella no maneja ninguno. Solo se siente cómoda con WhatsApp pero estaría dispuesta a aprender a usar una app móvil de salud si esta app viene con capacitaciones o un tutorial muy claro de cómo usarse.
+</td>
+  </tr>
+</tbody>
+</table>
+
+---
+
+<table>
+<colgroup>
+</colgroup>
+<thead>
+  <tr>
+    <th colspan="2">Entrevista #3<br></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Nombre</td>
+    <td>Hugo</td>
+  </tr>
+  <tr>
+    <td>Apellidos</td>
+    <td>Rojas Olivera</td>
+  </tr>
+  <tr>
+    <td>Edad</td>
+    <td>72 años</td>
+  </tr>
+  <tr>
+    <td>Distrito</td>
+    <td>Villa del Salvador</td>
+  </tr>
+  <tr>
+    <td>Fecha</td>
+    <td>10/09/2026</td>
+  </tr>
+  <tr>
+    <td>Aplicaciones Usadas</td>
+    <td>WhatsApp, YouTube, Facebook, ChatGPT</td>
+  </tr>
+  <tr>
+    <td>Motivacion</td>
+    <td>Estandarizar el uso de aplicaciones de salud en hospitales y clínicas</td>
+  </tr>
+  <tr>
+    <td>Frustracion</td>
+    <td>Falta de apoyo tecnológico en otros hospitales y perdida del seguimiento de pacientes</td>
+  </tr>
+  <tr>
+    <td>Evidencia</td>
+    <td><div align="center"><img src="../assets/img/chapter-II/hugoRojas.jpeg" alt="Captura entrevista 3"></div></td>
+  </tr>
+  <tr>
+    <td>Link</td>
+		
+  </tr>
+  <tr>
+    <td>Duracion<br></td>
+    <td>17:45 min - 32:44 min</td>
+  </tr>
+  <tr>
+    <td>Resumen</td>
+    <td>
+		Hugo Rojas Olivera tiene 72 años y trabaja como director ejecutivo del hospital de emergencias de Villa El Salvador y se ha especializado en pediatría. Considera que es imposible que un niño se sane si no tiene su suplementación de hierro, y que la alimentación alta en nutrientes es clave. Considera que la app móvil es vital e importante si se orienta a que se estandarice en todos los hospitales, clínicas y seguros o al menos en la mayoría de ellas. En su hospital la tecnología es común pues es moderno y está cómodo usando WhatsApp, YouTube, Facebook y ChatGPT.
+</td>
+  </tr>
+</tbody>
+</table>
 
 ### 2.2.3. Análisis de entrevistas
 
-> Análisis por segmento con sustento estadístico (porcentajes por hallazgo), análisis comparativo y conclusiones que sirven de base para los arquetipos.
+En esta sección se presenta el análisis de la información recopilada mediante las entrevistas realizadas a los segmentos de familias responsables de menores con anemia y personal de salud. Para cada segmento se identifican características objetivas y subjetivas, considerando los comportamientos, prácticas, necesidades, dificultades y percepciones expresadas por los entrevistados. Finalmente, se realiza una contrastación entre ambos segmentos para identificar coincidencias, diferencias y oportunidades relevantes para el proyecto.
 
-<!-- COMPLETAR -->
+**Análisis de Características Objetivas y Subjetivas**
+
+**Segmento 1: Madres, padres y apoderados de menores con anemia**
+
+El análisis de las entrevistas evidencia que el seguimiento del tratamiento de la anemia forma parte de las actividades cotidianas de las familias. El 100% de los entrevistados administra suplementos de hierro de manera periódica y realiza algún tipo de seguimiento mediante herramientas personales como cuadernos, calendarios, planificadores o la memoria. Asimismo, los tres entrevistados manifestaron haber olvidado alguna dosis en algún momento, evidenciando que mantener la constancia del tratamiento puede representar una dificultad.
+
+Respecto al control de las citas médicas, los entrevistados utilizan principalmente medios personales para organizarlas. Se mencionaron el uso de calendarios, planificadores, anotaciones y el celular. Además, el 100% utiliza un teléfono y aplicaciones de comunicación, destacando WhatsApp como una de las herramientas utilizadas con mayor frecuencia. Esto evidencia que existe familiaridad con herramientas digitales que pueden formar parte de sus actividades de seguimiento.
+
+A nivel subjetivo, el 67% de los entrevistados manifestó explícitamente interés en recibir recordatorios para evitar olvidar las dosis, mientras que también se identificó la necesidad de facilitar la gestión de las citas y la comunicación con el personal médico. Dos entrevistados señalaron dificultades relacionadas con la comunicación o la posibilidad de resolver dudas oportunamente, especialmente respecto al tratamiento y las indicaciones que deben seguir.
+
+En conjunto, se observa que las familias buscan que el menor se recupere de la anemia y mantenga una evolución favorable, pero enfrentan dificultades para mantener la constancia, organizar el tratamiento, resolver dudas y gestionar las actividades relacionadas con las citas médicas.
+
+
+<div align="center">
+<img src="../assets/img/chapter-II/madre.png" alt="User Persona 1" width=700>
+</div>
+
+
+**Segmento 2: Personal de salud**
+
+El análisis de las entrevistas evidencia que el seguimiento de los pacientes con anemia se basa principalmente en el control periódico de los niveles de hemoglobina, acompañado de la evaluación clínica, orientación nutricional y administración de suplementos de hierro. Ambos entrevistados señalaron la importancia de realizar controles periódicos para verificar la evolución del paciente y determinar si el tratamiento está logrando resultados adecuados.
+
+Respecto a la gestión de la información, se identifican diferencias entre los entrevistados. El 50% utiliza una historia clínica electrónica y herramientas digitales de comunicación, mientras que el otro 50% continúa realizando el seguimiento mediante historias clínicas físicas en papel. Esta diferencia evidencia que el nivel de digitalización puede variar dependiendo de la institución y del entorno donde desarrolla sus actividades el personal de salud.
+
+A nivel objetivo, ambos entrevistados consideran la alimentación y la suplementación con hierro como elementos importantes del tratamiento. También señalan la necesidad de realizar un seguimiento continuo hasta alcanzar niveles adecuados de hemoglobina. En uno de los casos se menciona además el uso de WhatsApp para intercambiar resultados y mantener comunicación con las madres, lo que evidencia que algunas herramientas digitales ya son utilizadas como apoyo al seguimiento.
+
+A nivel subjetivo, se identifican necesidades relacionadas con la digitalización y accesibilidad de la información. Uno de los entrevistados considera importante facilitar la obtención de citas de manera digital, mientras que el otro manifiesta la necesidad de contar con herramientas que incluyan instrucciones y orientación para facilitar la adopción de nuevas tecnologías.
+
+También se identifican dificultades relacionadas con el abandono del tratamiento y el acceso de las familias a los servicios de salud. Una de las entrevistadas señala que el abandono puede ser frecuente debido a factores como la falta de tiempo para acudir al hospital, realizar consultas o recoger medicamentos. Por otro lado, también se menciona que las condiciones económicas de algunas familias pueden dificultar el mantenimiento de una alimentación adecuada.
+
+En conjunto, se observa que el personal de salud busca realizar un seguimiento continuo y disponer de información confiable sobre la evolución de sus pacientes, pero existen diferencias en el nivel de digitalización de sus entornos de trabajo y oportunidades para facilitar el acceso a información, citas y herramientas de seguimiento.
+
+<div align="center">
+<img src="../assets/img/chapter-II/enfermeros.png" alt="User Persona 1" width=700>
+</div>
+
+
+**Análisis Comparativo**
+
+El análisis comparativo de ambos segmentos permite identificar que las familias y el personal de salud participan directamente en el seguimiento del tratamiento de la anemia, aunque desde perspectivas diferentes. Las familias se encargan principalmente del cumplimiento cotidiano del tratamiento y del cuidado del menor, mientras que el personal de salud realiza controles clínicos y evalúa la evolución mediante indicadores como los niveles de hemoglobina.
+
+Ambos segmentos coinciden en la importancia de mantener un seguimiento continuo. Sin embargo, presentan dificultades diferentes. En las familias destacan los olvidos de las dosis, la organización de las citas, las dudas sobre las indicaciones y la comunicación con el personal de salud. En el personal de salud destacan el abandono del tratamiento, el acceso de las familias a los controles y las diferencias en la disponibilidad de herramientas tecnológicas.
+
+Respecto al uso de tecnología, ambos segmentos muestran una oportunidad de mejora, aunque con diferentes necesidades. Las familias ya utilizan teléfonos inteligentes y aplicaciones de comunicación, mientras que el personal de salud presenta diferentes niveles de digitalización según su entorno laboral. Esto permite identificar una oportunidad para facilitar la conexión entre el seguimiento realizado por las familias y la información utilizada por los profesionales de salud.
+
+En cuanto a las necesidades, ambos segmentos requieren información confiable y accesible, pero aplicada a diferentes momentos del proceso. Las familias necesitan apoyo para organizar y mantener el tratamiento, mientras que el personal de salud necesita disponer de información que facilite el seguimiento y la toma de decisiones.
+
+**Conclusiones y Definición de Arquetipos**
+
+A partir del análisis realizado, se definen los siguientes perfiles de usuario:
+
+a) **Arquetipo: “El apoderado responsable del menor”**
+
+**Característica principal:** Responsable de administrar y acompañar el tratamiento del menor con anemia, coordinando sus actividades de cuidado y controles médicos.
+
+**Necesidad principal:** Contar con herramientas que faciliten la organización y seguimiento del tratamiento, las citas y la evolución del menor.
+
+**Principal dificultad:** Mantener la constancia del tratamiento, recordar las dosis, resolver dudas y coordinar las citas médicas.
+
+b) **Arquetipo: “El profesional de salud”**
+
+**Característica principal:** Encargado de realizar el seguimiento clínico de los pacientes con anemia y evaluar su evolución durante el tratamiento.
+
+**Necesidad principal:** Disponer de información organizada y accesible sobre los pacientes para facilitar el seguimiento, los controles y la toma de decisiones.
+
+**Principal dificultad:** El abandono del tratamiento, las dificultades de acceso de algunas familias a los controles y las diferencias en la disponibilidad de herramientas tecnológicas según el establecimiento de salud.
 
 ## 2.3. Needfinding
 
+Para crear un producto que cumpla con las necesidades específicas de un cliente, nuestro equipo se dedicará a identificar los User persona, User Task Matrix, User Journey Maps, Empathy Mapping y As-is Scenario Mapping.
+
+
 ### 2.3.1. User Personas
 
-> Un User Persona por segmento objetivo, elaborado en UXPressia.
+A partir del análisis de las entrevistas realizadas, se definieron dos User Personas que representan los principales perfiles involucrados en el seguimiento del tratamiento de la anemia infantil. Estas personas sintetizan las características, necesidades, motivaciones y dificultades identificadas en los participantes, permitiendo comprender de manera más clara las perspectivas de los usuarios y orientar el diseño de la solución.
 
-<img src="../assets/img/chapter-II/user-persona-01.png" alt="User Persona 1">
+**User Persona 1: María López — Apoderada del menor**
 
-<!-- COMPLETAR -->
+<div align="center">
+<img src="../assets/img/chapter-II/María López.png" alt="User Persona 1" width=700>
+</div>
+
+<br>
+
+María López representa el perfil de las madres, padres o apoderados responsables del cuidado de un menor con anemia. Se caracteriza por asumir directamente el seguimiento cotidiano del tratamiento, utilizando recursos personales para organizar las dosis y las citas médicas. Sus principales dificultades están relacionadas con los olvidos, las dudas sobre las indicaciones, la comunicación con el personal de salud y la organización de las actividades asociadas al tratamiento. A partir de las entrevistas, también se identifica su interés por contar con herramientas digitales sencillas que le permitan llevar un seguimiento más organizado y acceder a información confiable.
+
+**User Persona 2: Carlos Rojas — Profesional de salud**
+
+<div align="center">
+<img src="../assets/img/chapter-II/Carlos Rojas.png" alt="User Persona 2" width=700>
+</div>
+
+<br>
+Carlos Rojas representa el perfil del personal de salud encargado del seguimiento de pacientes con anemia. Su actividad se centra en el control de la evolución del paciente, el seguimiento de los niveles de hemoglobina y la orientación relacionada con el tratamiento y la alimentación. Las entrevistas evidencian la necesidad de disponer de información organizada y accesible, así como de facilitar procesos como la gestión de citas y la comunicación con las familias. Asimismo, se identifican diferencias en el nivel de digitalización de los establecimientos de salud y barreras relacionadas con la disponibilidad de infraestructura y capacitación tecnológica.
 
 ### 2.3.2. User Task Matrix
 
-| Tarea | [User Persona 1] Frecuencia | [User Persona 1] Importancia | [User Persona 2] Frecuencia | [User Persona 2] Importancia |
-|-------|------|------|------|------|
-| [Tarea] | | | | |
+La sección User Task Matrix permite identificar y comparar las principales tareas que realizan los usuarios representados en las User Personas. Las tareas se organizan considerando su frecuencia y nivel de importancia dentro del proceso actual de seguimiento del tratamiento de la anemia.
 
-<!-- COMPLETAR: explicación de la matriz -->
+**Usuario: Apoderado del menor con anemia**
+
+| USER TASK                                                     | Frecuencia | Importancia |
+| ------------------------------------------------------------- | ---------- | ----------- |
+| Administrar el suplemento de hierro al menor                  | Alta       | Crítica     |
+| Recordar y controlar las dosis del tratamiento                | Alta       | Crítica     |
+| Realizar seguimiento del tratamiento                          | Alta       | Crítica     |
+| Controlar las citas médicas                                   | Media      | Alta        |
+| Preparar o proporcionar alimentos adecuados al menor          | Alta       | Alta        |
+| Consultar indicaciones sobre alimentación y tratamiento       | Media      | Alta        |
+| Resolver dudas con el personal de salud                       | Media      | Alta        |
+| Observar la evolución del menor durante el tratamiento        | Media      | Alta        |
+| Registrar o anotar información relacionada con el tratamiento | Alta       | Importante  |
+| Mantener la continuidad del tratamiento                       | Alta       | Crítica     |
+
+Estas tareas se desprenden de las actividades descritas por los tres entrevistados. Por ejemplo, los padres mencionan administrar el hierro, realizar anotaciones o utilizar la memoria para llevar el control, gestionar citas, atender la alimentación y comunicarse con el personal de salud cuando surgen dudas.
+
+**Usuario: Profesional de salud**
+
+| USER TASK                                                      | Frecuencia | Importancia |
+| -------------------------------------------------------------- | ---------- | ----------- |
+| Realizar seguimiento de pacientes con anemia                   | Alta       | Crítica     |
+| Controlar los niveles de hemoglobina                           | Media      | Crítica     |
+| Registrar información clínica del paciente                     | Alta       | Crítica     |
+| Revisar la evolución del paciente                              | Media      | Alta        |
+| Brindar orientación nutricional                                | Media      | Alta        |
+| Indicar y realizar seguimiento de la suplementación con hierro | Media      | Crítica     |
+| Gestionar controles y citas de los pacientes                   | Media      | Alta        |
+| Mantener comunicación con madres y cuidadores                  | Media      | Alta        |
+| Consultar el historial del paciente                            | Media      | Alta        |
+| Identificar dificultades o abandono del tratamiento            | Media      | Crítica     |
+
+Estas tareas se basan en las actividades descritas por Hugo y Gladys: seguimiento mediante controles de hemoglobina, registro en historias clínicas, orientación nutricional, suplementación de hierro, comunicación con las familias y evaluación de la evolución del paciente.
+
 
 ### 2.3.3. User Journey Mapping
 
-> Un User Journey Map As-Is por cada User Persona identificado.
+**User Journey Mapping — María López**
 
-<img src="../assets/img/chapter-II/user-journey-01.png" alt="User Journey Map 1">
+<div align="center">
+<img src="../assets/img/chapter-II/User Journey Mapping - María López.png" alt="User Persona 2" width=800>
+</div>
 
-<!-- COMPLETAR -->
+Este journey está sustentado especialmente en que las familias actualmente recurren a cuadernos, calendarios, planificadores, celular o memoria, y manifiestan dificultades con los olvidos, las citas, las indicaciones y la comunicación.
+
+**User Journey Mapping — Carlos Rojas**
+
+<div align="center">
+<img src="../assets/img/chapter-II/User Journey Mapping - Carlos Rojas.png" alt="User Persona 2" width=800>
+</div>
+
+Este journey refleja las diferencias encontradas entre Hugo y Gladys: Hugo trabaja con historia clínica electrónica y utiliza WhatsApp para comunicarse con las madres, mientras Gladys señala que realiza el seguimiento mediante historias clínicas físicas y que existen limitaciones de infraestructura tecnológica en algunas áreas.
 
 ### 2.3.4. Empathy Mapping
 
-> Un Empathy Map por cada User Persona identificado.
+Lo siguiente a evaluar como parte del needfinding es a nuestros segmentos objetivos a través de empathy maps, con el objetivo de conocer mejor a nuestros segmentos objetivos e identificar sus necesidades profundas.
 
-<img src="../assets/img/chapter-II/empathy-map-01.png" alt="Empathy Map 1">
+**Empathy Mapping — María López**
 
-<!-- COMPLETAR -->
+<div align="center">
+<img src="../assets/img/chapter-II/Empathy Mapping — María López.png" alt="User Persona 2" width=800>
+</div>
+
+**Empathy Mapping — Carlos Rojas**
+
+<div align="center">
+<img src="../assets/img/chapter-II/Empathy Mapping — Carlos Rojas.png" alt="User Persona 2" width=800>
+</div>
+
 
 ### 2.3.5. As-is Scenario Mapping
 
-> Escenario actual (As-Is) por cada User Persona: fases, doing, thinking, feeling.
+Los siguientes Scenario Maps (As-Is) representan el recorrido actual de los dos perfiles de usuario identificados a partir de las entrevistas. Para cada persona se describen las principales fases de su interacción con el proceso de seguimiento de la anemia, considerando las actividades que realiza, lo que piensa y las emociones que experimenta. Esta representación permite identificar las dificultades presentes en el proceso actual y establecer una base para la identificación de oportunidades de mejora.
 
-<img src="../assets/img/chapter-II/as-is-scenario-01.png" alt="As-Is Scenario Map 1">
+**As-is Scenario Mapping — María López**
 
-<!-- COMPLETAR -->
+<div align="center">
+<img src="../assets/img/chapter-II/AS IS -  María López.jpg" alt="User Persona 2" width=950>
+</div>
+
+**As-is Scenario Mapping — Carlos Rojas**
+
+
+<div align="center">
+<img src="../assets/img/chapter-II/AS IS - Carlos Rojas.jpg" alt="User Persona 2" width=950>
+</div>
 
 ## 2.4. Ubiquitous Language
 
-> Glosario del lenguaje ubicuo del dominio, en inglés, con su definición.
+En esta sección se presentan los principales términos del dominio de Sanuvi, definidos en inglés y acompañados de su significado en español. Estos términos serán utilizados de manera consistente en la comunicación del equipo, documentación, diseño y desarrollo de la solución.
 
-| Término (EN) | Definición |
-|--------------|------------|
-| [Term] | [Definición] |
+| Término (EN)              | Definición                                                                                                                                         |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Patient**               | Menor diagnosticado con anemia que recibe tratamiento y seguimiento dentro del sistema.                                                            |
+| **Caregiver**             | Madre, padre o apoderado responsable del cuidado y seguimiento del tratamiento del paciente.                                                       |
+| **Health Professional**   | Profesional de salud encargado de atender, registrar y realizar el seguimiento de los pacientes con anemia.                                        |
+| **Anemia**                | Condición de salud caracterizada por niveles insuficientes de hemoglobina, que requiere evaluación y seguimiento médico.                           |
+| **Treatment**             | Conjunto de indicaciones médicas destinadas al tratamiento de la anemia, incluyendo la suplementación con hierro y los controles correspondientes. |
+| **Iron Supplement**       | Suplemento de hierro indicado como parte del tratamiento de la anemia.                                                                             |
+| **Dose**                  | Cantidad del suplemento de hierro que debe administrarse al paciente según las indicaciones del tratamiento.                                       |
+| **Dose Confirmation**     | Registro que indica que la dosis correspondiente del tratamiento fue administrada al paciente.                                                     |
+| **Hemoglobin Control**    | Control mediante el cual se registra y evalúa el nivel de hemoglobina del paciente durante su seguimiento.                                         |
+| **Medical Record**        | Registro que contiene la información clínica, antecedentes, controles y evolución del paciente.                                                    |
+| **Appointment**           | Cita programada para la atención o control del paciente por parte del personal de salud.                                                           |
+| **Treatment Adherence**   | Cumplimiento de las indicaciones establecidas para mantener la continuidad del tratamiento.                                                        |
+| **Treatment Abandonment** | Interrupción del tratamiento o de los controles indicados antes de completar el proceso establecido.                                               |
+| **Treatment Progress**    | Evolución del paciente durante el tratamiento, considerando sus controles y resultados clínicos.                                                   |
+| **Nutritional Diary**     | Registro de los alimentos consumidos por el paciente para realizar seguimiento de su alimentación durante el tratamiento.                          |
+| **Patient Assignment**    | Asociación de un paciente con el profesional de salud responsable de realizar su seguimiento.                                                      |
+| **Recovery**              | Estado en el que el paciente presenta una evolución favorable y cumple las condiciones clínicas establecidas para finalizar el tratamiento.        |
+| **Achievement**           | Reconocimiento obtenido por el paciente o cuidador al alcanzar determinados hitos relacionados con el seguimiento del tratamiento.                 |
+| **Streak**                | Cantidad consecutiva de días en los que se mantiene el cumplimiento o registro del tratamiento.                                                    |
 
-<!-- COMPLETAR -->
