@@ -78,7 +78,7 @@ Nuestra visión es que Sanuvi se convierta en una startup que contribuya a la tr
     </td>
   </tr>
   <tr>
-    <td width="140"><img src="../assets/img/chapter-I/gabriel-penaranda.png" width="120" alt="Foto integrante"></td>
+    <td width="140"><img src="../assets/img/chapter-I/gabriel-perfil.jpeg" width="120" alt="Foto integrante"></td>
     <td>
       <b>Gabriel Augusto Peñaranda Caldas</b> — <code>U202201836</code><br>
       <i>Ingeniería de Software</i><br><br>
