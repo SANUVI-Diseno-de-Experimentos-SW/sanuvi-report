@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/img/introduction/logo-upc.png" width="60" alt="UPC Logo">
+<img src="./assets/img/introduction/UPC_logo.png" width="200" alt="UPC Logo">
 
 Universidad Peruana de Ciencias Aplicadas
 
@@ -12,13 +12,13 @@ Carrera de Ingeniería de Software
 
 NRC
 
-**[NRC]**
+**9082**
 
 **Informe del Trabajo Final**
 
 Docente
 
-**[Apellidos, Nombres del docente]**
+**Juan Fernando Ysen Paiba**
 
 Startup
 
@@ -30,16 +30,16 @@ Producto
 
 **Integrantes**
 
-<table style="border-collapse: collapse; border: none;">
+<table style="border-collapse: collapse; border: none; margin: 0 auto;">
   <tr>
     <th style="border: none; text-align: left;">Código</th>
     <th style="border: none; text-align: left;">Apellidos y Nombres</th>
   </tr>
   <tr><td style="border: none;">U201822697</td><td style="border: none;">Quijandria Araneda, Vicente</td></tr>
-  <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
-  <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
-  <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
-  <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
+  <tr><td style="border: none;">U20231C426</td><td style="border: none;">Baca Camargo, Vitaly Arturo</td></tr>
+  <tr><td style="border: none;">U202210836</td><td style="border: none;">Peñaranda Caldas, Gabriel Augusto</td></tr>
+  <tr><td style="border: none;">U20231c197</td><td style="border: none;">Apaza bocanegra, Elizabeth Noelia</td></tr>
+  <tr><td style="border: none;">U201517312</td><td style="border: none;">Damián Pereira, Luis Alberto</td></tr>
 </table>
 
 **Período 2026-20**
@@ -56,8 +56,12 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 
 | Versión | Fecha | Autor | Descripción de modificación |
 |---------|-------|-------|-----------------------------|
-| 1.0 | [DD/MM/AAAA] | [Apellidos, Nombres] | Se creó la estructura base del informe según el Final Project Statement del curso 1ASI0732. |
-|  |  |  |  |
+| 1.0 | [05/09/2026] | Quijandria Araneda, Vicente | Se creó la estructura base del informe según el Final Project Statement del curso 1ASI0732. |
+| 1.1 | [06/09/2026] | Baca Camargo, Vitaly Arturo  | Avance del Capítulo I con definición de Startup Profile, 5W+2H y estructura general. Se añadieron y corrigieron perfiles del equipo.  |
+| 1.2 | [07/09/2026] | Baca Camargo, Vitaly Arturo  | Incorporación de Lean UX Canvas, assumptions y outcomes y ajustes al Lean UX Canvas, definición de segmentos objetivo y consolidación de contenido del Capítulo I.  |
+| 1.3 | [08/09/2026] | Baca Camargo, Vitaly Arturo, Peñaranda Caldas, Gabriel Augusto, Apaza bocanegra, Elizabeth Noelia y Quijandria Araneda, Vicente | Incorporación de Entrevistas por cada segmento y análisis de entrevistas  |
+| 1.4 | [10/09/2026] | Baca Camargo, Vitaly Arturo | Incorporación de Needfinding y creacion de las User Personas |
+| 1.5 | [11/09/2026] | Baca Camargo, Vitaly Arturo | Incorporación de Ubiquitous Language|
 
 <div style="page-break-after: always;"></div>
 
@@ -90,10 +94,10 @@ feature/chapter-VIII
 | Apellidos y Nombres | Usuario de GitHub |
 |---------------------|-------------------|
 | Quijandria Araneda, Vicente | vquijandria |
-| [Apellidos, Nombres] | [usuario] |
-| [Apellidos, Nombres] | [usuario] |
-| [Apellidos, Nombres] | [usuario] |
-| [Apellidos, Nombres] | [usuario] |
+| Baca Camargo, Vitaly Arturo| Mr-Code |
+| Peñaranda Caldas,Gabriel Augusto | gapc2024 |
+| Apaza Bocanegra, Elizabeth Noelia| Elizabeth-Apaza |
+| Damián Pereira, Luis Alberto | luisdamian8 |
 
 ### Entrega AV1
 
