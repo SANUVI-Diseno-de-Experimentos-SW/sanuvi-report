@@ -2,11 +2,25 @@
 
 ## 3.1. To-Be Scenario Mapping
 
-> Escenario objetivo (To-Be) por cada User Persona, mostrando cómo cambian las fases, acciones, pensamientos y emociones con la solución propuesta.
+**Segmento Madres, padres y cuidadores:** En el siguiente escenario To-Be se presenta el flujo de trabajo propuesto para María López, desarrollado a partir del análisis del escenario As-Is y la identificación de oportunidades de mejora. Se mantienen las mismas fases del escenario actual para facilitar la comparación y se incorporan las funcionalidades de Sanuvi orientadas a organizar el tratamiento, registrar el cumplimiento de las dosis, consultar la evolución, gestionar las citas, registrar la alimentación y mantener la comunicación con el personal de salud. De esta manera, se busca facilitar el seguimiento del tratamiento y brindar mayor control y claridad durante el proceso.
 
-<img src="../assets/img/chapter-III/to-be-scenario-01.png" alt="To-Be Scenario Map 1">
+<br>
 
-<!-- COMPLETAR -->
+<div aling="center">
+<img src="../assets/img/chapter-III/To Be Scenario Mapping - Maria Lopez.jpg">
+</div>
+
+<br>
+
+**Segmento Personal de salud:** En el siguiente escenario To-Be se presenta el flujo de trabajo propuesto para Carlos Rojas, desarrollado a partir del análisis del escenario As-Is y la identificación de oportunidades de mejora. Se mantienen las mismas fases del escenario actual para facilitar la comparación y se incorporan las funcionalidades de Sanuvi orientadas a organizar la información clínica, registrar controles, realizar el seguimiento de los niveles de hemoglobina, coordinar las citas y mantener la comunicación con las familias. Con ello, se busca facilitar el seguimiento de los pacientes y proporcionar información organizada para apoyar la atención y la toma de decisiones.
+
+<br>
+
+<div aling="center">
+<img src="../assets/img/chapter-III/To Be Scenario Mapping - Carlos Rojas.jpg">
+</div>
+
+<br>
 
 ## 3.2. User Stories
 
