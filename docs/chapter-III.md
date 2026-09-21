@@ -828,6 +828,59 @@ Entonces no continúa con el procedimiento y no logra cambiar su contraseña.
   </thead>
   <tbody>
     <tr>
+      <td>US-08</td>
+      <td>User</td>
+      <td>Medium</td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Cierre de sesión</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       	Como usuario
+Quiero cerrar sesión de mi cuenta en el dispositivo que lo esté usando
+Para evitar accesos indebidos a mi cuenta.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Cierre exitoso de sesión en la web</strong>
+      <br><br>
+Dado que el usuario está autenticado en la aplicación web<br>
+Cuando selecciona la opción de cerrar sesión<br>
+Entonces finaliza su sesión activa en el navegador<br><br>
+<strong>Escenario #2: Cierre exitoso de sesión en la aplicación móvil</strong>
+<br><br>
+Dado que el usuario está autenticado en la aplicación móvil<br>
+Cuando selecciona la opción de cerrar sesión<br>
+Entonces se elimina la sesión activa del dispositivo móvil
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
       <td>TS-03</td>
       <td>Developer</td>
       <td>Hight</td>
@@ -889,6 +942,60 @@ entonces el sistema responde con un estado 400 BAD REQUEST e indica que el códi
     </tr>
   </tbody>
 </table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-09</td>
+      <td>User</td>
+      <td>High</td>
+      <td> - </td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Acceso a la Pagina de Inicio</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como usuario, quiero ver la página de inicio para poder acceder a las funciones principales de la aplicación.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario # 1: Navegar a la página de inicio</strong>
+        <br><br>
+Dado que el usuario navega a la página de inicio<br>
+Cuando se carga la página de inicio<br>
+Entonces el usuario ve el contenido principal de la aplicación.
+        <br><br>
+        <strong>Escenario #2: Visualizar las funciones principales</strong>
+          <br><br>
+Dado que la aplicación cuenta con funciones disponibles<br>
+Cuando se carga la página de inicio<br>
+Entonces el usuario visualiza los accesos a las principales funciones de la aplicación segun el rol.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
 
 ## 3.3. Product Backlog
 
