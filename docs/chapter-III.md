@@ -2203,6 +2203,55 @@ entonces responde sin resultados.
   </tbody>
 </table>
 
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-18</td>
+      <td>Nadre</td>
+      <td>Medium</td>
+      <td>EP-05</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Puntos por cumplimiento del tratamiento</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como madre, quiero obtener puntos por confirmar el cumplimiento de las dosis de mi hijo, para reconocer mi constancia y mantener la motivación durante el tratamiento.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario 1: Obtención de puntos por cumplimiento</strong><br><br>
+Dado que la madre confirma el cumplimiento de una dosis de su hijo,<br>
+cuando se registra correctamente la confirmación de la dosis,<br>
+entonces se agregan los puntos correspondientes al total acumulado de la madre.<br><br>
+<strong>Escenario 2: Consulta de puntos acumulados</strong><br><br>
+Dado que la madre ha obtenido puntos por el cumplimiento de las dosis,<br>
+cuando consulta sus puntos acumulados,<br>
+entonces puede conocer el total de puntos obtenidos hasta ese momento.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 ## 3.3. Product Backlog
 
 > Ordenado por prioridad de valor de negocio. Estimación en Story Points (serie de Fibonacci).
