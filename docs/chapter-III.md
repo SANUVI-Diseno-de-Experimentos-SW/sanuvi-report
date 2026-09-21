@@ -26,13 +26,138 @@ Los siguientes Scenario Maps (To-Be) representan el recorrido propuesto para los
 
 ## 3.2. User Stories
 
-> Redactadas en el informe (no como captura de herramienta). Criterios de aceptación en formato **Gherkin**. Incluir Epics y Technical Stories.
+Para el presente proyecto, se definieron historias de usuario a partir de las epics principales identificadas durante la fase de análisis. Estas historias permiten describir, de forma concreta y centrada en el usuario, las funcionalidades clave del sistema, sirviendo como base para su diseño, desarrollo y validación.
+
 
 **Epics**
 
-| ID | Título | Descripción |
-|----|--------|-------------|
-| EP01 | [Título] | [Descripción] |
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Epic ID</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>EP-01</td>
+      <td>High</font></td>
+      <td>EP-01</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Comunicación de valor del negocio</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+Como visitante, quiero entender claramente el valor de la plataforma y ser guiado mediante acciones concretas, para sentirme motivado a registrarme o descargar la aplicación.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Epic ID</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>EP-02</td>
+      <td>High</font></td>
+      <td>EP-02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Autenticacion y Acceso</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+      Como usuario de la plataforma, quiero registrarme e iniciar sesión en la plataforma, para acceder a mi cuenta de forma segura.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Epic ID</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>EP-03</td>
+      <td>High</font></td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Seguridad de los usuarios</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+Como usuario de la plataforma, quiero asegurar mi cuenta, para evitar el acceso indebido a mi cuenta.     
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Epic ID</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>EP-04</td>
+      <td>High</font></td>
+      <td>EP-04</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Gestion de la informacion del Pacientes</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+Como madre o enfermera, quiero registrar y gestionar la información de mi paciente, para mantener sus datos organizados y facilitar el seguimiento de su tratamiento y evolución.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
 
 **User Stories**
 
