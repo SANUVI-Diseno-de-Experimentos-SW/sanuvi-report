@@ -609,7 +609,7 @@ Entonces se muestra un mensaje indicando que las credenciales no son válidas y 
   </thead>
   <tbody>
     <tr>
-      <td>T-01</td>
+      <td>TS-01</td>
       <td>Developer</td>
       <td>High</td>
       <td>EP-02</td>
@@ -634,10 +634,10 @@ Entonces se muestra un mensaje indicando que las credenciales no son válidas y 
       <td colspan="4">
         <strong>Escenario #1: Inicio de sesión exitoso:</strong>
         <br><br>
-        Dado que el usuario envíe una solicitud al endpoint api/v1//sign-in con el dni y contraseña <br> cuando los datos son válidos <br> entonces el sistema responde con un estado 200 OK y genera un token de acceso.
+        Dado que se envíe una solicitud al api/v1//sign-in con el dni y contraseña <br> cuando los datos son válidos <br> entonces la API responde con un estado 200 OK y genera un token de acceso.
         <br><br>
-        <strong>Escenario #2: Credenciales incorrectas:</strong>
-        Dado que el usuario inicie sesión con credenciales inválidas <br> cuando se verifica el dni y contraseña encriptada en la base de datos <br> entonces el sistema responde con un estado 401 UNAUTHORIZED.
+        <strong>Escenario #2: Credenciales incorrectas:</strong> <br><br>
+       Dado que se envíe una solicitud al api/v1//sign-in con credenciales incorrectas <br> cuando la API verifica las credenciales <br> entonces la API responde con un estado 401 UNAUTHORIZED.
       </td>
     </tr>
   </tbody>
@@ -656,7 +656,7 @@ Entonces se muestra un mensaje indicando que las credenciales no son válidas y 
   </thead>
   <tbody>
     <tr>
-      <td>T-02</td>
+      <td>TS-02</td>
       <td>Developer</td>
       <td>High</td>
       <td>EP-02</td>
@@ -671,7 +671,7 @@ Entonces se muestra un mensaje indicando que las credenciales no son válidas y 
     </tr>
     <tr>
       <td colspan="4">
-       Como developer, quiero gestionar el registro de usuarios de forma segura, para permitir la creación de cuentas en el sistema.
+       Como developer, quiero gestionar el registro de usuarios de forma segura a través de una API, para permitir la creación de cuentas en el sistema como una funcionalidad de mi aplicación.
       </td>
     </tr>
     <tr>
@@ -681,19 +681,16 @@ Entonces se muestra un mensaje indicando que las credenciales no son válidas y 
       <td colspan="4">
         <strong>Escenario #1: Registro exitoso de una madre</strong>
         <br><br>
-        Dado que se envíe una solicitud al endpoint /register/mother con sus datos personales y credenciales<br>
-cuando los datos proporcionados sean válidos y no exista una cuenta asociada<br>
-entonces el sistema registra la cuenta y responde con un estado 201 CREATED.
+        Dado que se envíe una solicitud a /register/mother con sus datos personales y credenciales<br>
+cuando la API valida los datos proporcionados y no exista una cuenta asociada<br>
+entonces el API responde con un estado 201 CREATED.
         <br><br>
     <strong>Escenario #2: Registro exitoso de enfermera o administrador</strong>
         <br><br>
-Dado que se envíe una solicitud al endpoint /register/staff con sus datos personales, credenciales y rol
-cuando los datos proporcionados sean válidos y el rol corresponda a Nurse o Admin <br>
-entonces el sistema registra la cuenta del personal y responde con un estado 201 CREATED.
+Dado que se envíe una solicitud a /register/staff con sus datos personales, credenciales y rol
+cuando la API valida los datos proporcionados, no exista una cuenta asociada y el rol corresponda a Nurse o Admin <br>
+entonces el API responde con un estado 201 CREATED.
         <br><br>
-        <strong>Escenario #3: Datos de registro incompletos</strong>
-        <br><br>
-Dado que la solicitud enviada al endpoint no contiene los campos obligatorios <br> cuando se intente procesar la solicitud <br> entonces responde con un estado 400 BAD REQUEST y muestra un mensaje indicando los campos requeridos.
       </td>
     </tr>
   </tbody>
@@ -896,7 +893,7 @@ Entonces se elimina la sesión activa del dispositivo móvil
     </tr>
     <tr>
       <td colspan="4">
-        Como developer, quiero gestionar la recuperación de contraseña de forma segura, para permitir a los usuarios restablecer su acceso al sistema.
+        Como developer, quiero gestionar la recuperación de contraseña de forma segura a través de una API, para permitir a los usuarios restablecer su acceso al sistema.
       </td>
     </tr>
     <tr>
@@ -906,38 +903,38 @@ Entonces se elimina la sesión activa del dispositivo móvil
       <td colspan="4">
         <strong>Escenario #1: Solicitud de código de recuperación exitosa:</strong>
           <br><br>
-Dado que el usuario envíe una solicitud al endpoint /password/request-code con un correo registrado<br>
-cuando el correo corresponda a un usuario existente<br>
-entonces el sistema envía un código de recuperación de 4 dígitos al correo y responde con un estado 200 OK.
+Dado que se envíe una solicitud al /password/request-code con un correo registrado<br>
+cuando la API valida que el correo corresponda a un usuario existente<br>
+entonces la API responde con un estado 200 OK y se envía un código de recuperación de 4 dígitos al correo proporcionado.
           <br><br>
 <strong>Escenario #2: Correo no registrado:</strong>
           <br><br>
-Dado que el usuario envíe una solicitud al endpoint /password/request-code con un correo no registrado <br>
-cuando el sistema verifique que no existe una cuenta asociada al correo <br>
-entonces el sistema responde con un estado 400 que indica que el usuario no fue encontrado.
+Dado que se envíe una solicitud al /password/request-code con un correo no registrado <br>
+cuando la API valida que no existe una cuenta asociada al correo <br>
+entonces la API responde con un estado 404 Not Found que indica que el usuario no fue encontrado.
 <br><br>
 <strong>Escenario #3: Verificación de código exitosa:</strong>
         <br><br>
-Dado que el usuario envíe una solicitud al endpoint /password/verify-code con su correo y código de recuperación<br>
-cuando el código sea válido y se encuentre dentro del período de vigencia de 10 minutos<br>
-entonces el sistema valida el código y responde con un estado 200 OK.
+Dado que se envíe una solicitud al  /password/verify-code con su correo y código de recuperación<br>
+cuando la API valida que el código sea válido y se encuentre dentro del período de vigencia de 10 minutos<br>
+entonces la API responde con un estado 200 OK y se valida el código 
 <br><br>
 <strong>Escenario #4: Código inválido o expirado:</strong>
         <br><br>
-Dado que el usuario envíe una solicitud al endpoint /password/verify-code con un código de recuperación<br>
-cuando el código sea incorrecto o haya superado su período de vigencia<br>
-entonces el sistema responde con un estado 400 BAD REQUEST e indica que el código es inválido o ha expirado.
+Dado que se envíe una solicitud al /password/verify-code con un código de recuperación<br>
+cuando la API valido que el código sea incorrecto o haya superado su período de vigencia<br>
+entonces la API responde con un estado 400 BAD REQUEST e indica que el código es inválido o ha expirado.
 <br><br>
-        <strong>Escenario #5: Restablecimiento de contraseña exitoso:</strong>
-Dado que el usuario envíe una solicitud al endpoint  /password/reset con su correo, código de recuperación y nueva contraseña<br>
-cuando el código sea válido y no haya expirado<br>
-entonces el sistema actualiza la contraseña del usuario y responde con un estado 200 OK.
+        <strong>Escenario #5: Restablecimiento de contraseña exitoso:</strong> <br><br>
+Dado que se envíe una solicitud al /password/reset con su correo, código de recuperación y nueva contraseña<br>
+cuando la API valida que el código sea válido y no haya expirado<br>
+entonces la API responde con un estado 200 OK actualiza la contraseña del usuario
         <br><br>
 <strong>Escenario #6: Restablecimiento con código inválido o expirado:</strong>
 <br><br>
-        Dado que el usuario envíe una solicitud al endpoint /password/reset con un código de recuperación<br>
-cuando el código sea inválido o haya expirado<br>
-entonces el sistema responde con un estado 400 BAD REQUEST e indica que el código es inválido o ha expirado.
+        Dado que el usuario envíe una solicitud al /password/reset con un código de recuperación<br>
+cuando la API valido que el  código sea inválido o haya expirado<br>
+entonces la API responde con un estado 400 BAD REQUEST e indica que el código es inválido o ha expirado.
       </td>
     </tr>
   </tbody>
@@ -1161,6 +1158,58 @@ Entonces no puede realizar la gestión del historial del paciente.<br><br>
 Dado que el paciente cuenta con un historial médico registrado<br>
 Cuando la enfermera actualiza la información clínica del paciente<br>
 Entonces el historial médico queda actualizado con la nueva información para continuar con su seguimiento.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-13</td>
+      <td>Enfermero</td>
+      <td>Hight</td>
+      <td>EP-04</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Estado del paciente</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como enfermera, quiero gestionar el estado del paciente según la evolución de su tratamiento, para mantener un control claro de los pacientes activos, completados o que han abandonado el tratamiento.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Actualización de estado exitosa</strong>
+<br><br>
+Dado que el paciente se encuentra en seguimiento por la enfermera<br>
+Cuando la enfermera actualiza su estado entre activo, completado o abandonado<br>
+Entonces el estado del paciente queda actualizado y disponible para su seguimiento.
+<br><br>
+<strong>Escenario #2: Cambio de estado sin justificación</strong>
+<br><br>
+Dado que la enfermera cambia el estado del paciente a completado o abandonado<br>
+Cuando no proporciona una justificación para el cambio<br>
+Entonces el cambio no se realiza y se indica que debe proporcionar una justificación.
       </td>
     </tr>
   </tbody>
