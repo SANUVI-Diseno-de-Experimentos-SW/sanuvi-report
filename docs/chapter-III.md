@@ -2252,6 +2252,67 @@ entonces puede conocer el total de puntos obtenidos hasta ese momento.
   </tbody>
 </table>
 
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-18</td>
+      <td>Developer</td>
+      <td>High</td>
+      <td>EP-05 - EP-07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Gestión y seguimiento de dosis</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como developer, quiero gestionar la confirmación y consulta de las dosis de un paciente mediante una API, para mantener actualizado el seguimiento del cumplimiento del tratamiento.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Consulta de la dosis del día</strong><br><br>
+Dado que se recibe una solicitud GET /patients/:patientId/today-dose,<br>
+cuando el paciente tiene una dosis programada para el día,<br>
+entonces la API responde con estado 200 OK y devuelve la información de la dosis junto con su estado y la posibilidad de confirmarla.<br><br>
+<strong>Escenario #2: Confirmación de la dosis</strong><br><br>
+Dado que se recibe una solicitud POST /doses/confirm con el identificador de un paciente que tiene una dosis pendiente,<br>
+cuando la API valida que la dosis corresponde al día actual y aún no ha sido confirmada,<br>
+entonces la API responde con estado 200 OK y registra la dosis con estado CONFIRMED.<br><br>
+<strong>Escenario #3: Dosis no disponible para confirmar</strong><br><br>
+Dado que se recibe una solicitud POST /doses/confirm para un paciente que no tiene una dosis pendiente para el día,<br>
+cuando la API verifica el estado de la dosis,<br>
+entonces responde con un error indicando que no existe una dosis pendiente para confirmar o que la dosis ya fue confirmada u omitida.<br><br>
+<strong>Escenario #4: Consulta del historial de dosis</strong><br><br>
+Dado que se recibe una solicitud GET /patients/:patientId/dose-history,<br>
+cuando existen dosis registradas para el paciente,<br>
+entonces la API responde con estado 200 OK y devuelve el historial de dosis junto con su estado y fecha correspondiente.<br><br>
+<strong>Escenario #5: Historial sin dosis registradas</strong><br><br>
+Dado que se recibe una solicitud GET /patients/:patientId/dose-history,<br>
+cuando el paciente no cuenta con dosis registradas en su historial,<br>
+entonces la API responde correctamente indicando que no existen registros de dosis para el paciente.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 ## 3.3. Product Backlog
 
 > Ordenado por prioridad de valor de negocio. Estimación en Story Points (serie de Fibonacci).
