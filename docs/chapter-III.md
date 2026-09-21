@@ -1,4 +1,4 @@
-# Capítulo III: Requirements Specification
+<img width="742" height="427" alt="image" src="https://github.com/user-attachments/assets/280365ea-2419-4dc3-9845-e81def9015ba" /># Capítulo III: Requirements Specification
 
 ## 3.1. To-Be Scenario Mapping
 
@@ -1851,7 +1851,7 @@ entonces se indica que no existen alimentos registrados para ese día.
     <tr>
       <td>US-16</td>
       <td>Madre</td>
-      <td>High</td>
+      <td>Medium</td>
       <td>EP-05 - EP-07</td>
     </tr>
     <tr>
@@ -1884,6 +1884,154 @@ entonces la racha se reinicia y comienza nuevamente el conteo de días consecuti
     </tr>
   </tbody>
 </table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-13</td>
+      <td>Developer</td>
+      <td>Medium</td>
+      <td>EP-05 - EP-07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Consulta del progreso de gamificación</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como developer, quiero gestionar la consulta del progreso de gamificación asociado a un paciente mediante una API, para proporcionar información sobre los puntos acumulados y la constancia del tratamiento.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Progreso encontrado</strong><br><br>
+        Dado que se recibe una solicitud GET /patients/:patientId/achievement para un paciente existente y asociado a la madre,<br>
+cuando la API obtiene la información de gamificación del paciente,<br>
+entonces la API responde correctamente y devuelve los puntos acumulados, la racha actual y la mejor racha histórica.<br><br>
+        <strong>Escenario #2: Paciente no encontrado</strong><br><br>
+Dado que se recibe una solicitud GET /patients/:patientId/achievement para un paciente que no existe,<br>
+cuando la API no encuentra al paciente,<br>
+entonces la API responde con un error indicando que el paciente no fue encontrado.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-17</td>
+      <td>Madre</td>
+      <td>Medium</td>
+      <td>EP-05 - EP-07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Insignias por logros del tratamiento</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como madre, quiero obtener insignias al alcanzar hitos durante el tratamiento de mi hijo, para reconocer mi constancia y motivarme a continuar con su seguimiento.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario 1: Desbloqueo de insignia</strong><br><br>
+Dado que la madre alcanza un hito establecido durante el tratamiento, como completar la primera semana, un mes sin interrupciones o la mitad del tratamiento,<br>
+cuando se verifica el cumplimiento del hito,<br>
+entonces la insignia correspondiente queda desbloqueada y se registra como un logro alcanzado.<br><br>
+<strong>Escenario 2: Consulta de insignias</strong><br><br>
+Dado que la madre tiene insignias disponibles,<br>
+cuando consulta sus logros del tratamiento,<br>
+entonces puede identificar las insignias que ya ha desbloqueado y los hitos asociados a las que aún están pendientes.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+     <td>TS-14</td>
+      <td>Medium</td>
+      <td>High</td>
+      <td>EP-05 - EP-07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Consulta de insignias y progreso</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como developer, quiero gestionar la consulta de las insignias asociadas a un paciente mediante una API, para obtener su estado de desbloqueo y el progreso hacia cada logro del tratamiento.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Insignias encontradas</strong><br><br>
+Dado que se recibe una solicitud GET /patients/:patientId/badges para un paciente existente y asociado a la madre,<br>
+cuando la API obtiene las insignias correspondientes al tratamiento,<br>
+entonces la API responde correctamente y devuelve las insignias con su estado de desbloqueo, progreso y días restantes para alcanzar cada hito.<br><br>
+<strong>Escenario #2: Paciente no encontrado</strong><br><br>
+Dado que se recibe una solicitud GET /patients/:patientId/badges para un paciente que no existe,<br>
+cuando la API no encuentra al paciente,<br>
+entonces la API responde con un error indicando que el paciente no fue encontrado.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 
 
 ## 3.3. Product Backlog
