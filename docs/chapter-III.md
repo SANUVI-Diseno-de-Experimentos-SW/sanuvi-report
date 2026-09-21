@@ -713,7 +713,7 @@ Dado que la solicitud enviada al endpoint no contiene los campos obligatorios <b
   <tbody>
     <tr>
       <td>US-06</td>
-      <td>User</td>
+      <td>Usuario</td>
       <td>Hight</td>
       <td>EP-03</td>
     </tr>
@@ -765,13 +765,13 @@ Entonces le llegará un código de 6 dígitos al correo ingresado.
   <tbody>
     <tr>
       <td>US-07</td>
-      <td>User</td>
+      <td>Usuario</td>
       <td>Hight</td>
       <td>EP-03</td>
     </tr>
     <tr>
       <td><b>Title</b></td>
-      <td colspan="3"></td>
+      <td colspan="3">Restablecer contraseña</td>
     </tr>
     <tr>
       <td colspan="4"><b>Description</b>
@@ -829,7 +829,7 @@ Entonces no continúa con el procedimiento y no logra cambiar su contraseña.
   <tbody>
     <tr>
       <td>US-08</td>
-      <td>User</td>
+      <td>Usuario</td>
       <td>Medium</td>
       <td>EP-03</td>
     </tr>
@@ -957,7 +957,7 @@ entonces el sistema responde con un estado 400 BAD REQUEST e indica que el códi
   <tbody>
     <tr>
       <td>US-09</td>
-      <td>User</td>
+      <td>Usuario</td>
       <td>High</td>
       <td> - </td>
     </tr>
@@ -990,6 +990,177 @@ Entonces el usuario ve el contenido principal de la aplicación.
 Dado que la aplicación cuenta con funciones disponibles<br>
 Cuando se carga la página de inicio<br>
 Entonces el usuario visualiza los accesos a las principales funciones de la aplicación segun el rol.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-10</td>
+      <td>Madre</td>
+      <td>Hight</td>
+      <td>EP-04</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Gestión de pacientes</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+Como madre, quiero gestionar la información de mi hijo, para mantener sus datos registrados y facilitar el seguimiento de su tratamiento.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Registrar nuevo paciente</strong>
+  <br><br>
+Dado que la madre proporciona información válida del paciente<br>
+Cuando la madre registra al paciente<br>
+Entonces el paciente queda registrado con la información proporcionada.
+<br><br>
+        <strong>Escenario #2: Información inválida del paciente</strong>
+        <br><br>
+Dado que la madre proporciona información incompleta o inválida del paciente<br>
+Cuando la madre intenta registrar al paciente<br>
+Entonces el paciente no es registrado y se muestra un mensaje de error.<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-11</td>
+      <td>Enfermera</td>
+      <td>Hight</td>
+      <td>EP-04</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Seguimiento del nivel de hemoglobina</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como enfermera, quiero llevar el seguimiento de los niveles de hemoglobina del paciente, para conocer su evolución durante el tratamiento de la anemia.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Registro exitoso del nivel de hemoglobina</strong>
+<br><br>
+Dado que la enfermera cuenta con el nivel de hemoglobina obtenido durante el control del paciente<br>
+Cuando registra un valor válido de hemoglobina<br>
+Entonces el nivel de hemoglobina queda registrado en el historial del paciente y se actualiza su progreso.
+<br><br>
+        <strong>Escenario #2: Actualización del nivel de hemoglobina</strong>
+<br><br>
+Dado que la enfermera cuenta con el resultado de hemoglobina obtenido durante el control del paciente<br>
+Cuando actualiza el nivel de hemoglobina<br>
+Entonces el nuevo valor queda disponible en el historial del paciente y permite consultar su evolución.<br><br>
+
+<strong>Escenario #3: Valor de hemoglobina inválido</strong>
+<br><br>
+Dado que la enfermera cuenta con un valor de hemoglobina fuera del rango permitido<br>
+Cuando actualiza el nivel de hemoglobina<br>
+Entonces el valor no es aceptado y se informa que el valor ingresado no es válido.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-12</td>
+      <td>Enfermera</td>
+      <td>Hight</td>
+      <td>EP-04</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Historial médico del paciente</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como enfermera, quiero consultar y gestionar el historial médico inicial de un paciente asignado a mi cartera, para contar con información clínica que facilite el seguimiento de su tratamiento contra la anemia.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       <strong>Escenario #1: Historial médico inicial</strong> 
+<br><br>
+Dado que el paciente se encuentra asignado a la cartera de la enfermera<br>
+Cuando la enfermera incorpora la información clínica inicial del paciente, incluyendo nivel de hemoglobina, peso, talla y observaciones médicas<br>
+Entonces el historial médico del paciente queda disponible para su seguimiento.<br><br>
+<strong>Escenario #2: Información clínica incompleta</strong>
+<br><br>
+Dado que la información clínica necesaria del paciente está incompleta<br>
+Cuando la enfermera intenta incorporar el historial médico<br>
+Entonces la información no se completa y se indica qué datos son necesarios para continuar.<br><br>
+<strong>Escenario #3: Paciente no asignado</strong>
+<br><br>
+Dado que el paciente no se encuentra asignado a la cartera de la enfermera<br>
+Cuando la enfermera intenta gestionar su historial médico<br>
+Entonces no puede realizar la gestión del historial del paciente.<br><br>
+<strong>Escenario #4: Actualización del historial médico</strong>
+<br><br>
+Dado que el paciente cuenta con un historial médico registrado<br>
+Cuando la enfermera actualiza la información clínica del paciente<br>
+Entonces el historial médico queda actualizado con la nueva información para continuar con su seguimiento.
       </td>
     </tr>
   </tbody>
