@@ -231,7 +231,7 @@ Como usuario de la plataforma, quiero asegurar mi cuenta, para evitar el acceso 
   <tbody>
     <tr>
       <td>EP-07</td>
-      <td>High</font></td>
+      <td>Medium</font></td>
       <td>EP-07</td>
     </tr>
     <tr>
@@ -294,7 +294,7 @@ Como usuario de la plataforma, quiero asegurar mi cuenta, para evitar el acceso 
   <tbody>
     <tr>
       <td>EP-09</td>
-      <td>High</font></td>
+      <td>Medium</font></td>
       <td>EP-09</td>
     </tr>
     <tr>
@@ -314,9 +314,57 @@ Como usuario de la plataforma, quiero asegurar mi cuenta, para evitar el acceso 
 
 **User Stories**
 
-| ID | Título | Descripción | Criterios de Aceptación | Relacionado con (Epic ID) |
-|----|--------|-------------|--------------------------|---------------------------|
-| US01 | [Título] | **Como** [rol], **quiero** [funcionalidad], **para** [beneficio]. | **Escenario 1: [Nombre]**<br>**Dado que** [contexto],<br>**Cuando** [evento],<br>**Entonces** [resultado]. | EP01 |
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-01</td>
+      <td>User</td>
+      <td>High</td>
+      <td>EP-01</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Conocer el valor de negocio de la plataforma</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como visitante del sitio web estático
+Quiero determinar el valor de negocio
+Para tomar la decisión de convertirme en usuario de la plataforma
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: El visitante conoce el propósito de la plataforma</strong>
+        <br><br>
+        Dado que el visitante desea saber si la plataforma es confiable<br>
+Cuando accede al sitio web estático<br>
+Entonces identifica claramente el propósito general de la plataforma.
+        <br><br>
+        <strong>Escenario #2: El visitante conoce los beneficios que ofrece la plataforma</strong>
+        <br><br>
+        Dado que el visitante desea conocer la plataforma<br>
+Cuando accede a la sección de Para quien<br>
+Entonces encuentra las funcionalidades que obtendrá por usar la plataforma según su el rol
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- COMPLETAR -->
 
