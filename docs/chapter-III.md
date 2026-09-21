@@ -1183,7 +1183,7 @@ Entonces el historial médico queda actualizado con la nueva información para c
     </tr>
     <tr>
       <td><b>Title</b></td>
-      <td colspan="3">Estado del paciente</td>
+      <td colspan="3">Estado del tratamiento del paciente</td>
     </tr>
     <tr>
       <td colspan="4"><b>Description</b>
@@ -1199,11 +1199,17 @@ Entonces el historial médico queda actualizado con la nueva información para c
     </tr>
     <tr>
       <td colspan="4">
-        <strong>Escenario #1: Actualización de estado exitosa</strong>
+        <strong>Escenario #1: Actualización de estado de tratamiento completado</strong>
 <br><br>
 Dado que el paciente se encuentra en seguimiento por la enfermera<br>
-Cuando la enfermera actualiza su estado entre activo, completado o abandonado<br>
-Entonces el estado del paciente queda actualizado y disponible para su seguimiento.
+Cuando la enfermera actualiza su estado del tratamiento a completado<br>
+Entonces el estado del paciente queda actualizado.
+<br><br>
+                <strong>Escenario #1: Actualización de estado de tratamiento abandonado</strong>
+<br><br>
+Dado que el paciente se encuentra en seguimiento por la enfermera<br>
+Cuando la enfermera actualiza su estado del tratamiento a abandonado<br>
+Entonces el estado del paciente queda actualizado.
 <br><br>
 <strong>Escenario #2: Cambio de estado sin justificación</strong>
 <br><br>
