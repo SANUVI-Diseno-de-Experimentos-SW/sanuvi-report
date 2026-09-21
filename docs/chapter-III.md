@@ -711,7 +711,7 @@ entonces el API responde con un estado 201 CREATED.
     <tr>
       <td>US-06</td>
       <td>Usuario</td>
-      <td>Hight</td>
+      <td>High</td>
       <td>EP-03</td>
     </tr>
     <tr>
@@ -763,7 +763,7 @@ Entonces le llegará un código de 6 dígitos al correo ingresado.
     <tr>
       <td>US-07</td>
       <td>Usuario</td>
-      <td>Hight</td>
+      <td>High</td>
       <td>EP-03</td>
     </tr>
     <tr>
@@ -880,7 +880,7 @@ Entonces se elimina la sesión activa del dispositivo móvil
     <tr>
       <td>TS-03</td>
       <td>Developer</td>
-      <td>Hight</td>
+      <td>High</td>
       <td>EP-03</td>
     </tr>
     <tr>
@@ -917,7 +917,7 @@ entonces la API responde con un estado 404 Not Found que indica que el usuario n
         <br><br>
 Dado que se envíe una solicitud al  /password/verify-code con su correo y código de recuperación<br>
 cuando la API valida que el código sea válido y se encuentre dentro del período de vigencia de 10 minutos<br>
-entonces la API responde con un estado 200 OK y se valida el código 
+entonces la API responde con un estado 200 OK y se confirma la validez del código.
 <br><br>
 <strong>Escenario #4: Código inválido o expirado:</strong>
         <br><br>
@@ -1007,7 +1007,7 @@ Entonces el usuario visualiza los accesos a las principales funciones de la apli
     <tr>
       <td>US-10</td>
       <td>Madre</td>
-      <td>Hight</td>
+      <td>High</td>
       <td>EP-04</td>
     </tr>
     <tr>
@@ -1059,7 +1059,7 @@ Entonces el paciente no es registrado y se muestra un mensaje de error.<br>
     <tr>
       <td>US-11</td>
       <td>Enfermera</td>
-      <td>Hight</td>
+      <td>High</td>
       <td>EP-04</td>
     </tr>
     <tr>
@@ -1117,7 +1117,7 @@ Entonces el valor no es aceptado y se informa que el valor ingresado no es váli
     <tr>
       <td>US-12</td>
       <td>Enfermera</td>
-      <td>Hight</td>
+      <td>High</td>
       <td>EP-04</td>
     </tr>
     <tr>
@@ -1178,7 +1178,7 @@ Entonces el historial médico queda actualizado con la nueva información para c
     <tr>
       <td>US-13</td>
       <td>Enfermero</td>
-      <td>Hight</td>
+      <td>High</td>
       <td>EP-04</td>
     </tr>
     <tr>
@@ -1215,7 +1215,59 @@ Entonces el cambio no se realiza y se indica que debe proporcionar una justifica
   </tbody>
 </table>
 
+---
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-04</td>
+      <td>Developer</td>
+      <td>High</td>
+      <td>EP-04</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registro de pacientes</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como developer, quiero gestionar el registro de pacientes mediante una API, para permitir que las madres incorporen nuevos pacientes a su seguimiento.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Registro exitoso del paciente</strong>
+        <br><br>
+Dado que se envía una solicitud al POST /patient/register con los datos válidos del paciente<br>
+Cuando la API valida la información proporcionada y obtiene el motherId desde el token de un usuario rol madre autenticada<br>
+Entonces la API responde con un estado 201 Created y confirma que el paciente fue registrado correctamente.<br><br>
+        <strong>Escenario #2: Fecha de nacimiento inválida</strong><br><br>
+Dado que se envía una solicitud al POST /patient/register con una fecha de nacimiento posterior a la fecha actual<br>
+Cuando la API valida los datos del paciente<br>
+Entonces la API responde con un estado 400 Bad Request e indica que la fecha de nacimiento no puede ser futura.<br><br>
+        <strong>Escenario #3: Peso o talla inválidos</strong><br><br>
+        Dado se envía un peso o talla menor o igual a cero a la solicitud POST /patient/register
+Cuando la API valida los datos del paciente<br>
+Entonces la API responde con un estado 400 Bad Request e indica que el peso o la talla deben ser mayores que cero.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## 3.3. Product Backlog
 
