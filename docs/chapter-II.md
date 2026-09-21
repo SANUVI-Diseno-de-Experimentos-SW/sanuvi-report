@@ -745,18 +745,26 @@ Lo siguiente a evaluar como parte del needfinding es a nuestros segmentos objeti
 
 Los siguientes Scenario Maps (As-Is) representan el recorrido actual de los dos perfiles de usuario identificados a partir de las entrevistas. Para cada persona se describen las principales fases de su interacción con el proceso de seguimiento de la anemia, considerando las actividades que realiza, lo que piensa y las emociones que experimenta. Esta representación permite identificar las dificultades presentes en el proceso actual y establecer una base para la identificación de oportunidades de mejora.
 
-**As-is Scenario Mapping — María López**
+**Segmento Madres, padres y cuidadores:** En el siguiente escenario As-Is se representa el recorrido actual de María López durante el seguimiento del tratamiento de la anemia. Se muestran las principales fases que atraviesa, desde la recepción del diagnóstico hasta la evaluación de la recuperación, considerando las actividades que realiza, los pensamientos que surgen durante el proceso y las emociones que experimenta. El mapa permite evidenciar dificultades como la organización manual de las dosis, las dudas sobre las indicaciones, el seguimiento de la alimentación y la dificultad para resolver consultas relacionadas con el tratamiento.
+
+<br>
 
 <div align="center">
 <img src="../assets/img/chapter-II/AS IS -  María López.jpg" alt="User Persona 2" width=950>
 </div>
 
-**As-is Scenario Mapping — Carlos Rojas**
+<br>
 
+**Segmento Personal de salud:** En el siguiente escenario As-Is se representa el recorrido actual de Carlos Rojas como profesional encargado del seguimiento de pacientes con anemia. El mapa comprende las fases desde la evaluación del paciente hasta la determinación de la recuperación, considerando las actividades realizadas, los pensamientos asociados a cada etapa y las emociones experimentadas. Esta representación permite identificar dificultades relacionadas con el registro y consulta de información clínica, el seguimiento de los controles y niveles de hemoglobina, la coordinación con las familias y la necesidad de disponer de información organizada para realizar un seguimiento adecuado.
+
+<br>
 
 <div align="center">
 <img src="../assets/img/chapter-II/AS IS - Carlos Rojas.jpg" alt="User Persona 2" width=950>
 </div>
+
+<br>
+
 
 ## 2.4. Ubiquitous Language
 
