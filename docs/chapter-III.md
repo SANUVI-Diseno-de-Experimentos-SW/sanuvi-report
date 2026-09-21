@@ -475,6 +475,229 @@ Entonces es redirigido a la tienda de aplicaciones de su sistema operativo para 
   </tbody>
 </table>
 
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-04</td>
+      <td>Usuario</td>
+      <td>High</td>
+      <td>EP-02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registro de usuario</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como usuario Quiero registrarme con mi rol respectivo Para acceder a las funcionalidades de la aplicación.
+              </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Registro exitoso</strong>
+      <br><br>
+Dado que el usuario no tenga una cuenta<br>
+Cuando complete el registro (Nombre completo, DNI ,email, contraseña y rol)<br>
+Entonces se crea su cuenta e ingresa con su respectivo rol elegido.
+              <br><br>
+    <strong>Escenario #2: Registro fallido</strong>
+      <br><br>
+Dado que el usuario no tenga una cuenta<br>
+Cuando ingrese un email con un formato no válido, una contraseña débil y un dni sin 8 digitos<br>
+Entonces se muestra un mensaje indicando que los datos ingresados no son válidos y no se realiza el registro del visitante.
+      <br><br>
+<strong>Escenario #3: Registro con correo existente:</strong>
+        <br><br>
+        Dado que el usuario no tenga una cuenta<br> 
+        cuando ingrese un correo ya asociado a una cuenta<br> 
+        entonces se muestra un mensaje indicando que no se pudo completar el registro.
+        <br><br>
+        <strong>Escenario #3: Registro con dni existente</strong>
+        <br><br>
+        Dado que el usuario no tenga una cuenta<br> 
+        cuando ingrese un dni ya asociado a una cuenta<br> 
+        entonces se muestra un mensaje indicando que no se pudo completar el registro.
+        <br><br>
+        <strong>Escenario #3: Registro con numero telefonico existente</strong>
+        <br><br>
+        Dado que el usuario no tenga una cuenta<br> 
+        cuando ingrese un numero telefonico ya asociado a una cuenta<br> 
+        entonces se muestra un mensaje indicando que no se pudo completar el registro.
+        <br><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-05</td>
+      <td>Usuario</td>
+      <td>High</td>
+      <td>EP-02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Inicio de sesión</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+        Como usuario no autenticado quiero iniciar sesión para acceder de forma seguro a mi cuenta.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+      <strong>Escenario #1: Inicio de sesión exitoso:</strong>
+      <br><br>
+Dado que el usuario tenga una cuenta registrada <br> cuando ingrese sus credenciales (dni y contraseña) <br> entonces accede a su cuenta.
+<br><br>
+<strong>Escenario #2: Credenciales incorrectas:</strong>
+<br><br>
+Dado que el usuario no haya iniciado sesión<br>
+Cuando ingrese un correo o contraseña incorrectos<br>
+Entonces se muestra un mensaje indicando que las credenciales no son válidas y no se le permite el acceso a su cuenta.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>T-01</td>
+      <td>Developer</td>
+      <td>High</td>
+      <td>EP-02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Autenticación de usuarios</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como developer quiero autenticar a los usuarios de forma segura a través de una API para que se permita el acceso al sistema.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Inicio de sesión exitoso:</strong>
+        <br><br>
+        Dado que el usuario envíe una solicitud al endpoint api/v1//sign-in con el dni y contraseña <br> cuando los datos son válidos <br> entonces el sistema responde con un estado 200 OK y genera un token de acceso.
+        <br><br>
+        <strong>Escenario #2: Credenciales incorrectas:</strong>
+        Dado que el usuario inicie sesión con credenciales inválidas <br> cuando se verifica el dni y contraseña encriptada en la base de datos <br> entonces el sistema responde con un estado 401 UNAUTHORIZED.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>T-02</td>
+      <td>Developer</td>
+      <td>High</td>
+      <td>EP-02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registro de usuarios</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como developer, quiero gestionar el registro de usuarios de forma segura, para permitir la creación de cuentas en el sistema.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Registro exitoso de una madre</strong>
+        <br><br>
+        Dado que se envíe una solicitud al endpoint /register/mother con sus datos personales y credenciales<br>
+cuando los datos proporcionados sean válidos y no exista una cuenta asociada<br>
+entonces el sistema registra la cuenta y responde con un estado 201 CREATED.
+        <br><br>
+    <strong>Escenario #2: Registro exitoso de enfermera o administrador</strong>
+        <br><br>
+Dado que se envíe una solicitud al endpoint /register/staff con sus datos personales, credenciales y rol
+cuando los datos proporcionados sean válidos y el rol corresponda a Nurse o Admin <br>
+entonces el sistema registra la cuenta del personal y responde con un estado 201 CREATED.
+        <br><br>
+        <strong>Escenario #3: Datos de registro incompletos</strong>
+        <br><br>
+Dado que la solicitud enviada al endpoint no contiene los campos obligatorios <br> cuando se intente procesar la solicitud <br> entonces responde con un estado 400 BAD REQUEST y muestra un mensaje indicando los campos requeridos.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## 3.3. Product Backlog
 
