@@ -1163,6 +1163,7 @@ Entonces el historial médico queda actualizado con la nueva información para c
   </tbody>
 </table>
 
+
 ---
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
@@ -1177,48 +1178,6 @@ Entonces el historial médico queda actualizado con la nueva información para c
   <tbody>
     <tr>
       <td>US-13</td>
-      <td>Enfermera</td>
-      <td>High</td>
-      <td>EP-05</td>
-    </tr>
-    <tr>
-      <td><b>Title</b></td>
-      <td colspan="3">Inicio del tratamiento del paciente</td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Description</b>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4">
-       
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Acceptance Criteria</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-
----
-
-<table border="1" cellpadding="10" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Story ID</th>
-      <th>User</th>
-      <th>Priority</th>
-      <th>Epic</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>US-14</td>
       <td>Enfermero</td>
       <td>High</td>
       <td>EP-05</td>
@@ -1583,7 +1542,202 @@ Entonces las dosis asociadas al tratamiento son eliminadas físicamente de la ba
   </tbody>
 </table>
 
+---
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-10</td>
+      <td>Developer</td>
+      <td>High</td>
+      <td>EP-04</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Asignación de paciente a enfermera</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como developer, quiero gestionar la asignación de pacientes a una enfermera mediante una API, para establecer la relación de seguimiento entre la enfermera y el paciente.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Asignación exitosa</strong>
+<br><br>
+Dado que se recibe una solicitud POST /assign-nurse con un paciente existente,<br>
+cuando la API valida que el paciente no tiene una enfermera asignada y que la enfermera pertenece a un establecimiento,<br>
+entonces la API responde con un estado 200 OK y confirma que el paciente fue asignado correctamente.<br><br>
+
+<strong>Escenario #2: Paciente no encontrado</strong>
+<br><br>
+Dado que se recibe una solicitud POST /assign-nurse con un identificador de paciente inexistente,<br>
+cuando la API verifica la existencia del paciente,<br>
+entonces la API responde con un estado 400 Bad Request e indica que el paciente no fue encontrado.<br><br>
+
+<strong>Escenario #3: Paciente con enfermera asignada</strong>
+<br><br>
+Dado que se recibe una solicitud POST /assign-nurse para un paciente que ya tiene una enfermera asignada,<br>
+cuando la API verifica la asignación existente,<br>
+entonces la API responde con un estado 400 Bad Request e indica que el paciente ya tiene una enfermera asignada.
+<br><br>
+<strong>Escenario #4: Enfermera sin establecimiento asignado</strong>
+<br><br>
+Dado que se recibe una solicitud POST /assign-nurse y la enfermera autenticada no pertenece a ningún establecimiento,<br>
+cuando la API valida la información de la enfermera,<br>
+entonces la API responde con un estado 400 Bad Request e indica que la enfermera no está asignada a ningún establecimiento.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-11</td>
+      <td>Developer</td>
+      <td>High</td>
+      <td>EP-04</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Gestion del historial clínica</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como developer, quiero gestionar la creación de la historia clínica de un paciente mediante una API, para almacenar su información clínica y facilitar su seguimiento.   
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+          <strong>Escenario #1: Historia clínica creada exitosamente</strong><br><br>
+Dado que se recibe una solicitud POST /medical-record con un paciente asignado a la enfermera y la información clínica requerida,<br>
+cuando la API valida los datos proporcionados,<br>
+entonces la API responde con un estado 201 Created y confirma que la historia clínica fue creada correctamente.<br><br>
+        <strong>Escenario #2: Información de historia clínica encontrada</strong>
+<br><br>
+Dado que se recibe una solicitud GET /{patientId}/medical-record con un paciente existente y asignado a la enfermera,<br>
+cuando la API consulta la información clínica del paciente,<br>
+entonces la API responde con un estado 200 OK y devuelve los datos del paciente, su historia clínica y sus controles.<br><br>
+       <strong>Escenario #3: Historia clínica no encontrada</strong>
+        <br><br>
+        Dado que se recibe una solicitud GET /{patientId}/medical-record para un paciente que no cuenta con una historia clínica,<br>
+cuando la API verifica la información clínica disponible,<br>
+entonces la API responde con un estado 400 Bad Request e indica que la historia clínica no existe.<br><br>
+        <strong>Escenario #4: Modificación de información clínica exitosa</strong><br><br>
+Dado que se recibe una solicitud PUT /medical-record/update con el identificador del paciente y uno o más campos de información clínica,<br>
+cuando la API verifica que el paciente está asignado a la enfermera,<br>
+entonces la API responde con un estado 200 OK y confirma que la información clínica fue modificada correctamente.<br><br>
+        <strong>Escenario #5: Paciente no asignado para modificar la historia clínica</strong><br><br>
+Dado que se recibe una solicitud PUT /medical-record/update para un paciente que no está asignado a la enfermera,<br>
+cuando la API valida la asignación del paciente,<br>
+entonces la API responde con un estado 400 Bad Request e indica que el paciente no está asignado a la enfermera.
+        <br><br>
+        <strong>Escenario #6: Consulta del historial de controles</strong><br><br>
+        Dado que se recibe una solicitud GET /medical-record/{medicalRecordId}/controls para una historia clínica existente,<br>
+cuando la API consulta los controles registrados,<br>
+entonces la API responde con un estado 200 OK y devuelve los controles junto con el promedio de hemoglobina, la evolución y la tendencia correspondiente.<br><br>
+        <strong>Escenario #7: Historia clínica sin controles</strong><br><br>
+Dado que se recibe una solicitud GET /medical-record/{medicalRecordId}/controls para una historia clínica que no tiene controles registrados,<br>
+cuando la API consulta el historial de controles,<br>
+entonces la API responde con un estado 200 OK e indica que no existen controles registrados.<br><br>
+        <strong>Escenario #8: Descarga de historia clínica</strong><br><br>
+Dado que se recibe una solicitud GET /medical-record/{medicalRecordId}/pdf para una historia clínica existente,<br>
+cuando la API genera la información clínica correspondiente,<br>
+entonces la API responde con un estado 200 OK y devuelve el archivo PDF de la historia clínica.<br><br>
+
+<strong>Escenario #9: Descarga del reporte de hemoglobina</strong>
+<br><br>
+Dado que se recibe una solicitud GET /medical-record/{medicalRecordId}/hemoglobin-report para una historia clínica existente,<br>
+cuando la API genera el reporte de evolución de hemoglobina,<br>
+entonces la API responde con un estado 200 OK y devuelve el archivo PDF correspondiente.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-12</td>
+      <td>Developer</td>
+      <td>High</td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Dar de alta a un paciente</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como developer, quiero gestionar el alta de un paciente mediante una API, para finalizar su seguimiento cuando corresponda.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Alta exitosa del paciente</strong>
+<br><br>
+Dado que se recibe una solicitud PUT /discharge con un paciente existente,<br>
+cuando la API verifica que la enfermera autenticada está asignada al paciente,<br>
+entonces la API responde con un estado 200 OK y cambia el estado del paciente de ACTIVE a DISCHARGED.
+<br><br>    
+<strong>Escenario #2: Paciente no encontrado</strong><br><br>
+Dado que se recibe una solicitud PUT /discharge con un identificador de paciente inexistente,<br>
+cuando la API verifica la existencia del paciente,<br>
+entonces la API responde con un estado 400 Bad Request e indica que el paciente no fue encontrado.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## 3.3. Product Backlog
 
