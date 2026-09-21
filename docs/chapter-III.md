@@ -1254,16 +1254,118 @@ Entonces el cambio no se realiza y se indica que debe proporcionar una justifica
         <strong>Escenario #1: Registro exitoso del paciente</strong>
         <br><br>
 Dado que se envía una solicitud al POST /patient/register con los datos válidos del paciente<br>
-Cuando la API valida la información proporcionada y obtiene el motherId desde el token de un usuario rol madre autenticada<br>
+Cuando la API valida la información proporcionada<br>
 Entonces la API responde con un estado 201 Created y confirma que el paciente fue registrado correctamente.<br><br>
         <strong>Escenario #2: Fecha de nacimiento inválida</strong><br><br>
 Dado que se envía una solicitud al POST /patient/register con una fecha de nacimiento posterior a la fecha actual<br>
 Cuando la API valida los datos del paciente<br>
 Entonces la API responde con un estado 400 Bad Request e indica que la fecha de nacimiento no puede ser futura.<br><br>
         <strong>Escenario #3: Peso o talla inválidos</strong><br><br>
-        Dado se envía un peso o talla menor o igual a cero a la solicitud POST /patient/register
-Cuando la API valida los datos del paciente<br>
+        Dado que se envía una solicitud de POST /patient/register con atributos como el peso o talla.<br>
+Cuando la API valida las solicitud y detecta errores de validacion<br>
 Entonces la API responde con un estado 400 Bad Request e indica que el peso o la talla deben ser mayores que cero.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-05</td>
+      <td>Developer</td>
+      <td>High</td>
+      <td>EP-04</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Obtener pacientes de la madre</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como developer, quiero consultar los pacientes asociados a una madre mediante una API, para permitir la obtención de la información básica de los pacientes registrados.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Pacientes Existentes</strong><br><br>
+Dado que se recibe una consulta  GET /my-patientsd<br>
+Cuando la API encuentra uno o mas pacientes<br>
+Entonces la API responde con un estado 200 OK y retorna los pacientes asociados a la madre.<br><br>
+        <strong>Escenario #2: Madre no identificada</strong><br><br>
+        Dado que se recibe una consulta GET /my-patients<br>
+Cuando la API no encuentra un motherId válido en el token<br>
+Entonces la API responde con un estado 400 Bad Request e indica que no se encontró el identificador de la madre.<br><br>
+    <strong>Escenario #3: sin pacientes registrados</strong><br><br>
+Dado que se recibe una consulta GET /my-patients<br>
+Cuando la API no tiene pacientes registrados<br>
+Entonces la API responde con un estado 200 OK y devuelve una lista de pacientes vacía.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-06</td>
+      <td>Developer</td>
+      <td>High</td>
+      <td>EP-04</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Consulta de evolución de hemoglobina</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como developer, quiero consultar la evolución de los niveles de hemoglobina de un paciente mediante una API, para proporcionar información sobre su progreso durante el seguimiento.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1:Evolución encontrada</strong><br><br>
+        Dado que se recibe una consulta al GET /{patientId}/hemoglobin-evolution<br>
+        Cuando la API encuentra al paciente y sus controles de hemoglobina<br>
+        Entonces la API responde 200 OK y retorna el nivel actual de hemoglobina junto con los controles ordenados por fecha.<br><br>
+        <strong>Escenario: Sin controles registrados</strong><br><br>
+        Dado que se recibe una solicitud GET a /{patientId}/hemoglobin-evolution<br>
+Cuando el paciente no tiene controles de hemoglobina registrados<br>
+Entonces la API responde 200 OK y retorna un arreglo vacío.
       </td>
     </tr>
   </tbody>
