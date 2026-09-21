@@ -1,4 +1,4 @@
-<img width="742" height="427" alt="image" src="https://github.com/user-attachments/assets/280365ea-2419-4dc3-9845-e81def9015ba" /># Capítulo III: Requirements Specification
+# Capítulo III: Requirements Specification
 
 ## 3.1. To-Be Scenario Mapping
 
@@ -2032,7 +2032,176 @@ entonces la API responde con un error indicando que el paciente no fue encontrad
   </tbody>
 </table>
 
+---
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-15</td>
+      <td>Developer</td>
+      <td>Medium</td>
+      <td>EP-06</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registro de consumo de alimento</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como developer, quiero gestionar el registro del consumo de alimentos de un paciente mediante una API, para calcular el hierro absorbido y mantener actualizada su información nutricional.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Registro de alimento exitoso</strong><br><br>
+Dado que se recibe una solicitud POST /food-entry con un paciente existente, un alimento válido y una cantidad válida,<br>
+cuando la API valida la información proporcionada,<br>
+entonces la API responde correctamente y registra el alimento junto con el hierro absorbido y el total acumulado del día.<br><br>
+<strong>Escenario #2: Registro de alimento inhibidor</strong><br><br>
+Dado que se recibe una solicitud POST /food-entry con un alimento identificado como inhibidor de la absorción de hierro,<br>
+cuando la API procesa el consumo registrado,<br>
+entonces la API registra el alimento, calcula el hierro absorbido y devuelve una advertencia indicando que el alimento puede reducir la absorción del hierro.<br><br>
+<strong>Escenario #5: Paciente no asociado</strong><br><br>
+Dado que se recibe una solicitud POST /food-entry para un paciente existente que no está asociado a la madre autenticada,<br>
+cuando la API verifica la relación entre la madre y el paciente,<br>
+entonces la API rechaza la operación indicando que el paciente no pertenece a la madre.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-16</td>
+      <td>Developer</td>
+      <td>Medium</td>
+      <td>EP-06</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Consulta del diario nutricional</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como developer, quiero consultar el consumo de alimentos de un paciente correspondiente al día actual mediante una API, para obtener su resumen nutricional y el hierro absorbido.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Diario con alimentos registrados</strong><br><br>
+Dado que se recibe una solicitud GET /today/{patientId} para un paciente existente y asociado a la madre,<br>
+cuando la API consulta los alimentos registrados durante el día,<br>
+entonces la API responde con los alimentos consumidos, las cantidades y el total de hierro absorbido.<br><br>
+<strong>Escenario #2: Diario sin alimentos registrados</strong><br><br>
+Dado que se recibe una solicitud GET /today/{patientId} para un paciente que no tiene alimentos registrados durante el día,<br>
+cuando la API consulta su información nutricional,<br>
+entonces la API responde correctamente indicando que no existen alimentos registrados y devuelve una lista vacía.<br><br>
+<strong>Escenario #3: Historial nutricional encontrado</strong><br><br>
+        Dado que se recibe una solicitud GET /history/{patientId} para un paciente existente,<br>
+cuando la API consulta su historial nutricional,<br>
+entonces la API responde con la información de los días correspondientes al período consultado, incluyendo el hierro absorbido y los alimentos registrados.<br><br>
+<strong>Escenario #4: Consulta del período predeterminado</strong><br><br>
+Dado que se recibe una solicitud GET /history/{patientId} sin especificar fechas de inicio ni fin,<br>
+cuando la API procesa la consulta,<br>
+entonces devuelve el historial nutricional correspondiente a los últimos 30 días.<br><br>
+<strong>Escenario #5: Consulta con período personalizado</strong><br><br>
+Dado que se recibe una solicitud GET /history/{patientId} con una fecha de inicio y una fecha de fin,<br>
+cuando la API procesa el período solicitado,<br>
+entonces devuelve el historial nutricional correspondiente al rango de fechas indicado.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+     <td>TS-17</td>
+      <td>Developer</td>
+      <td>Medium</td>
+      <td>EP-06</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Consulta de alimentos</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+Como developer, quiero gestionar la consulta de alimentos mediante una API, para obtener información nutricional de los alimentos según una categoría o un criterio de búsqueda.       
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Consulta por categoría</strong><br><br>
+Dado que se recibe una solicitud GET /foods/category/{category} con una categoría válida,<br>
+cuando la API consulta los alimentos correspondientes,<br>
+entonces responde con la lista de alimentos de la categoría junto con su información nutricional y si son inhibidores de la absorción de hierro.<br><br>
+<strong>Escenario #2: Búsqueda de alimentos</strong><br><br>
+Dado que se recibe una solicitud GET /foods/search con un texto de búsqueda de al menos dos caracteres,<br>
+cuando la API busca los alimentos que coinciden con el texto,<br>
+entonces responde con los alimentos encontrados y su información nutricional.<br><br>
+<strong>Escenario #3: Búsqueda sin resultados</strong><br><br>
+Dado que se recibe una solicitud GET /foods/search con un texto que no coincide con ningún alimento,<br>
+cuando la API realiza la búsqueda,<br>
+entonces responde correctamente con una lista vacía.<br><br>
+<strong>Escenario #4: Texto de búsqueda insuficiente</strong><br><br>
+Dado que se recibe una solicitud GET /foods/search con un texto de menos de dos caracteres,<br>
+cuando la API procesa la búsqueda,<br>
+entonces responde sin resultados.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## 3.3. Product Backlog
 
