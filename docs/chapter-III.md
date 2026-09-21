@@ -466,6 +466,7 @@ Cuando accede a convertirse en usuario de la plataforma<br>
 Entonces es redirigido a la página web.
         <br><br>
   <strong>Escenario #2: El visitante toma la decisión de descargar la aplicación móvil</strong>
+                <br><br>
 Dado que el visitante reconoce que la plataforma es confiable<br>
 Cuando accede a convertirse en usuario de la plataforma<br>
 Entonces es redirigido a la tienda de aplicaciones de su sistema operativo para descargar la aplicación.
