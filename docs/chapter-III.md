@@ -1739,6 +1739,153 @@ entonces la API responde con un estado 400 Bad Request e indica que el paciente 
   </tbody>
 </table>
 
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-14</td>
+      <td>Madre</td>
+      <td>High</td>
+      <td>EP-06</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Diario nutricional</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como madre, quiero llevar un registro de los alimentos que consume mi hijo durante el día, para conocer su alimentación y el aporte de hierro asociado a los alimentos registrados.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario 1: Registro de alimentos exitoso</strong><br><br>
+Dado que la madre desea registrar los alimentos consumidos por su hijo durante el día,<br>
+cuando selecciona los alimentos correspondientes,<br>
+entonces los alimentos quedan registrados y se calcula el aporte de hierro absorbido según los alimentos ingresados.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-15</td>
+      <td>Madre</td>
+      <td>High</td>
+      <td>EP-06</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Resumen nutricional diario</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como madre, quiero consultar el resumen nutricional diario de mi hijo, para conocer los alimentos registrados, el hierro absorbido y el cumplimiento de la meta diaria.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario 1: Resumen nutricional disponible</strong>
+        <br><br>
+Dado que la madre ha registrado alimentos durante el día,
+cuando consulta el resumen nutricional,
+entonces puede conocer los alimentos registrados, el hierro absorbido y si alcanzó la meta diaria de hierro.
+<br><br>
+<strong>Escenario 2: Sin alimentos registrados</strong>
+<br><br>
+Dado que la madre no ha registrado alimentos durante el día,<br>
+cuando consulta el resumen nutricional,<br>
+entonces se indica que no existen alimentos registrados para ese día.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-16</td>
+      <td>Madre</td>
+      <td>High</td>
+      <td>EP-05 - EP-07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Racha de tratamiento</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como madre, quiero conocer la cantidad de días consecutivos en los que mi hijo ha cumplido con su tratamiento, para mantener la constancia durante el proceso.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario 1: Racha de tratamiento</strong><br><br>
+Dado que la madre ha confirmado el cumplimiento de la dosis durante días consecutivos,<br>
+cuando consulta la racha de tratamiento,<br>
+entonces puede conocer la cantidad de días consecutivos en los que se ha cumplido el tratamiento.<br><br>
+<strong>Escenario 2: Pérdida de la racha</strong><br><br>
+Dado que la madre no ha confirmado el cumplimiento de una dosis correspondiente a un día,<br>
+cuando consulta la racha de tratamiento,<br>
+entonces la racha se reinicia y comienza nuevamente el conteo de días consecutivos.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
 ## 3.3. Product Backlog
 
 > Ordenado por prioridad de valor de negocio. Estimación en Story Points (serie de Fibonacci).
