@@ -699,6 +699,197 @@ Dado que la solicitud enviada al endpoint no contiene los campos obligatorios <b
   </tbody>
 </table>
 
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-06</td>
+      <td>User</td>
+      <td>Hight</td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Solicitar recuperación de acceso</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como usuario quiero solicitar la recuperación de mi cuenta para volver a acceder a mi cuenta.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Solicitud de recuperación de contraseña mediante el correo:</strong>
+         <br><br>
+        Dado que el usuario quiera iniciar sesión y no recuerde su contraseña<br>
+Cuando solicita la recuperación de su contraseña<br>
+Entonces ingresa su correo para procesar con la solicitud.
+        <br><br>
+        <strong>Escenario #2: Envío de código de verificación</strong>
+<br><br>
+Dado que el usuario haya solicitado la recuperación de su contraseña<br>
+Cuando haya ingresado su correo<br>
+Entonces le llegará un código de 6 dígitos al correo ingresado.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-07</td>
+      <td>User</td>
+      <td>Hight</td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3"></td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Cómo usuario quiero restablecer mi contraseña para volver a acceder a mi cuenta
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       <strong> Escenario #1: Ingreso del código de seguridad exitoso</strong>
+<br><br>
+Dado que el usuario haya solicitado la recuperación de la contraseña<br>
+Cuando ingresé el código de seguridad que le llegó a su correo<br>
+Entonces el sistema valida el código y logra cambiar su contraseña.
+        <br><br>
+  <strong> Escenario #2: Ingreso inválido del código de seguridad</strong>
+<br><br>
+Dado que el usuario haya solicitado la recuperación de la contraseña<br>
+Cuando ingresé un código de seguridad que no le llegó al correo<br>
+Entonces no continúa con el procedimiento y no cambia su contraseña.
+<br><br>
+<strong>Escenario #3: Ingreso de una contraseña débil</strong>
+        <br><br>
+Dado que el usuario haya ingresado el código de seguridad<br>
+Cuando ingresé una contraseña que con cumple con los criterios de seguridad<br>
+Entonces no se logra hacer el restablecimiento de su contraseña.<br><br>
+        
+<strong>Escenario #4: Ingreso de código expirado</strong>
+<br><br>
+Dado que el usuario haya solicitado la recuperación de su contraseña<br>
+Cuando haya ingresado un código de seguridad luego de 15 minutos<br>
+Entonces no continúa con el procedimiento y no logra cambiar su contraseña.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-03</td>
+      <td>Developer</td>
+      <td>Hight</td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Recuperar contraseña mediante correo</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como developer, quiero gestionar la recuperación de contraseña de forma segura, para permitir a los usuarios restablecer su acceso al sistema.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Solicitud de código de recuperación exitosa:</strong>
+          <br><br>
+Dado que el usuario envíe una solicitud al endpoint /password/request-code con un correo registrado<br>
+cuando el correo corresponda a un usuario existente<br>
+entonces el sistema envía un código de recuperación de 4 dígitos al correo y responde con un estado 200 OK.
+          <br><br>
+<strong>Escenario #2: Correo no registrado:</strong>
+          <br><br>
+Dado que el usuario envíe una solicitud al endpoint /password/request-code con un correo no registrado <br>
+cuando el sistema verifique que no existe una cuenta asociada al correo <br>
+entonces el sistema responde con un estado 400 que indica que el usuario no fue encontrado.
+<br><br>
+<strong>Escenario #3: Verificación de código exitosa:</strong>
+        <br><br>
+Dado que el usuario envíe una solicitud al endpoint /password/verify-code con su correo y código de recuperación<br>
+cuando el código sea válido y se encuentre dentro del período de vigencia de 10 minutos<br>
+entonces el sistema valida el código y responde con un estado 200 OK.
+<br><br>
+<strong>Escenario #4: Código inválido o expirado:</strong>
+        <br><br>
+Dado que el usuario envíe una solicitud al endpoint /password/verify-code con un código de recuperación<br>
+cuando el código sea incorrecto o haya superado su período de vigencia<br>
+entonces el sistema responde con un estado 400 BAD REQUEST e indica que el código es inválido o ha expirado.
+<br><br>
+        <strong>Escenario #5: Restablecimiento de contraseña exitoso:</strong>
+Dado que el usuario envíe una solicitud al endpoint  /password/reset con su correo, código de recuperación y nueva contraseña<br>
+cuando el código sea válido y no haya expirado<br>
+entonces el sistema actualiza la contraseña del usuario y responde con un estado 200 OK.
+        <br><br>
+<strong>Escenario #6: Restablecimiento con código inválido o expirado:</strong>
+<br><br>
+        Dado que el usuario envíe una solicitud al endpoint /password/reset con un código de recuperación<br>
+cuando el código sea inválido o haya expirado<br>
+entonces el sistema responde con un estado 400 BAD REQUEST e indica que el código es inválido o ha expirado.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 ## 3.3. Product Backlog
 
 > Ordenado por prioridad de valor de negocio. Estimación en Story Points (serie de Fibonacci).
