@@ -326,7 +326,7 @@ Como usuario de la plataforma, quiero asegurar mi cuenta, para evitar el acceso 
   <tbody>
     <tr>
       <td>US-01</td>
-      <td>User</td>
+      <td>Visitante</td>
       <td>High</td>
       <td>EP-01</td>
     </tr>
@@ -360,13 +360,120 @@ Entonces identifica claramente el propósito general de la plataforma.
         <br><br>
         Dado que el visitante desea conocer la plataforma<br>
 Cuando accede a la sección de Para quien<br>
-Entonces encuentra las funcionalidades que obtendrá por usar la plataforma según su el rol
+Entonces encuentra los beneficios que obtendrá por usar la plataforma según su el rol
+        <br><br>
+        <strong>Escenario #3: El visitante conoce como funciona la plataforma</strong>
+        <br><br>
+        Dado que el visitante desea conocer como funciona la plataforma<br>
+Cuando accede a la sección de  como funciona<br>
+Entonces encuentra una linea de tiempo de inicia a fin indicando paso a paso como funciona la plataforma
+        <br><br>
       </td>
     </tr>
   </tbody>
 </table>
 
-<!-- COMPLETAR -->
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-02</td>
+      <td>Visitante</td>
+      <td>High</td>
+      <td>EP-01</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Aumento de confianza sobre la plataforma</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como visitante,
+Quiero conocer sobre los testimonios de otras personas
+Para aumentar la confianza sobre el uso de la plataforma
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #2: Visitante lee los testimonios de clientes.</strong>
+        <br><br>
+ Dado que el visitante desea saber si la plataforma es confiable<br>
+Cuando accede a la sección de testimonios<br>
+Entonces puede conocer las experiencias de otros usuarios con la plataforma y sus funcionalidades.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-03</td>
+      <td>Visitante</td>
+      <td>High</td>
+      <td>EP-01</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Acceso a las aplicaciones</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como visitante,
+Quiero acceder o descargar la aplicación
+Para empezar a usarla en mis operaciones de negocio.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: El visitante toma la decisión de acceder a la plataforma web</strong>
+        <br><br>
+Dado que el visitante reconoce que la plataforma es confiable<br>
+Cuando accede a convertirse en usuario de la plataforma<br>
+Entonces es redirigido a la página web.
+        <br><br>
+  <strong>Escenario #2: El visitante toma la decisión de descargar la aplicación móvil</strong>
+Dado que el visitante reconoce que la plataforma es confiable<br>
+Cuando accede a convertirse en usuario de la plataforma<br>
+Entonces es redirigido a la tienda de aplicaciones de su sistema operativo para descargar la aplicación.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 
 ## 3.3. Product Backlog
 
