@@ -2313,6 +2313,59 @@ entonces la API responde correctamente indicando que no existen registros de dos
   </tbody>
 </table>
 
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-19</td>
+      <td>Developer</td>
+      <td>High</td>
+      <td>EP-09</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Consulta del nivel de riesgo de pacientes</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como developer, quiero consultar y clasificar la información de riesgo de los pacientes mediante una API, para facilitar el seguimiento de los casos según su nivel de riesgo.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Consulta del resumen de riesgo</strong><br><br>
+Dado que se recibe una solicitud GET /risk-overview,<br>
+cuando la API procesa la información de los pacientes,<br>
+entonces responde con estado 200 OK y devuelve la cantidad de pacientes clasificados en los niveles HIGH, MEDIUM y LOW, junto con el total.<br><br>
+<strong>Escenario #2: Consulta de pacientes por nivel de riesgo</strong><br><br>
+Dado que se recibe una solicitud GET /risk/:riskLevel/patients con un nivel de riesgo válido,<br>
+cuando la API encuentra pacientes correspondientes a dicho nivel,<br>
+entonces responde con estado 200 OK y devuelve la cantidad y los datos de los pacientes asociados al nivel solicitado.<br><br>
+<strong>Escenario #3: Consulta sin pacientes en el nivel de riesgo</strong><br><br>
+Dado que se recibe una solicitud GET /risk/:riskLevel/patients con un nivel de riesgo válido,<br>
+cuando no existen pacientes clasificados en dicho nivel,<br>
+entonces la API responde con estado 200 OK y devuelve una lista vacía de pacientes.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 ## 3.3. Product Backlog
 
 > Ordenado por prioridad de valor de negocio. Estimación en Story Points (serie de Fibonacci).
