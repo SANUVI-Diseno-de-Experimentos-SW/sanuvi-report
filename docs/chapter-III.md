@@ -1130,7 +1130,7 @@ Entonces el valor no es aceptado y se informa que el valor ingresado no es váli
     </tr>
     <tr>
       <td colspan="4">
-       Como enfermera, quiero consultar y gestionar el historial médico inicial de un paciente asignado a mi cartera, para contar con información clínica que facilite el seguimiento de su tratamiento contra la anemia.
+       Como enfermera, quiero consultar y gestionar el historial médico inicial de un paciente asignado a mi cartera, para contar con información clínica que facilite el seguimiento medico del paciente.
       </td>
     </tr>
     <tr>
@@ -1177,9 +1177,51 @@ Entonces el historial médico queda actualizado con la nueva información para c
   <tbody>
     <tr>
       <td>US-13</td>
+      <td>Enfermera</td>
+      <td>High</td>
+      <td>EP-05</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Inicio del tratamiento del paciente</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-14</td>
       <td>Enfermero</td>
       <td>High</td>
-      <td>EP-04</td>
+      <td>EP-05</td>
     </tr>
     <tr>
       <td><b>Title</b></td>
@@ -1220,6 +1262,8 @@ Entonces el cambio no se realiza y se indica que debe proporcionar una justifica
     </tr>
   </tbody>
 </table>
+
+
 
 ---
 
@@ -1376,6 +1420,170 @@ Entonces la API responde 200 OK y retorna un arreglo vacío.
     </tr>
   </tbody>
 </table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-07</td>
+      <td>Developer</td>
+      <td>High</td>
+      <td>EP-05</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Inicio del tratamiento</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como developer, quiero gestionar el inicio del tratamiento de un paciente mediante una API, para establecer sus condiciones de tratamiento y generar las dosis correspondientes.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Inicio de tratamiento exitoso</strong><br><br>
+Dado que se recibe una solicitud POST /treatments con el identificador del paciente, suplemento, cantidad, horario y duración del tratamiento,
+cuando la API valida que el paciente existe y no tiene un tratamiento activo,
+entonces la API responde con un estado 201 Created, crea el tratamiento con estado ACTIVE y genera las dosis correspondientes.
+        <br><br>
+        <strong>Escenario #2: Paciente no encontrado</strong><br><<br>
+Dado que se recibe una solicitud POST /treatments con un identificador de paciente inexistente,<br>
+cuando la API verifica la existencia del paciente,<br>
+entonces la API responde con un estado 400 Bad Request e indica que el paciente no fue encontrado.<br><br>
+          <strong>Escenario #3: Paciente con tratamiento activo</strong><br><br>
+Dado que se recibe una solicitud POST /treatments para un paciente que ya tiene un tratamiento activo,<br>
+cuando la API verifica los tratamientos existentes del paciente,<br>
+entonces la API responde con un estado 400 Bad Request e indica que el paciente ya tiene un tratamiento activo.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-08</td>
+      <td>Developer</td>
+      <td>High</td>
+      <td>EP-05</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Consulta del detalle del tratamiento</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como developer, quiero consultar el detalle del tratamiento de un paciente mediante una API, para obtener información sobre su evolución y cumplimiento del tratamiento.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Detalle del tratamiento encontrado</strong><br><br>
+Dado que se recibe una solicitud GET /patients/{patientId}/treatment-detail con un paciente existente y asignado a la enfermera,<br>
+cuando la API consulta la información del tratamiento,<br>
+entonces la API responde con un estado 200 OK y devuelve el detalle del tratamiento, incluyendo el nivel de riesgo, puntuación, adherencia, dosis administradas y omitidas, y las condiciones del tratamiento.
+<br><br>
+<strong>Escenario #2: Paciente no encontrado</strong>
+<br><br>
+Dado que se recibe una solicitud GET /patients/{patientId}/treatment-detail con un identificador de paciente inexistente,<br>
+cuando la API verifica la existencia del paciente,<br>
+entonces la API responde con un estado 400 Bad Request e indica que el paciente no fue encontrado.<br><br>
+<strong>Escenario #3: Paciente no asignado</strong><br><br>
+Dado que se recibe una solicitud GET /patients/{patientId}/treatment-detail para un paciente que no está asignado a la enfermera autenticada,<br>
+cuando la API valida la asignación del paciente,<br>
+entonces la API responde con un estado 400 Bad Request e indica que el paciente no está asignado a la enfermera.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-09</td>
+      <td>Developer</td>
+      <td>High</td>
+      <td>EP-05</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Gestión del estado del tratamiento</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como developer, quiero gestionar la finalización o abandono de un tratamiento mediante una API, para mantener actualizado su estado y registrar la observación correspondiente.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario: Tratamiento completado</strong><br><br>
+Dado que se recibe una solicitud PUT /treatments/complete con un treatmentId válido<br>
+Cuando la API procesa la solicitud<br>
+Entonces la API responde 200 OK y retorna el tratamiento con estado COMPLETED y la observación de finalización.<br><br>
+<strong>Escenario: Tratamiento abandonado</strong><br><br>
+Dado que se recibe una solicitud PUT /treatments/abandon con un treatmentId válido<br>
+Cuando la API procesa la solicitud<br>
+Entonces la API responde 200 OK y retorna el tratamiento con estado ABANDONED y la observación de abandono.<br><br>
+<strong>Escenario: Abandono del tratamiento</strong><br><br>
+Dado que se recibe una solicitud PUT /treatments/abandon con un treatmentId válido<br>
+Cuando la API procesa el abandono del tratamiento<br>
+Entonces las dosis asociadas al tratamiento son eliminadas físicamente de la base de datos.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
 
 ## 3.3. Product Backlog
 
