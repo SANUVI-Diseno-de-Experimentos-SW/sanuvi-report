@@ -2464,7 +2464,7 @@ entonces la consulta no se registra y se indica que debe proporcionar el conteni
     </tr>
     <tr>
       <td><b>Title</b></td>
-      <td colspan="3"></td>
+      <td colspan="3">Cierre de consulta</td>
     </tr>
     <tr>
       <td colspan="4"><b>Description</b>
@@ -2759,7 +2759,7 @@ entonces responde con un error indicando que el usuario no está autorizado para
     </tr>
     <tr>
       <td><b>Title</b></td>
-      <td colspan="3"></td>
+      <td colspan="3">Análisis y seguimiento de las postas</td>
     </tr>
     <tr>
       <td colspan="4"><b>Description</b>
@@ -3103,7 +3103,7 @@ entonces debe responder con 404 Not Found indicando que no existe una posta asig
   </thead>
   <tbody>
     <tr>
-      <td>US-21</td>
+      <td>US-22</td>
       <td>Administrador</td>
       <td>High</td>
       <td>EP-08</td>
@@ -3151,7 +3151,7 @@ entonces deben indicarse los campos pendientes y no debe completarse el registro
   </thead>
   <tbody>
     <tr>
-      <td>US-22</td>
+      <td>US-23</td>
       <td>Administrador</td>
       <td>High</td>
       <td>EP-08</td>
@@ -3200,7 +3200,7 @@ entonces debe mostrarse un mensaje indicando que no existen postas disponibles.
   </thead>
   <tbody>
     <tr>
-      <td>US-23</td>
+      <td>US-24</td>
       <td>Administrador</td>
       <td>High</td>
       <td>EP-08</td>
@@ -3253,7 +3253,7 @@ entonces debe mostrarse un mensaje indicando que la posta ya cuenta con una enfe
   </thead>
   <tbody>
     <tr>
-      <td>US-24</td>
+      <td>US-25</td>
       <td>Administrador</td>
       <td>High</td>
       <td>EP-08</td>
@@ -3302,7 +3302,7 @@ entonces debe mostrarse un mensaje indicando que no existen enfermeras disponibl
   </thead>
   <tbody>
     <tr>
-    <td>US-25</td>
+    <td>US-26</td>
       <td>Madre</td>
       <td>High</td>
       <td>EP-08</td>
@@ -3355,7 +3355,7 @@ entonces la cita debe quedar registrada con estado cancelado y debe mostrarse un
   </thead>
   <tbody>
     <tr>
-      <td>US-26</td>
+      <td>US-27</td>
       <td>Madre</td>
       <td>High</td>
       <td>EP-08</td>
@@ -3404,7 +3404,7 @@ entonces deben mostrarse los horarios libres y ocupados.<br>
   </thead>
   <tbody>
     <tr>
-      <td>US-27</td>
+      <td>US-28</td>
       <td>Madre</td>
       <td>High</td>
       <td>EP-08</td>
@@ -3457,7 +3457,7 @@ entonces debe mostrarse un mensaje indicando que primero debe registrar al menos
   </thead>
   <tbody>
     <tr>
-     <td>US-28</td>
+     <td>US-29</td>
       <td>Madre</td>
       <td>High</td>
       <td>EP-08</td>
@@ -3506,7 +3506,7 @@ entonces debe mostrarse un mensaje indicando que no existen próximas citas.
   </thead>
   <tbody>
     <tr>
-     <td>US-29</td>
+     <td>US-30</td>
       <td>Madre</td>
       <td>High</td>
       <td>EP-08</td>
@@ -3555,7 +3555,7 @@ entonces deben mostrarse las citas ordenadas desde la más próxima hasta las po
   </thead>
   <tbody>
     <tr>
-     <td>US-30</td>
+     <td>US-31</td>
       <td>Enfermero</td>
       <td>High</td>
       <td>EP-08</td>
