@@ -3033,6 +3033,63 @@ entonces debe responder con 200 OK y devolver las postas activas ordenadas por d
   </tbody>
 </table>
 
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+   <td>TS-30</td>
+      <td>Developer</td>
+      <td>High</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3"></td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como desarrollador, quiero implementar una API para consultar las citas futuras asignadas a una enfermera y su próxima agenda, para facilitar la gestión de sus atenciones programadas.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Consulta de citas futuras<br><br>
+Dado que se recibe una solicitud GET /appointments/nurse,<br>
+cuando la API consulta las citas asignadas a la enfermera,<br>
+entonces debe responder con 200 OK y devolver las citas futuras confirmadas correspondientes.<br>
+Escenario 2: Consulta de próximas citas<br><br>
+Dado que se recibe una solicitud GET /appointments/nurse/top,<br>
+cuando existen citas futuras asignadas a la enfermera,<br>
+entonces la API debe responder con 200 OK y devolver las próximas citas ordenadas por fecha y hora.<br><br>
+Escenario 3: Consulta de la posta asignada<br><br>
+Dado que se recibe una solicitud GET /nurse/my-facility,<br>
+cuando la enfermera tiene una posta asignada,<br>
+entonces la API debe responder con 200 OK y devolver el nombre de la posta correspondiente.<br><br>
+Escenario 4: Enfermera sin posta asignada<br><br>
+Dado que se recibe una solicitud GET /nurse/my-facility y la enfermera no tiene una posta asignada,<br>
+cuando la API consulta la asignación,<br>
+entonces debe responder con 404 Not Found indicando que no existe una posta asignada.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 ## 3.3. Product Backlog
 
 > Ordenado por prioridad de valor de negocio. Estimación en Story Points (serie de Fibonacci).
