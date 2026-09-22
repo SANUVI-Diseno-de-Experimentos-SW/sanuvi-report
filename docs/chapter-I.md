@@ -103,6 +103,31 @@ Nuestra visión es que Sanuvi se convierta en una startup que contribuya a la tr
       </ul>
     </td>
   </tr>
+  <tr>
+    <td width="140"><img src="../assets/img/chapter-I/FotoCarneLD.jpg" width="120" alt="Foto integrante"></td>
+    <td>
+      <b>Luis Alberto Damian Pereira</b> — <code>u201517312</code><br>
+      <i>Ingeniería de Software</i><br><br>
+      <strong>Perfil</strong>
+      <br> <br>
+      Persona dedicado, orientado a resultados, con alta capacidad de trabajo colaborativo, adaptación a nuevos retos y experiencia en coordinación de equipos.
+      <br><br>
+      <strong>Habilidades Técnicas:</strong>
+      <ul>
+        <li>Java, Python, c++</li>
+        <li>SQL Server</li>
+        <li>Jenkins</li>
+        <li>Bitbucket, Git</li>
+        <li>Jira</li>
+        <li>Azure</li>
+      </ul>
+      <strong>Habilidades Sociales:</strong>
+       <ul>
+        <li> Trabajo en equipo y colaboración en entornos ágile</li>
+        <li> Comunicación efectiva para el impulso de iniciativas de automatización, mejora continua para optimizar procesos y aumentar la eficiencia operativa.</li>
+      </ul>
+    </td>
+  </tr>
 </table>
 
 ## 1.2. Solution Profile
