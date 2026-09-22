@@ -440,7 +440,7 @@ Para aumentar la confianza sobre el uso de la plataforma
     </tr>
     <tr>
       <td colspan="4">
-        <strong>Escenario #2: Visitante lee los testimonios de clientes.</strong>
+        <strong>Escenario #1: Visitante lee los testimonios de clientes.</strong>
         <br><br>
  Dado que el visitante desea saber si la plataforma es confiable<br>
 Cuando accede a la sección de testimonios<br>
@@ -2540,8 +2540,8 @@ entonces responde con estado 200 OK y registra el mensaje dentro de la teleconsu
 <strong>Escenario #4: Cierre de una teleconsulta</strong><br><br>
 Dado que se recibe una solicitud DELETE /consultations/close para una teleconsulta activa,<br>
 cuando la API valida que la solicitud corresponde a la enfermera asignada y que existe al menos una respuesta de la enfermera,<br>
-entonces responde con estado 200 OK y cierra correctamente la teleconsulta.<br>
-<strong>Escenario #6: Cierre sin respuesta de la enfermera</strong><br><br>
+entonces responde con estado 200 OK y cierra correctamente la teleconsulta.<br><br>
+<strong>Escenario #5: Cierre sin respuesta de la enfermera</strong><br><br>
 Dado que se recibe una solicitud DELETE /consultations/close para una teleconsulta que aún no tiene una respuesta de la enfermera,<br>
 cuando la API verifica el historial de mensajes,<br>
 entonces responde con un error indicando que la enfermera debe haber respondido al menos una vez antes de cerrar la consulta.<br>
@@ -2586,7 +2586,7 @@ entonces responde con un error indicando que la enfermera debe haber respondido 
     </tr>
     <tr>
       <td colspan="4">
-        <string>Escenario #1: Registro del control exitoso</string>
+        <strong>Escenario #1: Registro del control exitoso</strong>
 <br><br>
 Dado que se recibe una solicitud POST /hemoglobin-control con un paciente asignado a la enfermera y una historia clínica existente,
 cuando la API valida que el nivel de hemoglobina se encuentra dentro del rango permitido,
@@ -2654,19 +2654,16 @@ entonces determina automáticamente el estado de anemia correspondiente según e
 Dado que se recibe una solicitud GET /dashboard/summary,<br>
 cuando la API procesa la información de las postas activas,<br>
 entonces responde con estado 200 OK y devuelve las métricas globales de postas activas, postas críticas y porcentaje de adherencia.<br><br>
-
 <strong>Escenario #2: Consulta de postas</strong>
 <br><br>
 Dado que se recibe una solicitud GET /facilities,<br>
 cuando la API consulta las postas activas,<br>
 entonces responde con estado 200 OK y devuelve las postas junto con sus métricas de adherencia, pacientes, dosis confirmadas, dosis omitidas y nivel de riesgo.<br><br>
-
 <strong>Escenario #3: Consulta de postas por nivel de riesgo</strong><br><br>
 Dado que se recibe una solicitud GET /facilities?riskLevel=HIGH con un nivel de riesgo válido,<br>
 cuando la API procesa el filtro solicitado,<br>
 entonces responde con estado 200 OK y devuelve únicamente las postas correspondientes al nivel de riesgo indicado.<br><br>
-
-<strong>Escenario #4: Nivel de riesgo no válido<strong><br><br>
+<strong>Escenario #4: Nivel de riesgo no válido</strong><br><br>
 Dado que se recibe una solicitud GET /facilities?riskLevel con un nivel de riesgo no permitido,<br>
 cuando la API valida el parámetro recibido,<br>
 entonces responde con un error indicando que el nivel de riesgo no es válido.<br><br>
@@ -2729,11 +2726,11 @@ entonces devuelve únicamente las postas correspondientes al nivel de riesgo ind
 Dado que se recibe una solicitud GET /report/pdf,<br>
 cuando existen postas activas con información disponible,<br>
 entonces la API responde correctamente y genera un archivo PDF con las métricas consolidadas de las postas.<br><br>
-<strong>Escenario #2: Reporte sin información disponible<strong><br><br>
+<strong>Escenario #2: Reporte sin información disponible</strong><br><br>
 Dado que se recibe una solicitud GET /report/pdf,<br>
 cuando no existen postas activas disponibles para generar el reporte,<br>
 entonces la API responde con un error indicando que no existe información disponible para el reporte.<br><br>
-<strong>Escenario #3: Acceso no autorizado al reporte<strong><br><br>
+<strong>Escenario #3: Acceso no autorizado al reporte</strong><br><br>
 Dado que se recibe una solicitud GET /report/pdf sin un token válido o con un usuario que no posee permisos de administrador,<br>
 cuando la API valida las credenciales y permisos,<br>
 entonces responde con un error indicando que el usuario no está autorizado para generar el reporte.<br>
@@ -2778,7 +2775,7 @@ entonces responde con un error indicando que el usuario no está autorizado para
     </tr>
     <tr>
       <td colspan="4">
-      <stong>Escenario 1: Consulta del resumen de las postas</strong><br><br>
+      <strong>Escenario 1: Consulta del resumen de las postas</strong><br><br>
 Dado que existen postas activas con información disponible,<br>
 cuando el administrador consulta el resumen general,<br>
 entonces puede visualizar la cantidad de postas activas, las postas con mayor nivel de riesgo y el porcentaje global de adherencia.<BR><BR>
@@ -2798,6 +2795,239 @@ entonces puede visualizar las postas ordenadas según su porcentaje de adherenci
 Dado que existen postas con información geográfica registrada,<br>
 cuando el administrador consulta su ubicación,<br>
 entonces puede visualizar la ubicación de las postas junto con su nivel de riesgo y porcentaje de adherencia.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-24</td>
+      <td>Developer</td>
+      <td>High</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Gestión de postas de salud</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como desarrollador, quiero implementar una API para registrar y consultar las postas de salud disponibles en el sistema, para permitir al administrador gestionar los establecimientos y visualizar la información de cada posta.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Registro exitoso de una posta
+<br><br>
+Dado que se recibe una solicitud POST / con los datos requeridos de una nueva posta,<br>
+cuando la API valida correctamente la información proporcionada,<br>
+entonces la API debe registrar la posta y responder con un estado 201 Created confirmando la creación.<br><br>
+Escenario 2: Listado de postas<br><br>
+Dado que existen postas registradas en el sistema,<br>
+cuando se recibe una solicitud GET /,<br>
+entonces la API debe responder con 200 OK y devolver el listado de postas junto con su información de asignación de enfermeras.<br><br>
+Escenario 3: Acceso no autorizado<br><br>
+Dado que se recibe una solicitud GET / sin un token válido o sin permisos de administrador,<br>
+cuando la API valida las credenciales del usuario,<br>
+entonces debe responder con 401 Unauthorized o 403 Forbidden, según corresponda.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-25</td>
+      <td>Developer</td>
+      <td>High</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Asignación de enfermeras a postas de salud</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como desarrollador, quiero implementar una API que permita verificar la disponibilidad de enfermeras y asignarlas a una posta, para mantener correctamente la relación entre enfermeras y establecimientos de salud.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Verificación de disponibilidad de enfermeras<br><br>
+Dado que se recibe una solicitud GET /can-register,<br>
+cuando la API verifica si existen enfermeras disponibles que no estén asignadas a una posta,<br>
+entonces debe responder con 200 OK e indicar mediante el campo available si existe al menos una enfermera disponible.<br><br>
+Escenario 2: Listado de enfermeras sin asignación<br><br>
+Dado que existen enfermeras que no están asignadas a ninguna posta,<br>
+cuando se recibe una solicitud GET /nurses/unassigned,<br>
+entonces la API debe responder con 200 OK y devolver la lista de enfermeras disponibles para asignación.<br><br>
+Escenario 3: Asignación exitosa de una enfermera<br><br>
+Dado que se recibe una solicitud POST /assign-nurse con una posta y una enfermera disponible,<br>
+cuando la API valida que la posta no tiene una enfermera activa y que la enfermera no está asignada a otra posta,<br>
+entonces debe realizar la asignación y responder con 200 OK confirmando la operación.<br><br>
+Escenario 4: Asignación no válida<br><br>
+Dado que se recibe una solicitud POST /assign-nurse para una posta que ya tiene una enfermera asignada o para una enfermera que ya pertenece a otra posta,<br>
+cuando la API valida las reglas de asignación,<br>
+entonces debe rechazar la operación y devolver un estado 400 Bad Request indicando la causa.<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+       <td>TS-26</td>
+      <td>Developer</td>
+      <td>High</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Consulta de distritos disponibles</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como desarrollador, quiero implementar una API que proporcione los distritos disponibles, para permitir seleccionar correctamente la ubicación de una posta durante su registro.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Consulta exitosa de distritos<br><br>
+Dado que se recibe una solicitud GET /districts,<br>
+cuando la API consulta los distritos registrados,<br>
+entonces debe responder con 200 OK y devolver el identificador y nombre de cada distrito disponible.<br><br>
+Escenario 2: Acceso sin autorización<br><br>
+Dado que se recibe una solicitud GET /districts sin un token válido o sin permisos de administrador,<br>
+cuando la API valida las credenciales,<br>
+entonces debe responder con 401 Unauthorized o 403 Forbidden.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-27</td>
+      <td>Developer</td>
+      <td>High</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Gestión de citas y disponibilidad de postas</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como desarrollador, quiero implementar una API para gestionar la reserva, cancelación y consulta de citas médicas de los pacientes, así como consultar las postas y horarios disponibles, para permitir una correcta gestión de las atenciones.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Reserva de cita exitosa<br><br>
+Dado que se recibe una solicitud POST /appointments con una posta, paciente, fecha y hora disponibles,<br>
+cuando la API valida que el paciente pertenece a la madre, que la posta tiene una enfermera asignada y que el horario está disponible,<br>
+entonces debe registrar la cita y responder con 201 Created.<br><br>
+Escenario 2: Horario no disponible<br><br>
+Dado que se recibe una solicitud POST /appointments para un horario que ya está reservado,<br>
+cuando la API verifica la disponibilidad,<br>
+entonces debe rechazar la reserva y responder con 400 Bad Request, indicando que el horario ya está ocupado.<br><br>
+Escenario 3: Consulta de horarios disponibles<br><br>
+Dado que se recibe una solicitud GET /:facilityId/available-slots con una posta y una fecha,<br>
+cuando la API consulta los horarios configurados,<br>
+entonces debe responder con 200 OK indicando cuáles están disponibles y cuáles están ocupados.<br><br>
+Escenario 4: Cancelación de una cita<br><br>
+Dado que se recibe una solicitud PUT /appointments/cancel con el identificador de una cita perteneciente a la madre,<br>
+cuando la API valida que la cita existe y pertenece a la madre,<br>
+entonces debe cancelar la cita y responder con 200 OK.<br><br>
+Escenario 5: Consulta del historial de citas<br><br>
+Dado que se recibe una solicitud GET /patient/:patientId/appointments,<br>
+cuando la API consulta las citas asociadas al paciente,<br>
+entonces debe responder con 200 OK y devolver las citas correspondientes, incluyendo su estado.<br><br>
+Escenario 6: Consulta de la próxima cita<br><br>
+Dado que se recibe una solicitud GET /appointments/mother/next,<br>
+cuando la API encuentra una cita futura confirmada para alguno de los pacientes de la madre,<br>
+entonces debe responder con 200 OK y devolver la información de la próxima cita.<br><br>
+Escenario 7: Madre sin próxima cita<br><br>
+Dado que se recibe una solicitud GET /appointments/mother/next y no existen citas futuras confirmadas,<br>
+cuando la API realiza la consulta,<br>
+entonces debe responder con 200 OK indicando que no existen próximas citas.<br><br>
+Escenario 8: Consulta de postas cercanas<br><br>
+Dado que se recibe una solicitud GET /nearby con las coordenadas lat y lng de la madre,<br>
+cuando la API procesa la ubicación proporcionada,<br>
+entonces debe responder con 200 OK y devolver las postas activas ordenadas por distancia.
       </td>
     </tr>
   </tbody>
