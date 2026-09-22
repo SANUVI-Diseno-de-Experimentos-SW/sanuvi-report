@@ -312,6 +312,35 @@ Como usuario de la plataforma, quiero asegurar mi cuenta, para evitar el acceso 
   </tbody>
 </table>
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Epic ID</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>EP-10</td>
+      <td>High</font></td>
+      <td>EP-10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Comunicación y consultas</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+Como madre o enfermera, quiero gestionar consultas relacionadas con el tratamiento y seguimiento del paciente, para facilitar la comunicación entre ambos y resolver dudas durante el proceso de atención.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 **User Stories**
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
@@ -2361,6 +2390,225 @@ entonces responde con estado 200 OK y devuelve la cantidad y los datos de los pa
 Dado que se recibe una solicitud GET /risk/:riskLevel/patients con un nivel de riesgo válido,<br>
 cuando no existen pacientes clasificados en dicho nivel,<br>
 entonces la API responde con estado 200 OK y devuelve una lista vacía de pacientes.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-19</td>
+      <td>Madre</td>
+      <td>High</td>
+      <td>EP-10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Comunicación con la enfermera</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como madre, quiero comunicarme con la enfermera asignada para realizar consultas relacionadas con el tratamiento de mi hijo y recibir orientación durante su seguimiento.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario 1: Consulta enviada correctamente</strong><br><br>
+Dado que la madre tiene una enfermera asignada,<br>
+cuando envía una consulta con un mensaje relacionado con el tratamiento de su hijo,<br>
+entonces la consulta se registra correctamente y queda disponible para que la enfermera pueda responderla.<br><br>
+<strong>Escenario 2: Consulta sin mensaje</strong><br><br>
+Dado que la madre intenta enviar una consulta,<br>
+cuando no proporciona ningún mensaje,<br>
+entonces la consulta no se registra y se indica que debe proporcionar el contenido de la consulta.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-20</td>
+      <td>Enfermera</td>
+      <td>High</td>
+      <td>EP-10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3"></td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como enfermera, quiero cerrar una consulta con una madre cuando haya atendido su solicitud, para finalizar el seguimiento de la consulta y dejar constancia de la atención realizada.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario 1: Cierre de consulta exitoso</strong><br><br>
+Dado que existe una consulta activa con una madre y la enfermera ha enviado al menos una respuesta,<br>
+cuando la enfermera solicita cerrar la consulta,<br>
+entonces la consulta se cierra correctamente.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-20</td>
+      <td>Developer</td>
+      <td>High</td>
+      <td>EP-10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Gestión de teleconsultas</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como developer, quiero gestionar las teleconsultas entre madres y enfermeras mediante una API, para permitir el intercambio de consultas y respuestas durante el seguimiento del tratamiento del paciente.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Creación de una teleconsulta</strong><br><br>
+Dado que se recibe una solicitud POST /consultations con la información de la madre, el paciente y el primer mensaje,<br>
+cuando la API valida que el paciente pertenece a la madre, tiene una enfermera asignada y no existe una consulta activa para dicho paciente,<br>
+entonces la API responde con estado 201 Created y registra correctamente la nueva consulta.<br><br>
+  <strong>Escenario #2: Paciente sin enfermera asignada</strong><br><br>
+Dado que se recibe una solicitud POST /consultations para un paciente que no tiene una enfermera asignada,<br>
+cuando la API verifica la información del paciente,<br>
+entonces responde con un error indicando que el paciente no tiene una enfermera asignada y no crea la consulta.<br><br>
+<strong>Escenario #3: Envío de mensaje en una teleconsulta</strong><br><br>
+Dado que se recibe una solicitud POST /messages asociada a una teleconsulta existente,<br>
+cuando la API valida que el remitente pertenece a la consulta y el contenido del mensaje es válido,<br>
+entonces responde con estado 200 OK y registra el mensaje dentro de la teleconsulta.<br><br>
+<strong>Escenario #4: Cierre de una teleconsulta</strong><br><br>
+Dado que se recibe una solicitud DELETE /consultations/close para una teleconsulta activa,<br>
+cuando la API valida que la solicitud corresponde a la enfermera asignada y que existe al menos una respuesta de la enfermera,<br>
+entonces responde con estado 200 OK y cierra correctamente la teleconsulta.<br>
+<strong>Escenario #6: Cierre sin respuesta de la enfermera</strong><br><br>
+Dado que se recibe una solicitud DELETE /consultations/close para una teleconsulta que aún no tiene una respuesta de la enfermera,<br>
+cuando la API verifica el historial de mensajes,<br>
+entonces responde con un error indicando que la enfermera debe haber respondido al menos una vez antes de cerrar la consulta.<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-21</td>
+       <td>Developer</td>
+      <td>High</td>
+      <td>EP-04</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registro del control de hemoglobina</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como developer, quiero gestionar el registro de los controles de hemoglobina de los pacientes mediante una API, para mantener actualizada la información de su evolución y determinar automáticamente su estado de anemia.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <string>Escenario #1: Registro del control exitoso</string>
+<br><br>
+Dado que se recibe una solicitud POST /hemoglobin-control con un paciente asignado a la enfermera y una historia clínica existente,
+cuando la API valida que el nivel de hemoglobina se encuentra dentro del rango permitido,
+entonces responde con estado 200 OK y registra correctamente el nuevo control de hemoglobina.
+<br><br>
+  <strong>Escenario #2: Nivel de hemoglobina fuera de rango</strong>
+<br><br>
+Dado que se recibe una solicitud POST /hemoglobin-control con un nivel de hemoglobina menor que 0 o mayor que 30 g/dL,<br>
+cuando la API valida el valor proporcionado,<br>
+entonces responde con un error indicando que el nivel de hemoglobina debe encontrarse entre 0 y 30 g/dL.<br><br>
+<strong>Escenario #3: Paciente sin historia clínica</strong><br><br>
+Dado que se recibe una solicitud POST /hemoglobin-control para un paciente que no cuenta con una historia clínica,<br>
+cuando la API verifica la información clínica requerida,<br>
+entonces responde con un error indicando que la historia clínica no existe y no registra el control.<br><br>
+<strong>Escenario #4: Paciente no asignado</strong><br><br>
+Dado que se recibe una solicitud POST /hemoglobin-control para un paciente que no está asignado a la enfermera,<br>
+cuando la API verifica la asignación del paciente,<br>
+entonces responde con un error indicando que el paciente no está asignado a la enfermera y no registra el control.<br><br>
+<strong>Escenario #5: Determinación del estado de anemia</strong><br><br>
+Dado que se recibe una solicitud POST /hemoglobin-control con un nivel de hemoglobina válido,<br>
+cuando la API registra el control y evalúa el valor proporcionado,<br>
+entonces determina automáticamente el estado de anemia correspondiente según el rango del nivel de hemoglobina.
       </td>
     </tr>
   </tbody>
