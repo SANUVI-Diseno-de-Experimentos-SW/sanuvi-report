@@ -3053,7 +3053,7 @@ entonces debe responder con 200 OK y devolver las postas activas ordenadas por d
     </tr>
     <tr>
       <td><b>Title</b></td>
-      <td colspan="3"></td>
+      <td colspan="3">Consulta de agenda y citas de la enfermera</td>
     </tr>
     <tr>
       <td colspan="4"><b>Description</b>
@@ -3085,6 +3085,507 @@ Escenario 4: Enfermera sin posta asignada<br><br>
 Dado que se recibe una solicitud GET /nurse/my-facility y la enfermera no tiene una posta asignada,<br>
 cuando la API consulta la asignación,<br>
 entonces debe responder con 404 Not Found indicando que no existe una posta asignada.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-21</td>
+      <td>Administrador</td>
+      <td>High</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registro de una posta de salud</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+Como administrador, quiero registrar una nueva posta de salud con su información de ubicación y servicios disponibles, para incorporarla al registro de postas y permitir la gestión de sus atenciones.      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Registro exitoso de una posta<br><br>
+Dado que el administrador desea registrar una nueva posta,<br>
+cuando completa la información requerida de la posta, incluyendo nombre, dirección, distrito, ubicación y servicios disponibles,<br>
+entonces la posta debe registrarse correctamente y debe mostrarse un mensaje de confirmación.<br><br>
+Escenario 2: Registro con información incompleta<br><br>
+Dado que el administrador intenta registrar una posta,<br>
+cuando no completa alguno de los datos requeridos,<br>
+entonces deben indicarse los campos pendientes y no debe completarse el registro.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-22</td>
+      <td>Administrador</td>
+      <td>High</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Consulta de postas de salud registradas</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como administrador, quiero consultar las postas de salud registradas y conocer su información de asignación de enfermeras, para gestionar los establecimientos disponibles.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Visualización de postas registradas<br><br>
+Dado que existen postas registradas,<br>
+cuando el administrador accede a la sección de gestión de postas,<br>
+entonces deben mostrarse las postas con su nombre, dirección y estado de asignación de enfermera.<br><br>
+Escenario 2: No existen postas registradas<br><br>
+Dado que no existen postas registradas,<br>
+cuando el administrador accede a la sección de gestión de postas,<br>
+entonces debe mostrarse un mensaje indicando que no existen postas disponibles.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-23</td>
+      <td>Administrador</td>
+      <td>High</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Asignación de enfermera a una posta</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como administrador, quiero asignar una enfermera disponible a una posta de salud, para garantizar que cada establecimiento cuente con personal responsable del seguimiento de sus pacientes.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Asignación exitosa<br><br>
+Dado que el administrador selecciona una posta sin enfermera asignada y una enfermera disponible,<br>
+cuando confirma la asignación,<br>
+entonces la enfermera debe quedar asignada a la posta y debe mostrarse un mensaje de confirmación.<br><br>
+Escenario 2: Enfermera no disponible<br><br>
+Dado que el administrador intenta asignar una enfermera que ya pertenece a otra posta,<br>
+cuando confirma la asignación,<br>
+entonces debe mostrarse un mensaje indicando que la enfermera no está disponible y la asignación no debe realizarse.<br><br>
+Escenario 3: Posta ya asignada<br><br>
+Dado que la posta seleccionada ya tiene una enfermera asignada,<br>
+cuando el administrador intenta asignar otra enfermera,<br>
+entonces debe mostrarse un mensaje indicando que la posta ya cuenta con una enfermera y no debe realizarse la asignación.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-24</td>
+      <td>Administrador</td>
+      <td>High</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Consulta de enfermeras disponibles para asignación</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como administrador, quiero consultar las enfermeras que no tienen una posta asignada, para seleccionar una durante la asignación de personal a un establecimiento.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Enfermeras disponibles<br><br>
+Dado que existen enfermeras sin una posta asignada,<br>
+cuando el administrador consulta la lista de enfermeras disponibles,<br>
+entonces deben mostrarse sus datos para seleccionar una y realizar la asignación.<br><br>
+Escenario 2: No existen enfermeras disponibles<br><br>
+Dado que todas las enfermeras se encuentran asignadas a una posta,<br>
+cuando el administrador consulta las enfermeras disponibles,<br>
+entonces debe mostrarse un mensaje indicando que no existen enfermeras disponibles.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>US-25</td>
+      <td>Madre</td>
+      <td>High</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Reserva y gestión de citas médicas</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como madre, quiero reservar, consultar y cancelar citas para mis pacientes, para organizar sus controles médicos en las postas de salud disponibles.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Reserva de cita exitosa<br><br>
+Dado que la madre tiene un paciente registrado y selecciona una posta, fecha y horario disponible,<br>
+cuando confirma la reserva,<br>
+entonces la cita debe registrarse correctamente y debe mostrarse un mensaje de confirmación.<br><br>
+Escenario 2: Horario ocupado<br><br>
+Dado que la madre selecciona un horario que ya fue reservado,<br>
+cuando intenta confirmar la cita,<br>
+entonces debe mostrarse un mensaje indicando que el horario no está disponible y no debe registrarse la cita.<br><br>
+Escenario 3: Cancelación de cita<br><br>
+Dado que la madre tiene una cita registrada,<br>
+cuando selecciona la opción de cancelar y confirma la acción,<br>
+entonces la cita debe quedar registrada con estado cancelado y debe mostrarse un mensaje de confirmación.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-26</td>
+      <td>Madre</td>
+      <td>High</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Consulta de postas y horarios disponibles</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como madre, quiero consultar las postas cercanas y sus horarios disponibles, para seleccionar una alternativa adecuada al programar una cita para mi paciente.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Consulta de postas cercanas<br><br>
+Dado que la madre tiene pacientes registrados y permite el acceso a su ubicación,<br>
+cuando consulta las postas cercanas,<br>
+entonces deben mostrarse las postas activas ordenadas según su distancia.<br><br>
+Escenario 2: Consulta de horarios disponibles<br><br>
+Dado que la madre selecciona una posta,<br>
+cuando consulta los horarios disponibles para una fecha determinada,<br>
+entonces deben mostrarse los horarios libres y ocupados.<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-27</td>
+      <td>Madre</td>
+      <td>High</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Consulta de postas y horarios disponibles</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como madre, quiero consultar las postas cercanas y sus horarios disponibles, para seleccionar una alternativa adecuada al programar una cita para mi paciente.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Consulta de postas cercanas<br><br>
+Dado que la madre tiene pacientes registrados y permite el acceso a su ubicación,<br>
+cuando consulta las postas cercanas,<br>
+entonces deben mostrarse las postas activas ordenadas según su distancia.<br><br>
+Escenario 2: Consulta de horarios disponibles<br><br>
+Dado que la madre selecciona una posta,<br>
+cuando consulta los horarios disponibles para una fecha determinada,<br>
+entonces deben mostrarse los horarios libres y ocupados.<br><br>
+Escenario 3: Madre sin pacientes registrados<br><br>
+Dado que la madre no tiene ningún paciente registrado,<br>
+cuando intenta consultar las postas cercanas,<br>
+entonces debe mostrarse un mensaje indicando que primero debe registrar al menos un paciente.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+     <td>US-28</td>
+      <td>Madre</td>
+      <td>High</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Visualización de la próxima cita</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como madre, quiero consultar la próxima cita confirmada de mis pacientes, para conocer con anticipación la fecha, hora y posta donde se realizará el control.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Próxima cita disponible<br><br>
+Dado que la madre tiene una cita futura confirmada,<br>
+cuando accede a la sección de próximas citas,<br>
+entonces deben mostrarse la fecha, hora, paciente, posta y estado de la cita.<br><br>
+Escenario 2: Sin próximas citas<br><br>
+Dado que la madre no tiene ninguna cita futura confirmada,<br>
+cuando consulta sus próximas citas,<br>
+entonces debe mostrarse un mensaje indicando que no existen próximas citas.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+     <td>US-29</td>
+      <td>Madre</td>
+      <td>High</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Consulta de agenda y próximas citas</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como enfermera, quiero consultar las citas futuras asignadas a mi agenda, para organizar las atenciones programadas de mis pacientes.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Visualización de citas futuras<br><br>
+Dado que la enfermera tiene citas futuras asignadas,<br>
+cuando accede a su agenda,<br>
+entonces deben mostrarse las citas confirmadas con la información del paciente, fecha y hora.<br><br>
+Escenario 2: Visualización de próximas citas<br><br>
+Dado que la enfermera tiene varias citas futuras,<br>
+cuando accede a la sección de próximas citas,<br>
+entonces deben mostrarse las citas ordenadas desde la más próxima hasta las posteriores.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+     <td>US-30</td>
+      <td>Enfermero</td>
+      <td>High</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Consulta de la posta asignada</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como enfermera, quiero consultar la posta de salud a la que estoy asignada, para identificar el establecimiento donde realizo el seguimiento de mis pacientes.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Enfermera con posta asignada<br><br>
+Dado que la enfermera tiene una posta asignada,<br>
+cuando consulta su establecimiento,<br>
+entonces debe mostrarse el nombre de la posta correspondiente.<br><br>
+Escenario 2: Enfermera sin posta asignada<br><br>
+Dado que la enfermera no tiene ninguna posta asignada,<br>
+cuando consulta su establecimiento,<br>
+entonces debe mostrarse un mensaje indicando que no tiene una posta asignada.
       </td>
     </tr>
   </tbody>
