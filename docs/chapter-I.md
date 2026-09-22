@@ -103,6 +103,57 @@ Nuestra visión es que Sanuvi se convierta en una startup que contribuya a la tr
       </ul>
     </td>
   </tr>
+  <tr>
+    <td width="140"><img src="../assets/img/chapter-I/FotoCarneLD.jpg" width="120" alt="Foto integrante"></td>
+    <td>
+      <b>Luis Alberto Damian Pereira</b> — <code>u201517312</code><br>
+      <i>Ingeniería de Software</i><br><br>
+      <strong>Perfil</strong>
+      <br> <br>
+      Persona dedicado, orientado a resultados, con alta capacidad de trabajo colaborativo, adaptación a nuevos retos y experiencia en coordinación de equipos.
+      <br><br>
+      <strong>Habilidades Técnicas:</strong>
+      <ul>
+        <li>Java, Python, c++</li>
+        <li>SQL Server</li>
+        <li>Jenkins</li>
+        <li>Bitbucket, Git</li>
+        <li>Jira</li>
+        <li>Azure</li>
+      </ul>
+      <strong>Habilidades Sociales:</strong>
+       <ul>
+        <li> Trabajo en equipo y colaboración en entornos ágile</li>
+        <li> Comunicación efectiva para el impulso de iniciativas de automatización, mejora continua para optimizar procesos y aumentar la eficiencia operativa.</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="140"><img src="../assets/img/chapter-I/elizabeth-apaza.jpeg" width="120" alt="Foto integrante"></td>
+    <td>
+      <b>Elizabeth Apaza</b> — <code>U20XXXXXXX</code><br>
+      <i>Ingeniería de Software</i><br><br>
+      <strong>Perfil</strong>
+      <br><br>
+      Estudiante de Ingeniería de Software apasionada por el desarrollo web y la creación de experiencias digitales interactivas. Enfocada en el diseño de interfaces (UI/UX) y el desarrollo Frontend, buscando siempre un equilibrio perfecto entre la estética, la accesibilidad y el rendimiento para entregar productos que realmente conecten con el usuario.
+      <br><br>
+      <strong>Habilidades Técnicas:</strong>
+      <ul>
+        <li>JavaScript, TypeScript</li>
+        <li>React, Angular, HTML5, CSS3</li>
+        <li>Diseño UI/UX (Figma)</li>
+        <li>Control de versiones: Git, GitHub</li>
+        <li>Metodologías Ágiles (Scrum)</li>
+      </ul>
+      <strong>Habilidades Sociales:</strong>
+      <ul>
+        <li>Empatía y diseño centrado en el usuario</li>
+        <li>Comunicación asertiva y escucha activa</li>
+        <li>Resolución creativa de problemas</li>
+        <li>Adaptabilidad y disposición para el aprendizaje continuo</li>
+      </ul>
+    </td>
+  </tr>
 </table>
 
 ## 1.2. Solution Profile
