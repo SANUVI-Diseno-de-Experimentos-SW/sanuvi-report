@@ -2614,6 +2614,195 @@ entonces determina automáticamente el estado de anemia correspondiente según e
   </tbody>
 </table>
 
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-22</td>
+      <td>Developer</td>
+      <td>High</td>
+      <td>EP-09</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Consulta de métricas y análisis de postas</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como developer, quiero gestionar la consulta de métricas e información agregada de las postas mediante una API, para proporcionar datos sobre la adherencia, el nivel de riesgo y el seguimiento de los tratamientos.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Consulta del resumen global</strong><br><br>
+Dado que se recibe una solicitud GET /dashboard/summary,<br>
+cuando la API procesa la información de las postas activas,<br>
+entonces responde con estado 200 OK y devuelve las métricas globales de postas activas, postas críticas y porcentaje de adherencia.<br><br>
+
+<strong>Escenario #2: Consulta de postas</strong>
+<br><br>
+Dado que se recibe una solicitud GET /facilities,<br>
+cuando la API consulta las postas activas,<br>
+entonces responde con estado 200 OK y devuelve las postas junto con sus métricas de adherencia, pacientes, dosis confirmadas, dosis omitidas y nivel de riesgo.<br><br>
+
+<strong>Escenario #3: Consulta de postas por nivel de riesgo</strong><br><br>
+Dado que se recibe una solicitud GET /facilities?riskLevel=HIGH con un nivel de riesgo válido,<br>
+cuando la API procesa el filtro solicitado,<br>
+entonces responde con estado 200 OK y devuelve únicamente las postas correspondientes al nivel de riesgo indicado.<br><br>
+
+<strong>Escenario #4: Nivel de riesgo no válido<strong><br><br>
+Dado que se recibe una solicitud GET /facilities?riskLevel con un nivel de riesgo no permitido,<br>
+cuando la API valida el parámetro recibido,<br>
+entonces responde con un error indicando que el nivel de riesgo no es válido.<br><br>
+<strong>Escenario #5: Consulta de postas con mayor adherencia</strong><br><br>
+Dado que se recibe una solicitud GET /facilities/top,<br>
+cuando la API procesa las métricas de las postas activas,<br>
+entonces responde con estado 200 OK y devuelve las postas ordenadas según su porcentaje de adherencia.<br><br>
+
+<strong>Escenario #6: Consulta de información geográfica de las postas</strong><br><br>
+Dado que se recibe una solicitud GET /heatmap,<br>
+cuando la API procesa la información de las postas,<br>
+entonces responde con estado 200 OK y devuelve las coordenadas geográficas, nivel de riesgo y porcentaje de adherencia de cada posta.<br><br>
+
+<strong>Escenario #7: Filtrado geográfico por nivel de riesgo</strong><br><br>
+Dado que se recibe una solicitud GET /heatmap?riskLevel=HIGH con un nivel de riesgo válido,<br>
+cuando la API procesa el filtro solicitado,<br>
+entonces devuelve únicamente las postas correspondientes al nivel de riesgo indicado junto con su información geográfica y métricas.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>TS-23</td>
+      <td>Developer</td>
+      <td>High</td>
+      <td>EP-09</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Generación de reportes de postas</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como developer, quiero generar reportes de las métricas de las postas mediante una API, para disponer de información consolidada sobre la adherencia, el riesgo y el seguimiento de los tratamientos.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <strong>Escenario #1: Generación del reporte</strong><br<br>
+Dado que se recibe una solicitud GET /report/pdf,<br>
+cuando existen postas activas con información disponible,<br>
+entonces la API responde correctamente y genera un archivo PDF con las métricas consolidadas de las postas.<br><br>
+<strong>Escenario #2: Reporte sin información disponible<strong><br><br>
+Dado que se recibe una solicitud GET /report/pdf,<br>
+cuando no existen postas activas disponibles para generar el reporte,<br>
+entonces la API responde con un error indicando que no existe información disponible para el reporte.<br><br>
+<strong>Escenario #3: Acceso no autorizado al reporte<strong><br><br>
+Dado que se recibe una solicitud GET /report/pdf sin un token válido o con un usuario que no posee permisos de administrador,<br>
+cuando la API valida las credenciales y permisos,<br>
+entonces responde con un error indicando que el usuario no está autorizado para generar el reporte.<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-21</td>
+      <td>Admin</td>
+      <td>High</td>
+      <td>EP-09</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3"></td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como administrador, quiero consultar información sobre las postas asignadas, sus niveles de riesgo y métricas de adherencia, para analizar el estado de los tratamientos y tomar acciones de seguimiento cuando sea necesario.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+      <stong>Escenario 1: Consulta del resumen de las postas</strong><br><br>
+Dado que existen postas activas con información disponible,<br>
+cuando el administrador consulta el resumen general,<br>
+entonces puede visualizar la cantidad de postas activas, las postas con mayor nivel de riesgo y el porcentaje global de adherencia.<BR><BR>
+<STRONG>Escenario 2: Consulta de información de las postas</STRONG><BR><BR>
+Dado que existen postas activas,<BR>
+cuando el administrador consulta la información de las postas,<BR>
+entonces puede visualizar sus métricas de adherencia, cantidad de pacientes, dosis confirmadas, dosis omitidas y nivel de riesgo.<BR>
+<STORNG>Escenario 3: Consulta de postas según nivel de riesgo</STORNG><BR><BR>
+Dado que el administrador necesita revisar las postas según su nivel de riesgo,<BR>
+cuando consulta las postas correspondientes a un nivel determinado,<BR>
+entonces puede visualizar únicamente las postas que pertenecen a dicho nivel de riesgo.<BR><BR>
+<STRONG>Escenario 4: Consulta de postas con mayor adherencia</STRONG><br><br>
+Dado que existen postas con información de adherencia,<br>
+cuando el administrador consulta las postas con mayor adherencia,<br>
+entonces puede visualizar las postas ordenadas según su porcentaje de adherencia.<br><br>
+<strong>Escenario 5: Consulta de ubicación y nivel de riesgo</strong><br><br>
+Dado que existen postas con información geográfica registrada,<br>
+cuando el administrador consulta su ubicación,<br>
+entonces puede visualizar la ubicación de las postas junto con su nivel de riesgo y porcentaje de adherencia.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 ## 3.3. Product Backlog
 
 > Ordenado por prioridad de valor de negocio. Estimación en Story Points (serie de Fibonacci).
