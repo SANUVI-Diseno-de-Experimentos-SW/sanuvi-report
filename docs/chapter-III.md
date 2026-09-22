@@ -3593,13 +3593,69 @@ entonces debe mostrarse un mensaje indicando que no tiene una posta asignada.
 
 ## 3.3. Product Backlog
 
-> Ordenado por prioridad de valor de negocio. Estimación en Story Points (serie de Fibonacci).
+Las historias se agruparon primero por prioridad (High antes que Medium; no se registraron historias Low) y, dentro de cada nivel, se respetó la secuencia de Epics (EP-01 a EP-10) para mantener la coherencia de flujo funcional: fundamentos (autenticación, seguridad y acceso) → gestión clínica del paciente y seguimiento del tratamiento → gestión de postas y citas → analíticas/reportes → comunicación → diario nutricional y gamificación (funcionalidades de prioridad Media orientadas a motivación, no bloqueantes para el MVP).
 
 | # Orden | User Story ID | Título | Descripción | Story Points (1/2/3/5/8) |
 |---------|---------------|--------|-------------|--------------------------|
-| 1 | US01 | [Título] | **Como** … **quiero** … **para** … | [SP] |
-
-<!-- COMPLETAR -->
+| 1 | US-01 | Conocer el valor de negocio de la plataforma | Como visitante del sitio web estático Quiero determinar el valor de negocio Para tomar la decisión de convertirme en usuario de la plataforma | 3 |
+| 2 | US-02 | Aumento de confianza sobre la plataforma | Como visitante, Quiero conocer sobre los testimonios de otras personas Para aumentar la confianza sobre el uso de la plataforma | 1 |
+| 3 | US-03 | Acceso a las aplicaciones | Como visitante, Quiero acceder o descargar la aplicación Para empezar a usarla en mis operaciones de negocio. | 2 |
+| 4 | US-04 | Registro de usuario | Como usuario Quiero registrarme con mi rol respectivo Para acceder a las funcionalidades de la aplicación. | 5 |
+| 5 | US-05 | Inicio de sesión | Como usuario no autenticado quiero iniciar sesión para acceder de forma seguro a mi cuenta. | 2 |
+| 6 | TS-01 | Autenticación de usuarios | Como developer quiero autenticar a los usuarios de forma segura a través de una API para que se permita el acceso al sistema. | 2 |
+| 7 | TS-02 | Registro de usuarios | Como developer, quiero gestionar el registro de usuarios de forma segura a través de una API, para permitir la creación de cuentas en el sistema como una funcionalidad de mi aplicación. | 2 |
+| 8 | US-06 | Solicitar recuperación de acceso | Como usuario quiero solicitar la recuperación de mi cuenta para volver a acceder a mi cuenta. | 2 |
+| 9 | US-07 | Restablecer contraseña | Cómo usuario quiero restablecer mi contraseña para volver a acceder a mi cuenta | 5 |
+| 10 | TS-03 | Recuperar contraseña mediante correo | Como developer, quiero gestionar la recuperación de contraseña de forma segura a través de una API, para permitir a los usuarios restablecer su acceso al sistema. | 5 |
+| 11 | TS-12 | Dar de alta a un paciente | Como developer, quiero gestionar el alta de un paciente mediante una API, para finalizar su seguimiento cuando corresponda. | 2 |
+| 12 | US-09 | Acceso a la Pagina de Inicio | Como usuario, quiero ver la página de inicio para poder acceder a las funciones principales de la aplicación. | 1 |
+| 13 | US-10 | Gestión de pacientes | Como madre, quiero gestionar la información de mi hijo, para mantener sus datos registrados y facilitar el seguimiento de su tratamiento. | 2 |
+| 14 | US-11 | Seguimiento del nivel de hemoglobina | Como enfermera, quiero llevar el seguimiento de los niveles de hemoglobina del paciente, para conocer su evolución durante el tratamiento de la anemia. | 5 |
+| 15 | US-12 | Historial médico del paciente | Como enfermera, quiero consultar y gestionar el historial médico inicial de un paciente asignado a mi cartera, para contar con información clínica que facilite el seguimiento medico del paciente. | 5 |
+| 16 | TS-04 | Registro de pacientes | Como developer, quiero gestionar el registro de pacientes mediante una API, para permitir que las madres incorporen nuevos pacientes a su seguimiento. | 3 |
+| 17 | TS-05 | Obtener pacientes de la madre | Como developer, quiero consultar los pacientes asociados a una madre mediante una API, para permitir la obtención de la información básica de los pacientes registrados. | 3 |
+| 18 | TS-06 | Consulta de evolución de hemoglobina | Como developer, quiero consultar la evolución de los niveles de hemoglobina de un paciente mediante una API, para proporcionar información sobre su progreso durante el seguimiento. | 2 |
+| 19 | TS-10 | Asignación de paciente a enfermera | Como developer, quiero gestionar la asignación de pacientes a una enfermera mediante una API, para establecer la relación de seguimiento entre la enfermera y el paciente. | 5 |
+| 20 | TS-11 | Gestion del historial clínica | Como developer, quiero gestionar la creación de la historia clínica de un paciente mediante una API, para almacenar su información clínica y facilitar su seguimiento. | 8 |
+| 21 | TS-21 | Registro del control de hemoglobina | Como developer, quiero gestionar el registro de los controles de hemoglobina de los pacientes mediante una API, para mantener actualizada la información de su evolución y determinar automáticamente su estado de anemia. | 8 |
+| 22 | US-13 | Estado del tratamiento del paciente | Como enfermera, quiero gestionar el estado del paciente según la evolución de su tratamiento, para mantener un control claro de los pacientes activos, completados o que han abandonado el tratamiento. | 3 |
+| 23 | TS-07 | Inicio del tratamiento | Como developer, quiero gestionar el inicio del tratamiento de un paciente mediante una API, para establecer sus condiciones de tratamiento y generar las dosis correspondientes. | 3 |
+| 24 | TS-08 | Consulta del detalle del tratamiento | Como developer, quiero consultar el detalle del tratamiento de un paciente mediante una API, para obtener información sobre su evolución y cumplimiento del tratamiento. | 3 |
+| 25 | TS-09 | Gestión del estado del tratamiento | Como developer, quiero gestionar la finalización o abandono de un tratamiento mediante una API, para mantener actualizado su estado y registrar la observación correspondiente. | 1 |
+| 26 | TS-18 | Gestión y seguimiento de dosis | Como developer, quiero gestionar la confirmación y consulta de las dosis de un paciente mediante una API, para mantener actualizado el seguimiento del cumplimiento del tratamiento. | 5 |
+| 27 | US-14 | Diario nutricional | Como madre, quiero llevar un registro de los alimentos que consume mi hijo durante el día, para conocer su alimentación y el aporte de hierro asociado a los alimentos registrados. | 1 |
+| 28 | US-15 | Resumen nutricional diario | Como madre, quiero consultar el resumen nutricional diario de mi hijo, para conocer los alimentos registrados, el hierro absorbido y el cumplimiento de la meta diaria. | 2 |
+| 29 | TS-24 | Gestión de postas de salud | Como desarrollador, quiero implementar una API para registrar y consultar las postas de salud disponibles en el sistema, para permitir al administrador gestionar los establecimientos y visualizar la información de cada posta. | 3 |
+| 30 | TS-25 | Asignación de enfermeras a postas de salud | Como desarrollador, quiero implementar una API que permita verificar la disponibilidad de enfermeras y asignarlas a una posta, para mantener correctamente la relación entre enfermeras y establecimientos de salud. | 5 |
+| 31 | TS-26 | Consulta de distritos disponibles | Como desarrollador, quiero implementar una API que proporcione los distritos disponibles, para permitir seleccionar correctamente la ubicación de una posta durante su registro. | 3 |
+| 32 | TS-27 | Gestión de citas y disponibilidad de postas | Como desarrollador, quiero implementar una API para gestionar la reserva, cancelación y consulta de citas médicas de los pacientes, así como consultar las postas y horarios disponibles, para permitir una correcta gestión de las atenciones. | 8 |
+| 33 | TS-30 | Consulta de agenda y citas de la enfermera | Como desarrollador, quiero implementar una API para consultar las citas futuras asignadas a una enfermera y su próxima agenda, para facilitar la gestión de sus atenciones programadas. | 5 |
+| 34 | US-22 | Registro de una posta de salud | Como administrador, quiero registrar una nueva posta de salud con su información de ubicación y servicios disponibles, para incorporarla al registro de postas y permitir la gestión de sus atenciones. | 3 |
+| 35 | US-23 | Consulta de postas de salud registradas | Como administrador, quiero consultar las postas de salud registradas y conocer su información de asignación de enfermeras, para gestionar los establecimientos disponibles. | 2 |
+| 36 | US-24 | Asignación de enfermera a una posta | Como administrador, quiero asignar una enfermera disponible a una posta de salud, para garantizar que cada establecimiento cuente con personal responsable del seguimiento de sus pacientes. | 3 |
+| 37 | US-25 | Consulta de enfermeras disponibles para asignación | Como administrador, quiero consultar las enfermeras que no tienen una posta asignada, para seleccionar una durante la asignación de personal a un establecimiento. | 2 |
+| 38 | US-26 | Reserva y gestión de citas médicas | Como madre, quiero reservar, consultar y cancelar citas para mis pacientes, para organizar sus controles médicos en las postas de salud disponibles. | 3 |
+| 39 | US-27 | Consulta de postas y horarios disponibles | Como madre, quiero consultar las postas cercanas y sus horarios disponibles, para seleccionar una alternativa adecuada al programar una cita para mi paciente. | 2 |
+| 40 | US-28 | Consulta de postas y horarios disponibles | Como madre, quiero consultar las postas cercanas y sus horarios disponibles, para seleccionar una alternativa adecuada al programar una cita para mi paciente. | 3 |
+| 41 | US-29 | Visualización de la próxima cita | Como madre, quiero consultar la próxima cita confirmada de mis pacientes, para conocer con anticipación la fecha, hora y posta donde se realizará el control. | 2 |
+| 42 | US-30 | Consulta de agenda y próximas citas | Como enfermera, quiero consultar las citas futuras asignadas a mi agenda, para organizar las atenciones programadas de mis pacientes. | 2 |
+| 43 | US-31 | Consulta de la posta asignada | Como enfermera, quiero consultar la posta de salud a la que estoy asignada, para identificar el establecimiento donde realizo el seguimiento de mis pacientes. | 2 |
+| 44 | TS-19 | Consulta del nivel de riesgo de pacientes | Como developer, quiero consultar y clasificar la información de riesgo de los pacientes mediante una API, para facilitar el seguimiento de los casos según su nivel de riesgo. | 5 |
+| 45 | TS-22 | Consulta de métricas y análisis de postas | Como developer, quiero gestionar la consulta de métricas e información agregada de las postas mediante una API, para proporcionar datos sobre la adherencia, el nivel de riesgo y el seguimiento de los tratamientos. | 8 |
+| 46 | TS-23 | Generación de reportes de postas | Como developer, quiero generar reportes de las métricas de las postas mediante una API, para disponer de información consolidada sobre la adherencia, el riesgo y el seguimiento de los tratamientos. | 5 |
+| 47 | US-21 | Análisis y seguimiento de las postas | Como administrador, quiero consultar información sobre las postas asignadas, sus niveles de riesgo y métricas de adherencia, para analizar el estado de los tratamientos y tomar acciones de seguimiento cuando sea necesario. | 8 |
+| 48 | US-19 | Comunicación con la enfermera | Como madre, quiero comunicarme con la enfermera asignada para realizar consultas relacionadas con el tratamiento de mi hijo y recibir orientación durante su seguimiento. | 2 |
+| 49 | US-20 | Cierre de consulta | Como enfermera, quiero cerrar una consulta con una madre cuando haya atendido su solicitud, para finalizar el seguimiento de la consulta y dejar constancia de la atención realizada. | 1 |
+| 50 | TS-20 | Gestión de teleconsultas | Como developer, quiero gestionar las teleconsultas entre madres y enfermeras mediante una API, para permitir el intercambio de consultas y respuestas durante el seguimiento del tratamiento del paciente. | 8 |
+| 51 | US-08 | Cierre de sesión | Como usuario Quiero cerrar sesión de mi cuenta en el dispositivo que lo esté usando Para evitar accesos indebidos a mi cuenta. | 2 |
+| 52 | US-16 | Racha de tratamiento | Como madre, quiero conocer la cantidad de días consecutivos en los que mi hijo ha cumplido con su tratamiento, para mantener la constancia durante el proceso. | 2 |
+| 53 | TS-13 | Consulta del progreso de gamificación | Como developer, quiero gestionar la consulta del progreso de gamificación asociado a un paciente mediante una API, para proporcionar información sobre los puntos acumulados y la constancia del tratamiento. | 2 |
+| 54 | US-17 | Insignias por logros del tratamiento | Como madre, quiero obtener insignias al alcanzar hitos durante el tratamiento de mi hijo, para reconocer mi constancia y motivarme a continuar con su seguimiento. | 2 |
+| 55 | TS-14 | Consulta de insignias y progreso | Como developer, quiero gestionar la consulta de las insignias asociadas a un paciente mediante una API, para obtener su estado de desbloqueo y el progreso hacia cada logro del tratamiento. | 2 |
+| 56 | US-18 | Puntos por cumplimiento del tratamiento | Como madre, quiero obtener puntos por confirmar el cumplimiento de las dosis de mi hijo, para reconocer mi constancia y mantener la motivación durante el tratamiento. | 2 |
+| 57 | TS-15 | Registro de consumo de alimento | Como developer, quiero gestionar el registro del consumo de alimentos de un paciente mediante una API, para calcular el hierro absorbido y mantener actualizada su información nutricional. | 3 |
+| 58 | TS-16 | Consulta del diario nutricional | Como developer, quiero consultar el consumo de alimentos de un paciente correspondiente al día actual mediante una API, para obtener su resumen nutricional y el hierro absorbido. | 5 |
+| 59 | TS-17 | Consulta de alimentos | Como developer, quiero gestionar la consulta de alimentos mediante una API, para obtener información nutricional de los alimentos según una categoría o un criterio de búsqueda. | 5 |
 
 ## 3.4. Impact Mapping
 
