@@ -3657,10 +3657,18 @@ Las historias se agruparon primero por prioridad (High antes que Medium; no se r
 
 ## 3.4. Impact Mapping
 
-> Impact Map con Goal → Actors → Impacts → Deliverables, elaborado en UXPressia o LucidChart.
+En esta sección, se presentara el mapa de impacto, el cual nos ayuda a alinear nuestros objetivos de empresa con los objetivos de nuestros segmentos.
 
-<img src="../assets/img/chapter-III/impact-map.png" alt="Impact Map">
+**Impact Mapping — María López**
 
-**Goal (SMART):** <!-- COMPLETAR -->
+<div align="center">
+  <img src="../assets/img/chapter-III/Impact map - Mesly Lopez.png">
+</div>
 
-<!-- COMPLETAR: explicación del mapa -->
+---
+
+**Impact Mapping — Carlos Rojas**
+  
+<div align="center">
+  <img src="../assets/img/chapter-III/Impact map - Carlos Rojas.png">
+</div>
