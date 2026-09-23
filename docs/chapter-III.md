@@ -3404,59 +3404,6 @@ entonces deben mostrarse los horarios libres y ocupados.<br>
   </thead>
   <tbody>
     <tr>
-      <td>US-28</td>
-      <td>Madre</td>
-      <td>High</td>
-      <td>EP-08</td>
-    </tr>
-    <tr>
-      <td><b>Title</b></td>
-      <td colspan="3">Consulta de postas y horarios disponibles</td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Description</b>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4">
-       Como madre, quiero consultar las postas cercanas y sus horarios disponibles, para seleccionar una alternativa adecuada al programar una cita para mi paciente.
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Acceptance Criteria</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        Escenario 1: Consulta de postas cercanas<br><br>
-Dado que la madre tiene pacientes registrados y permite el acceso a su ubicación,<br>
-cuando consulta las postas cercanas,<br>
-entonces deben mostrarse las postas activas ordenadas según su distancia.<br><br>
-Escenario 2: Consulta de horarios disponibles<br><br>
-Dado que la madre selecciona una posta,<br>
-cuando consulta los horarios disponibles para una fecha determinada,<br>
-entonces deben mostrarse los horarios libres y ocupados.<br><br>
-Escenario 3: Madre sin pacientes registrados<br><br>
-Dado que la madre no tiene ningún paciente registrado,<br>
-cuando intenta consultar las postas cercanas,<br>
-entonces debe mostrarse un mensaje indicando que primero debe registrar al menos un paciente.
-      </td>
-    </tr>
-  </tbody>
-</table>
-
----
-
-<table border="1" cellpadding="10" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Story ID</th>
-      <th>User</th>
-      <th>Priority</th>
-      <th>Epic</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
      <td>US-30</td>
       <td>Madre</td>
       <td>High</td>
@@ -3593,6 +3540,55 @@ entonces el sistema debe informar que no existe un tratamiento activo para regis
   </tbody>
 </table>
 
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+     <td>US-29</td>
+      <td>Madre</td>
+      <td>High</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Visualización de la próxima cita</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como madre, quiero consultar la próxima cita confirmada de mis pacientes, para conocer con anticipación la fecha, hora y posta donde se realizará el control.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Próxima cita disponible<br><br>
+Dado que la madre tiene una cita futura confirmada,<br>
+cuando accede a la sección de próximas citas,<br>
+entonces deben mostrarse la fecha, hora, paciente, posta y estado de la cita.<br><br>
+Escenario 2: Sin próximas citas<br><br>
+Dado que la madre no tiene ninguna cita futura confirmada,<br>
+cuando consulta sus próximas citas,<br>
+entonces debe mostrarse un mensaje indicando que no existen próximas citas.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 ## 3.3. Product Backlog
 
 Las historias se agruparon primero por prioridad (High antes que Medium; no se registraron historias Low) y, dentro de cada nivel, se respetó la secuencia de Epics (EP-01 a EP-10) para mantener la coherencia de flujo funcional: fundamentos (autenticación, seguridad y acceso) → gestión clínica del paciente y seguimiento del tratamiento → gestión de postas y citas → analíticas/reportes → comunicación → diario nutricional y gamificación (funcionalidades de prioridad Media orientadas a motivación, no bloqueantes para el MVP).
@@ -3638,26 +3634,26 @@ Las historias se agruparon primero por prioridad (High antes que Medium; no se r
 | 37 | US-25 | Consulta de enfermeras disponibles para asignación | Como administrador, quiero consultar las enfermeras que no tienen una posta asignada, para seleccionar una durante la asignación de personal a un establecimiento. | 2 |
 | 38 | US-26 | Reserva y gestión de citas médicas | Como madre, quiero reservar, consultar y cancelar citas para mis pacientes, para organizar sus controles médicos en las postas de salud disponibles. | 3 |
 | 39 | US-27 | Consulta de postas y horarios disponibles | Como madre, quiero consultar las postas cercanas y sus horarios disponibles, para seleccionar una alternativa adecuada al programar una cita para mi paciente. | 2 |
-| 40 | US-28 | Consulta de postas y horarios disponibles | Como madre, quiero consultar las postas cercanas y sus horarios disponibles, para seleccionar una alternativa adecuada al programar una cita para mi paciente. | 3 |
-| 42 | US-30 | Consulta de agenda y próximas citas | Como enfermera, quiero consultar las citas futuras asignadas a mi agenda, para organizar las atenciones programadas de mis pacientes. | 2 |
-| 43 | US-31 | Consulta de la posta asignada | Como enfermera, quiero consultar la posta de salud a la que estoy asignada, para identificar el establecimiento donde realizo el seguimiento de mis pacientes. | 2 |
-| 44 | TS-19 | Consulta del nivel de riesgo de pacientes | Como developer, quiero consultar y clasificar la información de riesgo de los pacientes mediante una API, para facilitar el seguimiento de los casos según su nivel de riesgo. | 5 |
-| 45 | TS-22 | Consulta de métricas y análisis de postas | Como developer, quiero gestionar la consulta de métricas e información agregada de las postas mediante una API, para proporcionar datos sobre la adherencia, el nivel de riesgo y el seguimiento de los tratamientos. | 8 |
-| 46 | TS-23 | Generación de reportes de postas | Como developer, quiero generar reportes de las métricas de las postas mediante una API, para disponer de información consolidada sobre la adherencia, el riesgo y el seguimiento de los tratamientos. | 5 |
-| 47 | US-21 | Análisis y seguimiento de las postas | Como administrador, quiero consultar información sobre las postas asignadas, sus niveles de riesgo y métricas de adherencia, para analizar el estado de los tratamientos y tomar acciones de seguimiento cuando sea necesario. | 8 |
-| 48 | US-19 | Comunicación con la enfermera | Como madre, quiero comunicarme con la enfermera asignada para realizar consultas relacionadas con el tratamiento de mi hijo y recibir orientación durante su seguimiento. | 2 |
-| 49 | US-20 | Cierre de consulta | Como enfermera, quiero cerrar una consulta con una madre cuando haya atendido su solicitud, para finalizar el seguimiento de la consulta y dejar constancia de la atención realizada. | 1 |
-| 50 | TS-20 | Gestión de teleconsultas | Como developer, quiero gestionar las teleconsultas entre madres y enfermeras mediante una API, para permitir el intercambio de consultas y respuestas durante el seguimiento del tratamiento del paciente. | 8 |
-| 51 | US-08 | Cierre de sesión | Como usuario Quiero cerrar sesión de mi cuenta en el dispositivo que lo esté usando Para evitar accesos indebidos a mi cuenta. | 2 |
-| 52 | US-16 | Racha de tratamiento | Como madre, quiero conocer la cantidad de días consecutivos en los que mi hijo ha cumplido con su tratamiento, para mantener la constancia durante el proceso. | 2 |
-| 53 | TS-13 | Consulta del progreso de gamificación | Como developer, quiero gestionar la consulta del progreso de gamificación asociado a un paciente mediante una API, para proporcionar información sobre los puntos acumulados y la constancia del tratamiento. | 2 |
-| 54 | US-17 | Insignias por logros del tratamiento | Como madre, quiero obtener insignias al alcanzar hitos durante el tratamiento de mi hijo, para reconocer mi constancia y motivarme a continuar con su seguimiento. | 2 |
-| 55 | TS-14 | Consulta de insignias y progreso | Como developer, quiero gestionar la consulta de las insignias asociadas a un paciente mediante una API, para obtener su estado de desbloqueo y el progreso hacia cada logro del tratamiento. | 2 |
-| 56 | US-18 | Puntos por cumplimiento del tratamiento | Como madre, quiero obtener puntos por confirmar el cumplimiento de las dosis de mi hijo, para reconocer mi constancia y mantener la motivación durante el tratamiento. | 2 |
-| 57 | TS-15 | Registro de consumo de alimento | Como developer, quiero gestionar el registro del consumo de alimentos de un paciente mediante una API, para calcular el hierro absorbido y mantener actualizada su información nutricional. | 3 |
-| 58 | TS-16 | Consulta del diario nutricional | Como developer, quiero consultar el consumo de alimentos de un paciente correspondiente al día actual mediante una API, para obtener su resumen nutricional y el hierro absorbido. | 5 |
-| 59 | TS-17 | Consulta de alimentos | Como developer, quiero gestionar la consulta de alimentos mediante una API, para obtener información nutricional de los alimentos según una categoría o un criterio de búsqueda. | 5 |
-| 60 | US-32 | Registro del cumplimiento de dosis | Como madre, quiero registrar el cumplimiento de las dosis de mi paciente, para llevar un seguimiento de su tratamiento. | 5 |
+| 40 | US-29 | Visualización de la próxima cita | Como madre, quiero consultar la próxima cita confirmada de mis pacientes, para conocer con anticipación la fecha, hora y posta donde se realizará el control. | 2 |
+| 41 | US-30 | Consulta de agenda y próximas citas | Como enfermera, quiero consultar las citas futuras asignadas a mi agenda, para organizar las atenciones programadas de mis pacientes. | 2 |
+| 42 | US-31 | Consulta de la posta asignada | Como enfermera, quiero consultar la posta de salud a la que estoy asignada, para identificar el establecimiento donde realizo el seguimiento de mis pacientes. | 2 |
+| 43 | TS-19 | Consulta del nivel de riesgo de pacientes | Como developer, quiero consultar y clasificar la información de riesgo de los pacientes mediante una API, para facilitar el seguimiento de los casos según su nivel de riesgo. | 5 |
+| 44 | TS-22 | Consulta de métricas y análisis de postas | Como developer, quiero gestionar la consulta de métricas e información agregada de las postas mediante una API, para proporcionar datos sobre la adherencia, el nivel de riesgo y el seguimiento de los tratamientos. | 8 |
+| 45 | TS-23 | Generación de reportes de postas | Como developer, quiero generar reportes de las métricas de las postas mediante una API, para disponer de información consolidada sobre la adherencia, el riesgo y el seguimiento de los tratamientos. | 5 |
+| 46 | US-21 | Análisis y seguimiento de las postas | Como administrador, quiero consultar información sobre las postas asignadas, sus niveles de riesgo y métricas de adherencia, para analizar el estado de los tratamientos y tomar acciones de seguimiento cuando sea necesario. | 8 |
+| 47 | US-19 | Comunicación con la enfermera | Como madre, quiero comunicarme con la enfermera asignada para realizar consultas relacionadas con el tratamiento de mi hijo y recibir orientación durante su seguimiento. | 2 |
+| 48 | US-20 | Cierre de consulta | Como enfermera, quiero cerrar una consulta con una madre cuando haya atendido su solicitud, para finalizar el seguimiento de la consulta y dejar constancia de la atención realizada. | 1 |
+| 49 | TS-20 | Gestión de teleconsultas | Como developer, quiero gestionar las teleconsultas entre madres y enfermeras mediante una API, para permitir el intercambio de consultas y respuestas durante el seguimiento del tratamiento del paciente. | 8 |
+| 50 | US-08 | Cierre de sesión | Como usuario Quiero cerrar sesión de mi cuenta en el dispositivo que lo esté usando Para evitar accesos indebidos a mi cuenta. | 2 |
+| 51 | US-16 | Racha de tratamiento | Como madre, quiero conocer la cantidad de días consecutivos en los que mi hijo ha cumplido con su tratamiento, para mantener la constancia durante el proceso. | 2 |
+| 52 | TS-13 | Consulta del progreso de gamificación | Como developer, quiero gestionar la consulta del progreso de gamificación asociado a un paciente mediante una API, para proporcionar información sobre los puntos acumulados y la constancia del tratamiento. | 2 |
+| 53 | US-17 | Insignias por logros del tratamiento | Como madre, quiero obtener insignias al alcanzar hitos durante el tratamiento de mi hijo, para reconocer mi constancia y motivarme a continuar con su seguimiento. | 2 |
+| 54 | TS-14 | Consulta de insignias y progreso | Como developer, quiero gestionar la consulta de las insignias asociadas a un paciente mediante una API, para obtener su estado de desbloqueo y el progreso hacia cada logro del tratamiento. | 2 |
+| 55 | US-18 | Puntos por cumplimiento del tratamiento | Como madre, quiero obtener puntos por confirmar el cumplimiento de las dosis de mi hijo, para reconocer mi constancia y mantener la motivación durante el tratamiento. | 2 |
+| 56 | TS-15 | Registro de consumo de alimento | Como developer, quiero gestionar el registro del consumo de alimentos de un paciente mediante una API, para calcular el hierro absorbido y mantener actualizada su información nutricional. | 3 |
+| 57 | TS-16 | Consulta del diario nutricional | Como developer, quiero consultar el consumo de alimentos de un paciente correspondiente al día actual mediante una API, para obtener su resumen nutricional y el hierro absorbido. | 5 |
+| 58 | TS-17 | Consulta de alimentos | Como developer, quiero gestionar la consulta de alimentos mediante una API, para obtener información nutricional de los alimentos según una categoría o un criterio de búsqueda. | 5 |
+| 59 | US-32 | Registro del cumplimiento de dosis | Como madre, quiero registrar el cumplimiento de las dosis de mi paciente, para llevar un seguimiento de su tratamiento. | 5 |
 
 ## 3.4. Impact Mapping
 
