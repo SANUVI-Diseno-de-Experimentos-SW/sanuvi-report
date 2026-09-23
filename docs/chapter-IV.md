@@ -178,25 +178,100 @@
 
 ## 4.8. Domain-Driven Software Architecture
 
+La arquitectura de software de Ferova Platform se organiza mediante un enfoque orientado al dominio, utilizando el modelo C4 para representar progresivamente la estructura de la solución. Esta representación permite visualizar el sistema desde una perspectiva general hasta el detalle de sus componentes internos.
+
+La arquitectura considera como actores principales al Apoderado y al Personal de Salud, quienes interactúan con la plataforma mediante diferentes aplicaciones. La solución está compuesta por una aplicación web para el personal de salud, una aplicación móvil para los apoderados y una API que centraliza la lógica de negocio y el acceso a los datos.
+
+Asimismo, Ferova Platform integra servicios externos como Resend, utilizado para el envío de correos electrónicos, y Google Maps API, utilizado para consultar información relacionada con la ubicación de las postas de salud.
+
+Para representar esta arquitectura se emplearon tres niveles del modelo C4: Contexto, Contenedores y Componentes, desarrollados mediante Structurizr.
+
+
 ### 4.8.1. Software Architecture Context Diagram
 
-> Diagrama C4 nivel Contexto, elaborado en Structurizr.
+El Context Diagram presenta una visión general de Ferova Platform y permite identificar los principales actores y sistemas externos que interactúan con la solución.
 
-<img src="../assets/img/chapter-IV/c4-context.png" alt="C4 Context Diagram">
+<div align ="center">
+  <img src="../assets/img/chapter-IV/1.png">
+</div>
 
-<!-- COMPLETAR -->
+En el centro del contexto se encuentra Ferova Platform, que proporciona las funcionalidades necesarias para que los apoderados realicen el seguimiento del tratamiento de sus pacientes y para que el personal de salud gestione y supervise su atención.
+
+Los principales actores identificados son:
+
+- **Apoderado:** madre, padre o cuidador responsable del paciente, quien utiliza la plataforma para gestionar la información del paciente, realizar el seguimiento del tratamiento, consultar su evolución, gestionar citas y comunicarse con el personal de salud.
+
+- **Personal de Salud:** profesionales responsables de gestionar y realizar el seguimiento de los pacientes, así como atender las consultas de los apoderados.
+
+Además, Ferova Platform mantiene comunicación con servicios externos. Resend permite gestionar el envío de correos electrónicos, particularmente aquellos relacionados con procesos como la recuperación de contraseña. Google Maps API permite consultar información de ubicación asociada a las postas de salud.
 
 ### 4.8.2. Software Architecture Container Diagrams
 
-<img src="../assets/img/chapter-IV/c4-container.png" alt="C4 Container Diagram">
+El Container Diagram descompone Ferova Platform en los principales contenedores que conforman la solución y muestra cómo estos interactúan entre sí.
 
-<!-- COMPLETAR -->
+<div align ="center">
+  <img src="../assets/img/chapter-IV/2.png">
+</div>
+
+La plataforma está organizada principalmente en los siguientes contenedores:
+
+- **Web Site:** sitio web público que presenta información sobre Ferova y permite a los usuarios acceder a la aplicación web o descargar la aplicación móvil.
+- **Web Application:** aplicación web destinada al personal de salud, mediante la cual puede gestionar pacientes y realizar el seguimiento de tratamientos, controles y citas.
+- **Mobile Application:** aplicación móvil destinada a los apoderados, que permite gestionar pacientes, registrar y consultar información relacionada con el tratamiento, consultar citas y mantener comunicación con el personal de salud.
+- **API Application:** backend principal de la plataforma, responsable de centralizar la lógica de negocio, autenticación, gestión de pacientes, tratamientos, citas, seguimiento y comunicación.
+- **Base de datos:** contenedor encargado de almacenar la información operativa de la plataforma, incluyendo usuarios, pacientes, tratamientos, citas, controles y demás información requerida por los módulos funcionales.
+
+La Web Application y la Mobile Application utilizan la API Application mediante comunicaciones HTTP/HTTPS para consultar y registrar información. A su vez, la API utiliza la base de datos para leer y escribir la información necesaria para la operación de la plataforma.
+
+En este nivel también se representan las integraciones externas. La plataforma utiliza Resend para el envío de correos electrónicos y Google Maps API para consultar información de ubicación de las postas de salud.
+
+De esta manera, el diagrama permite observar la separación entre las interfaces utilizadas por los usuarios, la capa encargada de la lógica de negocio y la persistencia de información.
 
 ### 4.8.3. Software Architecture Components Diagrams
 
-<img src="../assets/img/chapter-IV/c4-components.png" alt="C4 Components Diagram">
+El Component Diagram presenta una descomposición interna de los contenedores principales de Ferova Platform, permitiendo identificar las responsabilidades funcionales que conforman cada aplicación.
 
-<!-- COMPLETAR -->
+**Web Application**
+
+La aplicación web utilizada por el personal de salud se organiza en componentes orientados a las principales funcionalidades de gestión y seguimiento:
+
+<div align ="center">
+  <img src="../assets/img/chapter-IV/3.png">
+</div>
+
+- **Identity and Management:** gestiona la autenticación, autorización y administración de los usuarios del personal de salud.
+- **Patient Management:** permite gestionar la información de los pacientes y su asignación al personal de salud.
+- **Treatment Tracking:** gestiona el seguimiento de tratamientos, controles y estado de los pacientes.
+- **Health Facility:** permite consultar y gestionar información relacionada con las postas de salud.
+- **Communication:** gestiona las comunicaciones y consultas entre el personal de salud y los apoderados.
+- **Analytics Reporting:** permite consultar métricas e indicadores para analizar información relacionada con el seguimiento de los pacientes.
+
+Estos componentes mantienen relaciones funcionales entre sí y utilizan la API Application para acceder a las funcionalidades y datos proporcionados por el backend.
+
+**API Application**
+
+La API Application concentra la lógica de negocio de Ferova Platform y se encuentra organizada en componentes funcionales que representan las principales responsabilidades del backend:
+
+<div align ="center">
+  <img src="../assets/img/chapter-IV/4.png">
+</div>
+
+- **Identity and Management:** gestiona autenticación, autorización y administración de usuarios.
+- **Patient Management:** gestiona la información de los pacientes y su relación con el personal de salud.
+- **Treatment Tracking:** gestiona tratamientos, controles y seguimiento de los pacientes.
+- **Health Facility:** administra la información relacionada con las postas de salud y su ubicación.
+- **Communication Management:** gestiona las comunicaciones entre apoderados y personal de salud.
+- **Analytics Reporting:** genera métricas e indicadores a partir de la información disponible en la plataforma.
+- **Achievements & Rewards:** gestiona logros, puntos y recompensas relacionados con el seguimiento del tratamiento.
+- **Nutritional Diary:** gestiona el registro y seguimiento de información nutricional de los pacientes.
+
+Los componentes del backend mantienen relaciones entre sí para intercambiar información necesaria para ejecutar las funcionalidades del sistema. Por ejemplo, Patient Management proporciona información utilizada por Treatment Tracking, mientras que los datos de tratamientos y controles son utilizados por Analytics Reporting y Achievements & Rewards.
+
+La API también mantiene comunicación con servicios externos. El componente Identity and Management utiliza Resend para el envío de códigos de verificación relacionados con la recuperación de contraseña, mientras que Health Facility utiliza Google Maps API para consultar información de ubicación de las postas de salud.
+
+Finalmente, los componentes del backend interactúan con la base de datos MongoDB para almacenar y recuperar la información necesaria para la operación de la plataforma.
+
+
 
 ## 4.9. Software Object-Oriented Design
 
