@@ -3591,6 +3591,57 @@ entonces debe mostrarse un mensaje indicando que no tiene una posta asignada.
   </tbody>
 </table>
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+     <td>US-32</td>
+      <td>Madre</td>
+      <td>High</td>
+      <td>EP-05</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registro del cumplimiento de dosis</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+Como madre, quiero registrar el cumplimiento de las dosis de mi paciente, para llevar un seguimiento de su tratamiento.      
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario #1: Registro exitoso del cumplimiento<br><br>
+Dado que la madre tiene un tratamiento activo para su paciente,<br>
+cuando confirma que ha administrado la dosis correspondiente del día,<br>
+entonces el sistema debe registrar la dosis como cumplida y actualizar el seguimiento del tratamiento.<br><br>
+Escenario #2: Dosis ya registrada<br><br>
+Dado que la dosis correspondiente al día ya fue registrada,<br>
+cuando la madre intenta confirmar nuevamente la misma dosis,<br>
+entonces el sistema debe informar que la dosis ya fue registrada y evitar duplicar el registro.<br><br>
+Escenario #3: Tratamiento no activo<br><br>
+Dado que el paciente no tiene un tratamiento activo,<br>
+cuando la madre intenta registrar una dosis,<br>
+entonces el sistema debe informar que no existe un tratamiento activo para registrar la dosis.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 ## 3.3. Product Backlog
 
 Las historias se agruparon primero por prioridad (High antes que Medium; no se registraron historias Low) y, dentro de cada nivel, se respetó la secuencia de Epics (EP-01 a EP-10) para mantener la coherencia de flujo funcional: fundamentos (autenticación, seguridad y acceso) → gestión clínica del paciente y seguimiento del tratamiento → gestión de postas y citas → analíticas/reportes → comunicación → diario nutricional y gamificación (funcionalidades de prioridad Media orientadas a motivación, no bloqueantes para el MVP).
@@ -3656,6 +3707,7 @@ Las historias se agruparon primero por prioridad (High antes que Medium; no se r
 | 57 | TS-15 | Registro de consumo de alimento | Como developer, quiero gestionar el registro del consumo de alimentos de un paciente mediante una API, para calcular el hierro absorbido y mantener actualizada su información nutricional. | 3 |
 | 58 | TS-16 | Consulta del diario nutricional | Como developer, quiero consultar el consumo de alimentos de un paciente correspondiente al día actual mediante una API, para obtener su resumen nutricional y el hierro absorbido. | 5 |
 | 59 | TS-17 | Consulta de alimentos | Como developer, quiero gestionar la consulta de alimentos mediante una API, para obtener información nutricional de los alimentos según una categoría o un criterio de búsqueda. | 5 |
+| 60 | US-32 | Registro del cumplimiento de dosis | Como madre, quiero registrar el cumplimiento de las dosis de mi paciente, para llevar un seguimiento de su tratamiento. | 5 |
 
 ## 3.4. Impact Mapping
 
