@@ -3404,108 +3404,6 @@ entonces deben mostrarse los horarios libres y ocupados.<br>
   </thead>
   <tbody>
     <tr>
-      <td>US-28</td>
-      <td>Madre</td>
-      <td>High</td>
-      <td>EP-08</td>
-    </tr>
-    <tr>
-      <td><b>Title</b></td>
-      <td colspan="3">Consulta de postas y horarios disponibles</td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Description</b>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4">
-       Como madre, quiero consultar las postas cercanas y sus horarios disponibles, para seleccionar una alternativa adecuada al programar una cita para mi paciente.
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Acceptance Criteria</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        Escenario 1: Consulta de postas cercanas<br><br>
-Dado que la madre tiene pacientes registrados y permite el acceso a su ubicación,<br>
-cuando consulta las postas cercanas,<br>
-entonces deben mostrarse las postas activas ordenadas según su distancia.<br><br>
-Escenario 2: Consulta de horarios disponibles<br><br>
-Dado que la madre selecciona una posta,<br>
-cuando consulta los horarios disponibles para una fecha determinada,<br>
-entonces deben mostrarse los horarios libres y ocupados.<br><br>
-Escenario 3: Madre sin pacientes registrados<br><br>
-Dado que la madre no tiene ningún paciente registrado,<br>
-cuando intenta consultar las postas cercanas,<br>
-entonces debe mostrarse un mensaje indicando que primero debe registrar al menos un paciente.
-      </td>
-    </tr>
-  </tbody>
-</table>
-
----
-
-<table border="1" cellpadding="10" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Story ID</th>
-      <th>User</th>
-      <th>Priority</th>
-      <th>Epic</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-     <td>US-29</td>
-      <td>Madre</td>
-      <td>High</td>
-      <td>EP-08</td>
-    </tr>
-    <tr>
-      <td><b>Title</b></td>
-      <td colspan="3">Visualización de la próxima cita</td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Description</b>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4">
-       Como madre, quiero consultar la próxima cita confirmada de mis pacientes, para conocer con anticipación la fecha, hora y posta donde se realizará el control.
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Acceptance Criteria</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        Escenario 1: Próxima cita disponible<br><br>
-Dado que la madre tiene una cita futura confirmada,<br>
-cuando accede a la sección de próximas citas,<br>
-entonces deben mostrarse la fecha, hora, paciente, posta y estado de la cita.<br><br>
-Escenario 2: Sin próximas citas<br><br>
-Dado que la madre no tiene ninguna cita futura confirmada,<br>
-cuando consulta sus próximas citas,<br>
-entonces debe mostrarse un mensaje indicando que no existen próximas citas.
-      </td>
-    </tr>
-  </tbody>
-</table>
-
----
-
-<table border="1" cellpadding="10" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Story ID</th>
-      <th>User</th>
-      <th>Priority</th>
-      <th>Epic</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
      <td>US-30</td>
       <td>Madre</td>
       <td>High</td>
@@ -3591,6 +3489,288 @@ entonces debe mostrarse un mensaje indicando que no tiene una posta asignada.
   </tbody>
 </table>
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+     <td>US-32</td>
+      <td>Madre</td>
+      <td>High</td>
+      <td>EP-05</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registro del cumplimiento de dosis</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+Como madre, quiero registrar el cumplimiento de las dosis de mi paciente, para llevar un seguimiento de su tratamiento.      
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario #1: Registro exitoso del cumplimiento<br><br>
+Dado que la madre tiene un tratamiento activo para su paciente,<br>
+cuando confirma que ha administrado la dosis correspondiente del día,<br>
+entonces el sistema debe registrar la dosis como cumplida y actualizar el seguimiento del tratamiento.<br><br>
+Escenario #2: Dosis ya registrada<br><br>
+Dado que la dosis correspondiente al día ya fue registrada,<br>
+cuando la madre intenta confirmar nuevamente la misma dosis,<br>
+entonces el sistema debe informar que la dosis ya fue registrada y evitar duplicar el registro.<br><br>
+Escenario #3: Tratamiento no activo<br><br>
+Dado que el paciente no tiene un tratamiento activo,<br>
+cuando la madre intenta registrar una dosis,<br>
+entonces el sistema debe informar que no existe un tratamiento activo para registrar la dosis.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+     <td>US-29</td>
+      <td>Madre</td>
+      <td>High</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Visualización de la próxima cita</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+       Como madre, quiero consultar la próxima cita confirmada de mis pacientes, para conocer con anticipación la fecha, hora y posta donde se realizará el control.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Próxima cita disponible<br><br>
+Dado que la madre tiene una cita futura confirmada,<br>
+cuando accede a la sección de próximas citas,<br>
+entonces deben mostrarse la fecha, hora, paciente, posta y estado de la cita.<br><br>
+Escenario 2: Sin próximas citas<br><br>
+Dado que la madre no tiene ninguna cita futura confirmada,<br>
+cuando consulta sus próximas citas,<br>
+entonces debe mostrarse un mensaje indicando que no existen próximas citas.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<table border="1" cellspacing="0" cellpadding="8" style="border-collapse:collapse; width:100%;">
+    <tr>
+        <th>Story ID</th>
+        <th>User</th>
+        <th>Priority</th>
+        <th>Epic</th>
+    </tr>
+    <tr>
+        <td align="center">SP-01</td>
+        <td align="center">Desarrollador</td>
+        <td align="center">Alta</td>
+        <td align="center"></td>
+    </tr>
+    <tr>
+        <th>Title</th>
+        <td colspan="3">Investigar implementación de JWT para autenticación segura</td>
+    </tr>
+    <tr>
+        <th colspan="4">Description</th>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <strong> Como </strong> desarrollador <br>
+            <strong> Quiero </strong> investigar la implementación de JSON Web Tokens (JWT) <br>
+            <strong> Para </strong> determinar la estrategia más segura de manejo de sesiones sin estado (stateless) en la plataforma.
+        </td>
+    </tr>
+    <tr>
+        <th colspan="4">Acceptance Criteria</th>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <strong> Escenario 1: Evaluación de seguridad y flujo</strong> <br><br>
+            <strong> Dado que </strong> se realiza la investigación sobre el estándar JWT <br>
+            <strong> Cuando </strong> se evalúan los algoritmos de firma y el almacenamiento de tokens (Secure Cookies vs LocalStorage) <br>
+            <strong> Entonces </strong> se presenta una propuesta técnica y un prototipo funcional que valide la generación y verificación de tokens.
+        </td>
+    </tr>
+</table>
+
+---
+
+<table border="1" cellspacing="0" cellpadding="8" style="border-collapse:collapse; width:100%;">
+    <tr>
+        <th>Story ID</th>
+        <th>User</th>
+        <th>Priority</th>
+        <th>Epic</th>
+    </tr>
+    <tr>
+        <td align="center">SP-02</td>
+        <td align="center">Desarrollador</td>
+        <td align="center">Alta</td>
+        <td align="center"></td>
+    </tr>
+    <tr>
+        <th>Title</th>
+        <td colspan="3">Investigar despliegue de backend en Railway</td>
+    </tr>
+    <tr>
+        <th colspan="4">Description</th>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <strong> Como </strong> desarrollador <br>
+            <strong> Quiero </strong> investigar la plataforma Railway <br>
+            <strong> Para </strong> evaluar su viabilidad como entorno de despliegue para el backend desarrollado en Spring Boot.
+        </td>
+    </tr>
+    <tr>
+        <th colspan="4">Acceptance Criteria</th>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <strong> Escenario 1: Evaluación de CI/CD y conectividad</strong> <br><br>
+            <strong> Dado que </strong> se investigan las capacidades de Railway <br>
+            <strong> Cuando </strong> se realiza una prueba de despliegue conectando el repositorio de GitHub y la base de datos <br>
+            <strong> Entonces </strong> se determina si la plataforma cumple con los requisitos de escalabilidad y facilidad de integración para el proyecto.
+        </td>
+    </tr>
+</table>
+
+---
+
+<table border="1" cellspacing="0" cellpadding="8" style="border-collapse:collapse; width:100%;">
+    <tr>
+        <th>Story ID</th>
+        <th>User</th>
+        <th>Priority</th>
+        <th>Epic</th>
+    </tr>
+    <tr>
+        <td align="center">SP-03</td>
+        <td align="center">Desarrollador</td>
+        <td align="center">Alta</td>
+        <td align="center"></td>
+    </tr>
+    <tr>
+        <th>Title</th>
+        <td colspan="3">Investigar despliegue de frontend en Vercel</td>
+    </tr>
+    <tr>
+        <th colspan="4">Description</th>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <strong> Como </strong> desarrollador <br>
+            <strong> Quiero </strong> investigar el uso de Vercel para el despliegue del frontend <br>
+            <strong> Para </strong> asegurar una entrega rápida de contenido y una integración continua eficiente con la landing page y la aplicación.
+        </td>
+    </tr>
+    <tr>
+        <th colspan="4">Acceptance Criteria</th>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <strong> Escenario 1: Prototipo de despliegue en Vercel</strong> <br><br>
+            <strong> Dado que </strong> se evalúa Vercel como hosting para el frontend <br>
+            <strong> Cuando </strong> se configura el flujo de despliegue automático <br>
+            <strong> Entonces </strong> se cuenta con una URL pública funcional y un reporte de optimización de carga.
+        </td>
+    </tr>
+</table>
+
+<table border="1" cellspacing="0" cellpadding="8" style="border-collapse:collapse; width:100%;">
+    <tr>
+        <th>Story ID</th>
+        <th>User</th>
+        <th>Priority</th>
+        <th>Epic</th>
+    </tr>
+    <tr>
+        <td align="center">SP-04</td>
+        <td align="center">Desarrollador</td>
+        <td align="center">Alta</td>
+        <td align="center"></td>
+    </tr>
+    <tr>
+        <th>Title</th>
+        <td colspan="3">Investigar integración de Resend para el envío de correos electrónicos</td>
+    </tr>
+    <tr>
+        <th colspan="4">Description</th>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <strong> Como </strong> desarrollador <br>
+            <strong> Quiero </strong> investigar el uso de Resend como servicio para el envío de correos electrónicos <br>
+            <strong> Para </strong> asegurar un envío confiable de mensajes desde la aplicación y facilitar su integración con las funcionalidades que requieren comunicación por correo.
+        </td>
+    </tr>
+    <tr>
+        <th colspan="4">Acceptance Criteria</th>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <strong> Escenario 1: Prueba de envío de correo mediante Resend</strong> <br><br>
+            <strong> Dado que </strong> se evalúa Resend como servicio de envío de correos <br>
+            <strong> Cuando </strong> se configura la integración con la aplicación y se realiza un envío de prueba <br>
+            <strong> Entonces </strong> se recibe correctamente el correo electrónico y se obtiene una respuesta exitosa del servicio.
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <strong> Escenario 2: Validación de integración</strong> <br><br>
+            <strong> Dado que </strong> Resend se encuentra configurado en el entorno de desarrollo <br>
+            <strong> Cuando </strong> la aplicación solicita el envío de un correo <br>
+            <strong> Entonces </strong> el servicio procesa correctamente la solicitud y permite identificar el resultado del envío.
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <strong> Escenario 3: Validación de configuración segura</strong> <br><br>
+            <strong> Dado que </strong> se requiere integrar Resend de forma segura <br>
+            <strong> Cuando </strong> se configuran las credenciales y parámetros necesarios del servicio <br>
+            <strong> Entonces </strong> la aplicación puede realizar el envío sin exponer las credenciales utilizadas.
+        </td>
+    </tr>
+</table>
+
 ## 3.3. Product Backlog
 
 Las historias se agruparon primero por prioridad (High antes que Medium; no se registraron historias Low) y, dentro de cada nivel, se respetó la secuencia de Epics (EP-01 a EP-10) para mantener la coherencia de flujo funcional: fundamentos (autenticación, seguridad y acceso) → gestión clínica del paciente y seguimiento del tratamiento → gestión de postas y citas → analíticas/reportes → comunicación → diario nutricional y gamificación (funcionalidades de prioridad Media orientadas a motivación, no bloqueantes para el MVP).
@@ -3636,33 +3816,41 @@ Las historias se agruparon primero por prioridad (High antes que Medium; no se r
 | 37 | US-25 | Consulta de enfermeras disponibles para asignación | Como administrador, quiero consultar las enfermeras que no tienen una posta asignada, para seleccionar una durante la asignación de personal a un establecimiento. | 2 |
 | 38 | US-26 | Reserva y gestión de citas médicas | Como madre, quiero reservar, consultar y cancelar citas para mis pacientes, para organizar sus controles médicos en las postas de salud disponibles. | 3 |
 | 39 | US-27 | Consulta de postas y horarios disponibles | Como madre, quiero consultar las postas cercanas y sus horarios disponibles, para seleccionar una alternativa adecuada al programar una cita para mi paciente. | 2 |
-| 40 | US-28 | Consulta de postas y horarios disponibles | Como madre, quiero consultar las postas cercanas y sus horarios disponibles, para seleccionar una alternativa adecuada al programar una cita para mi paciente. | 3 |
-| 41 | US-29 | Visualización de la próxima cita | Como madre, quiero consultar la próxima cita confirmada de mis pacientes, para conocer con anticipación la fecha, hora y posta donde se realizará el control. | 2 |
-| 42 | US-30 | Consulta de agenda y próximas citas | Como enfermera, quiero consultar las citas futuras asignadas a mi agenda, para organizar las atenciones programadas de mis pacientes. | 2 |
-| 43 | US-31 | Consulta de la posta asignada | Como enfermera, quiero consultar la posta de salud a la que estoy asignada, para identificar el establecimiento donde realizo el seguimiento de mis pacientes. | 2 |
-| 44 | TS-19 | Consulta del nivel de riesgo de pacientes | Como developer, quiero consultar y clasificar la información de riesgo de los pacientes mediante una API, para facilitar el seguimiento de los casos según su nivel de riesgo. | 5 |
-| 45 | TS-22 | Consulta de métricas y análisis de postas | Como developer, quiero gestionar la consulta de métricas e información agregada de las postas mediante una API, para proporcionar datos sobre la adherencia, el nivel de riesgo y el seguimiento de los tratamientos. | 8 |
-| 46 | TS-23 | Generación de reportes de postas | Como developer, quiero generar reportes de las métricas de las postas mediante una API, para disponer de información consolidada sobre la adherencia, el riesgo y el seguimiento de los tratamientos. | 5 |
-| 47 | US-21 | Análisis y seguimiento de las postas | Como administrador, quiero consultar información sobre las postas asignadas, sus niveles de riesgo y métricas de adherencia, para analizar el estado de los tratamientos y tomar acciones de seguimiento cuando sea necesario. | 8 |
-| 48 | US-19 | Comunicación con la enfermera | Como madre, quiero comunicarme con la enfermera asignada para realizar consultas relacionadas con el tratamiento de mi hijo y recibir orientación durante su seguimiento. | 2 |
-| 49 | US-20 | Cierre de consulta | Como enfermera, quiero cerrar una consulta con una madre cuando haya atendido su solicitud, para finalizar el seguimiento de la consulta y dejar constancia de la atención realizada. | 1 |
-| 50 | TS-20 | Gestión de teleconsultas | Como developer, quiero gestionar las teleconsultas entre madres y enfermeras mediante una API, para permitir el intercambio de consultas y respuestas durante el seguimiento del tratamiento del paciente. | 8 |
-| 51 | US-08 | Cierre de sesión | Como usuario Quiero cerrar sesión de mi cuenta en el dispositivo que lo esté usando Para evitar accesos indebidos a mi cuenta. | 2 |
-| 52 | US-16 | Racha de tratamiento | Como madre, quiero conocer la cantidad de días consecutivos en los que mi hijo ha cumplido con su tratamiento, para mantener la constancia durante el proceso. | 2 |
-| 53 | TS-13 | Consulta del progreso de gamificación | Como developer, quiero gestionar la consulta del progreso de gamificación asociado a un paciente mediante una API, para proporcionar información sobre los puntos acumulados y la constancia del tratamiento. | 2 |
-| 54 | US-17 | Insignias por logros del tratamiento | Como madre, quiero obtener insignias al alcanzar hitos durante el tratamiento de mi hijo, para reconocer mi constancia y motivarme a continuar con su seguimiento. | 2 |
-| 55 | TS-14 | Consulta de insignias y progreso | Como developer, quiero gestionar la consulta de las insignias asociadas a un paciente mediante una API, para obtener su estado de desbloqueo y el progreso hacia cada logro del tratamiento. | 2 |
-| 56 | US-18 | Puntos por cumplimiento del tratamiento | Como madre, quiero obtener puntos por confirmar el cumplimiento de las dosis de mi hijo, para reconocer mi constancia y mantener la motivación durante el tratamiento. | 2 |
-| 57 | TS-15 | Registro de consumo de alimento | Como developer, quiero gestionar el registro del consumo de alimentos de un paciente mediante una API, para calcular el hierro absorbido y mantener actualizada su información nutricional. | 3 |
-| 58 | TS-16 | Consulta del diario nutricional | Como developer, quiero consultar el consumo de alimentos de un paciente correspondiente al día actual mediante una API, para obtener su resumen nutricional y el hierro absorbido. | 5 |
-| 59 | TS-17 | Consulta de alimentos | Como developer, quiero gestionar la consulta de alimentos mediante una API, para obtener información nutricional de los alimentos según una categoría o un criterio de búsqueda. | 5 |
+| 40 | US-29 | Visualización de la próxima cita | Como madre, quiero consultar la próxima cita confirmada de mis pacientes, para conocer con anticipación la fecha, hora y posta donde se realizará el control. | 2 |
+| 41 | US-30 | Consulta de agenda y próximas citas | Como enfermera, quiero consultar las citas futuras asignadas a mi agenda, para organizar las atenciones programadas de mis pacientes. | 2 |
+| 42 | US-31 | Consulta de la posta asignada | Como enfermera, quiero consultar la posta de salud a la que estoy asignada, para identificar el establecimiento donde realizo el seguimiento de mis pacientes. | 2 |
+| 43 | TS-19 | Consulta del nivel de riesgo de pacientes | Como developer, quiero consultar y clasificar la información de riesgo de los pacientes mediante una API, para facilitar el seguimiento de los casos según su nivel de riesgo. | 5 |
+| 44 | TS-22 | Consulta de métricas y análisis de postas | Como developer, quiero gestionar la consulta de métricas e información agregada de las postas mediante una API, para proporcionar datos sobre la adherencia, el nivel de riesgo y el seguimiento de los tratamientos. | 8 |
+| 45 | TS-23 | Generación de reportes de postas | Como developer, quiero generar reportes de las métricas de las postas mediante una API, para disponer de información consolidada sobre la adherencia, el riesgo y el seguimiento de los tratamientos. | 5 |
+| 46 | US-21 | Análisis y seguimiento de las postas | Como administrador, quiero consultar información sobre las postas asignadas, sus niveles de riesgo y métricas de adherencia, para analizar el estado de los tratamientos y tomar acciones de seguimiento cuando sea necesario. | 8 |
+| 47 | US-19 | Comunicación con la enfermera | Como madre, quiero comunicarme con la enfermera asignada para realizar consultas relacionadas con el tratamiento de mi hijo y recibir orientación durante su seguimiento. | 2 |
+| 48 | US-20 | Cierre de consulta | Como enfermera, quiero cerrar una consulta con una madre cuando haya atendido su solicitud, para finalizar el seguimiento de la consulta y dejar constancia de la atención realizada. | 1 |
+| 49 | TS-20 | Gestión de teleconsultas | Como developer, quiero gestionar las teleconsultas entre madres y enfermeras mediante una API, para permitir el intercambio de consultas y respuestas durante el seguimiento del tratamiento del paciente. | 8 |
+| 50 | US-08 | Cierre de sesión | Como usuario Quiero cerrar sesión de mi cuenta en el dispositivo que lo esté usando Para evitar accesos indebidos a mi cuenta. | 2 |
+| 51 | US-16 | Racha de tratamiento | Como madre, quiero conocer la cantidad de días consecutivos en los que mi hijo ha cumplido con su tratamiento, para mantener la constancia durante el proceso. | 2 |
+| 52 | TS-13 | Consulta del progreso de gamificación | Como developer, quiero gestionar la consulta del progreso de gamificación asociado a un paciente mediante una API, para proporcionar información sobre los puntos acumulados y la constancia del tratamiento. | 2 |
+| 53 | US-17 | Insignias por logros del tratamiento | Como madre, quiero obtener insignias al alcanzar hitos durante el tratamiento de mi hijo, para reconocer mi constancia y motivarme a continuar con su seguimiento. | 2 |
+| 54 | TS-14 | Consulta de insignias y progreso | Como developer, quiero gestionar la consulta de las insignias asociadas a un paciente mediante una API, para obtener su estado de desbloqueo y el progreso hacia cada logro del tratamiento. | 2 |
+| 55 | US-18 | Puntos por cumplimiento del tratamiento | Como madre, quiero obtener puntos por confirmar el cumplimiento de las dosis de mi hijo, para reconocer mi constancia y mantener la motivación durante el tratamiento. | 2 |
+| 56 | TS-15 | Registro de consumo de alimento | Como developer, quiero gestionar el registro del consumo de alimentos de un paciente mediante una API, para calcular el hierro absorbido y mantener actualizada su información nutricional. | 3 |
+| 57 | TS-16 | Consulta del diario nutricional | Como developer, quiero consultar el consumo de alimentos de un paciente correspondiente al día actual mediante una API, para obtener su resumen nutricional y el hierro absorbido. | 5 |
+| 58 | TS-17 | Consulta de alimentos | Como developer, quiero gestionar la consulta de alimentos mediante una API, para obtener información nutricional de los alimentos según una categoría o un criterio de búsqueda. | 5 |
+| 59 | US-32 | Registro del cumplimiento de dosis | Como madre, quiero registrar el cumplimiento de las dosis de mi paciente, para llevar un seguimiento de su tratamiento. | 5 |
 
 ## 3.4. Impact Mapping
 
-> Impact Map con Goal → Actors → Impacts → Deliverables, elaborado en UXPressia o LucidChart.
+En esta sección, se presentara el mapa de impacto, el cual nos ayuda a alinear nuestros objetivos de empresa con los objetivos de nuestros segmentos.
 
-<img src="../assets/img/chapter-III/impact-map.png" alt="Impact Map">
+**Impact Mapping — María López**
 
-**Goal (SMART):** <!-- COMPLETAR -->
+<div align="center">
+  <img src="../assets/img/chapter-III/Impact map - Mesly Lopez.png">
+</div>
 
-<!-- COMPLETAR: explicación del mapa -->
+---
+
+**Impact Mapping — Carlos Rojas**
+  
+<div align="center">
+  <img src="../assets/img/chapter-III/Impact map - Carlos Rojas.png">
+</div>
