@@ -3589,6 +3589,188 @@ entonces debe mostrarse un mensaje indicando que no existen próximas citas.
   </tbody>
 </table>
 
+---
+
+<table border="1" cellspacing="0" cellpadding="8" style="border-collapse:collapse; width:100%;">
+    <tr>
+        <th>Story ID</th>
+        <th>User</th>
+        <th>Priority</th>
+        <th>Epic</th>
+    </tr>
+    <tr>
+        <td align="center">SP-01</td>
+        <td align="center">Desarrollador</td>
+        <td align="center">Alta</td>
+        <td align="center"></td>
+    </tr>
+    <tr>
+        <th>Title</th>
+        <td colspan="3">Investigar implementación de JWT para autenticación segura</td>
+    </tr>
+    <tr>
+        <th colspan="4">Description</th>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <strong> Como </strong> desarrollador <br>
+            <strong> Quiero </strong> investigar la implementación de JSON Web Tokens (JWT) <br>
+            <strong> Para </strong> determinar la estrategia más segura de manejo de sesiones sin estado (stateless) en la plataforma.
+        </td>
+    </tr>
+    <tr>
+        <th colspan="4">Acceptance Criteria</th>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <strong> Escenario 1: Evaluación de seguridad y flujo</strong> <br><br>
+            <strong> Dado que </strong> se realiza la investigación sobre el estándar JWT <br>
+            <strong> Cuando </strong> se evalúan los algoritmos de firma y el almacenamiento de tokens (Secure Cookies vs LocalStorage) <br>
+            <strong> Entonces </strong> se presenta una propuesta técnica y un prototipo funcional que valide la generación y verificación de tokens.
+        </td>
+    </tr>
+</table>
+
+---
+
+<table border="1" cellspacing="0" cellpadding="8" style="border-collapse:collapse; width:100%;">
+    <tr>
+        <th>Story ID</th>
+        <th>User</th>
+        <th>Priority</th>
+        <th>Epic</th>
+    </tr>
+    <tr>
+        <td align="center">SP-02</td>
+        <td align="center">Desarrollador</td>
+        <td align="center">Alta</td>
+        <td align="center"></td>
+    </tr>
+    <tr>
+        <th>Title</th>
+        <td colspan="3">Investigar despliegue de backend en Railway</td>
+    </tr>
+    <tr>
+        <th colspan="4">Description</th>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <strong> Como </strong> desarrollador <br>
+            <strong> Quiero </strong> investigar la plataforma Railway <br>
+            <strong> Para </strong> evaluar su viabilidad como entorno de despliegue para el backend desarrollado en Spring Boot.
+        </td>
+    </tr>
+    <tr>
+        <th colspan="4">Acceptance Criteria</th>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <strong> Escenario 1: Evaluación de CI/CD y conectividad</strong> <br><br>
+            <strong> Dado que </strong> se investigan las capacidades de Railway <br>
+            <strong> Cuando </strong> se realiza una prueba de despliegue conectando el repositorio de GitHub y la base de datos <br>
+            <strong> Entonces </strong> se determina si la plataforma cumple con los requisitos de escalabilidad y facilidad de integración para el proyecto.
+        </td>
+    </tr>
+</table>
+
+---
+
+<table border="1" cellspacing="0" cellpadding="8" style="border-collapse:collapse; width:100%;">
+    <tr>
+        <th>Story ID</th>
+        <th>User</th>
+        <th>Priority</th>
+        <th>Epic</th>
+    </tr>
+    <tr>
+        <td align="center">SP-03</td>
+        <td align="center">Desarrollador</td>
+        <td align="center">Alta</td>
+        <td align="center"></td>
+    </tr>
+    <tr>
+        <th>Title</th>
+        <td colspan="3">Investigar despliegue de frontend en Vercel</td>
+    </tr>
+    <tr>
+        <th colspan="4">Description</th>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <strong> Como </strong> desarrollador <br>
+            <strong> Quiero </strong> investigar el uso de Vercel para el despliegue del frontend <br>
+            <strong> Para </strong> asegurar una entrega rápida de contenido y una integración continua eficiente con la landing page y la aplicación.
+        </td>
+    </tr>
+    <tr>
+        <th colspan="4">Acceptance Criteria</th>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <strong> Escenario 1: Prototipo de despliegue en Vercel</strong> <br><br>
+            <strong> Dado que </strong> se evalúa Vercel como hosting para el frontend <br>
+            <strong> Cuando </strong> se configura el flujo de despliegue automático <br>
+            <strong> Entonces </strong> se cuenta con una URL pública funcional y un reporte de optimización de carga.
+        </td>
+    </tr>
+</table>
+
+<table border="1" cellspacing="0" cellpadding="8" style="border-collapse:collapse; width:100%;">
+    <tr>
+        <th>Story ID</th>
+        <th>User</th>
+        <th>Priority</th>
+        <th>Epic</th>
+    </tr>
+    <tr>
+        <td align="center">SP-04</td>
+        <td align="center">Desarrollador</td>
+        <td align="center">Alta</td>
+        <td align="center"></td>
+    </tr>
+    <tr>
+        <th>Title</th>
+        <td colspan="3">Investigar integración de Resend para el envío de correos electrónicos</td>
+    </tr>
+    <tr>
+        <th colspan="4">Description</th>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <strong> Como </strong> desarrollador <br>
+            <strong> Quiero </strong> investigar el uso de Resend como servicio para el envío de correos electrónicos <br>
+            <strong> Para </strong> asegurar un envío confiable de mensajes desde la aplicación y facilitar su integración con las funcionalidades que requieren comunicación por correo.
+        </td>
+    </tr>
+    <tr>
+        <th colspan="4">Acceptance Criteria</th>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <strong> Escenario 1: Prueba de envío de correo mediante Resend</strong> <br><br>
+            <strong> Dado que </strong> se evalúa Resend como servicio de envío de correos <br>
+            <strong> Cuando </strong> se configura la integración con la aplicación y se realiza un envío de prueba <br>
+            <strong> Entonces </strong> se recibe correctamente el correo electrónico y se obtiene una respuesta exitosa del servicio.
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <strong> Escenario 2: Validación de integración</strong> <br><br>
+            <strong> Dado que </strong> Resend se encuentra configurado en el entorno de desarrollo <br>
+            <strong> Cuando </strong> la aplicación solicita el envío de un correo <br>
+            <strong> Entonces </strong> el servicio procesa correctamente la solicitud y permite identificar el resultado del envío.
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <strong> Escenario 3: Validación de configuración segura</strong> <br><br>
+            <strong> Dado que </strong> se requiere integrar Resend de forma segura <br>
+            <strong> Cuando </strong> se configuran las credenciales y parámetros necesarios del servicio <br>
+            <strong> Entonces </strong> la aplicación puede realizar el envío sin exponer las credenciales utilizadas.
+        </td>
+    </tr>
+</table>
+
 ## 3.3. Product Backlog
 
 Las historias se agruparon primero por prioridad (High antes que Medium; no se registraron historias Low) y, dentro de cada nivel, se respetó la secuencia de Epics (EP-01 a EP-10) para mantener la coherencia de flujo funcional: fundamentos (autenticación, seguridad y acceso) → gestión clínica del paciente y seguimiento del tratamiento → gestión de postas y citas → analíticas/reportes → comunicación → diario nutricional y gamificación (funcionalidades de prioridad Media orientadas a motivación, no bloqueantes para el MVP).
