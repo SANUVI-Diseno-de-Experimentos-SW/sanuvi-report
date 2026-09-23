@@ -3457,55 +3457,6 @@ entonces debe mostrarse un mensaje indicando que primero debe registrar al menos
   </thead>
   <tbody>
     <tr>
-     <td>US-29</td>
-      <td>Madre</td>
-      <td>High</td>
-      <td>EP-08</td>
-    </tr>
-    <tr>
-      <td><b>Title</b></td>
-      <td colspan="3">Visualización de la próxima cita</td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Description</b>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4">
-       Como madre, quiero consultar la próxima cita confirmada de mis pacientes, para conocer con anticipación la fecha, hora y posta donde se realizará el control.
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Acceptance Criteria</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        Escenario 1: Próxima cita disponible<br><br>
-Dado que la madre tiene una cita futura confirmada,<br>
-cuando accede a la sección de próximas citas,<br>
-entonces deben mostrarse la fecha, hora, paciente, posta y estado de la cita.<br><br>
-Escenario 2: Sin próximas citas<br><br>
-Dado que la madre no tiene ninguna cita futura confirmada,<br>
-cuando consulta sus próximas citas,<br>
-entonces debe mostrarse un mensaje indicando que no existen próximas citas.
-      </td>
-    </tr>
-  </tbody>
-</table>
-
----
-
-<table border="1" cellpadding="10" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Story ID</th>
-      <th>User</th>
-      <th>Priority</th>
-      <th>Epic</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
      <td>US-30</td>
       <td>Madre</td>
       <td>High</td>
@@ -3688,7 +3639,6 @@ Las historias se agruparon primero por prioridad (High antes que Medium; no se r
 | 38 | US-26 | Reserva y gestión de citas médicas | Como madre, quiero reservar, consultar y cancelar citas para mis pacientes, para organizar sus controles médicos en las postas de salud disponibles. | 3 |
 | 39 | US-27 | Consulta de postas y horarios disponibles | Como madre, quiero consultar las postas cercanas y sus horarios disponibles, para seleccionar una alternativa adecuada al programar una cita para mi paciente. | 2 |
 | 40 | US-28 | Consulta de postas y horarios disponibles | Como madre, quiero consultar las postas cercanas y sus horarios disponibles, para seleccionar una alternativa adecuada al programar una cita para mi paciente. | 3 |
-| 41 | US-29 | Visualización de la próxima cita | Como madre, quiero consultar la próxima cita confirmada de mis pacientes, para conocer con anticipación la fecha, hora y posta donde se realizará el control. | 2 |
 | 42 | US-30 | Consulta de agenda y próximas citas | Como enfermera, quiero consultar las citas futuras asignadas a mi agenda, para organizar las atenciones programadas de mis pacientes. | 2 |
 | 43 | US-31 | Consulta de la posta asignada | Como enfermera, quiero consultar la posta de salud a la que estoy asignada, para identificar el establecimiento donde realizo el seguimiento de mis pacientes. | 2 |
 | 44 | TS-19 | Consulta del nivel de riesgo de pacientes | Como developer, quiero consultar y clasificar la información de riesgo de los pacientes mediante una API, para facilitar el seguimiento de los casos según su nivel de riesgo. | 5 |
