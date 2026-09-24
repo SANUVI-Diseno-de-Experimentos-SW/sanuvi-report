@@ -277,17 +277,300 @@ Finalmente, los componentes del backend interactúan con la base de datos MongoD
 
 ### 4.9.1. Class Diagrams
 
-<img src="../assets/img/chapter-IV/class-diagram.png" alt="Class Diagram">
+El diagrama de clases representa la estructura estática del dominio de Ferova Platform, mostrando las principales clases que intervienen en la gestión de pacientes y el seguimiento de su tratamiento.
 
-<!-- COMPLETAR -->
+El modelo incluye entidades relacionadas con la administración de usuarios y pacientes, historias clínicas, controles de hemoglobina, tratamientos, establecimientos de salud, citas, asignación de personal de salud y comunicación entre usuarios. Asimismo, incorpora las clases asociadas al seguimiento nutricional y al sistema de logros y recompensas.
+
+Entre las principales clases representadas se encuentran User, Patient, MedicalRecord, Control, Treatment, HealthFacility, Appointment, NurseAssignment, Consultation, Message, RiskScore, Achievement, Badge, DailyDose, NutritionalDiary, FoodEntry y FoodItem. También se incluyen enumeraciones utilizadas para representar estados y categorías del dominio, como Role, TreatmentStatus, RiskLevel, AnemiaStatus y AchievementStatus.
+
+Las relaciones entre estas clases permiten representar, entre otros aspectos, la asociación de pacientes con usuarios, la gestión de historias clínicas y controles, el seguimiento de tratamientos, la asignación de personal de salud, la programación de citas, el registro de consultas y mensajes, el seguimiento nutricional y la obtención de logros durante el tratamiento.
+
+<div aling="center">
+  <img src="../assets/img/chapter-IV/Untitled.png">
+</div>
 
 ### 4.9.2. Class Dictionary
 
-| Clase | Atributo / Método | Tipo | Descripción |
-|-------|-------------------|------|-------------|
-| [Clase] | [atributo] | [tipo] | [descripción] |
+El diccionario de clases describe los principales elementos que conforman el modelo orientado a objetos de Ferova Platform, detallando las clases, atributos y métodos definidos en el diagrama.
 
-<!-- COMPLETAR -->
+**User**
+
+| Clase | Atributo / Método  | Tipo     | Descripción                                                    |
+| ----- | ------------------ | -------- | -------------------------------------------------------------- |
+| User  | id                 | string   | Identificador único del usuario.                               |
+| User  | name               | string   | Nombre del usuario.                                            |
+| User  | last_name          | string   | Apellido del usuario.                                          |
+| User  | password           | Password | Contraseña utilizada para la autenticación.                    |
+| User  | role               | Role     | Rol asignado al usuario dentro de la plataforma.               |
+| User  | email              | Email    | Correo electrónico del usuario.                                |
+| User  | phone              | Phone    | Número telefónico del usuario.                                 |
+| User  | created_at         | DateTime | Fecha y hora de creación del usuario.                          |
+| User  | validateName()     | string   | Valida el nombre registrado del usuario.                       |
+| User  | validateLastName() | string   | Valida el apellido registrado del usuario.                     |
+| User  | changePassword()   | void     | Permite cambiar la contraseña del usuario.                     |
+| User  | updateProfile()    | void     | Actualiza la información del perfil.                           |
+| User  | Deactive()         | void     | Desactiva al usuario.                                          |
+| User  | Active()           | void     | Activa al usuario.                                             |
+| User  | changeRole()       | void     | Permite cambiar el rol del usuario.                            |
+| User  | isMother()         | bool     | Determina si el usuario corresponde al rol de madre/apoderada. |
+| User  | isStaff()          | bool     | Determina si el usuario pertenece al personal de salud.        |
+
+**Patient**
+
+| Clase   | Atributo / Método     | Tipo          | Descripción                                       |
+| ------- | --------------------- | ------------- | ------------------------------------------------- |
+| Patient | id                    | string        | Identificador único del paciente.                 |
+| Patient | name                  | string        | Nombre del paciente.                              |
+| Patient | last_name             | string        | Apellido del paciente.                            |
+| Patient | BirthDate             | string        | Fecha de nacimiento del paciente.                 |
+| Patient | weight                | CurrentWeight | Peso actual del paciente.                         |
+| Patient | height                | CurrentHeight | Talla o altura actual del paciente.               |
+| Patient | motherId              | string        | Identificador de la madre o apoderada.            |
+| Patient | nurseId               | string        | Identificador del personal de salud asignado.     |
+| Patient | gender                | Gender        | Género del paciente.                              |
+| Patient | facilityId            | string        | Identificador del establecimiento de salud.       |
+| Patient | medicalRecord         | MedicalRecord | Historia clínica asociada al paciente.            |
+| Patient | assignNurse()         | void          | Permite asignar un personal de salud al paciente. |
+| Patient | Discharge()           | void          | Gestiona el alta del paciente.                    |
+| Patient | UpdateWeight()        | void          | Actualiza el peso del paciente.                   |
+| Patient | UpdateHeight()        | void          | Actualiza la altura del paciente.                 |
+| Patient | assignMedicalRecord() | void          | Asigna la historia clínica al paciente.           |
+
+**MedicalRecord**
+
+| Clase         | Atributo / Método | Tipo              | Descripción                                         |
+| ------------- | ----------------- | ----------------- | --------------------------------------------------- |
+| MedicalRecord | id                | string            | Identificador de la historia clínica.               |
+| MedicalRecord | CreatedAt         | DateTime          | Fecha de creación de la historia clínica.           |
+| MedicalRecord | UpdatedAt         | DateTime          | Fecha de última actualización.                      |
+| MedicalRecord | hemoglobinLevel   | HemoglobinLevel   | Nivel de hemoglobina registrado.                    |
+| MedicalRecord | weight            | Weight            | Peso registrado en la historia clínica.             |
+| MedicalRecord | height            | Height            | Altura registrada en la historia clínica.           |
+| MedicalRecord | antecedentes      | List<Antecedente> | Antecedentes registrados del paciente.              |
+| MedicalRecord | motivoConsulta    | string            | Motivo de la consulta médica.                       |
+| MedicalRecord | observaciones     | string            | Observaciones registradas por el personal de salud. |
+| MedicalRecord | controles         | List<Control>     | Controles asociados a la historia clínica.          |
+| MedicalRecord | sintomas          | List<string>      | Síntomas registrados del paciente.                  |
+| MedicalRecord | patientId         | string            | Identificador del paciente asociado.                |
+
+**Control**
+
+| Clase   | Atributo / Método       | Tipo             | Descripción                                         |
+| ------- | ----------------------- | ---------------- | --------------------------------------------------- |
+| Control | id                      | string           | Identificador único del control.                    |
+| Control | date                    | DateTime         | Fecha del control.                                  |
+| Control | hemoglobine_level       | HemoglobineLevel | Nivel de hemoglobina registrado durante el control. |
+| Control | anemiaStatus            | AnemiaStatus     | Estado de anemia determinado para el paciente.      |
+| Control | CalculateAnemiaStatus() | AnemiaStatus     | Calcula el estado de anemia del paciente.           |
+
+**Treatment**
+
+| Clase     | Atributo / Método        | Tipo            | Descripción                                           |
+| --------- | ------------------------ | --------------- | ----------------------------------------------------- |
+| Treatment | id                       | string          | Identificador del tratamiento.                        |
+| Treatment | patientId                | string          | Identificador del paciente.                           |
+| Treatment | nurseId                  | string          | Identificador del personal de salud responsable.      |
+| Treatment | supplement               | string          | Suplemento indicado para el tratamiento.              |
+| Treatment | quantity                 | string          | Cantidad indicada del suplemento.                     |
+| Treatment | dosingHours              | string          | Horario o frecuencia de administración.               |
+| Treatment | durationDays             | int             | Duración del tratamiento en días.                     |
+| Treatment | StartDate                | DateTime        | Fecha de inicio del tratamiento.                      |
+| Treatment | status                   | TreatmentStatus | Estado actual del tratamiento.                        |
+| Treatment | adherenceScore           | double          | Porcentaje o puntuación de adherencia al tratamiento. |
+| Treatment | currentStreak            | int             | Racha actual de cumplimiento.                         |
+| Treatment | totalConfirmed           | int             | Cantidad total de dosis confirmadas.                  |
+| Treatment | totalOmitted             | int             | Cantidad total de dosis omitidas.                     |
+| Treatment | CompletionObservation    | string?         | Observación relacionada con la finalización.          |
+| Treatment | AbandonmentObservation   | string?         | Observación relacionada con el abandono.              |
+| Treatment | riskScore                | RiskScore       | Nivel de riesgo asociado al tratamiento.              |
+| Treatment | validate()               | void            | Valida la información del tratamiento.                |
+| Treatment | completedTreatment()     | void            | Registra la finalización del tratamiento.             |
+| Treatment | abandonTreatment()       | void            | Registra el abandono del tratamiento.                 |
+| Treatment | UpdateAdherenceMetrics() | void            | Actualiza las métricas de adherencia.                 |
+| Treatment | UpdateRiskScore()        | void            | Actualiza el nivel de riesgo.                         |
+| Treatment | IsActive()               | bool            | Determina si el tratamiento está activo.              |
+| Treatment | IsCompleted()            | bool            | Determina si el tratamiento está completado.          |
+| Treatment | IsAbandoned()            | bool            | Determina si el tratamiento fue abandonado.           |
+
+**HealthFacility**
+
+| Clase          | Atributo / Método     | Tipo                  | Descripción                                         |
+| -------------- | --------------------- | --------------------- | --------------------------------------------------- |
+| HealthFacility | id                    | string                | Identificador del establecimiento de salud.         |
+| HealthFacility | name                  | string                | Nombre del establecimiento.                         |
+| HealthFacility | address               | string                | Dirección del establecimiento.                      |
+| HealthFacility | districtId            | string                | Identificador del distrito.                         |
+| HealthFacility | districtName          | string                | Nombre del distrito.                                |
+| HealthFacility | phone                 | string                | Número telefónico del establecimiento.              |
+| HealthFacility | services              | list<string>          | Servicios disponibles.                              |
+| HealthFacility | operating_schedule    | OperatingSchedule     | Horario de atención.                                |
+| HealthFacility | schedule_of_operation | ScheduleOfOperation   | Información del funcionamiento del establecimiento. |
+| HealthFacility | status                | string                | Estado del establecimiento.                         |
+| HealthFacility | nurse_assignments     | List<NurseAssignment> | Asignaciones del personal de salud.                 |
+| HealthFacility | activate()            | void                  | Activa el establecimiento.                          |
+| HealthFacility | deactivate()          | void                  | Desactiva el establecimiento.                       |
+| HealthFacility | updateServices()      | void                  | Actualiza los servicios disponibles.                |
+| HealthFacility | assignNurse()         | void                  | Asigna personal de salud.                           |
+| HealthFacility | isActive()            | bool                  | Determina si el establecimiento está activo.        |
+| HealthFacility | isInactive()          | bool                  | Determina si el establecimiento está inactivo.      |
+
+**Appoitment**
+
+| Clase       | Atributo / Método | Tipo   | Descripción                                 |
+| ----------- | ----------------- | ------ | ------------------------------------------- |
+| Appointment | id                | string | Identificador de la cita.                   |
+| Appointment | facilityId        | string | Identificador del establecimiento de salud. |
+| Appointment | patientId         | string | Identificador del paciente.                 |
+| Appointment | motherId          | string | Identificador de la madre o apoderada.      |
+| Appointment | nurseId           | string | Identificador del personal de salud.        |
+| Appointment | appointmentDate   | string | Fecha de la cita.                           |
+| Appointment | AppointmentTime   | string | Hora de la cita.                            |
+| Appointment | status            | string | Estado de la cita.                          |
+| Appointment | cancel()          | void   | Cancela la cita.                            |
+| Appointment | confirm()         | void   | Confirma la cita.                           |
+
+**NurseAssigment**
+
+| Clase           | Atributo / Método | Tipo   | Descripción                                   |
+| --------------- | ----------------- | ------ | --------------------------------------------- |
+| NurseAssignment | id                | string | Identificador de la asignación.               |
+| NurseAssignment | facilityId        | string | Identificador del establecimiento de salud.   |
+| NurseAssignment | nurseId           | string | Identificador del personal de salud asignado. |
+
+**Consultation**
+
+| Clase        | Atributo / Método            | Tipo          | Descripción                             |
+| ------------ | ---------------------------- | ------------- | --------------------------------------- |
+| Consultation | id                           | string        | Identificador de la consulta.           |
+| Consultation | patientId                    | string        | Identificador del paciente.             |
+| Consultation | motherId                     | string        | Identificador de la madre o apoderada.  |
+| Consultation | nurseId                      | string        | Identificador del personal de salud.    |
+| Consultation | message                      | List<Message> | Lista de mensajes de la consulta.       |
+| Consultation | CreatedAt                    | DateTime      | Fecha de creación de la consulta.       |
+| Consultation | ClosedAt                     | DateTime      | Fecha de cierre de la consulta.         |
+| Consultation | SendMessage(Message message) | void          | Envía un mensaje dentro de la consulta. |
+| Consultation | Close()                      | void          | Cierra la consulta.                     |
+| Consultation | IsOpen()                     | bool          | Determina si la consulta está abierta.  |
+
+**Message**
+
+| Clase   | Atributo / Método | Tipo          | Descripción                  |
+| ------- | ----------------- | ------------- | ---------------------------- |
+| Message | id                | string        | Identificador del mensaje.   |
+| Message | senderId          | string        | Identificador del remitente. |
+| Message | senderRole        | MessageSender | Rol del remitente.           |
+| Message | content           | string        | Contenido del mensaje.       |
+| Message | sentAt            | DateTime      | Fecha y hora de envío.       |
+
+**RiskScore**
+
+| Clase     | Atributo / Método    | Tipo      | Descripción                           |
+| --------- | -------------------- | --------- | ------------------------------------- |
+| RiskScore | id                   | string    | Identificador del registro de riesgo. |
+| RiskScore | score                | int       | Puntuación calculada de riesgo.       |
+| RiskScore | riskLevel            | RiskLevel | Nivel de riesgo determinado.          |
+| RiskScore | CalculateAt          | DateTime  | Fecha de cálculo del riesgo.          |
+| RiskScore | validate()           | void      | Valida la información del riesgo.     |
+| RiskScore | updateScore()        | void      | Actualiza la puntuación de riesgo.    |
+| RiskScore | CalculateRiskLevel() | int       | Calcula el nivel de riesgo.           |
+
+**DailyDose**
+
+| Clase     | Atributo / Método | Tipo       | Descripción                             |
+| --------- | ----------------- | ---------- | --------------------------------------- |
+| DailyDose | id                | string     | Identificador de la dosis.              |
+| DailyDose | treatmentId       | string     | Identificador del tratamiento asociado. |
+| DailyDose | ScheduledDate     | DateTime   | Fecha programada para la dosis.         |
+| DailyDose | ConfirmedAt       | DateTime   | Fecha y hora de confirmación.           |
+| DailyDose | status            | DoseStatus | Estado de la dosis.                     |
+| DailyDose | Confirmed()       | void       | Registra la confirmación de la dosis.   |
+| DailyDose | MarkAsOmitted()   | void       | Registra la dosis como omitida.         |
+
+**Achievement**
+
+| Clase       | Atributo / Método      | Tipo              | Descripción                                         |
+| ----------- | ---------------------- | ----------------- | --------------------------------------------------- |
+| Achievement | id                     | string            | Identificador del logro.                            |
+| Achievement | patientId              | string            | Identificador del paciente.                         |
+| Achievement | motherId               | string            | Identificador de la madre o apoderada.              |
+| Achievement | treatmentId            | string            | Identificador del tratamiento.                      |
+| Achievement | durationDays           | int               | Duración asociada al logro.                         |
+| Achievement | currentStreak          | int               | Racha actual.                                       |
+| Achievement | longestStreak          | int               | Racha más larga alcanzada.                          |
+| Achievement | best_streak            | int               | Mejor racha registrada.                             |
+| Achievement | streakStart            | DateTime          | Fecha de inicio de la racha.                        |
+| Achievement | totalPoints            | int               | Total de puntos obtenidos.                          |
+| Achievement | status                 | AchievementStatus | Estado del logro.                                   |
+| Achievement | OnDoseConfirmed()      | void              | Procesa el logro al confirmar una dosis.            |
+| Achievement | OnDoseOmitted()        | void              | Procesa el logro cuando se omite una dosis.         |
+| Achievement | OnTreatmentCompleted() | void              | Procesa el logro al completar el tratamiento.       |
+| Achievement | OnTreatmentAbandoned() | void              | Procesa el logro cuando se abandona el tratamiento. |
+
+**Bage**
+
+| Clase | Atributo / Método             | Tipo   | Descripción                                               |
+| ----- | ----------------------------- | ------ | --------------------------------------------------------- |
+| Badge | id                            | string | Identificador de la insignia.                             |
+| Badge | AchievementId                 | string | Identificador del logro relacionado.                      |
+| Badge | type                          | string | Tipo de insignia.                                         |
+| Badge | name                          | string | Nombre de la insignia.                                    |
+| Badge | description                   | string | Descripción de la insignia.                               |
+| Badge | milestone                     | string | Hito que representa la insignia.                          |
+| Badge | isUnlocked                    | bool   | Indica si la insignia ha sido desbloqueada.               |
+| Badge | Unclock()                     | void   | Desbloquea la insignia.                                   |
+| Badge | CanBeUnlockedWithStreak()     | bool   | Determina si puede desbloquearse mediante una racha.      |
+| Badge | CanBeUnlockedWithBestStreak() | bool   | Determina si puede desbloquearse mediante la mejor racha. |
+
+**NutritionalDiary**
+
+| Clase            | Atributo / Método       | Tipo     | Descripción                                  |
+| ---------------- | ----------------------- | -------- | -------------------------------------------- |
+| NutritionalDiary | id                      | string   | Identificador del diario nutricional.        |
+| NutritionalDiary | patientId               | string   | Identificador del paciente.                  |
+| NutritionalDiary | motherId                | string   | Identificador de la madre o apoderada.       |
+| NutritionalDiary | date                    | DateTime | Fecha del registro nutricional.              |
+| NutritionalDiary | totalIronAbsorbed       | double   | Cantidad total de hierro absorbido.          |
+| NutritionalDiary | hasInhibitor            | bool     | Indica si se registró un alimento inhibidor. |
+| NutritionalDiary | updateMetrics()         | void     | Actualiza las métricas nutricionales.        |
+| NutritionalDiary | markInhibitorDetected() | void     | Registra la detección de un inhibidor.       |
+| NutritionalDiary | resetDailyIron()        | void     | Reinicia el registro diario de hierro.       |
+
+**FoodEntry**
+
+| Clase     | Atributo / Método | Tipo     | Descripción                                  |
+| --------- | ----------------- | -------- | -------------------------------------------- |
+| FoodEntry | id                | string   | Identificador del registro alimenticio.      |
+| FoodEntry | foodItemId        | string   | Identificador del alimento.                  |
+| FoodEntry | diaryId           | string   | Identificador del diario nutricional.        |
+| FoodItem  | quantity          | double   | Cantidad consumida.                          |
+| FoodEntry | unit              | string   | Unidad utilizada para registrar la cantidad. |
+| FoodEntry | ironContributed   | double   | Cantidad de hierro aportada.                 |
+| FoodEntry | RegisteredAt      | DateTime | Fecha y hora del registro.                   |
+| FoodEntry | UpdateQuantity()  | void     | Actualiza la cantidad registrada.            |
+
+**FoodItem**
+
+| Clase    | Atributo / Método | Tipo            | Descripción                                                          |
+| -------- | ----------------- | --------------- | -------------------------------------------------------------------- |
+| FoodItem | id                | string          | Identificador del alimento.                                          |
+| FoodItem | name              | string          | Nombre del alimento.                                                 |
+| FoodItem | nutrientContent   | NutrientContent | Información nutricional del alimento.                                |
+| FoodItem | isInhibitor       | bool            | Indica si el alimento es inhibidor.                                  |
+| FoodItem | category          | string          | Categoría del alimento.                                              |
+| FoodItem | IsHemolron()      | bool            | Determina una característica relacionada con el hierro del alimento. |
+| FoodItem | IsNonHemolron()   | bool            | Determina si corresponde a la categoría indicada de hierro.          |
+
+**Enumerations**
+
+| Enumeración       | Valores representados              | Descripción                                        |
+| ----------------- | ---------------------------------- | -------------------------------------------------- |
+| Role              | Mother, Nurse, Admin               | Define los roles de los usuarios de la plataforma. |
+| TreatmentStatus   | Active, Completed, Abandoned       | Representa el estado del tratamiento.              |
+| RiskLevel         | LOW, MEDIUM, HIGH                  | Representa el nivel de riesgo calculado.           |
+| AnemiaStatus      | Mild, Moderate, Severe, Controlled | Representa el estado de anemia determinado.        |
+| AchievementStatus | ACTIVE, COMPLETED, ABANDONED       | Representa el estado del logro.                    |
+
+
 
 ## 4.10. Database Design
 
