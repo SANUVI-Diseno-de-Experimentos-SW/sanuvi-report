@@ -574,8 +574,64 @@ El diccionario de clases describe los principales elementos que conforman el mod
 
 ## 4.10. Database Design
 
+El diseño de la base de datos de Ferova Platform define la estructura de almacenamiento necesaria para soportar las principales funcionalidades de la plataforma. Se utiliza un enfoque de base de datos NoSQL, permitiendo manejar información estructurada y documental asociada a los diferentes contextos funcionales del sistema.
+
+La información se organiza de acuerdo con los principales dominios de la plataforma, incluyendo la gestión de usuarios, pacientes, tratamientos, establecimientos de salud, seguimiento nutricional, logros y recompensas, así como la comunicación entre los apoderados y el personal de salud.
+
+Esta organización permite mantener los datos asociados a cada contexto de negocio y facilita su consulta y actualización desde los componentes correspondientes de la aplicación.
+
 ### 4.10.1. Relational/Non-Relational Database Diagram
 
-<img src="../assets/img/chapter-IV/database-diagram.png" alt="Database Diagram">
+El diagrama de base de datos representa la estructura de almacenamiento NoSQL utilizada por Ferova Platform. A diferencia de un modelo relacional tradicional basado exclusivamente en tablas y relaciones, el modelo utilizado permite representar información mediante documentos y colecciones, manteniendo los datos agrupados de acuerdo con las necesidades de cada contexto funcional.
 
-<!-- COMPLETAR -->
+La estructura se encuentra organizada en los siguientes:
+
+- IAM: almacena la información relacionada con usuarios, roles y recuperación de contraseñas.
+- Patient Management: contiene la información principal de los pacientes y sus registros médicos.
+- Treatment Tracking: almacena los tratamientos, las dosis diarias y la información relacionada con el nivel de riesgo.
+- Health Facility: contiene los establecimientos de salud, distritos, citas y asignaciones del personal de salud.
+- Achievements & Rewards: almacena los logros y las insignias obtenidas durante el seguimiento del tratamiento.
+- Nutritional Diary: contiene los diarios nutricionales, registros de alimentos y alimentos disponibles.
+- Communication: contiene las consultas y los mensajes intercambiados entre los usuarios.
+
+
+<div aling="center">
+  <img src="../assets/img/chapter-IV/IAM-DATA-BASE-NOT-RELATIONAL.png">
+</div>
+
+---
+
+<div aling="center">
+  <img src="../assets/img/chapter-IV/DIAGRMA DE BASE DE DATOS NO RELACIONAL PATIENT.png">
+</div>
+
+---
+
+<div aling="center">
+  <img src="../assets/img/chapter-IV/database-Treatment Tracking.png">
+</div>
+
+---
+
+<div aling="center">
+  <img src="../assets/img/chapter-IV/healytu facilty diagram database.png">
+</div>
+
+---
+
+<div aling="center">
+  <img src="../assets/img/chapter-IV/database-diagrama-achievements-rewards.png">
+</div>
+
+---
+
+<div aling="center">
+  <img src="../assets/img/chapter-IV/Nutritional_diary_diagram_database.png">
+</div>
+
+---
+
+<div aling="center">
+  <img src="../assets/img/chapter-IV/diagram data base comunication.png">
+</div>
+
