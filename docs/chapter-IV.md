@@ -584,54 +584,143 @@ Esta organización permite mantener los datos asociados a cada contexto de negoc
 
 El diagrama de base de datos representa la estructura de almacenamiento NoSQL utilizada por Ferova Platform. A diferencia de un modelo relacional tradicional basado exclusivamente en tablas y relaciones, el modelo utilizado permite representar información mediante documentos y colecciones, manteniendo los datos agrupados de acuerdo con las necesidades de cada contexto funcional.
 
-La estructura se encuentra organizada en los siguientes:
+**IAM**
 
-- IAM: almacena la información relacionada con usuarios, roles y recuperación de contraseñas.
-- Patient Management: contiene la información principal de los pacientes y sus registros médicos.
-- Treatment Tracking: almacena los tratamientos, las dosis diarias y la información relacionada con el nivel de riesgo.
-- Health Facility: contiene los establecimientos de salud, distritos, citas y asignaciones del personal de salud.
-- Achievements & Rewards: almacena los logros y las insignias obtenidas durante el seguimiento del tratamiento.
-- Nutritional Diary: contiene los diarios nutricionales, registros de alimentos y alimentos disponibles.
-- Communication: contiene las consultas y los mensajes intercambiados entre los usuarios.
+El contexto IAM (Identity and Access Management) contiene la información necesaria para la identificación y gestión de acceso de los usuarios de la plataforma.
 
+<br>
 
-<div aling="center">
+<div align ="center">
   <img src="../assets/img/chapter-IV/IAM-DATA-BASE-NOT-RELATIONAL.png">
 </div>
 
----
+<br>
+La estructura está compuesta por:
 
-<div aling="center">
+| Colección           | Descripción                                                                                                                 |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `User`              | Almacena la información de los usuarios, incluyendo nombre, apellido, contraseña, DNI, correo, teléfono y rol.              |
+| `Rol`               | Contiene los roles disponibles dentro de la plataforma.                                                                     |
+| `password_recovery` | Almacena los códigos utilizados para la recuperación de contraseña, junto con su fecha de expiración y el usuario asociado. |
+
+La colección User incluye información de auditoría relacionada con la creación y actualización de los registros.
+
+**Patient Management**
+
+El contexto Patient Management almacena la información correspondiente a los pacientes y sus registros médicos.
+
+<br>
+
+<div align ="center">
   <img src="../assets/img/chapter-IV/DIAGRMA DE BASE DE DATOS NO RELACIONAL PATIENT.png">
 </div>
 
----
+<br>
 
-<div aling="center">
+| Colección         | Descripción                                                                                                                                                                                 |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Patient`         | Almacena los datos personales y clínicos básicos del paciente, así como referencias a su madre/apoderada y personal de salud asignado.                                                      |
+| `medical_records` | Contiene los registros médicos del paciente, incluyendo fecha, nivel de hemoglobina, peso, talla, sexo, motivo de consulta, observaciones, antecedentes, controles, síntomas y tratamiento. |
+
+La información de medical_records permite mantener el historial asociado al seguimiento clínico de cada paciente.
+
+**Treatment Tracking**
+
+El contexto Treatment Tracking almacena la información relacionada con el seguimiento del tratamiento.
+
+<br>
+
+<div align ="center">
   <img src="../assets/img/chapter-IV/database-Treatment Tracking.png">
 </div>
 
----
+ <br>
 
-<div aling="center">
+| Colección     | Descripción                                                                                                                                                                     |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `treatments`  | Almacena la información del tratamiento, paciente asociado, personal de salud responsable, suplemento, cantidad, frecuencia, duración, fechas, estado y métricas de adherencia. |
+| `daily_doses` | Registra las dosis programadas, su fecha de confirmación, estado y horas transcurridas sin confirmación.                                                                        |
+| `risk_scores` | Almacena la puntuación de riesgo del tratamiento, nivel de riesgo, fecha de cálculo y justificación.                                                                            |
+
+La colección daily_doses permite registrar individualmente el cumplimiento de las dosis asociadas a un tratamiento.
+
+**Health Facility**
+
+El contexto Health Facility contiene la información necesaria para gestionar las postas o establecimientos de salud y las actividades relacionadas con ellos.
+
+<br>
+
+<div align ="center">
   <img src="../assets/img/chapter-IV/healytu facilty diagram database.png">
 </div>
 
----
+<br>
 
-<div aling="center">
+| Colección           | Descripción                                                                                                              |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `districts`         | Contiene los distritos utilizados para identificar la ubicación de los establecimientos.                                 |
+| `health_facilities` | Almacena el nombre, dirección, distrito, coordenadas geográficas, horario de atención y estado del establecimiento.      |
+| `appointments`      | Registra las citas de los pacientes, incluyendo establecimiento, paciente, apoderado, personal de salud, fecha y estado. |
+| `nurse_assignments` | Registra la asignación del personal de salud a los establecimientos.                                                     |
+
+La colección health_facilities incluye las coordenadas lat y lng, utilizadas para representar la ubicación geográfica de las postas.
+
+**Achievements & Rewards**
+
+El contexto Achievements & Rewards almacena la información asociada a los logros obtenidos durante el seguimiento del tratamiento.
+
+<br>
+
+<div align ="center">
   <img src="../assets/img/chapter-IV/database-diagrama-achievements-rewards.png">
 </div>
 
----
+<br>
 
-<div aling="center">
+| Colección     | Descripción                                                                                                  |
+| ------------- | ------------------------------------------------------------------------------------------------------------ |
+| `Achievement` | Registra los logros asociados al paciente y tratamiento, incluyendo rachas de cumplimiento, puntos y estado. |
+| `badges`      | Contiene las insignias asociadas a los logros, incluyendo nombre, descripción, hito y estado de desbloqueo.  |
+
+
+La información de Achievement permite registrar el progreso del paciente durante el tratamiento, mientras que badges representa los reconocimientos obtenidos.
+
+**Nutritional Diary**
+
+El contexto Nutritional Diary permite almacenar la información relacionada con el registro nutricional.
+
+<br>
+
+<div align ="center">
   <img src="../assets/img/chapter-IV/Nutritional_diary_diagram_database.png">
 </div>
 
----
+<br>
 
-<div aling="center">
+
+| Colección           | Descripción                                                                                                                                    |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `nutritional_diary` | Almacena el diario nutricional asociado al paciente y apoderado, incluyendo fecha, hierro absorbido e identificación de alimentos inhibidores. |
+| `food_entries`      | Registra los alimentos consumidos dentro de un diario nutricional, incluyendo cantidad, unidad y aporte de hierro.                             |
+| `food_items`        | Contiene el catálogo de alimentos, su información nutricional, contenido de hierro, tipo de hierro, clasificación como inhibidor y categoría.  |
+
+La relación entre nutritional_diary y food_entries permite registrar los alimentos consumidos durante cada registro nutricional.
+
+**Communication**
+
+El contexto Communication permite gestionar las consultas entre los apoderados y el personal de salud.
+
+<br>
+
+<div align ="center">
   <img src="../assets/img/chapter-IV/diagram data base comunication.png">
 </div>
 
+<br>
+
+| Colección       | Descripción                                                                                                                                |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `consultations` | Almacena las consultas realizadas entre pacientes, apoderados y personal de salud, incluyendo estado, fecha de creación y fecha de cierre. |
+| `messages`      | Almacena los mensajes pertenecientes a cada consulta, incluyendo remitente, rol del remitente, contenido y fecha de envío.                 |
+
+En este contexto, los mensajes se encuentran asociados a una consulta específica mediante consultationId.
