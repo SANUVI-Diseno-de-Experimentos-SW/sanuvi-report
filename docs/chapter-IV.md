@@ -112,92 +112,253 @@ La paleta cromática de Ferova se fundamenta en dos colores ancla dictados por l
 
 A partir de estos dos ejes, se desarrolló una escala cromática completa con tokens semánticos, neutros y de soporte calibrados para superar las directrices de contraste WCAG 2.1 AA y AAA.
 
-```
-       #003178                      #7C0303
-  [ Azul Clínico Profundo ]     [ Rojo Óxido / Hierro ]
-  Confianza médica, serenidad    Hemoglobina, gotas de hierro,
-  y rigor institucional          alerta y vitalidad infantil
-```
+<!-- Visual Showcase de Colores Clave con CSS -->
+<div style="display: flex; flex-wrap: wrap; gap: 14px; margin: 18px 0;">
+  <!-- Card Azul Clínico #003178 -->
+  <div style="flex: 1 1 200px; max-width: 260px; border: 1px solid #D0DDF3; border-radius: 10px; overflow: hidden; background: #FFFFFF; box-shadow: 0 2px 6px rgba(0,49,120,0.08);">
+    <div style="background-color: #003178; height: 75px; display: flex; align-items: flex-end; padding: 8px 12px;">
+      <span style="color: #FFFFFF; font-size: 11px; font-weight: 700; background: rgba(0,0,0,0.35); padding: 2px 8px; border-radius: 4px; letter-spacing: 0.5px;">PRIMARY BASE</span>
+    </div>
+    <div style="padding: 12px;">
+      <div style="font-weight: 700; font-size: 14px; color: #0F172A;">Azul Clínico Profundo</div>
+      <div style="font-family: monospace; font-size: 13px; font-weight: 600; color: #003178; margin-top: 2px;">#003178</div>
+      <div style="font-size: 11px; color: #64748B; margin-top: 4px;">rgb(0, 49, 120) · hsl(216, 100%, 24%)</div>
+    </div>
+  </div>
+
+  <!-- Card Rojo Óxido #7C0303 -->
+  <div style="flex: 1 1 200px; max-width: 260px; border: 1px solid #FAD5D5; border-radius: 10px; overflow: hidden; background: #FFFFFF; box-shadow: 0 2px 6px rgba(124,3,3,0.08);">
+    <div style="background-color: #7C0303; height: 75px; display: flex; align-items: flex-end; padding: 8px 12px;">
+      <span style="color: #FFFFFF; font-size: 11px; font-weight: 700; background: rgba(0,0,0,0.35); padding: 2px 8px; border-radius: 4px; letter-spacing: 0.5px;">SECONDARY BASE</span>
+    </div>
+    <div style="padding: 12px;">
+      <div style="font-weight: 700; font-size: 14px; color: #0F172A;">Rojo Óxido / Hierro</div>
+      <div style="font-family: monospace; font-size: 13px; font-weight: 600; color: #7C0303; margin-top: 2px;">#7C0303</div>
+      <div style="font-size: 11px; color: #64748B; margin-top: 4px;">rgb(124, 3, 3) · hsl(0, 95%, 25%)</div>
+    </div>
+  </div>
+
+  <!-- Card Bio Teal #0D9488 -->
+  <div style="flex: 1 1 200px; max-width: 260px; border: 1px solid #99F6E4; border-radius: 10px; overflow: hidden; background: #FFFFFF; box-shadow: 0 2px 6px rgba(13,148,136,0.08);">
+    <div style="background-color: #0D9488; height: 75px; display: flex; align-items: flex-end; padding: 8px 12px;">
+      <span style="color: #FFFFFF; font-size: 11px; font-weight: 700; background: rgba(0,0,0,0.35); padding: 2px 8px; border-radius: 4px; letter-spacing: 0.5px;">ACCENT NUTRITION</span>
+    </div>
+    <div style="padding: 12px;">
+      <div style="font-weight: 700; font-size: 14px; color: #0F172A;">Bio Teal (Nutrición)</div>
+      <div style="font-family: monospace; font-size: 13px; font-weight: 600; color: #0D9488; margin-top: 2px;">#0D9488</div>
+      <div style="font-size: 11px; color: #64748B; margin-top: 4px;">rgb(13, 148, 136) · hsl(175, 84%, 32%)</div>
+    </div>
+  </div>
+
+  <!-- Card Iron Gold #F59E0B -->
+  <div style="flex: 1 1 200px; max-width: 260px; border: 1px solid #FDE68A; border-radius: 10px; overflow: hidden; background: #FFFFFF; box-shadow: 0 2px 6px rgba(245,158,11,0.08);">
+    <div style="background-color: #F59E0B; height: 75px; display: flex; align-items: flex-end; padding: 8px 12px;">
+      <span style="color: #FFFFFF; font-size: 11px; font-weight: 700; background: rgba(0,0,0,0.35); padding: 2px 8px; border-radius: 4px; letter-spacing: 0.5px;">ACCENT REWARDS</span>
+    </div>
+    <div style="padding: 12px;">
+      <div style="font-weight: 700; font-size: 14px; color: #0F172A;">Iron Gold (Logros)</div>
+      <div style="font-family: monospace; font-size: 13px; font-weight: 600; color: #B45309; margin-top: 2px;">#F59E0B</div>
+      <div style="font-size: 11px; color: #64748B; margin-top: 4px;">rgb(245, 158, 11) · hsl(38, 92%, 50%)</div>
+    </div>
+  </div>
+</div>
 
 ##### 1. Paleta Primaria: Azul Clínico Profundo (`#003178`)
 Color corporativo institucional y de mayor jerarquía visual en navegación, botones primarios, cabeceras y gráficos clínicos en Ferova Clinic y Landing Page.
 
-| Token | Código HEX | Valor RGB | Valor HSL | Rol en la Interfaz |
-|:---|:---:|:---:|:---:|:---|
-| `primary-50` | `#EBF1FA` | rgb(235, 241, 250) | hsl(216, 60%, 95%) | Fondos suaves de tarjetas activas, estados hover sutiles. |
-| `primary-100` | `#D0DDF3` | rgb(208, 221, 243) | hsl(218, 58%, 88%) | Bordes de selección, contenedores de badges primarios. |
-| `primary-200` | `#A2BEE7` | rgb(162, 190, 231) | hsl(216, 57%, 77%) | Indicadores inactivos, divisores destacados. |
-| `primary-300` | `#6B93D6` | rgb(107, 147, 214) | hsl(218, 59%, 63%) | Focus rings de accesibilidad, gráficos comparativos. |
-| `primary-400` | `#3467BE` | rgb(52, 103, 190) | hsl(218, 57%, 47%) | Enlaces interactivos, estados hover de elementos secundarios. |
-| **`primary-500` (Base)** | **`#003178`** | **rgb(0, 49, 120)** | **hsl(216, 100%, 24%)** | **Color Primario Base:** Botones principales, cabeceras, sidebar. |
-| `primary-600` | `#002A66` | rgb(0, 42, 102) | hsl(216, 100%, 20%) | Estado hover/active de botones primarios. |
-| `primary-700` | `#002254` | rgb(0, 34, 84) | hsl(216, 100%, 16%) | Estado pressed y cabeceras de tablas clínicas. |
-| `primary-800` | `#001A40` | rgb(0, 26, 64) | hsl(216, 100%, 13%) | Fondos oscuros de alta jerarquía. |
-| `primary-900` | `#00112B` | rgb(0, 17, 43) | hsl(216, 100%, 8%) | Sombras profundas y contrastes extremos. |
+<!-- Tira Cromática Primaria con CSS -->
+<div style="display: flex; width: 100%; border-radius: 8px; overflow: hidden; margin: 12px 0 16px 0; border: 1px solid #CBD5E1; height: 38px;">
+  <div style="flex: 1; background-color: #EBF1FA; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #003178;">50</div>
+  <div style="flex: 1; background-color: #D0DDF3; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #003178;">100</div>
+  <div style="flex: 1; background-color: #A2BEE7; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #002254;">200</div>
+  <div style="flex: 1; background-color: #6B93D6; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #FFFFFF;">300</div>
+  <div style="flex: 1; background-color: #3467BE; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #FFFFFF;">400</div>
+  <div style="flex: 1.4; background-color: #003178; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #FFFFFF; outline: 2px solid #FFFFFF;">500 Base</div>
+  <div style="flex: 1; background-color: #002A66; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #FFFFFF;">600</div>
+  <div style="flex: 1; background-color: #002254; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #FFFFFF;">700</div>
+  <div style="flex: 1; background-color: #001A40; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #FFFFFF;">800</div>
+  <div style="flex: 1; background-color: #00112B; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #FFFFFF;">900</div>
+</div>
+
+| Muestra | Token | Código HEX | Valor RGB | Valor HSL | Rol en la Interfaz |
+|:---:|:---|:---:|:---:|:---:|:---|
+| <span style="display:inline-block;width:24px;height:24px;background-color:#EBF1FA;border-radius:6px;border:1px solid #CBD5E1;box-shadow:0 1px 2px rgba(0,0,0,0.05);vertical-align:middle;"></span> | `primary-50` | `#EBF1FA` | rgb(235, 241, 250) | hsl(216, 60%, 95%) | Fondos suaves de tarjetas activas, estados hover sutiles. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#D0DDF3;border-radius:6px;border:1px solid #CBD5E1;box-shadow:0 1px 2px rgba(0,0,0,0.05);vertical-align:middle;"></span> | `primary-100` | `#D0DDF3` | rgb(208, 221, 243) | hsl(218, 58%, 88%) | Bordes de selección, contenedores de badges primarios. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#A2BEE7;border-radius:6px;border:1px solid #CBD5E1;box-shadow:0 1px 2px rgba(0,0,0,0.05);vertical-align:middle;"></span> | `primary-200` | `#A2BEE7` | rgb(162, 190, 231) | hsl(216, 57%, 77%) | Indicadores inactivos, divisores destacados. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#6B93D6;border-radius:6px;border:1px solid #CBD5E1;box-shadow:0 1px 2px rgba(0,0,0,0.05);vertical-align:middle;"></span> | `primary-300` | `#6B93D6` | rgb(107, 147, 214) | hsl(218, 59%, 63%) | Focus rings de accesibilidad, gráficos comparativos. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#3467BE;border-radius:6px;border:1px solid #CBD5E1;box-shadow:0 1px 2px rgba(0,0,0,0.05);vertical-align:middle;"></span> | `primary-400` | `#3467BE` | rgb(52, 103, 190) | hsl(218, 57%, 47%) | Enlaces interactivos, estados hover de elementos secundarios. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#003178;border-radius:6px;border:1px solid rgba(0,0,0,0.2);box-shadow:0 1px 3px rgba(0,49,120,0.3);vertical-align:middle;"></span> | **`primary-500` (Base)** | **`#003178`** | **rgb(0, 49, 120)** | **hsl(216, 100%, 24%)** | **Color Primario Base:** Botones principales, cabeceras, sidebar. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#002A66;border-radius:6px;border:1px solid rgba(0,0,0,0.2);box-shadow:0 1px 2px rgba(0,0,0,0.1);vertical-align:middle;"></span> | `primary-600` | `#002A66` | rgb(0, 42, 102) | hsl(216, 100%, 20%) | Estado hover/active de botones primarios. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#002254;border-radius:6px;border:1px solid rgba(0,0,0,0.2);box-shadow:0 1px 2px rgba(0,0,0,0.1);vertical-align:middle;"></span> | `primary-700` | `#002254` | rgb(0, 34, 84) | hsl(216, 100%, 16%) | Estado pressed y cabeceras de tablas clínicas. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#001A40;border-radius:6px;border:1px solid rgba(0,0,0,0.2);box-shadow:0 1px 2px rgba(0,0,0,0.1);vertical-align:middle;"></span> | `primary-800` | `#001A40` | rgb(0, 26, 64) | hsl(216, 100%, 13%) | Fondos oscuros de alta jerarquía. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#00112B;border-radius:6px;border:1px solid rgba(0,0,0,0.2);box-shadow:0 1px 2px rgba(0,0,0,0.1);vertical-align:middle;"></span> | `primary-900` | `#00112B` | rgb(0, 17, 43) | hsl(216, 100%, 8%) | Sombras profundas y contrastes extremos. |
 
 ##### 2. Paleta Secundaria: Rojo Óxido / Hemoglobina (`#7C0303`)
 Color de acento médico y simbólico. Representa directamente el hierro medicinal (sulfato ferroso y polimaltosado), la hemoglobina y la adherencia en Ferova Family, así como alertas críticas de nivel de anemia en Ferova Clinic.
 
-| Token | Código HEX | Valor RGB | Valor HSL | Rol en la Interfaz |
-|:---|:---:|:---:|:---:|:---|
-| `secondary-50` | `#FDF2F2` | rgb(253, 242, 242) | hsl(0, 67%, 97%) | Fondo de tarjetas de tratamiento y avisos de dosis. |
-| `secondary-100` | `#FBE4E4` | rgb(251, 228, 228) | hsl(0, 64%, 94%) | Badges de alerta de anemia severa, bordes de recordatorio. |
-| `secondary-200` | `#F5BDBD` | rgb(245, 189, 189) | hsl(0, 69%, 85%) | Ilustraciones y elementos decorativos de apoyo. |
-| `secondary-300` | `#E98888` | rgb(233, 136, 136) | hsl(0, 68%, 72%) | Gráficos de evolución de hemoglobina (rango bajo). |
-| `secondary-400` | `#B53030` | rgb(181, 48, 48) | hsl(0, 58%, 45%) | Acentos interactivos secundarios. |
-| **`secondary-500` (Base)** | **`#7C0303`** | **rgb(124, 3, 3)** | **hsl(0, 95%, 25%)** | **Color Secundario Base:** Iconos de dosis de hierro, acción clave en Family. |
-| `secondary-600` | `#690202` | rgb(105, 2, 2) | hsl(0, 96%, 21%) | Hover de botones de registro de dosis. |
-| `secondary-700` | `#560202` | rgb(86, 2, 2) | hsl(0, 95%, 17%) | Textos de alerta médica sobre fondos rosados claros. |
-| `secondary-800` | `#420101` | rgb(66, 1, 1) | hsl(0, 97%, 13%) | Títulos de gravedad clínica. |
-| `secondary-900` | `#2D0101` | rgb(45, 1, 1) | hsl(0, 96%, 9%) | Contrastes máximos de alerta. |
+<!-- Tira Cromática Secundaria con CSS -->
+<div style="display: flex; width: 100%; border-radius: 8px; overflow: hidden; margin: 12px 0 16px 0; border: 1px solid #CBD5E1; height: 38px;">
+  <div style="flex: 1; background-color: #FDF2F2; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #7C0303;">50</div>
+  <div style="flex: 1; background-color: #FBE4E4; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #7C0303;">100</div>
+  <div style="flex: 1; background-color: #F5BDBD; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #560202;">200</div>
+  <div style="flex: 1; background-color: #E98888; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #FFFFFF;">300</div>
+  <div style="flex: 1; background-color: #B53030; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #FFFFFF;">400</div>
+  <div style="flex: 1.4; background-color: #7C0303; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #FFFFFF; outline: 2px solid #FFFFFF;">500 Base</div>
+  <div style="flex: 1; background-color: #690202; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #FFFFFF;">600</div>
+  <div style="flex: 1; background-color: #560202; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #FFFFFF;">700</div>
+  <div style="flex: 1; background-color: #420101; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #FFFFFF;">800</div>
+  <div style="flex: 1; background-color: #2D0101; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #FFFFFF;">900</div>
+</div>
+
+| Muestra | Token | Código HEX | Valor RGB | Valor HSL | Rol en la Interfaz |
+|:---:|:---|:---:|:---:|:---:|:---|
+| <span style="display:inline-block;width:24px;height:24px;background-color:#FDF2F2;border-radius:6px;border:1px solid #CBD5E1;box-shadow:0 1px 2px rgba(0,0,0,0.05);vertical-align:middle;"></span> | `secondary-50` | `#FDF2F2` | rgb(253, 242, 242) | hsl(0, 67%, 97%) | Fondo de tarjetas de tratamiento y avisos de dosis. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#FBE4E4;border-radius:6px;border:1px solid #CBD5E1;box-shadow:0 1px 2px rgba(0,0,0,0.05);vertical-align:middle;"></span> | `secondary-100` | `#FBE4E4` | rgb(251, 228, 228) | hsl(0, 64%, 94%) | Badges de alerta de anemia severa, bordes de recordatorio. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#F5BDBD;border-radius:6px;border:1px solid #CBD5E1;box-shadow:0 1px 2px rgba(0,0,0,0.05);vertical-align:middle;"></span> | `secondary-200` | `#F5BDBD` | rgb(245, 189, 189) | hsl(0, 69%, 85%) | Ilustraciones y elementos decorativos de apoyo. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#E98888;border-radius:6px;border:1px solid #CBD5E1;box-shadow:0 1px 2px rgba(0,0,0,0.05);vertical-align:middle;"></span> | `secondary-300` | `#E98888` | rgb(233, 136, 136) | hsl(0, 68%, 72%) | Gráficos de evolución de hemoglobina (rango bajo). |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#B53030;border-radius:6px;border:1px solid #CBD5E1;box-shadow:0 1px 2px rgba(0,0,0,0.05);vertical-align:middle;"></span> | `secondary-400` | `#B53030` | rgb(181, 48, 48) | hsl(0, 58%, 45%) | Acentos interactivos secundarios. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#7C0303;border-radius:6px;border:1px solid rgba(0,0,0,0.2);box-shadow:0 1px 3px rgba(124,3,3,0.3);vertical-align:middle;"></span> | **`secondary-500` (Base)** | **`#7C0303`** | **rgb(124, 3, 3)** | **hsl(0, 95%, 25%)** | **Color Secundario Base:** Iconos de dosis de hierro, acción clave en Family. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#690202;border-radius:6px;border:1px solid rgba(0,0,0,0.2);box-shadow:0 1px 2px rgba(0,0,0,0.1);vertical-align:middle;"></span> | `secondary-600` | `#690202` | rgb(105, 2, 2) | hsl(0, 96%, 21%) | Hover de botones de registro de dosis. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#560202;border-radius:6px;border:1px solid rgba(0,0,0,0.2);box-shadow:0 1px 2px rgba(0,0,0,0.1);vertical-align:middle;"></span> | `secondary-700` | `#560202` | rgb(86, 2, 2) | hsl(0, 95%, 17%) | Textos de alerta médica sobre fondos rosados claros. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#420101;border-radius:6px;border:1px solid rgba(0,0,0,0.2);box-shadow:0 1px 2px rgba(0,0,0,0.1);vertical-align:middle;"></span> | `secondary-800` | `#420101` | rgb(66, 1, 1) | hsl(0, 97%, 13%) | Títulos de gravedad clínica. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#2D0101;border-radius:6px;border:1px solid rgba(0,0,0,0.2);box-shadow:0 1px 2px rgba(0,0,0,0.1);vertical-align:middle;"></span> | `secondary-900` | `#2D0101` | rgb(45, 1, 1) | hsl(0, 96%, 9%) | Contrastes máximos de alerta. |
 
 ##### 3. Colores de Acento y Soporte Funcional
 - **Bio Teal / Salud Nutricional (`#0D9488`):** Derivado para representar alimentos ricos en hierro (sangrecita, bazo, hígado), nutrición saludable y estilos de vida adecuados. Complementa armoniosamente la paleta sin competir con el rojo y el azul.
-  - Base: `#0D9488` | Fondo: `#F0FDFA` | Borde: `#99F6E4`
+  - <span style="display:inline-block;width:18px;height:18px;background-color:#0D9488;border-radius:4px;vertical-align:middle;margin-right:6px;"></span> **Base:** `#0D9488` | <span style="display:inline-block;width:18px;height:18px;background-color:#F0FDFA;border:1px solid #99F6E4;border-radius:4px;vertical-align:middle;margin-right:6px;"></span> **Fondo:** `#F0FDFA` | <span style="display:inline-block;width:18px;height:18px;background-color:#99F6E4;border-radius:4px;vertical-align:middle;margin-right:6px;"></span> **Borde:** `#99F6E4`
 - **Iron Gold / Motivación y Gamificación (`#F59E0B`):** Destinado a medallas de cumplimiento de tratamiento, rachas de días consecutivos administrando el hierro y felicitaciones al cuidador.
-  - Base: `#F59E0B` | Fondo: `#FFFBEB` | Borde: `#FDE68A`
+  - <span style="display:inline-block;width:18px;height:18px;background-color:#F59E0B;border-radius:4px;vertical-align:middle;margin-right:6px;"></span> **Base:** `#F59E0B` | <span style="display:inline-block;width:18px;height:18px;background-color:#FFFBEB;border:1px solid #FDE68A;border-radius:4px;vertical-align:middle;margin-right:6px;"></span> **Fondo:** `#FFFBEB` | <span style="display:inline-block;width:18px;height:18px;background-color:#FDE68A;border-radius:4px;vertical-align:middle;margin-right:6px;"></span> **Borde:** `#FDE68A`
 
 ##### 4. Colores Semánticos del Sistema (Feedback UX)
-Diseñados para proporcionar retroalimentación inequívoca sobre el estado del paciente o del sistema:
+Diseñados para proporcionar retroalimentación visual inequívoca sobre el estado del paciente o del sistema:
 
-| Estado Semántico | Token de Superficie (Surface) | Token de Borde (Border) | Token de Texto / Icono (Content) | Caso de Uso en Ferova |
-|:---|:---:|:---:|:---:|:---|
-| **Éxito (Success)** | `#ECFDF5` | `#86EFAC` | `#15803D` | Dosis diaria de hierro confirmada y registrada; hemoglobina dentro del valor normal (> 11.0 g/dL). |
-| **Advertencia (Warning)** | `#FFFBEB` | `#FDE68A` | `#B45309` | Dosis pendiente por tomar en la ventana horaria; cita de control médico programada en los próximos 3 días. |
-| **Peligro / Error (Danger)** | `#FEF2F2` | `#FECACA` | `#DC2626` | Dosis no administrada fuera de horario; anemia moderada o severa detectada (< 9.9 g/dL); error en registro. |
-| **Información (Info)** | `#EFF6FF` | `#BFDBFE` | `#1D4ED8` | Mensaje educativo de absorción (ej. "Acompañar con vitamina C"); notificación de la posta de salud. |
+| Previsualización Visual | Estado Semántico | Token Superficie | Token Borde | Token Contenido | Caso de Uso en Ferova |
+|:---:|:---|:---:|:---:|:---:|:---|
+| <span style="display:inline-block;background-color:#ECFDF5;border:1px solid #86EFAC;color:#15803D;padding:4px 10px;border-radius:6px;font-weight:700;font-size:12px;">✓ Confirmada</span> | **Éxito (Success)** | `#ECFDF5` | `#86EFAC` | `#15803D` | Dosis diaria de hierro confirmada y registrada; hemoglobina normal (> 11.0 g/dL). |
+| <span style="display:inline-block;background-color:#FFFBEB;border:1px solid #FDE68A;color:#B45309;padding:4px 10px;border-radius:6px;font-weight:700;font-size:12px;">▲ Pendiente</span> | **Advertencia (Warning)** | `#FFFBEB` | `#FDE68A` | `#B45309` | Dosis pendiente en la ventana horaria; cita médica en los próximos 3 días. |
+| <span style="display:inline-block;background-color:#FEF2F2;border:1px solid #FECACA;color:#DC2626;padding:4px 10px;border-radius:6px;font-weight:700;font-size:12px;">✕ Omitida</span> | **Peligro / Error (Danger)** | `#FEF2F2` | `#FECACA` | `#DC2626` | Dosis no administrada fuera de horario; anemia moderada o severa (< 9.9 g/dL). |
+| <span style="display:inline-block;background-color:#EFF6FF;border:1px solid #BFDBFE;color:#1D4ED8;padding:4px 10px;border-radius:6px;font-weight:700;font-size:12px;">ℹ Consejo</span> | **Información (Info)** | `#EFF6FF` | `#BFDBFE` | `#1D4ED8` | Mensaje educativo de absorción; notificación institucional de la posta. |
 
 ##### 5. Escala de Neutros y Superficies
 Basada en la gama Slate para garantizar armonía fría con el Azul Clínico:
 
-| Token | Código HEX | Uso en Interfaz |
-|:---|:---:|:---|
-| `neutral-white` | `#FFFFFF` | Superficie de tarjetas (*card background*), modales, fondos de inputs. |
-| `neutral-50` | `#F8FAFC` | Fondo general de pantallas en Web y Mobile (*canvas background*). |
-| `neutral-100` | `#F1F5F9` | Fondos de inputs inactivos, cabeceras de tablas secundarias. |
-| `neutral-200` | `#E2E8F0` | Líneas divisorias, bordes de tarjetas y bordes de campos de formulario. |
-| `neutral-300` | `#CBD5E1` | Bordes en estado hover, separadores marcados. |
-| `neutral-400` | `#94A3B8` | Iconos inactivos, texto de *placeholder* en inputs. |
-| `neutral-500` | `#64748B` | Textos terciarios, marcas de agua, leyendas de gráficos. |
-| `neutral-600` | `#475569` | Textos secundarios, etiquetas de metadatos, subtítulos. |
-| `neutral-700` | `#334155` | Texto de cuerpo principal en modo de alta densidad. |
-| `neutral-800` | `#1E293B` | Encabezados de tarjetas, títulos secundarios. |
-| `neutral-900` | `#0F172A` | Títulos principales (H1/H2) y texto de alto contraste. |
+<!-- Tira de Neutros con CSS -->
+<div style="display: flex; width: 100%; border-radius: 8px; overflow: hidden; margin: 12px 0 16px 0; border: 1px solid #CBD5E1; height: 38px;">
+  <div style="flex: 1; background-color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #0F172A; border-right: 1px solid #E2E8F0;">White</div>
+  <div style="flex: 1; background-color: #F8FAFC; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #0F172A;">50</div>
+  <div style="flex: 1; background-color: #F1F5F9; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #0F172A;">100</div>
+  <div style="flex: 1; background-color: #E2E8F0; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #0F172A;">200</div>
+  <div style="flex: 1; background-color: #CBD5E1; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #0F172A;">300</div>
+  <div style="flex: 1; background-color: #94A3B8; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #FFFFFF;">400</div>
+  <div style="flex: 1; background-color: #64748B; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #FFFFFF;">500</div>
+  <div style="flex: 1; background-color: #475569; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #FFFFFF;">600</div>
+  <div style="flex: 1; background-color: #334155; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #FFFFFF;">700</div>
+  <div style="flex: 1; background-color: #1E293B; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #FFFFFF;">800</div>
+  <div style="flex: 1; background-color: #0F172A; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #FFFFFF;">900</div>
+</div>
+
+| Muestra | Token | Código HEX | Uso en Interfaz |
+|:---:|:---|:---:|:---|
+| <span style="display:inline-block;width:24px;height:24px;background-color:#FFFFFF;border-radius:6px;border:1px solid #CBD5E1;box-shadow:0 1px 2px rgba(0,0,0,0.05);vertical-align:middle;"></span> | `neutral-white` | `#FFFFFF` | Superficie de tarjetas (*card background*), modales, fondos de inputs. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#F8FAFC;border-radius:6px;border:1px solid #CBD5E1;box-shadow:0 1px 2px rgba(0,0,0,0.05);vertical-align:middle;"></span> | `neutral-50` | `#F8FAFC` | Fondo general de pantallas en Web y Mobile (*canvas background*). |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#F1F5F9;border-radius:6px;border:1px solid #CBD5E1;box-shadow:0 1px 2px rgba(0,0,0,0.05);vertical-align:middle;"></span> | `neutral-100` | `#F1F5F9` | Fondos de inputs inactivos, cabeceras de tablas secundarias. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#E2E8F0;border-radius:6px;border:1px solid #CBD5E1;box-shadow:0 1px 2px rgba(0,0,0,0.05);vertical-align:middle;"></span> | `neutral-200` | `#E2E8F0` | Líneas divisorias, bordes de tarjetas y bordes de campos de formulario. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#CBD5E1;border-radius:6px;border:1px solid #94A3B8;box-shadow:0 1px 2px rgba(0,0,0,0.05);vertical-align:middle;"></span> | `neutral-300` | `#CBD5E1` | Bordes en estado hover, separadores marcados. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#94A3B8;border-radius:6px;border:1px solid rgba(0,0,0,0.1);box-shadow:0 1px 2px rgba(0,0,0,0.05);vertical-align:middle;"></span> | `neutral-400` | `#94A3B8` | Iconos inactivos, texto de *placeholder* en inputs. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#64748B;border-radius:6px;border:1px solid rgba(0,0,0,0.1);box-shadow:0 1px 2px rgba(0,0,0,0.05);vertical-align:middle;"></span> | `neutral-500` | `#64748B` | Textos terciarios, marcas de agua, leyendas de gráficos. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#475569;border-radius:6px;border:1px solid rgba(0,0,0,0.1);box-shadow:0 1px 2px rgba(0,0,0,0.05);vertical-align:middle;"></span> | `neutral-600` | `#475569` | Textos secundarios, etiquetas de metadatos, subtítulos. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#334155;border-radius:6px;border:1px solid rgba(0,0,0,0.1);box-shadow:0 1px 2px rgba(0,0,0,0.05);vertical-align:middle;"></span> | `neutral-700` | `#334155` | Texto de cuerpo principal en modo de alta densidad. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#1E293B;border-radius:6px;border:1px solid rgba(0,0,0,0.1);box-shadow:0 1px 2px rgba(0,0,0,0.05);vertical-align:middle;"></span> | `neutral-800` | `#1E293B` | Encabezados de tarjetas, títulos secundarios. |
+| <span style="display:inline-block;width:24px;height:24px;background-color:#0F172A;border-radius:6px;border:1px solid rgba(0,0,0,0.1);box-shadow:0 1px 2px rgba(0,0,0,0.05);vertical-align:middle;"></span> | `neutral-900` | `#0F172A` | Títulos principales (H1/H2) y texto de alto contraste. |
 
 ##### 6. Matriz de Cumplimiento de Accesibilidad y Ratios de Contraste (WCAG 2.1)
 Se evaluó el contraste de los colores clave contra los fondos del sistema mediante la fórmula de luminancia relativa de la W3C:
 
-| Combinación Evaluada | Color de Texto | Color de Fondo | Ratio de Contraste | Cumplimiento WCAG 2.1 | Evaluación |
-|:---|:---:|:---:|:---:|:---:|:---|
-| **Azul Primario sobre Blanco** | `#003178` | `#FFFFFF` | **12.28 : 1** | AAA (Pasa) | Excelente legibilidad en botones primarios y títulos. |
-| **Azul Primario sobre Canvas** | `#003178` | `#F8FAFC` | **11.75 : 1** | AAA (Pasa) | Óptimo para encabezados de sección. |
-| **Rojo Secundario sobre Blanco** | `#7C0303` | `#FFFFFF` | **11.19 : 1** | AAA (Pasa) | Alta visibilidad para advertencias y acentos de hierro. |
-| **Blanco sobre Azul Primario** | `#FFFFFF` | `#003178` | **12.28 : 1** | AAA (Pasa) | Contraste perfecto para botones y cabeceras sólidas. |
-| **Blanco sobre Rojo Secundario** | `#FFFFFF` | `#7C0303` | **11.19 : 1** | AAA (Pasa) | Contraste ideal en botones de acción crítica. |
-| **Texto Primario sobre Blanco** | `#0F172A` | `#FFFFFF` | **18.73 : 1** | AAA (Pasa) | Lectura descansada en párrafos extensos y tablas. |
-| **Texto Secundario sobre Blanco** | `#475569` | `#FFFFFF` | **5.45 : 1** | AA (Pasa) | Cumple estándar para texto regular (> 4.5:1). |
-| **Texto de Éxito sobre Fondo Verde** | `#15803D` | `#ECFDF5` | **5.32 : 1** | AA (Pasa) | Indicadores legibles sin fatiga. |
-| **Texto de Peligro sobre Fondo Rojo** | `#7C0303` | `#FDF2F2` | **10.35 : 1** | AAA (Pasa) | Alertas clínicas nítidas y seguras. |
+| Muestra Visual en Vivo | Combinación Evaluada | Color de Texto | Color de Fondo | Ratio de Contraste | Cumplimiento WCAG 2.1 | Evaluación |
+|:---:|:---|:---:|:---:|:---:|:---:|:---|
+| <span style="display:inline-block;background-color:#FFFFFF;color:#003178;padding:4px 8px;border-radius:4px;font-weight:700;border:1px solid #E2E8F0;">Aa Ferova</span> | **Azul Primario sobre Blanco** | `#003178` | `#FFFFFF` | **12.28 : 1** | AAA (Pasa) | Excelente legibilidad en botones primarios y títulos. |
+| <span style="display:inline-block;background-color:#F8FAFC;color:#003178;padding:4px 8px;border-radius:4px;font-weight:700;border:1px solid #E2E8F0;">Aa Ferova</span> | **Azul Primario sobre Canvas** | `#003178` | `#F8FAFC` | **11.75 : 1** | AAA (Pasa) | Óptimo para encabezados de sección. |
+| <span style="display:inline-block;background-color:#FFFFFF;color:#7C0303;padding:4px 8px;border-radius:4px;font-weight:700;border:1px solid #E2E8F0;">Aa Ferova</span> | **Rojo Secundario sobre Blanco** | `#7C0303` | `#FFFFFF` | **11.19 : 1** | AAA (Pasa) | Alta visibilidad para advertencias y acentos de hierro. |
+| <span style="display:inline-block;background-color:#003178;color:#FFFFFF;padding:4px 8px;border-radius:4px;font-weight:700;">Aa Ferova</span> | **Blanco sobre Azul Primario** | `#FFFFFF` | `#003178` | **12.28 : 1** | AAA (Pasa) | Contraste perfecto para botones y cabeceras sólidas. |
+| <span style="display:inline-block;background-color:#7C0303;color:#FFFFFF;padding:4px 8px;border-radius:4px;font-weight:700;">Aa Ferova</span> | **Blanco sobre Rojo Secundario** | `#FFFFFF` | `#7C0303` | **11.19 : 1** | AAA (Pasa) | Contraste ideal en botones de acción crítica. |
+| <span style="display:inline-block;background-color:#FFFFFF;color:#0F172A;padding:4px 8px;border-radius:4px;font-weight:700;border:1px solid #E2E8F0;">Aa Texto</span> | **Texto Primario sobre Blanco** | `#0F172A` | `#FFFFFF` | **18.73 : 1** | AAA (Pasa) | Lectura descansada en párrafos extensos y tablas. |
+| <span style="display:inline-block;background-color:#FFFFFF;color:#475569;padding:4px 8px;border-radius:4px;font-weight:700;border:1px solid #E2E8F0;">Aa Secundario</span> | **Texto Secundario sobre Blanco** | `#475569` | `#FFFFFF` | **5.45 : 1** | AA (Pasa) | Cumple estándar para texto regular (> 4.5:1). |
+| <span style="display:inline-block;background-color:#ECFDF5;color:#15803D;padding:4px 8px;border-radius:4px;font-weight:700;border:1px solid #86EFAC;">✓ Éxito</span> | **Texto de Éxito sobre Fondo Verde** | `#15803D` | `#ECFDF5` | **5.32 : 1** | AA (Pasa) | Indicadores legibles sin fatiga. |
+| <span style="display:inline-block;background-color:#FDF2F2;color:#7C0303;padding:4px 8px;border-radius:4px;font-weight:700;border:1px solid #FAD5D5;">▲ Alerta</span> | **Texto de Peligro sobre Fondo Rojo** | `#7C0303` | `#FDF2F2` | **10.35 : 1** | AAA (Pasa) | Alertas clínicas nítidas y seguras. |
+
+##### 7. Implementación Técnica en CSS (Design Tokens & Custom Properties)
+Para cargar y aplicar de forma inmediata esta paleta en los desarrollos web y móviles (CSS, SCSS, Tailwind o Flutter Web), se define la siguiente especificación oficial de tokens mediante variables CSS (`:root`):
+
+```css
+:root {
+  /* ==========================================================================
+     Ferova Design System - Color Tokens
+     ========================================================================== */
+
+  /* Paleta Primaria: Azul Clínico Profundo */
+  --color-primary-50:  #EBF1FA;
+  --color-primary-100: #D0DDF3;
+  --color-primary-200: #A2BEE7;
+  --color-primary-300: #6B93D6;
+  --color-primary-400: #3467BE;
+  --color-primary-500: #003178; /* Color Base Institucional */
+  --color-primary-600: #002A66;
+  --color-primary-700: #002254;
+  --color-primary-800: #001A40;
+  --color-primary-900: #00112B;
+
+  /* Paleta Secundaria: Rojo Óxido / Hemoglobina */
+  --color-secondary-50:  #FDF2F2;
+  --color-secondary-100: #FBE4E4;
+  --color-secondary-200: #F5BDBD;
+  --color-secondary-300: #E98888;
+  --color-secondary-400: #B53030;
+  --color-secondary-500: #7C0303; /* Color Base Dosis & Hierro */
+  --color-secondary-600: #690202;
+  --color-secondary-700: #560202;
+  --color-secondary-800: #420101;
+  --color-secondary-900: #2D0101;
+
+  /* Acentos Funcionales */
+  --color-accent-teal: #0D9488; /* Nutrición Saludable */
+  --color-accent-teal-surface: #F0FDFA;
+  --color-accent-gold: #F59E0B; /* Logros y Gamificación */
+  --color-accent-gold-surface: #FFFBEB;
+
+  /* Feedback Semántico */
+  --color-success-base:    #15803D;
+  --color-success-surface: #ECFDF5;
+  --color-success-border:  #86EFAC;
+
+  --color-warning-base:    #B45309;
+  --color-warning-surface: #FFFBEB;
+  --color-warning-border:  #FDE68A;
+
+  --color-danger-base:     #DC2626;
+  --color-danger-surface:  #FEF2F2;
+  --color-danger-border:   #FECACA;
+
+  --color-info-base:       #1D4ED8;
+  --color-info-surface:    #EFF6FF;
+  --color-info-border:     #BFDBFE;
+
+  /* Neutros Slate */
+  --color-neutral-white: #FFFFFF;
+  --color-neutral-50:    #F8FAFC;
+  --color-neutral-100:   #F1F5F9;
+  --color-neutral-200:   #E2E8F0;
+  --color-neutral-300:   #CBD5E1;
+  --color-neutral-400:   #94A3B8;
+  --color-neutral-500:   #64748B;
+  --color-neutral-600:   #475569;
+  --color-neutral-700:   #334155;
+  --color-neutral-800:   #1E293B;
+  --color-neutral-900:   #0F172A;
+
+  /* Tipografía */
+  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+```
 
 ---
 
