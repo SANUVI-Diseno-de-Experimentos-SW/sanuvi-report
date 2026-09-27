@@ -1119,13 +1119,97 @@ Vista del registro de dosis administradas. Muestra:
 
 ### 4.4.4. Mobile Applications User Flow Diagrams
 
-> Un User Flow por cada User Goal, consistente con los Wireflows. Incluir happy path y unhappy paths.
+Los siguientes diagramas representan los principales flujos de interacción de la aplicación móvil FerovaFamily, utilizada por los apoderados para gestionar la información de sus pacientes, realizar el seguimiento del tratamiento, registrar información nutricional, gestionar citas y comunicarse con el personal de salud.
 
-**User Goal 1:** [enunciado]
+**Mobile User Flow 1: Confirmación de dosis**
 
-<img src="../assets/img/chapter-IV/mobile-userflow-01.png" alt="Mobile User Flow 1">
+> **Relacionado con el User Goal:**
+>
+> Como apoderado, quiero confirmar las dosis programadas de mi paciente, para registrar el cumplimiento de su
+> tratamiento y realizar su seguimiento.
 
-<!-- COMPLETAR -->
+
+Este flujo inicia cuando el apoderado accede a la pantalla principal de FerovaFamily y consulta las dosis programadas del paciente seleccionado. Desde esta sección puede confirmar una dosis correspondiente al tratamiento. Una vez realizada la confirmación, la dosis queda registrada y puede ser consultada posteriormente en el historial.
+
+---
+
+**Mobile User Flow 2: Historial de dosis**
+
+> **Relacionado con el User Goal:**
+> Como apoderado, quiero consultar el historial de dosis de mi paciente,
+> para verificar las dosis que han sido confirmadas u omitidas durante su tratamiento.
+
+Este flujo inicia cuando el apoderado selecciona la opción “Ver historial” desde la sección de dosis. La aplicación muestra los registros correspondientes a diferentes fechas, permitiendo identificar las dosis confirmadas y omitidas.
+
+---
+
+**Mobile User Flow 3: Registro y búsqueda de alimentos**
+
+> **Relacionado con el User Goal:**
+> Como apoderado, quiero registrar los alimentos consumidos por mi paciente,
+> para llevar un seguimiento de su alimentación y del hierro aportado por los alimentos.
+
+Este flujo inicia desde el Diario Nutricional. El apoderado selecciona “Nueva entrada”, busca el alimento correspondiente, selecciona el alimento, indica la cantidad consumida y confirma el registro. La información se incorpora al diario nutricional.
+
+---
+
+**Mobile User Flow 4: Registro de paciente**
+
+> **Relacionado con el User Goal:**
+> Como apoderado, quiero registrar a un nuevo paciente,
+> para gestionar su información y realizar el seguimiento de su tratamiento.
+
+El flujo inicia cuando el apoderado selecciona “Agregar” en la sección “Mis Niños”. Luego completa los datos solicitados, como nombres, apellidos, fecha de nacimiento, sexo, peso y talla. Finalmente, selecciona “Registrar a mi pequeño” y el paciente queda incorporado a su cuenta.
+
+---
+
+**Mobile User Flow 5: Reserva de cita**
+
+> **Relacionado con el User Goal:**
+> Como apoderado, quiero reservar una cita para mi paciente,
+> para programar su atención en una posta de salud disponible.
+
+El flujo inicia desde “Ver Postas Cercanas”. El apoderado consulta las postas disponibles, selecciona una posta y revisa sus detalles. Posteriormente selecciona “Reservar cita”, elige al paciente, selecciona una fecha y un horario disponible y confirma la reserva.
+
+---
+
+**Mobile User Flow 6: Historial nutricional**
+
+> **Relacionado con el User Goal:**
+> Como apoderado, quiero consultar el historial nutricional de mi paciente,
+> para revisar los registros de alimentación y el hierro absorbido en diferentes fechas.
+
+El flujo inicia desde “Diario Nutricional”, donde el apoderado selecciona “Ver historial”. La aplicación muestra los registros nutricionales organizados por fecha, incluyendo información sobre el hierro absorbido y los alimentos registrados.
+
+---
+
+**Mobile User Flow 7: Progreso y medallas**
+
+> **Relacionado con el User Goal:**
+> Como apoderado, quiero consultar el progreso y las medallas de mi paciente,
+> para conocer su evolución durante el seguimiento del tratamiento y visualizar los logros obtenidos.
+
+El flujo inicia desde la pantalla principal, seleccionando “Mis Logros y Medallas”. La aplicación muestra información relacionada con el progreso, rachas, evolución de hemoglobina y medallas obtenidas o pendientes de desbloquear.
+
+---
+
+**Mobile User Flow 8: Cancelación de cita**
+
+> **Relacionado con el User Goal:**
+> Como apoderado, quiero cancelar una cita de mi paciente,
+> para gestionar las citas programadas cuando ya no sea posible asistir.
+
+El flujo inicia desde la sección “Citas”, donde el apoderado selecciona una cita previamente registrada. Luego selecciona “Cancelar cita” y la aplicación muestra una ventana de confirmación. Si confirma la operación, la cita pasa al estado de cancelada.
+
+---
+
+**Mobile User Flow 9: Comunicación**
+
+> **Relacionado con el User Goal:**
+> Como apoderado, quiero comunicarme con el personal de salud,
+> para realizar consultas relacionadas con el seguimiento de mi paciente.
+
+El flujo inicia desde la sección “Consultas”, donde el apoderado puede visualizar las consultas disponibles y seleccionar una conversación. Dentro de ella puede revisar los mensajes existentes y enviar nuevos mensajes al personal de salud.
 
 ## 4.5. Mobile Applications Prototyping
 
