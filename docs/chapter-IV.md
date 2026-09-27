@@ -186,6 +186,9 @@ Estándares visuales e interactivos para las interfaces web de FerovaClinic, ase
 
 ### 4.1.3. Mobile Style Guidelines
 
+Esta sección define las guías de estilo visual y de interacción para aplicaciones móviles, asegurando consistencia, usabilidad y alineación con las buenas prácticas de diseño en cada plataforma.
+
+
 #### 4.1.3.1. iOS Mobile Style Guidelines
 
 #### 4.1.3.2. Android Mobile Style Guidelines
