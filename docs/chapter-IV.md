@@ -218,7 +218,7 @@ Para garantizar una correcta visualización en dispositivos iPhone, la interfaz 
 * **Header superior:** Cada pantalla mantiene un header consistente con:
   - Botón de retroceso (flecha roja) en la parte superior izquierda
   - Título de la pantalla en color rojo oscuro y peso semibold
-  - Iconos de acciones secundarias (notificaciones, menú) en la parte superior derecha cuando aplique
+  - Iconos de acciones secundarias (menú) en la parte superior derecha cuando aplique
   
 * **Bottom Navigation:** La navegación inferior contiene 4 opciones principales:
   - **Inicio**: Acceso a la pantalla principal con resumen de información
@@ -279,10 +279,6 @@ La experiencia móvil en iOS debe mantener interacciones suaves, responsivas y c
   - Comportamiento momentum scrolling nativo de iOS
   - Parallax sutil en fondos de headers (reducción de 20-30%)
   - Ocultamiento suave de elementos como tabs al desplazarse hacia abajo (200ms)
-* **Notificaciones y alertas:** Las confirmaciones de acción (ej: "¡Cita Confirmada!") se animan con:
-  - Aparición desde el centro con escala (0.8x a 1x)
-  - Duración 300ms con ease-in-out
-  - Permanencia visible de 2-3 segundos antes de desaparecer
 * **Estados de carga:** Se utilizan spinners subtiles o esqueletos de contenido para indicar carga, con animación de rotación suave (800-1000ms) en color rojo institucional.
 * **Feedback háptico:** Se recomienda el uso de haptic feedback subtle de iOS (light impact, medium success) en momentos clave:
   - Confirmación de envío de consulta
