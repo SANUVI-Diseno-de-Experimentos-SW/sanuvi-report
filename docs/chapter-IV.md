@@ -297,6 +297,17 @@ La experiencia móvil en iOS debe mantener interacciones suaves, responsivas y c
 * Uso de colores en combinación con iconos/textos para transmitir información (no solo color)
 * Soporte para Dynamic Type para escalado de texto
 
+<div align="center">
+  <img src="../assets/img/chapter-IV/ios-1.png">
+</div>
+
+---
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/ios-2.png">
+</div>
+
+
 #### 4.1.3.2. Android Mobile Style Guidelines
 
 ## 4.2. Information Architecture
