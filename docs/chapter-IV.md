@@ -618,6 +618,13 @@ El flujo muestra cómo el usuario accede a la opción de agregar un nuevo pacien
   <img src="../assets/img/chapter-IV/wireflow/5.png" width=500>
 </div>
 
+
+> **Relacionado con User Goal:**
+> 
+> Como apoderado, quiero registrar a un nuevo paciente,
+> para gestionar su información y realizar el seguimiento de su tratamiento.
+
+
 ---
 
 **UG-02 — Agendar Cita Médica**
@@ -627,6 +634,12 @@ El flujo presenta cómo el usuario agenda una nueva cita médica. Comenzando des
 <div align="center">
   <img src="../assets/img/chapter-IV/wireflow/4.png" width=500>
 </div>
+
+> **Relacionado con User Goal:**
+> 
+> Como apoderado, quiero reservar una cita para mi paciente,
+> para programar su atención en una posta de salud disponible.
+
 
 ---
 
@@ -638,6 +651,11 @@ El flujo muestra el proceso de registrar un alimento en el diario nutricional. D
   <img src="../assets/img/chapter-IV/wireflow/7.png" width=500>
 </div>
 
+> **Relacionado con User Goal:**
+> 
+> Como apoderado, quiero registrar los alimentos consumidos por mi paciente,
+> para llevar un seguimiento de su alimentación y del hierro aportado por los alimentos.
+
 ---
 
 **UG-04 — Enviar Consulta a Especialista**
@@ -648,6 +666,11 @@ El flujo detalla cómo el usuario envía una consulta médica a un especialista.
   <img src="../assets/img/chapter-IV/wireflow/6.png" width=500>
 </div>
 
+> **Relacionado con User Goal:**
+>
+> Como apoderado, quiero enviar una consulta a un especialista,
+>para resolver dudas relacionadas con el seguimiento y tratamiento de mi paciente.
+
 ---
 
 **UG-05 — Comunicarse con Especialista mediante Chat**
@@ -657,6 +680,11 @@ El flujo presenta la conversación bidireccional entre usuario y especialista. D
 <div align="center">
   <img src="../assets/img/chapter-IV/wireflow/9.png" width=500>
 </div>
+
+> **Relacionado con User Goal:**
+>
+> Como apoderado, quiero comunicarme mediante un chat con el personal de salud,
+> para realizar consultas y dar seguimiento a la atención de mi paciente.
 
 
 ---
@@ -669,6 +697,10 @@ El flujo muestra el proceso paso a paso para recuperar acceso a una cuenta. Desd
   <img src="../assets/img/chapter-IV/wireflow/1.png" width=500>
 </div>
 
+> **Relacionado con User Goal:**
+> 
+> Como usuario, quiero recuperar mi contraseña,
+> para volver a acceder a mi cuenta cuando no recuerde mis credenciales.
 
 ---
 
@@ -681,6 +713,11 @@ El flujo detalla el proceso de registro de un nuevo usuario. Desde la pantalla d
   <img src="../assets/img/chapter-IV/wireflow/10.png" width=500>
 </div>
 
+> **Relacionado con User Goal:**
+> 
+> Como nuevo usuario, quiero crear una cuenta en la plataforma,
+> para acceder a las funcionalidades de Ferova y gestionar la información de mis pacientes.
+
 
 ---
 
@@ -691,6 +728,11 @@ El flujo detalla cómo el usuario confirma la administración de una dosis de me
 <div align="center">
   <img src="../assets/img/chapter-IV/wireflow/8.png" width=500>
 </div>
+
+> **Relacionado con User Goal:**
+>
+> Como apoderado, quiero confirmar las dosis programadas de mi paciente
+> y consultar su historial, para registrar y verificar el cumplimiento del tratamiento.
 
 
 ### 4.4.3. Mobile Applications Mock-ups
