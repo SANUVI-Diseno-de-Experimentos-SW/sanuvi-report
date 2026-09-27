@@ -186,7 +186,127 @@ Estándares visuales e interactivos para las interfaces web de FerovaClinic, ase
 
 ### 4.1.3. Mobile Style Guidelines
 
+Esta sección define las guías de estilo visual y de interacción para aplicaciones móviles, asegurando consistencia, usabilidad y alineación con las buenas prácticas de diseño en cada plataforma.
+
+
 #### 4.1.3.1. iOS Mobile Style Guidelines
+ 
+En esta subsección se detallan los estándares visuales y de interacción aplicados a la versión móvil de Ferova Family para dispositivos iOS, tomando como referencia las pantallas diseñadas en formato iPhone 15 Pro. Estos lineamientos aseguran una experiencia coherente con la identidad visual de Ferova Family, manteniendo una navegación clara, jerarquía de información intuitiva y adaptación a pantallas con zonas seguras como el *Dynamic Island*.
+ 
+**Sistema de Rejilla y Layout iOS**
+ 
+Para garantizar una correcta visualización en dispositivos iPhone, la interfaz móvil de Ferova Family utiliza una estructura vertical de una sola columna, priorizando la accesibilidad a funcionalidades médicas y la claridad en la información de salud:
+ 
+* **Formato de pantalla iPhone:** Las vistas están diseñadas para una proporción vertical, considerando espacios superiores seguros para evitar interferencias con el *Dynamic Island* y la barra de estado del sistema iOS.
+* **Distribución en una columna:** El contenido principal se organiza de forma vertical, permitiendo que secciones como inicio de sesión, diario nutricional, citas médicas, consultas y progreso se visualicen de manera ordenada y accesible.
+* **Espaciado lateral:** Se emplean márgenes internos consistentes (16-20px) para evitar que los textos, cards y botones queden pegados a los bordes de la pantalla.
+* **Cards centradas:** Las tarjetas de contenido, como las de "Mis Niños", "Postas Cercanas", "Historial Nutricional" y "Citas", se muestran centradas, con ancho controlado y separación visual clara entre bloques.
+* **Área segura para navegación:** Un espacio inferior de aproximadamente 70-80px se mantiene reservado para la barra de navegación inferior (bottom navigation), asegurando que el contenido principal no se superponga.
+**Componentes de Interfaz iOS**
+ 
+* **Botones principales:** Los botones como **Registrarse**, **Iniciar Sesión**, **Ver detalles**, **Confirmar Reserva**, **Enviar Consulta** y **Confirmar Dosis** utilizan el color rojo/marrón institucional de Ferova Family (#8B2E3B), con bordes redondeados (radio de 8-12px) y tamaño compacto. Contienen texto en blanco con peso semibold.
+* **Botones secundarios:** Los botones de acción secundaria como "Ver más información", "Volver al inicio" y "Editar" utilizan un fondo blanco o gris claro con borde de 1-2px en color rojo, manteniendo coherencia visual.
+* **Cards informativas:** Las tarjetas presentan fondos blancos, bordes suaves (radio 8-10px), sombras ligeras y espaciado interno consistente (12-16px). Se utilizan para organizar información sobre citas, consultas, registros nutricionales y detalles de postas médicas.
+* **Formularios:** Las pantallas de registro, inicio de sesión y envío de consultas emplean campos de entrada con fondo blanco, bordes ligeros (1px), radio de 8px y distribución vertical. Los placeholders tienen color gris claro.
+* **Badges y etiquetas:** Se utilizan para indicar estado (Activo, Confirmada, Cancelada, Omitida) con colores diferenciados: verde para activo/confirmado, gris para pendiente, rojo para cancelado/omitido.
+* **Iconos y avatares:** Los avatares de usuarios (niños, especialistas) se presentan en círculos de 48-64px con colores pastel diferenciados. Los íconos médicos (jeringa, medicamento, corazón) utilizan la paleta de colores de la app con peso visual coherente.
+* **Componentes de mapa:** En la pantalla "Postas Cercanas", el mapa muestra marcadores de ubicación en rojo oscuro con iconos médicos centrales, sobre un fondo de mapa en tonos neutros.
+* **Indicadores de progreso:** Los gráficos circulares de progreso muestran el porcentaje de absorción de hierro con un ring en color rojo oscuro sobre fondo blanco/gris claro.
+* **Acordeones y desplegables:** Las respuestas en consultas y detalles de servicios se organizan mediante bloques que se expanden con transiciones suaves.
+**Navegación iOS**
+ 
+* **Header superior:** Cada pantalla mantiene un header consistente con:
+  - Botón de retroceso (flecha roja) en la parte superior izquierda
+  - Título de la pantalla en color rojo oscuro y peso semibold
+  - Iconos de acciones secundarias (notificaciones, menú) en la parte superior derecha cuando aplique
+  
+* **Bottom Navigation:** La navegación inferior contiene 4 opciones principales:
+  - **Inicio**: Acceso a la pantalla principal con resumen de información
+  - **Diario**: Historial nutricional y registro de comidas/suplementos
+  - **Citas**: Gestión de citas médicas y reservas
+  - **Consultas**: Comunicación directa con especialistas médicos
+  
+  Cada ícono se resalta en color rojo cuando está activo, mostrando una pequeña línea o fondo indicador.
+* **Header con contexto:** Las pantallas con múltiples opciones (como "Crear cuenta" o "Iniciar sesión") incluyen un logo o ícono distintivo en la parte superior, centrado, reforzando la identidad de Ferova Family.
+* **Flujo de navegación:** La navegación está pensada para permitir desplazamiento vertical dentro de cada sección, con acceso rápido a funcionalidades clave mediante la barra inferior en todo momento.
+**Tipografía iOS Aplicada**
+ 
+La tipografía mantiene una jerarquía clara para mejorar la lectura en pantallas pequeñas y la comprensión de información médica:
+ 
+* **Títulos principales (H1):** Se utilizan textos en negrita (weight: 600-700) y tamaño 24-28px para secciones como **Iniciar sesión**, **Diario Nutricional**, **Citas**, **Mis Consultas**, **Progreso y Medallas** y **Crear tu cuenta**. Color: rojo oscuro (#8B2E3B).
+* **Subtítulos (H2):** Se aplican textos de tamaño 16-18px con weight 600, en color gris oscuro (#333333), para explicar secciones secundarias como "Seleccionar Paciente", "Horarios disponibles", "Cita Actual".
+* **Etiquetas de campo:** Textos pequeños (12-14px) en gris medio (#666666) con weight 500 para identificar campos de formulario (DNI, Contraseña, Teléfono).
+* **Cuerpo de texto:** El contenido descriptivo utiliza tamaño 14px, weight 400, alineación justificada o natural según el contexto, y suficiente interlineado (1.5-1.6) para mantener la legibilidad.
+* **Énfasis visual:** Algunos elementos importantes, como valores numéricos (1.36 mg de hierro), nombres de especialistas, estados de citas y datos de progreso, se resaltan con weight 600 o color rojo para captar la atención.
+* **Textos auxiliares:** Información secundaria como distancias ("0.5 km"), horarios, notas de estado utilizan tamaño 12px en color gris claro (#999999).
+* **Links y acciones:** Los links interactivos como "¿Ya tienes cuenta? Inicia sesión" utilizan color rojo con subrayado ligero, señalando claramente la interactividad.
+**Sistema de Colores iOS**
+ 
+La paleta de colores de Ferova Family está compuesta por:
+ 
+* **Rojo/Marrón institucional:** #8B2E3B - Color primario utilizado en botones principales, headers, títulos y elementos de mayor jerarquía. Comunica confianza y profesionalismo médico.
+* **Blanco:** #FFFFFF - Fondo principal de tarjetas, formularios y áreas de contenido, asegurando legibilidad y claridad.
+* **Gris claro:** #F5F5F5 - Fondo alternativo para campos de entrada, secciones secundarias y áreas de agrupación.
+* **Gris medio:** #CCCCCC - Bordes ligeros, divisores y elementos de menor importancia visual.
+* **Gris oscuro:** #333333 - Texto principal de cuerpo y subtítulos, asegurando suficiente contraste.
+* **Verde:** #2ECC71 - Indicador de estado activo, confirmado, o acción completada (checkmarks, badges "Activo", "Confirmada").
+* **Rojo claro/Rosa:** #F5D5D8 - Fondos suaves para alertas, avisos o secciones destacadas que requieren atención.
+* **Azul-Gris:** #5A6B7D - Color secundario utilizado en íconos de servicios, avatares de especialistas y elementos informativos.
+* **Amarillo pastel:** #F4E4A6 - Color de badges para logros y medallas completadas.
+* **Tonos pastel para avatares:** Colores suaves como azul claro (#87CEEB), rosa pastel (#FFB6C1) para diferenciar perfiles de niños.
+**Animaciones y Micro-interacciones iOS**
+ 
+La experiencia móvil en iOS debe mantener interacciones suaves, responsivas y coherentes con las pautas de Human Interface Guidelines de Apple:
+ 
+* **Transiciones de navegación:** Las pantallas utilizan transiciones push/pop suaves cuando se navega entre secciones, con duración de 300-350ms.
+* **Botones táctiles:** Los botones deben responder visualmente al toque mediante:
+  - Cambio de opacidad (reducción a 70-80%) durante el toque
+  - Ligera reducción de escala (0.98x) para feedback táctil
+  - Animación de duración 150-200ms
+* **Cards interactivas:** Las tarjetas de citas, consultas y registros nutricionales pueden mostrar:
+  - Ligera elevación (sombra más pronunciada) al interactuar
+  - Cambio de color de fondo (gris muy claro) durante el toque
+  - Transición suave al expandir/colapsar información
+* **Desplegables y acordeones:** Los bloques de preguntas frecuentes, servicios disponibles y detalles expandibles utilizan:
+  - Animación de rotación del ícono indicador (0° a 180°)
+  - Transición suave de altura del contenido (200-300ms)
+  - Cambio de color de fondo en el header del acordeón
+* **Indicadores de progreso:** Los anillos de progreso (absorción de hierro) animados muestran:
+  - Animación de stroke desde 0 hasta el porcentaje final al cargar la pantalla
+  - Duración de 800-1000ms con easing ease-out
+  - Número de porcentaje que anima simultáneamente
+* **Desplazamiento fluido:** Las secciones mantienen un scroll vertical suave con:
+  - Comportamiento momentum scrolling nativo de iOS
+  - Parallax sutil en fondos de headers (reducción de 20-30%)
+  - Ocultamiento suave de elementos como tabs al desplazarse hacia abajo (200ms)
+* **Notificaciones y alertas:** Las confirmaciones de acción (ej: "¡Cita Confirmada!") se animan con:
+  - Aparición desde el centro con escala (0.8x a 1x)
+  - Duración 300ms con ease-in-out
+  - Permanencia visible de 2-3 segundos antes de desaparecer
+* **Estados de carga:** Se utilizan spinners subtiles o esqueletos de contenido para indicar carga, con animación de rotación suave (800-1000ms) en color rojo institucional.
+* **Feedback háptico:** Se recomienda el uso de haptic feedback subtle de iOS (light impact, medium success) en momentos clave:
+  - Confirmación de envío de consulta
+  - Confirmación de cita
+  - Logro de meta de hierro
+ 
+**Consideraciones de Accesibilidad**
+ 
+* Contraste mínimo de 4.5:1 entre texto y fondo (conforme WCAG AA)
+* Tamaño mínimo de touch targets de 44x44pt según HIG de Apple
+* Etiquetas claras para campos de formulario y botones de acción
+* Uso de colores en combinación con iconos/textos para transmitir información (no solo color)
+* Soporte para Dynamic Type para escalado de texto
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/ios-1.png">
+</div>
+
+---
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/ios-2.png">
+</div>
+
 
 #### 4.1.3.2. Android Mobile Style Guidelines
 
