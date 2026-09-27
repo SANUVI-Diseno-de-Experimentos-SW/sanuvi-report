@@ -424,17 +424,28 @@ Panel principal con resumen de información clave del niño seleccionado. Muestr
 **Descripción:**
 Resumen diario del estado nutricional del niño seleccionado. Muestra gráfico circular de absorción de hierro, lista de alimentos ingeridos y opciones para agregar nuevas entradas.
 
- 
+ <div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Diario Nutricional.png" width=300>
+</div>
+
 #### Pantalla de Historial Nutricional
  
 **Descripción:**
 Timeline de entradas nutricionales organizadas por fecha. Muestra historial completo de alimentos registrados con detalles de absorción de hierro.
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Historial Nutricional.png" width=300>
+</div>
+
    
 #### Pantalla NutriHierro - Búsqueda y Registro de Alimentos
  
 **Descripción:**
 Interfaz para buscar y registrar alimentos específicos con contenido de hierro. Incluye categorías, búsqueda por nombre y modal de confirmación de cantidad.
  
+<div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Busqueda y agregacion de alimentos.png" width=500>
+</div>
 
 ---
 
