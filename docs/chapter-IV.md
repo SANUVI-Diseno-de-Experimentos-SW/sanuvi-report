@@ -9,13 +9,13 @@ Incluiremos la guía de estilos para nuestras dos aplicaciones: FerovaFamily y F
 Para Ferova Family, el branding se diseñó para mostrar confianza y profesionalismo, abarcando el tema de la salud. Los tres iconos del logo (Gota de sangre, corazón y casa) representan la salud y bienestar que nuestra aplicación promete mediante sus funcionalidades principales. En el tema de colores, el color rojo representa la vitalidad y temas de salud de la persona y el color salmón representa la calidez, contrastando de buena manera con el otro color. El diseño incluye el logo del producto y su nombre para que sea fácil de identificar.
 
 <div align="center">
-  <img src="">
+  <img src="../assets/img/chapter-IV/Branding_FerovaFamily.png">
 </div>
 
 El branding de Ferova Clinic se diseñó para mostrar profesionalismo, enfocado en el análisis de datos. Los iconos del logo (gota de sangre, barras y cruz roja) muestran la conexión entre el análisis de datos y la salud. En los colores, el color azul muestra profesionalismo y confianza y el color rojo muestra todo lo relacionado a la salud. El diseño incluye el logo del producto y su nombre para que sea identificable.
 
 <div align="center">
-  <img src="">
+  <img src="../assets/img/chapter-IV/Branding_FerovaClinic.png">
 </div>
 
 **Typography**
@@ -23,7 +23,7 @@ El branding de Ferova Clinic se diseñó para mostrar profesionalismo, enfocado 
 Para las dos aplicaciones, se selecciono la tipografía "Inter" como fuente principal y secundaria por su legibilidad, tono profesional y neutralidad. Esta fuente es agradable al usuario, mostrando diferencias claras en cada letra.
 
 <div align="center">
-  <img src="">
+  <img src="../assets/img/chapter-IV/Typography_Inter.png">
 </div>
 
 
@@ -32,7 +32,7 @@ Para las dos aplicaciones, se selecciono la tipografía "Inter" como fuente prin
 La paleta de colores de Ferova Family y Ferova Clinic se compone de 4 colores y sus variantes. Los colores, en conjunto, permiten mostrar una claridad en el diseño de las dos aplicaciones.
 
 <div align="center">
-  <img src="">
+  <img src="../assets/img/chapter-IV/Gemini_Generated_Image_62kz2062kz2062kz.jpg">
 </div>
 
 - #7C0303: Utilizado en Ferova Family. Este color y sus variaciones están asociadas a la vitalidad y salud, también se le relaciona a la urgencia. Representa la salud principalmente. Utilizada en botones primarios y la interfaz de la aplicación.
