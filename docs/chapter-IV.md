@@ -350,9 +350,75 @@ La experiencia móvil en iOS debe mantener interacciones suaves, responsivas y c
 
 ### 4.4.1. Mobile Applications Wireframes
 
-<img src="../assets/img/chapter-IV/mobile-wireframes.png" alt="Mobile Wireframes">
+Los siguientes wireframes corresponden a la aplicación móvil de Ferova Family, una plataforma integral de cuidado de la salud familiar con enfoque en seguimiento nutricional y gestión de citas médicas.
 
-<!-- COMPLETAR -->
+#### Principios Aplicados
+ 
+**-Jerarquía funcional clara:**
+ 
+El flujo de navegación prioriza las acciones más relevantes para los usuarios (madres/padres/apoderados), como gestión de citas médicas, seguimiento del estado nutricional de sus hijos, visualización de postas cercanas y comunicación directa con especialistas médicos.
+ 
+**-Consistencia y patrones de diseño:**
+ 
+Los componentes mantienen uniformidad en su comportamiento visual e interactivo, asegurando coherencia entre pantallas y módulos. Todos los wireframes utilizan una estructura vertical de una columna con navegación bottom-tab persistente.
+ 
+**-Accesibilidad en interfaces:**
+ 
+Se aplican contrastes adecuados, fuentes legibles, botones de tamaño óptimo (mínimo 44x44pt) y una estructura de navegación compatible con teclado y lectores de pantalla.
+ 
+**-Diseño adaptativo:**
+ 
+Los wireframes consideran que la aplicación será utilizada tanto en iPhones como en tablets, por lo que el diseño es responsivo y se ajusta a distintos anchos de pantalla.
+ 
+**-Arquitectura de información enfocada al flujo de tareas:**
+ 
+La estructura prioriza la eficiencia operativa, permitiendo a los tutores registrar alimentos, gestionar citas, seguir el progreso de salud y contactar especialistas en el menor número de clics posible.
+ 
+---
+
+#### Registro e Inicio de seccion
+
+Panel de acceso para usuarios registrados. Permite ingresar credenciales (DNI y contraseña) y acceder a la plataforma. Incluye opción de recuperación de contraseña y enlace para crear nueva cuenta. Tambien contamos con el Formulario completo para nuevos usuarios. Captura información personal (nombre, apellido, DNI, teléfono, email) y credenciales de acceso. Incluye validaciones en tiempo real y términos y condiciones.
+
+
+**Registro**
+
+**Elementos principales:**
+- Header con ícono/logo de Ferova Family
+- Campo de entrada: DNI (8 dígitos)
+- Campo de entrada: Contraseña (enmascarado)
+- Botón de "Olvidaste la contraseña?" en formato link
+- Botón principal: "Iniciar Sesión" (full width, color rojo oscuro)
+- Enlace a registro: "¿No tienes cuenta? Regístrate"
+- Bottom navigation: Iconos de acceso rápido a ayuda, seguridad y privacidad
+**Flujo de interacción:**
+1. Usuario ingresa DNI
+2. Usuario ingresa contraseña
+3. Usuario toca "Iniciar Sesión"
+4. Validación y navegación a Home
+
+**Inicio de Seccion**
+
+**Elementos principales:**
+- Header con ícono de Ferova Family
+- Campo: Nombre completo (placeholder con ejemplo)
+- Campo: Apellido completo
+- Campo: DNI (8 dígitos con validador)
+- Campo: Teléfono (formato internacional)
+- Campo: Correo Electrónico
+- Campo: Contraseña (enmascarado)
+- Campo: Confirmar Contraseña (enmascarado)
+- Checkbox: Acepto términos y condiciones
+- Botón principal: "Registrarse" (full width, color rojo)
+- Enlace a login: "¿Ya tienes cuenta? Inicia sesión"
+**Flujo de interacción:**
+1. Usuario completa todos los campos
+2. Sistema valida información
+3. Usuario acepta términos y condiciones
+4. Usuario toca "Registrarse"
+5. Confirmación de registro y acceso a Home
+
+
 
 ### 4.4.2. Mobile Applications Wireflow Diagrams
 
