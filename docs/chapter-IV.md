@@ -376,47 +376,155 @@ La estructura prioriza la eficiencia operativa, permitiendo a los tutores regist
  
 ---
 
+### Módulo de Autenticación
+
 #### Registro e Inicio de seccion
 
 Panel de acceso para usuarios registrados. Permite ingresar credenciales (DNI y contraseña) y acceder a la plataforma. Incluye opción de recuperación de contraseña y enlace para crear nueva cuenta. Tambien contamos con el Formulario completo para nuevos usuarios. Captura información personal (nombre, apellido, DNI, teléfono, email) y credenciales de acceso. Incluye validaciones en tiempo real y términos y condiciones.
 
 
-**Registro**
+---
 
-**Elementos principales:**
-- Header con ícono/logo de Ferova Family
-- Campo de entrada: DNI (8 dígitos)
-- Campo de entrada: Contraseña (enmascarado)
-- Botón de "Olvidaste la contraseña?" en formato link
-- Botón principal: "Iniciar Sesión" (full width, color rojo oscuro)
-- Enlace a registro: "¿No tienes cuenta? Regístrate"
-- Bottom navigation: Iconos de acceso rápido a ayuda, seguridad y privacidad
-**Flujo de interacción:**
-1. Usuario ingresa DNI
-2. Usuario ingresa contraseña
-3. Usuario toca "Iniciar Sesión"
-4. Validación y navegación a Home
+### Módulo de Home / Dashboard
+ 
+#### Pantalla Principal (Home)
+ 
+**Descripción:**
+Panel principal con resumen de información clave del niño seleccionado. Muestra:
+- Identificación del niño actual (selector para cambiar entre múltiples niños)
+- Diario de hoy (horarios programados de medicamento/suplementos)
+- Métricas de progreso (hierro absorbido)
+- Accesos rápidos a funciones principales (Nueva entrada, Postas cercanas, Logros)
+- Tip de salud diario
 
-**Inicio de Seccion**
+   
+---
 
-**Elementos principales:**
-- Header con ícono de Ferova Family
-- Campo: Nombre completo (placeholder con ejemplo)
-- Campo: Apellido completo
-- Campo: DNI (8 dígitos con validador)
-- Campo: Teléfono (formato internacional)
-- Campo: Correo Electrónico
-- Campo: Contraseña (enmascarado)
-- Campo: Confirmar Contraseña (enmascarado)
-- Checkbox: Acepto términos y condiciones
-- Botón principal: "Registrarse" (full width, color rojo)
-- Enlace a login: "¿Ya tienes cuenta? Inicia sesión"
-**Flujo de interacción:**
-1. Usuario completa todos los campos
-2. Sistema valida información
-3. Usuario acepta términos y condiciones
-4. Usuario toca "Registrarse"
-5. Confirmación de registro y acceso a Home
+### Módulo de Nutrición
+ 
+#### Pantalla de Diario Nutricional
+ 
+**Descripción:**
+Resumen diario del estado nutricional del niño seleccionado. Muestra gráfico circular de absorción de hierro, lista de alimentos ingeridos y opciones para agregar nuevas entradas.
+
+ 
+#### Pantalla de Historial Nutricional
+ 
+**Descripción:**
+Timeline de entradas nutricionales organizadas por fecha. Muestra historial completo de alimentos registrados con detalles de absorción de hierro.
+   
+#### Pantalla NutriHierro - Búsqueda y Registro de Alimentos
+ 
+**Descripción:**
+Interfaz para buscar y registrar alimentos específicos con contenido de hierro. Incluye categorías, búsqueda por nombre y modal de confirmación de cantidad.
+ 
+
+---
+
+### Módulo de Citas Médicas
+ 
+#### Pantalla de Citas
+ 
+**Descripción:**
+Gestión central de citas médicas. Muestra cita próxima, historial de citas (confirmadas/canceladas) y opciones para agendar nuevas citas.
+ 
+#### Pantalla de Reserva de Cita
+ 
+**Descripción:**
+Flujo de 2-3 pasos para agendar una nueva cita: seleccionar paciente, fecha y hora, y confirmar.
+ 
+<strong>Elementos principales (Paso 1 - Seleccionar Paciente):</strong>
+
+- Header: "Reserva Cita" con botón atrás
+- Selector de paciente: Avatares circulares
+- Subsección: "Fecha Seleccionada" (editable)
+- Subsección: "Horarios disponibles" con tabla de slots
+  - Horarios en formato 08:00, 09:00, 10:00, 16:00
+  - Indicador de disponibilidad (Disponible/Ocupado)
+  - Botón de confirmación
+
+<strong>Elementos principales (Paso 2 - Seleccionar Fecha):</strong>
+
+- Calendario interactivo (mes/año navegable)
+- Fechas disponibles resaltadas
+- Selección visual de fecha elegida
+- Botón: "Continuar"
+
+<strong>Elementos principales (Paso 3 - Confirmar):</strong>
+
+- Resumen de información:
+  - Paciente seleccionado
+  - Centro médico
+  - Fecha y hora
+  - Servicios disponibles
+- Botón: "Confirmar Reserva"
+
+
+#### Pantalla de Detalle de Posta Médica
+ 
+**Descripción:**
+Información detallada de un centro médico/posta, incluyendo servicios disponibles, horarios y opción de reservar cita.
+ 
+---
+ 
+### Módulo de Postas Cercanas
+ 
+#### Pantalla de Postas Cercanas
+ 
+**Descripción:**
+Mapa interactivo que muestra centros médicos cercanos a la ubicación del usuario, con información resumida de cada posta en cards.
+ 
+---
+
+### Módulo de Comunicación / Consultas
+ 
+#### Pantalla de Consultas (Directorio de Especialistas)
+ 
+**Descripción:**
+Listado de especialistas médicos disponibles para consultas. Muestra nombre, especialidad, estado y opción de escribir consulta.
+ 
+   
+#### Pantalla de Redacción de Consulta
+ 
+**Descripción:**
+Formulario para enviar una consulta médica a un especialista específico. Incluye campo de texto libre y información del especialista asignado.
+ 
+#### Pantalla de Chat con Especialista
+ 
+**Descripción:**
+Conversación bidireccional con un especialista médico. Muestra historial de mensajes, estado de sincronización y opciones de respuesta.
+ 
+#### Pantalla de Mis Consultas
+ 
+**Descripción:**
+Listado de consultas activas del usuario. Muestra especialistas asignados, estado de consultas y acceso rápido a conversaciones.
+ 
+---
+
+### Módulo de Progreso y Logros
+ 
+#### Pantalla de Progreso y Medallas
+ 
+**Descripción:**
+Panel visual que muestra evolución del tratamiento, gráficos de hemoglobina y logros/medallas completadas por el niño.
+ 
+---
+### Módulo de Historial de Dosis
+ 
+#### Pantalla de Historial de Dosis
+ 
+**Descripción:**
+Registro completo de dosis de medicamento/suplemento administradas. Muestra timeline con confirmaciones y omisiones.
+ 
+---
+
+### Módulo de Gestión de Pacientes
+ 
+#### Pantalla de Agregar Paciente
+ 
+**Descripción:**
+Formulario para registrar un nuevo paciente (niño) a la cuenta familiar. Captura información demográfica y médica básica que será utilizada para personalizar el seguimiento de salud y el tratamiento nutricional.
+ 
 
 
 
