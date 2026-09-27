@@ -308,29 +308,242 @@ La experiencia móvil en iOS debe mantener interacciones suaves, responsivas y c
 
 ## 4.2. Information Architecture
 
+En esta sección se define la arquitectura de información del ecosistema **Ferova**, entendida como la organización, el etiquetado, la búsqueda y la navegación de los contenidos que soportan las Epics definidas en el Capítulo III. El análisis se desarrolla sobre los tres frentes de interacción del producto:
+
+- **Landing Page de Sanuvi:** sitio web estático de captación, orientado al visitante que aún no es usuario.
+- **Ferova Family:** aplicación móvil dirigida a los apoderados del paciente, responsables de administrar el tratamiento de hierro en el hogar.
+- **Ferova Clinic:** aplicación web dirigida al personal de salud (enfermeras y administradores de posta), responsable del seguimiento clínico y de la gestión de las postas de salud.
+
+Dado que los tres productos consumen la misma **API Application** descrita en la sección 4.8, la arquitectura de información se diseñó sobre un modelo de contenido compartido (paciente, tratamiento, control de hemoglobina, cita, posta, consulta y logro), pero con esquemas de organización, vocabulario y profundidad de navegación diferenciados según el rol y el contexto de uso de cada audiencia.
+
 ### 4.2.1. Organization Systems
 
-<!-- COMPLETAR -->
+Los sistemas de organización determinan cómo se agrupa y jerarquiza la información antes de ser presentada. En el ecosistema Ferova se emplean cuatro esquemas de manera combinada:
+
+**1. Organización por audiencia (role-based)**
+
+Constituye el esquema de primer nivel de toda la plataforma. Tras la autenticación, la API resuelve el rol del usuario (apoderado, enfermera o administrador) y determina qué aplicación y qué conjunto de destinos se habilitan. Un mismo contenido —por ejemplo, el tratamiento de un paciente— se expone con distinto grado de detalle: el apoderado observa la dosis del día y su racha de cumplimiento, mientras que la enfermera accede al esquema de dosificación en mg/kg/día, a la serie histórica de hemoglobina y al nivel de riesgo calculado. Este esquema evita que el personal de salud deba filtrar información doméstica y que el apoderado se enfrente a terminología clínica innecesaria.
+
+**2. Organización jerárquica (visual hierarchy)**
+
+Se aplica dentro de cada pantalla para diferenciar lo urgente de lo informativo. La jerarquía se construye con posición, tamaño tipográfico y color semántico, definidos en la sección 4.1:
+
+- En **Ferova Clinic**, el Panel General ordena a los pacientes por nivel de riesgo clínico: los casos con hemoglobina en descenso o adherencia interrumpida se ubican en la parte superior con indicador rojo (`#7C0303`), seguidos de los casos en observación y, finalmente, de los pacientes estables.
+- En **Ferova Family**, la pantalla *Tratamiento / Hoy* prioriza la dosis pendiente del día como elemento de mayor peso visual, relegando a segundo plano la racha acumulada, las insignias obtenidas y el resumen nutricional.
+- Las notificaciones de ambas aplicaciones se ordenan por criticidad y no por antigüedad: primero los recordatorios de dosis vencidos y las citas próximas, luego los mensajes de la enfermera y, al final, los avisos de logros.
+
+**3. Organización secuencial (step-by-step)**
+
+Se utiliza en todos los procesos donde la omisión de un dato invalida el registro clínico. El usuario avanza por pasos con indicador de progreso, validación por paso y posibilidad de retroceder sin perder lo ingresado:
+
+| Proceso | Aplicación | Secuencia definida |
+|:---|:---|:---|
+| Registro de usuario y verificación | Family / Clinic | Datos personales → credenciales → verificación de correo → confirmación |
+| Recuperación de contraseña | Family / Clinic | Solicitud de correo → código enviado vía Resend → nueva contraseña → confirmación |
+| Registro de paciente | Family | Datos del menor → vínculo con el apoderado → posta de atención → confirmación |
+| Reserva de cita médica | Family | Selección de paciente → selección de distrito y posta → fecha y horario disponible → confirmación |
+| Registro de cumplimiento de dosis | Family | Selección de paciente → confirmación de la toma → observaciones opcionales |
+| Registro de control de hemoglobina | Clinic | Búsqueda del paciente → valor de Hb en g/dL y fecha → recálculo de riesgo → cierre del control |
+| Inicio y cierre de tratamiento | Clinic | Verificación del historial → esquema de dosificación → seguimiento → alta del paciente |
+| Registro de posta y asignación | Clinic (Admin) | Datos de la posta → ubicación vía Google Maps API → horarios de atención → asignación de enfermeras |
+
+**4. Organización matricial (facetada)**
+
+Se aplica donde el usuario debe explorar volúmenes altos de información sin una ruta predefinida. La matriz permite cruzar dimensiones de forma libre mediante filtros combinables:
+
+- **Lista de pacientes (Clinic):** cruce de nivel de riesgo, estado del tratamiento, posta asignada y rango de fechas del último control.
+- **Analítica y reportes de postas (Clinic – Admin):** cruce de posta, distrito, periodo y cobertura de adherencia, como insumo para los reportes de seguimiento.
+- **Diario nutricional (Family):** cruce de fecha y tipo de comida para consultar el hierro absorbido y los alimentos registrados.
+- **Historial de citas y de dosis (Family):** cruce de paciente y rango de fechas.
 
 ### 4.2.2. Labeling Systems
 
-<!-- COMPLETAR -->
+El sistema de etiquetado traduce el modelo de datos a un vocabulario comprensible para cada audiencia. Se establecieron las siguientes convenciones transversales, coherentes con el *Tone of Voice* de la sección 4.1:
+
+- Los **destinos de navegación** se etiquetan con sustantivos cortos (*Pacientes*, *Citas*, *Nutrición*), nunca con frases.
+- Las **acciones** se etiquetan con verbo en infinitivo más objeto (*Registrar dosis*, *Reservar cita*, *Generar reporte*), evitando etiquetas ambiguas como "Aceptar" u "OK".
+- El **vocabulario se adapta al rol**: en Ferova Clinic se emplea terminología clínica estandarizada (*hemoglobina*, *g/dL*, *adherencia*, *nivel de riesgo*, *alta del paciente*); en Ferova Family se emplea lenguaje cotidiano (*dosis de hoy*, *gotitas de hierro*, *alimentos que ayudan a absorber el hierro*).
+- Se conserva el término **apoderado del paciente** en lugar de "familia" o "madre" en todas las etiquetas de interfaz, para no excluir a otros cuidadores responsables.
+- Toda etiqueta numérica se acompaña de su unidad explícita (`g/dL`, `mg`, `días`) y toda fecha se muestra en formato `dd/mm/aaaa`.
+- Los iconos nunca se utilizan como etiqueta única en destinos de navegación: siempre se acompañan de texto, conforme a los criterios de accesibilidad declarados en la sección 4.1.
+
+**Landing Page (Sanuvi)**
+
+| Etiqueta | Contenido asociado |
+|:---|:---|
+| Inicio | Propósito de la plataforma, eslogan y botones de llamado a la acción: acceder a la web o descargar la aplicación. |
+| El problema | Datos estadísticos sobre la prevalencia de la anemia infantil en el Perú y su impacto en el desarrollo del menor. |
+| Solución | Descripción general de Ferova y de cómo articula el hogar con la posta de salud. |
+| Para quién | Beneficios diferenciados por rol: apoderados del paciente y personal de salud. |
+| Cómo funciona | Línea de tiempo paso a paso del recorrido completo, desde el diagnóstico en la posta hasta el seguimiento diario en el hogar. |
+| Testimonios | Experiencias de apoderados y personal de salud que han utilizado la plataforma. |
+| Descarga y acceso | Enlaces a las tiendas de aplicaciones y acceso a Ferova Clinic. |
+| Sobre Sanuvi | Misión, visión y equipo detrás del producto. |
+
+**Ferova Family (apoderado del paciente)**
+
+| Etiqueta | Contenido asociado |
+|:---|:---|
+| Tratamiento / Hoy | Dosis pendiente del día, registro de cumplimiento, racha acumulada, puntos obtenidos y avance del tratamiento del paciente seleccionado. |
+| Nutrición | Diario nutricional: registro de alimentos consumidos, hierro absorbido del día, resumen nutricional y consulta de alimentos ricos en hierro. |
+| Citas | Próxima cita, reserva de nuevas citas, consulta de postas y horarios disponibles, y agenda con el historial de citas. |
+| Mi Familia | Pacientes registrados por el apoderado, datos de cada menor, evolución de su hemoglobina, logros e insignias obtenidas y posta asignada. |
+| Consultas | Mensajería con la enfermera responsable del paciente: consultas abiertas, historial de consultas atendidas y creación de una nueva consulta. |
+| Notificaciones | Recordatorios de dosis, avisos de citas próximas, respuestas de la enfermera y logros desbloqueados. |
+| Mi cuenta | Datos del apoderado, preferencias de recordatorios y cierre de sesión. |
+
+**Ferova Clinic (personal de salud)**
+
+| Etiqueta | Rol | Contenido asociado |
+|:---|:---|:---|
+| Panel General | Enfermera / Admin | Indicadores del día, pacientes que requieren atención según riesgo, agenda de citas y accesos rápidos. |
+| Pacientes | Enfermera | Listado de pacientes asignados, registro y vinculación de pacientes, detalle del menor, seguimiento del nivel de hemoglobina y alta del paciente. |
+| Tratamientos | Enfermera | Inicio del tratamiento, esquema de dosificación, estado y detalle del tratamiento, y seguimiento de la adherencia. |
+| Historial Clínico | Enfermera | Registro y actualización del historial médico de cada paciente, con sus controles de hemoglobina. |
+| Consultas | Enfermera | Bandeja de teleconsultas por paciente, conversación con el apoderado y cierre de consulta. |
+| Agenda | Enfermera | Citas programadas en la posta asignada y disponibilidad de horarios. |
+| Postas de Salud | Admin | Registro de postas, ubicación, horarios de atención y consulta de postas registradas. |
+| Enfermeras | Admin | Consulta de enfermeras disponibles y asignación de enfermeras a una posta de salud. |
+| Analítica y Reportes | Admin | Métricas de seguimiento por posta y distrito, y generación de reportes de cobertura y adherencia. |
+| Notificaciones | Enfermera / Admin | Alertas de riesgo clínico, consultas sin responder y citas próximas. |
+| Configuración | Enfermera / Admin | Datos del profesional, posta activa y cierre de sesión. |
 
 ### 4.2.3. SEO Tags and Meta Tags
 
+Las etiquetas de posicionamiento se aplican sobre los productos accesibles mediante navegador: la Landing Page de Sanuvi, principal responsable de la captación orgánica, y las vistas públicas de Ferova Clinic.
+
 | Página | Title | Description | Keywords | Author |
 |--------|-------|-------------|----------|--------|
-| Landing Page | | | | |
+| Landing Page | Ferova \| Seguimiento del tratamiento de la anemia infantil en el Perú | Ferova, una iniciativa de Sanuvi, conecta a los apoderados con el personal de salud para no perder el hilo del tratamiento de hierro: recordatorios de dosis, control de hemoglobina y citas en la posta. | anemia infantil, tratamiento de hierro, adherencia al tratamiento, hemoglobina, suplementación con hierro, posta de salud, salud infantil Perú, Sanuvi, Ferova | Sanuvi |
+| Ferova Clinic (acceso) | Iniciar sesión \| Ferova Clinic | Acceso para enfermeras y administradores de postas de salud al seguimiento de pacientes en tratamiento contra la anemia infantil. | Ferova Clinic, acceso personal de salud, seguimiento de pacientes, anemia infantil | Sanuvi |
+| Ferova Family (ficha de tienda) | Ferova Family — Tratamiento de anemia infantil | Registra la dosis diaria de hierro de tu niño, lleva su diario nutricional y reserva sus citas en la posta de salud desde una sola aplicación. | anemia, hierro, niños, tratamiento, dosis, salud | Sanuvi |
 
-<!-- COMPLETAR -->
+**Etiquetas fundamentales de la Landing Page**
+
+```html
+<meta charset="UTF-8">
+```
+Indica al navegador cómo interpretar los caracteres de texto de la página. `UTF-8` corresponde a una codificación universal que garantiza la correcta visualización de los caracteres especiales del castellano, como la "ñ" y las vocales acentuadas, presentes de forma constante en el contenido del producto.
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+Establece que la página se adapte a la resolución del dispositivo, ajustando el ancho del contenido al ancho de la pantalla y fijando un nivel de zoom inicial 1:1. Resulta indispensable considerando que una proporción relevante de los apoderados accede al sitio desde un teléfono móvil.
+
+```html
+<title>Ferova | Seguimiento del tratamiento de la anemia infantil en el Perú</title>
+<meta name="description" content="Ferova, una iniciativa de Sanuvi, conecta a los apoderados con el personal de salud para no perder el hilo del tratamiento de hierro: recordatorios de dosis, control de hemoglobina y citas en la posta.">
+<meta name="keywords" content="anemia infantil, tratamiento de hierro, adherencia al tratamiento, hemoglobina, posta de salud, salud infantil Perú, Sanuvi, Ferova">
+<meta name="author" content="Sanuvi">
+```
+El `title` y la `description` constituyen el texto que el motor de búsqueda presenta en sus resultados. Se redactaron incorporando el problema ("anemia infantil") y el ámbito geográfico ("Perú"), por tratarse de los términos con los que el público objetivo realiza efectivamente la búsqueda.
+
+```html
+<html lang="es-PE">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://sanuvi.github.io/ferova/">
+```
+El atributo `lang` informa el idioma y la variante regional del contenido; `robots` autoriza expresamente la indexación del sitio de captación; y `canonical` declara la dirección preferente de la página para evitar contenido duplicado.
+
+**Etiquetas de previsualización en redes sociales (Open Graph y Twitter Cards)**
+
+```html
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ferova | Seguimiento del tratamiento de la anemia infantil">
+<meta property="og:description" content="Recordatorios de dosis, control de hemoglobina y coordinación con la posta de salud, en una sola plataforma.">
+<meta property="og:image" content="https://sanuvi.github.io/ferova/assets/og-cover.png">
+<meta property="og:locale" content="es_PE">
+<meta name="twitter:card" content="summary_large_image">
+```
+Estas etiquetas controlan la tarjeta de previsualización que se genera al compartir el enlace en redes sociales y en aplicaciones de mensajería, canal de difusión previsto para la captación de apoderados en comunidades y campañas de salud.
+
+**Consideración sobre las aplicaciones**
+
+Ferova Family y Ferova Clinic no son indexadas por motores de búsqueda: la primera por tratarse de una aplicación móvil nativa y la segunda por encontrarse detrás del inicio de sesión. En consecuencia, el posicionamiento de Ferova Family se trabaja mediante la optimización de su ficha de tienda (*App Store Optimization*), utilizando el título, la descripción y las palabras clave consignadas en la tabla anterior, mientras que en Ferova Clinic las vistas privadas se declaran con `<meta name="robots" content="noindex, nofollow">` para impedir su indexación.
 
 ### 4.2.4. Searching Systems
 
-<!-- COMPLETAR -->
+Los sistemas de búsqueda se diseñaron en función del volumen de información que administra cada rol. En Ferova Family predomina el filtrado sobre conjuntos pequeños y conocidos, mientras que en Ferova Clinic la búsqueda constituye el punto de partida del flujo de trabajo diario.
+
+**Ferova Family**
+
+| Ubicación | Mecanismo | Criterio |
+|:---|:---|:---|
+| Nutrición | Búsqueda por texto | Nombre del alimento, dentro del catálogo de alimentos ricos en hierro. |
+| Nutrición | Filtro facetado | Tipo de comida (desayuno, almuerzo, cena) y nivel de aporte de hierro. |
+| Nutrición | Filtro por fecha | Consulta del diario nutricional de un día o de un rango de días. |
+| Citas | Búsqueda por ubicación | Distrito y posta de salud disponible, con consulta de horarios de atención. |
+| Citas | Filtro por estado | Citas próximas, atendidas o canceladas. |
+| Mi Familia | Selector de paciente | Cambio de paciente activo cuando el apoderado tiene más de un menor registrado. |
+| Tratamiento | Filtro por fecha | Historial de cumplimiento de dosis por semana o por mes. |
+
+**Ferova Clinic**
+
+| Ubicación | Mecanismo | Criterio |
+|:---|:---|:---|
+| Barra superior | Búsqueda global persistente | DNI o apellido del menor; resuelve directamente al detalle del paciente. |
+| Pacientes | Filtro facetado | Nivel de riesgo clínico, estado del tratamiento y posta asignada. |
+| Pacientes | Búsqueda por documento | DNI del apoderado, para vincular un paciente ya registrado en la plataforma. |
+| Tratamientos | Filtro por estado | Tratamientos en curso, interrumpidos o finalizados. |
+| Historial Clínico | Búsqueda por paciente | Paciente registrado, con acceso a sus controles de hemoglobina. |
+| Consultas | Filtro por estado y paciente | Bandeja de consultas abiertas, respondidas o cerradas. |
+| Agenda | Filtro por fecha | Citas del día, de la semana o de un rango definido. |
+| Postas de Salud (Admin) | Búsqueda y filtro | Nombre de la posta y distrito. |
+| Enfermeras (Admin) | Filtro por disponibilidad | Enfermeras sin posta asignada o con capacidad disponible. |
+| Analítica y Reportes (Admin) | Filtro combinado | Posta, distrito y rango de fechas, como parámetros del reporte a generar. |
+
+**Comportamiento común de la búsqueda**
+
+- Los filtros activos se representan como *chips* removibles sobre el listado, de modo que el usuario siempre reconozca por qué el conjunto de resultados se encuentra reducido.
+- La búsqueda global de Ferova Clinic ofrece sugerencias a partir del tercer carácter ingresado y resalta la coincidencia dentro del resultado.
+- Los conjuntos extensos de resultados se presentan paginados, indicando el total de coincidencias encontradas.
+- Los estados vacíos no se limitan a informar la ausencia de resultados: proponen la acción siguiente ("No se encontró al paciente. Registrar un nuevo paciente"), en concordancia con las pautas de microcopy de la sección 4.1.
 
 ### 4.2.5. Navigation Systems
 
-<!-- COMPLETAR -->
+El sistema de navegación determina el acceso efectivo a las funcionalidades implementadas. Se distinguen cuatro tipos de navegación —global, local, contextual y utilitaria—, con una instanciación propia por producto.
+
+**1. Landing Page (Sanuvi)**
+
+Navegación de una sola página con barra superior fija y desplazamiento anclado hacia cada sección: *Inicio*, *El problema*, *Solución*, *Para quién*, *Cómo funciona*, *Testimonios* y *Sobre Sanuvi*. La barra mantiene de forma permanente los dos llamados a la acción del producto —descargar Ferova Family e ingresar a Ferova Clinic—, de modo que la conversión no dependa de la posición del visitante dentro de la página. El pie de página replica los enlaces de sección e incorpora los datos de contacto y las políticas del producto.
+
+**2. Ferova Family (móvil)**
+
+La navegación global se resuelve mediante la **barra de navegación inferior persistente** definida en la sección 4.1.3, con cuatro destinos alineados al recorrido diario del apoderado:
+
+- **Tratamiento / Hoy** — punto de entrada por defecto de la aplicación.
+- **Nutrición**
+- **Citas**
+- **Mi Familia**
+
+La limitación a cuatro destinos responde a un criterio ergonómico: cada elemento conserva así un área táctil suficiente dentro de la zona cómoda del pulgar. En consecuencia, los contenidos restantes se resuelven por otras vías de navegación:
+
+- **Navegación utilitaria:** *Consultas*, *Notificaciones* y *Mi cuenta* se acceden desde la barra superior de la aplicación, con indicador numérico (*badge*) cuando existen mensajes de la enfermera o recordatorios pendientes.
+- **Navegación local:** dentro de *Mi Familia*, cada paciente despliega pestañas internas de *Datos*, *Hemoglobina* y *Logros*; dentro de *Citas* se diferencian *Próximas* e *Historial*.
+- **Navegación contextual:** las tarjetas de acceso rápido de la pantalla de inicio conducen directamente a la acción sugerida por el estado del tratamiento (registrar la dosis del día, registrar un alimento o revisar la próxima cita). Las notificaciones operan como enlaces profundos (*deep links*) hacia la pantalla correspondiente.
+- El registro de la dosis diaria se resuelve mediante una hoja inferior deslizable, sin abandonar la pantalla actual, cumpliendo el criterio de dos toques establecido en la sección 4.1.3.
+
+**3. Ferova Clinic (web)**
+
+La navegación global se estructura sobre la **barra lateral izquierda** descrita en la sección 4.1.2, cuyos destinos se instancian según el rol autenticado:
+
+| Rol | Destinos de la barra lateral |
+|:---|:---|
+| Enfermera | Panel General · Pacientes · Tratamientos · Historial Clínico · Consultas · Agenda · Configuración |
+| Administrador | Panel General · Postas de Salud · Enfermeras · Analítica y Reportes · Configuración |
+
+Los destinos no habilitados para el rol no se muestran en la interfaz y, adicionalmente, su ruta se encuentra protegida en el cliente y validada en la API, de modo que la restricción no dependa únicamente de la capa visual.
+
+Complementan la navegación global:
+
+- **Navegación utilitaria:** la barra superior conserva el selector de posta activa, la búsqueda global por DNI o apellido del menor, la campana de notificaciones y el perfil del profesional.
+- **Navegación local:** el detalle del paciente organiza su contenido en pestañas de *Resumen*, *Tratamiento*, *Controles de Hemoglobina*, *Historial* y *Consultas*, evitando que el profesional pierda el contexto del caso al desplazarse entre secciones.
+- **Navegación contextual:** el Panel General expone accesos directos a las tareas del día (registrar un control de hemoglobina, responder una consulta pendiente o atender la cita próxima), y las alertas de riesgo conducen al paciente involucrado en un solo clic.
+- **Migas de pan (*breadcrumbs*):** las vistas de tercer nivel muestran su ruta de procedencia —por ejemplo, `Pacientes › Luis Ramírez › Control de Hemoglobina`—, de modo que el usuario pueda retroceder sin recurrir al botón del navegador.
+
+**4. Coherencia entre productos**
+
+Las tres interfaces comparten tres reglas de navegación transversales: el destino activo siempre se encuentra señalizado, toda acción de registro ofrece una salida explícita sin pérdida de datos, y ninguna funcionalidad crítica se ubica a más de tres niveles de profundidad desde el punto de entrada de la aplicación.
 
 ## 4.3. Landing Page UI Design
 
