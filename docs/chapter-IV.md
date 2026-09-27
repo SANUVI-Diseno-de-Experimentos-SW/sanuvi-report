@@ -695,9 +695,427 @@ El flujo detalla cómo el usuario confirma la administración de una dosis de me
 
 ### 4.4.3. Mobile Applications Mock-ups
 
-<img src="../assets/img/chapter-IV/mobile-mockups.png" alt="Mobile Mock-ups">
+Versión Mobile Mock-ups - Ferova Family (Aplicación de Salud Familiar Integral)
 
-<!-- COMPLETAR -->
+Los siguientes mock-ups representan el diseño de alta fidelidad de la interfaz de usuario de Ferova Family, mostrando la implementación visual completa de todos los módulos, componentes y flujos de la aplicación. Cada pantalla refleja la identidad visual, tipografía, paleta de colores y patrones de interacción documentados en las secciones anteriores de esta guía de estilo.
+
+---
+
+### Módulo de Autenticación
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/mockup/Login y Registro.png" width=500>
+</div>
+
+ 
+#### Pantalla de Login
+ 
+Vista de inicio de sesión con credenciales requeridas. Muestra:
+- Header con fondo rojo oscuro y logo de Ferova Family
+- Título "Iniciar sesión" con descripción explicativa
+- Campo de entrada: DNI (8 dígitos) con ícono de usuario
+- Campo de entrada: Contraseña (enmascarado) con ícono de ojo para mostrar/ocultar
+- Link: "¿Olvidaste la contraseña?" para recuperación de acceso
+- Botón principal: "Iniciar Sesión" (rojo oscuro, full width)
+- Link secundario: "¿No tienes cuenta? Registrate" para crear cuenta
+- Footer: Iconos de acceso rápido (Ayuda, Seguridad, Privacidad)
+
+#### Pantalla de Registro / Crear Cuenta
+ 
+Vista de creación de nueva cuenta. Muestra:
+- Header: Ícono de Ferova Family (gota de sangre)
+- Título: "Crear tu cuenta"
+- Subtítulo: "Únete a nuestra comunidad de cuidado integral"
+  
+  <strong>Campos de formulario:</strong>
+  - Nombre completo (placeholder: "Ej: Maria Elena")
+  - Apellido completo (placeholder: "Ej: Garcia Lopez")
+  - DNI (8 dígitos)
+  - Teléfono (formato internacional)
+  - Correo Electrónico
+  - Contraseña (con visibilidad toggle)
+  - Confirmar Contraseña (con visibilidad toggle)
+
+- Checkbox: "Acepto términos y condiciones de salud y privacidad"
+- Botón principal: "Registrarse →" (rojo oscuro)
+- Link: "¿Ya tienes cuenta? Inicia sesión"
+---
+
+### Módulo de Recuperación de Contraseña
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/mockup/Recuperacion de contraseña.png" width=500>
+</div>
+
+ 
+#### Pantalla 1: Recuperación Inicial
+ 
+Vista para iniciar el proceso de recuperación. Muestra:
+- Botón atrás y título "Volver"
+- Título: "¿Olvidastes tu Contraseña?"
+- Descripción: "Ingresa tu correo para recibir un código de recuperación"
+- Campo de entrada: Correo Electrónico con ícono de sobre
+- Botón principal: "Enviar Código" (púrpura)
+- Link: "Volver al inicio de Sesión"
+- Footer: "Ferova protege tus datos personales"
+- 
+#### Pantalla 2: Verificación de Identidad
+ 
+Vista para ingresar código OTP. Muestra:
+- Botón atrás "Volver"
+- Título: "Verificar tu identidad"
+- Descripción: "Hemos enviado un código de 4 dígitos a tu correo"
+- Campos de entrada: 4 inputs para dígitos individuales del código
+- Botón principal: "Verificar Código" (púrpura)
+- Link: "¿No recibistes el código? Reenviar"
+- 
+#### Pantalla 3: Nueva Contraseña
+ 
+Vista para crear nueva contraseña con validaciones. Muestra:
+- Botón atrás "Volver"
+- Título: "Nueva Contraseña"
+- Descripción: "Crea una contraseña segura para proteger tu cuenta"
+- Campo: Nueva Contraseña (enmascarado con toggle)
+- Campo: Confirmar Contraseña (enmascarado con toggle)
+- Sección: "Requisitos de seguridad"
+  - Mínimo 8 caracteres (indicador visual)
+  - Al menos un número (indicador visual)
+  - Un carácter especial (@, #, $) (indicador visual)
+- Botón principal: "Actualizar Contraseña ↻" (púrpura)
+  
+---
+
+### Módulo de Home / Dashboard
+
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/mockup/home.png" width=500>
+</div>
+
+ 
+#### Pantalla Principal - Home
+ 
+Vista principal con resumen de información del niño seleccionado. Muestra:
+- Header: Fondo rojo oscuro con "Ferova Family" y ícono de notificaciones
+- Saludo: "¡Hola María!" con subtítulo "Juntos por la salud de tus pequeños"
+- Sección "Mis Niños":
+  - Avatares circulares de niños (Mateo, Lucia, Agregar)
+  - Contador "2 activos"
+- Sección "Dosis de hoy":
+  - Fecha (Domingo 21 de abril)
+  - Horario programado
+  - Botón: "Confirmar Dosis" (gris-azulado)
+  - Link: "Ver historial" con ícono
+- Sección "Métricas de progreso":
+  - Card "Logro": Racha Actual 5 días, Puntos 50 
+  - Card "Nutrición": Hierro Absorbido Hoy 1.36 mg con ícono
+- Sección "Accesos Rápidos" (con íconos y descripciones):
+  - Nueva entrada de alimento
+  - Ver Postas Cercanas
+  - Mis Logros y Medallas
+- Bottom Navigation: Inicio (activo), Diario, Citas, Consultas
+  
+---
+
+### Módulo de Registro de Paciente
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/mockup/Registro de paciente.png" width=200>
+</div>
+
+ 
+#### Pantalla de Registro de Nuevo Paciente
+ 
+Vista para agregar un nuevo niño a la familia. Muestra:
+- Header: Fondo rojo oscuro con botón atrás
+- Título: "Registro del paciente"
+- Avatar ilustrado del niño (animado, personaje)
+- Título: "¡Bienvenido/a!"
+- Subtítulo: "Comencemos el camino hacia una vida llena de vitalidad para tu pequeño/a"
+- Formulario:
+  - Campo: "Nombres del niño/a" (placeholder: "Ej: Mateo Alejandro")
+  - Campo: "Apellidos" (placeholder: "Ej: Garcia Ruiz")
+  - Campo: "Fecha de nacimiento" (formato mm/dd/yyyy con calendar picker)
+  - Selector de género: Dos botones (♂ Masculino | ♀ Femenino)
+  - Campo: "Peso Actual (KG)" (format decimal)
+  - Campo: "Talla/ Altura (CM)" (numeric)
+- Botón principal: "Registrar a mi pequeño ♥" (rojo oscuro)
+- Nota: "Al registrar, aceptas que FerosaFamily guarde los datos de salud para el seguimiento del tratamiento"
+---
+
+### Módulo de Nutrición
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/mockup/Busqueda y Registro del alimento.png" width=500>
+</div>
+
+#### Pantalla de Diario Nutricional
+ 
+Vista del diario nutricional del día con gráfico circular. Muestra:
+- Header: "Diario Nutricional" con selector de niño (Mateo)
+- Gráfico circular: Visualización de hierro absorbido 1.36 mg en color rojo oscuro
+- Sección "Alimentos de Hoy": Contador "3 registros"
+  - Lista de alimentos con:
+    - Ícono de alimento
+    - Nombre
+    - Cantidad (mg de hierro)
+    - Indicador de tipo (Hemo/No Hemo/Alerta Inhibidor)
+- Botón principal: "+ Nueva Entrada" (rojo oscuro)
+- Link: "Ver Historial"
+- Sección "Tip de hoy": Consejo nutricional con ícono
+- Bottom Navigation
+#### Pantalla NutriHierro - Búsqueda de Alimentos
+ 
+Vista para buscar y registrar alimentos. Muestra:
+- Header: "NutriHierro" con botón atrás
+- Título: "¿Qué comemos hoy?"
+- Subtítulo: "Busca alimentos en hierro para fortalecer a tu pequeño"
+- Buscador: Campo "Buscar alimentos (ej. Lentejas)" con ícono de búsqueda
+- Tabs de categorías: Carnes, Verduras, Legumbres, Pescados
+- Lista de alimentos:
+  - Nombre del alimento (Lúcuma, Naranja, Mango, Plátano, Mandarina, Papaya)
+  - Indicador de tipo "No hemo"
+  - Cantidad de mg de hierro (0.4 mg, 0.1 mg, etc.)
+- Botón principal: "Ver más información" (rojo oscuro)
+#### Pantalla NutriHierro - Registro de Alimento (Modal)
+ 
+Modal para confirmar cantidad de alimento. Muestra:
+- Título: Nombre del alimento seleccionado "Lentejas cocidas"
+- Campo: Cantidad (input number con valor "150")
+- Selector: Unidad (Gramos)
+- Botón principal: "Registrar" (rojo oscuro)
+#### Pantalla de Historial Nutricional
+ 
+Vista del histórico de registros por fecha. Muestra:
+- Header: "Historial Nutricional" con botón atrás
+- Organizador por fechas:
+  - "20 de Abril" - Badge "1 inhibidor" - "3.2 mg de hierro absorbido" - "4 alimentos"
+  - "19 de Abril" - Badge "Sin inhibidores" - "4.5 mg de hierro absorbido" - "5 alimentos"
+  - "18 de Abril" - Badge "2 inhibidores" - "2.8 mg de hierro absorbido" - "4 alimentos"
+  - Y más fechas...
+- Scroll vertical para histórico completo
+---
+
+### Módulo de Citas Médicas
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/mockup/Citas.png" width=500>
+</div>
+
+ <div align="center">
+  <img src="../assets/img/chapter-IV/mockup/Reserva de cita.png" width=500>
+</div>
+
+#### Pantalla de Citas
+ 
+Vista de gestión de citas médicas. Muestra:
+- Header: "Citas"
+- Selector de paciente: Avatares (Mateo, Lucia)
+- Sección "Cita Actual":
+  - Card principal con fondo rojo oscuro
+  - Fecha y hora: "PRÓXIMA FECHA: 09:00 AM - 15 de Octubre"
+  - Paciente: Lucia
+  - Sede: Posta Medica Huascar
+  - Botón: "Cancelar Cita"
+- Sección "Historial de Citas":
+  - Card: "Posta Medica Huascar - CANCELADA"
+  - Card: "Centro de Salud Rosa - CONFIRMADA"
+- Botón principal: "Agendar nueva cita →" (rojo oscuro)
+- Nota: Cuando no hay citas, muestra estado vacío con "No tienes citas programadas" y botón "Agendar nueva cita →"
+- Bottom Navigation
+#### Pantalla de Postas Cercanas
+ 
+Vista de mapa con postas médicas cercanas. Muestra:
+- Header: "Postas Cercanas" con botón atrás
+- Mapa interactivo: Fondo con marcadores de postas (pines rojo oscuro con ícono de cruz)
+- Cards de postas debajo del mapa:
+  - Ícono médico (cruz)
+  - Nombre de posta (Posta Medica Huascar)
+  - Distancia (0.5 km)
+  - Indicador de estado: "Activo" (punto verde)
+  - Botón: "Ver detalles" (rojo oscuro)
+  - Otras postas: Centro de Salud Rosa (1.5 km), Posta Materno Infantil (1.2 km), Posta del niño (2.8 km)
+#### Pantalla de Detalle de Posta
+ 
+Vista de información detallada de centro médico. Muestra:
+- Header: Botón atrás "Detalle de posta"
+- Título: "Posta Santa Anita"
+- Dirección: "Jr. Las Flores 456" con ícono de ubicación
+- Sección "Días de atención":
+  - Información: "Miércoles - Thursdal - Friday"
+  - Indicador: "Activo"
+- Sección "Contacto":
+  - Ícono teléfono "Central de atención"
+  - Número clickeable: "912345678"
+- Sección "Servicios disponibles":
+  - Categorías en tags: "General Medicine", "Dentistry", "Pediatría", "Nutrición"
+- Botón principal: "Reserva de citas" (rojo oscuro)
+#### Pantalla de Reserva de Cita - Seleccionar Paciente
+ 
+Vista inicial de reserva. Muestra:
+- Header: "Reserva Cita" con botón atrás
+- Selector de paciente: Avatares (Mateo, Lucia)
+- Card: "Fecha Seleccionada"
+  - Fecha: "11 OCT - Miércoles 11 de Octubre"
+  - Link: "Editar"
+- Sección "Horarios disponibles":
+  - Grid de horarios: 08:00, 11:00 (Ocupado), 09:00, 14:00 (Ocupado), 10:00, 15:00 (Ocupado), 16:00
+- Botón principal: "Continuar →" (rojo oscuro)
+#### Pantalla de Reserva de Cita - Seleccionar Fecha
+ 
+Vista con calendario interactivo. Muestra:
+- Header: "Reserva Cita" con botón atrás
+- Selector de paciente: Avatares
+- Sección "Octubre 2026":
+  - Calendario navegable
+  - Día 11 seleccionado (fondo rojo oscuro)
+  - Días grises para meses anteriores/siguientes
+- Botón principal: "Continuar →" (rojo oscuro)
+#### Pantalla de Cita Confirmada
+ 
+Vista de confirmación exitosa. Muestra:
+- Ícono grande de checkmark en círculo rojo oscuro
+- Título: "¡Cita Confirmada!"
+- Subtítulo: "Tu cita ha sido agendada con éxito en nuestro sistema"
+- Card de resumen:
+  - Centro Médico: "Posta Medica Huascar"
+  - Fecha: "11 de Octubre, 2023"
+  - Hora: "9:00"
+  - Paciente: Avatar + "Mateo"
+- Botón principal: "Volver al Inicio" (rojo oscuro)
+---
+ 
+### Módulo de Progreso y Medallas
+
+ <div align="center">
+  <img src="../assets/img/chapter-IV/mockup/Progreso y medallas.png" width=500>
+</div>
+ 
+#### Pantalla de Progreso - Variante 1 (Medallas Bloqueadas)
+ 
+Vista de progreso del tratamiento. Muestra:
+- Header: Fondo rojo oscuro "Progreso y Medallas" con botón atrás
+- Sección "Progreso":
+  - Estado: "Activo" (punto verde)
+  - Puntos Totales: "70" 
+- Cards de progreso:
+  - "Racha actual: 7 días"
+  - "Mas Larga: 30 días"
+- Sección "Evolución de Hemoglobina":
+  - Gráfico de línea con evolución (7.2 a 11.2 g/dl)
+  - Valor actual: 11.2 g/dl
+  - Fechas en eje X
+- Sección "Medallas":
+  - "First Week": Ícono cerrado, progreso 0%, "Completa los 7 días sin fallar"
+  - "Half Treatment": Ícono cerrado, progreso 0%, "Completa la mitad del tratamiento (45 días)"
+  - "Treatment Completed": Ícono cerrado, progreso 0%, "Completa la mitad del tratamiento (45 días)"
+- Botón principal: "Volver al Inicio" (rojo oscuro)
+#### Pantalla de Progreso - Variante 2 (Medallas en Progreso)
+ 
+Vista similar pero con medallas parcialmente desbloqueadas:
+- Secciones iguales a Variante 1
+- Medallas con barra de progreso visible
+- "First Week": Progreso avanzado hacia desbloqueada
+#### Pantalla de Progreso - Variante 3 (Medallas Completadas)
+ 
+Vista con medallas completadas (ícono amarillo/dorado). Muestra:
+- Todas las medallas desbloqueadas
+- Ícono de medal en color dorado
+- Texto "Completa" en cada medalla
+- Animación de progreso completo
+---
+
+### Módulo de Comunicación / Consultas
+
+ <div align="center">
+  <img src="../assets/img/chapter-IV/mockup/Comunicacion.png" width=600>
+</div>
+ 
+#### Pantalla de Consultas - Sin Especialista Asignado
+ 
+Vista inicial de módulo de consultas. Muestra:
+- Header: Fondo rojo oscuro con ícono de consultas
+- Título: "Aún no tienes una enfermera asignada"
+- Descripción: "Para hacer una consulta, primero la enfermera debe asigner a tu pequeño en tu lista de pacientes..."
+- Botón principal: "Ver Postas Cercanas" (rojo oscuro) con ícono de ubicación
+- Bottom Navigation
+#### Pantalla de Consultas - Listado de Especialistas
+ 
+Vista del directorio de especialistas. Muestra:
+- Header: "Consultas"
+- Lista de especialistas:
+  - Daniel Baca - Vitaly Arturo (asignado) - Botón "Escribir Consulta" (rojo oscuro)
+  - Mateo Flores - Vitaly Arturo (asignado) - Botón "Escribir Consulta"
+  - Lucia Mendoza - Vitaly Arturo (asignado) - Botón "Escribir Consulta"
+  - Paoly Gonzalez - Sin enfermero asignado - Botón gris "Espera la asignación"
+  - Sergio Julca - Vitaly Arturo - Botón "Consulta activa" (con checkmark verde)
+- Botón principal: "Mis Consultas" (rojo oscuro) con ícono
+- Bottom Navigation
+#### Pantalla de Redacción de Consulta
+ 
+Vista para escribir consulta. Muestra:
+- Header: "Consulta para [Nombre de Paciente]"
+- Información del especialista:
+  - Avatar circular (color turquesa)
+  - Nombre: "Enf. Elena García"
+  - Status: "Asignada al tratamiento"
+- Tabs: "TU MENSAJE" (activo, rojo) | "RELACIONADO CON PACIENTE"
+- Área de texto: "Escribe aquí tus dudas sobre [Paciente]..." con placeholder
+- Nota: "Esta comunicación es privada y segura" con ícono de candado
+- Botón principal: "Enviar Consulta" (rojo oscuro) con ícono de avión
+#### Pantalla de Mis Consultas
+ 
+Vista del listado de consultas activas. Muestra:
+- Header: "Mis Consultas"
+- Cards de consultas:
+  - Paoly Gonzalez - Vitaly Arturo - Enfermero
+  - Última palabra: "Hola señora..."
+  - Timestamp: "Hoy hace 15 min"
+  - Badge: "ABIERTA" (rojo)
+- Botón principal: "Mis Consultas" (rojo oscuro)
+- Bottom Navigation
+#### Pantalla de Chat con Especialista
+ 
+Vista de conversación con especialista. Muestra:
+- Header: "Enf. Diana Briceño - En línea"
+- Badge: "SINCRONIZADO CON CLOUD"
+- Área de chat:
+  - Mensaje del especialista (bubble rojo con texto blanco):
+    "¡Hola Elena! Sí, hoy se la tomó mucho mejor mezclada con un poquito de zumo de naranja como me recomendaste."
+    Timestamp: "10:42 AM" con checkmarks
+  - Respuesta del usuario (bubble blanco con texto negro):
+    "¿Qué buena noticia! La vitamina C del zumo ayudará a que absorba mucho mejor el hierro. ¿Has notado algún efecto secundario o malestar estomacal?"
+    Timestamp: "09:25 AM"
+- Campo de entrada: "Escribe un mensaje..." con ícono de emoji
+- Botón de envío: Ícono de avión (rojo)
+---
+
+### Módulo de Historial de Dosis
+
+ <div align="center">
+  <img src="../assets/img/chapter-IV/mockup/historial de dosis.png" width=450>
+</div>
+ 
+#### Pantalla de Historial de Dosis
+ 
+Vista del registro de dosis administradas. Muestra:
+- Header: "Historial de Dosis" con botón atrás
+- Información del paciente:
+  - Avatar circular
+  - Nombre: "Mateo" o "Lucia"
+  - Medicamento: "Amoxicilina - 500ml" o "Sulfato Ferroso - Gotas"
+- Organizador por período:
+  - "HOY"
+    - 08:00 AM - Confirmada a las 08:15 AM - Badge "CONFIRMED" (verde)
+  - "AYER"
+    - 08:00 PM - Omitida - Sin confirmación - Badge "OMITTED" (rojo)
+    - 08:00 AM - Confirmada a las 08:05 AM - Badge "CONFIRMED"
+  - "15 ABR"
+    - 08:00 PM - Omitida - Badge "OMITTED"
+    - 08:00 AM - Confirmada - Badge "CONFIRMED"
+- Indicadores visuales: Checkmark (verde) para confirmadas, X (rojo) para omitidas
+---
+
 
 ### 4.4.4. Mobile Applications User Flow Diagrams
 
