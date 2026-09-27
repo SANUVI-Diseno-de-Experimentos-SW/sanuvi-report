@@ -702,6 +702,11 @@ Los siguientes mock-ups representan el diseño de alta fidelidad de la interfaz 
 ---
 
 ### Módulo de Autenticación
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/mockup/Login y Registro.png" width=500>
+</div>
+
  
 #### Pantalla de Login
  
@@ -737,6 +742,11 @@ Vista de creación de nueva cuenta. Muestra:
 ---
 
 ### Módulo de Recuperación de Contraseña
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/mockup/Recuperacion de contraseña.png" width=500>
+</div>
+
  
 #### Pantalla 1: Recuperación Inicial
  
@@ -776,6 +786,12 @@ Vista para crear nueva contraseña con validaciones. Muestra:
 ---
 
 ### Módulo de Home / Dashboard
+
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/mockup/home.png" width=500>
+</div>
+
  
 #### Pantalla Principal - Home
  
@@ -802,6 +818,11 @@ Vista principal con resumen de información del niño seleccionado. Muestra:
 ---
 
 ### Módulo de Registro de Paciente
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/mockup/Registro de paciente.png" width=200>
+</div>
+
  
 #### Pantalla de Registro de Nuevo Paciente
  
@@ -823,7 +844,11 @@ Vista para agregar un nuevo niño a la familia. Muestra:
 ---
 
 ### Módulo de Nutrición
- 
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/mockup/Busqueda y Registro del alimento.png" width=500>
+</div>
+
 #### Pantalla de Diario Nutricional
  
 Vista del diario nutricional del día con gráfico circular. Muestra:
@@ -872,7 +897,15 @@ Vista del histórico de registros por fecha. Muestra:
 ---
 
 ### Módulo de Citas Médicas
- 
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/mockup/Citas.png" width=500>
+</div>
+
+ <div align="center">
+  <img src="../assets/img/chapter-IV/mockup/Reserva de cita.png" width=500>
+</div>
+
 #### Pantalla de Citas
  
 Vista de gestión de citas médicas. Muestra:
@@ -953,6 +986,10 @@ Vista de confirmación exitosa. Muestra:
 ---
  
 ### Módulo de Progreso y Medallas
+
+ <div align="center">
+  <img src="../assets/img/chapter-IV/mockup/Progreso y medallas.png" width=500>
+</div>
  
 #### Pantalla de Progreso - Variante 1 (Medallas Bloqueadas)
  
@@ -989,6 +1026,10 @@ Vista con medallas completadas (ícono amarillo/dorado). Muestra:
 ---
 
 ### Módulo de Comunicación / Consultas
+
+ <div align="center">
+  <img src="../assets/img/chapter-IV/mockup/Comunicacion.png" width=600>
+</div>
  
 #### Pantalla de Consultas - Sin Especialista Asignado
  
@@ -1050,6 +1091,10 @@ Vista de conversación con especialista. Muestra:
 ---
 
 ### Módulo de Historial de Dosis
+
+ <div align="center">
+  <img src="../assets/img/chapter-IV/mockup/historial de dosis.png" width=450>
+</div>
  
 #### Pantalla de Historial de Dosis
  
