@@ -383,7 +383,7 @@ La estructura prioriza la eficiencia operativa, permitiendo a los tutores regist
 **Descripción:** Panel de acceso para usuarios registrados. Permite ingresar credenciales (DNI y contraseña) y acceder a la plataforma. Incluye opción de recuperación de contraseña y enlace para crear nueva cuenta. Tambien contamos con el Formulario completo para nuevos usuarios. Captura información personal (nombre, apellido, DNI, teléfono, email) y credenciales de acceso. Incluye validaciones en tiempo real y términos y condiciones.
 
 <div align="center">
-  <img src=""../assets/img/chapter-IV/Wireframe/login and register.png>
+  <img src="../assets/img/chapter-IV/Wireframe/login and register.png" width=500>
 </div>
 
 #### Pantalla de Recuperación de Contraseña
@@ -392,7 +392,7 @@ La estructura prioriza la eficiencia operativa, permitiendo a los tutores regist
 Flujo de recuperación de contraseña dividido en pasos: verificación de identidad, validación de código y creación de nueva contraseña.
 
 <div align="center">
-  <img src=""../assets/img/chapter-IV/Wireframe/recovery password.png>
+  <img src="../assets/img/chapter-IV/Wireframe/recovery password.png" width=500>
 </div>
 
 
@@ -411,7 +411,7 @@ Panel principal con resumen de información clave del niño seleccionado. Muestr
 - Tip de salud diario
 
 <div align="center">
-  <img src=""../assets/img/chapter-IV/Wireframe/home.png>
+  <img src="../assets/img/chapter-IV/Wireframe/home.png" width=300>
 </div>
 
   
