@@ -350,9 +350,257 @@ La experiencia móvil en iOS debe mantener interacciones suaves, responsivas y c
 
 ### 4.4.1. Mobile Applications Wireframes
 
-<img src="../assets/img/chapter-IV/mobile-wireframes.png" alt="Mobile Wireframes">
+Los siguientes wireframes corresponden a la aplicación móvil de Ferova Family, una plataforma integral de cuidado de la salud familiar con enfoque en seguimiento nutricional y gestión de citas médicas.
 
-<!-- COMPLETAR -->
+#### Principios Aplicados
+ 
+**-Jerarquía funcional clara:**
+ 
+El flujo de navegación prioriza las acciones más relevantes para los usuarios (madres/padres/apoderados), como gestión de citas médicas, seguimiento del estado nutricional de sus hijos, visualización de postas cercanas y comunicación directa con especialistas médicos.
+ 
+**-Consistencia y patrones de diseño:**
+ 
+Los componentes mantienen uniformidad en su comportamiento visual e interactivo, asegurando coherencia entre pantallas y módulos. Todos los wireframes utilizan una estructura vertical de una columna con navegación bottom-tab persistente.
+ 
+**-Accesibilidad en interfaces:**
+ 
+Se aplican contrastes adecuados, fuentes legibles, botones de tamaño óptimo (mínimo 44x44pt) y una estructura de navegación compatible con teclado y lectores de pantalla.
+ 
+**-Diseño adaptativo:**
+ 
+Los wireframes consideran que la aplicación será utilizada tanto en iPhones como en tablets, por lo que el diseño es responsivo y se ajusta a distintos anchos de pantalla.
+ 
+**-Arquitectura de información enfocada al flujo de tareas:**
+ 
+La estructura prioriza la eficiencia operativa, permitiendo a los tutores registrar alimentos, gestionar citas, seguir el progreso de salud y contactar especialistas en el menor número de clics posible.
+ 
+---
+
+### Módulo de Autenticación
+
+#### Patalla de Registro e Inicio de seccion
+
+**Descripción:** Panel de acceso para usuarios registrados. Permite ingresar credenciales (DNI y contraseña) y acceder a la plataforma. Incluye opción de recuperación de contraseña y enlace para crear nueva cuenta. Tambien contamos con el Formulario completo para nuevos usuarios. Captura información personal (nombre, apellido, DNI, teléfono, email) y credenciales de acceso. Incluye validaciones en tiempo real y términos y condiciones.
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/login and register.png" width=500>
+</div>
+
+#### Pantalla de Recuperación de Contraseña
+ 
+**Descripción:**
+Flujo de recuperación de contraseña dividido en pasos: verificación de identidad, validación de código y creación de nueva contraseña.
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/recovery password.png" width=500>
+</div>
+
+
+---
+
+### Módulo de Home / Dashboard
+ 
+#### Pantalla Principal (Home)
+ 
+**Descripción:**
+Panel principal con resumen de información clave del niño seleccionado. Muestra:
+- Identificación del niño actual (selector para cambiar entre múltiples niños)
+- Diario de hoy (horarios programados de medicamento/suplementos)
+- Métricas de progreso (hierro absorbido)
+- Accesos rápidos a funciones principales (Nueva entrada, Postas cercanas, Logros)
+- Tip de salud diario
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/home.png" width=300>
+</div>
+
+  
+---
+
+### Módulo de Nutrición
+ 
+#### Pantalla de Diario Nutricional
+ 
+**Descripción:**
+Resumen diario del estado nutricional del niño seleccionado. Muestra gráfico circular de absorción de hierro, lista de alimentos ingeridos y opciones para agregar nuevas entradas.
+
+ <div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Diario Nutricional.png" width=300>
+</div>
+
+#### Pantalla de Historial Nutricional
+ 
+**Descripción:**
+Timeline de entradas nutricionales organizadas por fecha. Muestra historial completo de alimentos registrados con detalles de absorción de hierro.
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Historial Nutricional.png" width=300>
+</div>
+
+   
+#### Pantalla NutriHierro - Búsqueda y Registro de Alimentos
+ 
+**Descripción:**
+Interfaz para buscar y registrar alimentos específicos con contenido de hierro. Incluye categorías, búsqueda por nombre y modal de confirmación de cantidad.
+ 
+<div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Busqueda y agregacion de alimentos.png" width=500>
+</div>
+
+---
+
+### Módulo de Citas Médicas
+ 
+#### Pantalla de Citas
+ 
+**Descripción:**
+Gestión central de citas médicas. Muestra cita próxima, historial de citas (confirmadas/canceladas) y opciones para agendar nuevas citas.
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Citas.png" width=500>
+</div>
+
+ 
+#### Pantalla de Reserva de Cita
+ 
+**Descripción:**
+Flujo de 2-3 pasos para agendar una nueva cita: seleccionar paciente, fecha y hora, y confirmar.
+ 
+<strong>Elementos principales (Paso 1 - Seleccionar Paciente):</strong>
+
+- Header: "Reserva Cita" con botón atrás
+- Selector de paciente: Avatares circulares
+- Subsección: "Fecha Seleccionada" (editable)
+- Subsección: "Horarios disponibles" con tabla de slots
+  - Horarios en formato 08:00, 09:00, 10:00, 16:00
+  - Indicador de disponibilidad (Disponible/Ocupado)
+  - Botón de confirmación
+
+<strong>Elementos principales (Paso 2 - Seleccionar Fecha):</strong>
+
+- Calendario interactivo (mes/año navegable)
+- Fechas disponibles resaltadas
+- Selección visual de fecha elegida
+- Botón: "Continuar"
+
+<strong>Elementos principales (Paso 3 - Confirmar):</strong>
+
+- Resumen de información:
+  - Paciente seleccionado
+  - Centro médico
+  - Fecha y hora
+  - Servicios disponibles
+- Botón: "Confirmar Reserva"
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Reserva de cita.png" width=500>
+</div>
+
+
+#### Pantalla de Detalle de Posta Médica
+ 
+**Descripción:**
+Información detallada de un centro médico/posta, incluyendo servicios disponibles, horarios y opción de reservar cita.
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Detalle de la posta.png" width=300>
+</div>
+ 
+---
+ 
+### Módulo de Postas Cercanas
+ 
+#### Pantalla de Postas Cercanas
+ 
+**Descripción:**
+Mapa interactivo que muestra centros médicos cercanos a la ubicación del usuario, con información resumida de cada posta en cards.
+
+ <div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/postas-cercanas.png" width=300>
+</div>
+
+---
+
+### Módulo de Comunicación / Consultas
+ 
+#### Pantalla de Consultas (Directorio de Especialistas)
+ 
+**Descripción:**
+Listado de especialistas médicos disponibles para consultas. Muestra nombre, especialidad, estado y opción de escribir consulta.
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Pantalla de Consultas.png" width=300>
+</div>
+   
+#### Pantalla de Redacción de Consulta
+ 
+**Descripción:**
+Formulario para enviar una consulta médica a un especialista específico. Incluye campo de texto libre y información del especialista asignado.
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Redacción de Consulta.png" width=300>
+</div>
+ 
+#### Pantalla de Chat con Especialista
+ 
+**Descripción:**
+Conversación bidireccional con un especialista médico. Muestra historial de mensajes, estado de sincronización y opciones de respuesta.
+
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Chat Mensajeria.png" width=300>
+</div>
+ 
+#### Pantalla de Mis Consultas
+ 
+**Descripción:**
+Listado de consultas activas del usuario. Muestra especialistas asignados, estado de consultas y acceso rápido a conversaciones.
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Mis Consultas.png" width=300>
+</div>
+ 
+ 
+---
+
+### Módulo de Progreso y Logros
+ 
+#### Pantalla de Progreso y Medallas
+ 
+**Descripción:**
+Panel visual que muestra evolución del tratamiento, gráficos de hemoglobina y logros/medallas completadas por el niño.
+
+ <div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Progreso y Medallas.png" width=300>
+</div>
+
+ 
+---
+### Módulo de Historial de Dosis
+ 
+#### Pantalla de Historial de Dosis
+ 
+**Descripción:**
+Registro completo de dosis de medicamento/suplemento administradas. Muestra timeline con confirmaciones y omisiones.
+
+  <div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Historial de Dosis.png" width=300>
+</div>
+
+---
+
+### Módulo de Gestión de Pacientes
+ 
+#### Pantalla de Agregar Paciente
+ 
+**Descripción:**
+Formulario para registrar un nuevo paciente (niño) a la cuenta familiar. Captura información demográfica y médica básica que será utilizada para personalizar el seguimiento de salud y el tratamiento nutricional.
+ 
+  <div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Agregar Paciente.png" width=300>
+</div>
+
+
 
 ### 4.4.2. Mobile Applications Wireflow Diagrams
 
