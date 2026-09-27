@@ -61,6 +61,129 @@ Por el otro lado, para Ferova Clinic, hemos tomado la decisión de tener un tono
 
 ### 4.1.2. Web Style Guidelines
 
+Estándares visuales e interactivos para las interfaces web de FerovaClinic, asegurando coherencia en desktop y dispositivos móviles.
+
+#### Colores
+
+**Primarios**
+- Azul Oscuro: `#003A70` (navbar, botones principales)
+- Azul Primario: `#1E7CB4` (enlaces, highlights)
+- Azul Claro: `#E8F4F8` (fondos informativos)
+
+**Sistema de Riesgo**
+- Rojo (Alto): `#E53935` y fondo `#FFCDD2`
+- Naranja (Medio): `#FFA500` y fondo `#FFE5CC`
+- Verde (Bajo): `#4CAF50` y fondo `#E8F5E9`
+
+**Neutros**
+- Fondo: `#FFFFFF` (blanco), `#F5F7FA` (gris claro)
+- Texto: `#1A1A1A` (primario), `#666666` (secundario)
+- Borde: `#E0E0E0`
+
+**Variantes de Estado Clínico**
+ 
+| Badge | Fondo | Texto | Uso |
+|-------|-------|-------|-----|
+| ACTIVO | `#E8F5E9` | `#4CAF50` | Tratamiento en curso, paciente activo |
+| CONFIRMADA | `#E0F2F1` | `#26A69A` | Cita confirmada, dosis confirmada |
+| COMPLETADO | `#E8F5E9` | `#4CAF50` | Tratamiento finalizado, período completado |
+| ABANDONADO | `#FFCDD2` | `#E53935` | Tratamiento abandonado, paciente dado de alta |
+| PENDIENTE | `#FFE5CC` | `#F57C00` | Acción pendiente, control pendiente |
+| EN SEGUIMIENTO | `#E3F2FD` | `#1565C0` | Monitoreo activo, seguimiento requerido |
+
+#### Tipografía
+
+**Familia**: `'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif`
+
+| Elemento | Size | Weight | Uso |
+|----------|------|--------|-----|
+| H1 | 32px | 700 | Títulos página |
+| H2 | 24px | 700 | Títulos sección |
+| H3 | 18px | 600 | Subtítulos |
+| H4 | 16px | 600 | Títulos card |
+| Body | 14px | 400 | Texto general |
+| Small | 12px | 400 | Labels |
+| Metric | 28-32px | 700 | Números grandes |
+
+#### Spacing
+
+- Base: 8px
+- Cards gap: 16px
+- List gap: 12px
+- Padding componentes: 12px 24px (botones), 20px (cards)
+
+#### Componentes
+
+**Navbar**
+- Alto: 64px (fixed)
+- Fondo: Gradiente azul con blur
+- Logo blanco + items navegación
+
+**Botones**
+- Primario: Azul oscuro, padding 12px 24px, border-radius 6px
+- Secundario: Outline azul, transparente
+- Estados: hover (elevación), active (scale 0.98)
+
+**Cards**
+- Fondo blanco, border 1px gris, border-radius 8px
+- Padding: 20px
+- Border-left 4px según riesgo (si aplica)
+- Hover: elevación suave
+
+**Badges**
+- Alto: 28px, border-radius 16px
+- Padding: 4px 12px
+- Font: 11px uppercase, weight 600
+- Variantes: ACTIVO (verde), CONFIRMADA (verde), COMPLETADO (verde), ABANDONADO (rojo)
+
+**Avatares**
+- Circular, 48px standard
+- Colores pastel por inicial
+- Texto: iniciales en blanco, 18px
+
+**Inputs**
+- Alto: 44px
+- Padding: 12px 14px
+- Border: 1px gris, radius 6px
+- Focus: border azul, shadow suave
+
+#### Breakpoints
+
+- Mobile: < 640px (1 columna)
+- Tablet: 640px - 1024px (2 columnas)
+- Desktop: > 1024px (3 columnas)
+- Max-width: 1280px
+
+#### Animaciones
+
+- Duración: 0.3s ease-out (estándar)
+- Hover: elevación + sombra
+- Entradas: fade-in + slide-up (0.4s)
+- Focus: outline azul 2px
+
+#### Accesibilidad
+
+- Contraste mínimo: 4.5:1 (texto sobre fondos)
+- Navegación por teclado: Tab order lógico, focus visible
+- Aria labels: en inputs y botones icon-only
+- WCAG 2.1 AA
+
+#### Componentes FerovaClinic
+
+**Card Paciente**
+- Avatar (48px) + Nombre (H4) + Badge estado
+- Metadata (edad, ubicación)
+- CTA: "Ver Detalles"
+
+**Monitor Clínico**
+- Score badge arriba-derecha (56px circular)
+- Adherencia (círculo donut con %)
+- Tratamiento (duración, dosis, progreso)
+
+**Heatmap**
+- Mapa geográfico con círculos coloreados por riesgo
+- Tamaño proporcional a pacientes
+
 ### 4.1.3. Mobile Style Guidelines
 
 #### 4.1.3.1. iOS Mobile Style Guidelines
