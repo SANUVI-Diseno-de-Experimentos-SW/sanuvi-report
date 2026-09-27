@@ -604,13 +604,59 @@ Formulario para registrar un nuevo paciente (niño) a la cuenta familiar. Captur
 
 ### 4.4.2. Mobile Applications Wireflow Diagrams
 
-> Un Wireflow por cada User Goal, considerando los User Persona.
+Cada Wireflow Diagram representa el recorrido visual e interactivo que realiza el usuario dentro de la aplicación para cumplir un objetivo específico (User Goal). En cada flujo se detalla la secuencia de pantallas y acciones que permiten alcanzar dicho propósito, desde la navegación inicial hasta la confirmación o registro de una tarea.
 
-**User Goal 1:** [enunciado]
+Los wireflow diagrams están conectados mediante líneas de flujo que indican el orden de navegación y las decisiones del usuario en cada punto clave de la aplicación.
 
-<img src="../assets/img/chapter-IV/mobile-wireflow-01.png" alt="Mobile Wireflow 1">
 
-<!-- COMPLETAR -->
+
+**UG-01 — Agregar Nuevo Paciente**
+
+El flujo muestra cómo el usuario accede a la opción de agregar un nuevo paciente desde la pantalla Home. El usuario selecciona el botón "Agregar" en el selector de niños, accede al formulario de registro donde completa información personal (nombre, apellido, fecha de nacimiento, género, peso, altura) y confirma guardando el registro. El nuevo paciente se integra inmediatamente al sistema y aparece en el selector de niños.
+
+---
+
+**UG-02 — Agendar Cita Médica**
+
+El flujo presenta cómo el usuario agenda una nueva cita médica. Comenzando desde la pantalla de Citas, el usuario selecciona "Agendar nueva cita", elige el paciente (niño), selecciona una fecha en el calendario interactivo, elige un horario disponible de la lista de slots, revisa el resumen de información y confirma la reserva. Tras la confirmación, el usuario recibe una notificación visual y la cita aparece en su listado.
+
+---
+
+**UG-03 — Registrar Alimento en Diario Nutricional**
+
+El flujo muestra el proceso de registrar un alimento en el diario nutricional. Desde la pantalla Home o Diario Nutricional, el usuario toca "+ Nueva Entrada", accede a la pantalla de búsqueda NutriHierro, busca o selecciona un alimento de la lista de categorías, abre el modal de cantidad, ingresa la cantidad y unidad del alimento, y confirma el registro. El alimento se agrega al diario del día y se actualiza el gráfico de absorción de hierro.
+
+---
+
+**UG-04 — Enviar Consulta a Especialista**
+
+El flujo detalla cómo el usuario envía una consulta médica a un especialista. Desde la pantalla Consultas, el usuario visualiza el listado de especialistas disponibles, selecciona uno específico, toca "Escribir Consulta", accede al formulario de redacción de consulta donde escribe su mensaje, y confirma el envío tocando el botón "Enviar Consulta". La consulta se sincroniza con la plataforma y el especialista recibe una notificación.
+
+---
+
+**UG-05 — Comunicarse con Especialista mediante Chat**
+
+El flujo presenta la conversación bidireccional entre usuario y especialista. Desde "Mis Consultas", el usuario selecciona una consulta activa, accede al chat con el especialista, lee los mensajes recibidos, escribe su respuesta en el campo de entrada, y envía el mensaje tocando el botón de envío. El mensaje se sincroniza en tiempo real y aparece en la conversación con timestamp y confirmación de lectura.
+
+---
+
+**UG-06 — Recuperar Contraseña Olvidada**
+
+El flujo muestra el proceso paso a paso para recuperar acceso a una cuenta. Desde la pantalla de Login, el usuario toca "¿Olvidaste la contraseña?" y accede a la pantalla de recuperación. Ingresa su email o DNI, toca "Enviar Código" y el sistema envía un código de verificación. En el siguiente paso, el usuario ingresa los 4 dígitos del código recibido y toca "Verificar Código". Tras la validación, accede a la pantalla de creación de nueva contraseña donde ingresa la nueva contraseña, confirma y toca "Actualizar Contraseña". Finalmente es redirigido a la pantalla de Login con la opción de iniciar sesión con sus nuevas credenciales.
+
+---
+
+**UG-07 — Crear Nueva Cuenta de Usuario**
+
+El flujo detalla el proceso de registro de un nuevo usuario. Desde la pantalla de Login, el usuario toca "¿No tienes cuenta? Regístrate" o accede directamente a la pantalla Crear Cuenta. Completa todos los campos requeridos (nombre, apellido, DNI, teléfono, email, contraseña), acepta los términos y condiciones, y toca "Registrarse". El sistema valida la información, crea la cuenta, y navega automáticamente a Home con la sesión iniciada.
+
+---
+
+**UG-08 — Confirmar Dosis del Tratamiento**
+
+El flujo detalla cómo el usuario confirma la administración de una dosis de medicamento/suplemento. Desde la pantalla Home, el usuario visualiza la sección "Dosis de hoy" con el horario programado (ej: "Horario programado"). El usuario toca el botón "Confirmar Dosis", el usuario confirma la dosis, y el sistema registra la administración. Tras la confirmación, se actualiza el historial de dosis, se suma un punto al contador de logros, El usuario puede retornar a Home o continuar explorando otras secciones.
+
+
 
 ### 4.4.3. Mobile Applications Mock-ups
 
