@@ -455,6 +455,11 @@ Interfaz para buscar y registrar alimentos específicos con contenido de hierro.
  
 **Descripción:**
 Gestión central de citas médicas. Muestra cita próxima, historial de citas (confirmadas/canceladas) y opciones para agendar nuevas citas.
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Citas.png" width=500>
+</div>
+
  
 #### Pantalla de Reserva de Cita
  
@@ -487,11 +492,19 @@ Flujo de 2-3 pasos para agendar una nueva cita: seleccionar paciente, fecha y ho
   - Servicios disponibles
 - Botón: "Confirmar Reserva"
 
+<div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Reserva de cita.png" width=500>
+</div>
+
 
 #### Pantalla de Detalle de Posta Médica
  
 **Descripción:**
 Información detallada de un centro médico/posta, incluyendo servicios disponibles, horarios y opción de reservar cita.
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Detalle de la posta.png" width=300>
+</div>
  
 ---
  
@@ -501,7 +514,11 @@ Información detallada de un centro médico/posta, incluyendo servicios disponib
  
 **Descripción:**
 Mapa interactivo que muestra centros médicos cercanos a la ubicación del usuario, con información resumida de cada posta en cards.
- 
+
+ <div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/postas-cercanas.png" width=300>
+</div>
+
 ---
 
 ### Módulo de Comunicación / Consultas
@@ -510,22 +527,39 @@ Mapa interactivo que muestra centros médicos cercanos a la ubicación del usuar
  
 **Descripción:**
 Listado de especialistas médicos disponibles para consultas. Muestra nombre, especialidad, estado y opción de escribir consulta.
- 
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Pantalla de Consultas.png" width=300>
+</div>
    
 #### Pantalla de Redacción de Consulta
  
 **Descripción:**
 Formulario para enviar una consulta médica a un especialista específico. Incluye campo de texto libre y información del especialista asignado.
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Redacción de Consulta.png" width=300>
+</div>
  
 #### Pantalla de Chat con Especialista
  
 **Descripción:**
 Conversación bidireccional con un especialista médico. Muestra historial de mensajes, estado de sincronización y opciones de respuesta.
+
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Chat Mensajeria.png" width=300>
+</div>
  
 #### Pantalla de Mis Consultas
  
 **Descripción:**
 Listado de consultas activas del usuario. Muestra especialistas asignados, estado de consultas y acceso rápido a conversaciones.
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Mis Consultas.png" width=300>
+</div>
+ 
  
 ---
 
@@ -535,6 +569,11 @@ Listado de consultas activas del usuario. Muestra especialistas asignados, estad
  
 **Descripción:**
 Panel visual que muestra evolución del tratamiento, gráficos de hemoglobina y logros/medallas completadas por el niño.
+
+ <div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Progreso y Medallas.png" width=300>
+</div>
+
  
 ---
 ### Módulo de Historial de Dosis
@@ -543,7 +582,11 @@ Panel visual que muestra evolución del tratamiento, gráficos de hemoglobina y 
  
 **Descripción:**
 Registro completo de dosis de medicamento/suplemento administradas. Muestra timeline con confirmaciones y omisiones.
- 
+
+  <div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Historial de Dosis.png" width=300>
+</div>
+
 ---
 
 ### Módulo de Gestión de Pacientes
@@ -553,6 +596,9 @@ Registro completo de dosis de medicamento/suplemento administradas. Muestra time
 **Descripción:**
 Formulario para registrar un nuevo paciente (niño) a la cuenta familiar. Captura información demográfica y médica básica que será utilizada para personalizar el seguimiento de salud y el tratamiento nutricional.
  
+  <div align="center">
+  <img src="../assets/img/chapter-IV/Wireframe/Agregar Paciente.png" width=300>
+</div>
 
 
 
