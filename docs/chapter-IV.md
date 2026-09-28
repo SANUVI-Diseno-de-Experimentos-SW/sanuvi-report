@@ -330,7 +330,6 @@ Se aplica dentro de cada pantalla para diferenciar lo urgente de lo informativo.
 
 - En **Ferova Clinic**, el Panel General ordena a los pacientes por nivel de riesgo clínico: los casos con hemoglobina en descenso o adherencia interrumpida se ubican en la parte superior con indicador rojo (`#7C0303`), seguidos de los casos en observación y, finalmente, de los pacientes estables.
 - En **Ferova Family**, la pantalla *Tratamiento / Hoy* prioriza la dosis pendiente del día como elemento de mayor peso visual, relegando a segundo plano la racha acumulada, las insignias obtenidas y el resumen nutricional.
-- Las notificaciones de ambas aplicaciones se ordenan por criticidad y no por antigüedad: primero los recordatorios de dosis vencidos y las citas próximas, luego los mensajes de la enfermera y, al final, los avisos de logros.
 
 **3. Organización secuencial (step-by-step)**
 
@@ -389,7 +388,6 @@ El sistema de etiquetado traduce el modelo de datos a un vocabulario comprensibl
 | Citas | Próxima cita, reserva de nuevas citas, consulta de postas y horarios disponibles, y agenda con el historial de citas. |
 | Mi Familia | Pacientes registrados por el apoderado, datos de cada menor, evolución de su hemoglobina, logros e insignias obtenidas y posta asignada. |
 | Consultas | Mensajería con la enfermera responsable del paciente: consultas abiertas, historial de consultas atendidas y creación de una nueva consulta. |
-| Notificaciones | Recordatorios de dosis, avisos de citas próximas, respuestas de la enfermera y logros desbloqueados. |
 | Mi cuenta | Datos del apoderado, preferencias de recordatorios y cierre de sesión. |
 
 **Ferova Clinic (personal de salud)**
@@ -405,7 +403,6 @@ El sistema de etiquetado traduce el modelo de datos a un vocabulario comprensibl
 | Postas de Salud | Admin | Registro de postas, ubicación, horarios de atención y consulta de postas registradas. |
 | Enfermeras | Admin | Consulta de enfermeras disponibles y asignación de enfermeras a una posta de salud. |
 | Analítica y Reportes | Admin | Métricas de seguimiento por posta y distrito, y generación de reportes de cobertura y adherencia. |
-| Notificaciones | Enfermera / Admin | Alertas de riesgo clínico, consultas sin responder y citas próximas. |
 | Configuración | Enfermera / Admin | Datos del profesional, posta activa y cierre de sesión. |
 
 ### 4.2.3. SEO Tags and Meta Tags
@@ -518,9 +515,9 @@ La navegación global se resuelve mediante la **barra de navegación inferior pe
 
 La limitación a cuatro destinos responde a un criterio ergonómico: cada elemento conserva así un área táctil suficiente dentro de la zona cómoda del pulgar. En consecuencia, los contenidos restantes se resuelven por otras vías de navegación:
 
-- **Navegación utilitaria:** *Consultas*, *Notificaciones* y *Mi cuenta* se acceden desde la barra superior de la aplicación, con indicador numérico (*badge*) cuando existen mensajes de la enfermera o recordatorios pendientes.
+- **Navegación utilitaria:** *Consultas* y *Mi cuenta* se acceden desde la barra superior de la aplicación, con indicador numérico (*badge*) cuando existen mensajes de la enfermera o recordatorios pendientes.
 - **Navegación local:** dentro de *Mi Familia*, cada paciente despliega pestañas internas de *Datos*, *Hemoglobina* y *Logros*; dentro de *Citas* se diferencian *Próximas* e *Historial*.
-- **Navegación contextual:** las tarjetas de acceso rápido de la pantalla de inicio conducen directamente a la acción sugerida por el estado del tratamiento (registrar la dosis del día, registrar un alimento o revisar la próxima cita). Las notificaciones operan como enlaces profundos (*deep links*) hacia la pantalla correspondiente.
+- **Navegación contextual:** las tarjetas de acceso rápido de la pantalla de inicio conducen directamente a la acción sugerida por el estado del tratamiento (registrar la dosis del día, registrar un alimento o revisar la próxima cita). 
 - El registro de la dosis diaria se resuelve mediante una hoja inferior deslizable, sin abandonar la pantalla actual, cumpliendo el criterio de dos toques establecido en la sección 4.1.3.
 
 **3. Ferova Clinic (web)**
@@ -536,7 +533,7 @@ Los destinos no habilitados para el rol no se muestran en la interfaz y, adicion
 
 Complementan la navegación global:
 
-- **Navegación utilitaria:** la barra superior conserva el selector de posta activa, la búsqueda global por DNI o apellido del menor, la campana de notificaciones y el perfil del profesional.
+- **Navegación utilitaria:** la barra superior conserva el selector de posta activa, la búsqueda global por DNI o apellido del menor y el perfil del profesional.
 - **Navegación local:** el detalle del paciente organiza su contenido en pestañas de *Resumen*, *Tratamiento*, *Controles de Hemoglobina*, *Historial* y *Consultas*, evitando que el profesional pierda el contexto del caso al desplazarse entre secciones.
 - **Navegación contextual:** el Panel General expone accesos directos a las tareas del día (registrar un control de hemoglobina, responder una consulta pendiente o atender la cita próxima), y las alertas de riesgo conducen al paciente involucrado en un solo clic.
 - **Migas de pan (*breadcrumbs*):** las vistas de tercer nivel muestran su ruta de procedencia —por ejemplo, `Pacientes › Luis Ramírez › Control de Hemoglobina`—, de modo que el usuario pueda retroceder sin recurrir al botón del navegador.
