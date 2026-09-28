@@ -1966,11 +1966,150 @@ Los siguientes mock-ups representan la versión de alta fidelidad (High-Fidelity
 
 ### 4.6.4. Web Applications User Flow Diagrams
 
-**User Goal 1:** [enunciado]
+Los siguientes diagramas de flujo de usuario (User Flows) ilustran los recorridos interactivos de alta fidelidad que realiza el personal de salud y los administradores en Ferova Clinic. Estos diagramas detallan las decisiones del usuario, la respuesta del sistema y las rutas de navegación utilizando las interfaces visuales finales, validando así que la arquitectura de información cumpla con los objetivos del producto.
 
-<img src="../assets/img/chapter-IV/web-userflow-01.png" alt="Web User Flow 1">
+---
 
-<!-- COMPLETAR -->
+**Web User Flow 1: Visualización de Riesgo Clínico de Paciente**
+
+> **Relacionado con el User Goal:**
+> Como personal de salud, quiero identificar rápidamente a los pacientes en situación de riesgo desde mi panel principal, para revisar su historial detallado y tomar medidas preventivas.
+
+El flujo inicia en el Panel General (Dashboard), donde el profesional identifica a los pacientes categorizados por niveles de riesgo[cite: 9]. Al hacer clic en un nivel (ej. "Riesgo Alto"), el sistema filtra la lista de pacientes correspondientes[cite: 9]. Desde el listado, el usuario selecciona un caso específico y el sistema despliega su perfil clínico completo, permitiendo analizar las gráficas de evolución de la hemoglobina y tomar decisiones[cite: 9].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-userflow-01.png" alt="Web User Flow 01">
+</div>
+
+---
+
+**Web User Flow 2: Asignación de Pacientes**
+
+> **Relacionado con el User Goal:**
+> Como personal de salud, quiero buscar y vincular a un paciente registrado en el sistema a mi lista de atención, para iniciar su seguimiento clínico formal.
+
+El recorrido inicia en la sección de pacientes, donde el profesional activa la función de búsqueda para asignar un nuevo paciente[cite: 10]. El sistema evalúa la búsqueda presentando dos caminos posibles: si el paciente es encontrado, muestra una tarjeta de validación para confirmar la asignación, terminando en una pantalla de éxito; si no es encontrado, muestra un estado vacío (empty state) informando que el paciente no está registrado[cite: 10].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-userflow-02.png" alt="Web User Flow 02">
+</div>
+
+---
+
+**Web User Flow 3: Inicio de Tratamiento**
+
+> **Relacionado con el User Goal:**
+> Como personal de salud, quiero configurar el esquema de medicación de un paciente recién asignado, para que el apoderado reciba las indicaciones en su aplicación móvil.
+
+El flujo muestra que el profesional puede acceder a la función de iniciar tratamiento desde diferentes puntos (listado general, vista de riesgo o perfil del paciente)[cite: 11]. Todas estas rutas convergen en el formulario central de "Iniciar Tratamiento", donde se ingresa la dosis, suplemento y frecuencia[cite: 11]. Al confirmar, el sistema registra el esquema y muestra el resumen del tratamiento activo[cite: 11].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-userflow-03.png" alt="Web User Flow 03">
+</div>
+
+---
+
+**Web User Flow 4: Dar de Alta a un Paciente**
+
+> **Relacionado con el User Goal:**
+> Como personal de salud, quiero registrar el alta médica de un paciente que ha completado exitosamente su esquema o cuyos niveles de hemoglobina se han regularizado, para cerrar su caso.
+
+El profesional accede al listado de sus pacientes activos y hace clic en la opción de "Dar de Alta" para un registro particular[cite: 12]. En lugar de ejecutar la acción inmediatamente, el sistema despliega un modal superpuesto (pop-up) exigiendo una confirmación consciente[cite: 12]. Tras aceptar, el sistema actualiza la base de datos y refleja el estado de "Alta" en la interfaz del listado[cite: 12].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-userflow-04.png" alt="Web User Flow 04">
+</div>
+
+---
+
+**Web User Flow 5: Registro y Actualización de Historial Médico**
+
+> **Relacionado con el User Goal:**
+> Como personal de salud, quiero actualizar la historia clínica del paciente con nuevos datos antropométricos o antecedentes, para mantener su expediente al día.
+
+Este flujo detalla la navegación desde el listado general hacia el perfil individual del paciente[cite: 13]. Una vez en el historial médico, el profesional selecciona la opción de editar/actualizar, lo que despliega un formulario detallado[cite: 13]. Al guardar los cambios, el sistema valida la información y devuelve al usuario a la vista consolidada con los datos antropométricos renovados[cite: 13].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-userflow-05.png" alt="Web User Flow 05">
+</div>
+
+---
+
+**Web User Flow 6: Control de Hemoglobina**
+
+> **Relacionado con el User Goal:**
+> Como personal de salud, quiero registrar un nuevo valor de hemoglobina tras un tamizaje, para permitir que el sistema recalcule el nivel de riesgo clínico.
+
+Desde la vista de detalles del paciente, el profesional se dirige a la pestaña específica de controles[cite: 14]. Al hacer clic en agregar, completa el formulario con la fecha de la prueba y el valor de hemoglobina (g/dL)[cite: 14]. El flujo culmina cuando el sistema guarda el dato, lo añade al historial del paciente y ajusta las gráficas y etiquetas de riesgo en tiempo real[cite: 14].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-userflow-06.png" alt="Web User Flow 06">
+</div>
+
+---
+
+**Web User Flow 7: Gestión de Citas**
+
+> **Relacionado con el User Goal:**
+> Como personal de salud, quiero revisar la agenda de atenciones programadas, para organizar mi carga de trabajo diaria en la posta médica.
+
+El usuario accede al submódulo de "Agenda de Citas" desde el panel de navegación principal[cite: 15]. El diagrama ilustra cómo el sistema gestiona la visualización según los datos disponibles: despliega una cuadrícula poblada con tarjetas de citas confirmadas si existen atenciones programadas, o bien, presenta un estado vacío ilustrado y amigable si la agenda del día está libre[cite: 15].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-userflow-07.png" alt="Web User Flow 07">
+</div>
+
+---
+
+**Web User Flow 8: Flujo de Consultas (Comunicación)**
+
+> **Relacionado con el User Goal:**
+> Como personal de salud, quiero leer y responder los mensajes enviados por los apoderados, para brindar soporte remoto y asegurar la correcta administración del suplemento.
+
+El flujo inicia en la bandeja de consultas, donde el usuario visualiza los mensajes pendientes a la izquierda de la pantalla[cite: 16]. Al seleccionar una conversación, el área derecha despliega el chat completo[cite: 16]. El recorrido abarca la redacción de la respuesta, el uso de opciones complementarias y la interacción con ventanas modales en caso de que el profesional decida cerrar la consulta de manera definitiva[cite: 16].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-userflow-08.png" alt="Web User Flow 08">
+</div>
+
+---
+
+**Web User Flow 9: Flujos de "Mis Tratamientos" (Monitoreo)**
+
+> **Relacionado con el User Goal:**
+> Como personal de salud, quiero supervisar el progreso general de todos los tratamientos activos bajo mi cargo, para identificar rápidamente los casos de baja adherencia.
+
+El profesional navega hacia la vista de "Mis Tratamientos", encontrando un grid de tarjetas que resumen la adherencia de cada paciente mediante gráficos circulares[cite: 17]. Desde aquí, el usuario puede interactuar con una tarjeta para abrir un modal de edición (por ejemplo, para modificar la dosis) o ingresar a los detalles profundos del progreso clínico de ese paciente en particular[cite: 17].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-userflow-09.png" alt="Web User Flow 09">
+</div>
+
+---
+
+**Web User Flow 10: Registro de Posta (Rol Administrador)**
+
+> **Relacionado con el User Goal:**
+> Como administrador del sistema, quiero dar de alta un nuevo establecimiento de salud, para integrarlo a la red de Ferova Clinic y permitir la asignación de personal.
+
+Este diagrama traza el recorrido secuencial (wizard) que realiza el administrador. Inicia en el panel principal y avanza por una serie de pantallas que solicitan: datos generales de la posta, localización exacta en el mapa integrado, definición de horarios operativos y asignación inicial de personal[cite: 18]. El flujo termina con la validación del sistema y la inclusión del centro en el directorio global[cite: 18].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-userflow-10.png" alt="Web User Flow 10">
+</div>
+
+---
+
+**Web User Flow 11: Flujo Heat Map (Rol Administrador)**
+
+> **Relacionado con el User Goal:**
+> Como administrador, quiero visualizar el mapa de calor de las postas médicas, para analizar geográficamente la concentración de pacientes según su nivel de riesgo clínico.
+
+Desde el Dashboard analítico, el administrador navega hacia el submódulo "Mapa de Calor"[cite: 19]. El flujo muestra cómo el usuario interactúa con la interfaz de mapas, utilizando los filtros superiores para aislar datos visuales específicos[cite: 19]. El sistema responde re-renderizando las capas de colores en el mapa, evidenciando zonas críticas de atención de acuerdo con los parámetros seleccionados[cite: 19].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-userflow-11.png" alt="Web User Flow 11">
+</div>
 
 ## 4.7. Web Applications Prototyping
 
