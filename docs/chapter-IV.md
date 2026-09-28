@@ -293,16 +293,6 @@ La experiencia móvil en iOS debe mantener interacciones suaves, responsivas y c
 * Uso de colores en combinación con iconos/textos para transmitir información (no solo color)
 * Soporte para Dynamic Type para escalado de texto
 
-<div align="center">
-  <img src="../assets/img/chapter-IV/ios-1.png">
-</div>
-
----
-
-<div align="center">
-  <img src="../assets/img/chapter-IV/ios-2.png">
-</div>
-
 
 #### 4.1.3.2. Android Mobile Style Guidelines
 
@@ -1293,21 +1283,34 @@ El flujo inicia desde la sección “Consultas”, donde el apoderado puede visu
 
 ## 4.5. Mobile Applications Prototyping
 
-> Introducción con los principales criterios para las decisiones de interacción y su relación con la arquitectura de información.
-
-<!-- COMPLETAR -->
-
 ### 4.5.1. Android Mobile Applications Prototyping
 
-<img src="../assets/img/chapter-IV/android-prototype.png" alt="Android Prototype">
+En cuanto a la arquitectura de información, el prototipo móvil de FerovaFamily emplea una navegación jerárquica clara, acompañada de flujos secuenciales en procesos clave como el registro de pacientes, la confirmación de dosis, el registro de alimentos y la gestión de citas. Asimismo, se definieron etiquetas y categorías orientadas a las necesidades de los apoderados, facilitando el acceso a funcionalidades como el seguimiento del tratamiento, el diario nutricional, las postas de salud, las citas y las consultas con el personal de salud.
 
-**Enlace del video:** [URL de Microsoft Stream]
+Asimismo, se implementaron interacciones responsivas, estados visuales, validaciones en formularios y retroalimentación inmediata ante las acciones del usuario. Estos elementos permiten que la consulta de información y ejecución de tareas se realicen de manera clara y eficiente dentro del contexto móvil, facilitando el seguimiento del tratamiento de los pacientes.
+
+Además, se grabó un video donde se explican los principales flujos de interacción del prototipo móvil de FerovaFamily, mostrando cómo las decisiones de diseño se reflejan en la experiencia del apoderado y en las diferentes funcionalidades de seguimiento y gestión disponibles en la aplicación.
+
+**Enlace del video:** https://me-l.co/mqsu78sl
 
 ### 4.5.2. iOS Mobile Applications Prototyping
 
-<img src="../assets/img/chapter-IV/ios-prototype.png" alt="iOS Prototype">
+En cuanto a la arquitectura de información, el prototipo móvil de FerovaFamily para iOS mantiene una navegación jerárquica coherente con las convenciones de diseño de la plataforma, incorporando flujos secuenciales en procesos clave como el registro de pacientes, la confirmación de dosis, el registro de alimentos y la gestión de citas. Se definieron etiquetas intuitivas y categorías orientadas a las necesidades de los apoderados, facilitando el acceso a funcionalidades como el seguimiento del tratamiento, el diario nutricional, las postas de salud, las citas y las consultas con el personal de salud.
 
-**Enlace del video:** [URL de Microsoft Stream]
+Asimismo, se implementaron interacciones adaptadas al contexto de iOS, como estados de selección, transiciones entre pantallas y retroalimentación visual ante las acciones del usuario. También se incorporaron validaciones visuales en formularios y mensajes de confirmación que permiten comprender el resultado de las acciones realizadas. Estos elementos aseguran que tanto el acceso a la información como la ejecución de tareas se realicen de manera clara y eficiente, manteniendo una experiencia coherente con las convenciones de la plataforma iOS.
+
+Además, se grabó un video donde se explican los principales flujos de interacción del prototipo iOS, mostrando cómo las decisiones de diseño se reflejan en la experiencia del apoderado y cómo se adaptan a las convenciones y expectativas de los usuarios de esta plataforma.
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/ios-1.png">
+</div>
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/ios-2.png">
+</div>
+
+
+**Enlace del video:** https://me-l.co/m22cabc2
 
 ## 4.6. Web Applications UX/UI Design
 
