@@ -1941,9 +1941,134 @@ El flujo inicia en el panel general del administrador (Dashboard), donde se obse
 
 ### 4.6.3. Web Applications Mock-ups
 
-<img src="../assets/img/chapter-IV/web-mockups.png" alt="Web Mock-ups">
+### 4.6.3. Web Applications Mock-ups
 
-<!-- COMPLETAR -->
+Los siguientes mock-ups representan la versión de alta fidelidad (High-Fidelity) de Ferova Clinic, diseñados para resoluciones de escritorio. Estos diseños aplican estrictamente las Web Style Guidelines definidas en la sección 4.1.2, garantizando coherencia visual, jerarquía clara de la información y cumplimiento de las normativas de accesibilidad.
+
+**Elementos visuales clave aplicados:**
+*   **Colores Institucionales:** Uso predominante del Azul Oscuro (`#003A70`) en la barra superior (Topbar) y botones primarios para transmitir profesionalismo, contrastado con fondos claros (`#F5F7FA`) para el área de contenido.
+*   **Sistema de Riesgo Semántico:** Implementación del sistema de colores para categorizar el estado de los pacientes: Rojo (Riesgo Alto), Amarillo/Naranja (Riesgo Medio) y Verde (Riesgo Bajo).
+*   **Tipografía y Legibilidad:** Uso de la familia tipográfica 'Inter', aplicando diferentes pesos visuales (bold para métricas clave y subtítulos, regular para datos en tablas) para facilitar el escaneo rápido.
+
+---
+
+**Web Mock-up 1: IAM (Identity and Access Management)**
+
+> **Descripción Visual:**
+> El módulo de autenticación presenta un diseño minimalista y centrado, utilizando fondos blancos y grises claros para reducir la carga cognitiva durante el acceso y registro[cite: 20].
+> 
+> *   **Pantalla de Login:** Estructura centrada tipo tarjeta (card) con el logotipo de la plataforma. Contiene campos de entrada (inputs) con bordes definidos para correo y contraseña, un enlace de recuperación sutil y un botón de acción primaria (Call to Action) ancho y destacado en color institucional[cite: 20].
+> *   **Registro Profesional:** Utiliza un diseño de vista dividida. El panel izquierdo refuerza la propuesta de valor con texto informativo e iconografía, mientras que el derecho contiene un formulario extenso y estructurado (nombres, DNI, correo, contraseña) con validaciones visuales[cite: 20].
+> *   **Recuperación de Contraseña (Flujo de 3 pasos):** Mantiene la interfaz centrada. Destaca el paso de verificación de identidad, el cual emplea cuatro cajas de texto individuales (inputs) de un solo dígito para el ingreso del código OTP, mejorando la usabilidad[cite: 20].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-mockup-01.png" alt="Web Mock-up 01">
+</div>
+
+---
+
+**Web Mock-up 2: Home / Dashboard**
+
+> **Descripción Visual:**
+> El panel de control actúa como la pantalla principal tras iniciar sesión, presentando una arquitectura de información adaptada al rol del usuario mediante componentes tipo bloque y un layout de grilla[cite: 21].
+> 
+> *   **Topbar y Navegación:** Barra superior azul oscuro constante que incluye el logotipo, un menú horizontal (Inicio, Pacientes, Consultas, Historial) con estados activos (subrayado/resalte) y el perfil del usuario (avatar y nombre) a la derecha[cite: 21].
+> *   **Dashboard Clínico (Rol Enfermera):** La pantalla se divide en tres columnas. A la izquierda, la tarjeta de "Estado de Riesgo Clínico" agrupa a los pacientes usando bloques de color semántico (Rojo: Crítico, Amarillo: Medio, Verde: Bajo). Al centro, un grid de "Accesos Rápidos" con botones cuadrados e iconografía minimalista. A la derecha, una lista compacta con la "Agenda del Día" y etiquetas (badges) de estado[cite: 21].
+> *   **Dashboard Administrativo (Rol Coordinador):** Enfoque analítico. Presenta métricas numéricas en gran tamaño (ej. "+4 Postas Activas"), un gráfico de barras horizontales para la "Adherencia Global" y una tabla extensa que enlista los centros de salud con barras de progreso lineal porcentuales[cite: 21].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-mockup-02.png" alt="Web Mock-up 02">
+</div>
+
+---
+
+**Web Mock-up 3: Agenda de Citas (Healthy-Management)**
+
+> **Descripción Visual:**
+> Interfaz optimizada para la lectura rápida y gestión de la carga de trabajo diaria en la posta médica, utilizando un sistema de tarjetas (cards) sobre un fondo gris claro[cite: 22].
+> 
+> *   **Cabecera de Resumen:** Incorpora un buscador tabular y un grupo de tres tarjetas superiores que muestran el recuento total de pacientes, el porcentaje de citas confirmadas y la hora de la próxima atención destacada[cite: 22].
+> *   **Cuadrícula de Citas (Grid):** Los registros se presentan en tarjetas individuales blancas. Cada tarjeta incluye el avatar con iniciales, nombre del paciente, hora de la cita, posta médica correspondiente y un distintivo visual (Badge) con bordes redondeados y texto verde indicando "CONFIRMADA"[cite: 22].
+> *   **Empty State:** Pantalla diseñada para cuando no existen registros. Se compone de una ilustración central (ícono de calendario) en colores pastel, un título descriptivo ("No hay citas programadas") y un texto de soporte, evitando la sensación de error en el sistema[cite: 22].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-mockup-03.png" alt="Web Mock-up 03">
+</div>
+
+---
+
+**Web Mock-up 4: Gestión de Pacientes y Controles**
+
+> **Descripción Visual:**
+> Es el núcleo operativo de la plataforma, caracterizado por el uso de formularios clínicos detallados, modales de confirmación e historiales en formato de línea de tiempo o listas[cite: 23].
+> 
+> *   **Formularios Clínicos (Control de Hemoglobina):** Organizados en una sola columna central para mantener el foco. Utilizan etiquetas superiores (top-aligned labels) para los campos de entrada como fecha y valor (g/dL). Cuentan con un botón primario de "Guardar" y otro secundario "Cancelar" estilo outline[cite: 23].
+> *   **Modales de Acción:** Para prevenir errores, acciones como "Dar de Alta" despliegan una ventana modal superpuesta. El fondo de la pantalla principal se oscurece (overlay), centrando la atención del usuario en el cuadro de diálogo que requiere una confirmación explícita mediante un botón azul[cite: 23].
+> *   **Listados Activos:** Empleo de tablas limpias con separadores de línea sutiles (border-bottom), donde cada fila representa un paciente o un control histórico, acompañado de botones de acción rápida en la columna derecha[cite: 23].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-mockup-04.png" alt="Web Mock-up 04">
+</div>
+
+---
+
+**Web Mock-up 5: Módulo de Comunicación (Consultation)**
+
+> **Descripción Visual:**
+> Interfaz de mensajería sincrónica/asincrónica diseñada bajo el patrón de vista maestra-detalle (master-detail view), dividiendo la pantalla en dos paneles funcionales[cite: 24].
+> 
+> *   **Bandeja Lateral (Izquierda):** Lista de chats activos con buscador integrado. El chat seleccionado se resalta con un fondo sombreado suave, mostrando el nombre del remitente y un extracto del último mensaje[cite: 24].
+> *   **Área de Chat (Derecha):** Presenta una cabecera con el nombre del paciente/apoderado. El historial de conversación utiliza burbujas de texto diferenciadas: las respuestas del profesional usan fondo azul oscuro y texto blanco (alineadas a la derecha), mientras que los mensajes recibidos usan fondo gris claro y texto oscuro (alineadas a la izquierda)[cite: 24].
+> *   **Input y Controles:** En la parte inferior se ubica el área de redacción con un campo de texto amplio y botones para adjuntar archivos y enviar. También incluye modales de advertencia con iconografía roja para confirmar el cierre definitivo de una consulta[cite: 24].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-mockup-05.png" alt="Web Mock-up 05">
+</div>
+
+---
+
+**Web Mock-up 6: Seguimiento de Tratamientos (Treatment Tracking)**
+
+> **Descripción Visual:**
+> Módulo centrado en la visualización de datos de progreso clínico, empleando gráficos integrados directamente en las tarjetas de los pacientes[cite: 25].
+> 
+> *   **Tarjetas de "Mis Tratamientos":** Cada tratamiento activo se representa en una tarjeta amplia. En su interior, además de los datos de dosis y duración, se renderiza un gráfico circular (Donut chart) que cuantifica el porcentaje de adherencia. El color del gráfico (verde, amarillo, rojo) reacciona dinámicamente al porcentaje[cite: 25].
+> *   **Clasificación de Riesgo:** Los listados de pacientes incluyen un identificador semántico contundente: una barra de color vertical gruesa en el borde izquierdo de la fila del paciente, permitiendo escanear rápidamente visualmente quiénes están en estado crítico[cite: 25].
+> *   **Formularios de Inicio:** El registro de un nuevo esquema se divide en bloques visuales dentro de una misma tarjeta, guiando al profesional a seleccionar el suplemento, ingresar la dosificación y establecer la frecuencia[cite: 25].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-mockup-06.png" alt="Web Mock-up 06">
+</div>
+
+---
+
+**Web Mock-up 7: Analítica y Mapa de Calor (Heat Map)**
+
+> **Descripción Visual:**
+> Herramienta administrativa y epidemiológica para visualizar datos geoespaciales. La interfaz maximiza el área de visualización del mapa para el análisis detallado[cite: 26].
+> 
+> *   **Mapa Interactivo:** Componente central que muestra el callejero de la región. Sobre él, se superponen agrupaciones (clusters) circulares semitransparentes. El tamaño del círculo representa el volumen de pacientes, y su color (Rojo, Amarillo, Verde, Azul) representa la categoría de riesgo o estado de adherencia predominante en esa zona[cite: 26].
+> *   **Panel de Control:** En la parte superior, sobre el mapa, se ubican controles de filtrado mediante botones (toggles) en forma de pastilla (pill buttons), permitiendo al usuario activar o desactivar capas de datos (ej. ocultar riesgo bajo para enfocar en riesgo crítico)[cite: 26].
+> *   **Panel de Métricas Laterales:** En algunas vistas, el mapa se acompaña de un panel lateral que lista las postas médicas de la zona visible, acompañadas de barras de progreso lineales que indican el rendimiento porcentual de cada establecimiento[cite: 26].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-mockup-07.png" alt="Web Mock-up 07">
+</div>
+
+---
+
+**Web Mock-up 8: Administración de Postas (Health Facilities)**
+
+> **Descripción Visual:**
+> Módulo administrativo caracterizado por el uso de asistentes paso a paso (wizards) y tablas de gestión de recursos humanos y físicos[cite: 27].
+> 
+> *   **Wizard de Registro:** El proceso de creación de una "Nueva Posta" incorpora una barra de progreso horizontal en la parte superior con pasos numerados (1. Datos, 2. Ubicación, 3. Horarios). Incluye un minimapa interactivo para fijar el pin de ubicación (coordenadas) y selectores de tiempo (time-pickers) amigables para configurar la apertura y cierre por días[cite: 27].
+> *   **Gestión de Personal:** Las pantallas de asignación de enfermeras emplean listas estilo tabla con selectores desplegables (dropdown menus). Los botones de "Guardar" y "Cancelar" se ubican consistentemente en la parte inferior de las tarjetas de formulario[cite: 27].
+> *   **Feedback del Sistema:** Pantallas de éxito con un gran checkmark verde e iconografía confirmando que la posta o el personal han sido registrados y vinculados correctamente en la base de datos[cite: 27].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-mockup-08.png" alt="Web Mock-up 08">
+</div>
 
 ### 4.6.4. Web Applications User Flow Diagrams
 
