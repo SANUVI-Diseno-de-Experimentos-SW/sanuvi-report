@@ -71,6 +71,7 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 | 2.0 | [22/09/2026] | Baca Camargo Vitaly Arturo | Avance Domain-Driven Software Architecture, Software Object-Oriented Design y Database Design  |
 | 2.1 | [23/09/2026] | Damián Pereira, Luis Alberto | Avance Landing Page Wireframe y Software Object-Oriented Design y Landing Page Mock-up  |
 | 2.2 | [24/09/2026] | Peñaranda Caldas, Gabriel Augusto | Avance Style Guidelines  |
+| 2.3 | [28/09/2026] | Apaza bocanegra, Elizabeth Noelia | Avance Web Applications Wireframes, Web Applications Wireflow Diagrams, Web Applications Mock-ups, Web Applications User Flow Diagrams y Web Applications Prototyping   |
 
 <div style="page-break-after: always;"></div>
 
