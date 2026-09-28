@@ -1794,16 +1794,16 @@ Flujos administrativos para gestionar la infraestructura de salud. Se implementa
 
 ### 4.6.2. Web Applications Wireflow Diagrams
 
-Los siguientes diagramas de flujo de baja fidelidad (Wireflows) ilustran las secuencias de interacción clave que el personal de salud (enfermeras) y los administradores realizan dentro de Ferova Clinic. Estos flujos mapean el recorrido del usuario pantalla por pantalla, incluyendo decisiones y acciones críticas para cumplir objetivos específicos (User Goals).
+Los siguientes diagramas de flujo de baja fidelidad (Wireflows) ilustran las secuencias de interacción clave que el personal de salud (enfermeras) y los administradores realizan dentro de Ferova Clinic. Estos diagramas consolidados mapean el recorrido del usuario a través de las distintas pantallas, detallando las decisiones y acciones críticas para cumplir objetivos específicos (User Goals) según el rol del usuario.
 
 ---
 
-**Web Wireflow 1: Visualización de Riesgo Clínico de Paciente**
+**Web Wireflow 1: Flujo de Autenticación y Accesos (IAM)**
 
 > **Relacionado con el User Goal:**
-> Como personal de salud, quiero identificar rápidamente a los pacientes en situación de riesgo desde mi panel principal, para revisar su historial detallado y tomar medidas preventivas.
+> Como usuario (personal de salud o administrador), quiero iniciar sesión, solicitar una cuenta profesional o recuperar mi contraseña de forma segura para acceder a la plataforma.
 
-El flujo inicia en el Panel General (Dashboard), donde el profesional identifica a los pacientes categorizados por niveles de riesgo (Crítico, Moderado, Bajo)[cite: 9]. Al hacer clic en un nivel específico, el sistema filtra y despliega la lista correspondiente de pacientes[cite: 9]. Desde allí, el usuario selecciona un paciente y navega progresivamente por sus detalles clínicos, revisando gráficas de adherencia y evolución de la hemoglobina para un análisis completo de su estado actual[cite: 9].
+Este diagrama ilustra las rutas de entrada al sistema. El flujo principal comienza en la pantalla de inicio de sesión. Si el usuario es nuevo, es derivado al formulario de registro en dos pasos para crear su cuenta profesional. En caso de pérdida de credenciales, el usuario sigue una ruta de recuperación lineal: solicitud mediante correo electrónico, ingreso del código de verificación (OTP) para validar su identidad y, finalmente, la creación de una nueva contraseña, desembocando de nuevo en el acceso principal[cite: 30].
 
 <div align="center">
   <img src="../assets/img/chapter-IV/web-wireflow-01.png" alt="Web Wireflow 01">
@@ -1811,12 +1811,12 @@ El flujo inicia en el Panel General (Dashboard), donde el profesional identifica
 
 ---
 
-**Web Wireflow 2: Asignación de Pacientes**
+**Web Wireflow 2: Flujo de Gestión Clínica (Pacientes, Historial y Tratamientos)**
 
 > **Relacionado con el User Goal:**
-> Como personal de salud, quiero buscar y vincular a un paciente registrado en el sistema a mi lista de atención, para iniciar su seguimiento clínico formal.
+> Como personal de salud, quiero gestionar mi lista de pacientes, registrar nuevos controles de hemoglobina y hacer un seguimiento detallado a sus tratamientos para evaluar su evolución.
 
-El flujo arranca en la sección de pacientes, donde el profesional selecciona la opción para asignar un nuevo paciente y realiza la búsqueda[cite: 10]. El sistema presenta una bifurcación lógica: si el paciente existe, muestra sus datos básicos y permite confirmar la asignación, mostrando una pantalla de éxito; si el paciente no está registrado, se muestra un estado vacío (empty state) indicando que no se encontraron resultados[cite: 10].
+Este extenso diagrama consolida las interacciones principales del rol de enfermería. El recorrido inicia en el Panel General (Dashboard) o en el listado de pacientes. A partir de ahí, se ramifica hacia las vistas de detalle clínico. El flujo detalla cómo el profesional navega para consultar el historial médico, registrar un nuevo control de hemoglobina (desplegando los modales correspondientes), revisar la adherencia del tratamiento en curso y consultar la agenda de citas programadas, conectando transversalmente las herramientas de seguimiento del paciente[cite: 28].
 
 <div align="center">
   <img src="../assets/img/chapter-IV/web-wireflow-02.png" alt="Web Wireflow 02">
@@ -1824,122 +1824,16 @@ El flujo arranca en la sección de pacientes, donde el profesional selecciona la
 
 ---
 
-**Web Wireflow 3: Inicio de Tratamiento**
+**Web Wireflow 3: Flujo Administrativo (Postas y Analítica)**
 
 > **Relacionado con el User Goal:**
-> Como personal de salud, quiero configurar el esquema de medicación de un paciente recién asignado, para que el apoderado reciba las indicaciones en su aplicación móvil.
+> Como coordinador o administrador, quiero gestionar los establecimientos de salud de la red y visualizar la concentración poblacional de riesgo mediante herramientas geoespaciales.
 
-Desde la lista general, el usuario inicia la acción para asignar un tratamiento[cite: 11]. El flujo se divide en distintas rutas de navegación que convergen en el formulario de "Iniciar Tratamiento"[cite: 11]. En este formulario, el profesional define el suplemento, la dosis y la frecuencia; tras guardar, el sistema confirma la acción y redirige a la vista de resumen del esquema creado[cite: 11].
+Este diagrama mapea las tareas exclusivas del rol administrador. Desde el dashboard administrativo, el usuario tiene dos rutas principales. Hacia arriba, el flujo muestra la navegación al "Mapa de Calor" (Heat Map), donde interactúa con los filtros para visualizar la densidad y niveles de riesgo de los pacientes en diversas zonas. Hacia abajo, se ilustra el módulo de gestión de postas: detalla el flujo de 4 pasos (wizard) para registrar un nuevo establecimiento y el proceso para buscar una posta existente con el fin de asignarle personal médico[cite: 29].
 
 <div align="center">
   <img src="../assets/img/chapter-IV/web-wireflow-03.png" alt="Web Wireflow 03">
 </div>
-
----
-
-**Web Wireflow 4: Dar de Alta a un Paciente**
-
-> **Relacionado con el User Goal:**
-> Como personal de salud, quiero registrar el alta médica de un paciente que ha completado exitosamente su esquema o cuyos niveles de hemoglobina se han regularizado, para cerrar su caso.
-
-El profesional navega a su lista de pacientes activos y selecciona la acción "Dar de Alta" para un caso específico[cite: 12]. El sistema despliega un modal superpuesto solicitando la confirmación de la acción para prevenir cierres accidentales[cite: 12]. Al confirmar, el estado del paciente se actualiza en el listado general reflejando su nueva condición[cite: 12].
-
-<div align="center">
-  <img src="../assets/img/chapter-IV/web-wireflow-04.png" alt="Web Wireflow 04">
-</div>
-
----
-
-**Web Wireflow 5: Registro y Actualización de Historial Médico**
-
-> **Relacionado con el User Goal:**
-> Como personal de salud, quiero actualizar la historia clínica del paciente con nuevos datos antropométricos o antecedentes, para mantener su expediente al día.
-
-El flujo detalla el ingreso al perfil del paciente y la navegación hacia la sección del historial médico[cite: 13]. Al elegir actualizar, se abre un formulario detallado donde el usuario ingresa la nueva información[cite: 13]. Tras completar los datos, se confirma el guardado y el sistema refleja la actualización en la vista consolidada del historial del paciente[cite: 13].
-
-<div align="center">
-  <img src="../assets/img/chapter-IV/web-wireflow-05.png" alt="Web Wireflow 05">
-</div>
-
----
-
-**Web Wireflow 6: Control de Hemoglobina**
-
-> **Relacionado con el User Goal:**
-> Como personal de salud, quiero registrar un nuevo valor de hemoglobina tras un tamizaje, para permitir que el sistema recalcule el nivel de riesgo clínico.
-
-Desde la vista del paciente, el profesional accede a la pestaña de controles y selecciona agregar un nuevo registro[cite: 14]. El sistema muestra un formulario donde se ingresa la fecha y el valor en g/dL de la muestra obtenida[cite: 14]. Tras la confirmación, el nuevo valor se añade a la lista histórica y actualiza las gráficas de evolución[cite: 14].
-
-<div align="center">
-  <img src="../assets/img/chapter-IV/web-wireflow-06.png" alt="Web Wireflow 06">
-</div>
-
----
-
-**Web Wireflow 7: Gestión de Citas**
-
-> **Relacionado con el User Goal:**
-> Como personal de salud, quiero revisar la agenda de atenciones programadas, para organizar mi carga de trabajo diaria en la posta médica.
-
-El usuario accede al módulo de Citas desde la navegación global, donde el sistema presenta una bifurcación según los filtros aplicados[cite: 15]. El flujo muestra la vista con el listado completo de citas programadas y, como alternativa, el estado de pantalla vacía (empty state) que indica que no hay pacientes citados para los parámetros seleccionados[cite: 15].
-
-<div align="center">
-  <img src="../assets/img/chapter-IV/web-wireflow-07.png" alt="Web Wireflow 07">
-</div>
-
----
-
-**Web Wireflow 8: Flujo de Consultas (Comunicación)**
-
-> **Relacionado con el User Goal:**
-> Como personal de salud, quiero leer y responder los mensajes enviados por los apoderados, para brindar soporte remoto y asegurar la correcta administración del suplemento.
-
-El profesional visualiza los mensajes entrantes en la bandeja de consultas[cite: 16]. Al seleccionar un chat específico, se despliega la vista de conversación donde puede redactar una respuesta[cite: 16]. El flujo incluye acciones complementarias, como modales de confirmación para cerrar la consulta o enviar el mensaje, actualizando así el hilo de la conversación[cite: 16].
-
-<div align="center">
-  <img src="../assets/img/chapter-IV/web-wireflow-08.png" alt="Web Wireflow 08">
-</div>
-
----
-
-**Web Wireflow 9: Flujos de "Mis Tratamientos" (Monitoreo)**
-
-> **Relacionado con el User Goal:**
-> Como personal de salud, quiero supervisar el progreso general de todos los tratamientos activos bajo mi cargo, para identificar rápidamente los casos de baja adherencia.
-
-El usuario ingresa a la vista "Mis Tratamientos", visualizando las tarjetas resumen de cada caso activo[cite: 17]. El flujo muestra cómo el profesional puede seleccionar un tratamiento, abrir un modal de edición para ajustar parámetros o visualizar vistas detalladas del estado de adherencia del paciente seleccionado[cite: 17].
-
-<div align="center">
-  <img src="../assets/img/chapter-IV/web-wireflow-09.png" alt="Web Wireflow 09">
-</div>
-
----
-
-**Web Wireflow 10: Registro de Posta (Rol Administrador)**
-
-> **Relacionado con el User Goal:**
-> Como administrador del sistema, quiero dar de alta un nuevo establecimiento de salud, para integrarlo a la red de Ferova Clinic y permitir la asignación de personal.
-
-Este flujo exclusivo para administradores inicia con la selección de "Nueva Posta"[cite: 18]. El usuario navega por un asistente (wizard) secuencial: ingresa datos generales, ubica la posta en un mapa, define horarios y asigna enfermeras al centro[cite: 18]. El proceso culmina con el guardado exitoso y la aparición del nuevo registro en el listado de establecimientos[cite: 18].
-
-<div align="center">
-  <img src="../assets/img/chapter-IV/web-wireflow-10.png" alt="Web Wireflow 10">
-</div>
-
----
-
-**Web Wireflow 11: Flujo Heat Map (Rol Administrador)**
-
-> **Relacionado con el User Goal:**
-> Como administrador, quiero visualizar el mapa de calor de las postas médicas, para analizar geográficamente la concentración de pacientes según su nivel de riesgo clínico.
-
-El flujo inicia en el panel general del administrador (Dashboard), donde se observan métricas globales[cite: 19]. Desde allí, el usuario navega hacia el módulo del "Mapa de Calor"[cite: 19]. El sistema presenta una bifurcación interactiva que permite visualizar el mapa con diferentes agrupaciones de datos, mostrando círculos de colores superpuestos (clusters) que representan la densidad y el estado de riesgo de los pacientes en diversas zonas[cite: 19].
-
-<div align="center">
-  <img src="../assets/img/chapter-IV/web-wireflow-11.png" alt="Web Wireflow 11">
-</div>
-
-### 4.6.3. Web Applications Mock-ups
 
 ### 4.6.3. Web Applications Mock-ups
 
