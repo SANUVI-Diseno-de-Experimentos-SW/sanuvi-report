@@ -64,6 +64,14 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 | 1.3 | [08/09/2026] | Baca Camargo, Vitaly Arturo, Peñaranda Caldas, Gabriel Augusto, Apaza bocanegra, Elizabeth Noelia y Quijandria Araneda, Vicente | Incorporación de Entrevistas por cada segmento y análisis de entrevistas  |
 | 1.4 | [10/09/2026] | Baca Camargo, Vitaly Arturo | Incorporación de Needfinding y creacion de las User Personas |
 | 1.5 | [11/09/2026] | Baca Camargo, Vitaly Arturo | Incorporación de Ubiquitous Language|
+| 1.6 | [15/09/2026] | Baca Camargo, Vitaly Arturo, Damián Pereira, Luis Alberto | Incorpacion de Analisis Competitivo y Estrategias y tacticas contra los competidores|
+| 1.7 | [18/09/2026] | Baca Camargo, Vitaly Arturo|  Avance del Capítulo III  To-Be Scenario Mapping, User Stories, Product Backlog y Impact Mapping |
+| 1.8 | [20/09/2026] | Baca Camargo, Vitaly Arturo|  Avance del Mobile Applications Wireframes, Mobile Applications Wireflow Diagrams, Mobile Applications Mock-ups,  Mobile Applications User Flow Diagrams y Mobile Applications Prototyping |
+| 1.9 | [21/09/2026] | Quijandria Araneda, Vicente | Avance Organization Systems, Labeling Systems, SEO Tags and Meta Tags, Searching Systems y Navigation Systems  |
+| 2.0 | [22/09/2026] | Baca Camargo Vitaly Arturo | Avance Domain-Driven Software Architecture, Software Object-Oriented Design y Database Design  |
+| 2.1 | [23/09/2026] | Damián Pereira, Luis Alberto | Avance Landing Page Wireframe y Software Object-Oriented Design y Landing Page Mock-up  |
+| 2.2 | [24/09/2026] | Peñaranda Caldas, Gabriel Augusto | Avance Style Guidelines  |
+| 2.3 | [28/09/2026] | Apaza bocanegra, Elizabeth Noelia | Avance Web Applications Wireframes, Web Applications Wireflow Diagrams, Web Applications Mock-ups, Web Applications User Flow Diagrams y Web Applications Prototyping   |
 
 <div style="page-break-after: always;"></div>
 
