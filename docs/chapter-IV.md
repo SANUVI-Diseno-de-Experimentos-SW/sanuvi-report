@@ -1672,9 +1672,125 @@ Además, se grabó un video donde se explican los principales flujos de interacc
 
 ### 4.6.1. Web Applications Wireframes
 
-<img src="../assets/img/chapter-IV/web-wireframes.png" alt="Web Wireframes">
+Los siguientes wireframes corresponden a la aplicación web de **Ferova Clinic**, una plataforma de gestión clínica y administrativa diseñada específicamente para el personal de salud y administradores de postas médicas. El objetivo de estos esquemas de baja fidelidad es definir la estructura de la información, la disposición de los elementos y los flujos de trabajo sin distracciones visuales, garantizando que la herramienta responda a las altas exigencias operativas de los usuarios.
 
-<!-- COMPLETAR -->
+#### Principios Aplicados
+
+**- Eficiencia operativa y navegación (Dashboard Layout):**
+La interfaz adopta una estructura robusta de panel de control, utilizando una barra lateral izquierda (Sidebar) persistente y una barra superior (Topbar). Esto permite al personal cambiar rápidamente entre módulos (pacientes, citas, consultas) sin perder el contexto de su sesión, reduciendo la carga cognitiva y el número de clics.
+
+**- Jerarquía de datos clínicos:**
+El diseño prioriza la visibilidad de la información crítica por encima del pliegue (above the fold). Elementos como los indicadores de riesgo de los pacientes, el estado de adherencia y las citas del día se posicionan estratégicamente para que los profesionales puedan identificar urgencias y tomar decisiones inmediatas con un simple escaneo visual.
+
+**- Diseño modular para resoluciones de escritorio:**
+A diferencia del diseño móvil, Ferova Clinic aprovecha el espacio horizontal de los monitores de escritorio. Se emplean componentes modulares como tarjetas (cards) para agrupar métricas, tablas de datos expansibles para el listado de pacientes, y vistas divididas (master-detail) para el módulo de mensajería, optimizando la lectura masiva de datos.
+
+**- Flujos de tareas secuenciales (Wizards):**
+Para minimizar errores en el ingreso de información médica o administrativa, los procesos complejos —como el registro de una nueva posta de salud, la configuración de un esquema de tratamiento o la actualización de un historial clínico— se estructuran en pasos lógicos y secuenciales, guiando al usuario de principio a fin de manera clara.
+
+---
+
+### Módulo IAM (Identity and Access Management)
+
+#### Pantallas de Autenticación y Recuperación
+
+**Descripción:**
+Panel de acceso y gestión de credenciales para el personal de salud. Se observa una estructura centrada que incluye el inicio de sesión, el formulario de registro para nuevos profesionales (con campos para datos personales e institucionales) y el flujo paso a paso para la recuperación de contraseña (solicitud de código y creación de nueva clave)[cite: 1].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-wireframes-01.png" alt="Web Wireframes-01">
+</div>
+
+---
+
+### Módulo de Home / Dashboard
+
+#### Pantalla Principal (Panel General)
+
+**Descripción:**
+Panel de control principal (Dashboard) diferenciado por roles. La vista superior (orientada a enfermeras) destaca el número de pacientes en riesgo, citas programadas y accesos rápidos a tareas frecuentes. La vista inferior (orientada a coordinadores) muestra métricas globales, porcentajes de adherencia y un listado de estado de las diferentes postas médicas[cite: 2].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-wireframes-02.png" alt="Web Wireframes-02">
+</div>
+
+---
+
+### Módulo de Agenda de Citas (Healthy-Management)
+
+#### Pantalla de Agenda de Citas
+
+**Descripción:**
+Gestión centralizada de las atenciones programadas. Presenta un buscador superior, tarjetas de resumen con el total de citas y próximas atenciones, seguido de una cuadrícula con el listado de pacientes citados. Cada registro indica la hora, el estado de la cita mediante un badge (ej. "Confirmada") y los datos de la posta médica[cite: 3].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-wireframes-03.png" alt="Web Wireframes-03">
+</div>
+
+---
+
+### Módulo de Tratamientos (Treatment - Tracking)
+
+#### Pantallas de Inicio y Seguimiento de Tratamiento
+
+**Descripción:**
+Módulo orientado al control de los esquemas de medicación. Se visualizan formularios para iniciar un nuevo tratamiento, un panel para clasificar el tipo de riesgo de los pacientes y una vista de "Mis Tratamientos" que permite al profesional monitorear el progreso y adherencia de los casos activos mediante indicadores visuales[cite: 4].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-wireframes-04.png" alt="Web Wireframes-04">
+</div>
+
+---
+
+### Módulo de Gestión de Pacientes (Patient Management)
+
+#### Pantallas de Control de Hemoglobina y Registro Médico
+
+**Descripción:**
+Dedicado a la gestión clínica individual. Incluye flujos para asignar pacientes a profesionales y dar de alta. La sección principal detalla formularios extensos para registrar nuevos controles de hemoglobina, actualizar métricas (peso, talla) y consultar el historial cronológico de las evaluaciones clínicas previas del menor[cite: 5].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-wireframes-05.png" alt="Web Wireframes-05">
+</div>
+
+---
+
+### Módulo de Comunicación (Consultation)
+
+#### Pantalla de Bandeja de Consultas
+
+**Descripción:**
+Interfaz para la comunicación directa con los apoderados. Utiliza un patrón de vista dividida: a la izquierda, una bandeja de entrada con el listado de pacientes y un buscador; a la derecha, el área de conversación detallada (chat) donde el profesional puede revisar el historial de mensajes y redactar respuestas[cite: 6].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-wireframes-06.png" alt="Web Wireframes-06">
+</div>
+
+---
+
+### Módulo de Analítica y Mapas
+
+#### Pantalla de Mapa de Calor
+
+**Descripción:**
+Herramienta de análisis geográfico para coordinadores y administradores. Se visualiza un mapa central de gran tamaño diseñado para mostrar la concentración de pacientes según su nivel de riesgo (Crítico, Moderado, Bajo), complementado por un panel lateral que detalla métricas específicas por cada establecimiento de salud[cite: 7].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-wireframes-07.png" alt="Web Wireframes-07">
+</div>
+
+---
+
+### Módulo de Administración de Postas (Health Facilities)
+
+#### Pantallas de Registro y Gestión de Postas
+
+**Descripción:**
+Flujos administrativos para gestionar la infraestructura de salud. Se implementa un patrón secuencial (wizard) de 4 pasos para registrar una "Nueva Posta" (datos, ubicación, horario y asignación de personal). También incluye vistas para buscar postas existentes y asignar o reasignar enfermeras a los distintos centros[cite: 8].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-wireframes-08.png" alt="Web Wireframes-08">
+</div>
 
 ### 4.6.2. Web Applications Wireflow Diagrams
 
