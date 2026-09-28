@@ -1301,7 +1301,7 @@ Asimismo, se implementaron interacciones responsivas, estados visuales, validaci
 
 Además, se grabó un video donde se explican los principales flujos de interacción del prototipo móvil de FerovaFamily, mostrando cómo las decisiones de diseño se reflejan en la experiencia del apoderado y en las diferentes funcionalidades de seguimiento y gestión disponibles en la aplicación.
 
-**Enlace del video:** [URL de Microsoft Stream]
+**Enlace del video:** https://me-l.co/mqsu78sl
 
 ### 4.5.2. iOS Mobile Applications Prototyping
 
@@ -1311,7 +1311,7 @@ Asimismo, se implementaron interacciones adaptadas al contexto de iOS, como esta
 
 Además, se grabó un video donde se explican los principales flujos de interacción del prototipo iOS, mostrando cómo las decisiones de diseño se reflejan en la experiencia del apoderado y cómo se adaptan a las convenciones y expectativas de los usuarios de esta plataforma.
 
-**Enlace del video:** [URL de Microsoft Stream]
+**Enlace del video:** https://me-l.co/m22cabc2
 
 ## 4.6. Web Applications UX/UI Design
 
