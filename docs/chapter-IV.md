@@ -293,16 +293,6 @@ La experiencia móvil en iOS debe mantener interacciones suaves, responsivas y c
 * Uso de colores en combinación con iconos/textos para transmitir información (no solo color)
 * Soporte para Dynamic Type para escalado de texto
 
-<div align="center">
-  <img src="../assets/img/chapter-IV/ios-1.png">
-</div>
-
----
-
-<div align="center">
-  <img src="../assets/img/chapter-IV/ios-2.png">
-</div>
-
 
 #### 4.1.3.2. Android Mobile Style Guidelines
 
@@ -1310,6 +1300,15 @@ En cuanto a la arquitectura de información, el prototipo móvil de FerovaFamily
 Asimismo, se implementaron interacciones adaptadas al contexto de iOS, como estados de selección, transiciones entre pantallas y retroalimentación visual ante las acciones del usuario. También se incorporaron validaciones visuales en formularios y mensajes de confirmación que permiten comprender el resultado de las acciones realizadas. Estos elementos aseguran que tanto el acceso a la información como la ejecución de tareas se realicen de manera clara y eficiente, manteniendo una experiencia coherente con las convenciones de la plataforma iOS.
 
 Además, se grabó un video donde se explican los principales flujos de interacción del prototipo iOS, mostrando cómo las decisiones de diseño se reflejan en la experiencia del apoderado y cómo se adaptan a las convenciones y expectativas de los usuarios de esta plataforma.
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/ios-1.png">
+</div>
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/ios-2.png">
+</div>
+
 
 **Enlace del video:** https://me-l.co/m22cabc2
 
