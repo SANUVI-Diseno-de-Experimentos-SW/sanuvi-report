@@ -1170,6 +1170,10 @@ Los siguientes diagramas representan los principales flujos de interacción de l
 > Como apoderado, quiero confirmar las dosis programadas de mi paciente, para registrar el cumplimiento de su
 > tratamiento y realizar su seguimiento.
 
+ <div align="center">
+  <img src="../assets/img/chapter-IV/mockup flow/Confirmacion de dosis Flow.png" width=450>
+</div>
+
 
 Este flujo inicia cuando el apoderado accede a la pantalla principal de FerovaFamily y consulta las dosis programadas del paciente seleccionado. Desde esta sección puede confirmar una dosis correspondiente al tratamiento. Una vez realizada la confirmación, la dosis queda registrada y puede ser consultada posteriormente en el historial.
 
@@ -1181,6 +1185,10 @@ Este flujo inicia cuando el apoderado accede a la pantalla principal de FerovaFa
 > Como apoderado, quiero consultar el historial de dosis de mi paciente,
 > para verificar las dosis que han sido confirmadas u omitidas durante su tratamiento.
 
+ <div align="center">
+  <img src="../assets/img/chapter-IV/mockup flow/Hisorial de dosis Flow.png" width=450>
+</div>
+
 Este flujo inicia cuando el apoderado selecciona la opción “Ver historial” desde la sección de dosis. La aplicación muestra los registros correspondientes a diferentes fechas, permitiendo identificar las dosis confirmadas y omitidas.
 
 ---
@@ -1190,6 +1198,10 @@ Este flujo inicia cuando el apoderado selecciona la opción “Ver historial” 
 > **Relacionado con el User Goal:**
 > Como apoderado, quiero registrar los alimentos consumidos por mi paciente,
 > para llevar un seguimiento de su alimentación y del hierro aportado por los alimentos.
+
+ <div align="center">
+  <img src="../assets/img/chapter-IV/mockup flow/Registrar y Busqueda de alimentos.png" width=450>
+</div>
 
 Este flujo inicia desde el Diario Nutricional. El apoderado selecciona “Nueva entrada”, busca el alimento correspondiente, selecciona el alimento, indica la cantidad consumida y confirma el registro. La información se incorpora al diario nutricional.
 
@@ -1201,6 +1213,11 @@ Este flujo inicia desde el Diario Nutricional. El apoderado selecciona “Nueva 
 > Como apoderado, quiero registrar a un nuevo paciente,
 > para gestionar su información y realizar el seguimiento de su tratamiento.
 
+ <div align="center">
+  <img src="../assets/img/chapter-IV/mockup flow/Registro de Paciente Flow.png" width=450>
+</div>
+
+
 El flujo inicia cuando el apoderado selecciona “Agregar” en la sección “Mis Niños”. Luego completa los datos solicitados, como nombres, apellidos, fecha de nacimiento, sexo, peso y talla. Finalmente, selecciona “Registrar a mi pequeño” y el paciente queda incorporado a su cuenta.
 
 ---
@@ -1210,6 +1227,10 @@ El flujo inicia cuando el apoderado selecciona “Agregar” en la sección “M
 > **Relacionado con el User Goal:**
 > Como apoderado, quiero reservar una cita para mi paciente,
 > para programar su atención en una posta de salud disponible.
+
+ <div align="center">
+  <img src="../assets/img/chapter-IV/mockup flow/Reserva de Cita Flow.png" width=450>
+</div>
 
 El flujo inicia desde “Ver Postas Cercanas”. El apoderado consulta las postas disponibles, selecciona una posta y revisa sus detalles. Posteriormente selecciona “Reservar cita”, elige al paciente, selecciona una fecha y un horario disponible y confirma la reserva.
 
@@ -1221,6 +1242,10 @@ El flujo inicia desde “Ver Postas Cercanas”. El apoderado consulta las posta
 > Como apoderado, quiero consultar el historial nutricional de mi paciente,
 > para revisar los registros de alimentación y el hierro absorbido en diferentes fechas.
 
+ <div align="center">
+  <img src="../assets/img/chapter-IV/mockup flow/Ver Historial Nutricional Flow.png" width=450>
+</div>
+
 El flujo inicia desde “Diario Nutricional”, donde el apoderado selecciona “Ver historial”. La aplicación muestra los registros nutricionales organizados por fecha, incluyendo información sobre el hierro absorbido y los alimentos registrados.
 
 ---
@@ -1230,6 +1255,10 @@ El flujo inicia desde “Diario Nutricional”, donde el apoderado selecciona �
 > **Relacionado con el User Goal:**
 > Como apoderado, quiero consultar el progreso y las medallas de mi paciente,
 > para conocer su evolución durante el seguimiento del tratamiento y visualizar los logros obtenidos.
+
+ <div align="center">
+  <img src="../assets/img/chapter-IV/mockup flow/Ver Progreso y Medallas de un paciente.png" width=450>
+</div>
 
 El flujo inicia desde la pantalla principal, seleccionando “Mis Logros y Medallas”. La aplicación muestra información relacionada con el progreso, rachas, evolución de hemoglobina y medallas obtenidas o pendientes de desbloquear.
 
@@ -1241,6 +1270,11 @@ El flujo inicia desde la pantalla principal, seleccionando “Mis Logros y Medal
 > Como apoderado, quiero cancelar una cita de mi paciente,
 > para gestionar las citas programadas cuando ya no sea posible asistir.
 
+ <div align="center">
+  <img src="../assets/img/chapter-IV/mockup flow/Cancelar Cita Flow.png" width=450>
+</div>
+
+
 El flujo inicia desde la sección “Citas”, donde el apoderado selecciona una cita previamente registrada. Luego selecciona “Cancelar cita” y la aplicación muestra una ventana de confirmación. Si confirma la operación, la cita pasa al estado de cancelada.
 
 ---
@@ -1250,6 +1284,10 @@ El flujo inicia desde la sección “Citas”, donde el apoderado selecciona una
 > **Relacionado con el User Goal:**
 > Como apoderado, quiero comunicarme con el personal de salud,
 > para realizar consultas relacionadas con el seguimiento de mi paciente.
+
+ <div align="center">
+  <img src="../assets/img/chapter-IV/mockup flow/Comunicacion Flow.png" width=450>
+</div>
 
 El flujo inicia desde la sección “Consultas”, donde el apoderado puede visualizar las consultas disponibles y seleccionar una conversación. Dentro de ella puede revisar los mensajes existentes y enviar nuevos mensajes al personal de salud.
 
