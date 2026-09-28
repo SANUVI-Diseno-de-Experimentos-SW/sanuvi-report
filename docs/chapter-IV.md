@@ -639,7 +639,7 @@ Para elaborar nuestro prototipo de baja fidelidad, hemos utilizado la plataforma
 
 
 
-<img src="assets/img/chapter-IV/Landing Page/LP Mock Up.png" alt="Landing Page Wireframe">
+<img src="../assets/img/chapter-IV/Landing Page/LP Mock Up.png" alt="Landing Page Wireframe">
 
 ### 4.3.2. Landing Page Mock-up
 
@@ -651,36 +651,36 @@ Hemos finalizado con éxito el mock-up de la página de inicio, aplicando los pr
   </a>
 </p>
 
-<img src="assets/img/chapter-IV/Landing Page/LP Wireframe.png" alt="Landing Page Mock Up">
+<img src="../assets/img/chapter-IV/Landing Page/LP Wireframe.png" alt="Landing Page Mock Up">
 
 **Segmentos de la Landing Page**
 
-<img src="assets/img/chapter-IV/Landing Page/LP Aplicación.png" alt="Landing Page Aplicación">
+<img src="../assets/img/chapter-IV/Landing Page/LP Aplicación.png" alt="Landing Page Aplicación">
 
 **La aplicación** <br>
 Es una app que ayuda a controlar y dar seguimiento al tratamiento de la anemia, facilitando el registro de dosis, el monitoreo y la comunicación con personal de salud. <br>
 
-<img src="assets/img/chapter-IV/Landing Page/LP Aplicación.png" alt="Landing Page Aplicación">
+<img src="../assets/img/chapter-IV/Landing Page/LP Aplicación.png" alt="Landing Page Aplicación">
 
 **El problema** <br>
 La anemia infantil sigue siendo alta en Perú, principalmente por el abandono del tratamiento y la falta de información y seguimiento adecuado.
 <br>
-<img src="assets/img/chapter-IV/Landing Page/LP Problema.png" alt="Landing Page Problema">
+<img src="../assets/img/chapter-IV/Landing Page/LP Problema.png" alt="Landing Page Problema">
 
 **Las funcionalidades** <br>
 Incluye registro de dosis, recordatorios, monitoreo del progreso, teleconsultas e información nutricional para apoyar el tratamiento.
 <br>
-<img src="assets/img/chapter-IV/Landing Page/LP Funcionalidades.png" alt="Landing Page Funcionalidades">
+<img src="../assets/img/chapter-IV/Landing Page/LP Funcionalidades.png" alt="Landing Page Funcionalidades">
 
 **Público objetivo** <br>
 Está dirigida a cuidadores de niños y personal de salud, priorizando simplicidad para usuarios y herramientas de seguimiento para profesionales.
 <br>
-<img src="assets/img/chapter-IV/Landing Page/LP Segmentos.png" alt="Landing Page Segmentos">
+<img src="../assets/img/chapter-IV/Landing Page/LP Segmentos.png" alt="Landing Page Segmentos">
 
 **Testimonios** <br>
 Los usuarios destacan que la app mejora la organización del tratamiento y facilita el seguimiento, generando confianza en su uso.
 <br>
-<img src="assets/img/chapter-IV/Landing Page/LP Testimonios.png" alt="Landing Page Testimonios">
+<img src="../assets/img/chapter-IV/Landing Page/LP Testimonios.png" alt="Landing Page Testimonios">
 
 ## 4.4. Mobile Applications UX/UI Design
 
