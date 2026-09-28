@@ -1298,7 +1298,7 @@ Además, se grabó un video donde se explican los principales flujos de interacc
 <div align="center">
   <img src="../assets/img/chapter-IV/androind-2.png">
 </div>
-
+<br>
 
 **Enlace del video:** https://me-l.co/mqsu78sl
 
@@ -1318,6 +1318,7 @@ Además, se grabó un video donde se explican los principales flujos de interacc
   <img src="../assets/img/chapter-IV/ios-2.png">
 </div>
 
+ <br>
 
 **Enlace del video:** https://me-l.co/m22cabc2
 
