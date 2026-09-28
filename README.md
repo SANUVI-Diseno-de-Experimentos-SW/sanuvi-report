@@ -64,6 +64,9 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 | 1.3 | [08/09/2026] | Baca Camargo, Vitaly Arturo, Peñaranda Caldas, Gabriel Augusto, Apaza bocanegra, Elizabeth Noelia y Quijandria Araneda, Vicente | Incorporación de Entrevistas por cada segmento y análisis de entrevistas  |
 | 1.4 | [10/09/2026] | Baca Camargo, Vitaly Arturo | Incorporación de Needfinding y creacion de las User Personas |
 | 1.5 | [11/09/2026] | Baca Camargo, Vitaly Arturo | Incorporación de Ubiquitous Language|
+| 1.6 | [15/09/2026] | Baca Camargo, Vitaly Arturo, Damián Pereira, Luis Alberto | Incorpacion de Analisis Competitivo y Estrategias y tacticas contra los competidores|
+| 1.7 | [18/09/2026] | Baca Camargo, Vitaly Arturo|  Avance del Capítulo III  To-Be Scenario Mapping, User Stories, Product Backlog y Impact Mapping |
+| 1.8 | [20/09/2026] | Baca Camargo, Vitaly Arturo|  Avance del Mobile Applications Wireframes, Mobile Applications Wireflow Diagrams, Mobile Applications Mock-ups,  Mobile Applications User Flow Diagrams y Mobile Applications Prototyping |
 
 <div style="page-break-after: always;"></div>
 
