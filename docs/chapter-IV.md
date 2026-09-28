@@ -1291,6 +1291,15 @@ Asimismo, se implementaron interacciones responsivas, estados visuales, validaci
 
 Además, se grabó un video donde se explican los principales flujos de interacción del prototipo móvil de FerovaFamily, mostrando cómo las decisiones de diseño se reflejan en la experiencia del apoderado y en las diferentes funcionalidades de seguimiento y gestión disponibles en la aplicación.
 
+<div align="center">
+  <img src="../assets/img/chapter-IV/androind-1.png">
+</div>
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/androind-2.png">
+</div>
+
+
 **Enlace del video:** https://me-l.co/mqsu78sl
 
 ### 4.5.2. iOS Mobile Applications Prototyping
