@@ -293,18 +293,100 @@ La experiencia móvil en iOS debe mantener interacciones suaves, responsivas y c
 * Uso de colores en combinación con iconos/textos para transmitir información (no solo color)
 * Soporte para Dynamic Type para escalado de texto
 
-<div align="center">
-  <img src="../assets/img/chapter-IV/ios-1.png">
-</div>
-
----
-
-<div align="center">
-  <img src="../assets/img/chapter-IV/ios-2.png">
-</div>
-
-
 #### 4.1.3.2. Android Mobile Style Guidelines
+ 
+En esta subsección se definen los estándares visuales, funcionales y de interacción aplicados a la versión móvil de Ferova Family para dispositivos Android, fundamentados en las especificaciones de **Material Design 3 (Material You)** de Google. Estos lineamientos garantizan una experiencia ergonómica, accesible y perfectamente integrada con el ecosistema de Android en una amplia variedad de fabricantes y densidades de pantalla habituales en el Perú (smartphones con proporciones 20:9 y 19.5:9, resoluciones FHD+ y densidades xxhdpi), optimizando el aprovechamiento del espacio frente a la barra de estado superior (*punch-hole* o muesca de cámara frontal) y la barra inferior de navegación por gestos del sistema.
+ 
+**Sistema de Rejilla y Layout Android**
+ 
+Para garantizar una experiencia visual ordenada, predecible y adaptable a la fragmentación de pantallas en Android, la interfaz de Ferova Family implementa una cuadrícula modular basada en columnas verticales y márgenes flexibles:
+ 
+* **Formato de pantalla Android:** Las interfaces se estructuran para proporciones verticales comunes en Android (20:9, 19.5:9), incorporando márgenes seguros superiores (*insets*) para evitar solapamientos con la barra de estado del sistema, iconos de conectividad y la cámara frontal perforada.
+* **Distribución en una columna vertical:** Toda la información clave (acceso, diario nutricional, citas de control, consultas con especialistas y avance de hemoglobina) se despliega en un flujo vertical continuo, minimizando el esfuerzo de interacción y facilitando el escaneo visual rápido.
+* **Espaciado lateral estandarizado:** Se aplican márgenes internos uniformes de 16-20dp a ambos lados de la pantalla, asegurando que tarjetas, textos y botones mantengan una separación prudente respecto a los bordes físicos del dispositivo.
+* **Cards centradas y estructuradas:** Los contenedores principales (tarjetas de "Mis Niños", "Postas Cercanas", "Historial Nutricional" y "Citas") se presentan centrados con un ancho controlado, bordes definidos y espaciado vertical de 12-16dp entre bloques para brindar claridad compositiva.
+* **Área segura para navegación inferior:** Se reserva un espacio inferior de 80dp de altura para alojar la barra de navegación de Material 3 (*M3 Navigation Bar*), respetando los márgenes de la barra de navegación por gestos nativa de Android para evitar activaciones involuntarias.
+ 
+**Componentes de Interfaz Android (Material 3)**
+ 
+* **Botones principales (Filled Buttons M3):** Las acciones prioritarias como **Registrarse**, **Iniciar Sesión**, **Ver detalles**, **Confirmar Reserva**, **Enviar Consulta** y **Confirmar Dosis** se implementan como botones rellenos de Material 3 en el color institucional de Ferova Family (#8B2E3B / #7C0303). Cuentan con altura estándar de 48dp (cumpliendo el touch target mínimo), esquinas redondeadas con radio de 20-24dp (o forma de píldora completa M3), texto en blanco con peso semibold y efecto táctil *Ripple* inmediato al pulsar.
+* **Botones secundarios (Outlined y Text Buttons M3):** Acciones secundarias como "Ver más información", "Volver al inicio" o "Editar" utilizan botones delineados con borde de 1.5dp en color institucional o neutro sobre fondo transparente, o botones de texto plano para acciones terciarias de baja fricción.
+* **Botón de Acción Flotante (Floating Action Button - FAB):** En pantallas como Diario Nutricional y Tratamiento se incorpora un FAB (estándar de 56×56dp o extendido) en la esquina inferior derecha o centrado, con fondo en color secundario o institucional, para la acción más recurrente del cuidador: "Registrar Dosis" o "Nueva Consulta".
+* **Cards informativas (Material Cards):** Las tarjetas emplean el componente *OutlinedCard* o *ElevatedCard* de Material 3, con fondos blancos (#FFFFFF), radio de curvatura de 12-16dp, bordes tenues de 1dp en tono neutro (#CCCCCC) y elevación tonal sutil (Level 1) que evita sombras pesadas y sobrecargas visuales. Se utilizan para fichas de niños, resumen de tratamientos y listado de postas de salud.
+* **Formularios y campos de texto (Text Fields M3):** Los formularios de inicio de sesión, registro de pacientes y consultas emplean *Outlined Text Fields* con fondo blanco o gris claro (#F5F5F5), etiquetas flotantes (*floating labels*), radio de curvatura de 8-12dp, soporte para iconos de inicio/fin (como ver u ocultar contraseña) y mensajes de soporte o error contextuales en la parte inferior.
+* **Badges y Chips de Estado (Material 3 Chips):** Se utilizan *Filter Chips* y *Assist Chips* compactos para clasificar el estado de citas y tratamientos (Activo, Confirmada, Cancelada, Omitida). Se diferencian cromáticamente: verde para activo/confirmado, gris neutro para pendiente y rojo para cancelado/omitido, acompañados de texto explícito y esquinas redondeadas de 8dp.
+* **Iconos y avatares:** Los perfiles de usuarios (niños registrados y especialistas médicos) se muestran en avatares circulares de 48-64dp con fondos en tonos pastel diferenciados. Los iconos corresponden a la biblioteca de **Material Symbols (Rounded)**, manteniendo un grosor de trazo uniforme y coherencia cromática con la identidad visual.
+* **Componentes de mapa interactivo:** En la vista de "Postas Cercanas", el mapa integrado mediante Google Maps API despliega marcadores personalizados en color rojo oscuro con el icono de salud distintivo de Ferova Family, sobre un mapa con estilo visual simplificado que resalta vías de acceso y centros médicos.
+* **Indicadores de progreso (Progress Indicators M3):** Para el monitoreo de absorción de hierro y cumplimiento de metas se utilizan indicadores circulares (*CircularProgressIndicator*) y lineales (*LinearProgressIndicator*) con anillo en color rojo institucional sobre riel de fondo en gris claro, mostrando el valor numérico porcentual en el centro o al costado.
+* **Hojas modales inferiores (Modal Bottom Sheets M3):** Para tareas rápidas como el registro de gotas de sulfato ferroso, selección de síntomas o confirmación de horarios, se despliegan *Bottom Sheets* nativas de Material 3 con esquinas superiores redondeadas de 28dp y barra indicadora de arrastre (*drag handle*), permitiendo al usuario completar la acción sin perder el contexto de la vista principal.
+* **Barras de notificación temporal (Snackbars M3):** Tras registrar una dosis o agendar una cita, se muestra un *Snackbar* emergente en la parte inferior de la pantalla con mensaje breve y botón interactivo de deshacer (*"Dosis de 5 gotas registrada para Matías. [DESHACER]"*), asegurando tolerancia a fallos y tranquilidad al cuidador.
+ 
+**Navegación Android**
+ 
+* **Header superior (M3 Top App Bar):** Cada pantalla incorpora una barra superior consistente (variantes *Center-Aligned Top App Bar* o *Small Top App Bar*):
+  - Botón de navegación hacia atrás (flecha nativa de Android) en el extremo izquierdo, integrado plenamente con el gesto predictivo de retroceso (*Predictive Back Gesture*) de Android.
+  - Título de la pantalla en tipografía semibold y color institucional (#8B2E3B / #7C0303).
+  - Iconos de acción secundaria (menú contextual de tres puntos verticales o botón de notificaciones) en el extremo derecho cuando corresponda.
+* **Barra de navegación inferior (M3 Navigation Bar):** Mantiene fijas en la base las 4 opciones cardinales de la aplicación:
+  - **Inicio:** Resumen del estado de salud y recordatorio de la próxima dosis.
+  - **Diario:** Registro nutricional, alimentos ricos en hierro y control de tomas.
+  - **Citas:** Calendario, reservas y gestión de citas en la posta médica.
+  - **Consultas:** Directorio y comunicación directa con profesionales de salud.
+  
+  La pestaña activa se resalta mediante el contenedor en forma de píldora horizontal (*active indicator pill*) característico de Material 3, con fondo en tono suave y el icono relleno en color institucional.
+* **Header de identidad y bienvenida:** Las pantallas de bienvenida y autenticación ("Crear tu cuenta", "Iniciar sesión") sitúan el imagotipo de Ferova Family centrado en la parte superior, consolidando el reconocimiento de marca.
+* **Flujo ergonómico y navegación gestual:** La aplicación soporta navegación fluida por gestos nativos de Android (deslizar desde los bordes para volver), scroll vertical suave y acceso permanente a las secciones clave desde la barra inferior sin requerir estiramiento de la mano.
+ 
+**Tipografía Android Aplicada**
+ 
+La tipografía adopta la familia **Inter** mapeada rigurosamente a la escala de tipos de **Material Design 3**, asegurando legibilidad inmediata en condiciones de diversa iluminación y pantallas de densidades variables:
+ 
+* **Títulos principales (Headline Large/Medium - H1):** Tamaño de 24-28sp con peso negrita (weight: 600-700) para encabezados mayores como **Iniciar sesión**, **Diario Nutricional**, **Citas**, **Mis Consultas**, **Progreso y Medallas** y **Crear tu cuenta**. Color: rojo institucional (#8B2E3B / #7C0303).
+* **Subtítulos de sección (Title Medium - H2):** Tamaño de 16-18sp con peso semibold (weight: 600) en color gris oscuro (#333333), empleados en bloques de contenido secundario como "Seleccionar Paciente", "Horarios disponibles" y "Cita Actual".
+* **Etiquetas de formulario (Label Large/Medium):** Textos concisos de 12-14sp en gris medio (#666666) y peso medium (weight: 500) para identificar inputs (DNI, Teléfono, Contraseña).
+* **Cuerpo de texto (Body Large/Medium):** Contenido explicativo y guías nutricionales en 14-16sp, peso regular (weight: 400), alineación natural a la izquierda y un interlineado (*line-height*) de 1.5 a 1.6 para evitar cansancio visual.
+* **Énfasis de métricas clínicas:** Cifras clave como dosificación de gotas (ej. "1.36 mg de hierro"), porcentajes de adherencia terapéutica, nombres de especialistas y estados clínicos se destacan con peso semibold (weight: 600) o acento en color rojo institucional.
+* **Textos auxiliares y metadatos (Label Small / Body Small):** Información complementaria como distancias a postas ("0.5 km"), horas de registro y notas de pie en tamaño de 11-12sp con tono gris neutro (#999999).
+* **Enlaces y accionables interactivos:** Enlaces como "¿Ya tienes cuenta? Inicia sesión" utilizan color rojo institucional (#8B2E3B) con peso semibold o subrayado ligero para indicar con claridad su interactividad.
+ 
+**Sistema de Colores Android (Material 3 Color Roles)**
+ 
+La paleta cromática de Ferova Family en Android se estructura mediante los roles de color de Material You, equilibrando la sobriedad médica con la calidez maternal:
+ 
+* **Primary (Rojo/Marrón institucional):** #8B2E3B / #7C0303 - Tono fundamental para botones primarios, headers, iconos activos de navegación, FAB y títulos de mayor jerarquía. Transmite rigor en salud y compromiso terapéutico.
+* **Surface y Background (Blanco Puro):** #FFFFFF - Superficie base para tarjetas, diálogos, hojas inferiores y fondos de contenido, asegurando luminosidad y alto contraste.
+* **Surface Variant / Fondo Alternativo:** #F5F5F5 / #F8FAFC - Fondo de lienzos generales, cajas de texto de formularios y agrupaciones secundarias.
+* **Outline (Gris Medio):** #CCCCCC / #E0E0E0 - Color de bordes en tarjetas delineadas (*OutlinedCard*), divisores de listas y límites de campos en reposo.
+* **On Surface (Gris Oscuro):** #333333 - Color primario para texto de lectura, títulos secundarios e iconos estándar, asegurando contraste óptimo frente a fondos claros.
+* **Semantic Success (Verde Clínico):** #2ECC71 - Indicador de dosis completada, confirmación de cita y estados activos (badges "Confirmada", "Activo").
+* **Secondary Container (Rojo Claro / Rosa):** #F5D5D8 - Superficie de fondo para alertas sanitarias, avisos de dosis próximas y bloques que demandan atención sin generar alarma desmedida.
+* **Tertiary / Informative (Azul-Gris):** #5A6B7D - Color de soporte empleado en avatares de médicos especialistas, detalles de servicios clínicos e iconos informativos.
+* **Accent Gold (Amarillo Pastel / Ámbar):** #F4E4A6 - Color para badges de logros, estrellas y medallas por días consecutivos de adherencia al tratamiento.
+* **Tonos pastel para avatares:** Azul claro (#87CEEB) y rosa pastel (#FFB6C1) para personalizar e identificar de forma visualmente agradable a cada niño registrado.
+ 
+**Animaciones y Micro-interacciones Android (Material Motion)**
+ 
+La experiencia en Android se apoya en los principios de movimiento de Material Design 3, ofreciendo transiciones naturales y retroalimentación inmediata:
+ 
+* **Efecto Ripple:** Todos los componentes interactivos (botones, filas de listas, cards pulsables y tabs) responden al toque mediante una onda de tinta táctil (*ripple effect*) semitransparente, confirmando el contacto físico de forma instantánea.
+* **Transiciones de pantalla (Material Shared Axis y Predictive Back):** Las navegaciones entre niveles jerárquicos aplican transiciones de eje compartido (*Shared Axis* X/Y) con duración de 300-350ms y curva *Emphasized Easing*, mientras que el retorno de pantalla respeta la animación predictiva de Android 14+.
+* **Transformación de contenedores (Container Transform):** Al seleccionar una cita o un especialista, la tarjeta se expande suavemente hacia la vista de detalle mediante una transición continua de contenedor (duración de 250-300ms).
+* **Elevación tonal interactiva:** Las tarjetas de citas y consultas incrementan su elevación tonal al ser presionadas (de Level 1 a Level 2), proporcionando un sutil realce visual.
+* **Animación de indicadores de progreso:** Los anillos circulares de absorción de hierro y barras de avance animan su recorrido desde 0 hasta el porcentaje correspondiente al cargar la pantalla (800-1000ms con curva *ease-out*), sincronizando la cifra numérica en pantalla.
+* **Desplazamiento fluido con física nativa:** Las listas y vistas de contenido incorporan el desplazamiento elástico nativo de Android (*overscroll stretch effect*) y admiten el ocultamiento progresivo de la barra de navegación inferior al realizar scroll descendente continuo.
+* **Estados de carga elegantes:** Se emplean indicadores circulares (*CircularProgressIndicator* M3) en color rojo institucional o esqueletos de carga (*skeletons*) grises para anticipar la llegada de información desde el servidor.
+* **Respuesta háptica nativa (Haptic Feedback):** Se utiliza la API de vibración de Android (`HapticFeedbackConstants.CONFIRM` y `HapticFeedbackConstants.REJECT`) en hitos decisivos:
+  - Confirmación al registrar la toma de la dosis diaria de hierro.
+  - Confirmación exitosa al agendar una cita médica en la posta.
+  - Alerta sutil al intentar programar una cita en un horario no disponible.
+ 
+**Consideraciones de Accesibilidad**
+ 
+* **Ratio de contraste:** Cumplimiento riguroso de contraste mínimo de 4.5:1 para texto normal y 3.0:1 para elementos gráficos y texto grande, conforme a WCAG 2.1 nivel AA.
+* **Superficies táctiles mínimas:** Todos los botones, iconos interactivos y campos de entrada poseen un tamaño mínimo de **48×48dp**, cumpliendo estrictamente con los lineamientos de accesibilidad de Google y las validaciones de Android Accessibility Scanner.
+* **Etiquetado semántico (*contentDescription*):** Todos los botones basados exclusivamente en iconos (flecha de retroceso, botón de menú, iconos del tab bar) cuentan con descripciones de contenido explícitas para compatibilidad con el lector de pantalla **TalkBack**.
+* **Independencia del color:** Ningún estado clínico o de tratamiento se transmite únicamente mediante variaciones cromáticas; se combinan iconos temáticos (check, reloj, cruz), texto descriptivo y color.
+* **Soporte de escalado de texto (sp):** Todos los tamaños tipográficos se declaran en unidades `sp` (*scale-independent pixels*), respetando los ajustes de tamaño de fuente configurados por el usuario en el sistema operativo Android sin romper el layout.
 
 ## 4.2. Information Architecture
 
