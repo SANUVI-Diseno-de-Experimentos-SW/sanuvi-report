@@ -47,7 +47,7 @@ Flujo de trabajo GitFlow
 El ciclo de desarrollo se gestionará implementando el modelo de ramas diseñado por Vincent Driessen en 'A successful Git branching model'.
 
 <p align="center">
-  <img src="" alt="flow diagram" width="800">
+  <img src="../assets/img/chapter-V/gitflow.png" alt="flow diagram" width="800">
 </p>
 
 **Estructura de branches (Ramas):**
