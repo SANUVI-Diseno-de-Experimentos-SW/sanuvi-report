@@ -1672,39 +1672,450 @@ Además, se grabó un video donde se explican los principales flujos de interacc
 
 ### 4.6.1. Web Applications Wireframes
 
-<img src="../assets/img/chapter-IV/web-wireframes.png" alt="Web Wireframes">
+Los siguientes wireframes corresponden a la aplicación web de **Ferova Clinic**, una plataforma de gestión clínica y administrativa diseñada específicamente para el personal de salud y administradores de postas médicas. El objetivo de estos esquemas de baja fidelidad es definir la estructura de la información, la disposición de los elementos y los flujos de trabajo sin distracciones visuales, garantizando que la herramienta responda a las altas exigencias operativas de los usuarios.
 
-<!-- COMPLETAR -->
+#### Principios Aplicados
+
+**- Eficiencia operativa y navegación (Dashboard Layout):**
+La interfaz adopta una estructura robusta de panel de control, utilizando una barra lateral izquierda (Sidebar) persistente y una barra superior (Topbar). Esto permite al personal cambiar rápidamente entre módulos (pacientes, citas, consultas) sin perder el contexto de su sesión, reduciendo la carga cognitiva y el número de clics.
+
+**- Jerarquía de datos clínicos:**
+El diseño prioriza la visibilidad de la información crítica por encima del pliegue (above the fold). Elementos como los indicadores de riesgo de los pacientes, el estado de adherencia y las citas del día se posicionan estratégicamente para que los profesionales puedan identificar urgencias y tomar decisiones inmediatas con un simple escaneo visual.
+
+**- Diseño modular para resoluciones de escritorio:**
+A diferencia del diseño móvil, Ferova Clinic aprovecha el espacio horizontal de los monitores de escritorio. Se emplean componentes modulares como tarjetas (cards) para agrupar métricas, tablas de datos expansibles para el listado de pacientes, y vistas divididas (master-detail) para el módulo de mensajería, optimizando la lectura masiva de datos.
+
+**- Flujos de tareas secuenciales (Wizards):**
+Para minimizar errores en el ingreso de información médica o administrativa, los procesos complejos —como el registro de una nueva posta de salud, la configuración de un esquema de tratamiento o la actualización de un historial clínico— se estructuran en pasos lógicos y secuenciales, guiando al usuario de principio a fin de manera clara.
+
+---
+
+### Módulo IAM (Identity and Access Management)
+
+#### Pantallas de Autenticación y Recuperación
+
+**Descripción:**
+Panel de acceso y gestión de credenciales para el personal de salud. Se observa una estructura centrada que incluye el inicio de sesión, el formulario de registro para nuevos profesionales (con campos para datos personales e institucionales) y el flujo paso a paso para la recuperación de contraseña (solicitud de código y creación de nueva clave)[cite: 1].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-wireframes-01.jpg" alt="Web Wireframes-01">
+</div>
+
+---
+
+### Módulo de Home / Dashboard
+
+#### Pantalla Principal (Panel General)
+
+**Descripción:**
+Panel de control principal (Dashboard) diferenciado por roles. La vista superior (orientada a enfermeras) destaca el número de pacientes en riesgo, citas programadas y accesos rápidos a tareas frecuentes. La vista inferior (orientada a coordinadores) muestra métricas globales, porcentajes de adherencia y un listado de estado de las diferentes postas médicas[cite: 2].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-wireframes-02.jpg" alt="Web Wireframes-02">
+</div>
+
+---
+
+### Módulo de Agenda de Citas (Healthy-Management)
+
+#### Pantalla de Agenda de Citas
+
+**Descripción:**
+Gestión centralizada de las atenciones programadas. Presenta un buscador superior, tarjetas de resumen con el total de citas y próximas atenciones, seguido de una cuadrícula con el listado de pacientes citados. Cada registro indica la hora, el estado de la cita mediante un badge (ej. "Confirmada") y los datos de la posta médica[cite: 3].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-wireframes-03.jpg" alt="Web Wireframes-03">
+</div>
+
+---
+
+### Módulo de Tratamientos (Treatment - Tracking)
+
+#### Pantallas de Inicio y Seguimiento de Tratamiento
+
+**Descripción:**
+Módulo orientado al control de los esquemas de medicación. Se visualizan formularios para iniciar un nuevo tratamiento, un panel para clasificar el tipo de riesgo de los pacientes y una vista de "Mis Tratamientos" que permite al profesional monitorear el progreso y adherencia de los casos activos mediante indicadores visuales[cite: 4].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-wireframes-04.jpg" alt="Web Wireframes-04">
+</div>
+
+---
+
+### Módulo de Gestión de Pacientes (Patient Management)
+
+#### Pantallas de Control de Hemoglobina y Registro Médico
+
+**Descripción:**
+Dedicado a la gestión clínica individual. Incluye flujos para asignar pacientes a profesionales y dar de alta. La sección principal detalla formularios extensos para registrar nuevos controles de hemoglobina, actualizar métricas (peso, talla) y consultar el historial cronológico de las evaluaciones clínicas previas del menor[cite: 5].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-wireframes-05.jpg" alt="Web Wireframes-05">
+</div>
+
+---
+
+### Módulo de Comunicación (Consultation)
+
+#### Pantalla de Bandeja de Consultas
+
+**Descripción:**
+Interfaz para la comunicación directa con los apoderados. Utiliza un patrón de vista dividida: a la izquierda, una bandeja de entrada con el listado de pacientes y un buscador; a la derecha, el área de conversación detallada (chat) donde el profesional puede revisar el historial de mensajes y redactar respuestas[cite: 6].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-wireframes-06.jpg" alt="Web Wireframes-06">
+</div>
+
+---
+
+### Módulo de Analítica y Mapas
+
+#### Pantalla de Mapa de Calor
+
+**Descripción:**
+Herramienta de análisis geográfico para coordinadores y administradores. Se visualiza un mapa central de gran tamaño diseñado para mostrar la concentración de pacientes según su nivel de riesgo (Crítico, Moderado, Bajo), complementado por un panel lateral que detalla métricas específicas por cada establecimiento de salud[cite: 7].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-wireframes-07.jpg" alt="Web Wireframes-07">
+</div>
+
+---
+
+### Módulo de Administración de Postas (Health Facilities)
+
+#### Pantallas de Registro y Gestión de Postas
+
+**Descripción:**
+Flujos administrativos para gestionar la infraestructura de salud. Se implementa un patrón secuencial (wizard) de 4 pasos para registrar una "Nueva Posta" (datos, ubicación, horario y asignación de personal). También incluye vistas para buscar postas existentes y asignar o reasignar enfermeras a los distintos centros[cite: 8].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-wireframes-08.jpg" alt="Web Wireframes-08">
+</div>
 
 ### 4.6.2. Web Applications Wireflow Diagrams
 
-**User Goal 1:** [enunciado]
+Los siguientes diagramas de flujo de baja fidelidad (Wireflows) ilustran las secuencias de interacción clave que el personal de salud (enfermeras) y los administradores realizan dentro de Ferova Clinic. Estos diagramas consolidados mapean el recorrido del usuario a través de las distintas pantallas, detallando las decisiones y acciones críticas para cumplir objetivos específicos (User Goals) según el rol del usuario.
 
-<img src="../assets/img/chapter-IV/web-wireflow-01.png" alt="Web Wireflow 1">
+---
 
-<!-- COMPLETAR -->
+**Web Wireflow 1: Flujo de Autenticación y Accesos (IAM)**
+
+> **Relacionado con el User Goal:**
+> Como usuario (personal de salud o administrador), quiero iniciar sesión, solicitar una cuenta profesional o recuperar mi contraseña de forma segura para acceder a la plataforma.
+
+Este diagrama ilustra las rutas de entrada al sistema. El flujo principal comienza en la pantalla de inicio de sesión. Si el usuario es nuevo, es derivado al formulario de registro en dos pasos para crear su cuenta profesional. En caso de pérdida de credenciales, el usuario sigue una ruta de recuperación lineal: solicitud mediante correo electrónico, ingreso del código de verificación (OTP) para validar su identidad y, finalmente, la creación de una nueva contraseña, desembocando de nuevo en el acceso principal[cite: 30].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-wireflow-01.png" alt="Web Wireflow 01">
+</div>
+
+---
+
+**Web Wireflow 2: Flujo de Gestión Clínica (Pacientes, Historial y Tratamientos)**
+
+> **Relacionado con el User Goal:**
+> Como personal de salud, quiero gestionar mi lista de pacientes, registrar nuevos controles de hemoglobina y hacer un seguimiento detallado a sus tratamientos para evaluar su evolución.
+
+Este extenso diagrama consolida las interacciones principales del rol de enfermería. El recorrido inicia en el Panel General (Dashboard) o en el listado de pacientes. A partir de ahí, se ramifica hacia las vistas de detalle clínico. El flujo detalla cómo el profesional navega para consultar el historial médico, registrar un nuevo control de hemoglobina (desplegando los modales correspondientes), revisar la adherencia del tratamiento en curso y consultar la agenda de citas programadas, conectando transversalmente las herramientas de seguimiento del paciente[cite: 28].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-wireflow-02.png" alt="Web Wireflow 02">
+</div>
+
+---
+
+**Web Wireflow 3: Flujo Administrativo (Postas y Analítica)**
+
+> **Relacionado con el User Goal:**
+> Como coordinador o administrador, quiero gestionar los establecimientos de salud de la red y visualizar la concentración poblacional de riesgo mediante herramientas geoespaciales.
+
+Este diagrama mapea las tareas exclusivas del rol administrador. Desde el dashboard administrativo, el usuario tiene dos rutas principales. Hacia arriba, el flujo muestra la navegación al "Mapa de Calor" (Heat Map), donde interactúa con los filtros para visualizar la densidad y niveles de riesgo de los pacientes en diversas zonas. Hacia abajo, se ilustra el módulo de gestión de postas: detalla el flujo de 4 pasos (wizard) para registrar un nuevo establecimiento y el proceso para buscar una posta existente con el fin de asignarle personal médico[cite: 29].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-wireflow-03.png" alt="Web Wireflow 03">
+</div>
 
 ### 4.6.3. Web Applications Mock-ups
 
-<img src="../assets/img/chapter-IV/web-mockups.png" alt="Web Mock-ups">
+Los siguientes mock-ups representan la versión de alta fidelidad (High-Fidelity) de Ferova Clinic, diseñados para resoluciones de escritorio. Estos diseños aplican estrictamente las Web Style Guidelines definidas en la sección 4.1.2, garantizando coherencia visual, jerarquía clara de la información y cumplimiento de las normativas de accesibilidad.
 
-<!-- COMPLETAR -->
+**Elementos visuales clave aplicados:**
+*   **Colores Institucionales:** Uso predominante del Azul Oscuro (`#003A70`) en la barra superior (Topbar) y botones primarios para transmitir profesionalismo, contrastado con fondos claros (`#F5F7FA`) para el área de contenido.
+*   **Sistema de Riesgo Semántico:** Implementación del sistema de colores para categorizar el estado de los pacientes: Rojo (Riesgo Alto), Amarillo/Naranja (Riesgo Medio) y Verde (Riesgo Bajo).
+*   **Tipografía y Legibilidad:** Uso de la familia tipográfica 'Inter', aplicando diferentes pesos visuales (bold para métricas clave y subtítulos, regular para datos en tablas) para facilitar el escaneo rápido.
+
+---
+
+**Web Mock-up 1: IAM (Identity and Access Management)**
+
+> **Descripción Visual:**
+> El módulo de autenticación presenta un diseño minimalista y centrado, utilizando fondos blancos y grises claros para reducir la carga cognitiva durante el acceso y registro[cite: 20].
+> 
+> *   **Pantalla de Login:** Estructura centrada tipo tarjeta (card) con el logotipo de la plataforma. Contiene campos de entrada (inputs) con bordes definidos para correo y contraseña, un enlace de recuperación sutil y un botón de acción primaria (Call to Action) ancho y destacado en color institucional[cite: 20].
+> *   **Registro Profesional:** Utiliza un diseño de vista dividida. El panel izquierdo refuerza la propuesta de valor con texto informativo e iconografía, mientras que el derecho contiene un formulario extenso y estructurado (nombres, DNI, correo, contraseña) con validaciones visuales[cite: 20].
+> *   **Recuperación de Contraseña (Flujo de 3 pasos):** Mantiene la interfaz centrada. Destaca el paso de verificación de identidad, el cual emplea cuatro cajas de texto individuales (inputs) de un solo dígito para el ingreso del código OTP, mejorando la usabilidad[cite: 20].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-mockup-01.png" alt="Web Mock-up 01">
+</div>
+
+---
+
+**Web Mock-up 2: Home / Dashboard**
+
+> **Descripción Visual:**
+> El panel de control actúa como la pantalla principal tras iniciar sesión, presentando una arquitectura de información adaptada al rol del usuario mediante componentes tipo bloque y un layout de grilla[cite: 21].
+> 
+> *   **Topbar y Navegación:** Barra superior azul oscuro constante que incluye el logotipo, un menú horizontal (Inicio, Pacientes, Consultas, Historial) con estados activos (subrayado/resalte) y el perfil del usuario (avatar y nombre) a la derecha[cite: 21].
+> *   **Dashboard Clínico (Rol Enfermera):** La pantalla se divide en tres columnas. A la izquierda, la tarjeta de "Estado de Riesgo Clínico" agrupa a los pacientes usando bloques de color semántico (Rojo: Crítico, Amarillo: Medio, Verde: Bajo). Al centro, un grid de "Accesos Rápidos" con botones cuadrados e iconografía minimalista. A la derecha, una lista compacta con la "Agenda del Día" y etiquetas (badges) de estado[cite: 21].
+> *   **Dashboard Administrativo (Rol Coordinador):** Enfoque analítico. Presenta métricas numéricas en gran tamaño (ej. "+4 Postas Activas"), un gráfico de barras horizontales para la "Adherencia Global" y una tabla extensa que enlista los centros de salud con barras de progreso lineal porcentuales[cite: 21].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-mockup-02.png" alt="Web Mock-up 02">
+</div>
+
+---
+
+**Web Mock-up 3: Agenda de Citas (Healthy-Management)**
+
+> **Descripción Visual:**
+> Interfaz optimizada para la lectura rápida y gestión de la carga de trabajo diaria en la posta médica, utilizando un sistema de tarjetas (cards) sobre un fondo gris claro[cite: 22].
+> 
+> *   **Cabecera de Resumen:** Incorpora un buscador tabular y un grupo de tres tarjetas superiores que muestran el recuento total de pacientes, el porcentaje de citas confirmadas y la hora de la próxima atención destacada[cite: 22].
+> *   **Cuadrícula de Citas (Grid):** Los registros se presentan en tarjetas individuales blancas. Cada tarjeta incluye el avatar con iniciales, nombre del paciente, hora de la cita, posta médica correspondiente y un distintivo visual (Badge) con bordes redondeados y texto verde indicando "CONFIRMADA"[cite: 22].
+> *   **Empty State:** Pantalla diseñada para cuando no existen registros. Se compone de una ilustración central (ícono de calendario) en colores pastel, un título descriptivo ("No hay citas programadas") y un texto de soporte, evitando la sensación de error en el sistema[cite: 22].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-mockup-03.png" alt="Web Mock-up 03">
+</div>
+
+---
+
+**Web Mock-up 4: Gestión de Pacientes y Controles**
+
+> **Descripción Visual:**
+> Es el núcleo operativo de la plataforma, caracterizado por el uso de formularios clínicos detallados, modales de confirmación e historiales en formato de línea de tiempo o listas[cite: 23].
+> 
+> *   **Formularios Clínicos (Control de Hemoglobina):** Organizados en una sola columna central para mantener el foco. Utilizan etiquetas superiores (top-aligned labels) para los campos de entrada como fecha y valor (g/dL). Cuentan con un botón primario de "Guardar" y otro secundario "Cancelar" estilo outline[cite: 23].
+> *   **Modales de Acción:** Para prevenir errores, acciones como "Dar de Alta" despliegan una ventana modal superpuesta. El fondo de la pantalla principal se oscurece (overlay), centrando la atención del usuario en el cuadro de diálogo que requiere una confirmación explícita mediante un botón azul[cite: 23].
+> *   **Listados Activos:** Empleo de tablas limpias con separadores de línea sutiles (border-bottom), donde cada fila representa un paciente o un control histórico, acompañado de botones de acción rápida en la columna derecha[cite: 23].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-mockup-04.png" alt="Web Mock-up 04">
+</div>
+
+---
+
+**Web Mock-up 5: Módulo de Comunicación (Consultation)**
+
+> **Descripción Visual:**
+> Interfaz de mensajería sincrónica/asincrónica diseñada bajo el patrón de vista maestra-detalle (master-detail view), dividiendo la pantalla en dos paneles funcionales[cite: 24].
+> 
+> *   **Bandeja Lateral (Izquierda):** Lista de chats activos con buscador integrado. El chat seleccionado se resalta con un fondo sombreado suave, mostrando el nombre del remitente y un extracto del último mensaje[cite: 24].
+> *   **Área de Chat (Derecha):** Presenta una cabecera con el nombre del paciente/apoderado. El historial de conversación utiliza burbujas de texto diferenciadas: las respuestas del profesional usan fondo azul oscuro y texto blanco (alineadas a la derecha), mientras que los mensajes recibidos usan fondo gris claro y texto oscuro (alineadas a la izquierda)[cite: 24].
+> *   **Input y Controles:** En la parte inferior se ubica el área de redacción con un campo de texto amplio y botones para adjuntar archivos y enviar. También incluye modales de advertencia con iconografía roja para confirmar el cierre definitivo de una consulta[cite: 24].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-mockup-05.png" alt="Web Mock-up 05">
+</div>
+
+---
+
+**Web Mock-up 6: Seguimiento de Tratamientos (Treatment Tracking)**
+
+> **Descripción Visual:**
+> Módulo centrado en la visualización de datos de progreso clínico, empleando gráficos integrados directamente en las tarjetas de los pacientes[cite: 25].
+> 
+> *   **Tarjetas de "Mis Tratamientos":** Cada tratamiento activo se representa en una tarjeta amplia. En su interior, además de los datos de dosis y duración, se renderiza un gráfico circular (Donut chart) que cuantifica el porcentaje de adherencia. El color del gráfico (verde, amarillo, rojo) reacciona dinámicamente al porcentaje[cite: 25].
+> *   **Clasificación de Riesgo:** Los listados de pacientes incluyen un identificador semántico contundente: una barra de color vertical gruesa en el borde izquierdo de la fila del paciente, permitiendo escanear rápidamente visualmente quiénes están en estado crítico[cite: 25].
+> *   **Formularios de Inicio:** El registro de un nuevo esquema se divide en bloques visuales dentro de una misma tarjeta, guiando al profesional a seleccionar el suplemento, ingresar la dosificación y establecer la frecuencia[cite: 25].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-mockup-06.png" alt="Web Mock-up 06">
+</div>
+
+---
+
+**Web Mock-up 7: Analítica y Mapa de Calor (Heat Map)**
+
+> **Descripción Visual:**
+> Herramienta administrativa y epidemiológica para visualizar datos geoespaciales. La interfaz maximiza el área de visualización del mapa para el análisis detallado[cite: 26].
+> 
+> *   **Mapa Interactivo:** Componente central que muestra el callejero de la región. Sobre él, se superponen agrupaciones (clusters) circulares semitransparentes. El tamaño del círculo representa el volumen de pacientes, y su color (Rojo, Amarillo, Verde, Azul) representa la categoría de riesgo o estado de adherencia predominante en esa zona[cite: 26].
+> *   **Panel de Control:** En la parte superior, sobre el mapa, se ubican controles de filtrado mediante botones (toggles) en forma de pastilla (pill buttons), permitiendo al usuario activar o desactivar capas de datos (ej. ocultar riesgo bajo para enfocar en riesgo crítico)[cite: 26].
+> *   **Panel de Métricas Laterales:** En algunas vistas, el mapa se acompaña de un panel lateral que lista las postas médicas de la zona visible, acompañadas de barras de progreso lineales que indican el rendimiento porcentual de cada establecimiento[cite: 26].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-mockup-07.png" alt="Web Mock-up 07">
+</div>
+
+---
+
+**Web Mock-up 8: Administración de Postas (Health Facilities)**
+
+> **Descripción Visual:**
+> Módulo administrativo caracterizado por el uso de asistentes paso a paso (wizards) y tablas de gestión de recursos humanos y físicos[cite: 27].
+> 
+> *   **Wizard de Registro:** El proceso de creación de una "Nueva Posta" incorpora una barra de progreso horizontal en la parte superior con pasos numerados (1. Datos, 2. Ubicación, 3. Horarios). Incluye un minimapa interactivo para fijar el pin de ubicación (coordenadas) y selectores de tiempo (time-pickers) amigables para configurar la apertura y cierre por días[cite: 27].
+> *   **Gestión de Personal:** Las pantallas de asignación de enfermeras emplean listas estilo tabla con selectores desplegables (dropdown menus). Los botones de "Guardar" y "Cancelar" se ubican consistentemente en la parte inferior de las tarjetas de formulario[cite: 27].
+> *   **Feedback del Sistema:** Pantallas de éxito con un gran checkmark verde e iconografía confirmando que la posta o el personal han sido registrados y vinculados correctamente en la base de datos[cite: 27].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-mockup-08.png" alt="Web Mock-up 08">
+</div>
 
 ### 4.6.4. Web Applications User Flow Diagrams
 
-**User Goal 1:** [enunciado]
+Los siguientes diagramas de flujo de usuario (User Flows) ilustran los recorridos interactivos de alta fidelidad que realiza el personal de salud y los administradores en Ferova Clinic. Estos diagramas detallan las decisiones del usuario, la respuesta del sistema y las rutas de navegación utilizando las interfaces visuales finales, validando así que la arquitectura de información cumpla con los objetivos del producto.
 
-<img src="../assets/img/chapter-IV/web-userflow-01.png" alt="Web User Flow 1">
+---
 
-<!-- COMPLETAR -->
+**Web User Flow 1: Visualización de Riesgo Clínico de Paciente**
+
+> **Relacionado con el User Goal:**
+> Como personal de salud, quiero identificar rápidamente a los pacientes en situación de riesgo desde mi panel principal, para revisar su historial detallado y tomar medidas preventivas.
+
+El flujo inicia en el Panel General (Dashboard), donde el profesional identifica a los pacientes categorizados por niveles de riesgo[cite: 9]. Al hacer clic en un nivel (ej. "Riesgo Alto"), el sistema filtra la lista de pacientes correspondientes[cite: 9]. Desde el listado, el usuario selecciona un caso específico y el sistema despliega su perfil clínico completo, permitiendo analizar las gráficas de evolución de la hemoglobina y tomar decisiones[cite: 9].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-userflow-01.png" alt="Web User Flow 01">
+</div>
+
+---
+
+**Web User Flow 2: Asignación de Pacientes**
+
+> **Relacionado con el User Goal:**
+> Como personal de salud, quiero buscar y vincular a un paciente registrado en el sistema a mi lista de atención, para iniciar su seguimiento clínico formal.
+
+El recorrido inicia en la sección de pacientes, donde el profesional activa la función de búsqueda para asignar un nuevo paciente[cite: 10]. El sistema evalúa la búsqueda presentando dos caminos posibles: si el paciente es encontrado, muestra una tarjeta de validación para confirmar la asignación, terminando en una pantalla de éxito; si no es encontrado, muestra un estado vacío (empty state) informando que el paciente no está registrado[cite: 10].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-userflow-02.png" alt="Web User Flow 02">
+</div>
+
+---
+
+**Web User Flow 3: Inicio de Tratamiento**
+
+> **Relacionado con el User Goal:**
+> Como personal de salud, quiero configurar el esquema de medicación de un paciente recién asignado, para que el apoderado reciba las indicaciones en su aplicación móvil.
+
+El flujo muestra que el profesional puede acceder a la función de iniciar tratamiento desde diferentes puntos (listado general, vista de riesgo o perfil del paciente)[cite: 11]. Todas estas rutas convergen en el formulario central de "Iniciar Tratamiento", donde se ingresa la dosis, suplemento y frecuencia[cite: 11]. Al confirmar, el sistema registra el esquema y muestra el resumen del tratamiento activo[cite: 11].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-userflow-03.png" alt="Web User Flow 03">
+</div>
+
+---
+
+**Web User Flow 4: Dar de Alta a un Paciente**
+
+> **Relacionado con el User Goal:**
+> Como personal de salud, quiero registrar el alta médica de un paciente que ha completado exitosamente su esquema o cuyos niveles de hemoglobina se han regularizado, para cerrar su caso.
+
+El profesional accede al listado de sus pacientes activos y hace clic en la opción de "Dar de Alta" para un registro particular[cite: 12]. En lugar de ejecutar la acción inmediatamente, el sistema despliega un modal superpuesto (pop-up) exigiendo una confirmación consciente[cite: 12]. Tras aceptar, el sistema actualiza la base de datos y refleja el estado de "Alta" en la interfaz del listado[cite: 12].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-userflow-04.png" alt="Web User Flow 04">
+</div>
+
+---
+
+**Web User Flow 5: Registro y Actualización de Historial Médico**
+
+> **Relacionado con el User Goal:**
+> Como personal de salud, quiero actualizar la historia clínica del paciente con nuevos datos antropométricos o antecedentes, para mantener su expediente al día.
+
+Este flujo detalla la navegación desde el listado general hacia el perfil individual del paciente[cite: 13]. Una vez en el historial médico, el profesional selecciona la opción de editar/actualizar, lo que despliega un formulario detallado[cite: 13]. Al guardar los cambios, el sistema valida la información y devuelve al usuario a la vista consolidada con los datos antropométricos renovados[cite: 13].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-userflow-05.png" alt="Web User Flow 05">
+</div>
+
+---
+
+**Web User Flow 6: Control de Hemoglobina**
+
+> **Relacionado con el User Goal:**
+> Como personal de salud, quiero registrar un nuevo valor de hemoglobina tras un tamizaje, para permitir que el sistema recalcule el nivel de riesgo clínico.
+
+Desde la vista de detalles del paciente, el profesional se dirige a la pestaña específica de controles[cite: 14]. Al hacer clic en agregar, completa el formulario con la fecha de la prueba y el valor de hemoglobina (g/dL)[cite: 14]. El flujo culmina cuando el sistema guarda el dato, lo añade al historial del paciente y ajusta las gráficas y etiquetas de riesgo en tiempo real[cite: 14].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-userflow-06.png" alt="Web User Flow 06">
+</div>
+
+---
+
+**Web User Flow 7: Gestión de Citas**
+
+> **Relacionado con el User Goal:**
+> Como personal de salud, quiero revisar la agenda de atenciones programadas, para organizar mi carga de trabajo diaria en la posta médica.
+
+El usuario accede al submódulo de "Agenda de Citas" desde el panel de navegación principal[cite: 15]. El diagrama ilustra cómo el sistema gestiona la visualización según los datos disponibles: despliega una cuadrícula poblada con tarjetas de citas confirmadas si existen atenciones programadas, o bien, presenta un estado vacío ilustrado y amigable si la agenda del día está libre[cite: 15].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-userflow-07.png" alt="Web User Flow 07">
+</div>
+
+---
+
+**Web User Flow 8: Flujo de Consultas (Comunicación)**
+
+> **Relacionado con el User Goal:**
+> Como personal de salud, quiero leer y responder los mensajes enviados por los apoderados, para brindar soporte remoto y asegurar la correcta administración del suplemento.
+
+El flujo inicia en la bandeja de consultas, donde el usuario visualiza los mensajes pendientes a la izquierda de la pantalla[cite: 16]. Al seleccionar una conversación, el área derecha despliega el chat completo[cite: 16]. El recorrido abarca la redacción de la respuesta, el uso de opciones complementarias y la interacción con ventanas modales en caso de que el profesional decida cerrar la consulta de manera definitiva[cite: 16].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-userflow-08.png" alt="Web User Flow 08">
+</div>
+
+---
+
+**Web User Flow 9: Flujos de "Mis Tratamientos" (Monitoreo)**
+
+> **Relacionado con el User Goal:**
+> Como personal de salud, quiero supervisar el progreso general de todos los tratamientos activos bajo mi cargo, para identificar rápidamente los casos de baja adherencia.
+
+El profesional navega hacia la vista de "Mis Tratamientos", encontrando un grid de tarjetas que resumen la adherencia de cada paciente mediante gráficos circulares[cite: 17]. Desde aquí, el usuario puede interactuar con una tarjeta para abrir un modal de edición (por ejemplo, para modificar la dosis) o ingresar a los detalles profundos del progreso clínico de ese paciente en particular[cite: 17].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-userflow-09.png" alt="Web User Flow 09">
+</div>
+
+---
+
+**Web User Flow 10: Registro de Posta (Rol Administrador)**
+
+> **Relacionado con el User Goal:**
+> Como administrador del sistema, quiero dar de alta un nuevo establecimiento de salud, para integrarlo a la red de Ferova Clinic y permitir la asignación de personal.
+
+Este diagrama traza el recorrido secuencial (wizard) que realiza el administrador. Inicia en el panel principal y avanza por una serie de pantallas que solicitan: datos generales de la posta, localización exacta en el mapa integrado, definición de horarios operativos y asignación inicial de personal[cite: 18]. El flujo termina con la validación del sistema y la inclusión del centro en el directorio global[cite: 18].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-userflow-10.png" alt="Web User Flow 10">
+</div>
+
+---
+
+**Web User Flow 11: Flujo Heat Map (Rol Administrador)**
+
+> **Relacionado con el User Goal:**
+> Como administrador, quiero visualizar el mapa de calor de las postas médicas, para analizar geográficamente la concentración de pacientes según su nivel de riesgo clínico.
+
+Desde el Dashboard analítico, el administrador navega hacia el submódulo "Mapa de Calor"[cite: 19]. El flujo muestra cómo el usuario interactúa con la interfaz de mapas, utilizando los filtros superiores para aislar datos visuales específicos[cite: 19]. El sistema responde re-renderizando las capas de colores en el mapa, evidenciando zonas críticas de atención de acuerdo con los parámetros seleccionados[cite: 19].
+
+<div align="center">
+  <img src="../assets/img/chapter-IV/web-userflow-11.png" alt="Web User Flow 11">
+</div>
 
 ## 4.7. Web Applications Prototyping
 
-<img src="../assets/img/chapter-IV/web-prototype.png" alt="Web Prototype">
+<img src="../assets/img/chapter-IV/53.png" alt="Web Prototype">
 
-**Enlace del video:** [URL de Microsoft Stream]
-
-<!-- COMPLETAR -->
+**Enlace del video:** https://me-l.co/dziikpji
 
 ## 4.8. Domain-Driven Software Architecture
 
