@@ -30,7 +30,7 @@ Se realizaron los productos de UX con la herramienta de UXPressia, así como las
 
 ### 5.1.2. Source Code Management
 
-> Repositorios en la organización de GitHub y modelo de ramas **GitFlow**, con la convención de **Conventional Commits**.
+Para la gestión de versiones, el proyecto adoptará el modelo GitFlow, utilizando GitHub como repositorio y plataforma principal. En las siguientes secciones se detallará la aplicación de este flujo de trabajo, además de proporcionar los enlace correspondiente de cada repositorio.
 
 **Repositorios**
 
@@ -42,26 +42,21 @@ Se realizaron los productos de UX con la herramienta de UXPressia, así como las
 | RESTful API / Backend | [URL] |
 | Mobile Application | [URL] |
 
-**GitFlow**
+Flujo de trabajo GitFlow
 
-| Rama | Propósito | Convención de nombre |
-|------|-----------|----------------------|
-| `main` | Versiones liberadas en producción | `main` |
-| `develop` | Integración de features | `develop` |
-| `feature/*` | Nueva funcionalidad | `feature/<nombre>` |
-| `release/*` | Preparación de release | `release/<x.y.z>` |
-| `hotfix/*` | Corrección urgente en producción | `hotfix/<nombre>` |
+El ciclo de desarrollo se gestionará implementando el modelo de ramas diseñado por Vincent Driessen en 'A successful Git branching model'.
 
-**Conventional Commits**
+<p align="center">
+  <img src="" alt="flow diagram" width="800">
+</p>
 
-```
-<type>[optional scope]: <description>
+**Estructura de branches (Ramas):**
 
-[optional body]
-[optional footer(s)]
-```
+- **Main (Rama Principal):** Constituye el eje central del repositorio, reservada exclusivamente para versiones estables y productivas del software. El código alojado aquí debe haber superado rigurosos procesos de validación y pruebas previas en las ramas de funcionalidad y desarrollo.
 
-<!-- COMPLETAR: tipos usados (feat, fix, docs, style, refactor, test, chore) y ejemplos reales del equipo -->
+- **Develop (Rama de Desarrollo):** Actúa como el entorno de integración continua para el equipo. Su función principal es centralizar el progreso diario del proyecto, sirviendo de base para la consolidación de nuevas características antes de su despliegue final.
+
+- **Features (Ramas de Funcionalidad):** Se empleará una rama independiente para cada módulo o tarea específica. Una vez concluida y verificada la funcionalidad, esta se integrará a la rama Develop. Para mantener el orden, se aplicará una nomenclatura estandarizada bajo el patrón "feature/chapter-#".
 
 ### 5.1.3. Source Code Style Guide & Conventions
 
