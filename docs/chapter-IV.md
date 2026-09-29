@@ -2113,11 +2113,9 @@ Desde el Dashboard analítico, el administrador navega hacia el submódulo "Mapa
 
 ## 4.7. Web Applications Prototyping
 
-<img src="../assets/img/chapter-IV/web-prototype.png" alt="Web Prototype">
+<img src="../assets/img/chapter-IV/53.png" alt="Web Prototype">
 
 **Enlace del video:** https://me-l.co/dziikpji
-
-<!-- COMPLETAR -->
 
 ## 4.8. Domain-Driven Software Architecture
 
