@@ -2115,7 +2115,7 @@ Desde el Dashboard analítico, el administrador navega hacia el submódulo "Mapa
 
 <img src="../assets/img/chapter-IV/web-prototype.png" alt="Web Prototype">
 
-**Enlace del video:** [URL de Microsoft Stream]
+**Enlace del video:** https://me-l.co/dziikpji
 
 <!-- COMPLETAR -->
 
