@@ -668,7 +668,7 @@ Se creó un nuevo proyecto en Firebase con el nombre Ferova-Family desde la cons
 - **Resultado:** El proyecto fue creado correctamente y quedó listo para registrar aplicaciones Android.
 
 <div align="center">
-	<img src="resources/images/sprint-2/deployment/step-1.png">
+	<img src="../assets/img/chapter-V/movile-steps/step-1.png">
 </div>
 
 <br>
@@ -686,7 +686,7 @@ Nombre del paquete: pe.edu.upc.ferovafamily
 - **Resultado:** Firebase vinculó correctamente la aplicación Android al proyecto.
 
 <div align="center">
-	<img src="resources/images/sprint-2/deployment/step-3.png">
+	<img src="../assets/img/chapter-V/movile-steps/step-3.png">
 </div>
 
 <br>
@@ -698,7 +698,7 @@ Luego del registro de la aplicación, Firebase confirmó que la configuración f
 - **Resultado:** El proyecto quedó preparado para distribuir versiones de la aplicación.
 
 <div align="center">
-	<img src="resources/images/sprint-2/deployment/step-1.1.png">
+	<img src="../assets/img/chapter-V/movile-steps/step-1.1.png">
 </div>
 
 <br>
@@ -716,7 +716,7 @@ Build
 - **Resultado:** Android Studio compiló la aplicación y generó el archivo APK correspondiente.
 
 <div align="center">
-	<img src="resources/images/sprint-2/deployment/step-4.png">
+	<img src="../assets/img/chapter-V/movile-steps/step-4.png">
 </div>
 
 <br>
@@ -732,7 +732,7 @@ app/build/outputs/apk/debug/app-debug.apk
 - **Resultado:** El APK quedó listo para ser distribuido mediante Firebase App Distribution.
   
 <div align="center">
-	<img src="resources/images/sprint-2/deployment/step-4.1.png">
+	<img src="../assets/img/chapter-V/movile-steps/step-4.1.png">
 </div>
 
 <br>
@@ -745,7 +745,7 @@ Se accedió al módulo App Distribution de Firebase y se cargó el archivo APK g
 
 
 <div align="center">
-	<img src="resources/images/sprint-2/deployment/step-5.png">
+	<img src="../assets/img/chapter-V/movile-steps/step-5.png">
 </div>
 
 <br>
@@ -759,7 +759,7 @@ Desde dicho correo, los usuarios pueden aceptar la invitación e instalar la apl
 - **Resultado:** La aplicación quedó disponible para pruebas y validación.
 
 <div align="center">
-	<img src="resources/images/sprint-2/deployment/step-6.png">
+	<img src="../assets/img/chapter-V/movile-steps/step-6.png">
 </div>
 
 
