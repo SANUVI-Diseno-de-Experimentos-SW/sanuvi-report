@@ -966,11 +966,40 @@ Al ejecutar todas las fases del desarrollo en este sprint, la colaboración del 
 
 #### Repositorio Backend:
 
+<div align="center">
+  <img src="../assets/img/chapter-V/collabarotion/backend-1.png" width=900>
+</div>
+
+---
+
+<div align="center">
+  <img src="../assets/img/chapter-V/collabarotion/backend.png" width=900>
+</div>
 
 #### Repositorio Landing Page:
 
 
+<div align="center">
+  <img src="../assets/img/chapter-V/collabarotion/landing-page-1.png" width=900>
+</div>
+
+---
+
+<div align="center">
+  <img src="../assets/img/chapter-V/collabarotion/landing-page.png" width=900>
+</div>
+
 #### Repositorio Mobile Application:
+
+<div align="center">
+  <img src="../assets/img/chapter-V/collabarotion/movil-ferova-family-kotklit-1.png" width=900>
+</div>
+
+---
+
+<div align="center">
+  <img src="../assets/img/chapter-V/collabarotion/movil-ferova-family-kotklit.png" width=900>
+</div>
 
 
 ## 5.3. Video About-the-Product
