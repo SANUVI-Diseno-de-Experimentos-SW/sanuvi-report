@@ -111,9 +111,27 @@ feature/chapter-VIII
 
 ### Entrega AV1
 
-<!-- COMPLETAR: descripción de cómo se desarrollaron las actividades de elaboración del informe + capturas de Insights > Contributors y del Network graph -->
+Durante este avance del trabajo, se desarrollaron los siguientes puntos del reporte:
 
-*Evidencias:* `assets/img/introduction/collaboration-av1-*.png`
+Carátula e información esencial
+- Registro de versiones y Project Report Collaboration Insights
+- **Capítulo I: Introducción**
+- **Capítulo II: Requirements Elicitation & Analysis**
+- **Capítulo III: Requirements Specification**
+- **Capítulo IV: Product Design**
+- **Capítulo V: Product Implementation**
+- Conclusiones y Anexos
+
+<div align="center">
+  <img src="assets/img/introduction/ollaboration-av1.png">
+</div>
+
+### Commits por integrante
+
+- **Baca Camargo, Vitaly Arturo (`Mr-code-star`)**: 86 commits
+- **Apaza bocanegra, Elizabeth Noelia (`Elizabeth-Apaza`)**: 29 commits
+- **Apaza bocanegra, Elizabeth Noelia (`luisdamian8`)**: 6 commits
+- **Peñaranda Caldas,Gabriel Augusto (`gapc2124`)**: 3 commits
 
 ### Entrega TB1
 
