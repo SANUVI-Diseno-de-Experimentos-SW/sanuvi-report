@@ -314,36 +314,12 @@ El despliegue de la plataforma Ferova se organiza en cuatro componentes principa
 
 #### Sprint n
 
-**Sprint Planning n**
-
-| Campo | Valor |
-|-------|-------|
-| Date | [YYYY-MM-DD] |
-| Time | [HH:MM] |
-| Location | [Lugar / plataforma] |
-| Prepared By | [Nombre] |
-| Attendees (to planning meeting) | [Nombres] |
-| Sprint n – 1 Review Summary | [Resumen] |
-| Sprint n – 1 Retrospective Summary | [Resumen] |
-| Sprint n Goal | [Objetivo] |
-| Sprint n Velocity | [Story Points] |
-| Sum of Story Points | [Story Points] |
-
-**Aspect Leaders and Collaborators**
-
-| Team Member (Last Name, First Name) | GitHub Username | [Aspecto 1] | [Aspecto 2] | [Aspecto 3] |
-|-------------------------------------|-----------------|-------------|-------------|-------------|
-| [Apellidos, Nombres] | [usuario] | L / C | L / C | L / C |
-
-*L = Leader, C = Collaborator*
-
 **Sprint Backlog n**
 
 | User Story ID | User Story Title | Work-Item / Task ID | Task Title | Description | Estimation (hours) | Assigned To | Status (To-do / In-Process / To-Review / Done) |
 |---------------|------------------|---------------------|------------|-------------|--------------------|-------------|-----------------------------------------------|
 | US01 | [Título] | T01 | [Título] | [Descripción] | [h] | [Nombre] | Done |
 
-<!-- COMPLETAR: repetir el bloque por cada sprint -->
 
 ### 5.2.2. Implemented Landing Page Evidence
 
@@ -355,11 +331,9 @@ El despliegue de la plataforma Ferova se organiza en cuatro componentes principa
 |------------|--------|-----------|----------------|---------------------|---------------------|
 | [repo] | [branch] | [sha] | [mensaje] | [cuerpo] | [fecha] |
 
-<!-- COMPLETAR -->
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
-<!-- COMPLETAR -->
 
 ### 5.2.4. Acuerdo de Servicio - SaaS
 
@@ -367,15 +341,12 @@ El despliegue de la plataforma Ferova se organiza en cuatro componentes principa
 
 **Enlace público:** [URL]
 
-<!-- COMPLETAR -->
 
 ### 5.2.5. Implemented Native-Mobile Application Evidence
 
-<!-- COMPLETAR -->
 
 ### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
 
-<!-- COMPLETAR -->
 
 ### 5.2.7. RESTful API documentation
 
@@ -383,7 +354,6 @@ El despliegue de la plataforma Ferova se organiza en cuatro componentes principa
 
 **Enlace:** [URL de la documentación desplegada]
 
-<!-- COMPLETAR -->
 
 ### 5.2.8. Team Collaboration Insights
 
@@ -402,4 +372,3 @@ El despliegue de la plataforma Ferova se organiza en cuatro componentes principa
 
 <img src="../assets/img/chapter-V/video-about-the-product.png" alt="Captura del video About-the-Product">
 
-<!-- COMPLETAR -->
