@@ -366,14 +366,66 @@ El Sprint 1 contempla la implementación de la Landing Page de Ferova, el desarr
 
 ### 5.2.2. Implemented Landing Page Evidence
 
-<img src="../assets/img/chapter-V/landing-evidence.png" alt="Landing Page implementada">
+El equipo completó el diseño, implementación y despliegue de la Landing Page de **Ferova**, desarrollada como página promocional de la solución digital orientada al seguimiento y control del tratamiento de la anemia. La Landing Page presenta la problemática abordada por Ferova, sus principales funcionalidades, los segmentos de usuarios a los que está dirigida y el flujo general de funcionamiento de la solución.
 
-**Commits**
+- **Plataforma de Despliegue:** GitHub Pages
+- **Tecnología:** Angular + TypeScript
+- **Características Implementadas:**
+  - Sección principal (Hero) con propuesta de valor de Ferova.
+  - Presentación del problema de la anemia infantil y su contexto.
+  - Sección de funcionalidades principales de Ferova.
+  - Presentación de los segmentos de usuarios: madres/cuidadores y personal de salud.
+  - Sección "Cómo funciona" con el flujo general de interacción entre la madre y el personal de salud.
+  - Sección de testimonios.
+  - Sección final de llamada a la acción para descargar FerovaFamily o acceder a FerovaClinic.
+  - Diseño responsive adaptado a diferentes tamaños de pantalla.
+  - Navegación mediante enlaces internos entre las principales secciones de la Landing Page.
 
-| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
-|------------|--------|-----------|----------------|---------------------|---------------------|
-| [repo] | [branch] | [sha] | [mensaje] | [cuerpo] | [fecha] |
+<div align="center">
+  <img src="../assets/img/chapter-V/landing-page/git-hub-pages.png" width=800>
+</div>
 
+**Figura 1.** Implementación de la sección principal de la Landing Page de Ferova.
+
+<div align="center">
+  <img src="../assets/img/chapter-V/landing-page/landing-page-01.png" width=800>
+</div>
+
+**Figura 2.** Sección de problemática y contexto de la anemia infantil.
+
+<div align="center">
+  <img src="../assets/img/chapter-V/landing-page/landing-page-02.png" width=800>
+</div>
+
+**Figura 3.** Sección de funcionalidades principales de Ferova.
+
+<div align="center">
+  <img src="../assets/img/chapter-V/landing-page/landing-page-03.png" width=800>
+</div>
+
+**Figura 4.** Sección de segmentos de usuarios y propuesta de valor para cada plataforma.
+
+<div align="center">
+  <img src="../assets/img/chapter-V/landing-page/landing-page-04.png" width=800>
+</div>
+
+**Figura 5.** Sección "Cómo funciona" de la solución Ferova.
+
+<div align="center">
+  <img src="../assets/img/chapter-V/landing-page/landing-page-05.png" width=800>
+</div>
+
+**Figura 6.** Sección de testimonios de usuarios.
+
+<div align="center">
+  <img src="../assets/img/chapter-V/landing-page/landing-page-06.png" width=800>
+</div>
+
+**Figura 7.** Sección final de llamada a la acción para acceder a FerovaFamily y FerovaClinic.
+
+<div align="center">
+  <img src="../assets/img/chapter-V/landing-page/landing-page-07.png" width=800>
+</div>
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
