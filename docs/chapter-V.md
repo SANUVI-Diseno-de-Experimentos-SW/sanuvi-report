@@ -658,6 +658,111 @@ Los presentes términos estarán disponibles públicamente en la sección **Term
 
 ### 5.2.5. Implemented Native-Mobile Application Evidence
 
+Hemos Desplegaro la aplicación móvil Ferova Family utilizando Firebase App Distribution, permitiendo que los evaluadores o usuarios de prueba puedan instalar y probar la aplicación antes de su lanzamiento oficial.
+
+
+**Paso 1: Creación del Proyecto en Firebase**
+
+Se creó un nuevo proyecto en Firebase con el nombre Ferova-Family desde la consola de Firebase.
+
+- **Resultado:** El proyecto fue creado correctamente y quedó listo para registrar aplicaciones Android.
+
+<div align="center">
+	<img src="resources/images/sprint-2/deployment/step-1.png">
+</div>
+
+<br>
+
+**Paso 2: Registro de la Aplicación Android**
+
+Se registró la aplicación Android dentro del proyecto Firebase utilizando los siguientes datos:
+
+```
+Nombre de la aplicación: Ferova Family
+
+Nombre del paquete: pe.edu.upc.ferovafamily
+```
+
+- **Resultado:** Firebase vinculó correctamente la aplicación Android al proyecto.
+
+<div align="center">
+	<img src="resources/images/sprint-2/deployment/step-3.png">
+</div>
+
+<br>
+
+**Paso 3: Configuración Exitosa del Proyecto**
+
+Luego del registro de la aplicación, Firebase confirmó que la configuración fue realizada exitosamente.
+
+- **Resultado:** El proyecto quedó preparado para distribuir versiones de la aplicación.
+
+<div align="center">
+	<img src="resources/images/sprint-2/deployment/step-1.1.png">
+</div>
+
+<br>
+
+**Paso 4: Generación del APK desde Android Studio**
+
+Se generó el archivo APK desde Android Studio utilizando la siguiente ruta:
+
+```
+Build
+→ Generate App Bundles or APKs
+→ Generate APKs
+```
+
+- **Resultado:** Android Studio compiló la aplicación y generó el archivo APK correspondiente.
+
+<div align="center">
+	<img src="resources/images/sprint-2/deployment/step-4.png">
+</div>
+
+<br>
+
+**Paso 5: Ubicación del APK Generado**
+
+El archivo generado se ubicó en la siguiente ruta del proyecto:
+
+```
+app/build/outputs/apk/debug/app-debug.apk
+```
+
+- **Resultado:** El APK quedó listo para ser distribuido mediante Firebase App Distribution.
+  
+<div align="center">
+	<img src="resources/images/sprint-2/deployment/step-4.1.png">
+</div>
+
+<br>
+
+**Paso 6: Carga del APK en Firebase App Distribution**
+
+Se accedió al módulo App Distribution de Firebase y se cargó el archivo APK generado previamente.
+
+- **Resultado:** Firebase inició el procesamiento y distribución de la aplicación para los usuarios de prueba.
+
+
+<div align="center">
+	<img src="resources/images/sprint-2/deployment/step-5.png">
+</div>
+
+<br>
+
+**Paso 7: Invitación a los Evaluadores**
+
+Firebase envió automáticamente un correo electrónico de invitación a los usuarios registrados como evaluadores.
+
+Desde dicho correo, los usuarios pueden aceptar la invitación e instalar la aplicación en sus dispositivos Android.
+
+- **Resultado:** La aplicación quedó disponible para pruebas y validación.
+
+<div align="center">
+	<img src="resources/images/sprint-2/deployment/step-6.png">
+</div>
+
+
 
 ### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
 
