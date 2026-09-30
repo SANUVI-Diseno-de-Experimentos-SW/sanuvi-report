@@ -779,6 +779,110 @@ El repositorio fue reinicializado como parte de la transición del proyecto desd
 	<img src="../assets/img/chapter-V/backend/repo-backend.png">
 </div>
 
+El backend de Ferova fue desplegado como una API RESTful utilizando **ASP.NET Core con C#**, mediante **Railway** como plataforma de despliegue. El proyecto se encuentra almacenado en un repositorio de GitHub y utiliza un archivo `Dockerfile` para definir el proceso de construcción de la aplicación.
+
+El proceso de despliegue se realizó mediante los siguientes pasos:
+
+**Paso 1 Creación y configuración del servicio en Railway**
+
+Se creó un servicio en **Railway** conectado directamente con el repositorio de GitHub que contiene el backend de Ferova.
+
+Durante la configuración del servicio se seleccionó el repositorio correspondiente al proyecto y se estableció la rama principal como fuente del código utilizado para el despliegue.
+
+Railway permite visualizar el historial de despliegues y comprobar el estado de cada versión publicada.
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-V/backend/1.png" width=800>
+</div>
+
+<br>
+
+**Paso 2 Configuración del Dockerfile**
+
+Para realizar la construcción del backend se utilizó un `Dockerfile`, ubicado en la raíz del repositorio.
+
+En la configuración de Railway se seleccionó **Dockerfile** como builder y se especificó la ruta:
+
+`/Dockerfile`
+
+De esta manera, Railway utiliza las instrucciones definidas en el Dockerfile para construir la imagen de la aplicación y posteriormente ejecutar el servicio desplegado.
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-V/backend/3.png" width=800>
+</div>
+
+<br>
+
+**Paso 3 Configuración de variables de entorno**
+
+Las configuraciones sensibles y dependencias externas del backend se gestionaron mediante **variables de entorno de Railway**, evitando almacenar directamente estos valores dentro del código fuente.
+
+Entre las variables configuradas se encuentran las relacionadas con:
+
+- Configuración de ASP.NET Core.
+- Autenticación y generación de tokens JWT.
+- Conexión con MongoDB.
+- Configuración de servicios de correo electrónico mediante Resend.
+
+Los valores de estas variables permanecen protegidos dentro de Railway y no se almacenan directamente en el repositorio de GitHub.
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-V/backend/2.png" width=700>
+</div>
+
+<br>
+
+**Paso 4 Construcción y despliegue**
+
+Una vez configurado el repositorio, el Dockerfile y las variables de entorno, Railway ejecutó el proceso de construcción y despliegue del backend.
+
+El servicio fue desplegado correctamente y Railway generó una URL pública para acceder a la aplicación:
+
+**URL del backend:**  https://webapplication1-production-3774.up.railway.app
+
+El estado del despliegue se verificó desde el panel de Railway, donde se muestra el servicio como activo y con el despliegue completado correctamente.
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-V/backend/5.png" width=800>
+</div>
+
+<br>
+
+#### 5.2.6.6. Verificación de la API REST mediante Swagger
+
+Finalmente, se verificó el funcionamiento de la API REST desplegada mediante **Swagger UI**.
+
+La documentación permite visualizar y probar los endpoints disponibles de Ferova, organizados de acuerdo con los diferentes servicios implementados.
+
+Entre los grupos de endpoints disponibles se encuentran:
+
+- **Achievement:** gestión de logros y recompensas.
+- **Analytics:** consultas de información analítica y generación de reportes.
+- **Communication:** consultas, mensajes y comunicación entre usuarios y personal de salud.
+- **HealthFacility:** gestión de postas de salud, citas y asignación de personal.
+- **Patient:** operaciones relacionadas con pacientes.
+- **Treatment:** operaciones relacionadas con el tratamiento.
+- **Nutration Diary:** gestión y consultas de información del diarion nutricional.
+- **Identify and Access Management**: gestión de registro y autenticación.
+
+La API también cuenta con mecanismos de autorización para los endpoints que requieren autenticación.
+
+<br>
+
+<div align="center">
+  <img src="../assets/img/chapter-V/backend/final.png" width=900>
+</div>
+
+<br>
+
 
 ### 5.2.7. RESTful API documentation
 
