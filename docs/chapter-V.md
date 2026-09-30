@@ -462,9 +462,198 @@ El equipo completó el diseño, implementación y despliegue de la Landing Page 
 
 ### 5.2.4. Acuerdo de Servicio - SaaS
 
-> Derechos, obligaciones y restricciones aplicables a los usuarios de la plataforma. Debe estar publicado en la sección *Terms and Conditions* del website.
+#### 5.2.4.1. Descripción del Servicio
 
-**Enlace público:** [URL]
+Ferova es una solución digital orientada al seguimiento y control del tratamiento de la anemia, desarrollada por Sanuvi. El servicio integra una aplicación móvil denominada **FerovaFamily**, dirigida a madres, apoderadas y cuidadores, y una plataforma web denominada **FerovaClinic**, dirigida al personal de salud.
+
+El servicio permite:
+
+- Registrar y consultar información de los pacientes.
+- Registrar y realizar seguimiento de las dosis del tratamiento.
+- Consultar la evolución de los controles de hemoglobina.
+- Registrar información nutricional relacionada con el tratamiento.
+- Gestionar y consultar citas de control.
+- Consultar postas de salud cercanas.
+- Facilitar la comunicación entre las apoderadas y el personal de salud.
+- Proporcionar indicadores para facilitar el seguimiento de los pacientes por parte del personal de salud.
+- Incorporar elementos de gamificación para incentivar la constancia durante el tratamiento.
+
+Ferova se proporciona mediante servicios digitales accesibles desde dispositivos Android para **FerovaFamily** y mediante un navegador web para **FerovaClinic**.
+
+---
+
+#### 5.2.4.2. Derechos de los Usuarios
+
+Los usuarios de Ferova tienen derecho a:
+
+- Acceder a las funcionalidades correspondientes al rol asignado dentro de la plataforma.
+- Consultar la información registrada asociada a su cuenta y a los pacientes que tenga autorizados para gestionar.
+- Recibir información clara sobre el funcionamiento de las funcionalidades disponibles.
+- Mantener la confidencialidad de sus credenciales de acceso.
+- Solicitar la actualización o corrección de información personal cuando corresponda.
+- Recibir una experiencia de uso coherente con las funcionalidades disponibles en la versión utilizada.
+- Solicitar soporte ante problemas relacionados con el acceso o funcionamiento de la plataforma.
+
+---
+
+#### 5.2.4.3. Obligaciones de los Usuarios
+
+Los usuarios se comprometen a:
+
+- Proporcionar información veraz y actualizada durante el registro y uso de la plataforma.
+- Mantener sus credenciales de acceso bajo confidencialidad.
+- No compartir sus credenciales con terceros.
+- Utilizar la plataforma únicamente para los fines relacionados con el seguimiento del tratamiento y las funcionalidades ofrecidas.
+- Registrar información de manera responsable y conforme a la realidad del paciente.
+- Mantener actualizados los datos necesarios para el seguimiento del tratamiento.
+- Informar oportunamente cualquier acceso no autorizado o actividad sospechosa asociada a su cuenta.
+- Respetar las funciones y permisos correspondientes al rol asignado.
+
+---
+
+#### 5.2.4.4. Restricciones de Uso
+
+Está prohibido utilizar Ferova para:
+
+- Acceder, modificar o eliminar información de otros usuarios sin autorización.
+- Intentar obtener acceso a funcionalidades restringidas mediante mecanismos no autorizados.
+- Compartir cuentas o credenciales de acceso de manera que permita el uso no autorizado de la plataforma.
+- Introducir código malicioso, virus u otros elementos que puedan afectar el funcionamiento del servicio.
+- Realizar actividades que comprometan la seguridad, disponibilidad o integridad de la plataforma.
+- Utilizar la información obtenida mediante Ferova para fines distintos a los autorizados.
+- Suplantar la identidad de otro usuario o profesional de salud.
+- Utilizar la plataforma para actividades ilícitas o contrarias a la normativa aplicable.
+
+---
+
+#### 5.2.4.5. Responsabilidades del Proveedor
+
+Sanuvi se compromete a:
+
+- Mantener disponibles las funcionalidades implementadas de Ferova.
+- Realizar acciones de mantenimiento y actualización necesarias para el funcionamiento del servicio.
+- Implementar mecanismos razonables de seguridad para proteger la información gestionada por la plataforma.
+- Gestionar los incidentes técnicos identificados durante el funcionamiento del servicio.
+- Mantener actualizada la documentación relacionada con las funcionalidades principales cuando corresponda.
+- Informar cambios relevantes que puedan afectar el uso de la plataforma.
+
+Las funcionalidades y características disponibles pueden variar de acuerdo con las actualizaciones realizadas sobre Ferova.
+
+---
+
+#### 5.2.4.6. Limitaciones del Servicio
+
+Ferova constituye una herramienta digital de apoyo para el seguimiento del tratamiento y la coordinación entre usuarios y personal de salud.
+
+La información presentada por la plataforma no reemplaza la evaluación, diagnóstico, prescripción ni las indicaciones realizadas por un profesional de salud.
+
+Las decisiones relacionadas con el tratamiento del paciente deben ser realizadas por el personal de salud responsable, de acuerdo con la evaluación clínica correspondiente.
+
+Sanuvi no será responsable por decisiones tomadas por los usuarios fuera de las indicaciones proporcionadas por el personal de salud ni por información ingresada incorrectamente por los propios usuarios.
+
+Asimismo, pueden producirse interrupciones temporales del servicio debido a mantenimiento, actualizaciones, problemas de conectividad, servicios de terceros u otras circunstancias técnicas fuera del control directo de Sanuvi.
+
+---
+
+#### 5.2.4.7. Protección de Datos y Privacidad
+
+Ferova gestiona información proporcionada por sus usuarios durante el uso de la plataforma.
+
+Los datos serán tratados de acuerdo con las políticas de privacidad aplicables y con la normativa vigente correspondiente a la protección de datos personales.
+
+Los usuarios son responsables de proporcionar información correcta y de utilizar la plataforma respetando la privacidad y confidencialidad de la información de los pacientes.
+
+El acceso a la información estará condicionado por el rol y los permisos asignados dentro de Ferova.
+
+La información personal no deberá ser compartida con terceros sin la correspondiente autorización, salvo cuando exista una obligación legal aplicable.
+
+---
+
+#### 5.2.4.8. Acceso y Gestión de Cuentas
+
+Para utilizar las funcionalidades que requieren autenticación, el usuario deberá contar con una cuenta registrada en Ferova.
+
+El usuario es responsable de:
+
+- Proporcionar información correcta durante el registro.
+- Mantener actualizadas sus credenciales.
+- Proteger sus datos de acceso.
+- Informar cualquier sospecha de acceso no autorizado.
+
+Sanuvi podrá restringir temporalmente una cuenta cuando se detecten actividades que comprometan la seguridad de la plataforma o incumplan las condiciones de uso.
+
+---
+
+#### 5.2.4.9. Modificaciones del Servicio
+
+Sanuvi podrá realizar modificaciones, actualizaciones o mejoras sobre Ferova con el objetivo de mantener y mejorar el funcionamiento de la plataforma.
+
+Las modificaciones podrán incluir:
+
+- Incorporación de nuevas funcionalidades.
+- Mejoras de usabilidad y accesibilidad.
+- Correcciones de errores.
+- Actualizaciones de seguridad.
+- Modificaciones técnicas necesarias para mantener el servicio.
+
+Cuando una modificación afecte de manera significativa las condiciones de uso, esta podrá ser comunicada mediante los canales disponibles de la plataforma o del sitio web.
+
+---
+
+#### 5.2.4.10. Terminación o Restricción del Acceso
+
+El usuario podrá dejar de utilizar Ferova en cualquier momento.
+
+Sanuvi podrá restringir o suspender el acceso de una cuenta cuando:
+
+- Se incumplan las presentes condiciones de servicio.
+- Se detecte un uso fraudulento o no autorizado.
+- Se realicen actividades que comprometan la seguridad de la plataforma.
+- Exista una obligación legal que requiera dicha restricción.
+
+La suspensión o terminación del acceso no elimina las obligaciones que, por su naturaleza, deban continuar vigentes.
+
+---
+
+#### 5.2.4.11. Propiedad Intelectual
+
+Los elementos que conforman Ferova, incluyendo su diseño, identidad visual, código fuente, interfaces, contenidos y componentes desarrollados por Sanuvi, se encuentran protegidos por las normas aplicables de propiedad intelectual.
+
+El uso de Ferova no concede al usuario derechos de propiedad sobre el software, diseño, código fuente o identidad visual de la plataforma.
+
+Los usuarios conservan los derechos que les correspondan sobre la información que proporcionen a la plataforma, de acuerdo con la normativa aplicable.
+
+---
+
+#### 5.2.4.12. Resolución de Incidencias
+
+Ante problemas relacionados con el acceso o funcionamiento de Ferova, el usuario podrá comunicarse mediante los canales de contacto publicados en el sitio web.
+
+Las incidencias serán evaluadas de acuerdo con su naturaleza y disponibilidad de los servicios técnicos correspondientes.
+
+Para facilitar la atención, el usuario deberá proporcionar información suficiente sobre el problema identificado, evitando compartir contraseñas u otros datos de autenticación.
+
+---
+
+#### 5.2.4.13. Aceptación de los Términos
+
+El acceso y uso de las funcionalidades de Ferova implica la aceptación de los presentes términos y condiciones.
+
+En caso de que el usuario no esté de acuerdo con alguna de las condiciones establecidas, deberá abstenerse de utilizar las funcionalidades correspondientes de la plataforma.
+
+Los presentes términos estarán disponibles públicamente en la sección **Terms and Conditions** del sitio web de Ferova.
+
+---
+
+#### 5.2.4.14. Contacto
+
+**Sanuvi - Ferova**
+
+- **Producto:** Ferova
+- **Aplicación móvil:** FerovaFamily
+- **Plataforma web:** FerovaClinic
+- **Sitio web:** Landing Page oficial de Ferova
+- **Sección:** Terms and Conditions
 
 
 ### 5.2.5. Implemented Native-Mobile Application Evidence
