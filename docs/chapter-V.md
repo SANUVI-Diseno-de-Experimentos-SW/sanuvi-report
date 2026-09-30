@@ -1006,12 +1006,12 @@ Al ejecutar todas las fases del desarrollo en este sprint, la colaboración del 
 
 #### Landing Page
 
-<img src="../assets/img/chapter-V/video-about-the-product.png" alt="Captura del video About-the-Product">
+<img src="../assets/img/chapter-V/screeshoot/landing-page.png" alt="Captura del video About-the-Product">
 
 | Campo | Dato |
 |-------|------|
-| Enlace del video | [URL de Microsoft Stream] |
-| Duración | [mm:ss] |
+| Enlace del video | https://l1nq.com/prijh1q |
+| Duración | 2:38 min |
 
 #### API RESFUL - SWAGGER
 
