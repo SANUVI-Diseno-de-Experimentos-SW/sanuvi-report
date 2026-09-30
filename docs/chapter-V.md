@@ -1010,8 +1010,8 @@ Al ejecutar todas las fases del desarrollo en este sprint, la colaboración del 
 
 | Campo | Dato |
 |-------|------|
-| Enlace del video | https://l1nq.com/prijh1q |
-| Duración | 2:38 min |
+| Enlace del video | https://n9.cl/0ut58o |
+| Duración | 2:06 min |
 
 #### API RESFUL - SWAGGER
 
