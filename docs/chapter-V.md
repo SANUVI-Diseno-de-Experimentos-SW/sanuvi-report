@@ -773,6 +773,9 @@ Desde dicho correo, los usuarios pueden aceptar la invitación e instalar la apl
 
 ### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
 
+El repositorio fue reinicializado como parte de la transición del proyecto desde la fase de prototipo a desarrollo de producción.
+
+
 
 ### 5.2.7. RESTful API documentation
 
