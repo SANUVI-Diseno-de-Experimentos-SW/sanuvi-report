@@ -960,16 +960,18 @@ La documentación completa de la API se encuentra disponible mediante Swagger/Op
 | `/api/treatment-tracking/patients/{patientId}/treatment-detail` | Obtener detalle completo del tratamiento de un paciente | GET        | `patientId`                                          | `{ "patientName":"Irini Baca", "riskLevel":"MEDIUM", "score":50, "adherenceScore":75 }`                                   |
 
 
-
-
-
 ### 5.2.8. Team Collaboration Insights
 
-> Capturas de los analíticos de colaboración y commits en GitHub para los repositorios de producto.
+Al ejecutar todas las fases del desarrollo en este sprint, la colaboración del equipo requirió alta sincronización mediante GitHub:
 
-<img src="../assets/img/chapter-V/collaboration-insights.png" alt="Team Collaboration Insights">
+#### Repositorio Backend:
 
-<!-- COMPLETAR -->
+
+#### Repositorio Landing Page:
+
+
+#### Repositorio Mobile Application:
+
 
 ## 5.3. Video About-the-Product
 
