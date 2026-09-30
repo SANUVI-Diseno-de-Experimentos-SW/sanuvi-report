@@ -762,7 +762,14 @@ Desde dicho correo, los usuarios pueden aceptar la invitación e instalar la apl
 	<img src="../assets/img/chapter-V/movile-steps/step-6.png">
 </div>
 
+<br>
 
+**Resultado final del producto**
+
+
+<div align="center">
+	<img src="../assets/img/chapter-V/movile-steps/resultado.png">
+</div>
 
 ### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
 
