@@ -312,14 +312,57 @@ El despliegue de la plataforma Ferova se organiza en cuatro componentes principa
 
 ### 5.2.1. Sprint Backlogs
 
-#### Sprint n
+#### Sprint 1
 
-**Sprint Backlog n**
+**Sprint Backlog 1**
 
-| User Story ID | User Story Title | Work-Item / Task ID | Task Title | Description | Estimation (hours) | Assigned To | Status (To-do / In-Process / To-Review / Done) |
-|---------------|------------------|---------------------|------------|-------------|--------------------|-------------|-----------------------------------------------|
-| US01 | [Título] | T01 | [Título] | [Descripción] | [h] | [Nombre] | Done |
+El Sprint 1 contempla la implementación de la Landing Page de Ferova, el desarrollo de las funcionalidades principales de FerovaFamily orientadas a las madres/apoderadas y la implementación completa de la API RESTful definida en el Product Backlog. Las historias incluidas corresponden únicamente a elementos previamente definidos en el Product Backlog.
 
+| Sprint # | User Story Id | User Story Title | Description | Estimation (Hours) | Assigned To | Status |
+|---------|---------------|------------------|-------------|--------------------|-------------|--------|
+| Sprint 1 | US-01 | Conocer el valor de negocio de la plataforma | Como visitante del sitio web estático Quiero determinar el valor de negocio Para tomar la decisión de convertirme en usuario de la plataforma. | 6 | Damián Pereira, Luis Alberto | Done |
+| Sprint 1 | US-02 | Aumento de confianza sobre la plataforma | Como visitante, Quiero conocer sobre los testimonios de otras personas Para aumentar la confianza sobre el uso de la plataforma. | 2 | Damián Pereira, Luis Alberto | Done|
+| Sprint 1 | US-03 | Acceso a las aplicaciones | Como visitante, Quiero acceder o descargar la aplicación Para empezar a usarla en mis operaciones de negocio. | 4 | Damián Pereira, Luis Alberto | Done|
+| Sprint 1 | US-04 | Registro de usuario | Como usuario Quiero registrarme con mi rol respectivo Para acceder a las funcionalidades de la aplicación. | 10 | Peñaranda Caldas, Gabriel Augusto | Done |
+| Sprint 1 | US-05 | Inicio de sesión | Como usuario no autenticado quiero iniciar sesión para acceder de forma seguro a mi cuenta. | 4 | Peñaranda Caldas, Gabriel Augusto | Done |
+| Sprint 1 | TS-01 | Autenticación de usuarios | Como developer quiero autenticar a los usuarios de forma segura a través de una API para que se permita el acceso al sistema. | 4 | Peñaranda Caldas, Gabriel Augusto | Done |
+| Sprint 1 | TS-02 | Registro de usuarios | Como developer, quiero gestionar el registro de usuarios de forma segura a través de una API, para permitir la creación de cuentas en el sistema como una funcionalidad de mi aplicación. | 4 | Peñaranda Caldas, Gabriel Augusto  | Done |
+| Sprint 1 | US-06 | Solicitar recuperación de acceso | Como usuario quiero solicitar la recuperación de mi cuenta para volver a acceder a mi cuenta. | 4 | Damián Pereira, Luis Alberto | Done |
+| Sprint 1 | US-07 | Restablecer contraseña | Cómo usuario quiero restablecer mi contraseña para volver a acceder a mi cuenta. | 10 | Damián Pereira, Luis Alberto | Done |
+| Sprint 1 | TS-03 | Recuperar contraseña mediante correo | Como developer, quiero gestionar la recuperación de contraseña de forma segura a través de una API, para permitir a los usuarios restablecer su acceso al sistema. | 10 | Damián Pereira, Luis Alberto | Done |
+| Sprint 1 | US-09 | Acceso a la Pagina de Inicio | Como usuario, quiero ver la página de inicio para poder acceder a las funciones principales de la aplicación. | 2 |  Damián Pereira, Luis Alberto | Done |
+| Sprint 1 | US-10 | Gestión de pacientes | Como madre, quiero gestionar la información de mi hijo, para mantener sus datos registrados y facilitar el seguimiento de su tratamiento. | 4 | Baca Camargo, Vitaly Arturo | Done |
+| Sprint 1 | TS-04 | Registro de pacientes | Como developer, quiero gestionar el registro de pacientes mediante una API, para permitir que las madres incorporen nuevos pacientes a su seguimiento. | 6 | Baca Camargo, Vitaly Arturo | Done |
+| Sprint 1 | TS-05 | Obtener pacientes de la madre | Como developer, quiero consultar los pacientes asociados a una madre mediante una API, para permitir la obtención de la información básica de los pacientes registrados. | 6 | Por asignar | Baca Camargo, Vitaly Arturo | Done |
+| Sprint 1 | TS-06 | Consulta de evolución de hemoglobina | Como developer, quiero consultar la evolución de los niveles de hemoglobina de un paciente mediante una API, para proporcionar información sobre su progreso durante el seguimiento. | 4 | Quijandria Araneda, Vicente | Done |
+| Sprint 1 | TS-10 | Asignación de paciente a enfermera | Como developer, quiero gestionar la asignación de pacientes a una enfermera mediante una API, para establecer la relación de seguimiento entre la enfermera y el paciente. | 10 | Quijandria Araneda, Vicente | Done |
+| Sprint 1 | TS-11 | Gestion del historial clínica | Como developer, quiero gestionar la creación de la historia clínica de un paciente mediante una API, para almacenar su información clínica y facilitar su seguimiento. | 16 | Quijandria Araneda, Vicente | Done |
+| Sprint 1 | TS-12 | Dar de alta a un paciente | Como developer, quiero gestionar el alta de un paciente mediante una API, para finalizar su seguimiento cuando corresponda. | 4 | Baca Camargo, Vitaly Arturo | Done |
+| Sprint 1 | TS-21 | Registro del control de hemoglobina | Como developer, quiero gestionar el registro de los controles de hemoglobina de los pacientes mediante una API, para mantener actualizada la información de su evolución y determinar automáticamente su estado de anemia. | 16 | Baca Camargo, Vitaly Arturo | Done |
+| Sprint 1 | TS-07 | Inicio del tratamiento | Como developer, quiero gestionar el inicio del tratamiento de un paciente mediante una API, para establecer sus condiciones de tratamiento y generar las dosis correspondientes. | 6 | Baca Camargo, Vitaly Arturo | Done |
+| Sprint 1 | TS-08 | Consulta del detalle del tratamiento | Como developer, quiero consultar el detalle del tratamiento de un paciente mediante una API, para obtener información sobre su evolución y cumplimiento del tratamiento. | 6 | Baca Camargo, Vitaly Arturo | Done |
+| Sprint 1 | TS-09 | Gestión del estado del tratamiento | Como developer, quiero gestionar la finalización o abandono de un tratamiento mediante una API, para mantener actualizado su estado y registrar la observación correspondiente. | 2 | Baca Camargo, Vitaly Arturo | Done |
+| Sprint 1 | TS-18 | Gestión y seguimiento de dosis | Como developer, quiero gestionar la confirmación y consulta de las dosis de un paciente mediante una API, para mantener actualizado el seguimiento del cumplimiento del tratamiento. | 10 | Baca Camargo, Vitaly Arturo | Done |
+| Sprint 1 | US-14 | Diario nutricional | Como madre, quiero llevar un registro de los alimentos que consume mi hijo durante el día, para conocer su alimentación y el aporte de hierro asociado a los alimentos registrados. | 2 | Apaza bocanegra, Elizabeth Noelia | Done |
+| Sprint 1 | US-15 | Resumen nutricional diario | Como madre, quiero consultar el resumen nutricional diario de mi hijo, para conocer los alimentos registrados, el hierro absorbido y el cumplimiento de la meta diaria. | 4 | Apaza bocanegra, Elizabeth Noelia | Done |
+| Sprint 1 | TS-15 | Registro de consumo de alimento | Como developer, quiero gestionar el registro del consumo de alimentos de un paciente mediante una API, para calcular el hierro absorbido y mantener actualizada su información nutricional. | 6 | Apaza bocanegra, Elizabeth Noelia | Done |
+| Sprint 1 | TS-16 | Consulta del diario nutricional | Como developer, quiero consultar el consumo de alimentos de un paciente correspondiente al día actual mediante una API, para obtener su resumen nutricional y el hierro absorbido. | 10 | Apaza bocanegra, Elizabeth Noelia | Done |
+| Sprint 1 | TS-17 | Consulta de alimentos | Como developer, quiero gestionar la consulta de alimentos mediante una API, para obtener información nutricional de los alimentos según una categoría o un criterio de búsqueda. | 10 | Apaza bocanegra, Elizabeth Noelia | Done |
+| Sprint 1 | US-16 | Racha de tratamiento | Como madre, quiero conocer la cantidad de días consecutivos en los que mi hijo ha cumplido con su tratamiento, para mantener la constancia durante el proceso. | 4 | Baca Camargo, Vitaly Arturo| Done |
+| Sprint 1 | US-17 | Insignias por logros del tratamiento | Como madre, quiero obtener insignias al alcanzar hitos durante el tratamiento de mi hijo, para reconocer mi constancia y motivarme a continuar con su seguimiento. | 4 | Baca Camargo, Vitaly Arturo| Done |
+| Sprint 1 | US-18 | Puntos por cumplimiento del tratamiento | Como madre, quiero obtener puntos por confirmar el cumplimiento de las dosis de mi hijo, para reconocer mi constancia y mantener la motivación durante el tratamiento. | 4 | Baca Camargo, Vitaly Arturo| Done |
+| Sprint 1 | TS-13 | Consulta del progreso de gamificación | Como developer, quiero gestionar la consulta del progreso de gamificación asociado a un paciente mediante una API, para proporcionar información sobre los puntos acumulados y la constancia del tratamiento. | 4 | Baca Camargo, Vitaly Arturo| Done |
+| Sprint 1 | TS-14 | Consulta de insignias y progreso | Como developer, quiero gestionar la consulta de las insignias asociadas a un paciente mediante una API, para obtener su estado de desbloqueo y el progreso hacia cada logro del tratamiento. | 4 | Baca Camargo, Vitaly Arturo| Done |
+| Sprint 1 | US-19 | Comunicación con la enfermera | Como madre, quiero comunicarme con la enfermera asignada para realizar consultas relacionadas con el tratamiento de mi hijo y recibir orientación durante su seguimiento. | 4 | Peñaranda Caldas, Gabriel Augusto | Done |
+| Sprint 1 | TS-20 | Gestión de teleconsultas | Como developer, quiero gestionar las teleconsultas entre madres y enfermeras mediante una API, para permitir el intercambio de consultas y respuestas durante el seguimiento del tratamiento del paciente. | 16 | Peñaranda Caldas, Gabriel Augusto | Done |
+| Sprint 1 | US-26 | Reserva y gestión de citas médicas | Como madre, quiero reservar, consultar y cancelar citas para mis pacientes, para organizar sus controles médicos en las postas de salud disponibles. | 6 | Peñaranda Caldas, Gabriel Augusto | Done |
+| Sprint 1 | US-27 | Consulta de postas y horarios disponibles | Como madre, quiero consultar las postas cercanas y sus horarios disponibles, para seleccionar una alternativa adecuada al programar una cita para mi paciente. | 4 | Peñaranda Caldas, Gabriel Augusto | Done |
+| Sprint 1 | US-29 | Visualización de la próxima cita | Como madre, quiero consultar la próxima cita confirmada de mis pacientes, para conocer con anticipación la fecha, hora y posta donde se realizará el control. | 4 | Peñaranda Caldas, Gabriel Augusto | Done |
+| Sprint 1 | TS-24 | Gestión de postas de salud | Como desarrollador, quiero implementar una API para registrar y consultar las postas de salud disponibles en el sistema, para permitir al administrador gestionar los establecimientos y visualizar la información de cada posta. | 6 | Peñaranda Caldas, Gabriel Augusto | Done |
+| Sprint 1 | TS-25 | Asignación de enfermeras a postas de salud | Como desarrollador, quiero implementar una API que permita verificar la disponibilidad de enfermeras y asignarlas a una posta, para mantener correctamente la relación entre enfermeras y establecimientos de salud. | 10 | Peñaranda Caldas, Gabriel Augusto | Done |
+| Sprint 1 | TS-26 | Consulta de distritos disponibles | Como desarrollador, quiero implementar una API que proporcione los distritos disponibles, para permitir seleccionar correctamente la ubicación de una posta durante su registro. | 6 | Peñaranda Caldas, Gabriel Augusto | Done |
+| Sprint 1 | TS-27 | Gestión de citas y disponibilidad de postas | Como desarrollador, quiero implementar una API para gestionar la reserva, cancelación y consulta de citas médicas de los pacientes, así como consultar las postas y horarios disponibles, para permitir una correcta gestión de las atenciones. | 16 | Peñaranda Caldas, Gabriel Augusto | Done |
+| Sprint 1 | US-32 | Registro del cumplimiento de dosis | Como madre, quiero registrar el cumplimiento de las dosis de mi paciente, para llevar un seguimiento de su tratamiento. | 10 | Peñaranda Caldas, Gabriel Augusto | Done |
 
 ### 5.2.2. Implemented Landing Page Evidence
 
