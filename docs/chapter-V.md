@@ -775,6 +775,9 @@ Desde dicho correo, los usuarios pueden aceptar la invitación e instalar la apl
 
 El repositorio fue reinicializado como parte de la transición del proyecto desde la fase de prototipo a desarrollo de producción.
 
+<div align="center">
+	<img src="../assets/img/chapter-V/backend/repo-backend.png">
+</div>
 
 
 ### 5.2.7. RESTful API documentation
