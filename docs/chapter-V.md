@@ -160,9 +160,153 @@ El ciclo de desarrollo se gestionará implementando el modelo de ramas diseñado
 
 ### 5.1.4. Software Deployment Configuration
 
-> Por cada producto: procedimiento de despliegue, servicio utilizado y evidencias de configuración.
+##### 1. Landing Page — Ferova
 
-<!-- COMPLETAR -->
+**Tecnología Base:**
+
+- **Tecnología:** HTML, CSS y JavaScript
+- **Repositorio:** GitHub
+- **Hosting:** GitHub Pages
+
+**Configuración y Despliegue:**
+
+- El código fuente de la Landing Page de Ferova se mantiene en un repositorio de GitHub.
+- La Landing Page está orientada a presentar información general sobre Ferova, sus funcionalidades y la propuesta de la plataforma.
+- El proyecto utiliza **GitHub Pages** como servicio de hosting para publicar la página web.
+- La publicación se realiza directamente desde el repositorio configurado para GitHub Pages.
+- Los cambios realizados en los archivos de la Landing Page pueden ser publicados nuevamente mediante las actualizaciones realizadas en el repositorio.
+- GitHub Pages proporciona el acceso web a la Landing Page sin requerir un servidor backend propio para su funcionamiento.
+- La Landing Page funciona de manera independiente de FerovaClinic, aunque puede proporcionar enlaces de acceso hacia los diferentes componentes de la plataforma.
+
+---
+
+
+##### 2. Frontend Web Application — FerovaClinic (Angular)
+
+**Tecnología Base:**
+
+- **Framework:** Angular
+- **Lenguaje:** TypeScript
+- **IDE:** WebStorm
+- **Build Tool:** Angular CLI
+- **Hosting:** Vercel
+- **Repositorio:** GitHub
+
+**Configuración y Despliegue:**
+
+- El código fuente de FerovaClinic se mantiene en un repositorio de GitHub, donde se gestiona el control de versiones y las actualizaciones de la aplicación web.
+- El desarrollo de la aplicación se realiza utilizando **WebStorm** como entorno de desarrollo integrado (IDE).
+- La aplicación está desarrollada con **Angular** y **TypeScript**, utilizando Angular CLI para la ejecución y construcción del proyecto.
+- Para generar la versión de producción se realiza el proceso de compilación mediante Angular CLI, generando los archivos optimizados de la aplicación.
+- El proyecto de FerovaClinic se encuentra vinculado con **Vercel**, plataforma utilizada para el despliegue y alojamiento de la aplicación web.
+- Vercel permite realizar la construcción y publicación de la aplicación a partir del repositorio de GitHub.
+- Las actualizaciones realizadas en el repositorio pueden generar nuevos despliegues de la aplicación web en Vercel.
+- Las variables de entorno utilizadas por el frontend permiten configurar la URL del backend y otros parámetros necesarios para la comunicación con los servicios REST.
+- En el entorno de desarrollo, FerovaClinic se ejecuta localmente mediante Angular CLI y puede conectarse al backend configurado para pruebas.
+- En el entorno de producción, FerovaClinic se encuentra desplegado en Vercel y consume los servicios REST del backend desplegado en Railway.
+- La aplicación web utiliza solicitudes HTTP/HTTPS para acceder a los servicios proporcionados por el backend.
+
+**Integración con el backend:**
+
+FerovaClinic consume la API REST desarrollada con C# y .NET para realizar las operaciones correspondientes a la gestión de pacientes, controles, tratamientos, citas, seguimiento y demás funcionalidades destinadas al personal de salud.
+
+---
+
+##### 3. Backend — C# + .NET
+
+**Tecnología Base:**
+
+- **Lenguaje:** C#
+- **Framework:** .NET
+- **IDE:** JetBrains Rider
+- **Contenedorización:** Docker
+- **Hosting:** Railway
+- **Documentación de API:** Swagger / OpenAPI
+- **Repositorio:** GitHub
+
+**Configuración y Despliegue:**
+
+- El código fuente del backend se mantiene en un repositorio de GitHub para gestionar el control de versiones y las actualizaciones del servicio.
+- El desarrollo del backend se realiza utilizando **JetBrains Rider** como entorno de desarrollo integrado (IDE).
+- La aplicación backend está desarrollada utilizando **C# y .NET** y proporciona los servicios REST utilizados por FerovaClinic y FerovaFamily.
+- Para la construcción y despliegue de la aplicación se utiliza un archivo `Dockerfile`, que contiene las instrucciones necesarias para preparar el entorno, compilar el proyecto y generar la imagen de la aplicación.
+- El repositorio de GitHub se encuentra vinculado con **Railway**, plataforma utilizada para el alojamiento y despliegue del backend.
+- Railway utiliza la configuración del proyecto y el `Dockerfile` para realizar la construcción de la aplicación y ejecutar el servicio.
+- El backend desplegado en Railway expone la API REST mediante HTTP/HTTPS para permitir el acceso desde las aplicaciones cliente.
+- Los endpoints de la API se documentan mediante **Swagger / OpenAPI**.
+- **Swagger UI** permite visualizar y realizar pruebas de los endpoints disponibles, incluyendo sus métodos HTTP, parámetros y respuestas.
+- La configuración del backend utiliza variables de entorno para administrar valores dependientes del entorno de ejecución.
+- Los cambios realizados en el repositorio pueden generar una nueva construcción y despliegue del backend en Railway.
+- El backend proporciona los servicios necesarios para la gestión de usuarios, pacientes, historias clínicas, controles de hemoglobina, tratamientos, citas, seguimiento y comunicación.
+
+**Entornos diferenciados:**
+
+- **Desarrollo:** El backend se ejecuta localmente desde Rider utilizando el entorno de desarrollo de .NET.
+- **Producción:** El backend se ejecuta en Railway utilizando la imagen construida mediante Docker y se encuentra disponible para las aplicaciones cliente.
+
+**Integración con las aplicaciones cliente:**
+
+- **FerovaClinic:** Consume la API REST desde la aplicación web desarrollada con Angular.
+- **FerovaFamily:** Consume la API REST desde la aplicación móvil desarrollada con Kotlin.
+- Ambas aplicaciones utilizan solicitudes HTTP/HTTPS para acceder a los servicios proporcionados por el backend.
+
+##### 4. Aplicación Móvil — FerovaFamily (Kotlin + Android)
+
+**Tecnología Base:**
+
+- **Lenguaje:** Kotlin
+- **IDE:** Android Studio
+- **Framework:** Jetpack Compose
+- **Plataforma:** Android
+- **Distribución:** APK
+- **Hosting de pruebas:** Firebase App Distribution
+- **Repositorio:** GitHub
+
+**Configuración y Despliegue:**
+
+- El código fuente de FerovaFamily se mantiene en un repositorio de GitHub para gestionar el control de versiones y las actualizaciones de la aplicación.
+- El desarrollo de la aplicación móvil se realiza utilizando **Android Studio** como entorno de desarrollo integrado (IDE).
+- La aplicación está desarrollada en **Kotlin** y utiliza **Jetpack Compose** para la construcción de las interfaces de usuario.
+- Para generar una versión instalable de la aplicación se realiza la compilación del proyecto desde Android Studio.
+- Para las versiones de prueba se genera un archivo **APK (Android Package)**.
+- El archivo APK generado puede instalarse en dispositivos físicos o emuladores Android para verificar el funcionamiento de la aplicación.
+- Las versiones de prueba de FerovaFamily se distribuyen mediante **Firebase App Distribution**, permitiendo realizar pruebas con usuarios y testers seleccionados.
+- Firebase App Distribution permite gestionar las versiones de prueba y distribuirlas a los testers antes de una publicación oficial.
+- Las nuevas versiones de la aplicación pueden ser compiladas y distribuidas nuevamente mediante Firebase App Distribution para incorporar cambios y obtener retroalimentación durante las pruebas.
+- FerovaFamily consume los servicios REST proporcionados por el backend desplegado en Railway mediante solicitudes HTTP/HTTPS.
+
+**Entornos diferenciados:**
+
+- **Desarrollo:** FerovaFamily se ejecuta desde Android Studio utilizando un emulador o dispositivo físico Android.
+- **Pruebas:** Se genera un APK desde Android Studio y se distribuye mediante Firebase App Distribution.
+- **Producción:** La aplicación puede prepararse como una versión de lanzamiento para su posterior distribución en el canal correspondiente.
+
+---
+
+##### 5. Flujo general de despliegue
+
+El despliegue de la plataforma Ferova se organiza en cuatro componentes principales:
+
+1. **Landing Page:** El código fuente se mantiene en GitHub y se publica mediante **GitHub Pages**, proporcionando la página informativa de Ferova.
+
+2. **FerovaClinic:** La aplicación web desarrollada con **Angular y TypeScript** se mantiene en GitHub, se construye mediante Angular CLI y se despliega en **Vercel**.
+
+3. **Backend:** La API desarrollada con **C# y .NET** se mantiene en GitHub. El `Dockerfile` define el proceso de construcción de la aplicación y **Railway** se utiliza para el despliegue y ejecución del backend. La API REST se documenta y prueba mediante **Swagger UI**.
+
+4. **FerovaFamily:** La aplicación móvil desarrollada con **Kotlin y Jetpack Compose** se mantiene en GitHub y se compila mediante **Android Studio** para generar el APK. Las versiones de prueba se distribuyen mediante **Firebase App Distribution**.
+
+5. **Comunicación entre componentes:** FerovaClinic y FerovaFamily consumen los servicios REST proporcionados por el backend mediante solicitudes HTTP/HTTPS.
+
+##### 6. Resumen de tecnologías de despliegue
+
+| Componente | Tecnología | Herramienta de desarrollo | Construcción | Despliegue / Distribución |
+|---|---|---|---|---|
+| Landing Page | HTML + CSS + JavaScript | WebStorm | — | GitHub Pages |
+| FerovaClinic | Angular + TypeScript | WebStorm | Angular CLI | Vercel |
+| Backend | C# + .NET | JetBrains Rider | Docker / Dockerfile | Railway |
+| FerovaFamily | Kotlin + Jetpack Compose | Android Studio | Gradle / Android Build | Firebase App Distribution |
+| API | REST / OpenAPI | JetBrains Rider / Swagger UI | Docker | Railway |
+
 
 ## 5.2. Product Implementation & Deployment
 
