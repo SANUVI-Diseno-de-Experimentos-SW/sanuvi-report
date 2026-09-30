@@ -381,47 +381,77 @@ El equipo completó el diseño, implementación y despliegue de la Landing Page 
   - Diseño responsive adaptado a diferentes tamaños de pantalla.
   - Navegación mediante enlaces internos entre las principales secciones de la Landing Page.
 
+<br>
+
 <div align="center">
   <img src="../assets/img/chapter-V/landing-page/git-hub-pages.png" width=800>
 </div>
 
+<br>
+
 **Figura 1.** Implementación de la sección principal de la Landing Page de Ferova.
+
+<br>
 
 <div align="center">
   <img src="../assets/img/chapter-V/landing-page/landing-page-01.png" width=800>
 </div>
 
+<br>
+
 **Figura 2.** Sección de problemática y contexto de la anemia infantil.
+
+<br>
 
 <div align="center">
   <img src="../assets/img/chapter-V/landing-page/landing-page-02.png" width=800>
 </div>
 
+<br>
+
 **Figura 3.** Sección de funcionalidades principales de Ferova.
+
+<br>
 
 <div align="center">
   <img src="../assets/img/chapter-V/landing-page/landing-page-03.png" width=800>
 </div>
 
+<br>
+
 **Figura 4.** Sección de segmentos de usuarios y propuesta de valor para cada plataforma.
+
+<br>
 
 <div align="center">
   <img src="../assets/img/chapter-V/landing-page/landing-page-04.png" width=800>
 </div>
 
+<br>
+
 **Figura 5.** Sección "Cómo funciona" de la solución Ferova.
+
+<br>
 
 <div align="center">
   <img src="../assets/img/chapter-V/landing-page/landing-page-05.png" width=800>
 </div>
 
+<br>
+
 **Figura 6.** Sección de testimonios de usuarios.
+
+<br>
 
 <div align="center">
   <img src="../assets/img/chapter-V/landing-page/landing-page-06.png" width=800>
 </div>
 
+<br>
+
 **Figura 7.** Sección final de llamada a la acción para acceder a FerovaFamily y FerovaClinic.
+
+<br>
 
 <div align="center">
   <img src="../assets/img/chapter-V/landing-page/landing-page-07.png" width=800>
