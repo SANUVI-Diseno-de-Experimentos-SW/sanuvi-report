@@ -36,11 +36,11 @@ Para la gestión de versiones, el proyecto adoptará el modelo GitFlow, utilizan
 
 | Producto | URL |
 |----------|-----|
-| Report | https://github.com/SANUVI-Diseno-de-Experimentos-SW/sanuvi-report |
-| Landing Page | [URL] |
+| Report | https://github.com/SANUVI-Diseno-de-Experimentos-SW/sanuvi-report/tree/main |
+| Landing Page | https://github.com/SANUVI-Diseno-de-Experimentos-SW/ferova-landing-page |
 | Frontend Web Application | [URL] |
-| RESTful API / Backend | [URL] |
-| Mobile Application | [URL] |
+| RESTful API / Backend | https://github.com/SANUVI-Diseno-de-Experimentos-SW/WebApplication1 |
+| Mobile Application | https://github.com/SANUVI-Diseno-de-Experimentos-SW/ferova-mobile-android |
 
 Flujo de trabajo GitFlow
 
@@ -60,9 +60,103 @@ El ciclo de desarrollo se gestionará implementando el modelo de ramas diseñado
 
 ### 5.1.3. Source Code Style Guide & Conventions
 
-> Convenciones por lenguaje y tecnología utilizadas (HTML, CSS, JavaScript/TypeScript, Java/Kotlin, Dart, Gherkin, etc.), con referencia a la guía oficial adoptada.
+#### Frontend Web App — FerovaClinic (Angular + TypeScript)
 
-<!-- COMPLETAR -->
+##### Convenciones generales:
+
+- **Idioma:** Código, nombres de clases, funciones y variables completamente en inglés.
+- **Estructura de carpetas:** Organización por módulos, componentes, servicios e interfaces.
+- **Indentación:** 2 espacios.
+- **Formato de archivos:** `.ts`, `.html`, `.scss`.
+- **Componentización:** Las interfaces deben dividirse en componentes reutilizables y mantener una única responsabilidad.
+
+##### Estilo de código adoptado:
+
+- **Angular Style Guide:** Convenciones oficiales de Angular para estructura, componentes, servicios y organización del código. https://angular.io/guide/styleguide
+- **TypeScript Style Guide:** Convenciones para escritura consistente y mantenible de código TypeScript. https://google.github.io/styleguide/tsguide.html
+
+##### Estilo de código adoptado:
+
+- **Componentes:** `PascalCase` — Ej.: `PatientListComponent`, `TreatmentTrackingComponent`.
+- **Servicios:** `PascalCase` + sufijo `Service` — Ej.: `PatientService`, `AppointmentService`.
+- **Interfaces:** `PascalCase` — Ej.: `Patient`, `Treatment`, `Appointment`.
+- **Archivos:** `kebab-case` — Ej.: `patient-list.component.ts`, `treatment.service.ts`.
+- **Variables y funciones:** `camelCase` — Ej.: `patientId`, `getPatientDetails()`.
+- **Constantes:** `UPPER_SNAKE_CASE` — Ej.: `MAX_PATIENTS`.
+
+---
+
+####  Mobile Frontend — FerovaFamily (Kotlin + Android Studio + Jetpack Compose)
+
+##### Convenciones generales:
+
+- **Idioma:** Todo el código, nombres de clases, funciones y variables en inglés.
+- **Indentación:** 4 espacios.
+- **Formato de archivos:** `.kt`.
+- **Arquitectura:** Separación de responsabilidades entre UI, lógica de presentación y acceso a datos.
+- **Interfaz:** Las pantallas serán desarrolladas utilizando Jetpack Compose.
+
+##### Estilo de código adoptado:
+
+- **Kotlin Coding Conventions:** Convenciones oficiales para el desarrollo en Kotlin.[Kotlin Coding Conventions](https://kotlinlang.org/docs/coding-conventions.html)
+
+- **Android Kotlin Style Guide:** Convenciones recomendadas para proyectos Android desarrollados con Kotlin. Android Kotlin Style Guide [Android Kotlin Style Guide (Google)](https://developer.android.com/kotlin/style-guide)
+
+##### Nomenclatura:
+
+- **Clases y objetos:** `PascalCase` — Ej.: `PatientProfile`, `TreatmentScreen`.
+- **Funciones y variables:** `camelCase` — Ej.: `getPatientData()`, `selectedPatient`.
+- **Constantes:** `UPPER_SNAKE_CASE` — Ej.: `MAX_PATIENTS`, `DEFAULT_TIMEOUT`.
+- **Paquetes:** minúsculas y separados por puntos — Ej.: `com.ferova.family.ui.patient`.
+- **Funciones composables:** `PascalCase` — Ej.: `PatientCard()`, `TreatmentScreen()`.
+- **Archivos Kotlin:** `PascalCase` cuando representan componentes principales — Ej.: `PatientScreen.kt`, `TreatmentViewModel.kt`.
+
+---
+
+#### Backend — C# + .NET
+
+##### Convenciones generales:
+
+- **Idioma:** Código y documentación interna en inglés.
+- **Indentación:** 4 espacios.
+- **Formato de archivos:** `.cs`.
+- **Arquitectura:** Separación de responsabilidades entre las capas de presentación, aplicación, dominio e infraestructura.
+- **Framework:** .NET para la implementación de la API y lógica de negocio.
+
+##### Estilo de código adoptado:
+
+- **Microsoft C# Coding Conventions:** Convenciones oficiales de Microsoft para el desarrollo en C#.
+- **.NET Coding Guidelines:** Buenas prácticas para la construcción y organización de aplicaciones .NET.
+
+##### Nomenclatura:
+
+- **Clases:** `PascalCase` — Ej.: `PatientService`, `TreatmentController`.
+- **Interfaces:** `IPascalCase` — Ej.: `IPatientRepository`, `ITreatmentService`.
+- **Métodos:** `PascalCase` — Ej.: `GetPatientById()`, `RegisterTreatment()`.
+- **Variables:** `camelCase` — Ej.: `patientId`, `treatmentData`.
+- **Propiedades:** `PascalCase` — Ej.: `PatientId`, `TreatmentStatus`.
+- **Constantes:** `PascalCase` — Ej.: `MaxPatients`.
+- **Endpoints REST:** `kebab-case` — Ej.: `/api/patients`, `/api/treatments`.
+- **Namespaces:** `PascalCase` separados por puntos — Ej.: `Ferova.Application.Patients`.
+
+---
+
+#### Database — MongoDB (NoSQL)
+
+##### Convenciones generales:
+
+- **Formato:** Documentos almacenados en formato JSON/BSON.
+- **Indentación:** 2 espacios para documentos JSON.
+- **Modelado:** Se utilizarán documentos orientados a las necesidades de consulta del sistema, evitando duplicación innecesaria de información.
+- **Identificadores:** Se utilizará `ObjectId` como identificador de los documentos cuando corresponda.
+
+##### Nomenclatura:
+
+- **Colecciones:** `snake_case` y en plural — Ej.: `patients`, `treatments`, `daily_doses`.
+- **Campos:** `camelCase` — Ej.: `patientId`, `createdAt`, `treatmentStatus`.
+- **Índices:** `snake_case` descriptivo — Ej.: `patient_id_index`, `treatment_status_index`.
+- **Referencias:** Los campos utilizados para relacionar documentos deberán utilizar nombres descriptivos y consistentes. Ej.: `patientId`, `nurseId`, `treatmentId`.
+
 
 ### 5.1.4. Software Deployment Configuration
 
