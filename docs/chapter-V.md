@@ -1,8 +1,12 @@
+<div style="page-break-after: always;"></div>
+
 # Capítulo V: Product Implementation
 
 ## 5.1. Software Configuration Management
 
 ### 5.1.1. Software Development Environment Configuration
+
+<div class ="chapter">
 
 **Project Management:**
 
@@ -28,7 +32,11 @@ Se realizaron los productos de UX con la herramienta de UXPressia, así como las
 
 - **Control de Versiones y Gestión:** Se utiliza GitHub como plataforma central para el alojamiento de repositorios, permitiendo un control detallado del historial de cambios y una colaboración eficiente mediante Git.
 
+</div>
+<div style="page-break-after: always;"></div>
+
 ### 5.1.2. Source Code Management
+<div class ="chapter">
 
 Para la gestión de versiones, el proyecto adoptará el modelo GitFlow, utilizando GitHub como repositorio y plataforma principal. En las siguientes secciones se detallará la aplicación de este flujo de trabajo, además de proporcionar los enlace correspondiente de cada repositorio.
 
@@ -58,24 +66,32 @@ El ciclo de desarrollo se gestionará implementando el modelo de ramas diseñado
 
 - **Features (Ramas de Funcionalidad):** Se empleará una rama independiente para cada módulo o tarea específica. Una vez concluida y verificada la funcionalidad, esta se integrará a la rama Develop. Para mantener el orden, se aplicará una nomenclatura estandarizada bajo el patrón "feature/chapter-#".
 
+</div>
+<div style="page-break-after: always;"></div>
+
 ### 5.1.3. Source Code Style Guide & Conventions
 
 #### Frontend Web App — FerovaClinic (Angular + TypeScript)
 
 ##### Convenciones generales:
+<div class ="chapter">
 
 - **Idioma:** Código, nombres de clases, funciones y variables completamente en inglés.
 - **Estructura de carpetas:** Organización por módulos, componentes, servicios e interfaces.
 - **Indentación:** 2 espacios.
 - **Formato de archivos:** `.ts`, `.html`, `.scss`.
 - **Componentización:** Las interfaces deben dividirse en componentes reutilizables y mantener una única responsabilidad.
+</div>
 
 ##### Estilo de código adoptado:
+<div class ="chapter">
 
 - **Angular Style Guide:** Convenciones oficiales de Angular para estructura, componentes, servicios y organización del código. https://angular.io/guide/styleguide
 - **TypeScript Style Guide:** Convenciones para escritura consistente y mantenible de código TypeScript. https://google.github.io/styleguide/tsguide.html
+</div>
 
 ##### Estilo de código adoptado:
+<div class ="chapter">
 
 - **Componentes:** `PascalCase` — Ej.: `PatientListComponent`, `TreatmentTrackingComponent`.
 - **Servicios:** `PascalCase` + sufijo `Service` — Ej.: `PatientService`, `AppointmentService`.
@@ -84,25 +100,30 @@ El ciclo de desarrollo se gestionará implementando el modelo de ramas diseñado
 - **Variables y funciones:** `camelCase` — Ej.: `patientId`, `getPatientDetails()`.
 - **Constantes:** `UPPER_SNAKE_CASE` — Ej.: `MAX_PATIENTS`.
 
----
+</div>
 
 ####  Mobile Frontend — FerovaFamily (Kotlin + Android Studio + Jetpack Compose)
 
 ##### Convenciones generales:
+<div class ="chapter">
 
 - **Idioma:** Todo el código, nombres de clases, funciones y variables en inglés.
 - **Indentación:** 4 espacios.
 - **Formato de archivos:** `.kt`.
 - **Arquitectura:** Separación de responsabilidades entre UI, lógica de presentación y acceso a datos.
 - **Interfaz:** Las pantallas serán desarrolladas utilizando Jetpack Compose.
+</div>
 
 ##### Estilo de código adoptado:
+<div class ="chapter">
 
 - **Kotlin Coding Conventions:** Convenciones oficiales para el desarrollo en Kotlin.[Kotlin Coding Conventions](https://kotlinlang.org/docs/coding-conventions.html)
 
 - **Android Kotlin Style Guide:** Convenciones recomendadas para proyectos Android desarrollados con Kotlin. Android Kotlin Style Guide [Android Kotlin Style Guide (Google)](https://developer.android.com/kotlin/style-guide)
+</div>
 
 ##### Nomenclatura:
+<div class ="chapter">
 
 - **Clases y objetos:** `PascalCase` — Ej.: `PatientProfile`, `TreatmentScreen`.
 - **Funciones y variables:** `camelCase` — Ej.: `getPatientData()`, `selectedPatient`.
@@ -110,12 +131,15 @@ El ciclo de desarrollo se gestionará implementando el modelo de ramas diseñado
 - **Paquetes:** minúsculas y separados por puntos — Ej.: `com.ferova.family.ui.patient`.
 - **Funciones composables:** `PascalCase` — Ej.: `PatientCard()`, `TreatmentScreen()`.
 - **Archivos Kotlin:** `PascalCase` cuando representan componentes principales — Ej.: `PatientScreen.kt`, `TreatmentViewModel.kt`.
+</div>
 
----
+<div style="page-break-after: always;"></div>
 
 #### Backend — C# + .NET
 
 ##### Convenciones generales:
+
+<div class ="chapter">
 
 - **Idioma:** Código y documentación interna en inglés.
 - **Indentación:** 4 espacios.
@@ -123,12 +147,19 @@ El ciclo de desarrollo se gestionará implementando el modelo de ramas diseñado
 - **Arquitectura:** Separación de responsabilidades entre las capas de presentación, aplicación, dominio e infraestructura.
 - **Framework:** .NET para la implementación de la API y lógica de negocio.
 
+</div>
+
 ##### Estilo de código adoptado:
+<div class ="chapter">
 
 - **Microsoft C# Coding Conventions:** Convenciones oficiales de Microsoft para el desarrollo en C#.
 - **.NET Coding Guidelines:** Buenas prácticas para la construcción y organización de aplicaciones .NET.
 
+</div>
+
 ##### Nomenclatura:
+
+<div class ="chapter">
 
 - **Clases:** `PascalCase` — Ej.: `PatientService`, `TreatmentController`.
 - **Interfaces:** `IPascalCase` — Ej.: `IPatientRepository`, `ITreatmentService`.
@@ -139,28 +170,34 @@ El ciclo de desarrollo se gestionará implementando el modelo de ramas diseñado
 - **Endpoints REST:** `kebab-case` — Ej.: `/api/patients`, `/api/treatments`.
 - **Namespaces:** `PascalCase` separados por puntos — Ej.: `Ferova.Application.Patients`.
 
----
+</div>
 
 #### Database — MongoDB (NoSQL)
 
 ##### Convenciones generales:
 
+<div class ="chapter">
 - **Formato:** Documentos almacenados en formato JSON/BSON.
 - **Indentación:** 2 espacios para documentos JSON.
 - **Modelado:** Se utilizarán documentos orientados a las necesidades de consulta del sistema, evitando duplicación innecesaria de información.
 - **Identificadores:** Se utilizará `ObjectId` como identificador de los documentos cuando corresponda.
+</div>
 
 ##### Nomenclatura:
+
+<div class ="chapter">
 
 - **Colecciones:** `snake_case` y en plural — Ej.: `patients`, `treatments`, `daily_doses`.
 - **Campos:** `camelCase` — Ej.: `patientId`, `createdAt`, `treatmentStatus`.
 - **Índices:** `snake_case` descriptivo — Ej.: `patient_id_index`, `treatment_status_index`.
 - **Referencias:** Los campos utilizados para relacionar documentos deberán utilizar nombres descriptivos y consistentes. Ej.: `patientId`, `nurseId`, `treatmentId`.
-
+</div>
+<div style="page-break-after: always;"></div>
 
 ### 5.1.4. Software Deployment Configuration
 
 ##### 1. Landing Page — Ferova
+<div class ="chapter">
 
 **Tecnología Base:**
 
@@ -178,10 +215,13 @@ El ciclo de desarrollo se gestionará implementando el modelo de ramas diseñado
 - GitHub Pages proporciona el acceso web a la Landing Page sin requerir un servidor backend propio para su funcionamiento.
 - La Landing Page funciona de manera independiente de FerovaClinic, aunque puede proporcionar enlaces de acceso hacia los diferentes componentes de la plataforma.
 
----
+</div>
 
+<div style="page-break-after: always;"></div>
 
 ##### 2. Frontend Web Application — FerovaClinic (Angular)
+
+<div class ="chapter">
 
 **Tecnología Base:**
 
@@ -210,9 +250,11 @@ El ciclo de desarrollo se gestionará implementando el modelo de ramas diseñado
 
 FerovaClinic consume la API REST desarrollada con C# y .NET para realizar las operaciones correspondientes a la gestión de pacientes, controles, tratamientos, citas, seguimiento y demás funcionalidades destinadas al personal de salud.
 
----
+</div>
+<div style="page-break-after: always;"></div>
 
 ##### 3. Backend — C# + .NET
+<div class ="chapter">
 
 **Tecnología Base:**
 
@@ -249,8 +291,11 @@ FerovaClinic consume la API REST desarrollada con C# y .NET para realizar las op
 - **FerovaClinic:** Consume la API REST desde la aplicación web desarrollada con Angular.
 - **FerovaFamily:** Consume la API REST desde la aplicación móvil desarrollada con Kotlin.
 - Ambas aplicaciones utilizan solicitudes HTTP/HTTPS para acceder a los servicios proporcionados por el backend.
+</div>
+<div style="page-break-after: always;"></div>
 
 ##### 4. Aplicación Móvil — FerovaFamily (Kotlin + Android)
+<div class ="chapter">
 
 **Tecnología Base:**
 
@@ -280,10 +325,11 @@ FerovaClinic consume la API REST desarrollada con C# y .NET para realizar las op
 - **Desarrollo:** FerovaFamily se ejecuta desde Android Studio utilizando un emulador o dispositivo físico Android.
 - **Pruebas:** Se genera un APK desde Android Studio y se distribuye mediante Firebase App Distribution.
 - **Producción:** La aplicación puede prepararse como una versión de lanzamiento para su posterior distribución en el canal correspondiente.
-
----
+</div>
+<div style="page-break-after: always;"></div>
 
 ##### 5. Flujo general de despliegue
+<div class ="chapter">
 
 El despliegue de la plataforma Ferova se organiza en cuatro componentes principales:
 
@@ -296,8 +342,10 @@ El despliegue de la plataforma Ferova se organiza en cuatro componentes principa
 4. **FerovaFamily:** La aplicación móvil desarrollada con **Kotlin y Jetpack Compose** se mantiene en GitHub y se compila mediante **Android Studio** para generar el APK. Las versiones de prueba se distribuyen mediante **Firebase App Distribution**.
 
 5. **Comunicación entre componentes:** FerovaClinic y FerovaFamily consumen los servicios REST proporcionados por el backend mediante solicitudes HTTP/HTTPS.
+</div>
 
 ##### 6. Resumen de tecnologías de despliegue
+<div class ="chapter">
 
 | Componente | Tecnología | Herramienta de desarrollo | Construcción | Despliegue / Distribución |
 |---|---|---|---|---|
@@ -306,13 +354,15 @@ El despliegue de la plataforma Ferova se organiza en cuatro componentes principa
 | Backend | C# + .NET | JetBrains Rider | Docker / Dockerfile | Railway |
 | FerovaFamily | Kotlin + Jetpack Compose | Android Studio | Gradle / Android Build | Firebase App Distribution |
 | API | REST / OpenAPI | JetBrains Rider / Swagger UI | Docker | Railway |
-
+</div>
+<div style="page-break-after: always;"></div>
 
 ## 5.2. Product Implementation & Deployment
 
 ### 5.2.1. Sprint Backlogs
 
 #### Sprint 1
+<div class ="chapter">
 
 **Sprint Backlog 1**
 
@@ -364,8 +414,11 @@ El Sprint 1 contempla la implementación de la Landing Page de Ferova, el desarr
 | Sprint 1 | TS-27 | Gestión de citas y disponibilidad de postas | Como desarrollador, quiero implementar una API para gestionar la reserva, cancelación y consulta de citas médicas de los pacientes, así como consultar las postas y horarios disponibles, para permitir una correcta gestión de las atenciones. | 16 | Peñaranda Caldas, Gabriel Augusto | Done |
 | Sprint 1 | US-32 | Registro del cumplimiento de dosis | Como madre, quiero registrar el cumplimiento de las dosis de mi paciente, para llevar un seguimiento de su tratamiento. | 10 | Peñaranda Caldas, Gabriel Augusto | Done |
 
-### 5.2.2. Implemented Landing Page Evidence
+</div>
+<div style="page-break-after: always;"></div>
 
+### 5.2.2. Implemented Landing Page Evidence
+<div class ="chapter">
 El equipo completó el diseño, implementación y despliegue de la Landing Page de **Ferova**, desarrollada como página promocional de la solución digital orientada al seguimiento y control del tratamiento de la anemia. La Landing Page presenta la problemática abordada por Ferova, sus principales funcionalidades, los segmentos de usuarios a los que está dirigida y el flujo general de funcionamiento de la solución.
 
 - **Plataforma de Despliegue:** GitHub Pages
@@ -386,6 +439,7 @@ El equipo completó el diseño, implementación y despliegue de la Landing Page 
 <div align="center">
   <img src="../assets/img/chapter-V/landing-page/git-hub-pages.png" width=800>
 </div>
+<div style="page-break-after: always;"></div>
 
 <br>
 
@@ -396,6 +450,7 @@ El equipo completó el diseño, implementación y despliegue de la Landing Page 
 <div align="center">
   <img src="../assets/img/chapter-V/landing-page/landing-page-01.png" width=800>
 </div>
+<div style="page-break-after: always;"></div>
 
 <br>
 
@@ -406,6 +461,7 @@ El equipo completó el diseño, implementación y despliegue de la Landing Page 
 <div align="center">
   <img src="../assets/img/chapter-V/landing-page/landing-page-02.png" width=800>
 </div>
+<div style="page-break-after: always;"></div>
 
 <br>
 
@@ -416,6 +472,7 @@ El equipo completó el diseño, implementación y despliegue de la Landing Page 
 <div align="center">
   <img src="../assets/img/chapter-V/landing-page/landing-page-03.png" width=800>
 </div>
+<div style="page-break-after: always;"></div>
 
 <br>
 
@@ -426,6 +483,7 @@ El equipo completó el diseño, implementación y despliegue de la Landing Page 
 <div align="center">
   <img src="../assets/img/chapter-V/landing-page/landing-page-04.png" width=800>
 </div>
+<div style="page-break-after: always;"></div>
 
 <br>
 
@@ -436,6 +494,7 @@ El equipo completó el diseño, implementación y despliegue de la Landing Page 
 <div align="center">
   <img src="../assets/img/chapter-V/landing-page/landing-page-05.png" width=800>
 </div>
+<div style="page-break-after: always;"></div>
 
 <br>
 
@@ -446,6 +505,7 @@ El equipo completó el diseño, implementación y despliegue de la Landing Page 
 <div align="center">
   <img src="../assets/img/chapter-V/landing-page/landing-page-06.png" width=800>
 </div>
+<div style="page-break-after: always;"></div>
 
 <br>
 
@@ -457,12 +517,18 @@ El equipo completó el diseño, implementación y despliegue de la Landing Page 
   <img src="../assets/img/chapter-V/landing-page/landing-page-07.png" width=800>
 </div>
 
+</div>
+
+<div style="page-break-after: always;"></div>
+
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
 
 ### 5.2.4. Acuerdo de Servicio - SaaS
 
 #### 5.2.4.1. Descripción del Servicio
+
+<div class ="chapter">
 
 Ferova es una solución digital orientada al seguimiento y control del tratamiento de la anemia, desarrollada por Sanuvi. El servicio integra una aplicación móvil denominada **FerovaFamily**, dirigida a madres, apoderadas y cuidadores, y una plataforma web denominada **FerovaClinic**, dirigida al personal de salud.
 
@@ -480,9 +546,11 @@ El servicio permite:
 
 Ferova se proporciona mediante servicios digitales accesibles desde dispositivos Android para **FerovaFamily** y mediante un navegador web para **FerovaClinic**.
 
----
+</div>
 
 #### 5.2.4.2. Derechos de los Usuarios
+
+<div class ="chapter">
 
 Los usuarios de Ferova tienen derecho a:
 
@@ -493,10 +561,10 @@ Los usuarios de Ferova tienen derecho a:
 - Solicitar la actualización o corrección de información personal cuando corresponda.
 - Recibir una experiencia de uso coherente con las funcionalidades disponibles en la versión utilizada.
 - Solicitar soporte ante problemas relacionados con el acceso o funcionamiento de la plataforma.
-
----
+</div>
 
 #### 5.2.4.3. Obligaciones de los Usuarios
+<div class ="chapter">
 
 Los usuarios se comprometen a:
 
@@ -508,10 +576,11 @@ Los usuarios se comprometen a:
 - Mantener actualizados los datos necesarios para el seguimiento del tratamiento.
 - Informar oportunamente cualquier acceso no autorizado o actividad sospechosa asociada a su cuenta.
 - Respetar las funciones y permisos correspondientes al rol asignado.
-
----
+</div>
+<div style="page-break-after: always;"></div>
 
 #### 5.2.4.4. Restricciones de Uso
+<div class ="chapter">
 
 Está prohibido utilizar Ferova para:
 
@@ -523,10 +592,10 @@ Está prohibido utilizar Ferova para:
 - Utilizar la información obtenida mediante Ferova para fines distintos a los autorizados.
 - Suplantar la identidad de otro usuario o profesional de salud.
 - Utilizar la plataforma para actividades ilícitas o contrarias a la normativa aplicable.
-
----
+</div>
 
 #### 5.2.4.5. Responsabilidades del Proveedor
+<div class ="chapter">
 
 Sanuvi se compromete a:
 
@@ -538,10 +607,10 @@ Sanuvi se compromete a:
 - Informar cambios relevantes que puedan afectar el uso de la plataforma.
 
 Las funcionalidades y características disponibles pueden variar de acuerdo con las actualizaciones realizadas sobre Ferova.
-
----
+</div>
 
 #### 5.2.4.6. Limitaciones del Servicio
+<div class ="chapter">
 
 Ferova constituye una herramienta digital de apoyo para el seguimiento del tratamiento y la coordinación entre usuarios y personal de salud.
 
@@ -552,10 +621,11 @@ Las decisiones relacionadas con el tratamiento del paciente deben ser realizadas
 Sanuvi no será responsable por decisiones tomadas por los usuarios fuera de las indicaciones proporcionadas por el personal de salud ni por información ingresada incorrectamente por los propios usuarios.
 
 Asimismo, pueden producirse interrupciones temporales del servicio debido a mantenimiento, actualizaciones, problemas de conectividad, servicios de terceros u otras circunstancias técnicas fuera del control directo de Sanuvi.
-
----
+</div>
+<div style="page-break-after: always;"></div>
 
 #### 5.2.4.7. Protección de Datos y Privacidad
+<div class ="chapter">
 
 Ferova gestiona información proporcionada por sus usuarios durante el uso de la plataforma.
 
@@ -566,10 +636,11 @@ Los usuarios son responsables de proporcionar información correcta y de utiliza
 El acceso a la información estará condicionado por el rol y los permisos asignados dentro de Ferova.
 
 La información personal no deberá ser compartida con terceros sin la correspondiente autorización, salvo cuando exista una obligación legal aplicable.
+</div>
 
----
 
 #### 5.2.4.8. Acceso y Gestión de Cuentas
+<div class ="chapter">
 
 Para utilizar las funcionalidades que requieren autenticación, el usuario deberá contar con una cuenta registrada en Ferova.
 
@@ -581,10 +652,10 @@ El usuario es responsable de:
 - Informar cualquier sospecha de acceso no autorizado.
 
 Sanuvi podrá restringir temporalmente una cuenta cuando se detecten actividades que comprometan la seguridad de la plataforma o incumplan las condiciones de uso.
-
----
+</div>
 
 #### 5.2.4.9. Modificaciones del Servicio
+<div class ="chapter">
 
 Sanuvi podrá realizar modificaciones, actualizaciones o mejoras sobre Ferova con el objetivo de mantener y mejorar el funcionamiento de la plataforma.
 
@@ -597,10 +668,11 @@ Las modificaciones podrán incluir:
 - Modificaciones técnicas necesarias para mantener el servicio.
 
 Cuando una modificación afecte de manera significativa las condiciones de uso, esta podrá ser comunicada mediante los canales disponibles de la plataforma o del sitio web.
-
----
+</div>
+<div style="page-break-after: always;"></div>
 
 #### 5.2.4.10. Terminación o Restricción del Acceso
+<div class ="chapter">
 
 El usuario podrá dejar de utilizar Ferova en cualquier momento.
 
@@ -612,40 +684,41 @@ Sanuvi podrá restringir o suspender el acceso de una cuenta cuando:
 - Exista una obligación legal que requiera dicha restricción.
 
 La suspensión o terminación del acceso no elimina las obligaciones que, por su naturaleza, deban continuar vigentes.
-
----
+</div>
 
 #### 5.2.4.11. Propiedad Intelectual
+<div class ="chapter">
 
 Los elementos que conforman Ferova, incluyendo su diseño, identidad visual, código fuente, interfaces, contenidos y componentes desarrollados por Sanuvi, se encuentran protegidos por las normas aplicables de propiedad intelectual.
 
 El uso de Ferova no concede al usuario derechos de propiedad sobre el software, diseño, código fuente o identidad visual de la plataforma.
 
 Los usuarios conservan los derechos que les correspondan sobre la información que proporcionen a la plataforma, de acuerdo con la normativa aplicable.
-
----
+</div>
 
 #### 5.2.4.12. Resolución de Incidencias
+<div class ="chapter">
 
 Ante problemas relacionados con el acceso o funcionamiento de Ferova, el usuario podrá comunicarse mediante los canales de contacto publicados en el sitio web.
 
 Las incidencias serán evaluadas de acuerdo con su naturaleza y disponibilidad de los servicios técnicos correspondientes.
 
 Para facilitar la atención, el usuario deberá proporcionar información suficiente sobre el problema identificado, evitando compartir contraseñas u otros datos de autenticación.
+</div>
 
----
 
 #### 5.2.4.13. Aceptación de los Términos
+<div class ="chapter">
 
 El acceso y uso de las funcionalidades de Ferova implica la aceptación de los presentes términos y condiciones.
 
 En caso de que el usuario no esté de acuerdo con alguna de las condiciones establecidas, deberá abstenerse de utilizar las funcionalidades correspondientes de la plataforma.
 
 Los presentes términos estarán disponibles públicamente en la sección **Terms and Conditions** del sitio web de Ferova.
-
----
+</div>
 
 #### 5.2.4.14. Contacto
+<div class ="chapter">
 
 **Sanuvi - Ferova**
 
@@ -654,9 +727,11 @@ Los presentes términos estarán disponibles públicamente en la sección **Term
 - **Plataforma web:** FerovaClinic
 - **Sitio web:** Landing Page oficial de Ferova
 - **Sección:** Terms and Conditions
-
+</div>
+<div style="page-break-after: always;"></div>
 
 ### 5.2.5. Implemented Native-Mobile Application Evidence
+<div class ="chapter">
 
 Hemos Desplegaro la aplicación móvil Ferova Family utilizando Firebase App Distribution, permitiendo que los evaluadores o usuarios de prueba puedan instalar y probar la aplicación antes de su lanzamiento oficial.
 
@@ -672,6 +747,7 @@ Se creó un nuevo proyecto en Firebase con el nombre Ferova-Family desde la cons
 </div>
 
 <br>
+<div style="page-break-after: always;"></div>
 
 **Paso 2: Registro de la Aplicación Android**
 
@@ -690,6 +766,7 @@ Nombre del paquete: pe.edu.upc.ferovafamily
 </div>
 
 <br>
+<div style="page-break-after: always;"></div>
 
 **Paso 3: Configuración Exitosa del Proyecto**
 
@@ -702,6 +779,7 @@ Luego del registro de la aplicación, Firebase confirmó que la configuración f
 </div>
 
 <br>
+<div style="page-break-after: always;"></div>
 
 **Paso 4: Generación del APK desde Android Studio**
 
@@ -720,6 +798,7 @@ Build
 </div>
 
 <br>
+<div style="page-break-after: always;"></div>
 
 **Paso 5: Ubicación del APK Generado**
 
@@ -736,6 +815,7 @@ app/build/outputs/apk/debug/app-debug.apk
 </div>
 
 <br>
+<div style="page-break-after: always;"></div>
 
 **Paso 6: Carga del APK en Firebase App Distribution**
 
@@ -749,6 +829,7 @@ Se accedió al módulo App Distribution de Firebase y se cargó el archivo APK g
 </div>
 
 <br>
+<div style="page-break-after: always;"></div>
 
 **Paso 7: Invitación a los Evaluadores**
 
@@ -771,7 +852,12 @@ Desde dicho correo, los usuarios pueden aceptar la invitación e instalar la apl
 	<img src="../assets/img/chapter-V/movile-steps/resultado.png">
 </div>
 
+</div>
+<div style="page-break-after: always;"></div>
+
 ### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
+
+<div class ="chapter">
 
 El repositorio fue reinicializado como parte de la transición del proyecto desde la fase de prototipo a desarrollo de producción.
 
@@ -782,6 +868,8 @@ El repositorio fue reinicializado como parte de la transición del proyecto desd
 El backend de Ferova fue desplegado como una API RESTful utilizando **ASP.NET Core con C#**, mediante **Railway** como plataforma de despliegue. El proyecto se encuentra almacenado en un repositorio de GitHub y utiliza un archivo `Dockerfile` para definir el proceso de construcción de la aplicación.
 
 El proceso de despliegue se realizó mediante los siguientes pasos:
+
+<div style="page-break-after: always;"></div>
 
 **Paso 1 Creación y configuración del servicio en Railway**
 
@@ -798,6 +886,8 @@ Railway permite visualizar el historial de despliegues y comprobar el estado de 
 </div>
 
 <br>
+
+<div style="page-break-after: always;"></div>
 
 **Paso 2 Configuración del Dockerfile**
 
@@ -816,6 +906,8 @@ De esta manera, Railway utiliza las instrucciones definidas en el Dockerfile par
 </div>
 
 <br>
+
+<div style="page-break-after: always;"></div>
 
 **Paso 3 Configuración de variables de entorno**
 
@@ -838,6 +930,8 @@ Los valores de estas variables permanecen protegidos dentro de Railway y no se a
 
 <br>
 
+<div style="page-break-after: always;"></div>
+
 **Paso 4 Construcción y despliegue**
 
 Una vez configurado el repositorio, el Dockerfile y las variables de entorno, Railway ejecutó el proceso de construcción y despliegue del backend.
@@ -855,8 +949,13 @@ El estado del despliegue se verificó desde el panel de Railway, donde se muestr
 </div>
 
 <br>
+</div>
+
+<div style="page-break-after: always;"></div>
 
 #### 5.2.6.6. Verificación de la API REST mediante Swagger
+
+<div class ="chapter">
 
 Finalmente, se verificó el funcionamiento de la API REST desplegada mediante **Swagger UI**.
 
@@ -881,10 +980,14 @@ La API también cuenta con mecanismos de autorización para los endpoints que re
   <img src="../assets/img/chapter-V/backend/final.png" width=900>
 </div>
 
-<br>
+</div>
+
+<div style="page-break-after: always;"></div>
 
 
 ### 5.2.7. RESTful API documentation
+
+<div class ="chapter">
 
 En esta sección se presenta la documentación de la API RESTful del sistema Ferova, la cual permite la comunicación entre el frontend y el backend mediante endpoints estructurados bajo el estándar HTTP y siguiendo los principios REST.
 
@@ -958,11 +1061,13 @@ La documentación completa de la API se encuentra disponible mediante Swagger/Op
 | `/api/treatment-tracking/nurses/treatments`                     | Obtener tratamientos asignados a una enfermera          | GET        | `status=ACTIVE \| COMPLETED \| ABANDONED` (opcional) | `{ "treatments":[{ "patientName":"Irini Baca", "status":"ACTIVE" }] }`                                                    |
 | `/api/treatment-tracking/treatments/{treatmentId}`              | Obtener detalle de un tratamiento                       | GET        | `treatmentId`                                        | `{ "id":"uuid", "patientName":"Irini Baca", "supplementName":"Vitamina C", "status":"ACTIVE" }`                           |
 | `/api/treatment-tracking/patients/{patientId}/treatment-detail` | Obtener detalle completo del tratamiento de un paciente | GET        | `patientId`                                          | `{ "patientName":"Irini Baca", "riskLevel":"MEDIUM", "score":50, "adherenceScore":75 }`                                   |
-
+</div>
+<div style="page-break-after: always;"></div>
 
 ### 5.2.8. Team Collaboration Insights
-
+<div class="chapter">
 Al ejecutar todas las fases del desarrollo en este sprint, la colaboración del equipo requirió alta sincronización mediante GitHub:
+</div>
 
 #### Repositorio Backend:
 
@@ -970,11 +1075,13 @@ Al ejecutar todas las fases del desarrollo en este sprint, la colaboración del 
   <img src="../assets/img/chapter-V/collabarotion/backend-1.png" width=900>
 </div>
 
----
+<div style="page-break-after: always;"></div>
 
 <div align="center">
   <img src="../assets/img/chapter-V/collabarotion/backend.png" width=900>
 </div>
+
+<div style="page-break-after: always;"></div>
 
 #### Repositorio Landing Page:
 
@@ -989,6 +1096,8 @@ Al ejecutar todas las fases del desarrollo en este sprint, la colaboración del 
   <img src="../assets/img/chapter-V/collabarotion/landing-page.png" width=900>
 </div>
 
+<div style="page-break-after: always;"></div>
+
 #### Repositorio Mobile Application:
 
 <div align="center">
@@ -1001,17 +1110,22 @@ Al ejecutar todas las fases del desarrollo en este sprint, la colaboración del 
   <img src="../assets/img/chapter-V/collabarotion/movil-ferova-family-kotklit.png" width=900>
 </div>
 
+<div style="page-break-after: always;"></div>
 
 ## 5.3. Video About-the-Product
 
 #### Landing Page
 
+<div align ="center">
 <img src="../assets/img/chapter-V/screeshoot/landing-page.png" alt="Captura del video About-the-Product">
+</div>
 
 | Campo | Dato |
 |-------|------|
 | Enlace del video | https://n9.cl/0ut58o |
 | Duración | 2:06 min |
+
+<div style="page-break-after: always;"></div>
 
 #### API RESFUL - SWAGGER
 
@@ -1023,6 +1137,8 @@ Al ejecutar todas las fases del desarrollo en este sprint, la colaboración del 
 |-------|------|
 | Enlace del video | https://n9.cl/100l2 |
 | Duración | 8:15 min |
+
+<div style="page-break-after: always;"></div>
 
 #### Aplicación Movil
 

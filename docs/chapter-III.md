@@ -1,36 +1,46 @@
+<div style="page-break-after: always;"></div>
+
 # Capítulo III: Requirements Specification
 
 ## 3.1. To-Be Scenario Mapping
 
+<div class="chapter"> 
+
 Los siguientes Scenario Maps (To-Be) representan el recorrido propuesto para los dos perfiles de usuario identificados a partir del análisis de los escenarios As-Is. Para cada persona se mantienen las mismas fases del proceso actual, incorporando las mejoras y funcionalidades propuestas para Sanuvi. Se describen las actividades que realizarían los usuarios, los pensamientos asociados y las emociones esperadas durante cada etapa. Esta representación permite visualizar cómo la solución propuesta transforma el proceso actual y cómo contribuye a facilitar el seguimiento del tratamiento, organizar la información y mejorar la interacción entre las familias y el personal de salud.
+</div>
+
+<div class="chapter"> 
 
 **Segmento Madres, padres y cuidadores:** En el siguiente escenario To-Be se presenta el flujo de trabajo propuesto para María López, desarrollado a partir del análisis del escenario As-Is y la identificación de oportunidades de mejora. Se mantienen las mismas fases del escenario actual para facilitar la comparación y se incorporan las funcionalidades de Sanuvi orientadas a organizar el tratamiento, registrar el cumplimiento de las dosis, consultar la evolución, gestionar las citas, registrar la alimentación y mantener la comunicación con el personal de salud. De esta manera, se busca facilitar el seguimiento del tratamiento y brindar mayor control y claridad durante el proceso.
-
 <br>
-
 <div aling="center">
 <img src="../assets/img/chapter-III/To Be Scenario Mapping - Maria Lopez.jpg">
 </div>
-
-<br>
-
-**Segmento Personal de salud:** En el siguiente escenario To-Be se presenta el flujo de trabajo propuesto para Carlos Rojas, desarrollado a partir del análisis del escenario As-Is y la identificación de oportunidades de mejora. Se mantienen las mismas fases del escenario actual para facilitar la comparación y se incorporan las funcionalidades de Sanuvi orientadas a organizar la información clínica, registrar controles, realizar el seguimiento de los niveles de hemoglobina, coordinar las citas y mantener la comunicación con las familias. Con ello, se busca facilitar el seguimiento de los pacientes y proporcionar información organizada para apoyar la atención y la toma de decisiones.
-
-<br>
-
-<div aling="center">
-<img src="../assets/img/chapter-III/To Be Scenario Mapping - Carlos Rojas.jpg">
 </div>
 
 <br>
+<div style="page-break-after: always;"></div>
+<div class="chapter"> 
+
+**Segmento Personal de salud:** En el siguiente escenario To-Be se presenta el flujo de trabajo propuesto para Carlos Rojas, desarrollado a partir del análisis del escenario As-Is y la identificación de oportunidades de mejora. Se mantienen las mismas fases del escenario actual para facilitar la comparación y se incorporan las funcionalidades de Sanuvi orientadas a organizar la información clínica, registrar controles, realizar el seguimiento de los niveles de hemoglobina, coordinar las citas y mantener la comunicación con las familias. Con ello, se busca facilitar el seguimiento de los pacientes y proporcionar información organizada para apoyar la atención y la toma de decisiones.
+<br>
+<div aling="center">
+<img src="../assets/img/chapter-III/To Be Scenario Mapping - Carlos Rojas.jpg">
+</div>
+</div>
+
+<br>
+<div style="page-break-after: always;"></div>
 
 ## 3.2. User Stories
+<div class="chapter"> 
 
 Para el presente proyecto, se definieron historias de usuario a partir de las epics principales identificadas durante la fase de análisis. Estas historias permiten describir, de forma concreta y centrada en el usuario, las funcionalidades clave del sistema, sirviendo como base para su diseño, desarrollo y validación.
-
+</div>
 
 **Epics**
 
+<div class="toc"> 
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -220,6 +230,7 @@ Como usuario de la plataforma, quiero asegurar mi cuenta, para evitar el acceso 
 
 <br>
 
+<div style="page-break-after: always;"></div>
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
     <tr>
@@ -312,6 +323,8 @@ Como usuario de la plataforma, quiero asegurar mi cuenta, para evitar el acceso 
   </tbody>
 </table>
 
+<br>
+
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
     <tr>
@@ -341,7 +354,13 @@ Como madre o enfermera, quiero gestionar consultas relacionadas con el tratamien
   </tbody>
 </table>
 
+</div>
+
+<div style="page-break-after: always;"></div>
+
 **User Stories**
+
+<div class="toc"> 
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -403,6 +422,7 @@ Entonces encuentra una linea de tiempo de inicia a fin indicando paso a paso com
 </table>
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -451,6 +471,7 @@ Entonces puede conocer las experiencias de otros usuarios con la plataforma y su
 </table>
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -505,6 +526,7 @@ Entonces es redirigido a la tienda de aplicaciones de su sistema operativo para 
 </table>
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -576,6 +598,7 @@ Entonces se muestra un mensaje indicando que los datos ingresados no son válido
 </table>
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -626,6 +649,7 @@ Entonces se muestra un mensaje indicando que las credenciales no son válidas y 
 </table>
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -673,6 +697,7 @@ Entonces se muestra un mensaje indicando que las credenciales no son válidas y 
 </table>
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -726,6 +751,7 @@ entonces el API responde con un estado 201 CREATED.
 </table>
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -778,6 +804,7 @@ Entonces le llegará un código de 6 dígitos al correo ingresado.
 </table>
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -842,6 +869,7 @@ Entonces no continúa con el procedimiento y no logra cambiar su contraseña.
 </table>
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -895,6 +923,7 @@ Entonces se elimina la sesión activa del dispositivo móvil
 </table>
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -970,6 +999,7 @@ entonces la API responde con un estado 400 BAD REQUEST e indica que el código e
 </table>
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -1022,6 +1052,7 @@ Entonces el usuario visualiza los accesos a las principales funciones de la apli
 </table>
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -1074,6 +1105,7 @@ Entonces el paciente no es registrado y se muestra un mensaje de error.<br>
 </table>
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -1132,6 +1164,7 @@ Entonces el valor no es aceptado y se informa que el valor ingresado no es váli
 </table>
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -1194,6 +1227,7 @@ Entonces el historial médico queda actualizado con la nueva información para c
 
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -1254,6 +1288,7 @@ Entonces el cambio no se realiza y se indica que debe proporcionar una justifica
 
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -1308,6 +1343,7 @@ Entonces la API responde con un estado 400 Bad Request e indica que el peso o la
 </table>
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -1361,6 +1397,7 @@ Entonces la API responde con un estado 200 OK y devuelve una lista de pacientes 
 </table>
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -1410,6 +1447,7 @@ Entonces la API responde 200 OK y retorna un arreglo vacío.
 </table>
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -1464,6 +1502,7 @@ entonces la API responde con un estado 400 Bad Request e indica que el paciente 
 </table>
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -1519,6 +1558,7 @@ entonces la API responde con un estado 400 Bad Request e indica que el paciente 
 </table>
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -1572,6 +1612,7 @@ Entonces las dosis asociadas al tratamiento son eliminadas físicamente de la ba
 </table>
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -1636,6 +1677,7 @@ entonces la API responde con un estado 400 Bad Request e indica que la enfermera
 </table>
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -1718,6 +1760,7 @@ entonces la API responde con un estado 200 OK y devuelve el archivo PDF correspo
 </table>
 
 ---
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -1768,6 +1811,8 @@ entonces la API responde con un estado 400 Bad Request e indica que el paciente 
   </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 ---
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
@@ -1812,6 +1857,8 @@ entonces los alimentos quedan registrados y se calcula el aporte de hierro absor
     </tr>
   </tbody>
 </table>
+
+<div style="page-break-after: always;"></div>
 
 ---
 
@@ -1865,6 +1912,8 @@ entonces se indica que no existen alimentos registrados para ese día.
   </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 ---
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
@@ -1913,6 +1962,8 @@ entonces la racha se reinicia y comienza nuevamente el conteo de días consecuti
     </tr>
   </tbody>
 </table>
+
+<div style="page-break-after: always;"></div>
 
 ---
 
@@ -1963,6 +2014,8 @@ entonces la API responde con un error indicando que el paciente no fue encontrad
   </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 ---
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
@@ -2012,6 +2065,8 @@ entonces puede identificar las insignias que ya ha desbloqueado y los hitos asoc
   </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 ---
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
@@ -2060,6 +2115,8 @@ entonces la API responde con un error indicando que el paciente no fue encontrad
     </tr>
   </tbody>
 </table>
+
+<div style="page-break-after: always;"></div>
 
 ---
 
@@ -2113,6 +2170,8 @@ entonces la API rechaza la operación indicando que el paciente no pertenece a l
     </tr>
   </tbody>
 </table>
+
+<div style="page-break-after: always;"></div>
 
 ---
 
@@ -2175,6 +2234,8 @@ entonces devuelve el historial nutricional correspondiente al rango de fechas in
   </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 ---
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
@@ -2232,6 +2293,8 @@ entonces responde sin resultados.
   </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 ---
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
@@ -2280,6 +2343,8 @@ entonces puede conocer el total de puntos obtenidos hasta ese momento.
     </tr>
   </tbody>
 </table>
+
+<div style="page-break-after: always;"></div>
 
 ---
 
@@ -2342,6 +2407,8 @@ entonces la API responde correctamente indicando que no existen registros de dos
   </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 ---
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
@@ -2395,6 +2462,8 @@ entonces la API responde con estado 200 OK y devuelve una lista vacía de pacien
   </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 ---
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
@@ -2444,6 +2513,8 @@ entonces la consulta no se registra y se indica que debe proporcionar el conteni
   </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 ---
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
@@ -2488,6 +2559,8 @@ entonces la consulta se cierra correctamente.
     </tr>
   </tbody>
 </table>
+
+<div style="page-break-after: always;"></div>
 
 ---
 
@@ -2549,6 +2622,8 @@ entonces responde con un error indicando que la enfermera debe haber respondido 
     </tr>
   </tbody>
 </table>
+
+<div style="page-break-after: always;"></div>
 
 ---
 
@@ -2613,6 +2688,8 @@ entonces determina automáticamente el estado de anemia correspondiente según e
     </tr>
   </tbody>
 </table>
+
+<div style="page-break-after: always;"></div>
 
 ---
 
@@ -2686,6 +2763,8 @@ entonces devuelve únicamente las postas correspondientes al nivel de riesgo ind
   </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 ---
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
@@ -2738,6 +2817,8 @@ entonces responde con un error indicando que el usuario no está autorizado para
     </tr>
   </tbody>
 </table>
+
+<div style="page-break-after: always;"></div>
 
 ---
 
@@ -2800,6 +2881,8 @@ entonces puede visualizar la ubicación de las postas junto con su nivel de ries
   </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 ---
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
@@ -2853,6 +2936,8 @@ entonces debe responder con 401 Unauthorized o 403 Forbidden, según corresponda
     </tr>
   </tbody>
 </table>
+
+<div style="page-break-after: always;"></div>
 
 ---
 
@@ -2911,6 +2996,8 @@ entonces debe rechazar la operación y devolver un estado 400 Bad Request indica
   </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 ---
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
@@ -2959,6 +3046,8 @@ entonces debe responder con 401 Unauthorized o 403 Forbidden.
     </tr>
   </tbody>
 </table>
+
+<div style="page-break-after: always;"></div>
 
 ---
 
@@ -3033,6 +3122,8 @@ entonces debe responder con 200 OK y devolver las postas activas ordenadas por d
   </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 ---
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
@@ -3090,6 +3181,8 @@ entonces debe responder con 404 Not Found indicando que no existe una posta asig
   </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 ---
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
@@ -3137,6 +3230,8 @@ entonces deben indicarse los campos pendientes y no debe completarse el registro
     </tr>
   </tbody>
 </table>
+
+<div style="page-break-after: always;"></div>
 
 ---
 
@@ -3186,6 +3281,8 @@ entonces debe mostrarse un mensaje indicando que no existen postas disponibles.
     </tr>
   </tbody>
 </table>
+
+<div style="page-break-after: always;"></div>
 
 ---
 
@@ -3240,6 +3337,8 @@ entonces debe mostrarse un mensaje indicando que la posta ya cuenta con una enfe
   </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 ---
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
@@ -3288,6 +3387,8 @@ entonces debe mostrarse un mensaje indicando que no existen enfermeras disponibl
     </tr>
   </tbody>
 </table>
+
+<div style="page-break-after: always;"></div>
 
 ---
 
@@ -3342,6 +3443,8 @@ entonces la cita debe quedar registrada con estado cancelado y debe mostrarse un
   </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 ---
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
@@ -3390,6 +3493,8 @@ entonces deben mostrarse los horarios libres y ocupados.<br>
     </tr>
   </tbody>
 </table>
+
+<div style="page-break-after: always;"></div>
 
 ---
 
@@ -3440,6 +3545,8 @@ entonces deben mostrarse las citas ordenadas desde la más próxima hasta las po
   </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 ---
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
@@ -3488,6 +3595,10 @@ entonces debe mostrarse un mensaje indicando que no tiene una posta asignada.
     </tr>
   </tbody>
 </table>
+
+<div style="page-break-after: always;"></div>
+
+---
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -3542,6 +3653,8 @@ entonces el sistema debe informar que no existe un tratamiento activo para regis
 
 ---
 
+<div style="page-break-after: always;"></div>
+
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
     <tr>
@@ -3591,6 +3704,8 @@ entonces debe mostrarse un mensaje indicando que no existen próximas citas.
 
 ---
 
+<div style="page-break-after: always;"></div>
+
 <table border="1" cellspacing="0" cellpadding="8" style="border-collapse:collapse; width:100%;">
     <tr>
         <th>Story ID</th>
@@ -3632,6 +3747,8 @@ entonces debe mostrarse un mensaje indicando que no existen próximas citas.
 </table>
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellspacing="0" cellpadding="8" style="border-collapse:collapse; width:100%;">
     <tr>
@@ -3675,6 +3792,8 @@ entonces debe mostrarse un mensaje indicando que no existen próximas citas.
 
 ---
 
+<div style="page-break-after: always;"></div>
+
 <table border="1" cellspacing="0" cellpadding="8" style="border-collapse:collapse; width:100%;">
     <tr>
         <th>Story ID</th>
@@ -3714,6 +3833,10 @@ entonces debe mostrarse un mensaje indicando que no existen próximas citas.
         </td>
     </tr>
 </table>
+
+---
+
+<div style="page-break-after: always;"></div>
 
 <table border="1" cellspacing="0" cellpadding="8" style="border-collapse:collapse; width:100%;">
     <tr>
@@ -3771,9 +3894,18 @@ entonces debe mostrarse un mensaje indicando que no existen próximas citas.
     </tr>
 </table>
 
+</div>
+
+<div style="page-break-after: always;"></div>
+
 ## 3.3. Product Backlog
+<div class="chapter"> 
 
 Las historias se agruparon primero por prioridad (High antes que Medium; no se registraron historias Low) y, dentro de cada nivel, se respetó la secuencia de Epics (EP-01 a EP-10) para mantener la coherencia de flujo funcional: fundamentos (autenticación, seguridad y acceso) → gestión clínica del paciente y seguimiento del tratamiento → gestión de postas y citas → analíticas/reportes → comunicación → diario nutricional y gamificación (funcionalidades de prioridad Media orientadas a motivación, no bloqueantes para el MVP).
+
+</div>
+
+<div class="toc"> 
 
 | # Orden | User Story ID | Título | Descripción | Story Points (1/2/3/5/8) |
 |---------|---------------|--------|-------------|--------------------------|
@@ -3836,8 +3968,10 @@ Las historias se agruparon primero por prioridad (High antes que Medium; no se r
 | 57 | TS-16 | Consulta del diario nutricional | Como developer, quiero consultar el consumo de alimentos de un paciente correspondiente al día actual mediante una API, para obtener su resumen nutricional y el hierro absorbido. | 5 |
 | 58 | TS-17 | Consulta de alimentos | Como developer, quiero gestionar la consulta de alimentos mediante una API, para obtener información nutricional de los alimentos según una categoría o un criterio de búsqueda. | 5 |
 | 59 | US-32 | Registro del cumplimiento de dosis | Como madre, quiero registrar el cumplimiento de las dosis de mi paciente, para llevar un seguimiento de su tratamiento. | 5 |
+</div>
 
 ## 3.4. Impact Mapping
+<div class="chapter"> 
 
 En esta sección, se presentara el mapa de impacto, el cual nos ayuda a alinear nuestros objetivos de empresa con los objetivos de nuestros segmentos.
 
@@ -3848,9 +3982,11 @@ En esta sección, se presentara el mapa de impacto, el cual nos ayuda a alinear 
 </div>
 
 ---
+<div style="page-break-after: always;"></div>
 
 **Impact Mapping — Carlos Rojas**
   
 <div align="center">
   <img src="../assets/img/chapter-III/Impact map - Carlos Rojas.png">
+</div>
 </div>

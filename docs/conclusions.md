@@ -2,6 +2,8 @@
 
 ## Conclusiones y recomendaciones
 
+<div class ="chapter">
+
 A lo largo del presente proyecto, el equipo de Sanuvi ha desarrollado un proceso de ingeniería de software orientado a abordar la problemática del seguimiento y adherencia al tratamiento de la anemia, considerando las necesidades tanto de los apoderados como del personal de salud. El trabajo comprendió el análisis de la problemática, la investigación de los usuarios, la aplicación de Lean UX, la definición de requerimientos, el diseño de la solución, la elaboración de prototipos y el diseño de la arquitectura de software de Ferova. A continuación, se presentan las principales conclusiones obtenidas a partir del trabajo realizado.
 
 **Sobre el Problem Statement y el contexto de la problemática**
@@ -47,6 +49,8 @@ Esta separación permite distribuir las responsabilidades de la solución y esta
 El trabajo realizado permitió establecer una solución digital que integra las necesidades de los dos segmentos identificados dentro de una misma plataforma. FerovaFamily proporciona herramientas para que los apoderados puedan registrar y consultar información relacionada con sus pacientes, mientras que FerovaClinic proporciona al personal de salud funcionalidades orientadas a la gestión y seguimiento de los pacientes.
 
 En conjunto, la solución busca centralizar información relacionada con el tratamiento, facilitar el seguimiento de las actividades asociadas y mejorar la comunicación entre los apoderados y el personal de salud. De esta manera, el producto propuesto responde a las necesidades identificadas durante las etapas de investigación y análisis, manteniendo como eje principal el seguimiento del tratamiento de la anemia.
+
+</div>
 
 ## Video App Validation
 

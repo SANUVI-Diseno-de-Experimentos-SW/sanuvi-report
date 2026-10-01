@@ -1,10 +1,16 @@
+<div style="page-break-after: always;"></div>
+
 # Capítulo II: Requirements Elicitation & Analysis
 
 ## 2.1. Competidores
 
+<div class="chapter"> 
 Ferova presenta tres competidores relevantes en el mercado de salud digital orientado al seguimiento de tratamientos y adherencia terapéutica:
+</div> 
 
-- **App ALMA — MINSA** (competidor directo): Es la aplicación oficial del 
+<div class="chapter"> 
+
+**App ALMA — MINSA** (competidor directo): Es la aplicación oficial del 
 Ministerio de Salud del Perú para el seguimiento del crecimiento y 
 tratamiento de anemia en niños menores de 36 meses. Permite a los padres 
 registrar fechas de control, vacunas, inicio de gotitas de hierro y 
@@ -12,29 +18,41 @@ recetas ricas en hierro. Está disponible únicamente en Android y se
 distribuye de forma gratuita a través del Plan Multisectorial contra la 
 Anemia del MINSA.
 
-- **Medisafe** (competidor indirecto): Es una plataforma de gestión de 
+**Medisafe** (competidor indirecto): Es una plataforma de gestión de 
 medicamentos con más de 10 millones de usuarios a nivel global. Permite 
 configurar recordatorios de dosis, gestionar múltiples perfiles de 
 pacientes y notificar a cuidadores en caso de olvido. No está adaptada 
 al contexto peruano ni tiene enfoque en anemia materno-infantil, pero 
 compite indirectamente como herramienta general de adherencia terapéutica.
 
-- **MyTherapy** (competidor indirecto): Es una aplicación de recordatorio 
+**MyTherapy** (competidor indirecto): Es una aplicación de recordatorio 
 de medicamentos desarrollada por Smartpatient GmbH con enfoque en 
 pacientes con enfermedades crónicas. Incorpora un sistema de recompensas 
 visuales por cumplimiento, diario de salud imprimible y notificación 
 automática a familiares. Tiene alta presencia en Europa y Latinoamérica 
 pero sin adaptación al sistema de salud peruano ni al dominio de anemia.
+</div>
+
+<div style="page-break-after: always;"></div>
 
 ### 2.1.1. Análisis competitivo
 
+<div class="chapter"> 
+
 **¿Por qué llevar a cabo este análisis?**  
-> El objetivo de este análisis es evaluar las oportunidades reales de 
+
+El objetivo de este análisis es evaluar las oportunidades reales de 
 competir en el mercado de salud digital materno-infantil en el Perú, 
 identificando las características de producto, segmentos objetivo y 
 estrategias de los principales actores. A través de este estudio, Sanuvi 
 busca tomar decisiones informadas para diseñar una propuesta de valor 
 diferenciada que permita a Ferova destacar frente a soluciones existentes.
+
+</div>
+
+<div style="page-break-after: always;"></div>
+
+<div class="toc"> 
 
 | | <div align="center">**SANUVI (Nombre del Startup)** <br><img src="../assets/img/chapter-II/Ferova.png" alt="Logo Ferova" width="80"></div> | <div align="center">**App ALMA — MINSA (Competidor Directo)** <br><img src="../assets/img/chapter-II/ALMA MINSA.jpg" alt="Logo ALMA MINSA" width="80"></div> | <div align="center">**Medisafe (Competidor Indirecto)** <br><img src="../assets/img/chapter-II/Medisafe.webp" alt="Logo Medisafe" width="80"></div> | <div align="center">**MyTherapy (Competidor Indirecto)** <br><img src="../assets/img/chapter-II/MyTherapy.png" alt="Logo MyTherapy" width="80"></div> |
 |:---|:---|:---|:---|:---|
@@ -54,77 +72,52 @@ diferenciada que permita a Ferova destacar frente a soluciones existentes.
 | Oportunidades | Creciente uso de herramientas digitales aplicadas al ámbito de la salud. Posibilidad de establecer alianzas con establecimientos de salud para fortalecer el seguimiento de la anemia infantil. | Puede evolucionar incorporando un módulo para enfermeras con el respaldo institucional del MINSA. | Expansión a mercados latinoamericanos con apps especializadas por condición crónica. | Expansión con módulos para enfermedades prevalentes en Latinoamérica. |
 | Amenazas | Posible resistencia de usuarios a incorporar nuevas herramientas digitales. Existencia de aplicaciones de salud que podrían incorporar funcionalidades similares. | Puede actualizarse e incorporar funcionalidades similares a Ferova al contar con el respaldo institucional del MINSA. | Competidores locales con mejor adaptación cultural y al sistema de salud peruano. | Competidores locales con mejor contextualización al entorno latinoamericano. |
 
+</div>
+
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
+
+<div class="chapter"> 
 
 Una vez identificados los actores del mercado, el siguiente paso es definir cómo Ferova se abrirá paso entre ellos. No basta con conocer a la competencia: se necesita un plan de acción que aproveche las ventajas propias y blinde las debilidades. Para lograrlo utilizamos la **Matriz CAME** (Corregir, Afrontar, Mantener, Explotar), una herramienta que permite traducir el análisis FODA de la sección anterior en decisiones estratégicas concretas.
 
 A través de este análisis establecemos tácticas ofensivas para explotar nuestra especialización en el dominio de la anemia materno-infantil peruana, y acciones de supervivencia para mitigar los riesgos de ser una solución nueva sin reconocimiento de marca. Este enfoque asegura que cada funcionalidad de Ferova Family y Ferova Clinic tenga un propósito estratégico detrás.
 
+</div> 
+
+<div style="page-break-after: always;"></div>
+
+<div class="chapter"> 
+
 **Matriz CAME para el desarrollo de estrategias basándonos en el análisis FODA**
 
-<table border="1" cellpadding="8" cellspacing="0" style="width: 100%; border-collapse: collapse;">
-  <tr>
-    <th style="text-align: left;">Análisis FODA cruzado</th>
-    <th style="text-align: left;">Oportunidades (O)</th>
-    <th style="text-align: left;">Amenazas (A)</th>
-  </tr>
-  <tr>
-    <td>
-      <b>Fortalezas (F)</b><br>
-      1. Enfoque especializado en el seguimiento del tratamiento de la anemia materno-infantil en el contexto peruano.<br>
-      2. Diseño de doble cara: Ferova Family para madres y cuidadores, Ferova Clinic para el personal de salud, lo que habilita continuidad y coordinación del seguimiento.<br>
-      3. Gratuidad para ambos actores, sin barrera de suscripción frente a los modelos freemium de la competencia.
-    </td>
-    <td>
-      <b>Estrategia (FO) — Estrategias Ofensivas</b><br>
-      1. Alianza con postas y redes de salud del MINSA como canal de adopción: capacitar al personal de enfermería en Ferova Clinic para que las madres lleguen referidas desde la propia consulta, aprovechando un canal de confianza ya existente.<br>
-      2. Posicionar Ferova Clinic como el panel de seguimiento que hoy no existe en el mercado, con semáforo de riesgo y visibilidad en tiempo real de la adherencia — ninguno de los tres competidores analizados ofrece una vista para el personal de salud.<br>
-      3. Capitalizar la gratuidad para ambos actores en la negociación con establecimientos públicos, donde el presupuesto es una restricción real y las licencias por usuario son un bloqueo de entrada.<br>
-      4. Comunicar la especialización peruana como eje de posicionamiento: valores de referencia de hemoglobina ajustados por altitud, guía nutricional con alimentos locales y alineación con el Plan Multisectorial contra la Anemia.
-    </td>
-    <td>
-      <b>Estrategia (FA) — Estrategias Defensivas</b><br>
-      1. Blindar la especialización local como barrera de entrada: el ajuste de hemoglobina por altitud, la guía nutricional regional y la terminología del sistema de salud peruano no son replicables con rapidez por una app internacional.<br>
-      2. Diseñar las funcionalidades críticas con modo offline y sincronización diferida, para que la conectividad intermitente en zonas periurbanas y rurales no expulse al usuario hacia alternativas más simples.<br>
-      3. Formalizar convenios con establecimientos de salud que incorporen Ferova al flujo de trabajo de seguimiento, elevando el costo de sustitución en caso de que ALMA incorpore funcionalidades similares con respaldo institucional.<br>
-      4. Difundir resultados de pilotos y testimonios del personal de enfermería para construir reputación verificable frente al respaldo institucional que ALMA ya posee.
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <b>Debilidades (D)</b><br>
-      1. Bajo reconocimiento de marca: solución nueva que aún requiere validar su aceptación y utilidad con los usuarios.<br>
-      2. Adopción condicionada por la conectividad y por la familiaridad de las madres con herramientas digitales.<br>
-      3. Cobertura de plataforma limitada: Ferova Family está disponible únicamente en Android.<br>
-      4. Ausencia de respaldo institucional propio y de presencia en tiendas comparable a la de los competidores globales.
-    </td>
-    <td>
-      <b>Estrategia (DO) — Reorientación</b><br>
-      1. Validación rápida con Lean UX: ejecutar las entrevistas y pruebas de usabilidad documentadas en la sección 2.2 para generar evidencia de utilidad y material de respaldo publicable antes de escalar.<br>
-      2. Onboarding asistido por la enfermera durante la consulta en la posta, convirtiendo la baja familiaridad digital de las madres en un momento de acompañamiento en lugar de una barrera de registro.<br>
-      3. Priorizar en el roadmap la ampliación de cobertura a iOS y a navegador móvil, cerrando la debilidad de plataforma que hoy comparte con ALMA.<br>
-      4. Generar contenido de autoridad dirigido a decisores de establecimientos de salud (guías de implementación, casos de uso, indicadores de adherencia) para compensar la falta de reconocimiento de marca con credibilidad técnica.
-    </td>
-    <td>
-      <b>Estrategia (DA) — Supervivencia</b><br>
-      1. Concentrar el esfuerzo en el núcleo funcional — registro de dosis, controles de hemoglobina, alertas y comunicación madre-enfermera — sin competir en amplitud de catálogo con Medisafe ni MyTherapy, cuya madurez de producto es superior.<br>
-      2. Establecer una política explícita de tratamiento de datos sensibles de salud de menores: consentimiento informado, anonimización en reportes agregados y respaldos, requisito indispensable para operar junto al sistema de salud público.<br>
-      3. Buscar respaldo institucional o académico que compense la ausencia de marca y aporte legitimidad frente a los establecimientos de salud y a las familias.<br>
-      4. Formalizar un plan de gestión de incidentes y comunicación con establecimientos y familias, para contener el impacto reputacional de cualquier falla en un dominio donde la confianza es el activo principal.
-    </td>
-  </tr>
-</table>
+| Análisis FODA cruzado | Oportunidades (O) | Amenazas (A) |
+|-----------------------|-------------------|--------------|
+| **Fortalezas (F)** <br> 1. Enfoque especializado en el seguimiento del tratamiento de la anemia materno-infantil en el contexto peruano. <br> 2. Diseño de doble cara: Ferova Family para madres y cuidadores, Ferova Clinic para el personal de salud, lo que habilita continuidad y coordinación del seguimiento. <br> 3. Gratuidad para ambos actores, sin barrera de suscripción frente a los modelos freemium de la competencia. | **Estrategia (FO) — Estrategias Ofensivas** <br> 1. Alianza con postas y redes de salud del MINSA como canal de adopción: capacitar al personal de enfermería en Ferova Clinic para que las madres lleguen referidas desde la propia consulta, aprovechando un canal de confianza ya existente. <br> 2. Posicionar Ferova Clinic como el panel de seguimiento que hoy no existe en el mercado, con semáforo de riesgo y visibilidad en tiempo real de la adherencia — ninguno de los tres competidores analizados ofrece una vista para el personal de salud. <br> 3. Capitalizar la gratuidad para ambos actores en la negociación con establecimientos públicos, donde el presupuesto es una restricción real y las licencias por usuario son un bloqueo de entrada. <br> 4. Comunicar la especialización peruana como eje de posicionamiento: valores de referencia de hemoglobina ajustados por altitud, guía nutricional con alimentos locales y alineación con el Plan Multisectorial contra la Anemia. | **Estrategia (FA) — Estrategias Defensivas** <br> 1. Blindar la especialización local como barrera de entrada: el ajuste de hemoglobina por altitud, la guía nutricional regional y la terminología del sistema de salud peruano no son replicables con rapidez por una app internacional. <br> 2. Diseñar las funcionalidades críticas con modo offline y sincronización diferida, para que la conectividad intermitente en zonas periurbanas y rurales no expulse al usuario hacia alternativas más simples. <br> 3. Formalizar convenios con establecimientos de salud que incorporen Ferova al flujo de trabajo de seguimiento, elevando el costo de sustitución en caso de que ALMA incorpore funcionalidades similares con respaldo institucional. <br> 4. Difundir resultados de pilotos y testimonios del personal de enfermería para construir reputación verificable frente al respaldo institucional que ALMA ya posee. |
+| **Debilidades (D)** <br> 1. Bajo reconocimiento de marca: solución nueva que aún requiere validar su aceptación y utilidad con los usuarios. <br> 2. Adopción condicionada por la conectividad y por la familiaridad de las madres con herramientas digitales. <br> 3. Cobertura de plataforma limitada: Ferova Family está disponible únicamente en Android. <br> 4. Ausencia de respaldo institucional propio y de presencia en tiendas comparable a la de los competidores globales. | **Estrategia (DO) — Reorientación** <br> 1. Validación rápida con Lean UX: ejecutar las entrevistas y pruebas de usabilidad documentadas en la sección 2.2 para generar evidencia de utilidad y material de respaldo publicable antes de escalar. <br> 2. Onboarding asistido por la enfermera durante la consulta en la posta, convirtiendo la baja familiaridad digital de las madres en un momento de acompañamiento en lugar de una barrera de registro. <br> 3. Priorizar en el roadmap la ampliación de cobertura a iOS y a navegador móvil, cerrando la debilidad de plataforma que hoy comparte con ALMA. <br> 4. Generar contenido de autoridad dirigido a decisores de establecimientos de salud (guías de implementación, casos de uso, indicadores de adherencia) para compensar la falta de reconocimiento de marca con credibilidad técnica. | **Estrategia (DA) — Supervivencia** <br> 1. Concentrar el esfuerzo en el núcleo funcional — registro de dosis, controles de hemoglobina, alertas y comunicación madre-enfermera — sin competir en amplitud de catálogo con Medisafe ni MyTherapy, cuya madurez de producto es superior. <br> 2. Establecer una política explícita de tratamiento de datos sensibles de salud de menores: consentimiento informado, anonimización en reportes agregados y respaldos, requisito indispensable para operar junto al sistema de salud público. <br> 3. Buscar respaldo institucional o académico que compense la ausencia de marca y aporte legitimidad frente a los establecimientos de salud y a las familias. <br> 4. Formalizar un plan de gestión de incidentes y comunicación con establecimientos y familias, para contener el impacto reputacional de cualquier falla en un dominio donde la confianza es el activo principal. |
+</div>
+
+<div style="page-break-after: always;"></div>
+<div class="chapter">
 
 **Enfoque estratégico de Ferova**
 
 Ferova se posiciona como una solución especializada en el seguimiento del tratamiento de la anemia materno-infantil, con una propuesta de valor centrada en la conexión entre madres y personal de salud, la gamificación motivacional y la detección temprana del abandono terapéutico. Su diferenciación frente a los competidores se sostiene en tres ejes: **especialización de dominio**, **contexto local** y **visibilidad en tiempo real**. A continuación se detallan las estrategias y tácticas específicas frente a cada actor del mercado.
+
+</div>
+
+<div class="chapter">
 
 **1. Frente a App ALMA — MINSA**
 
 - **Estrategia de complementariedad activa:** posicionarse no como rival de ALMA sino como su complemento técnico — mientras ALMA informa, Ferova conecta. La táctica es acercarse directamente al personal de enfermería de las postas como canal de adopción, generando tracción desde el sistema de salud hacia las madres.
 - **Cierre de la brecha de seguimiento:** ALMA no cuenta con un panel para personal de salud. Ferova cubre exactamente esa ausencia con el semáforo de riesgo y la detección temprana de abandono, convirtiéndose en la herramienta que el personal de salud necesita y que ALMA, en su alcance actual, no ofrece.
 - **Ventaja de cobertura de actores:** ALMA se limita a una app informativa para padres en Android. Ferova cubre a los dos actores del tratamiento con una app móvil para las familias y una aplicación web para el personal de salud, accesible desde cualquier navegador del establecimiento sin necesidad de instalación.
+</div>
+
+<div style="page-break-after: always;"></div>
+
+<div class="chapter">
 
 **2. Frente a Medisafe**
 
@@ -132,17 +125,29 @@ Ferova se posiciona como una solución especializada en el seguimiento del trata
 - **Táctica de adopción institucional:** mientras Medisafe depende de que el usuario la descargue por cuenta propia, Ferova llega a las madres a través de la enfermera que las atiende en la posta — un canal de confianza que ningún competidor internacional posee.
 - **Táctica de gratuidad frente al freemium:** las funcionalidades de seguimiento que Medisafe reserva a su plan de pago (USD 4.99/mes) forman parte del núcleo gratuito de Ferova, eliminando la fricción económica en un segmento de bajos ingresos.
 
+</div>
+
+<div style="page-break-after: always;"></div>
+
+<div class="chapter">
+
 **3. Frente a MyTherapy**
 
 - **Estrategia de gamificación contextual:** MyTherapy premia el cumplimiento con recompensas visuales genéricas. Ferova vincula la motivación directamente con la salud real del niño — la madre no solo ve que cumplió, sino cómo ese cumplimiento se refleja en la evolución de la hemoglobina de su hijo. Esa conexión entre esfuerzo y resultado clínico no es replicable con una app genérica.
 - **Táctica de red de soporte formal:** MyTherapy notifica a familiares. Ferova incorpora al personal de salud como red de apoyo formal, con capacidad de intervenir ante una alerta de abandono, algo que el modelo de notificación de MyTherapy no contempla.
 - **Táctica de contextualización del diario de salud:** frente al diario imprimible genérico de MyTherapy, Ferova ofrece un diario nutricional orientado a alimentos facilitadores e inhibidores de la absorción del hierro, con productos de consumo habitual en el Perú.
 
+</div>
+
+<div style="page-break-after: always;"></div>
+
 ## 2.2. Entrevistas
 
 ### 2.2.1. Diseño de entrevistas
 
-**Segmento 1: Madres, padres o cuidadores de niños con anemia**
+<div class="chapter">
+
+##### **Segmento 1: Madres, padres o cuidadores de niños con anemia**
 
 <h4>Preguntas Personales:</h4> 
 
@@ -197,8 +202,13 @@ Ferova se posiciona como una solución especializada en el seguimiento del trata
 - ¿Se considera una persona organizada o más improvisada?<br>
 - ¿Suele seguir indicaciones médicas al pie de la letra?<br>
 
+</div>
 
-**Segmento 2: Personal de salud responsable del seguimiento**
+<div style="page-break-after: always;"></div>
+
+<div class="chapter">
+
+##### **Segmento 2: Personal de salud responsable del seguimiento**
 
 <h4>Preguntas Personales:</h4> 
 
@@ -248,21 +258,30 @@ Ferova se posiciona como una solución especializada en el seguimiento del trata
 - ¿Se considera una persona organizada en el manejo de pacientes?<br>
 - ¿Qué tan importante es la eficiencia en su trabajo diario?<br>
 
+></div>
+
+<div style="page-break-after: always;"></div>
 
 ### 2.2.2. Registro de entrevistas
 
+<div class="chapter">
+
 En esta sección presentamos los registros de las entrevistas que hicimos para cada segmento objetivo de nuestra aplicación.
 
-##### **Segmento objetivo 1: Madres, padres o cuidadores de niños con anemia** 
+</div>
+
+
+#### **Segmento objetivo 1: Madres, padres o cuidadores de niños con anemia** 
+
 ---
 
-
+<div class="chapter">
 <table>
 <colgroup>
 </colgroup>
 <thead>
   <tr>
-    <th colspan="2">Entrevista #3<br></th>
+    <th colspan="2">Entrevista #1<br></th>
   </tr>
 </thead>
 <tbody>
@@ -314,7 +333,10 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
 </tbody>
 </table>
+</div>
 
+<div style="page-break-after: always;"></div>
+<div class="chapter">
 <table>
 <colgroup>
 </colgroup>
@@ -376,7 +398,9 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
 </tbody>
 </table>
-
+</div>
+<div style="page-break-after: always;"></div>
+<div class="chapter">
 <table>
 <colgroup>
 </colgroup>
@@ -438,16 +462,19 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
 </tbody>
 </table>
+</div>
 
-##### **Segmento objetivo 2: Personal de salud responsable del seguimiento**
+<div style="page-break-after: always;"></div>
+
+#### **Segmento objetivo 2: Personal de salud responsable del seguimiento**
 ---
-
+<div class="chapter">
 <table>
 <colgroup>
 </colgroup>
 <thead>
   <tr>
-    <th colspan="2">Entrevista #2<br></th>
+    <th colspan="2">Entrevista #1<br></th>
   </tr>
 </thead>
 <tbody>
@@ -503,15 +530,17 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
 </tbody>
 </table>
+</div>
 
 ---
-
+<div style="page-break-after: always;"></div>
+<div class="chapter">
 <table>
 <colgroup>
 </colgroup>
 <thead>
   <tr>
-    <th colspan="2">Entrevista #3<br></th>
+    <th colspan="2">Entrevista #2<br></th>
   </tr>
 </thead>
 <tbody>
@@ -567,12 +596,21 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
 </tbody>
 </table>
+</div>
+
+<div style="page-break-after: always;"></div>
 
 ### 2.2.3. Análisis de entrevistas
 
+<div class="chapter">
 En esta sección se presenta el análisis de la información recopilada mediante las entrevistas realizadas a los segmentos de familias responsables de menores con anemia y personal de salud. Para cada segmento se identifican características objetivas y subjetivas, considerando los comportamientos, prácticas, necesidades, dificultades y percepciones expresadas por los entrevistados. Finalmente, se realiza una contrastación entre ambos segmentos para identificar coincidencias, diferencias y oportunidades relevantes para el proyecto.
+</div>
+
+<div class="chapter">
 
 **Análisis de Características Objetivas y Subjetivas**
+</div>
+<div class="chapter">
 
 **Segmento 1: Madres, padres y apoderados de menores con anemia**
 
@@ -584,13 +622,19 @@ A nivel subjetivo, el 67% de los entrevistados manifestó explícitamente inter�
 
 En conjunto, se observa que las familias buscan que el menor se recupere de la anemia y mantenga una evolución favorable, pero enfrentan dificultades para mantener la constancia, organizar el tratamiento, resolver dudas y gestionar las actividades relacionadas con las citas médicas.
 
-
 <div align="center">
 <img src="../assets/img/chapter-II/madre.png" alt="User Persona 1" width=700>
 </div>
 
+</div>
+
+<div style="page-break-after: always;"></div>
+
+<div class="chapter">
 
 **Segmento 2: Personal de salud**
+</div>
+<div class="chapter">
 
 El análisis de las entrevistas evidencia que el seguimiento de los pacientes con anemia se basa principalmente en el control periódico de los niveles de hemoglobina, acompañado de la evaluación clínica, orientación nutricional y administración de suplementos de hierro. Ambos entrevistados señalaron la importancia de realizar controles periódicos para verificar la evolución del paciente y determinar si el tratamiento está logrando resultados adecuados.
 
@@ -607,7 +651,10 @@ En conjunto, se observa que el personal de salud busca realizar un seguimiento c
 <div align="center">
 <img src="../assets/img/chapter-II/enfermeros.png" alt="User Persona 1" width=700>
 </div>
+</div>
 
+<div style="page-break-after: always;"></div>
+<div class="chapter">
 
 **Análisis Comparativo**
 
@@ -619,57 +666,109 @@ Respecto al uso de tecnología, ambos segmentos muestran una oportunidad de mejo
 
 En cuanto a las necesidades, ambos segmentos requieren información confiable y accesible, pero aplicada a diferentes momentos del proceso. Las familias necesitan apoyo para organizar y mantener el tratamiento, mientras que el personal de salud necesita disponer de información que facilite el seguimiento y la toma de decisiones.
 
+</div>
+
+<div style="page-break-after: always;"></div>
+
+<div class="chapter">
+
 **Conclusiones y Definición de Arquetipos**
 
 A partir del análisis realizado, se definen los siguientes perfiles de usuario:
 
+</div>
+
 a) **Arquetipo: “El apoderado responsable del menor”**
 
+<div class="chapter">
+
 **Característica principal:** Responsable de administrar y acompañar el tratamiento del menor con anemia, coordinando sus actividades de cuidado y controles médicos.
+</div>
+
+<div class="chapter">
 
 **Necesidad principal:** Contar con herramientas que faciliten la organización y seguimiento del tratamiento, las citas y la evolución del menor.
+</div>
+
+<div class="chapter">
 
 **Principal dificultad:** Mantener la constancia del tratamiento, recordar las dosis, resolver dudas y coordinar las citas médicas.
+</div>
+
+<br>
 
 b) **Arquetipo: “El profesional de salud”**
 
+<div class="chapter">
+
 **Característica principal:** Encargado de realizar el seguimiento clínico de los pacientes con anemia y evaluar su evolución durante el tratamiento.
+</div>
+
+<div class="chapter">
 
 **Necesidad principal:** Disponer de información organizada y accesible sobre los pacientes para facilitar el seguimiento, los controles y la toma de decisiones.
+</div>
+
+<div class="chapter">
 
 **Principal dificultad:** El abandono del tratamiento, las dificultades de acceso de algunas familias a los controles y las diferencias en la disponibilidad de herramientas tecnológicas según el establecimiento de salud.
+</div>
+
+
+<div style="page-break-after: always;"></div>
 
 ## 2.3. Needfinding
 
-Para crear un producto que cumpla con las necesidades específicas de un cliente, nuestro equipo se dedicará a identificar los User persona, User Task Matrix, User Journey Maps, Empathy Mapping y As-is Scenario Mapping.
+<div class="chapter">
 
+Para crear un producto que cumpla con las necesidades específicas de un cliente, nuestro equipo se dedicará a identificar los User persona, User Task Matrix, User Journey Maps, Empathy Mapping y As-is Scenario Mapping.
+</div>
 
 ### 2.3.1. User Personas
 
+<div class="chapter">
+
 A partir del análisis de las entrevistas realizadas, se definieron dos User Personas que representan los principales perfiles involucrados en el seguimiento del tratamiento de la anemia infantil. Estas personas sintetizan las características, necesidades, motivaciones y dificultades identificadas en los participantes, permitiendo comprender de manera más clara las perspectivas de los usuarios y orientar el diseño de la solución.
+</div>
+
+<div style="page-break-after: always;"></div>
 
 **User Persona 1: María López — Apoderada del menor**
+
+<div class="chapter">
 
 <div align="center">
 <img src="../assets/img/chapter-II/María López.png" alt="User Persona 1" width=700>
 </div>
 
-<br>
-
 María López representa el perfil de las madres, padres o apoderados responsables del cuidado de un menor con anemia. Se caracteriza por asumir directamente el seguimiento cotidiano del tratamiento, utilizando recursos personales para organizar las dosis y las citas médicas. Sus principales dificultades están relacionadas con los olvidos, las dudas sobre las indicaciones, la comunicación con el personal de salud y la organización de las actividades asociadas al tratamiento. A partir de las entrevistas, también se identifica su interés por contar con herramientas digitales sencillas que le permitan llevar un seguimiento más organizado y acceder a información confiable.
 
+</div>
+
+<div style="page-break-after: always;"></div>
+
 **User Persona 2: Carlos Rojas — Profesional de salud**
+
+<div class="chapter">
 
 <div align="center">
 <img src="../assets/img/chapter-II/Carlos Rojas.png" alt="User Persona 2" width=700>
 </div>
 
-<br>
 Carlos Rojas representa el perfil del personal de salud encargado del seguimiento de pacientes con anemia. Su actividad se centra en el control de la evolución del paciente, el seguimiento de los niveles de hemoglobina y la orientación relacionada con el tratamiento y la alimentación. Las entrevistas evidencian la necesidad de disponer de información organizada y accesible, así como de facilitar procesos como la gestión de citas y la comunicación con las familias. Asimismo, se identifican diferencias en el nivel de digitalización de los establecimientos de salud y barreras relacionadas con la disponibilidad de infraestructura y capacitación tecnológica.
+</div>
+
+<div style="page-break-after: always;"></div>
 
 ### 2.3.2. User Task Matrix
 
+<div class="chapter">
+
 La sección User Task Matrix permite identificar y comparar las principales tareas que realizan los usuarios representados en las User Personas. Las tareas se organizan considerando su frecuencia y nivel de importancia dentro del proceso actual de seguimiento del tratamiento de la anemia.
+
+</div>
+
+<div class="chapter">
 
 **Usuario: Apoderado del menor con anemia**
 
@@ -688,6 +787,12 @@ La sección User Task Matrix permite identificar y comparar las principales tare
 
 Estas tareas se desprenden de las actividades descritas por los tres entrevistados. Por ejemplo, los padres mencionan administrar el hierro, realizar anotaciones o utilizar la memoria para llevar el control, gestionar citas, atender la alimentación y comunicarse con el personal de salud cuando surgen dudas.
 
+</div>
+
+<div style="page-break-after: always;"></div>
+
+<div class="chapter">
+
 **Usuario: Profesional de salud**
 
 | USER TASK                                                      | Frecuencia | Importancia |
@@ -705,8 +810,11 @@ Estas tareas se desprenden de las actividades descritas por los tres entrevistad
 
 Estas tareas se basan en las actividades descritas por Hugo y Gladys: seguimiento mediante controles de hemoglobina, registro en historias clínicas, orientación nutricional, suplementación de hierro, comunicación con las familias y evaluación de la evolución del paciente.
 
+</div>
+<div style="page-break-after: always;"></div>
 
 ### 2.3.3. User Journey Mapping
+<div class="chapter">
 
 **User Journey Mapping — María López**
 
@@ -716,6 +824,9 @@ Estas tareas se basan en las actividades descritas por Hugo y Gladys: seguimient
 
 Este journey está sustentado especialmente en que las familias actualmente recurren a cuadernos, calendarios, planificadores, celular o memoria, y manifiestan dificultades con los olvidos, las citas, las indicaciones y la comunicación.
 
+</div>
+<div class="chapter">
+
 **User Journey Mapping — Carlos Rojas**
 
 <div align="center">
@@ -723,27 +834,40 @@ Este journey está sustentado especialmente en que las familias actualmente recu
 </div>
 
 Este journey refleja las diferencias encontradas entre Hugo y Gladys: Hugo trabaja con historia clínica electrónica y utiliza WhatsApp para comunicarse con las madres, mientras Gladys señala que realiza el seguimiento mediante historias clínicas físicas y que existen limitaciones de infraestructura tecnológica en algunas áreas.
+</div>
+
+<div style="page-break-after: always;"></div>
 
 ### 2.3.4. Empathy Mapping
+<div class="chapter">
 
 Lo siguiente a evaluar como parte del needfinding es a nuestros segmentos objetivos a través de empathy maps, con el objetivo de conocer mejor a nuestros segmentos objetivos e identificar sus necesidades profundas.
+</div>
+
+<div style="page-break-after: always;"></div>
 
 **Empathy Mapping — María López**
-
+<div class="chapter">
 <div align="center">
 <img src="../assets/img/chapter-II/Empathy Mapping — María López.png" alt="User Persona 2" width=800>
 </div>
-
-**Empathy Mapping — Carlos Rojas**
-
-<div align="center">
-<img src="../assets/img/chapter-II/Empathy Mapping — Carlos Rojas.png" alt="User Persona 2" width=800>
 </div>
 
+**Empathy Mapping — Carlos Rojas**
+<div class="chapter">
+<div align="center">
+<img src="../assets/img/chapter-II/Empathy Mapping — Carlos Rojas.png" alt="User Persona 2" width=440>
+</div>
+</div>
+
+<div style="page-break-after: always;"></div>
 
 ### 2.3.5. As-is Scenario Mapping
 
+<div class="chapter">
 Los siguientes Scenario Maps (As-Is) representan el recorrido actual de los dos perfiles de usuario identificados a partir de las entrevistas. Para cada persona se describen las principales fases de su interacción con el proceso de seguimiento de la anemia, considerando las actividades que realiza, lo que piensa y las emociones que experimenta. Esta representación permite identificar las dificultades presentes en el proceso actual y establecer una base para la identificación de oportunidades de mejora.
+</div>
+<div class="chapter">
 
 **Segmento Madres, padres y cuidadores:** En el siguiente escenario As-Is se representa el recorrido actual de María López durante el seguimiento del tratamiento de la anemia. Se muestran las principales fases que atraviesa, desde la recepción del diagnóstico hasta la evaluación de la recuperación, considerando las actividades que realiza, los pensamientos que surgen durante el proceso y las emociones que experimenta. El mapa permite evidenciar dificultades como la organización manual de las dosis, las dudas sobre las indicaciones, el seguimiento de la alimentación y la dificultad para resolver consultas relacionadas con el tratamiento.
 
@@ -752,8 +876,10 @@ Los siguientes Scenario Maps (As-Is) representan el recorrido actual de los dos 
 <div align="center">
 <img src="../assets/img/chapter-II/AS IS -  María López.jpg" alt="User Persona 2" width=950>
 </div>
+</div>
 
-<br>
+<div style="page-break-after: always;"></div>
+<div class="chapter">
 
 **Segmento Personal de salud:** En el siguiente escenario As-Is se representa el recorrido actual de Carlos Rojas como profesional encargado del seguimiento de pacientes con anemia. El mapa comprende las fases desde la evaluación del paciente hasta la determinación de la recuperación, considerando las actividades realizadas, los pensamientos asociados a cada etapa y las emociones experimentadas. Esta representación permite identificar dificultades relacionadas con el registro y consulta de información clínica, el seguimiento de los controles y niveles de hemoglobina, la coordinación con las familias y la necesidad de disponer de información organizada para realizar un seguimiento adecuado.
 
@@ -763,12 +889,20 @@ Los siguientes Scenario Maps (As-Is) representan el recorrido actual de los dos 
 <img src="../assets/img/chapter-II/AS IS - Carlos Rojas.jpg" alt="User Persona 2" width=950>
 </div>
 
-<br>
-
+</div>
+<div style="page-break-after: always;"></div>
 
 ## 2.4. Ubiquitous Language
 
+<div class="chapter">
+
 En esta sección se presentan los principales términos del dominio de Sanuvi, definidos en inglés y acompañados de su significado en español. Estos términos serán utilizados de manera consistente en la comunicación del equipo, documentación, diseño y desarrollo de la solución.
+
+</div>
+
+<br>
+
+<div class="chapter">
 
 | Término (EN)              | Definición                                                                                                                                         |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -792,3 +926,4 @@ En esta sección se presentan los principales términos del dominio de Sanuvi, d
 | **Achievement**           | Reconocimiento obtenido por el paciente o cuidador al alcanzar determinados hitos relacionados con el seguimiento del tratamiento.                 |
 | **Streak**                | Cantidad consecutiva de días en los que se mantiene el cumplimiento o registro del tratamiento.                                                    |
 
+</div>
