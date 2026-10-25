@@ -171,7 +171,7 @@ Scenario: Horario ocupado
     And no debe registrarse la cita.
 ```
 
-#### Feature 4: Gestion de Historial Medico
+#### Feature 5: Gestion de Historial Medico
 
 ```gherkin
 
@@ -211,7 +211,44 @@ Then el historial médico queda actualizado con la nueva información para conti
 
 ```
 
+#### Feature 6: Registro del control de hemoglobina
 
+```gherkin
+
+Feature: Registro del control de hemoglobina
+
+Como enfermero, quiero gestionar el registro de los controles de hemoglobina de los pacientes,
+para mantener actualizada la información de su evolución
+y determinar automáticamente su estado de anemia.
+
+Scenario: Registro del control exitoso
+
+Given que se recibe un paciente asignado a la enfermera y una historia clínica existente,
+When se valida que el nivel de hemoglobina se encuentra dentro del rango permitido,
+            | Campo                                  | Valor                                |
+            | Nivel                                  | 20                                   |
+Then se registra dicho nivel de hemoglobina
+And se registra correctamente el nuevo control de hemoglobina.
+
+Scenario: Nivel de hemoglobina fuera de rango
+
+Given que se ingrese un nivel menor que 0 o mayor que 30 g/dL,
+When el sistema valida el valor proporcionado,
+Then responde con un error indicando que el nivel de hemoglobina debe encontrarse entre 0 y 30 g/dL.
+
+Scenario: Paciente sin historia clínica
+
+Given que se ingrese un control para un paciente que no cuenta con una historia clínica,
+When el sistema verifique la información clínica requerida,
+Then responde con un error indicando que la historia clínica no existe y no registra el control.
+
+Scenario: Determinación del estado de anemia
+
+Given que se ingrese con un nivel de hemoglobina válido,
+When el sistema registra el control y evalúa el valor proporcionado,
+Then determina automáticamente el estado de anemia correspondiente según el rango del nivel de hemoglobina.
+
+```
 
 #### Feature 10: Autenticación y Seguridad
 
