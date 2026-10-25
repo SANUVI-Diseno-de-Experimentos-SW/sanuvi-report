@@ -22,15 +22,48 @@
 
 ### 6.1.3. Core Behavior-Driven Development
 
-> Archivos `.feature` en Gherkin, derivados de los criterios de aceptación de los User Stories.
+En esta sección se aplican técnicas de Behavior-Driven Development (BDD) para definir y validar el comportamiento esperado del sistema Ferova desde la perspectiva del usuario.
+BDD permite crear una especificación ejecutable que sirve como documentación viva del sistema y como base para las pruebas automatizadas.
+
+Se utiliza Gherkin como lenguaje de especificación, estructurando los escenarios con el formato Given-When-Then, lo que facilita la comunicación entre el equipo técnico y los stakeholders del negocio.
+
+### Feature Files - Funcionalidades Core
+
+#### Feature 10: Autenticación y Seguridad
 
 ```gherkin
-Feature: [Nombre de la feature]
+Feature: Gestión de autenticación y seguridad
 
-  Scenario: [Nombre del escenario]
-    Given [contexto]
-    When [evento]
-    Then [resultado]
+  Scenario: Registro exitoso
+    Given el usuario tiene credenciales validas
+    When ingresa su dni "76919351"
+    And ingresa su contraseña
+    And hace click en "Iniciar Seccion"
+    And se registra la fecha y hora del acceso
+    And se muestra mensaje "Bienvenido de nuevo, [Nombre]"
+
+ Scenario: Intento de inicio de sesión con credenciales incorrectas
+    Given el usuario ingresa dni válido
+    When ingresa contraseña incorrecta
+    And hace clic en "Iniciar Sesión"
+    Then el sistema muestra "Credenciales Incorrectas"
+    And no permite el acceso
+
+  Scenario: Recuperación de contraseña
+    Given el usuario olvidó su contraseña
+    When selecciona "¿Olvidaste tu contraseña?"
+    And ingresa su email registrado
+    And hace clic en "Enviar codigo de validacion"
+    Then recibe email con el codigo de 4 digitos
+    And ingresa dicho codigo de validacion
+    And puede crear una nueva contraseña.
+
+  Scenario: Cerrar sesión de forma segura
+    Given el usuario ha terminado su trabajo
+    When selecciona "Cerrar Sesión"
+    Then el sistema invalida el token de sesión
+    And redirige a la página de inicio de sesión
+    And limpia datos sensibles del navegador
 ```
 
 <!-- COMPLETAR -->
