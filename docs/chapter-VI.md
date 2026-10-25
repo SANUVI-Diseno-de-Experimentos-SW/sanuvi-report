@@ -221,6 +221,10 @@ Como enfermero, quiero gestionar el registro de los controles de hemoglobina de 
 para mantener actualizada la información de su evolución
 y determinar automáticamente su estado de anemia.
 
+Background:
+    Given el usuario ha iniciado sesión como Nurse
+    And Tiene Pacientes asignado a su cartera
+
 Scenario: Registro del control exitoso
 
 Given que se recibe un paciente asignado a la enfermera y una historia clínica existente,
@@ -249,6 +253,40 @@ When el sistema registra el control y evalúa el valor proporcionado,
 Then determina automáticamente el estado de anemia correspondiente según el rango del nivel de hemoglobina.
 
 ```
+
+#### Feature 7: Registro del cumplimiento de dosis
+
+```gherkin
+
+Feature: Registro del cumplimiento de dosis
+
+Como madre, quiero registrar el cumplimiento de las dosis de mi paciente,
+para llevar un seguimiento de su tratamiento.
+
+Background:
+    Given el usuario ha iniciado sesión como Mother
+    And Tiene Pacientes registrados
+
+Scenario: Registro exitoso del cumplimiento
+
+Given que la madre tiene un tratamiento activo para su paciente,
+When confirma que ha administrado la dosis correspondiente del día,
+Then el sistema debe registrar la dosis como cumplida y actualizar el seguimiento del tratamiento.
+
+Scenario: Dosis ya registrada
+
+Given que la dosis correspondiente al día ya fue registrada,
+When la madre intenta confirmar nuevamente la misma dosis,
+Then el sistema debe informar que la dosis ya fue registrada y evitar duplicar el registro.
+
+Scenario: Tratamiento no activo
+
+Given que el paciente no tiene un tratamiento activo,
+When la madre intenta registrar una dosis,
+Then el sistema debe informar que no existe un tratamiento activo para registrar la dosis.
+
+```
+
 
 #### Feature 10: Autenticación y Seguridad
 
