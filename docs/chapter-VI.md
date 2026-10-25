@@ -49,7 +49,7 @@ Scenario: Registrar nuevo paciente
   Given no existe pacientes registrados
   When la madre completa el formulario:
       | Campo       | Valor                |
-      | Nombre      | Francheso            |
+      | Nombre      | Franchesco           |
       | Apellido    | Basilio              |
       | Peso        | 50                   |
       | Precio      | 150                  |
@@ -59,6 +59,40 @@ Scenario: Información inválida del paciente
   Given que se proporciona información incompleta
   When  la madre intenta registrar al paciente
   Then el sistema muestra "Ingresar datos para el registro del paciente"
+
+```
+
+#### Feature 2: Gestion del Diario Nutricional
+
+```gherkin
+
+Feature: Gestion del Diario Nutricional de un paciente
+
+Como madre, quiero llevar un registro de los alimentos que consume mi hijo durante el día
+para conocer su alimentación
+y el aporte de hierro asociado a los alimentos registrados.
+
+Background:
+    Given el usuario ha iniciado sesión como Madre
+    And tiene pacientes registrados
+    And se encuentra en la sección diario nutricional
+
+Scenario: Registro de alimentos exitoso
+   Given no existe un diario nutricional para un paciente
+   When la madre selecciona o busca un alimento
+   Then introduce los gramos de dicho alimento que va consumir:
+   | Campo       | Valor                |
+   | Gramos      | 20                   |
+   Then el sistema registra muestra "Alimento registrado"
+
+Scenario Resumen Nutricional 
+  Given la madre ha registrado alimentos durante el día
+  When consulta el resumen nutricional del día
+  Then puede visualizar:
+      | Información              |
+      | Hierro Absorvido         |
+      | Alimentos de Hoy         |
+  
 
 ```
 
