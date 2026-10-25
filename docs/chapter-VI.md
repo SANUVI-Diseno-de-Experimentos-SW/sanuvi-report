@@ -29,12 +29,49 @@ Se utiliza Gherkin como lenguaje de especificación, estructurando los escenario
 
 ### Feature Files - Funcionalidades Core
 
+#### Feature 1: Gestión de Pacientes
+
+```gherkin
+
+Feature: Gestión de la información del paciente
+
+Como madre, quiero gestionar la información de mi hijo,
+para mantener sus datos registrados
+y facilitar el seguimiento de su tratamiento.
+
+Scenario: Registrar nuevo paciente
+
+Background:
+    Given el usuario ha iniciado sesión como Madre
+    And se encuentra con la sección pacientes
+
+Scenario: Registrar nuevo paciente
+  Given no existe pacientes registrados
+  When la madre completa el formulario:
+      | Campo       | Valor                |
+      | Nombre      | Francheso            |
+      | Apellido    | Basilio              |
+      | Peso        | 50                   |
+      | Precio      | 150                  |
+  Then el sistema registra a dicho paciente
+
+Scenario: Información inválida del paciente
+  Given que se proporciona información incompleta
+  When  la madre intenta registrar al paciente
+  Then el sistema muestra "Ingresar datos para el registro del paciente"
+
+```
+
 #### Feature 10: Autenticación y Seguridad
 
 ```gherkin
+
 Feature: Gestión de autenticación y seguridad
 
-  Scenario: Registro exitoso
+  Como usuario Quiero registrarme con mi rol respectivo
+  Para acceder a las funcionalidades de la aplicación.
+
+Scenario: Registro exitoso
     Given el usuario tiene credenciales validas
     When ingresa su dni "76919351"
     And ingresa su contraseña
@@ -71,7 +108,8 @@ Feature: Gestión de autenticación y seguridad
 ```gherkin
 
 Feature: Control de acceso basado en roles
-  Como administrador del sistema
+
+  Como developer del sistema
   Quiero que cada funcionalidad esté disponible solo para los roles autorizados
   Para proteger los datos de salud de las madres y de sus pacientes
 
