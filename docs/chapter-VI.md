@@ -81,8 +81,8 @@ Scenario: Registro de alimentos exitoso
    Given no existe un diario nutricional para un paciente
    When la madre selecciona o busca un alimento
    Then introduce los gramos de dicho alimento que va consumir:
-   | Campo       | Valor                |
-   | Gramos      | 20                   |
+       | Campo       | Valor                |
+       | Gramos      | 20                   |
    Then el sistema registra muestra "Alimento registrado"
 
 Scenario Resumen Nutricional 
@@ -93,6 +93,41 @@ Scenario Resumen Nutricional
       | Hierro Absorvido         |
       | Alimentos de Hoy         |
   
+```
+
+#### Feature 3: Gestion de Postas Medicas
+
+```gherkin
+
+Como administrador, quiero registrar una nueva posta de salud con su información de ubicación
+y servicios disponibles, para incorporarla al registro de postas
+y permitir la gestión de sus atenciones.
+
+Background:
+    Given el usuario ha iniciado sesión como Admin
+    And no tiene postas registradas
+
+Scenario: Registro exitoso de una posta
+    Given que el administrador desea registrar una nueva posta
+    When el administrador complete dicho formulario:
+        | Campo                   | Valor                                                                        |
+        | Nombre de la posta      | Posta Santa Anita                                                            |
+        | Dirección               | Av. Jiron de la Union                                                        |
+        | Distrito                | San Juan de Miraflores                                                       | 
+        | Ubicacion               | Ubicacion respectiva al mapa (sacando la latitude, longitude)                |
+        | Numero de telefono      | +51 936266001                                                                |
+        | Servicios               | Pediatría, Vacunación                                                        |
+        | Horarios disponibles    | Lun, Mar, Mie, Ju, Vi, Sab, Dom                                              |
+        | Horas disponibles       | 7:00, 8:00, 9:00, 11: 00, 12:00, 2:00                                        |
+   Then el sistema dicha posta
+
+Scenario: Asignación de Enfermero a posta
+    Given que el administrador desea asignar a un enfermero(a) en una posta
+    When selecciona una posta sin un enfermero
+    Then podrá seleccionar desde una lista al enfermero para dicha posta
+         | Información              |
+         | Nombre del enfermero     |
+
 
 ```
 
