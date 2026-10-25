@@ -42,14 +42,14 @@ Feature: Gestión de autenticación y seguridad
     And se registra la fecha y hora del acceso
     And se muestra mensaje "Bienvenido de nuevo, [Nombre]"
 
- Scenario: Intento de inicio de sesión con credenciales incorrectas
+ Scenario: Credenciales incorrectas:
     Given el usuario ingresa dni válido
     When ingresa contraseña incorrecta
     And hace clic en "Iniciar Sesión"
     Then el sistema muestra "Credenciales Incorrectas"
     And no permite el acceso
 
-  Scenario: Recuperación de contraseña
+  Scenario: Solicitud de recuperación de contraseña mediante el correo
     Given el usuario olvidó su contraseña
     When selecciona "¿Olvidaste tu contraseña?"
     And ingresa su email registrado
@@ -64,6 +64,74 @@ Feature: Gestión de autenticación y seguridad
     Then el sistema invalida el token de sesión
     And redirige a la página de inicio de sesión
     And limpia datos sensibles del navegador
+```
+
+#### Feature 11: Gestion de Roles
+
+```gherkin
+
+Feature: Control de acceso basado en roles
+  Como administrador del sistema
+  Quiero que cada funcionalidad esté disponible solo para los roles autorizados
+  Para proteger los datos de salud de las madres y de sus pacientes
+
+Background:
+
+  Scenario: Registrar una madre asigna el rol Mother
+    Given el sistema define tres roles fijos: "Admin", "Nurse" y "Mother"
+    And cada usuario inicia sesión con su DNI y contraseña y recibe un token JWT
+    And el token de una madre incluye "motherId" y el de una enfermera incluye "nurseId"
+
+ Scenario Outline: Registrar personal asigna el rol indicado
+    When se registra personal con el rol
+    Then el sistema responde 201 Created
+    And al iniciar sesión recibe un token que incluye el rol
+    Examples:
+      | rol   |
+      | Nurse |
+      | Admin |
+
+  Scenario: Una madre solo accede a las funciones de madre
+    Given el usuario ha iniciado sesión con el rol "Mother"
+    Then el usuario solo tiene acceso a:
+      | Módulo permitido          | Funcionalidad                                                  |
+      | Gestión de pacientes      | Registrar paciente, ver mis pacientes, evolución de hemoglobina |
+      | Diario nutricional        | Registrar alimento, ver diario de hoy, ver historial           |
+      | Seguimiento de tratamiento | Confirmar dosis, ver dosis de hoy, ver historial de dosis      |
+      | Citas                     | Reservar y cancelar citas, ver postas cercanas, próxima cita   |
+    And no puede acceder a:
+      | Módulo restringido        | Funcionalidad                                                  |
+      | Historia clínica          | Crear y consultar historias clínicas                           |
+      | Control de hemoglobina    | Registrar controles                                            |
+      | Gestión de pacientes      | Asignarse pacientes, dar de alta, buscar madres                |
+      | Seguimiento de tratamiento | Iniciar, completar o abandonar tratamientos, ver riesgo        |
+      | Citas                     | Ver la agenda de la enfermera                                  |
+      | Postas de salud           | Registrar postas y asignar enfermeras                          |
+
+  Scenario: Una enfermera solo accede a las funciones de enfermera
+    Given el usuario ha iniciado sesión con el rol "Nurse"
+    Then el usuario solo tiene acceso a:
+      | Módulo permitido          | Funcionalidad                                                         |
+      | Gestión de pacientes      | Asignarse pacientes, buscar madres, ver pacientes asignados, dar de alta |
+      | Historia clínica          | Crear y consultar historias clínicas de sus pacientes                 |
+      | Control de hemoglobina    | Registrar controles y consultar el historial                          |
+      | Seguimiento de tratamiento | Iniciar, completar y abandonar tratamientos, ver riesgo               |
+      | Citas                     | Ver la agenda de citas de su posta                                    |
+    And no puede acceder a:
+      | Módulo restringido        | Funcionalidad                                                  |
+      | Gestión de pacientes      | Registrar pacientes, ver "mis pacientes" de una madre          |
+      | Diario nutricional        | Registrar alimento, ver diario e historial                     |
+      | Seguimiento de tratamiento | Confirmar dosis, ver dosis de hoy e historial de dosis         |
+      | Citas                     | Reservar o cancelar citas, ver postas cercanas, próxima cita   |
+      | Postas de salud           | Registrar postas y asignar enfermeras                          |
+
+  Scenario: Un administrador gestiona las postas de salud
+    Given el usuario ha iniciado sesión con el rol "Admin"
+    Then el usuario tiene acceso a:
+      | Módulo permitido | Funcionalidad                                                  |
+      | Postas de salud  | Registrar postas, consultar distritos, asignar enfermeras a postas |
+    And ni una madre ni una enfermera pueden usar esas funciones
+
 ```
 
 <!-- COMPLETAR -->
