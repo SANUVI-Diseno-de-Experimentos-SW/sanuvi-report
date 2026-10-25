@@ -171,6 +171,47 @@ Scenario: Horario ocupado
     And no debe registrarse la cita.
 ```
 
+#### Feature 4: Gestion de Historial Medico
+
+```gherkin
+
+Feature: Gestion de Historial Medico
+
+Como enfermera, quiero consultar y gestionar el historial médico inicial de un paciente asignado a mi cartera, para contar con información clínica que facilite el seguimiento medico del paciente.
+
+Background:
+    Given el usuario ha iniciado sesión como Nurse
+    And Tiene Pacientes asignado a su cartera
+
+
+Scenario: Historial médico inicial
+
+Given que el paciente se encuentra asignado a la cartera de la enfermera
+When la enfermera incorpora la información clínica inicial del paciente.
+        | Campo                                  | Valor                                |
+        | Peso                                   | 60                                   |
+        | Altura                                 | 159                                  |
+        | Motivo de Consulta                     | Baja Hemoglobina                     |
+        | Antecedentes                           | Anemia: Familiar                     |
+        | Sintomas Detectados                    | Anemia, Diabetis                     |
+
+Then el historial médico del paciente queda disponible para su seguimiento.
+
+Scenario: Información clínica incompleta
+
+Given que la información clínica necesaria del paciente está incompleta
+When la enfermera intenta incorporar el historial médico
+Then la información no se completa y se indica qué datos son necesarios para continuar.
+
+Scenario: Actualización del historial médico
+
+Given que el paciente cuenta con un historial médico registrado
+When la enfermera actualiza la información clínica del paciente
+Then el historial médico queda actualizado con la nueva información para continuar con su seguimiento.
+
+```
+
+
 
 #### Feature 10: Autenticación y Seguridad
 
@@ -225,12 +266,11 @@ Feature: Control de acceso basado en roles
 
 Background:
 
-  Scenario: Registrar una madre asigna el rol Mother
     Given el sistema define tres roles fijos: "Admin", "Nurse" y "Mother"
     And cada usuario inicia sesión con su DNI y contraseña y recibe un token JWT
     And el token de una madre incluye "motherId" y el de una enfermera incluye "nurseId"
 
- Scenario Outline: Registrar personal asigna el rol indicado
+ Scenario: Registrar personal asigna el rol indicado
     When se registra personal con el rol
     Then el sistema responde 201 Created
     And al iniciar sesión recibe un token que incluye el rol
