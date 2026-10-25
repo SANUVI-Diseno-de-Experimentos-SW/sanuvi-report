@@ -177,7 +177,8 @@ Scenario: Horario ocupado
 
 Feature: Gestion de Historial Medico
 
-Como enfermera, quiero consultar y gestionar el historial médico inicial de un paciente asignado a mi cartera, para contar con información clínica que facilite el seguimiento medico del paciente.
+Como enfermera, quiero consultar y gestionar el historial médico inicial de un paciente asignado a mi cartera,
+para contar con información clínica que facilite el seguimiento medico del paciente.
 
 Background:
     Given el usuario ha iniciado sesión como Nurse
