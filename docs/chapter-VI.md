@@ -99,6 +99,8 @@ Scenario Resumen Nutricional
 
 ```gherkin
 
+Feature: Gestion de Postas Medicas
+
 Como administrador, quiero registrar una nueva posta de salud con su información de ubicación
 y servicios disponibles, para incorporarla al registro de postas
 y permitir la gestión de sus atenciones.
@@ -114,8 +116,8 @@ Scenario: Registro exitoso de una posta
         | Nombre de la posta      | Posta Santa Anita                                                            |
         | Dirección               | Av. Jiron de la Union                                                        |
         | Distrito                | San Juan de Miraflores                                                       | 
-        | Ubicacion               | Ubicacion respectiva al mapa (sacando la latitude, longitude)                |
-        | Numero de telefono      | +51 936266001                                                                |
+        | Ubicación               | Ubicacion respectiva al mapa (sacando la latitude, longitude)                |
+        | Numero de teléfono      | +51 936266001                                                                |
         | Servicios               | Pediatría, Vacunación                                                        |
         | Horarios disponibles    | Lun, Mar, Mie, Ju, Vi, Sab, Dom                                              |
         | Horas disponibles       | 7:00, 8:00, 9:00, 11: 00, 12:00, 2:00                                        |
@@ -128,8 +130,47 @@ Scenario: Asignación de Enfermero a posta
          | Información              |
          | Nombre del enfermero     |
 
+Scenario: Consulta de postas cercanas
+    Given que la madre tiene pacientes registrados y permite el acceso a su ubicación,
+    When consulta la sección de  "postas cercanas",
+    Then deben mostrarse las postas activas ordenadas según su ubicación actual.
 
 ```
+
+#### Feature 4: Gestion de Citas
+
+```gherkin
+
+Feature: Gestion de Citas
+
+Como madre, quiero reservar, consultar y cancelar citas para mis pacientes,
+para organizar sus controles médicos en las postas de salud disponibles.
+
+Scenario: Reserva de cita exitosa
+    Given que la madre tiene un paciente registrado
+    And selecciona una posta, fecha y hora disponible,
+        | Campo                   | Valor                                                                        |
+        | Posta                   | Posta Santa Anita                                                            |
+        | Fecha                   | 20/11/2026                                                                   |
+        | Hora                    | 9:00                                                                         | 
+    When confirma la reserva,
+    Then la cita debe registrarse correctamente y debe mostrarse un mensaje de confirmación.
+
+Scenario: Cancelación de cita
+    
+    Given que la madre tiene una cita registrada,
+    When selecciona la opción de cancelar y confirma la acción,
+    Then la cita debe quedar registrada con estado cancelado
+    And debe mostrarse un mensaje de confirmación.
+
+Scenario: Horario ocupado
+
+    Given que la madre selecciona un horario que ya fue reservado,
+    When intenta confirmar la cita,
+    Then debe mostrarse un mensaje indicando que el horario no está disponible
+    And no debe registrarse la cita.
+```
+
 
 #### Feature 10: Autenticación y Seguridad
 
