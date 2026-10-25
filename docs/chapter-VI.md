@@ -175,40 +175,61 @@ Scenario: Horario ocupado
 
 ```gherkin
 
-Feature: Gestion de Historial Medico
+Feature: Gestión del Historial Médico
+  Como enfermero, quiero consultar y gestionar el historial médico inicial de un paciente asignado a mi cartera,
+  para contar con información clínica que facilite el seguimiento médico del paciente.
 
-Como enfermera, quiero consultar y gestionar el historial médico inicial de un paciente asignado a mi cartera,
-para contar con información clínica que facilite el seguimiento medico del paciente.
-
-Background:
+  Background:
     Given el usuario ha iniciado sesión como Nurse
-    And Tiene Pacientes asignado a su cartera
+    And tiene pacientes asignados a su cartera
 
+  Scenario: Registro del historial médico inicial
+    Given que el paciente se encuentra asignado a la cartera de la enfermera
+    And el paciente no cuenta con un historial médico previo
+    When la enfermera ingresa la siguiente información clínica inicial:
+      | Campo                | Valor              |
+      | Peso                 | 12.5 kg            |
+      | Altura               | 85 cm              |
+      | Motivo de Consulta   | Baja Hemoglobina   |
+      | Antecedentes         | ALERGIA: Penicilina|
+      | Síntomas             | Fatiga, Palidez    |
+    And el sistema valida que todos los campos obligatorios están completos
+    Then se registra el historial médico con estado "ACTIVO"
+    And el historial queda disponible para su consulta y seguimiento
+    And el paciente cambia de "Pendiente de historial" a "Historial registrado"
 
-Scenario: Historial médico inicial
+  Scenario: Consulta del historial médico existente
+    Given que el paciente ya cuenta con un historial médico registrado
+    When la enfermera accede al módulo de historial del paciente
+    Then el sistema muestra los datos clínicos completos:
+      | Sección      | Información mostrada                        |
+      | Cabecera     | Nombre, edad, sexo, peso, altura            |
+      | Clínico      | Motivo de consulta y observaciones          |
+      | Antecedentes | Lista de antecedentes registrados           |
+      | Síntomas     | Lista de síntomas reportados                |
+      | Controles    | Historial de controles de hemoglobina       |
 
-Given que el paciente se encuentra asignado a la cartera de la enfermera
-When la enfermera incorpora la información clínica inicial del paciente.
-        | Campo                                  | Valor                                |
-        | Peso                                   | 60                                   |
-        | Altura                                 | 159                                  |
-        | Motivo de Consulta                     | Baja Hemoglobina                     |
-        | Antecedentes                           | Anemia: Familiar                     |
-        | Sintomas Detectados                    | Anemia, Diabetis                     |
+  Scenario: Información clínica incompleta
+    Given que la enfermera está en el formulario de registro de historial médico
+    When la enfermera intenta guardar el historial dejando campos obligatorios vacíos:
+      | Campo faltante       | Estado   |
+      | Peso                 | Vacío    |
+      | Motivo de Consulta   | Vacío    |
+    Then el sistema no registra el historial médico
+    And muestra un mensaje indicando que el peso y el motivo de consulta son obligatorios
+    And el botón "Guardar Historial" permanece deshabilitado
 
-Then el historial médico del paciente queda disponible para su seguimiento.
-
-Scenario: Información clínica incompleta
-
-Given que la información clínica necesaria del paciente está incompleta
-When la enfermera intenta incorporar el historial médico
-Then la información no se completa y se indica qué datos son necesarios para continuar.
-
-Scenario: Actualización del historial médico
-
-Given que el paciente cuenta con un historial médico registrado
-When la enfermera actualiza la información clínica del paciente
-Then el historial médico queda actualizado con la nueva información para continuar con su seguimiento.
+  Scenario: Actualización del historial médico
+    Given que el paciente cuenta con un historial médico registrado
+    When la enfermera actualiza la siguiente información clínica:
+      | Campo          | Valor Nuevo         |
+      | Peso           | 13.0 kg             |
+      | Observaciones  | Mejora en el apetito|
+      | Síntomas       | Ninguno             |
+    And el sistema valida los nuevos datos
+    Then el historial médico se actualiza con la nueva información
+    And se registra la fecha de última actualización ("updatedAt")
+    And el historial queda disponible con los datos actualizados para su seguimiento
 
 ```
 
@@ -217,45 +238,103 @@ Then el historial médico queda actualizado con la nueva información para conti
 ```gherkin
 
 Feature: Registro del control de hemoglobina
+  Como enfermero, quiero gestionar el registro de los controles de hemoglobina de los pacientes,
+  para mantener actualizada la información de su evolución
+  y determinar automáticamente su estado de anemia.
 
-Como enfermero, quiero gestionar el registro de los controles de hemoglobina de los pacientes,
-para mantener actualizada la información de su evolución
-y determinar automáticamente su estado de anemia.
+  Background:
+    Given el usuario ha iniciado sesión como Nurse
+    And tiene pacientes asignados a su cartera
+
+
+  Scenario: Registro del control exitoso
+    Given que se recibe un paciente asignado a la enfermera con historia clínica existente
+    And el enfermero ingresa el siguiente nivel de hemoglobina:
+      | Campo | Valor |
+      | Nivel | 10.5  |
+    When el sistema valida que el nivel de hemoglobina se encuentra dentro del rango permitido (0 - 30 g/dL)
+    Then se registra el nivel de hemoglobina en la historia clínica del paciente
+    And se crea un nuevo control con la fecha actual y el estado de anemia correspondiente
+
+
+  Scenario: Nivel de hemoglobina fuera de rango
+    Given que el enfermero ingresa un nivel de hemoglobina menor que 0 o mayor que 30 g/dL
+    When el sistema valida el valor proporcionado
+    Then responde con un error indicando "El nivel de hemoglobina debe encontrarse entre 0 y 30 g/dL"
+    And no registra el control en la historia clínica
+
+
+  Scenario: Paciente sin historia clínica
+    Given que el enfermero intenta registrar un control para un paciente que no cuenta con historia clínica
+    When el sistema verifica la información clínica requerida
+    Then responde con un error indicando que la historia clínica no existe
+    And no registra el control
+
+  Scenario Outline: Determinación automática del estado de anemia
+    Given que el enfermero ingresa un nivel de hemoglobina válido de "<nivel>"
+    When el sistema registra el control y evalúa el valor proporcionado
+    Then determina automáticamente el estado de anemia como "<estado>"
+
+    Examples:
+      | nivel | estado     |
+      | 6.5   | SEVERE     |
+      | 8.0   | MODERATE   |
+      | 10.0  | MILD       |
+      | 12.0  | CONTROLLED |
+
+```
+
+#### Feature 7: Gestión de Tratamientos
+
+```gherkin
+
+Feature: Inicio del tratamiento
+
+Como enfermero, quiero gestionar el inicio del tratamiento de un paciente,
+para establecer sus condiciones de tratamiento y generar las dosis correspondientes.
 
 Background:
     Given el usuario ha iniciado sesión como Nurse
     And Tiene Pacientes asignado a su cartera
+    
+Scenario: Inicio de tratamiento exitoso
 
-Scenario: Registro del control exitoso
+Given que el enfermero ingrese suplemento, cantidad, horario y duración del tratamiento,
+        | Campo                                  | Valor                                |
+        | suplemento                             | Sulfato ferroso                      |
+        | cantidad                               | 20 gramos                            |
+        | horario                                | 9:00 AM                              |
+        | duración                               | 5 dias                               |
 
-Given que se recibe un paciente asignado a la enfermera y una historia clínica existente,
-When se valida que el nivel de hemoglobina se encuentra dentro del rango permitido,
-            | Campo                                  | Valor                                |
-            | Nivel                                  | 20                                   |
-Then se registra dicho nivel de hemoglobina
-And se registra correctamente el nuevo control de hemoglobina.
+When el sistema valida que el paciente existe y no tiene un tratamiento activo,
+Then el sistema registra dicho tratamiento,
+And crea el tratamiento con estado ACTIVE y genera las dosis correspondientes.
 
-Scenario: Nivel de hemoglobina fuera de rango
+Scenario: Tratamiento completado exitosamente
+    Given que el enfermero accede al detalle de un tratamiento con estado "ACTIVE"
+    And el paciente ha mostrado un gran avance en la adherencia (tasa >= 85%)
+    When el enfermero selecciona la opción "Marcar como completado"
+    And ingresa la justificación clínica: "El paciente ha completado el ciclo de 90 días..."
+    And el sistema valida el ID del tratamiento y la observación
+    Then el sistema actualiza el tratamiento con estado "COMPLETED"
+    And registra la observación en el campo "completionObservation"
+    And actualiza automáticamente la ficha epidemiológica y el padrón HIS-MINSA
+    And los botones de acción desaparecen y se muestra la nota clínica registrada
 
-Given que se ingrese un nivel menor que 0 o mayor que 30 g/dL,
-When el sistema valida el valor proporcionado,
-Then responde con un error indicando que el nivel de hemoglobina debe encontrarse entre 0 y 30 g/dL.
-
-Scenario: Paciente sin historia clínica
-
-Given que se ingrese un control para un paciente que no cuenta con una historia clínica,
-When el sistema verifique la información clínica requerida,
-Then responde con un error indicando que la historia clínica no existe y no registra el control.
-
-Scenario: Determinación del estado de anemia
-
-Given que se ingrese con un nivel de hemoglobina válido,
-When el sistema registra el control y evalúa el valor proporcionado,
-Then determina automáticamente el estado de anemia correspondiente según el rango del nivel de hemoglobina.
+Scenario: Registrar abandono de tratamiento
+    Given que el enfermero accede al detalle de un tratamiento con estado "ACTIVE"
+    And el paciente no ha respondido a las dosis o al contacto con la madre
+    When el enfermero selecciona la opción "Registrar abandono"
+    And ingresa la justificación: "No hay respuesta de dicho paciente, no se ha tomado la dosis..."
+    And el sistema valida el ID del tratamiento y la observación
+    Then el sistema actualiza el tratamiento con estado "ABANDONED"
+    And registra la observación en el campo "abandonmentObservation"
+    And notifica al promotor de salud para visita domiciliaria en las próximas 48 horas
+    And los botones de acción desaparecen y se muestra la nota clínica registrada
 
 ```
 
-#### Feature 7: Registro del cumplimiento de dosis
+#### Feature 8: Registro del cumplimiento de dosis
 
 ```gherkin
 
@@ -288,6 +367,34 @@ Then el sistema debe informar que no existe un tratamiento activo para registrar
 
 ```
 
+#### Feature 9: Registro del cumplimiento de dosis
+
+```gherkin
+
+Feature: Dar de Alta a un Paciente
+  Como desarrollador, quiero gestionar el alta de un paciente mediante una API,
+  para finalizar su seguimiento clínico cuando corresponda.
+
+  Background:
+    Given el sistema tiene un paciente registrado con estado "ACTIVE"
+    And el paciente está asignado a la enfermera autenticada
+
+  Scenario: Alta exitosa de un paciente
+    Given que se recibe una solicitud "PUT /discharge" con el ID de un paciente existente
+    When la API verifica que la enfermera autenticada está asignada al paciente
+    Then la API responde con un estado "200 OK"
+    And el estado del paciente cambia de "ACTIVE" a "DISCHARGED"
+    And el paciente ya no aparece en la lista de pacientes activos de la enfermera
+
+
+  Scenario: Intento de alta de un paciente inexistente
+    Given que se recibe una solicitud "PUT /discharge" con un identificador de paciente inexistente
+    When la API verifica la existencia del paciente
+    Then la API responde con un estado "400 Bad Request"
+    And retorna un mensaje de error indicando que el paciente no fue encontrado
+    And el estado del paciente no sufre modificaciones
+
+```
 
 #### Feature 10: Autenticación y Seguridad
 
