@@ -16,12 +16,11 @@
 
 ### 6.1.2. Core Integration Tests
 
-Las pruebas de integración verifican que los módulos del sistema interactúen correctamente entre sí. Para ello se utilizó **xUnit** junto con `WebApplicationFactory<Program>`, que levanta la API completa de ASP.NET Core en memoria, y **Mongo2Go**, que provee una instancia embebida de MongoDB durante la ejecución de los tests. Esto permite probar el flujo real desde la capa HTTP hasta la persistencia, sin depender de infraestructura externa.
-
+Las pruebas de integración verifican que los módulos del backend interactúen correctamente entre sí a través de los endpoints REST. Para su ejecución se utilizó xUnit junto con MongoWebApplicationFactory, que permite iniciar la API de ASP.NET Core en memoria, y Mongo2Go, que proporciona una instancia embebida de MongoDB durante las pruebas. Este enfoque permite validar el flujo de las solicitudes HTTP, las respuestas de la API, las reglas de negocio y la persistencia de datos sin depender de una infraestructura externa.
 
 ### Core Integration Tests — IAM
 
-Cada test registra sus propios usuarios con DNI y correo únicos, por lo que los casos son independientes entre sí. Para el módulo IAM se implementaron tres clases de prueba:
+El módulo IAM (Identity and Access Management) comprende las pruebas de integración relacionadas con la autenticación, el registro de usuarios y la recuperación de contraseñas. Los casos de prueba verifican el registro de madres y personal de salud, el inicio de sesión mediante credenciales válidas e inválidas, la prevención de registros duplicados y el manejo de errores durante el proceso de recuperación de contraseña. Para este módulo se implementaron tres clases de prueba:
 
 | Clase | Endpoints cubiertos | Casos |
 | --- | --- | --- |
@@ -161,6 +160,8 @@ Comprueba la respuesta de la API cuando se solicitan los detalles de un alimento
 
 **Alcance:** las pruebas de esta clase se concentran en seguridad, validaciones y consultas. No se incluyen escenarios de registro exitoso de consumo de alimentos ni consultas exitosas de información diaria e historial. Asimismo, el endpoint de alimentos por categoría (`foods/category/{category}`) está definido en `NutritionDiaryApi.cs`, pero no cuenta con casos de prueba en esta clase.
 
+---
+
 ### Core Integration Tests — Patient Management
 
 Cada escenario de prueba prepara sus propios datos mediante la API, creando madres, pacientes y enfermeras según los requisitos de cada caso. Para el módulo Patient Management se implementaron tres clases de prueba de integración, utilizando `xUnit`, `HttpClient` y `MongoWebApplicationFactory`. Las pruebas validan el registro y la asignación de pacientes, la gestión de historias clínicas, el seguimiento de hemoglobina y los mecanismos de autenticación y autorización por roles.
@@ -243,6 +244,8 @@ Valida el registro de pacientes por parte de las madres, la asociación del paci
 *[Insertar captura de la ejecución de `PatientRegistrationAndAssignmentTests` en Rider]*
 
 **Alcance:** los casos cubren los flujos principales de registro, asignación y consulta, además de las validaciones de error y las respuestas para listas vacías. La prueba de registro con peso negativo espera `400 Bad Request`, por lo que el resultado depende de que la validación correspondiente esté implementada en el dominio.
+
+---
 
 ### Core Integration Tests — Treatment Tracking
 
@@ -341,6 +344,8 @@ Valida que los endpoints protegidos requieran un token de autenticación y que l
 *[Insertar captura de la ejecución de `TreatmentSecurityTests` en Rider]*
 
 **Alcance:** se ejecutaron 18 casos relacionados con la autenticación y autorización del módulo, distribuidos en nueve escenarios sin token y nueve escenarios con un rol incorrecto. Estas pruebas verifican la separación de permisos entre madres y enfermeras para los endpoints de seguimiento del tratamiento.
+
+---
 
 ### Core Integration Tests — Healthy Facility
 
