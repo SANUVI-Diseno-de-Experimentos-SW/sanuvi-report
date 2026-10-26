@@ -16,9 +16,78 @@
 
 ### 6.1.2. Core Integration Tests
 
-> Pruebas de integración entre capas y con la base de datos / servicios externos.
+Las pruebas de integración verifican que los módulos del sistema interactúen correctamente entre sí. Para ello se utilizó **xUnit** junto con `WebApplicationFactory<Program>`, que levanta la API completa de ASP.NET Core en memoria, y **Mongo2Go**, que provee una instancia embebida de MongoDB durante la ejecución de los tests. Esto permite probar el flujo real desde la capa HTTP hasta la persistencia, sin depender de infraestructura externa.
 
-<!-- COMPLETAR -->
+
+### Core Integration Tests — IAM
+
+Cada test registra sus propios usuarios con DNI y correo únicos, por lo que los casos son independientes entre sí. Para el módulo IAM se implementaron tres clases de prueba:
+
+| Clase | Endpoints cubiertos | Casos |
+| --- | --- | --- |
+| `AuthenticationIntegrationTests` | `register/mother`, `login` | 6 |
+| `StaffRegistrationIntegrationTests` | `register/staff`, `users/email/{email}`, `login` | 7 |
+| `PasswordResetIntegrationTests` | `password/request-code`, `password/verify-code`, `password/reset` | 5 |
+
+---
+
+##### Prueba 1 — Flujo de autenticación (IAM)
+
+**Clase:** `AuthenticationIntegrationTests`
+
+Valida la comunicación entre un cliente HTTP y los endpoints REST del módulo IAM. Cubre el ciclo completo de registro de una madre e inicio de sesión, incluyendo la generación del token JWT y el manejo de errores por credenciales inválidas o datos duplicados.
+
+| Caso | Endpoint | Resultado esperado |
+| --- | --- | --- |
+| Registro de madre con datos válidos | `POST /api/users/register/mother` | `201 Created` + mensaje de confirmación |
+| Registro con DNI duplicado | `POST /api/users/register/mother` | `400 Bad Request` |
+| Registro con correo duplicado | `POST /api/users/register/mother` | `400 Bad Request` |
+| Inicio de sesión válido | `POST /api/users/login` | `200 OK` + token JWT |
+| Contraseña incorrecta | `POST /api/users/login` | `401 Unauthorized` |
+| Usuario inexistente | `POST /api/users/login` | `401 Unauthorized` |
+
+*\[Insertar captura de la ejecución de `AuthenticationIntegrationTests` en Rider\]*
+
+---
+
+##### Prueba 2 — Registro de personal (staff)
+
+**Clase:** `StaffRegistrationIntegrationTests`
+
+Valida el alta de personal de salud (enfermera y administrador) y comprueba que los datos enviados queden guardados correctamente en la base de datos, consultándolos después por correo. También verifica el manejo de roles inválidos y de DNI repetidos, y que el personal registrado pueda iniciar sesión.
+
+| Caso | Endpoint | Resultado esperado |
+| --- | --- | --- |
+| Registro con rol válido (`Nurse` y `Admin`) | `POST /api/users/register/staff` | `201 Created` + mensaje de confirmación |
+| Datos guardados correctamente (`Nurse` y `Admin`) | `POST /api/users/register/staff` y `GET /api/users/email/{email}` | `200 OK` con nombre, apellido, DNI, correo, teléfono y rol iguales a los enviados |
+| Rol inexistente | `POST /api/users/register/staff` | `400 Bad Request` |
+| DNI duplicado | `POST /api/users/register/staff` | `400 Bad Request` |
+| Inicio de sesión del personal registrado | `POST /api/users/login` | `200 OK` + token JWT |
+
+*\[Insertar captura de la ejecución de `StaffRegistrationIntegrationTests` en Rider\]*
+
+**Hallazgo detectado por la prueba:** al registrar personal con un DNI duplicado, la API respondía `500 Internal Server Error` porque el controlador solo capturaba `ArgumentException` y no `InvalidOperationException`. Se corrigió para devolver `400 Bad Request`, igual que el registro de madres.
+
+---
+
+##### Prueba 3 — Recuperación de contraseña
+
+**Clase:** `PasswordResetIntegrationTests`
+
+Valida los casos de error del flujo de recuperación de contraseña en sus tres pasos: solicitar código, verificarlo y restablecer la contraseña. Comprueba que la API rechace correos inexistentes y códigos inválidos, y que ante un intento fallido la contraseña original siga funcionando.
+
+| Caso | Endpoint | Resultado esperado |
+| --- | --- | --- |
+| Solicitar código con correo inexistente | `POST /api/users/password/request-code` | `400 Bad Request` |
+| Verificar código con correo inexistente | `POST /api/users/password/verify-code` | `400 Bad Request` |
+| Verificar código sin haberlo solicitado | `POST /api/users/password/verify-code` | `400 Bad Request` |
+| Restablecer con correo inexistente | `POST /api/users/password/reset` | `400 Bad Request` |
+| Restablecer con código inválido | `POST /api/users/password/reset` y `POST /api/users/login` | `400 Bad Request`; el inicio de sesión con la contraseña original devuelve `200 OK` |
+
+*\[Insertar captura de la ejecución de `PasswordResetIntegrationTests` en Rider\]*
+
+**Alcance:** el flujo exitoso (solicitar código, verificarlo y restablecer) no está cubierto porque el código se envía por correo electrónico. Para probarlo se requiere reemplazar el servicio de correo por un doble de prueba que capture el código enviado.
+
 
 ### 6.1.3. Core Behavior-Driven Development
 
