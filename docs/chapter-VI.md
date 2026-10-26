@@ -16,9 +16,458 @@
 
 ### 6.1.2. Core Integration Tests
 
-> Pruebas de integración entre capas y con la base de datos / servicios externos.
+Las pruebas de integración verifican que los módulos del backend interactúen correctamente entre sí a través de los endpoints REST. Para su ejecución se utilizó xUnit junto con MongoWebApplicationFactory, que permite iniciar la API de ASP.NET Core en memoria, y Mongo2Go, que proporciona una instancia embebida de MongoDB durante las pruebas. Este enfoque permite validar el flujo de las solicitudes HTTP, las respuestas de la API, las reglas de negocio y la persistencia de datos sin depender de una infraestructura externa.
 
-<!-- COMPLETAR -->
+### Core Integration Tests — IAM
+
+El módulo IAM (Identity and Access Management) comprende las pruebas de integración relacionadas con la autenticación, el registro de usuarios y la recuperación de contraseñas. Los casos de prueba verifican el registro de madres y personal de salud, el inicio de sesión mediante credenciales válidas e inválidas, la prevención de registros duplicados y el manejo de errores durante el proceso de recuperación de contraseña. Para este módulo se implementaron tres clases de prueba:
+
+| Clase | Endpoints cubiertos | Casos |
+| --- | --- | --- |
+| `AuthenticationIntegrationTests` | `register/mother`, `login` | 6 |
+| `StaffRegistrationIntegrationTests` | `register/staff`, `users/email/{email}`, `login` | 7 |
+| `PasswordResetIntegrationTests` | `password/request-code`, `password/verify-code`, `password/reset` | 5 |
+
+
+##### Prueba 1 — Flujo de autenticación (IAM)
+
+**Clase:** `AuthenticationIntegrationTests`
+
+Valida la comunicación entre un cliente HTTP y los endpoints REST del módulo IAM. Cubre el ciclo completo de registro de una madre e inicio de sesión, incluyendo la generación del token JWT y el manejo de errores por credenciales inválidas o datos duplicados.
+
+| Caso | Endpoint | Resultado esperado |
+| --- | --- | --- |
+| Registro de madre con datos válidos | `POST /api/users/register/mother` | `201 Created` + mensaje de confirmación |
+| Registro con DNI duplicado | `POST /api/users/register/mother` | `400 Bad Request` |
+| Registro con correo duplicado | `POST /api/users/register/mother` | `400 Bad Request` |
+| Inicio de sesión válido | `POST /api/users/login` | `200 OK` + token JWT |
+| Contraseña incorrecta | `POST /api/users/login` | `401 Unauthorized` |
+| Usuario inexistente | `POST /api/users/login` | `401 Unauthorized` |
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-integration/Iam/AuthenticationTest.png">
+</div>
+
+##### Prueba 2 — Registro de personal (staff)
+
+**Clase:** `StaffRegistrationIntegrationTests`
+
+Valida el alta de personal de salud (enfermera y administrador) y comprueba que los datos enviados queden guardados correctamente en la base de datos, consultándolos después por correo. También verifica el manejo de roles inválidos y de DNI repetidos, y que el personal registrado pueda iniciar sesión.
+
+| Caso | Endpoint | Resultado esperado |
+| --- | --- | --- |
+| Registro con rol válido (`Nurse` y `Admin`) | `POST /api/users/register/staff` | `201 Created` + mensaje de confirmación |
+| Datos guardados correctamente (`Nurse` y `Admin`) | `POST /api/users/register/staff` y `GET /api/users/email/{email}` | `200 OK` con nombre, apellido, DNI, correo, teléfono y rol iguales a los enviados |
+| Rol inexistente | `POST /api/users/register/staff` | `400 Bad Request` |
+| DNI duplicado | `POST /api/users/register/staff` | `400 Bad Request` |
+| Inicio de sesión del personal registrado | `POST /api/users/login` | `200 OK` + token JWT |
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-integration/Iam/StaffRegistrationIntegrationTest.png">
+</div>
+
+**Hallazgo detectado por la prueba:** al registrar personal con un DNI duplicado, la API respondía `500 Internal Server Error` porque el controlador solo capturaba `ArgumentException` y no `InvalidOperationException`. Se corrigió para devolver `400 Bad Request`, igual que el registro de madres.
+
+##### Prueba 3 — Recuperación de contraseña
+
+**Clase:** `PasswordResetIntegrationTests`
+
+Valida los casos de error del flujo de recuperación de contraseña en sus tres pasos: solicitar código, verificarlo y restablecer la contraseña. Comprueba que la API rechace correos inexistentes y códigos inválidos, y que ante un intento fallido la contraseña original siga funcionando.
+
+| Caso | Endpoint | Resultado esperado |
+| --- | --- | --- |
+| Solicitar código con correo inexistente | `POST /api/users/password/request-code` | `400 Bad Request` |
+| Verificar código con correo inexistente | `POST /api/users/password/verify-code` | `400 Bad Request` |
+| Verificar código sin haberlo solicitado | `POST /api/users/password/verify-code` | `400 Bad Request` |
+| Restablecer con correo inexistente | `POST /api/users/password/reset` | `400 Bad Request` |
+| Restablecer con código inválido | `POST /api/users/password/reset` y `POST /api/users/login` | `400 Bad Request`; el inicio de sesión con la contraseña original devuelve `200 OK` |
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-integration/Iam/PasswordResetIntegrationTest.png">
+</div>
+
+**Alcance:** el flujo exitoso (solicitar código, verificarlo y restablecer) no está cubierto porque el código se envía por correo electrónico. Para probarlo se requiere reemplazar el servicio de correo por un doble de prueba que capture el código enviado.
+
+---
+
+### Core Integration Tests — Nutrition Diary
+
+Para el módulo Nutrition Diary se implementó la clase de prueba `NutritiondiaryintegrationTests`. Los casos utilizan `HttpClient` y `MongoWebApplicationFactory` para validar la interacción con los endpoints REST, incluyendo la seguridad, las validaciones de datos y las consultas de información nutricional.
+
+| Clase | Endpoints cubiertos | Casos |
+| --- | --- | --- |
+| `NutritiondiaryintegrationTests` | `food-entry`, `today/{patientId}`, `history/{patientId}`, `foods/search`, `foods/{foodItemId}` | 17 |
+
+##### Prueba 1 — Seguridad y autorización (Nutrition Diary)
+
+**Clase:** `NutritiondiaryintegrationTests`
+
+Valida los mecanismos de autenticación y autorización de los endpoints destinados a las madres. Comprueba que las solicitudes sin token sean rechazadas, que el personal de salud no pueda acceder a los endpoints exclusivos para madres y que el token de una madre contenga el claim `motherId` requerido para identificarla.
+
+| Caso | Endpoint | Resultado esperado |
+| --- | --- | --- |
+| Registro de consumo sin token | `POST /api/nutritional-diary/food-entry` | `401 Unauthorized` |
+| Consulta diaria sin token | `GET /api/nutritional-diary/today/{patientId}` | `401 Unauthorized` |
+| Consulta del historial sin token | `GET /api/nutritional-diary/history/{patientId}` | `401 Unauthorized` |
+| Registro de consumo con token de personal de salud | `POST /api/nutritional-diary/food-entry` | `403 Forbidden` |
+| Consulta diaria con token de personal de salud | `GET /api/nutritional-diary/today/{patientId}` | `403 Forbidden` |
+| Consulta del historial con token de personal de salud | `GET /api/nutritional-diary/history/{patientId}` | `403 Forbidden` |
+| Token de madre con claim `motherId` | `GET /api/nutritional-diary/history/{patientId}` | No devuelve `401 Unauthorized`, `403 Forbidden` ni el mensaje `Mother ID no encontrado` |
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-integration/NutritionDiary/NutritionTest.png">
+</div>
+
+##### Prueba 2 — Validación del registro de consumo de alimentos
+
+**Clase:** `NutritiondiaryintegrationTests`
+
+Comprueba las validaciones del endpoint de registro de consumo de alimentos, verificando que las solicitudes con campos obligatorios faltantes o cantidades negativas sean rechazadas por la API.
+
+| Caso | Endpoint | Resultado esperado |
+| --- | --- | --- |
+| Registro con campos obligatorios faltantes | `POST /api/nutritional-diary/food-entry` | `400 Bad Request` + mensaje `Faltan campos requeridos` |
+| Registro con cantidad negativa | `POST /api/nutritional-diary/food-entry` | `400 Bad Request` |
+
+##### Prueba 3 — Consulta diaria e historial de pacientes
+
+**Clase:** `NutritiondiaryintegrationTests`
+
+Valida el comportamiento de los endpoints de consulta diaria e historial cuando la madre autenticada solicita información de un paciente inexistente o que no le pertenece.
+
+| Caso | Endpoint | Resultado esperado |
+| --- | --- | --- |
+| Consulta diaria de paciente inexistente o no asociado | `GET /api/nutritional-diary/today/{patientId}` | `400 Bad Request` |
+| Consulta del historial de paciente inexistente o no asociado | `GET /api/nutritional-diary/history/{patientId}` | `400 Bad Request` |
+
+##### Prueba 4 — Búsqueda de alimentos
+
+**Clase:** `NutritiondiaryintegrationTests`
+
+Verifica el comportamiento del endpoint público de búsqueda de alimentos. Comprueba que la API rechace búsquedas con texto vacío, espacios en blanco o sin el parámetro requerido, y que permita realizar una búsqueda válida sin autenticación.
+
+| Caso | Endpoint | Resultado esperado |
+| --- | --- | --- |
+| Búsqueda con texto vacío | `GET /api/nutritional-diary/foods/search?text=` | `400 Bad Request` |
+| Búsqueda con texto compuesto por espacios | `GET /api/nutritional-diary/foods/search?text=...` | `400 Bad Request` |
+| Búsqueda sin el parámetro `text` | `GET /api/nutritional-diary/foods/search` | `400 Bad Request` |
+| Búsqueda válida de alimentos (`arroz`) | `GET /api/nutritional-diary/foods/search?text=arroz` | `200 OK`, sin token de autenticación |
+
+##### Prueba 5 — Consulta de detalles de alimentos
+
+**Clase:** `NutritiondiaryintegrationTests`
+
+Comprueba la respuesta de la API cuando se solicitan los detalles de un alimento mediante un identificador inexistente, utilizando tanto un identificador con formato ObjectId como una cadena de texto que no corresponde a un alimento registrado.
+
+| Caso | Endpoint | Resultado esperado |
+| --- | --- | --- |
+| Consulta con identificador inexistente en formato ObjectId | `GET /api/nutritional-diary/foods/{foodItemId}` | `400 Bad Request` |
+| Consulta con identificador inexistente en formato de texto | `GET /api/nutritional-diary/foods/{foodItemId}` | `400 Bad Request` |
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-integration/NutritionDiary/NutritionTest.png">
+</div>
+
+**Alcance:** las pruebas de esta clase se concentran en seguridad, validaciones y consultas. No se incluyen escenarios de registro exitoso de consumo de alimentos ni consultas exitosas de información diaria e historial. Asimismo, el endpoint de alimentos por categoría (`foods/category/{category}`) está definido en `NutritionDiaryApi.cs`, pero no cuenta con casos de prueba en esta clase.
+
+---
+
+### Core Integration Tests — Patient Management
+
+Cada escenario de prueba prepara sus propios datos mediante la API, creando madres, pacientes y enfermeras según los requisitos de cada caso. Para el módulo Patient Management se implementaron tres clases de prueba de integración, utilizando `xUnit`, `HttpClient` y `MongoWebApplicationFactory`. Las pruebas validan el registro y la asignación de pacientes, la gestión de historias clínicas, el seguimiento de hemoglobina y los mecanismos de autenticación y autorización por roles.
+
+| Clase | Endpoints cubiertos | Casos |
+|---|---|---:|
+| `MedicalRecordAndHemoglobinTests` | `medical-record`, `{patientId}/medical-record`, `hemoglobin-control`, `medical-record/{id}/controls`, `{patientId}/hemoglobin-evolution`, `discharge` | 15 |
+| `PatientManagementSecurityTests` | `register`, `assign-nurse`, `medical-record`, `hemoglobin-control`, `discharge`, `my-patients`, `nurse`, `mother/{motherId}`, `mother/search/{term}`, `{id}` y endpoints relacionados | 28 |
+| `PatientRegistrationAndAssignmentTests` | `register`, `my-patients`, `assign-nurse`, `mother/{motherId}`, `nurse`, `{id}`, `mother/search/{term}` | 14 |
+
+##### Prueba 1 — Historia clínica y control de hemoglobina
+
+**Clase:** `MedicalRecordAndHemoglobinTests`
+
+Valida la creación y consulta de historias clínicas, el registro y consulta de controles de hemoglobina, la consulta de la evolución de hemoglobina por parte de la madre y las validaciones del alta del paciente. También comprueba que una enfermera no pueda acceder ni modificar la información de pacientes asignados a otra profesional de salud.
+
+| Caso | Endpoint | Resultado esperado |
+|---|---|---|
+| Crear historia clínica de paciente asignado | `POST /api/patients/medical-record` | `201 Created` + mensaje de confirmación |
+| Crear historia clínica de paciente asignado a otra enfermera | `POST /api/patients/medical-record` | `400 Bad Request` |
+| Crear historia clínica con campos obligatorios faltantes | `POST /api/patients/medical-record` | `400 Bad Request` |
+| Consultar historia clínica después de crearla | `GET /api/patients/{patientId}/medical-record` | `200 OK` + datos guardados |
+| Consultar historia clínica antes de crearla | `GET /api/patients/{patientId}/medical-record` | `404 Not Found` o `400 Bad Request` |
+| Consultar historia clínica de paciente asignado a otra enfermera | `GET /api/patients/{patientId}/medical-record` | `400 Bad Request` |
+| Registrar un nivel válido de hemoglobina | `POST /api/patients/hemoglobin-control` | `201 Created` + mensaje de confirmación |
+| Registrar hemoglobina sin especificar el nivel | `POST /api/patients/hemoglobin-control` | `400 Bad Request` |
+| Registrar hemoglobina de paciente asignado a otra enfermera | `POST /api/patients/hemoglobin-control` | `400 Bad Request` |
+| Consultar controles después de registrar hemoglobina | `GET /api/patients/medical-record/{id}/controls` | `200 OK` + control registrado |
+| Consultar controles sin acceso autorizado | `GET /api/patients/medical-record/{id}/controls` | `400 Bad Request` |
+| Consultar evolución de hemoglobina del propio paciente | `GET /api/patients/{patientId}/hemoglobin-evolution` | `200 OK` + evolución registrada |
+| Consultar evolución de paciente de otra madre | `GET /api/patients/{patientId}/hemoglobin-evolution` | `400 Bad Request` |
+| Dar de alta sin identificador de paciente | `PUT /api/patients/discharge` | `400 Bad Request` |
+| Dar de alta a un paciente asignado a otra enfermera | `PUT /api/patients/discharge` | `400 Bad Request` |
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-integration/PatientManagement/MedicalRecordAndHemoglobinTests.png">
+</div>
+
+**Alcance:** las pruebas de alta del paciente cubren únicamente escenarios de error relacionados con la ausencia del identificador y la asignación a otra enfermera. El flujo exitoso de alta no está cubierto porque depende de las reglas de negocio establecidas para el alta del paciente.
+
+##### Prueba 2 — Seguridad y autorización de Patient Management
+
+**Clase:** `PatientManagementSecurityTests`
+
+Valida que los endpoints del módulo requieran autenticación y que el acceso esté restringido según el rol del usuario. Comprueba que las operaciones exclusivas de las madres no puedan ejecutarse con un token de enfermera y que las operaciones destinadas al personal de salud rechacen los tokens de madre. Asimismo, verifica que los tokens incluyan los claims `motherId` y `nurseId` requeridos por los controladores.
+
+| Caso | Endpoint | Resultado esperado |
+|---|---|---|
+| Acceso a endpoints protegidos sin token (13 escenarios) | Endpoints de registro, asignación, historia clínica, hemoglobina, alta y consultas de pacientes | `401 Unauthorized` |
+| Acceso a endpoints de enfermera con token de madre (10 escenarios) | Endpoints de asignación, historia clínica, hemoglobina, alta y consultas de personal de salud | `403 Forbidden` |
+| Acceso a endpoints de madre con token de enfermera (3 escenarios) | `POST /api/patients/register`, `GET /api/patients/my-patients` y `GET /api/patients/{id}/hemoglobin-evolution` | `403 Forbidden` |
+| Verificación del claim `motherId` | `GET /api/patients/my-patients` | `200 OK`, sin el mensaje `Mother ID no encontrado` |
+| Verificación del claim `nurseId` | `GET /api/patients/nurse` | `200 OK`, sin el mensaje `Nurse ID no encontrado` |
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-integration/PatientManagement/PatientManagementSecurityTests.png">
+</div>
+
+**Alcance:** se verifican 28 ejecuciones relacionadas con la autenticación, la autorización por roles y la presencia de los claims necesarios para identificar a madres y enfermeras.
+
+##### Prueba 3 — Registro y asignación de pacientes
+
+**Clase:** `PatientRegistrationAndAssignmentTests`
+
+Valida el registro de pacientes por parte de las madres, la asociación del paciente con la madre autenticada, la asignación de pacientes a enfermeras y las consultas de pacientes asignados y no asignados. También comprueba las respuestas de la API cuando no existen pacientes, se envían datos inválidos o se consultan identificadores inexistentes.
+
+| Caso | Endpoint | Resultado esperado |
+|---|---|---|
+| Registrar paciente con datos válidos | `POST /api/patients/register` | `201 Created` + mensaje de confirmación |
+| Verificar que el paciente se asocia a la madre del token | `POST /api/patients/register` y `GET /api/patients/my-patients` | `200 OK` al consultar los pacientes; aparece el paciente registrado |
+| Registrar paciente con peso negativo | `POST /api/patients/register` | `400 Bad Request` |
+| Consultar pacientes de una madre sin pacientes | `GET /api/patients/my-patients` | `200 OK` + lista vacía |
+| Listar pacientes de una madre antes de la asignación | `GET /api/patients/mother/{motherId}` | `200 OK` + estado `UNASSIGNED` |
+| Listar pacientes de una madre después de la asignación | `GET /api/patients/mother/{motherId}` | `200 OK` + estado `ASSIGNED` |
+| Asignar un paciente válido a una enfermera | `POST /api/patients/assign-nurse` | `201 Created` + mensaje de confirmación |
+| Asignar paciente sin identificador | `POST /api/patients/assign-nurse` | `400 Bad Request` |
+| Asignar paciente inexistente | `POST /api/patients/assign-nurse` | `400 Bad Request` |
+| Consultar pacientes de una enfermera sin asignaciones | `GET /api/patients/nurse` | `200 OK` + estado `EMPTY` y total `0` |
+| Consultar pacientes después de la asignación | `GET /api/patients/nurse` | `200 OK` + estado `SUCCESS` y total `1` |
+| Consultar información básica de un paciente existente | `GET /api/patients/{id}` | `200 OK` + información del paciente |
+| Consultar información básica de un paciente inexistente | `GET /api/patients/{id}` | `404 Not Found` o `400 Bad Request` |
+| Buscar una madre por DNI existente | `GET /api/patients/mother/search/{term}` | `200 OK` + información de la madre |
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-integration/PatientManagement/PatientRegistrationAndAssignmentTests.png">
+</div>
+
+**Alcance:** los casos cubren los flujos principales de registro, asignación y consulta, además de las validaciones de error y las respuestas para listas vacías. La prueba de registro con peso negativo espera `400 Bad Request`, por lo que el resultado depende de que la validación correspondiente esté implementada en el dominio.
+
+---
+
+### Core Integration Tests — Treatment Tracking
+
+Cada escenario de prueba prepara los datos necesarios para verificar el seguimiento del tratamiento, utilizando pacientes registrados, enfermeras asignadas, historias clínicas y controles de hemoglobina. Para el módulo Treatment Tracking se implementaron cuatro clases de prueba de integración mediante `xUnit`, `HttpClient` y `MongoWebApplicationFactory`.
+
+Las pruebas validan el inicio y la gestión del tratamiento, el seguimiento de las dosis diarias, el historial de cumplimiento, la clasificación de pacientes según su nivel de riesgo y los mecanismos de autenticación y autorización por roles.
+
+| Clase | Endpoints cubiertos | Casos |
+|---|---|---:|
+| `DoseTests` | `patients/{id}/today-dose`, `doses/confirm`, `patients/{id}/dose-history` | 9 |
+| `RiskTests` | `risk-overview`, `risk/{riskLevel}/patients` | 4 |
+| `TreatmentLifecycleTests` | `treatments`, `treatments/complete`, `treatments/abandon`, `nurses/treatments` | 18 |
+| `TreatmentSecurityTests` | Endpoints de tratamientos, dosis, consultas de riesgo y tratamientos de enfermeras | 18 |
+
+##### Prueba 1 — Registro y seguimiento de dosis
+
+**Clase:** `DoseTests`
+
+Valida la consulta de la dosis correspondiente al día, la confirmación de la toma por parte de la madre y la consulta del historial de dosis. Comprueba que la madre pueda consultar y confirmar las dosis de su propio paciente, y que la API rechace operaciones relacionadas con pacientes ajenos, pacientes sin tratamiento o identificadores inexistentes.
+
+| Caso | Endpoint | Resultado esperado |
+|---|---|---|
+| Consultar dosis diaria del propio paciente con tratamiento | `GET /api/treatment-tracking/patients/{id}/today-dose` | `200 OK` |
+| Consultar dosis diaria de un paciente de otra madre | `GET /api/treatment-tracking/patients/{id}/today-dose` | `400 Bad Request` |
+| Confirmar dosis del propio paciente | `POST /api/treatment-tracking/doses/confirm` | `200 OK` |
+| Confirmar dosis de un paciente de otra madre | `POST /api/treatment-tracking/doses/confirm` | `400 Bad Request` |
+| Confirmar dosis de un paciente sin tratamiento | `POST /api/treatment-tracking/doses/confirm` | `400 Bad Request` |
+| Confirmar dosis de un paciente inexistente | `POST /api/treatment-tracking/doses/confirm` | `400 Bad Request` |
+| Consultar historial del propio paciente con tratamiento | `GET /api/treatment-tracking/patients/{id}/dose-history` | `200 OK` |
+| Consultar historial después de confirmar una dosis | `GET /api/treatment-tracking/patients/{id}/dose-history` | `200 OK` + estado de dosis `CONFIRM` |
+| Consultar historial de un paciente de otra madre | `GET /api/treatment-tracking/patients/{id}/dose-history` | `400 Bad Request` |
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-integration/TreatmentTracking/DosesTest.png">
+</div>
+
+**Alcance:** se validan nueve escenarios relacionados con la consulta y confirmación de dosis. El caso de confirmación depende de las reglas temporales que aplique la API para permitir registrar una toma. La prueba de historial de otro paciente verifica también que no se exponga información perteneciente a otra madre.
+
+##### Prueba 2 — Clasificación y consulta de pacientes por riesgo
+
+**Clase:** `RiskTests`
+
+Valida los endpoints destinados a las enfermeras para consultar el resumen de pacientes según su nivel de riesgo y obtener la lista de pacientes pertenecientes a un nivel determinado. Se comprueba el comportamiento cuando la enfermera no tiene pacientes, cuando existen tratamientos y cuando se proporciona un nivel de riesgo inválido.
+
+| Caso | Endpoint | Resultado esperado |
+|---|---|---|
+| Consultar resumen de riesgo sin pacientes | `GET /api/treatment-tracking/risk-overview` | `200 OK` |
+| Consultar resumen de riesgo con pacientes en tratamiento | `GET /api/treatment-tracking/risk-overview` | `200 OK` + contenido no vacío |
+| Consultar pacientes con nivel de riesgo válido | `GET /api/treatment-tracking/risk/{riskLevel}/patients` | `200 OK` |
+| Consultar pacientes con nivel de riesgo inválido | `GET /api/treatment-tracking/risk/{riskLevel}/patients` | `400 Bad Request` |
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-integration/TreatmentTracking/RiskTests.png">
+</div>
+
+**Alcance:** las cuatro pruebas verifican las consultas de riesgo y la validación del nivel proporcionado. El nivel válido utilizado en las pruebas es `HIGH`, definido en `TreatmentTrackingApi.cs`.
+
+##### Prueba 3 — Ciclo de vida del tratamiento
+
+**Clase:** `TreatmentLifecycleTests`
+
+Valida el inicio de tratamientos para pacientes asignados a una enfermera, la consulta de los tratamientos registrados y el filtrado por estado. También verifica las operaciones de completar y abandonar un tratamiento, incluyendo el rechazo de identificadores inexistentes y de operaciones sobre tratamientos asignados a otra enfermera.
+
+| Caso | Endpoint | Resultado esperado |
+|---|---|---|
+| Iniciar tratamiento para un paciente asignado | `POST /api/treatment-tracking/treatments` | `201 Created` |
+| Verificar que el tratamiento aparece en la lista de la enfermera | `POST /api/treatment-tracking/treatments` y `GET /api/treatment-tracking/nurses/treatments` | El tratamiento aparece con el paciente correspondiente |
+| Iniciar tratamiento sin identificador de paciente | `POST /api/treatment-tracking/treatments` | `400 Bad Request` + mensaje `PatientId es requerido` |
+| Iniciar tratamiento para paciente asignado a otra enfermera | `POST /api/treatment-tracking/treatments` | `400 Bad Request` |
+| Iniciar tratamiento para paciente inexistente | `POST /api/treatment-tracking/treatments` | `400 Bad Request` |
+| Iniciar tratamiento con duración de cero días | `POST /api/treatment-tracking/treatments` | `400 Bad Request` |
+| Iniciar tratamiento con duración negativa | `POST /api/treatment-tracking/treatments` | `400 Bad Request` |
+| Iniciar tratamiento sin nombre del suplemento | `POST /api/treatment-tracking/treatments` | `400 Bad Request` |
+| Consultar tratamientos sin tratamientos asignados a la enfermera | `GET /api/treatment-tracking/nurses/treatments` | `200 OK` + lista vacía |
+| Filtrar tratamientos por estado activo | `GET /api/treatment-tracking/nurses/treatments?status=ACTIVE` | `200 OK` + tratamiento activo incluido |
+| Filtrar por estado completado | `GET /api/treatment-tracking/nurses/treatments?status=COMPLETED` | `200 OK` + tratamiento activo excluido |
+| Consultar tratamientos con estado inválido | `GET /api/treatment-tracking/nurses/treatments?status=ESTADO-INEXISTENTE` | `400 Bad Request` |
+| Completar tratamiento propio | `PUT /api/treatment-tracking/treatments/complete` | `200 OK` + tratamiento excluido de la lista activa |
+| Completar tratamiento inexistente | `PUT /api/treatment-tracking/treatments/complete` | `400 Bad Request` |
+| Completar tratamiento asignado a otra enfermera | `PUT /api/treatment-tracking/treatments/complete` | `400 Bad Request` |
+| Abandonar tratamiento propio | `PUT /api/treatment-tracking/treatments/abandon` | `200 OK` + tratamiento excluido de la lista activa |
+| Abandonar tratamiento inexistente | `PUT /api/treatment-tracking/treatments/abandon` | `400 Bad Request` |
+| Abandonar tratamiento asignado a otra enfermera | `PUT /api/treatment-tracking/treatments/abandon` | `400 Bad Request` |
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-integration/TreatmentTracking/TreatmentLifecycleTests.png">
+</div>
+
+**Alcance:** las pruebas cubren el inicio, la consulta, el filtrado, la finalización y el abandono de tratamientos. Se incluyen escenarios de éxito y error para validar la asignación del paciente, los datos obligatorios, la duración y los permisos de acceso. La lista de tratamientos se comprueba después de completar o abandonar un tratamiento para verificar que deje de aparecer entre los activos.
+
+##### Prueba 4 — Seguridad y autorización de Treatment Tracking
+
+**Clase:** `TreatmentSecurityTests`
+
+Valida que los endpoints protegidos requieran un token de autenticación y que las operaciones se restrinjan según el rol del usuario. Comprueba que las madres no puedan gestionar tratamientos ni consultar información exclusiva de enfermería, y que las enfermeras no puedan confirmar dosis ni consultar la información de dosis reservada a las madres.
+
+| Caso | Endpoint | Resultado esperado |
+|---|---|---|
+| Acceso a endpoints protegidos sin token (9 escenarios) | Inicio, confirmación, finalización y abandono de tratamientos; dosis diaria, historial, resumen de riesgo, lista de tratamientos y pacientes por riesgo | `401 Unauthorized` |
+| Acceso con rol incorrecto (9 escenarios) | Operaciones exclusivas de enfermería con token de madre y consultas o confirmación de dosis con token de enfermera | `403 Forbidden` |
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-integration/TreatmentTracking/TreatmentSecurityTests.png">
+</div>
+
+**Alcance:** se ejecutaron 18 casos relacionados con la autenticación y autorización del módulo, distribuidos en nueve escenarios sin token y nueve escenarios con un rol incorrecto. Estas pruebas verifican la separación de permisos entre madres y enfermeras para los endpoints de seguimiento del tratamiento.
+
+---
+
+### Core Integration Tests — Healthy Facility
+
+Las pruebas de integración del módulo Healthy Facility verifican la interacción entre los endpoints REST encargados de gestionar las postas de salud, asignar enfermeras y administrar las citas médicas. Se utiliza `xUnit` junto con `MongoWebApplicationFactory` para ejecutar las pruebas contra la API en memoria y comprobar las respuestas HTTP y los datos generados durante cada escenario.
+
+Para este módulo se implementaron tres clases de prueba: `HealthFacilityRegistrationTests`, `HealthFacilitySecurityTests` y `AppointmentTests`.
+
+| Clase | Endpoints cubiertos | Casos |
+|---|---|---:|
+| `HealthFacilityRegistrationTests` | Registro de postas, asignación de enfermeras, consulta de postas y búsqueda de postas cercanas | 17 |
+| `HealthFacilitySecurityTests` | Registro y asignación de postas, citas, búsqueda de postas cercanas y consultas de agenda | 17 |
+| `AppointmentTests` | Reserva y cancelación de citas, historial de citas del paciente, agenda de enfermería y próxima cita | 23 |
+
+##### Prueba 1 — Registro de postas y asignación de enfermeras
+
+**Clase:** `HealthFacilityRegistrationTests`
+
+Valida el registro de postas de salud por parte del administrador, la asignación de enfermeras y la consulta de información de las postas. También comprueba las validaciones de campos obligatorios, la existencia de los identificadores enviados y las reglas que impiden asignar más de una enfermera a una posta o a una enfermera a varias postas.
+
+| Caso | Endpoint | Resultado esperado |
+|---|---|---|
+| Registrar posta con datos válidos | `POST /api/health-facilities` | `201 Created` + la posta aparece en el listado |
+| Registrar posta sin nombre | `POST /api/health-facilities` | `400 Bad Request` |
+| Registrar posta sin dirección | `POST /api/health-facilities` | `400 Bad Request` |
+| Registrar posta sin identificador de distrito | `POST /api/health-facilities` | `400 Bad Request` |
+| Registrar posta sin servicios | `POST /api/health-facilities` | `400 Bad Request` |
+| Registrar posta sin días disponibles | `POST /api/health-facilities` | `400 Bad Request` |
+| Registrar posta sin horarios disponibles | `POST /api/health-facilities` | `400 Bad Request` |
+| Asignar enfermera a una posta disponible | `POST /api/health-facilities/assign-nurse` | `200 OK` + mensaje de confirmación |
+| Asignar enfermera a una posta que ya tiene enfermera | `POST /api/health-facilities/assign-nurse` | `400 Bad Request` |
+| Asignar enfermera a una posta inexistente | `POST /api/health-facilities/assign-nurse` | `400 Bad Request` |
+| Asignar una enfermera inexistente | `POST /api/health-facilities/assign-nurse` | `400 Bad Request` |
+| Asignar una enfermera que ya pertenece a otra posta | `POST /api/health-facilities/assign-nurse` | `400 Bad Request` |
+| Consultar una posta existente sin token | `GET /api/health-facilities/{id}` | `200 OK` + información de la posta |
+| Consultar una posta inexistente | `GET /api/health-facilities/{id}` | `404 Not Found` o `400 Bad Request` |
+| Buscar postas cercanas sin pacientes registrados | `GET /api/health-facilities/nearby?lat={lat}&lng={lng}` | `400 Bad Request` |
+| Buscar postas cercanas a una ubicación con una posta registrada | `GET /api/health-facilities/nearby?lat={lat}&lng={lng}` | `200 OK` + la posta cercana en los resultados |
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-integration/HealthyFacilities/HealthFacilityRegistrationTests.png">
+</div>
+
+**Alcance:** se verifican 17 casos de prueba, incluyendo seis escenarios de campos obligatorios, la asignación de enfermeras y las consultas públicas y geográficas. Las pruebas también comprueban que cada posta admita una sola enfermera y que una enfermera no pueda asignarse a otra posta si ya pertenece a una.
+
+##### Prueba 2 — Seguridad y autorización de Healthy Facility
+
+**Clase:** `HealthFacilitySecurityTests`
+
+Valida la protección de los endpoints según el rol del usuario. Comprueba que las operaciones administrativas requieran autenticación y autorización de administrador, que las madres puedan gestionar sus citas y buscar postas cercanas, y que las enfermeras puedan consultar únicamente la agenda correspondiente a su rol. También verifica la presencia del identificador de enfermera en el token JWT.
+
+| Caso | Endpoint | Resultado esperado |
+|---|---|---|
+| Acceso a endpoints protegidos sin token (7 escenarios) | Registro de postas, asignación de enfermeras, reserva y cancelación de citas, búsqueda de postas cercanas y consultas de agenda | `401 Unauthorized` |
+| Acceso a endpoints con rol incorrecto (9 escenarios) | Registro y asignación de postas, reserva y cancelación de citas, búsqueda de postas cercanas y consultas de agenda | `403 Forbidden` |
+| Verificar el claim `nurseId` en el token de enfermera | Token JWT generado para el rol `Nurse` | El claim `nurseId` está presente y no está vacío |
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-integration/HealthyFacilities/HealthFacilitySecurityTests.png">
+</div>
+
+**Alcance:** se ejecutaron 17 casos relacionados con la seguridad, distribuidos en siete escenarios sin token, nueve escenarios con rol incorrecto y una validación del claim de enfermera. Los resultados permiten verificar la separación de permisos entre los roles `Admin`, `Nurse` y `Mother`.
+
+##### Prueba 3 — Reserva, cancelación y consulta de citas
+
+**Clase:** `AppointmentTests`
+
+Valida el ciclo de vida de las citas médicas desde la reserva por parte de una madre hasta la cancelación y consulta de la agenda de enfermería. Comprueba que las citas se registren correctamente, que la información aparezca en el historial del paciente y que se rechacen las reservas con datos inválidos, fechas pasadas, postas inexistentes o pacientes que pertenecen a otra madre.
+
+| Caso | Endpoint | Resultado esperado |
+|---|---|---|
+| Reservar cita con datos válidos | `POST /api/health-facilities/appointments` | `201 Created` + mensaje de confirmación |
+| Verificar que la cita aparece en el historial del paciente | `POST /api/health-facilities/appointments` y `GET /api/health-facilities/patient/{patientId}/appointments` | `200 OK` + datos de la cita |
+| Reservar cita para un paciente de otra madre | `POST /api/health-facilities/appointments` | `400 Bad Request` |
+| Reservar cita en una posta inexistente | `POST /api/health-facilities/appointments` | `400 Bad Request` |
+| Reservar cita con fecha inválida (3 variantes) | `POST /api/health-facilities/appointments` | `400 Bad Request` |
+| Reservar cita con hora inválida (3 variantes) | `POST /api/health-facilities/appointments` | `400 Bad Request` |
+| Reservar cita con fecha pasada | `POST /api/health-facilities/appointments` | `400 Bad Request` |
+| Reservar cita en una posta sin enfermera asignada | `POST /api/health-facilities/appointments` | `400 Bad Request` |
+| Reservar un horario que ya está ocupado | `POST /api/health-facilities/appointments` | `400 Bad Request` |
+| Volver a reservar el horario de una cita cancelada | `POST /api/health-facilities/appointments` | `201 Created` |
+| Cancelar una cita propia | `PUT /api/health-facilities/appointments/cancel` | `200 OK` + estado de cita cancelada |
+| Cancelar una cita perteneciente a otra madre | `PUT /api/health-facilities/appointments/cancel` | `400 Bad Request` |
+| Cancelar una cita inexistente | `PUT /api/health-facilities/appointments/cancel` | `400 Bad Request` |
+| Consultar agenda de enfermería sin citas | `GET /api/health-facilities/appointments/nurse` | `200 OK` + lista vacía |
+| Consultar agenda después de reservar una cita | `GET /api/health-facilities/appointments/nurse` | `200 OK` + cita registrada |
+| Consultar agenda desde otra enfermera | `GET /api/health-facilities/appointments/nurse` | `200 OK` + lista vacía |
+| Consultar próxima cita sin citas registradas | `GET /api/health-facilities/appointments/mother/next` | `404 Not Found` |
+| Consultar próxima cita después de reservar | `GET /api/health-facilities/appointments/mother/next` | `200 OK` + información de la cita |
+| Consultar próxima cita después de cancelar | `GET /api/health-facilities/appointments/mother/next` | `404 Not Found` |
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-integration/HealthyFacilities/AppointmentTests.png">
+</div>
+
+**Alcance:** la clase contempla 23 casos de prueba, incluidos los escenarios parametrizados para fechas y horas inválidas. Se comprueba la validación de reservas, la prevención de duplicidad de horarios, la autorización por paciente, la actualización del estado de las citas y la separación de las agendas entre enfermeras.
+
+**Observación:** la prueba de reutilización del horario cancelado comprueba que la API permita reservar nuevamente ese horario. Esto es importante porque un horario liberado después de una cancelación no debería permanecer bloqueado para futuras reservas.
+
 
 ### 6.1.3. Core Behavior-Driven Development
 
