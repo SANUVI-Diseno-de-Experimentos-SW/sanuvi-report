@@ -29,7 +29,6 @@ Cada test registra sus propios usuarios con DNI y correo únicos, por lo que los
 | `StaffRegistrationIntegrationTests` | `register/staff`, `users/email/{email}`, `login` | 7 |
 | `PasswordResetIntegrationTests` | `password/request-code`, `password/verify-code`, `password/reset` | 5 |
 
----
 
 ##### Prueba 1 — Flujo de autenticación (IAM)
 
@@ -47,8 +46,6 @@ Valida la comunicación entre un cliente HTTP y los endpoints REST del módulo I
 | Usuario inexistente | `POST /api/users/login` | `401 Unauthorized` |
 
 *\[Insertar captura de la ejecución de `AuthenticationIntegrationTests` en Rider\]*
-
----
 
 ##### Prueba 2 — Registro de personal (staff)
 
@@ -68,8 +65,6 @@ Valida el alta de personal de salud (enfermera y administrador) y comprueba que 
 
 **Hallazgo detectado por la prueba:** al registrar personal con un DNI duplicado, la API respondía `500 Internal Server Error` porque el controlador solo capturaba `ArgumentException` y no `InvalidOperationException`. Se corrigió para devolver `400 Bad Request`, igual que el registro de madres.
 
----
-
 ##### Prueba 3 — Recuperación de contraseña
 
 **Clase:** `PasswordResetIntegrationTests`
@@ -87,6 +82,85 @@ Valida los casos de error del flujo de recuperación de contraseña en sus tres 
 *\[Insertar captura de la ejecución de `PasswordResetIntegrationTests` en Rider\]*
 
 **Alcance:** el flujo exitoso (solicitar código, verificarlo y restablecer) no está cubierto porque el código se envía por correo electrónico. Para probarlo se requiere reemplazar el servicio de correo por un doble de prueba que capture el código enviado.
+
+---
+
+### Core Integration Tests — Nutrition Diary
+
+Para el módulo Nutrition Diary se implementó la clase de prueba `NutritiondiaryintegrationTests`. Los casos utilizan `HttpClient` y `MongoWebApplicationFactory` para validar la interacción con los endpoints REST, incluyendo la seguridad, las validaciones de datos y las consultas de información nutricional.
+
+| Clase | Endpoints cubiertos | Casos |
+| --- | --- | --- |
+| `NutritiondiaryintegrationTests` | `food-entry`, `today/{patientId}`, `history/{patientId}`, `foods/search`, `foods/{foodItemId}` | 17 |
+
+##### Prueba 1 — Seguridad y autorización (Nutrition Diary)
+
+**Clase:** `NutritiondiaryintegrationTests`
+
+Valida los mecanismos de autenticación y autorización de los endpoints destinados a las madres. Comprueba que las solicitudes sin token sean rechazadas, que el personal de salud no pueda acceder a los endpoints exclusivos para madres y que el token de una madre contenga el claim `motherId` requerido para identificarla.
+
+| Caso | Endpoint | Resultado esperado |
+| --- | --- | --- |
+| Registro de consumo sin token | `POST /api/nutritional-diary/food-entry` | `401 Unauthorized` |
+| Consulta diaria sin token | `GET /api/nutritional-diary/today/{patientId}` | `401 Unauthorized` |
+| Consulta del historial sin token | `GET /api/nutritional-diary/history/{patientId}` | `401 Unauthorized` |
+| Registro de consumo con token de personal de salud | `POST /api/nutritional-diary/food-entry` | `403 Forbidden` |
+| Consulta diaria con token de personal de salud | `GET /api/nutritional-diary/today/{patientId}` | `403 Forbidden` |
+| Consulta del historial con token de personal de salud | `GET /api/nutritional-diary/history/{patientId}` | `403 Forbidden` |
+| Token de madre con claim `motherId` | `GET /api/nutritional-diary/history/{patientId}` | No devuelve `401 Unauthorized`, `403 Forbidden` ni el mensaje `Mother ID no encontrado` |
+
+*[Insertar captura de la ejecución de `NutritiondiaryintegrationTests` en Rider]*
+
+##### Prueba 2 — Validación del registro de consumo de alimentos
+
+**Clase:** `NutritiondiaryintegrationTests`
+
+Comprueba las validaciones del endpoint de registro de consumo de alimentos, verificando que las solicitudes con campos obligatorios faltantes o cantidades negativas sean rechazadas por la API.
+
+| Caso | Endpoint | Resultado esperado |
+| --- | --- | --- |
+| Registro con campos obligatorios faltantes | `POST /api/nutritional-diary/food-entry` | `400 Bad Request` + mensaje `Faltan campos requeridos` |
+| Registro con cantidad negativa | `POST /api/nutritional-diary/food-entry` | `400 Bad Request` |
+
+##### Prueba 3 — Consulta diaria e historial de pacientes
+
+**Clase:** `NutritiondiaryintegrationTests`
+
+Valida el comportamiento de los endpoints de consulta diaria e historial cuando la madre autenticada solicita información de un paciente inexistente o que no le pertenece.
+
+| Caso | Endpoint | Resultado esperado |
+| --- | --- | --- |
+| Consulta diaria de paciente inexistente o no asociado | `GET /api/nutritional-diary/today/{patientId}` | `400 Bad Request` |
+| Consulta del historial de paciente inexistente o no asociado | `GET /api/nutritional-diary/history/{patientId}` | `400 Bad Request` |
+
+##### Prueba 4 — Búsqueda de alimentos
+
+**Clase:** `NutritiondiaryintegrationTests`
+
+Verifica el comportamiento del endpoint público de búsqueda de alimentos. Comprueba que la API rechace búsquedas con texto vacío, espacios en blanco o sin el parámetro requerido, y que permita realizar una búsqueda válida sin autenticación.
+
+| Caso | Endpoint | Resultado esperado |
+| --- | --- | --- |
+| Búsqueda con texto vacío | `GET /api/nutritional-diary/foods/search?text=` | `400 Bad Request` |
+| Búsqueda con texto compuesto por espacios | `GET /api/nutritional-diary/foods/search?text=...` | `400 Bad Request` |
+| Búsqueda sin el parámetro `text` | `GET /api/nutritional-diary/foods/search` | `400 Bad Request` |
+| Búsqueda válida de alimentos (`arroz`) | `GET /api/nutritional-diary/foods/search?text=arroz` | `200 OK`, sin token de autenticación |
+
+##### Prueba 5 — Consulta de detalles de alimentos
+
+**Clase:** `NutritiondiaryintegrationTests`
+
+Comprueba la respuesta de la API cuando se solicitan los detalles de un alimento mediante un identificador inexistente, utilizando tanto un identificador con formato ObjectId como una cadena de texto que no corresponde a un alimento registrado.
+
+| Caso | Endpoint | Resultado esperado |
+| --- | --- | --- |
+| Consulta con identificador inexistente en formato ObjectId | `GET /api/nutritional-diary/foods/{foodItemId}` | `400 Bad Request` |
+| Consulta con identificador inexistente en formato de texto | `GET /api/nutritional-diary/foods/{foodItemId}` | `400 Bad Request` |
+
+*[Insertar captura de la ejecución de `NutritiondiaryintegrationTests` en Rider]*
+
+**Alcance:** las pruebas de esta clase se concentran en seguridad, validaciones y consultas. No se incluyen escenarios de registro exitoso de consumo de alimentos ni consultas exitosas de información diaria e historial. Asimismo, el endpoint de alimentos por categoría (`foods/category/{category}`) está definido en `NutritionDiaryApi.cs`, pero no cuenta con casos de prueba en esta clase.
+
 
 
 ### 6.1.3. Core Behavior-Driven Development
