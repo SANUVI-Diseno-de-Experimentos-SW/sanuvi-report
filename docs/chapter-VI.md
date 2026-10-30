@@ -4,15 +4,53 @@
 
 ### 6.1.1. Core Entities Unit Tests
 
-> Pruebas unitarias sobre las entidades y value objects del dominio. Incluir el código de las pruebas y la evidencia de ejecución.
+En esta sección se detallan las pruebas unitarias realizadas sobre las entidades y agregados core del sistema Restock, asegurando la integridad de las reglas de negocio y la consistencia de los datos.
 
-```
-// [ruta del archivo de pruebas]
-```
+#### IAM (Identity and Access Management) Bounded Context Unit Tests
 
-<img src="../assets/img/chapter-VI/unit-tests-run.png" alt="Ejecución de unit tests">
+Se validó la entidad `User` asegurando la correcta asignación de roles y la integridad de los datos de perfil de usuario.
 
-<!-- COMPLETAR -->
+<div align="center">
+<img src="../assets/img/chapter-VI/test-unit/UserTest.png">
+</div>
+
+#### Nutrition Diary Bounded Context Unit Tests
+
+Se realizaron pruebas sobre el agregado `NutritionalDiary` `FoodEntry` y `FoodItem`.
+
+<div align="center">
+<img src="../assets/img/chapter-VI/test-unit/NutritionalDiaryTest.png">
+<img src="../assets/img/chapter-VI/test-unit/FoodEntryTest.png">
+<img src="../assets/img/chapter-VI/test-unit/FoodItemTest.png">
+</div>
+
+#### Patient Management Bounded Context Unit Tests
+
+Se validaron las entidades `Patient` `Control` y `MedicalRecord`.
+
+<div align="center">
+<img src="../assets/img/chapter-VI/test-unit/PatientTest.png">
+<img src="../assets/img/chapter-VI/test-unit/ControlTest.png">
+<img src="../assets/img/chapter-VI/test-unit/MedicalRecordTest.png">
+</div>
+
+#### Treatment Tracking Bounded Context Unit Tests
+
+Se validaron las entidades `Treatment` y `DailyDose`.
+
+<div align="center">
+<img src="../assets/img/chapter-VI/test-unit/TreatmentTest.png">
+<img src="../assets/img/chapter-VI/test-unit/DailyDoseTest.png">
+</div>
+
+#### Healthy Facility Bounded Context Unit Tests
+
+Se validaron las entidades `HealthFacility` y `Appointment`.
+
+<div align="center">
+<img src="../assets/img/chapter-VI/test-unit/HealthFacilityTest.png">
+<img src="../assets/img/chapter-VI/test-unit/AppointmentTest.png">
+</div>
 
 ### 6.1.2. Core Integration Tests
 
