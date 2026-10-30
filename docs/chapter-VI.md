@@ -24,11 +24,33 @@ Se realizaron pruebas sobre el agregado `NutritionalDiary` `FoodEntry` y `FoodIt
 <img src="../assets/img/chapter-VI/test-unit/FoodItemTest.png">
 </div>
 
-#### Resource Bounded Context Unit Tests
+#### Patient Management Bounded Context Unit Tests
 
-Se validaron las entidades `Order` y `Alert`, incluyendo el cálculo de totales en pedidos, transiciones de estado y la generación correcta de alertas de inventario.
+Se validaron las entidades `Patient` `Control` y `MedicalRecord`.
 
-![Resource Unit Tests Evidence](assets/images/chapter6/unit-test-evidence/resource-unit-tests.png)
+<div align="center">
+<img src="../assets/img/chapter-VI/test-unit/PatientTest.png">
+<img src="../assets/img/chapter-VI/test-unit/ControlTest.png">
+<img src="../assets/img/chapter-VI/test-unit/MedicalRecordTest.png">
+</div>
+
+#### Treatment Tracking Bounded Context Unit Tests
+
+Se validaron las entidades `Treatment` y `DailyDose`.
+
+<div align="center">
+<img src="../assets/img/chapter-VI/test-unit/TreatmentTest.png">
+<img src="../assets/img/chapter-VI/test-unit/DailyDoseTest.png">
+</div>
+
+#### Healthy Facility Bounded Context Unit Tests
+
+Se validaron las entidades `HealthFacility` y `Appointment`.
+
+<div align="center">
+<img src="../assets/img/chapter-VI/test-unit/HealthFacilityTest.png">
+<img src="../assets/img/chapter-VI/test-unit/AppointmentTest.png">
+</div>
 
 ### 6.1.2. Core Integration Tests
 
