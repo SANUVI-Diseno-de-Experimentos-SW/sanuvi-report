@@ -14,11 +14,15 @@ Se validó la entidad `User` asegurando la correcta asignación de roles y la in
 <img src="../assets/img/chapter-VI/test-unit/UserTest.png">
 </div>
 
-#### Subscriptions Bounded Context Unit Tests
+#### Nutrition Diary Bounded Context Unit Tests
 
-Se realizaron pruebas sobre el agregado `Subscription`, verificando la lógica de cambio de planes, estados de suscripción y fechas de vigencia.
+Se realizaron pruebas sobre el agregado `NutritionalDiary` `FoodEntry` y `FoodItem`.
 
-![Subscriptions Unit Tests Evidence](assets/images/chapter6/unit-test-evidence/subscriptions-unit-tests.png)
+<div align="center">
+<img src="../assets/img/chapter-VI/test-unit/NutritionalDiaryTest.png">
+<img src="../assets/img/chapter-VI/test-unit/FoodEntryTest.png">
+<img src="../assets/img/chapter-VI/test-unit/FoodItemTest.png">
+</div>
 
 #### Resource Bounded Context Unit Tests
 
