@@ -8,7 +8,7 @@ En esta sección se detallan las pruebas unitarias realizadas sobre las entidade
 
 #### IAM (Identity and Access Management) Bounded Context Unit Tests
 
-Se validaron las entidades `User` asegurando la correcta asignación de roles y la integridad de los datos de perfil de usuario.
+Se validó la entidad `User` asegurando la correcta asignación de roles y la integridad de los datos de perfil de usuario.
 
 <div align="center">
 <img src="../assets/img/chapter-VI/test-unit/UserTest.png">
