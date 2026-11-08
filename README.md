@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/img/introduction/logo-upc.png" width="60" alt="UPC Logo">
+<img src="./assets/img/introduction/UPC_logo.png" width="200" alt="UPC Logo">
 
 Universidad Peruana de Ciencias Aplicadas
 
@@ -10,37 +10,28 @@ Carrera de Ingeniería de Software
 
 **Diseño de Experimentos de Ingeniería de Software**
 
-NRC
-
-**[NRC]**
+NRC: **9082**
 
 **Informe del Trabajo Final**
 
 Docente
 
-**[Apellidos, Nombres del docente]**
+**Juan Fernando Ysen Paiba**
 
-Startup
 
-**SANUVI**
+Startup: **SANUVI**
 
-Producto
-
-**Ferova**
+Producto: **Ferova**
 
 **Integrantes**
 
-<table style="border-collapse: collapse; border: none;">
-  <tr>
-    <th style="border: none; text-align: left;">Código</th>
-    <th style="border: none; text-align: left;">Apellidos y Nombres</th>
-  </tr>
-  <tr><td style="border: none;">U201822697</td><td style="border: none;">Quijandria Araneda, Vicente</td></tr>
-  <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
-  <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
-  <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
-  <tr><td style="border: none;">[Código]</td><td style="border: none;">[Apellidos, Nombres]</td></tr>
-</table>
+| Integrante                            | Código     |
+| ------------------------------------  | ---------- |
+| Quijandria Araneda, Vicente           | U201822697 |
+| Baca Camargo, Vitaly Arturo           | U20231C426 |
+| Peñaranda Caldas, Gabriel Augusto     | U202210836 |
+| Apaza bocanegra, Elizabeth Noelia     | U20231c197 |
+|  Damián Pereira, Luis Alberto         | U201517312 |
 
 **Período 2026-20**
 
@@ -52,24 +43,39 @@ Producto
 
 ## Registro de Versiones del Informe
 
+<div class="chapter"> 
+
 Esta sección resume las modificaciones relevantes realizadas al informe durante todo el ciclo de vida del proyecto. Cada línea de versión incluye un único autor y debe mantener coherencia con la sección *Project Report Collaboration Insights*.
+<div class="toc">
 
 | Versión | Fecha | Autor | Descripción de modificación |
 |---------|-------|-------|-----------------------------|
-| 1.0 | [DD/MM/AAAA] | [Apellidos, Nombres] | Se creó la estructura base del informe según el Final Project Statement del curso 1ASI0732. |
-|  |  |  |  |
+| 1.0 | [05/09/2026] | Quijandria Araneda, Vicente | Se creó la estructura base del informe según el Final Project Statement del curso 1ASI0732. |
+| 1.1 | [06/09/2026] | Baca Camargo, Vitaly Arturo  | Avance del Capítulo I con definición de Startup Profile, 5W+2H y estructura general. Se añadieron y corrigieron perfiles del equipo.  |
+| 1.2 | [07/09/2026] | Baca Camargo, Vitaly Arturo  | Incorporación de Lean UX Canvas, assumptions y outcomes y ajustes al Lean UX Canvas, definición de segmentos objetivo y consolidación de contenido del Capítulo I.  |
+| 1.3 | [08/09/2026] | Baca Camargo, Vitaly Arturo, Peñaranda Caldas, Gabriel Augusto, Apaza bocanegra, Elizabeth Noelia y Quijandria Araneda, Vicente | Incorporación de Entrevistas por cada segmento y análisis de entrevistas  |
+| 1.4 | [10/09/2026] | Baca Camargo, Vitaly Arturo | Incorporación de Needfinding y creacion de las User Personas |
+| 1.5 | [11/09/2026] | Baca Camargo, Vitaly Arturo | Incorporación de Ubiquitous Language|
+| 1.6 | [15/09/2026] | Baca Camargo, Vitaly Arturo, Damián Pereira, Luis Alberto | Incorpacion de Analisis Competitivo y Estrategias y tacticas contra los competidores|
+| 1.7 | [18/09/2026] | Baca Camargo, Vitaly Arturo|  Avance del Capítulo III  To-Be Scenario Mapping, User Stories, Product Backlog y Impact Mapping |
+| 1.8 | [20/09/2026] | Baca Camargo, Vitaly Arturo|  Avance del Mobile Applications Wireframes, Mobile Applications Wireflow Diagrams, Mobile Applications Mock-ups,  Mobile Applications User Flow Diagrams y Mobile Applications Prototyping |
+| 1.9 | [21/09/2026] | Quijandria Araneda, Vicente | Avance Organization Systems, Labeling Systems, SEO Tags and Meta Tags, Searching Systems y Navigation Systems  |
+| 2.0 | [22/09/2026] | Baca Camargo Vitaly Arturo | Avance Domain-Driven Software Architecture, Software Object-Oriented Design y Database Design  |
+| 2.1 | [23/09/2026] | Damián Pereira, Luis Alberto | Avance Landing Page Wireframe y Software Object-Oriented Design y Landing Page Mock-up  |
+| 2.2 | [24/09/2026] | Peñaranda Caldas, Gabriel Augusto | Avance Style Guidelines  |
+| 2.3 | [28/09/2026] | Apaza bocanegra, Elizabeth Noelia | Avance Web Applications Wireframes, Web Applications Wireflow Diagrams, Web Applications Mock-ups, Web Applications User Flow Diagrams y Web Applications Prototyping   |
+</div>
+</div>
 
 <div style="page-break-after: always;"></div>
 
 ## Project Report Collaboration Insights
 
-**Link de la organización en GitHub:** https://github.com/SANUVI-Diseno-de-Experimentos-SW
+<div class="chapter">
 
-**Link del repositorio del Informe:** https://github.com/SANUVI-Diseno-de-Experimentos-SW/sanuvi-report
-
-**Links de los repositorios de producto:** [Landing Page] · [Frontend Web] · [RESTful API / Backend] · [Mobile]
-
-El repositorio del informe se gestiona aplicando **GitFlow** y **Conventional Commits**. Las ramas de trabajo se derivan de `develop` y se integran a través de Pull Requests:
+**Link de la organización en GitHub:** <br>https://github.com/SANUVI-Diseno-de-Experimentos-SW
+**Link del repositorio del Informe:** <br>https://github.com/SANUVI-Diseno-de-Experimentos-SW/sanuvi-report
+**Links de los repositorios de producto:** <br>**Landing Page:**<br>https://github.com/SANUVI-Diseno-de-Experimentos-SW/ferova-landing-page<br>**Api RESTFUL:**<br>https://github.com/SANUVI-Diseno-de-Experimentos-SW/ferova-landing-page<br>**Mobile Application:**<br>https://github.com/SANUVI-Diseno-de-Experimentos-SW/ferova-mobile-android<br>El repositorio del informe se gestiona aplicando **GitFlow** y **Conventional Commits**. Las ramas de trabajo se derivan de `develop` y se integran a través de Pull Requests:
 
 ```
 main
@@ -85,39 +91,78 @@ feature/chapter-VII
 feature/chapter-VIII
 ```
 
+<div style="page-break-after: always;"></div>
+
 **Integrantes y usuarios de GitHub**
 
 | Apellidos y Nombres | Usuario de GitHub |
 |---------------------|-------------------|
 | Quijandria Araneda, Vicente | vquijandria |
-| [Apellidos, Nombres] | [usuario] |
-| [Apellidos, Nombres] | [usuario] |
-| [Apellidos, Nombres] | [usuario] |
-| [Apellidos, Nombres] | [usuario] |
+| Baca Camargo, Vitaly Arturo| Mr-Code |
+| Peñaranda Caldas,Gabriel Augusto | gapc2024 |
+| Apaza Bocanegra, Elizabeth Noelia| Elizabeth-Apaza |
+| Damián Pereira, Luis Alberto | luisdamian8 |
+
+</div>
+
+<div style="page-break-after: always;"></div>
+
 
 ### Entrega AV1
 
-<!-- COMPLETAR: descripción de cómo se desarrollaron las actividades de elaboración del informe + capturas de Insights > Contributors y del Network graph -->
+<div class="chapter">
 
-*Evidencias:* `assets/img/introduction/collaboration-av1-*.png`
+Durante este avance del trabajo, se desarrollaron los siguientes puntos del reporte:
+
+</div>
+
+<div class="toc">
+
+**Carátula e información esencial**
+**Registro de versiones y Project Report Collaboration Insights**
+**Capítulo I: Introducción**
+**Capítulo II: Requirements Elicitation & Analysis**
+**Capítulo III: Requirements Specification**
+**Capítulo IV: Product Design**
+**Capítulo V: Product Implementation**
+**Conclusiones**
+
+<div align="center">
+  <img src="assets/img/introduction/ollaboration-av1.png">
+</div>
+
+### Commits por integrante
+
+**Baca Camargo, Vitaly Arturo (`Mr-code-star`)**: 86 commits
+**Apaza Bocanegra, Elizabeth Noelia (`Elizabeth-Apaza`)**: 29 commits
+**Damián Pereira, Luis Alberto (`luisdamian8`)**: 6 commits
+**Peñaranda Caldas,Gabriel Augusto (`gapc2124`)**: 3 commits
+**Quijandria Araneda, Vicente (`vquijandria`)**: 
+
+</div>
+
+<div style="page-break-after: always;"></div>
 
 ### Entrega TB1
 
-<!-- COMPLETAR -->
+<div style="page-break-after: always;"></div>
 
 ### Entrega AV2
 
-<!-- COMPLETAR -->
+<div style="page-break-after: always;"></div>
 
 ### Entrega TB2
 
-<!-- COMPLETAR -->
+<div style="page-break-after: always;"></div>
+
 
 <div style="page-break-after: always;"></div>
 
 ## Tabla de contenido
 
 ### Part I: As-Is Software Project
+
+<div align="toc">
 
 - [Capítulo I: Introducción](docs/chapter-I.md#capítulo-i-introducción)
     - [1.1. Startup Profile](docs/chapter-I.md#11-startup-profile)
@@ -153,6 +198,8 @@ feature/chapter-VIII
     - [3.2. User Stories](docs/chapter-III.md#32-user-stories)
     - [3.3. Product Backlog](docs/chapter-III.md#33-product-backlog)
     - [3.4. Impact Mapping](docs/chapter-III.md#34-impact-mapping)
+
+<div style="page-break-after: always;"></div>
 
 - [Capítulo IV: Product Design](docs/chapter-IV.md#capítulo-iv-product-design)
     - [4.1. Style Guidelines](docs/chapter-IV.md#41-style-guidelines)
@@ -194,6 +241,8 @@ feature/chapter-VIII
     - [4.10. Database Design](docs/chapter-IV.md#410-database-design)
         - [4.10.1. Relational/Non-Relational Database Diagram](docs/chapter-IV.md#4101-relationalnon-relational-database-diagram)
 
+<div style="page-break-after: always;"></div>
+
 - [Capítulo V: Product Implementation](docs/chapter-V.md#capítulo-v-product-implementation)
     - [5.1. Software Configuration Management](docs/chapter-V.md#51-software-configuration-management)
         - [5.1.1. Software Development Environment Configuration](docs/chapter-V.md#511-software-development-environment-configuration)
@@ -211,7 +260,11 @@ feature/chapter-VIII
         - [5.2.8. Team Collaboration Insights](docs/chapter-V.md#528-team-collaboration-insights)
     - [5.3. Video About-the-Product](docs/chapter-V.md#53-video-about-the-product)
 
+</div>
+
 ### Part II: Verification, Validation & Pipeline
+
+<div align="toc">
 
 - [Capítulo VI: Product Verification & Validation](docs/chapter-VI.md#capítulo-vi-product-verification--validation)
     - [6.1. Testing Suites & Validation](docs/chapter-VI.md#61-testing-suites--validation)
@@ -255,7 +308,11 @@ feature/chapter-VIII
         - [7.4.3. Alerting Pipeline Components](docs/chapter-VII.md#743-alerting-pipeline-components)
         - [7.4.4. Notification Pipeline Components](docs/chapter-VII.md#744-notification-pipeline-components)
 
+</div>
+
 ### Part III: Experiment-Driven Lifecycle
+
+<div align="toc">
 
 - [Capítulo VIII: Experiment-Driven Development](docs/chapter-VIII.md#capítulo-viii-experiment-driven-development)
     - [8.1. Experiment Planning](docs/chapter-VIII.md#81-experiment-planning)
@@ -310,21 +367,35 @@ feature/chapter-VIII
     - [Anexo C: Videos del Proyecto](docs/annexes.md#anexo-c-videos-del-proyecto)
     - [Anexo D: Artefactos de Diseño](docs/annexes.md#anexo-d-artefactos-de-diseño)
 
+</div>
+
 <div style="page-break-after: always;"></div>
 
 ## ABET – EAC - Student Outcome 4
+
+<div class="chapter"> 
 
 Cada participante del equipo debe sustentar evidencia de cómo las actividades realizadas en el trabajo final han ayudado a desarrollar las dimensiones del student outcome. Por ello en esta sección debe haber una subsección por cada alumno donde éste describa por escrito la relación entre el outcome, sus dimensiones y el trabajo que ha realizado. Esto se complementa con lo reflejado en los testimonios expuestos que forman parte del video About The Team.
 
 El curso contribuye al cumplimiento del Student Outcome ABET:
 
-**ABET - EAC - Student Outcome 4**
+</div>
 
-**Criterio:** La capacidad de reconocer responsabilidades éticas y profesionales en situaciones de ingeniería y hacer juicios informados, que deben considerar el impacto de las soluciones de ingeniería en contextos globales, económicos, ambientales y sociales.
+#### **Criterio:**
+
+<div class="chapter"> 
+
+La capacidad de reconocer responsabilidades éticas y profesionales en situaciones de ingeniería y hacer juicios informados, que deben considerar el impacto de las soluciones de ingeniería en contextos globales, económicos, ambientales y sociales.
 
 En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET - EAC - Student Outcome 4.
 
+</div>
+
+<div style="page-break-after: always;"></div>
+
+<div class="toc"> 
+
 | Criterio específico | Acciones realizadas | Conclusiones |
 |---------------------|---------------------|--------------|
-| **4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software** | **[Apellidos, Nombres]:**<br>**AV1:** [acción realizada]<br>**TB1:** [acción realizada]<br>**AV2:** [acción realizada]<br>**TB2:** [acción realizada]<br><br>**[Apellidos, Nombres]:**<br>**AV1:** [acción realizada]<br>… | **AV1:** [conclusión grupal]<br><br>**TB1:** [conclusión grupal]<br><br>**AV2:** [conclusión grupal]<br><br>**TB2:** [conclusión grupal] |
-| **4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales** | **[Apellidos, Nombres]:**<br>**AV1:** [acción realizada]<br>**TB1:** [acción realizada]<br>**AV2:** [acción realizada]<br>**TB2:** [acción realizada]<br><br>**[Apellidos, Nombres]:**<br>**AV1:** [acción realizada]<br>… | **AV1:** [conclusión grupal]<br><br>**TB1:** [conclusión grupal]<br><br>**AV2:** [conclusión grupal]<br><br>**TB2:** [conclusión grupal] |
+| **4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software** | **Baca Camargo, Vitaly Arturo**<br><br>**AV1:** Ejerció ética profesional al documentar fielmente el registro de entrevistas a proveedores, asegurando la honestidad de los hallazgos recopilados. Mantuvo la integridad y rigor del informe final al redactar las Conclusiones y recomendaciones del proyecto.<br><br>**AV2:** Demostró liderazgo ético y profesional al revisar y validar el To-Be Product Backlog y las To-Be User Stories, asegurando la calidad, coherencia y cumplimiento de los estándares definidos por el equipo. | *[Pendiente completar]* |
+| **4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales** | **Baca Camargo, Vitaly Arturo**<br><br>**AV1:** Consolidó el impacto del proyecto mediante la redacción de las Conclusiones y el diseño inicial (Landing Page Mock-up), evaluando cómo la solución final resuelve el problema social/económico planteado.<br><br>**AV2:** Tomó decisiones estratégicas utilizando el Impact Mapping y el levantamiento de User Stories para asegurar que las funcionalidades del Sprint/Product Backlog generen un impacto real y positivo en el flujo de negocio y en los usuarios finales. | *[Pendiente completar]* |
