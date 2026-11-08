@@ -992,8 +992,6 @@ Background:
 
 ```
 
-<!-- COMPLETAR -->
-
 ### 6.1.4. Core System Tests
 
 En esta sección se presentan las pruebas de sistema realizadas sobre los principales productos de la solución, con el objetivo de verificar su correcto funcionamiento de manera integral desde la perspectiva del usuario final. Estas pruebas permiten validar la ejecución de las funcionalidades implementadas, la navegación entre los diferentes módulos, la interacción con los servicios backend y el comportamiento de las aplicaciones ante operaciones exitosas y escenarios alternativos.
@@ -1001,6 +999,19 @@ En esta sección se presentan las pruebas de sistema realizadas sobre los princi
 Para esta entrega, las pruebas de sistema se realizaron sobre cuatro productos principales: Landing Page desarrollada con HTML, CSS y JavaScript y desplegada en GitHub Pages; aplicación web desarrollada con Angular; backend desarrollado con C# y .NET, ambos desplegados en sus respectivos entornos; y aplicación móvil desarrollada con Kotlin, ejecutada en un dispositivo Android físico.
 
 Las pruebas consideran los flujos funcionales de cada producto, verificando la interacción entre las interfaces de usuario y los servicios de la API, así como el procesamiento de las operaciones y la respuesta obtenida durante su ejecución.
+
+#### Testing Strategy
+
+La estrategia de pruebas de sistema se definió de acuerdo con las características y tecnologías de cada producto desarrollado. Para la Landing Page y la aplicación web Angular se utilizará Selenium IDE, permitiendo automatizar y reproducir flujos de navegación e interacción con las interfaces desde el navegador.
+
+Para el backend desarrollado en C# y .NET se utilizará Postman y Swagger, con el propósito de ejecutar solicitudes HTTP y verificar las respuestas de los endpoints, la autenticación, el acceso a recursos protegidos y el procesamiento de las operaciones. Finalmente, para la aplicación móvil desarrollada en Kotlin se realizarán pruebas manuales documentadas sobre un dispositivo Android físico, verificando la ejecución de sus principales funcionalidades y la interacción con los servicios backend.
+
+| Producto | Entorno | Herramienta | Tipo de prueba | Propósito |
+|---|---|---|---|---|
+| Landing Page | GitHub Pages | Selenium IDE | Web System Test | Validar carga, navegación, botones, enlaces y visualización del contenido público. |
+| Web Application | Entorno desplegado | Selenium IDE | Web UI System Test | Validar autenticación, navegación, gestión de pacientes, tratamientos y funcionalidades disponibles según el rol. |
+| Backend API | Entorno desplegado | Postman / Swagger | API System Test | Validar autenticación, autorización, endpoints, operaciones CRUD, persistencia de datos y manejo de errores. |
+| Mobile Application | Dispositivo Android | Prueba manual documentada | Mobile System Test | Validar inicio de sesión, navegación, funcionalidades de seguimiento del tratamiento e interacción con la API. |
 
 
 ## 6.2. Static testing & Verification
