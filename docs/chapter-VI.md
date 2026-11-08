@@ -1037,36 +1037,225 @@ Background:
 
 ### 6.3.1. Diseño de Entrevistas
 
-> Elementos a validar y preguntas por segmento objetivo sobre el producto ya implementado.
+En esta sección se establece, para cada segmento objetivo, los elementos considerados durante la sesión de validación, incluyendo las aplicaciones móviles desarrolladas.
 
-**Segmento 1: [Nombre del segmento]**
+#### Segmento 1: Madres y cuidadores de niños con anemia
 
-*Elementos a validar*
+#### Elementos a validar
 
-<!-- COMPLETAR -->
+* Experiencia general utilizando la aplicación.
+* Diseño visual y facilidad de navegación.
+* Registro de pacientes.
+* Confirmación de dosis del tratamiento.
+* Reserva de citas.
+* Mapa de postas cercanas.
+* Registro de alimentos (Diario Nutricional).
+* Chat con el enfermero.
+* Utilidad general de la aplicación.
 
-*Preguntas*
+---
 
-<!-- COMPLETAR -->
+#### 1. Experiencia de usuario (UX) general
 
-**Segmento 2: [Nombre del segmento]**
+* En general, ¿cómo te sentiste usando la aplicación? 
+* ¿Te resultó fácil o complicada de usar? ¿Por qué? 
+* ¿Lograste hacer todo lo que querías sin ayuda? 
+* ¿Hubo algún momento en que te sentiste perdida o confundida? 
 
-<!-- COMPLETAR -->
+---
+
+#### 2. Diseño del aplicativo
+
+* ¿Qué te pareció el diseño de la aplicación (colores, letras, imágenes)? 
+* ¿Te resultó sencillo navegar entre las diferentes pantallas? 
+* ¿Cambiarías algo de cómo se ve la aplicación? 
+
+---
+
+#### 3. Registro de pacientes (niños)
+
+* ¿Cómo te pareció el proceso para registrar a tu hijo en la aplicación? 
+* ¿Los datos solicitados fueron claros y fáciles de completar? 
+
+---
+
+#### 4. Confirmación de dosis
+
+* ¿Te quedó claro cómo confirmar que administraste la dosis a tu hijo? 
+* ¿El proceso fue rápido y sencillo o encontraste alguna dificultad? 
+* ¿Entendiste para qué sirve confirmar las dosis? 
+* ¿Crees que esta función te ayudaría a seguir correctamente el tratamiento? 
+
+---
+
+#### 5. Reserva de citas
+
+* ¿Cómo te pareció reservar una cita en la posta? 
+* ¿Te resultó fácil elegir la fecha y la hora? 
+
+---
+
+#### 6. Mapa de postas cercanas
+
+* ¿Qué te pareció el mapa para encontrar la posta más cercana? 
+* ¿La ubicación mostrada te pareció correcta o precisa? 
+* ¿La utilizarías cuando necesites reservar una cita? 
+
+---
+
+#### 7. Registro de alimentos (Diario Nutricional)
+
+* ¿Cómo te pareció registrar los alimentos consumidos por tu hijo cada dia?
+* ¿El proceso te resultó fácil o tedioso?
+* ¿Crees que utilizarías esta función diariamente? ¿Por qué?
+
+---
+
+#### 8. Chat con el enfermero
+
+* ¿Cómo fue tu experiencia consultando tus dudas mediante el chat?
+* ¿Te sentiste cómoda escribiéndole tus consultas al enfermero?
+* ¿Consideras que esta función te brinda mayor confianza durante el tratamiento?
+
+---
+
+#### Preguntas finales
+
+* De todas las funciones, ¿cuál fue la que más te gustó y cual menos?
+* ¿Sentiste que faltó alguna función o información importante?
+* ¿Recomendarías Ferova Family a otras madres? ¿Por qué?
+
+---
+
+#### Segmento 2: Personal de salud (Enfermeros/as y Nutricionistas)
+
+#### Elementos a validar
+
+* Experiencia general utilizando la aplicación.
+* Diseño visual y facilidad de navegación.
+* Registro y seguimiento de hemoglobina.
+* Gestión de citas provenientes de Ferova Family.
+* Historial clínico de los pacientes.
+* Dashboard de indicadores y adherencia.
+* Semáforo de riesgo.
+* Gestión del tratamiento.
+* Chat con las madres.
+* Utilidad general de la aplicación.
+
+---
+
+#### 1. Experiencia de usuario (UX) general
+
+* En términos de experiencia de uso, ¿cómo te sentirías utilizando la aplicación durante tu jornada laboral?
+* ¿La aplicación te ayuda a ahorrar tiempo o añade dificultades?
+* ¿Qué tan sencillo te resulta realizar las tareas frecuentes dentro de la aplicación?
+* ¿Hubo alguna funcionalidad que te resultara confusa?
+
+---
+
+#### 2. Diseño del aplicativo
+
+* ¿Qué opinas del diseño visual de la aplicación (colores, legibilidad y consistencia)?
+* ¿La interfaz te resulta intuitiva para realizar tus actividades?
+* ¿Los botones y opciones son fáciles de identificar?
+* ¿Cambiarías algún aspecto del diseño?
+
+---
+
+#### 3. Registro y seguimiento de hemoglobina
+
+* ¿Qué opinas de cómo la aplicación permite registrar y hacer seguimiento de los niveles de hemoglobina (Hb)?
+* ¿Qué te parece el flujo para registrar una nueva medición de Hb?
+* ¿Faltó algún dato importante durante el registro?
+* ¿Te resulta sencillo consultar la información registrada?
+
+---
+
+#### 4. Historial clínico del paciente
+
+* ¿La visualización del historial y la evolución de la hemoglobina facilita la toma de decisiones clínicas?
+* ¿Qué mejorarías del historial mostrado?
+* ¿Qué opinas sobre la sección destinada al historial médico del paciente?
+* ¿La información presentada es suficiente para el seguimiento clínico?
+
+---
+
+#### 5. Gestión de citas
+
+* ¿Qué opinas sobre la gestión de citas que llegan desde las madres?
+* ¿Consideras que el flujo de reservas se adapta a tu trabajo diario?
+* ¿Te resulta sencillo gestionar las citas programadas?
+* ¿Qué mejorarías de esta funcionalidad?
+
+---
+
+#### 6. Dashboard y monitoreo
+
+* ¿Qué opinas del dashboard con indicadores de adherencia?
+* ¿Te resulta útil visualizar el semáforo de riesgo (Low, Medium y High)?
+* ¿La información mostrada te ayuda a priorizar pacientes?
+* ¿Agregarías algún indicador adicional?
+
+---
+
+#### 7. Gestión del tratamiento
+
+* ¿La lógica de incremento del score conforme las madres confirman las dosis te parece adecuada?
+* ¿Consideras correcto que la duración del tratamiento se calcule automáticamente según las dosis confirmadas?
+* ¿Preferirías modificar manualmente la duración del tratamiento? ¿Por qué?
+* ¿La clasificación de pacientes por nivel de riesgo te resulta útil para el seguimiento?
+
+---
+
+#### 8. Chat con las madres
+
+* ¿Qué opinas del flujo de mensajes entre madres y enfermeros?
+* ¿Te resulta cómodo responder consultas mediante la aplicación?
+* ¿El sistema te permite gestionar las conversaciones de manera eficiente?
+* ¿Agregarías alguna funcionalidad al chat?
+
+---
+
+#### Preguntas finales
+
+* ¿Cuál fue la funcionalidad que más te gustó?
+* ¿Cuál fue la funcionalidad que menos te gustó?
+* ¿Qué función agregarías o mejorarías?
+* ¿Consideras que esta aplicación facilitaría tu trabajo diario? ¿Por qué?
+* ¿Recomendarías esta aplicación a otros profesionales de salud? ¿Por qué?
+* Del 1 al 5, ¿qué tan fácil te pareció utilizar la aplicación en general?
+* 
+
 
 ### 6.3.2. Registro de Entrevistas
+
+**Segmento 1: Madres y cuidadores de niños con anemia**
 
 | Campo | Dato |
 |-------|------|
 | Nombres y apellidos | [Nombre] |
 | Edad | [Edad] |
 | Distrito | [Distrito] |
+| Evidencia | [Evidencia] |
 | Fecha | [DD/MM/AAAA] |
 | Timing | [inicio] — duración [mm:ss] |
 | Enlace del video | [URL] |
+| Resumen        |         |
 
-<img src="../assets/img/chapter-VI/validation-interview-01.png" alt="Captura entrevista de validación 1">
 
-*Resumen:* <!-- COMPLETAR -->
+**Segmento 2: Personal de salud (Enfermeros/as y Nutricionistas**
+
+| Campo | Dato |
+|-------|------|
+| Nombres y apellidos | [Nombre] |
+| Edad | [Edad] |
+| Distrito | [Distrito] |
+| Evidencia | [Evidencia] |
+| Fecha | [DD/MM/AAAA] |
+| Timing | [inicio] — duración [mm:ss] |
+| Enlace del video | [URL] |
+| Resumen        |         |
+
 
 <!-- COMPLETAR: repetir por cada entrevista -->
 
