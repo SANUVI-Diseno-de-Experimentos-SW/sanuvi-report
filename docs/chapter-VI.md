@@ -1367,6 +1367,7 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 | 3 | Problema importante que dificulta la realización de una tarea. |
 | 4 | Problema crítico que impide completar una tarea o provoca errores graves. |
 
+##### TABLA RESUMEN
 
 | # | Problema | Escala de severidad | Heurística / Principio violado | Recomendación |
 |---:|---|:---:|---|---|
