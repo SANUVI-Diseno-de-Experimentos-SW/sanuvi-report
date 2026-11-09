@@ -992,13 +992,27 @@ Background:
 
 ```
 
-<!-- COMPLETAR -->
-
 ### 6.1.4. Core System Tests
 
-> Pruebas de sistema / aceptación end-to-end sobre el producto desplegado.
+En esta sección se presentan las pruebas de sistema realizadas sobre los principales productos de la solución, con el objetivo de verificar su correcto funcionamiento de manera integral desde la perspectiva del usuario final. Estas pruebas permiten validar la ejecución de las funcionalidades implementadas, la navegación entre los diferentes módulos, la interacción con los servicios backend y el comportamiento de las aplicaciones ante operaciones exitosas y escenarios alternativos.
 
-<!-- COMPLETAR -->
+Para esta entrega, las pruebas de sistema se realizaron sobre cuatro productos principales: Landing Page desarrollada con HTML, CSS y JavaScript y desplegada en GitHub Pages; aplicación web desarrollada con Angular; backend desarrollado con C# y .NET, ambos desplegados en sus respectivos entornos; y aplicación móvil desarrollada con Kotlin, ejecutada en un dispositivo Android físico.
+
+Las pruebas consideran los flujos funcionales de cada producto, verificando la interacción entre las interfaces de usuario y los servicios de la API, así como el procesamiento de las operaciones y la respuesta obtenida durante su ejecución.
+
+#### Testing Strategy
+
+La estrategia de pruebas de sistema se definió de acuerdo con las características y tecnologías de cada producto desarrollado. Para la Landing Page y la aplicación web Angular se utilizará Selenium IDE, permitiendo automatizar y reproducir flujos de navegación e interacción con las interfaces desde el navegador.
+
+Para el backend desarrollado en C# y .NET se utilizará Postman y Swagger, con el propósito de ejecutar solicitudes HTTP y verificar las respuestas de los endpoints, la autenticación, el acceso a recursos protegidos y el procesamiento de las operaciones. Finalmente, para la aplicación móvil desarrollada en Kotlin se realizarán pruebas manuales documentadas sobre un dispositivo Android físico, verificando la ejecución de sus principales funcionalidades y la interacción con los servicios backend.
+
+| Producto | Entorno | Herramienta | Tipo de prueba | Propósito |
+|---|---|---|---|---|
+| Landing Page | GitHub Pages | Selenium IDE | Web System Test | Validar carga, navegación, botones, enlaces y visualización del contenido público. |
+| Web Application | Entorno desplegado | Selenium IDE | Web UI System Test | Validar autenticación, navegación, gestión de pacientes, tratamientos y funcionalidades disponibles según el rol. |
+| Backend API | Entorno desplegado | Postman / Swagger | API System Test | Validar autenticación, autorización, endpoints, operaciones CRUD, persistencia de datos y manejo de errores. |
+| Mobile Application | Dispositivo Android | Prueba manual documentada | Mobile System Test | Validar inicio de sesión, navegación, funcionalidades de seguimiento del tratamiento e interacción con la API. |
+
 
 ## 6.2. Static testing & Verification
 
@@ -1300,25 +1314,80 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
 #### 6.4.1.1. Información del grupo auditado
 
 | Campo | Dato |
-|-------|------|
-| Startup auditada | [Nombre] |
-| Producto | [Nombre] |
-| Integrantes | [Nombres] |
-| Repositorio / despliegue | [URL] |
+|---|---|
+| Startup auditada | RichStudent |
+| Producto | UPC-X |
+| Integrantes | Gilbert Alonso Huarcaya Matias, Luis Manuel Espinoza Navarrete, Eduardo Jose Cossar Sanchez, Manuel Alejandro Molina Vásquez, Mathias Javier Murillo   |
+| Repositorio / despliegue |  |
+
+### TAREAS A EVALUAR
+
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas de la plataforma UPC-X, considerando su aplicación web y móvil:
+
+1. Inicio de sesión mediante correo institucional y código de verificación.
+2. Registro de una cuenta nueva con correo institucional (@upc.edu.pe).
+3. Exploración y búsqueda de publicaciones mediante filtros por sede y categoría.
+4. Publicación y administración de avisos de productos o servicios.
+5. Gestión de publicaciones guardadas (favoritos).
+6. Visualización del detalle de una publicación y contacto con el vendedor.
+7. Gestión de conversaciones y coordinación entre estudiantes.
+8. Propuesta y aceptación de acuerdos de encuentro dentro del campus.
+9. Envío de evidencias de pago y confirmación de entrega.
+10. Visualización y gestión del perfil de usuario, reputación e historial de transacciones.
+
+**No están incluidas en esta versión de la evaluación las siguientes tareas:**
+
+1. Procesamiento o validación directa de pagos mediante Yape o Plin.
+2. Gestión de pagos o suscripciones Premium.
+3. Pruebas de carga, seguridad o rendimiento sobre la API.
+4. Evaluación de funcionalidades administrativas internas de la plataforma.
+5. Funcionalidades que no se encuentren disponibles en las versiones web y móvil proporcionadas para la auditoría.
 
 #### 6.4.1.2. Cronograma de auditoría realizada
 
 | Fecha | Actividad | Participantes | Duración |
-|-------|-----------|---------------|----------|
-| [DD/MM/AAAA] | [Actividad] | [Nombres] | [hh:mm] |
+|---|---|---|---|
+| 10/11/2026 | Envío de solicitud de información al equipo RichStudent | Vitaly Arturo Baca Camargo | 00:15 |
+| 11/11/2026 | Recepción y revisión de información del proyecto UPC-X | Vitaly Arturo Baca Camargo | 00:30 |
+| 12/11/2026 | Evaluación de usabilidad de la aplicación web | Vitaly Arturo Baca Camargo | 01:30 |
+| 13/11/2026 | Identificación y clasificación de problemas encontrados | Vitaly Arturo Baca Camargo | 01:00 |
+| 14/11/2026 | Elaboración del informe de auditoría | Vitaly Arturo Baca Camargo | 01:30 |
+| 15/11/2026 | Revisión y entrega del informe de auditoría | Vitaly Arturo Baca Camargo | 00:30 |
 
 #### 6.4.1.3. Contenido de auditoría realizada
 
-| # | Problema | Escala de severidad | Heurística / Principio violado | Recomendación |
-|---|----------|---------------------|--------------------------------|---------------|
-| 1 | [Problema] | [1-4] | [Heurística] | [Recomendación] |
+##### Escala de severidad
 
-<!-- COMPLETAR -->
+Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
+
+| Nivel | Descripción |
+|:---:|---|
+| 1 | Problema cosmético que no afecta significativamente la experiencia. |
+| 2 | Problema menor que puede generar confusión o incomodidad. |
+| 3 | Problema importante que dificulta la realización de una tarea. |
+| 4 | Problema crítico que impide completar una tarea o provoca errores graves. |
+
+##### TABLA RESUMEN
+
+| # | Problema | Escala de severidad | Heurística / Principio violado | Recomendación |
+|---:|---|:---:|---|---|
+| 1 | Los filtros del marketplace desaparecen al desplazarse hacia abajo por los productos, obligando al usuario a regresar a la parte superior para modificarlos. | 3 | Flexibilidad y eficiencia de uso (H7). | Implementar un panel de filtros lateral fijo (*sticky*) o un botón flotante que permita acceder a los filtros sin interrumpir la navegación por los productos. |
+| 2 | El buscador y los filtros del marketplace no presentan una diferenciación visual suficientemente clara, dificultando la comprensión de sus funciones. | 2 | Correspondencia entre el sistema y el mundo real (H2). | Diferenciar visualmente el buscador de los filtros, agrupando estos últimos en una sección independiente y utilizando etiquetas e iconografía claras. |
+| 3 | En la vista de conversación con el vendedor, el contenido del chat y los datos del producto tienen dimensiones reducidas, dificultando la lectura y comprensión de la información. | 3 | Diseño estético y minimalista (H8). | Ampliar el área de conversación, mejorar el tamaño de los textos y reorganizar la información del producto para facilitar su lectura y consulta. |
+| 4 | Los selectores de fecha y hora para proponer un encuentro presentan una apariencia visual antigua y poco intuitiva, especialmente al utilizar el calendario desplegable. | 2 | Consistencia y estándares (H4). | Implementar componentes modernos de selección de fecha y hora, con una interfaz visual uniforme, controles claros y una navegación sencilla. |
+| 5 | La opción «Cerrar sesión» aparece duplicada en el menú lateral y en la sección principal del perfil, generando redundancia en las acciones disponibles. | 2 | Consistencia y estándares (H4). | Mantener una única opción para cerrar sesión, preferentemente en el menú lateral, evitando duplicaciones innecesarias. |
+| 6 | La sección «Acuerdos anteriores» presenta información poco organizada, dificultando identificar rápidamente el estado del acuerdo, el motivo de cancelación y los pasos realizados. | 3 | Reconocimiento antes que recuerdo (H6). | Rediseñar cada acuerdo mediante tarjetas estructuradas que destaquen el estado, precio, fecha, punto de encuentro y motivo de cancelación. Incorporar una línea de tiempo visual para representar los pasos del acuerdo. |
+| 7 | En el centro de ayuda, las preguntas frecuentes permiten mantener varias respuestas abiertas simultáneamente, provocando acumulación de contenido y dificultando la navegación. | 2 | Diseño estético y minimalista (H8). | Implementar un comportamiento de acordeón exclusivo (*single accordion*), donde al abrir una pregunta se cierre automáticamente la respuesta anterior. |
+| 8 | El correo electrónico de contacto del centro de ayuda no presenta una integración visual suficientemente clara como enlace de contacto, aunque dispone de un vínculo. | 2 | Visibilidad del estado del sistema (H1). | Presentar el correo como un elemento interactivo claramente identificable, manteniendo su hipervínculo y agregando una acción visible para abrir la aplicación de correo. |
+| 9 | En la versión móvil del marketplace, el saludo «Hola, Vitaly» aparece demasiado cerca de la parte superior de la pantalla, generando una distribución visual poco equilibrada. | 2 | Diseño estético y minimalista (H8). | Incrementar el espaciado superior del contenido, respetar las áreas seguras del dispositivo y mejorar la distribución vertical del encabezado. |
+| 10 | La vista móvil «Gestionar cierre» presenta los acuerdos anteriores y sus respectivos pasos mediante bloques de texto poco diferenciados, dificultando la comprensión de la información. | 3 | Reconocimiento antes que recuerdo (H6). | Reorganizar la información en tarjetas con jerarquía visual, etiquetas de estado, iconografía y una línea de tiempo que permita identificar fácilmente cada etapa del acuerdo. |
+| 11 | En la publicación de avisos desde dispositivos móviles, la opción para agregar fotografías únicamente permite seleccionar imágenes de la galería, sin ofrecer directamente la posibilidad de tomar una fotografía del producto. | 3 | Flexibilidad y eficiencia de uso (H7). | Incorporar dos opciones claramente diferenciadas: «Tomar fotografía» y «Seleccionar de galería», solicitando los permisos de cámara correspondientes cuando sea necesario. |
+| 12 | La ventana emergente «Perfil del vendedor» presenta información de reputación poco clara, ya que muestra al vendedor como «QA Equipo 1», pero posteriormente aparece una reseña identificada como «QA Equipo 2», generando confusión sobre la identidad del vendedor y el autor de la valoración. | 3 | Consistencia y estándares (H4). | Reorganizar la información del perfil y diferenciar claramente los datos del vendedor de las reseñas recibidas. Mostrar el nombre del autor de cada reseña mediante una etiqueta identificativa y asegurar que las valoraciones correspondan al perfil consultado. |
+| 13 | La sección "Mi reputación" presenta las estadísticas de intercambios, opiniones positivas, ventas completadas y avisos activos como texto simple, sin una jerarquía visual clara. Además, existe demasiado espacio vacío y no se muestra una representación visual de la calificación del usuario. | 2 | H8: Estética y diseño minimalista. H1: Visibilidad del estado del sistema. | Rediseñar la sección mediante tarjetas individuales para cada indicador, incorporando iconos, cifras destacadas y una representación visual mediante estrellas para la calificación. Cuando no existan reseñas, mostrar un estado vacío ilustrado y un mensaje explicativo. |
+| 14 | Durante la selección de fotografías del aviso, la imagen se muestra con un recorte y ampliación excesivos dentro del espacio asignado, impidiendo visualizar correctamente el producto completo. Además, no se ofrecen controles para ajustar el encuadre de la fotografía. | 3 | H7: Flexibilidad y eficiencia de uso. H8: Estética y diseño minimalista. | Incorporar herramientas para ajustar el encuadre, ampliar, reducir y posicionar la fotografía. Permitir visualizar la imagen completa antes de confirmar su selección. |
+| 15 | Los botones de gestión de la publicación presentan una distribución desordenada, tamaños desiguales y textos divididos en varias líneas, dificultando la identificación de las acciones. Además, algunas opciones como «Retirar aviso» y «Marcar como vendido» pueden generar confusión sobre sus consecuencias. | 3 | Estética y diseño minimalista (Heurística 8) y Prevención de errores (Heurística 5). | Reorganizar las acciones según su importancia, mantener botones de dimensiones uniformes y agrupar las opciones secundarias en un menú desplegable. Asimismo, incorporar mensajes de confirmación para las acciones que modifican el estado de la publicación. |
+| 16 | El campo «Precio en soles» no establece un límite máximo para el importe ingresado, permitiendo registrar cantidades excesivamente elevadas que podrían generar publicaciones con precios irreales o errores al momento de publicar el aviso. | 3 | Prevención de errores (Heurística 5). | Establecer un importe máximo permitido para el precio, validar que el valor ingresado se encuentre dentro del rango establecido y mostrar un mensaje de advertencia cuando se supere dicho límite. |
+| 17 | Los mensajes del chat presentan el mismo color y alineación, sin una diferenciación visual clara entre los mensajes enviados y recibidos por los participantes, dificultando identificar quién intervino en la conversación. | 3 | Visibilidad del estado del sistema (Heurística 1) y Consistencia y estándares (Heurística 4). | Diferenciar los mensajes mediante colores, alineaciones y estilos de burbuja según el emisor, permitiendo reconocer rápidamente los mensajes propios y los del otro participante. |
 
 ### 6.4.2. Auditoría recibida
 
