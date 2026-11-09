@@ -1314,17 +1314,45 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
 #### 6.4.1.1. Información del grupo auditado
 
 | Campo | Dato |
-|-------|------|
-| Startup auditada | [Nombre] |
-| Producto | [Nombre] |
-| Integrantes | [Nombres] |
-| Repositorio / despliegue | [URL] |
+|---|---|
+| Startup auditada | RichStudent |
+| Producto | UPC-X |
+| Integrantes | Gilbert Alonso Huarcaya Matias, Luis Manuel Espinoza Navarrete, Eduardo Jose Cossar Sanchez, Manuel Alejandro Molina Vásquez, Mathias Javier Murillo   |
+| Repositorio / despliegue |  |
+
+### TAREAS A EVALUAR
+
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas de la plataforma UPC-X, considerando su aplicación web y móvil:
+
+1. Inicio de sesión mediante correo institucional y código de verificación.
+2. Registro de una cuenta nueva con correo institucional (@upc.edu.pe).
+3. Exploración y búsqueda de publicaciones mediante filtros por sede y categoría.
+4. Publicación y administración de avisos de productos o servicios.
+5. Gestión de publicaciones guardadas (favoritos).
+6. Visualización del detalle de una publicación y contacto con el vendedor.
+7. Gestión de conversaciones y coordinación entre estudiantes.
+8. Propuesta y aceptación de acuerdos de encuentro dentro del campus.
+9. Envío de evidencias de pago y confirmación de entrega.
+10. Visualización y gestión del perfil de usuario, reputación e historial de transacciones.
+
+**No están incluidas en esta versión de la evaluación las siguientes tareas:**
+
+1. Procesamiento o validación directa de pagos mediante Yape o Plin.
+2. Gestión de pagos o suscripciones Premium.
+3. Pruebas de carga, seguridad o rendimiento sobre la API.
+4. Evaluación de funcionalidades administrativas internas de la plataforma.
+5. Funcionalidades que no se encuentren disponibles en las versiones web y móvil proporcionadas para la auditoría.
 
 #### 6.4.1.2. Cronograma de auditoría realizada
 
 | Fecha | Actividad | Participantes | Duración |
-|-------|-----------|---------------|----------|
-| [DD/MM/AAAA] | [Actividad] | [Nombres] | [hh:mm] |
+|---|---|---|---|
+| [DD/MM/AAAA] | Envío de solicitud de información al equipo RichStudent | Vitaly Arturo Baca Camargo | 00:15 |
+| [DD/MM/AAAA] | Recepción y revisión de información del proyecto UPC-X | Vitaly Arturo Baca Camargo | 00:30 |
+| [DD/MM/AAAA] | Evaluación de usabilidad de la aplicación web | Vitaly Arturo Baca Camargo | 01:30 |
+| [DD/MM/AAAA] | Identificación y clasificación de problemas encontrados | Vitaly Arturo Baca Camargo | 01:00 |
+| [DD/MM/AAAA] | Elaboración del informe de auditoría | Vitaly Arturo Baca Camargo | 01:30 |
+| [DD/MM/AAAA] | Revisión y entrega del informe de auditoría | Vitaly Arturo Baca Camargo | 00:30 |
 
 #### 6.4.1.3. Contenido de auditoría realizada
 
