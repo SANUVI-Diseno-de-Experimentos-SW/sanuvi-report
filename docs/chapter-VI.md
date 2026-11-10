@@ -1026,17 +1026,41 @@ Para el backend desarrollado en C# y .NET se utilizará Postman y Swagger, con e
 
 **ST-LP-01: Load Landing Page**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-LP-WEB-MOBILE/ST-LP-01_LoadLandingPage.png" width=700>
+</div>
+
+<br>
+
 Se evidencia la ejecución del test de carga de la Landing Page, verificando que la página pública desplegada en GitHub Pages se abra correctamente y que el navegador establezca las dimensiones de visualización configuradas. La prueba finalizó satisfactoriamente, sin errores.
 
 **ST-LP-02: Navigation Menu**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-LP-WEB-MOBILE/ST-LP-02_NavigationMenu.png" width=700>
+</div>
+
+<br>
 
 Se evidencia la ejecución del test de navegación del menú principal, verificando que los enlaces «El problema», «Funcionalidades», «Para quién» y «Cómo funciona» respondan correctamente al hacer clic y permitan acceder a las respectivas secciones de la Landing Page. La prueba finalizó satisfactoriamente.
 
 **ST-LP-03: Call To Action**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-LP-WEB-MOBILE/ST-LP-03_CallToAction.png" width=700>
+</div>
+
+<br>
+
 Se evidencia la ejecución del test del botón Call To Action, correspondiente al acceso del personal de salud. Se verificó que el botón redirija correctamente al usuario hacia la aplicación web Ferova Clinic, desplegada en Azure Static Web Apps. La prueba finalizó satisfactoriamente.
 
 **ST-LP-04: Download APK**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-LP-WEB-MOBILE/ST-LP-04_DownloadAPK.png" width=700>
+</div>
+
+<br>
 
 Se evidencia la ejecución del test de descarga de la aplicación móvil Ferova Family. Se verificó la interacción con el botón de descarga mediante el atributo `download="Ferova_Family.apk"` y se incorporó una pausa de cinco segundos para permitir el procesamiento de la descarga. Selenium IDE registró la ejecución satisfactoria de los comandos configurados.
 
