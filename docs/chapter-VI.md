@@ -1440,6 +1440,211 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 | 16 | El campo «Precio en soles» no establece un límite máximo para el importe ingresado, permitiendo registrar cantidades excesivamente elevadas que podrían generar publicaciones con precios irreales o errores al momento de publicar el aviso. | 3 | Prevención de errores (Heurística 5). | Establecer un importe máximo permitido para el precio, validar que el valor ingresado se encuentre dentro del rango establecido y mostrar un mensaje de advertencia cuando se supere dicho límite. |
 | 17 | Los mensajes del chat presentan el mismo color y alineación, sin una diferenciación visual clara entre los mensajes enviados y recibidos por los participantes, dificultando identificar quién intervino en la conversación. | 3 | Visibilidad del estado del sistema (Heurística 1) y Consistencia y estándares (Heurística 4). | Diferenciar los mensajes mediante colores, alineaciones y estilos de burbuja según el emisor, permitiendo reconocer rápidamente los mensajes propios y los del otro participante. |
 
+##### RECOMENDACIONES
+
+#### Problema n°1: Pérdida de visibilidad de los filtros al desplazarse en el marketplace
+
+**Severidad:** 3 | **Heurística violada:** Flexibilidad y eficiencia de uso (H7)
+
+**Problema:** Los filtros del marketplace desaparecen al desplazarse hacia abajo por el catálogo de productos, obligando al usuario a regresar manualmente hasta la parte superior de la página cada vez que desea modificar o aplicar un nuevo criterio de filtrado.
+
+![Problema 1](../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/1.png)
+
+**Recomendación:** Implementar un panel de filtros lateral fijo (*sticky*) o un botón de acción flotante que permita acceder y modificar los filtros en cualquier momento sin interrumpir la navegación por los productos.
+
+---
+
+#### Problema n°2: Falta de diferenciación visual entre el buscador y los filtros
+
+**Severidad:** 2 | **Heurística violada:** Correspondencia entre el sistema y el mundo real (H2)
+
+**Problema:** El buscador principal y los controles de filtrado del marketplace no presentan una separación ni diferenciación visual suficientemente clara en la interfaz, lo que dificulta al usuario distinguir rápidamente el alcance y la función de cada herramienta.
+
+![Problema 2](../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/2.png)
+
+**Recomendación:** Diferenciar visualmente la barra de búsqueda de los filtros de categoría o atributos, agrupando estos últimos en un contenedor o sección independiente y utilizando etiquetas descriptivas e iconografía clara.
+
+---
+
+#### Problema n°3: Dimensiones reducidas en el chat y datos del producto en la vista de conversación
+
+**Severidad:** 3 | **Heurística violada:** Diseño estético y minimalista (H8)
+
+**Problema:** En la vista de conversación con el vendedor, tanto el contenedor del chat como el resumen con los datos del producto presentan dimensiones muy reducidas, dificultando la lectura cómoda de los mensajes y la consulta de los detalles del artículo.
+
+![Problema 3](../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/3.png)
+
+**Recomendación:** Ampliar el área destinada a la ventana de conversación, incrementar el tamaño tipográfico de los textos y reorganizar la tarjeta informativa del producto para facilitar su lectura y consulta rápida.
+
+---
+
+#### Problema n°4: Apariencia desactualizada y poco intuitiva en selectores de fecha y hora
+
+**Severidad:** 2 | **Heurística violada:** Consistencia y estándares (H4)
+
+**Problema:** Los selectores de fecha y hora utilizados para proponer un encuentro presentan una apariencia visual antigua y poco intuitiva, especialmente al interactuar con el calendario desplegable, rompiendo con la línea gráfica del resto de la plataforma.
+
+![Problema 4](../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/4.png)
+
+**Recomendación:** Implementar componentes modernos y estandarizados de selección de fecha y hora (*date/time pickers*), manteniendo una interfaz visual uniforme con el sistema de diseño, controles claros y una navegación sencilla.
+
+---
+
+#### Problema n°5: Duplicidad de la opción «Cerrar sesión» en menú lateral y perfil
+
+**Severidad:** 2 | **Heurística violada:** Consistencia y estándares (H4)
+
+**Problema:** La acción «Cerrar sesión» aparece duplicada simultáneamente en el menú de navegación lateral y dentro del área principal de la sección de perfil, generando redundancia innecesaria en las acciones disponibles de la cuenta.
+
+![Problema 5](../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/5.png)
+
+**Recomendación:** Mantener una única ubicación estándar para la acción de cerrar sesión, preferentemente al final del menú lateral de navegación o en el menú de usuario superior, eliminando duplicaciones en el contenido central.
+
+---
+
+#### Problema n°6: Desorganización de la información en la sección «Acuerdos anteriores»
+
+**Severidad:** 3 | **Heurística violada:** Reconocimiento antes que recuerdo (H6)
+
+**Problema:** La sección «Acuerdos anteriores» muestra los datos de forma plana y poco estructurada, lo que dificulta al usuario identificar de un vistazo el estado final del acuerdo, el motivo de cancelación y la secuencia de pasos realizados.
+
+![Problema 6](../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/6.png)
+
+**Recomendación:** Rediseñar cada registro mediante tarjetas estructuradas que destaquen mediante insignias (*badges*) el estado, precio, fecha, punto de encuentro y motivo de cancelación, incorporando además una línea de tiempo visual (*stepper*) para representar los pasos completados del acuerdo.
+
+---
+
+#### Problema n°7: Acumulación de respuestas abiertas simultáneamente en preguntas frecuentes
+
+**Severidad:** 2 | **Heurística violada:** Diseño estético y minimalista (H8)
+
+**Problema:** En la sección del centro de ayuda, el listado de preguntas frecuentes permite mantener múltiples respuestas desplegadas al mismo tiempo, provocando una acumulación excesiva de texto en pantalla y alargando innecesariamente el desplazamiento vertical.
+
+![Problema 7](../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/7.png)
+
+**Recomendación:** Implementar un comportamiento de acordeón exclusivo (*single accordion*), de modo que al desplegar una nueva pregunta se contraiga automáticamente la respuesta que se encontraba abierta previamente.
+
+---
+
+#### Problema n°8: Falta de affordance visual en el enlace de correo de contacto del centro de ayuda
+
+**Severidad:** 2 | **Heurística violada:** Visibilidad del estado del sistema (H1)
+
+**Problema:** En el centro de ayuda, la dirección de correo electrónico de soporte no presenta señales visuales claras (como color distintivo, subrayado o botón) que indiquen que se trata de un enlace interactivo, pese a contar internamente con el hipervínculo mailto:.
+
+![Problema 8](../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/8.png)
+
+**Recomendación:** Presentar el correo electrónico como un elemento interactivo claramente identificable mediante color de enlace, iconografía de sobre o botón de acción secundaria que indique explícitamente la apertura del cliente de correo o la opción de copiar la dirección.
+
+---
+
+#### Problema n°9: Espaciado superior insuficiente en el saludo de la versión móvil
+
+**Severidad:** 2 | **Heurística violada:** Diseño estético y minimalista (H8)
+
+**Problema:** En la vista móvil del marketplace, el encabezado de bienvenida «Hola, Vitaly» se posiciona demasiado pegado al borde superior del contenedor, generando una composición visual apretada y poco equilibrada.
+
+![Problema 9](../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/9.png)
+
+**Recomendación:** Incrementar el margen o espaciado interno superior (*padding-top*) del contenedor principal, respetando las áreas seguras (*safe areas*) del dispositivo móvil y mejorando la respiración visual del encabezado.
+
+---
+
+#### Problema n°10: Bloques de texto poco diferenciados en la vista móvil «Gestionar cierre»
+
+**Severidad:** 3 | **Heurística violada:** Reconocimiento antes que recuerdo (H6)
+
+**Problema:** En la versión móvil de la vista «Gestionar cierre», los acuerdos anteriores y el historial de sus respectivos pasos se presentan como bloques continuos de texto sin jerarquía ni separación clara, dificultando el escaneo rápido de la información en pantallas pequeñas.
+
+![Problema 10](../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/10.jpg)
+
+**Recomendación:** Reorganizar la información en tarjetas individuales con jerarquía tipográfica clara, etiquetas de estado con código de color, iconografía de apoyo y una línea de tiempo compacta que permita identificar fácilmente cada etapa del acuerdo en móvil.
+
+---
+
+#### Problema n°11: Ausencia de opción para tomar fotografías directamente desde la cámara en móvil
+
+**Severidad:** 3 | **Heurística violada:** Flexibilidad y eficiencia de uso (H7)
+
+**Problema:** Durante el flujo de publicación de avisos desde dispositivos móviles, el control para agregar imágenes únicamente abre el selector de archivos de la galería, impidiendo al usuario capturar una fotografía del producto en el momento con la cámara de su teléfono.
+
+![Problema 11](../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/11.jpg)
+
+**Recomendación:** Incorporar un menú de selección o dos acciones claramente diferenciadas al subir imágenes en móvil: «Tomar fotografía» (invocando la cámara con los permisos correspondientes) y «Seleccionar de la galería».
+
+---
+
+#### Problema n°12: Confusión de identidad entre vendedor y autor de reseña en «Perfil del vendedor»
+
+**Severidad:** 3 | **Heurística violada:** Consistencia y estándares (H4)
+
+**Problema:** La ventana emergente «Perfil del vendedor» muestra información ambigua sobre la reputación: encabeza la vista identificando al vendedor como «QA Equipo 1», pero en el listado inferior muestra una reseña asociada a «QA Equipo 2» sin especificar quién es el evaluador y quién el evaluado.
+
+![Problema 12](../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/12.png)
+
+**Recomendación:** Reestructurar el modal diferenciando visualmente la cabecera con los datos del vendedor respecto a la sección de comentarios recibidos. Incluir etiquetas explícitas (ej. «Reseña escrita por: [Nombre del comprador]») y validar que las valoraciones listadas correspondan efectivamente al vendedor consultado.
+
+---
+
+#### Problema n°13: Falta de jerarquía visual y representación gráfica en «Mi reputación»
+
+**Severidad:** 2 | **Heurística violada:** Diseño estético y minimalista (H8) / Visibilidad del estado del sistema (H1)
+
+**Problema:** La sección «Mi reputación» presenta las métricas de intercambios, opiniones positivas, ventas completadas y avisos activos como líneas de texto simple sin jerarquía visual, dejando grandes espacios vacíos y omitiendo una representación gráfica de la calificación promedio del usuario.
+
+![Problema 13](../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/13.png)
+
+**Recomendación:** Rediseñar el panel utilizando tarjetas de resumen (*KPI cards*) para cada indicador con iconos e indicadores numéricos destacados, además de incorporar una visualización mediante estrellas para la calificación general. En caso de no contar con reseñas, mostrar un estado vacío (*empty state*) ilustrado con un mensaje orientativo.
+
+---
+
+#### Problema n°14: Recorte excesivo y falta de controles de ajuste al seleccionar fotografías
+
+**Severidad:** 3 | **Heurística violada:** Flexibilidad y eficiencia de uso (H7) / Diseño estético y minimalista (H8)
+
+**Problema:** Al cargar fotografías para un aviso, la previsualización aplica un recorte (*crop*) y zoom automático excesivo dentro del marco asignado, cortando partes importantes del producto y sin ofrecer controles para que el usuario ajuste el encuadre.
+
+![Problema 14](../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/14.png)
+
+**Recomendación:** Integrar un componente de edición básica al subir imágenes que permita ajustar el encuadre, ampliar, reducir (*zoom in/out*) y reposicionar la fotografía, garantizando una vista previa fiel a cómo se publicará el anuncio.
+
+---
+
+#### Problema n°15: Distribución desordenada y ambigüedad en los botones de gestión de la publicación
+
+**Severidad:** 3 | **Heurística violada:** Diseño estético y minimalista (H8) / Prevención de errores (H5)
+
+**Problema:** Los botones de acción para gestionar una publicación presentan una alineación desordenada, tamaños desiguales y etiquetas de texto partidas en múltiples líneas. Además, acciones críticas como «Retirar aviso» y «Marcar como vendido» carecen de diferenciación y explicación sobre sus consecuencias.
+
+![Problema 15](../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/15.png)
+
+**Recomendación:** Estandarizar el tamaño y alineación de los botones priorizando la acción principal, agrupar las acciones secundarias o destructivas en un menú desplegable («Más opciones») e implementar modales de confirmación que expliquen el impacto de retirar o marcar como vendido un aviso antes de ejecutar la acción.
+
+---
+
+#### Problema n°16: Falta de validación de límite máximo en el campo «Precio en soles»
+
+**Severidad:** 3 | **Heurística violada:** Prevención de errores (H5)
+
+**Problema:** El campo numérico «Precio en soles» del formulario de publicación no cuenta con un tope máximo ni validación de longitud, permitiendo ingresar cifras desproporcionadas o irreales que pueden generar errores de visualización o distorsionar el catálogo.
+
+![Problema 16 - Captura 1](../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/16.png)
+![Problema 16 - Captura 2](../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/16.1.jpg)
+
+**Recomendación:** Definir e implementar una validación de importe máximo razonable tanto en el *frontend* como en el *backend*, restringiendo la cantidad de dígitos permitidos y mostrando un mensaje de advertencia en línea cuando el monto ingresado supere el límite establecido.
+
+---
+
+#### Problema n°17: Ausencia de diferenciación visual entre mensajes enviados y recibidos en el chat
+
+**Severidad:** 3 | **Heurística violada:** Visibilidad del estado del sistema (H1) / Consistencia y estándares (H4)
+
+**Problema:** En la interfaz de mensajería, todas las burbujas de texto utilizan exactamente el mismo color de fondo y se alinean del mismo lado del contenedor, impidiendo distinguir rápidamente cuáles mensajes fueron enviados por el usuario actual y cuáles pertenecen al interlocutor.
+
+![Problema 17](../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/17.jpg)
+
+**Recomendación:** Aplicar el estándar convencional de interfaces de chat: alinear los mensajes propios a la derecha con un color de acento diferenciador, y posicionar los mensajes recibidos a la izquierda con un tono neutro, facilitando el seguimiento inmediato de la conversación.
+
 ### 6.4.2. Auditoría recibida
 
 #### 6.4.2.1. Información del grupo auditor
