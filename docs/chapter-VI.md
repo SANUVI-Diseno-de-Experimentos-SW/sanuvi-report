@@ -1428,8 +1428,8 @@ La evaluación se realizó mediante capturas de las plataformas en ejecución co
 #### 6.4.2.2. Cronograma de auditoría recibida
 
 | Fecha | Actividad | Participantes | Duración |
-|-------|-----------|---------------|----------|
-| [DD/MM/AAAA] | [Actividad] | [Nombres] | [hh:mm] |
+|---|---|---|---|
+| 09/11/2026 | Inspección visual de la landing page, aplicación web y aplicación móvil Android; revisión de los flujos y hallazgos observados. | Dhilsen Mallqui Vilca | 01:30 h |
 
 #### 6.4.2.3. Contenido de auditoría recibida
 
