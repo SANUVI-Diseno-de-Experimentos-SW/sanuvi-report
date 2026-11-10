@@ -952,41 +952,41 @@ Background:
   Scenario: Una madre solo accede a las funciones de madre
     Given el usuario ha iniciado sesión con el rol "Mother"
     Then el usuario solo tiene acceso a:
-      | Módulo permitido          | Funcionalidad                                                  |
+      | Módulo permitido          | Funcionalidad                                                   |
       | Gestión de pacientes      | Registrar paciente, ver mis pacientes, evolución de hemoglobina |
-      | Diario nutricional        | Registrar alimento, ver diario de hoy, ver historial           |
+      | Diario nutricional        | Registrar alimento, ver diario de hoy, ver historial            |
       | Seguimiento de tratamiento | Confirmar dosis, ver dosis de hoy, ver historial de dosis      |
-      | Citas                     | Reservar y cancelar citas, ver postas cercanas, próxima cita   |
+      | Citas                     | Reservar y cancelar citas, ver postas cercanas, próxima cita    |
     And no puede acceder a:
       | Módulo restringido        | Funcionalidad                                                  |
       | Historia clínica          | Crear y consultar historias clínicas                           |
       | Control de hemoglobina    | Registrar controles                                            |
       | Gestión de pacientes      | Asignarse pacientes, dar de alta, buscar madres                |
-      | Seguimiento de tratamiento | Iniciar, completar o abandonar tratamientos, ver riesgo        |
+      | Seguimiento de tratamiento | Iniciar, completar o abandonar tratamientos, ver riesgo       |
       | Citas                     | Ver la agenda de la enfermera                                  |
       | Postas de salud           | Registrar postas y asignar enfermeras                          |
 
   Scenario: Una enfermera solo accede a las funciones de enfermera
     Given el usuario ha iniciado sesión con el rol "Nurse"
     Then el usuario solo tiene acceso a:
-      | Módulo permitido          | Funcionalidad                                                         |
+      | Módulo permitido          | Funcionalidad                                                            |
       | Gestión de pacientes      | Asignarse pacientes, buscar madres, ver pacientes asignados, dar de alta |
-      | Historia clínica          | Crear y consultar historias clínicas de sus pacientes                 |
-      | Control de hemoglobina    | Registrar controles y consultar el historial                          |
-      | Seguimiento de tratamiento | Iniciar, completar y abandonar tratamientos, ver riesgo               |
-      | Citas                     | Ver la agenda de citas de su posta                                    |
+      | Historia clínica          | Crear y consultar historias clínicas de sus pacientes                    |
+      | Control de hemoglobina    | Registrar controles y consultar el historial                             |
+      | Seguimiento de tratamiento | Iniciar, completar y abandonar tratamientos, ver riesgo                 |
+      | Citas                     | Ver la agenda de citas de su posta                                       |
     And no puede acceder a:
       | Módulo restringido        | Funcionalidad                                                  |
       | Gestión de pacientes      | Registrar pacientes, ver "mis pacientes" de una madre          |
       | Diario nutricional        | Registrar alimento, ver diario e historial                     |
-      | Seguimiento de tratamiento | Confirmar dosis, ver dosis de hoy e historial de dosis         |
+      | Seguimiento de tratamiento | Confirmar dosis, ver dosis de hoy e historial de dosis        |
       | Citas                     | Reservar o cancelar citas, ver postas cercanas, próxima cita   |
       | Postas de salud           | Registrar postas y asignar enfermeras                          |
 
   Scenario: Un administrador gestiona las postas de salud
     Given el usuario ha iniciado sesión con el rol "Admin"
     Then el usuario tiene acceso a:
-      | Módulo permitido | Funcionalidad                                                  |
+      | Módulo permitido | Funcionalidad                                                      |
       | Postas de salud  | Registrar postas, consultar distritos, asignar enfermeras a postas |
     And ni una madre ni una enfermera pueden usar esas funciones
 
@@ -1012,6 +1012,33 @@ Para el backend desarrollado en C# y .NET se utilizará Postman y Swagger, con e
 | Web Application | Entorno desplegado | Selenium IDE | Web UI System Test | Validar autenticación, navegación, gestión de pacientes, tratamientos y funcionalidades disponibles según el rol. |
 | Backend API | Entorno desplegado | Postman / Swagger | API System Test | Validar autenticación, autorización, endpoints, operaciones CRUD, persistencia de datos y manejo de errores. |
 | Mobile Application | Dispositivo Android | Prueba manual documentada | Mobile System Test | Validar inicio de sesión, navegación, funcionalidades de seguimiento del tratamiento e interacción con la API. |
+
+#### System Test Cases
+
+| ID | Producto | Escenario | Herramienta | Resultado esperado | Estado |
+|---|---|---|---|---|---|
+| ST-LP-01 | Landing Page | Cargar la página pública | Selenium IDE | El sitio carga correctamente y muestra la sección principal. | Passed |
+| ST-LP-02 | Landing Page | Validar navegación del menú principal | Selenium IDE | Los enlaces del menú permiten acceder correctamente a las secciones correspondientes. | Passed |
+| ST-LP-03 | Landing Page | Validar redirección del Call To Action | Selenium IDE | El botón de acceso para personal de salud redirige correctamente hacia Ferova Clinic. | Passed |
+| ST-LP-04 | Landing Page | Validar descarga de APK | Selenium IDE | El botón permite iniciar la descarga del archivo Ferova_Family.apk. | Passed |
+
+#### Selenium IDE Tests for Landing Page
+
+**ST-LP-01: Load Landing Page**
+
+Se evidencia la ejecución del test de carga de la Landing Page, verificando que la página pública desplegada en GitHub Pages se abra correctamente y que el navegador establezca las dimensiones de visualización configuradas. La prueba finalizó satisfactoriamente, sin errores.
+
+**ST-LP-02: Navigation Menu**
+
+Se evidencia la ejecución del test de navegación del menú principal, verificando que los enlaces «El problema», «Funcionalidades», «Para quién» y «Cómo funciona» respondan correctamente al hacer clic y permitan acceder a las respectivas secciones de la Landing Page. La prueba finalizó satisfactoriamente.
+
+**ST-LP-03: Call To Action**
+
+Se evidencia la ejecución del test del botón Call To Action, correspondiente al acceso del personal de salud. Se verificó que el botón redirija correctamente al usuario hacia la aplicación web Ferova Clinic, desplegada en Azure Static Web Apps. La prueba finalizó satisfactoriamente.
+
+**ST-LP-04: Download APK**
+
+Se evidencia la ejecución del test de descarga de la aplicación móvil Ferova Family. Se verificó la interacción con el botón de descarga mediante el atributo `download="Ferova_Family.apk"` y se incorporó una pausa de cinco segundos para permitir el procesamiento de la descarga. Selenium IDE registró la ejecución satisfactoria de los comandos configurados.
 
 
 ## 6.2. Static testing & Verification
