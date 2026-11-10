@@ -1492,7 +1492,24 @@ La auditoría UX realizada por Aether System identificó los siguientes hallazgo
 #### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
 
 | # Hallazgo | Modificación realizada | Evidencia (commit / captura) | Responsable |
-|------------|------------------------|------------------------------|-------------|
-| 1 | [Modificación] | [enlace] | [Nombre] |
-
-<!-- COMPLETAR -->
+|---|---|---|---|
+| LP-01 | Se actualizaron las cifras de la landing page, incorporando las fuentes y el contexto correspondiente. | [Enlace a captura / commit] | [Nombre] |
+| LP-02 | Se reformuló el mensaje principal para evitar promesas de resultados clínicos garantizados. | [Enlace a captura / commit] | [Nombre] |
+| LP-03 | Se aclaró el público objetivo y las condiciones de acceso a FerovaFamily. | [Enlace a captura / commit] | [Nombre] |
+| LP-04 | Se precisaron las condiciones y los plazos de respuesta del servicio de teleconsulta. | [Enlace a captura / commit] | [Nombre] |
+| LP-05 | Se revisó la denominación institucional y se retiró cualquier afirmación oficial sin autorización acreditada. | [Enlace a captura / commit] | [Nombre] |
+| LP-06 | Se revisó la afirmación sobre el tiempo de registro para evitar presentar tiempos no validados. | [Enlace a captura / commit] | [Nombre] |
+| WEB-01 | Se revisó el nombre del acceso para que corresponda con los perfiles de enfermería y administración. | [Enlace a captura / commit] | [Nombre] |
+| WEB-02 | Se reemplazaron los valores genéricos de los saludos y perfiles por información válida. | [Enlace a captura / commit] | [Nombre] |
+| WEB-03 | Se corrigió la presentación de la adherencia para mostrar un estado sin datos cuando no existen registros suficientes. | [Enlace a captura / commit] | [Nombre] |
+| WEB-04 | Se tradujeron al español las etiquetas de interfaz que permanecían en inglés. | [Enlace a captura / commit] | [Nombre] |
+| WEB-05 | Se ajustó la visualización de los estados de carga y ausencia de registros para evitar mensajes simultáneos. | [Enlace a captura / commit] | [Nombre] |
+| WEB-06 | Se sustituyeron los datos personales visibles por información de prueba y se protegieron los documentos de identidad. | [Enlace a captura / commit] | [Nombre] |
+| WEB-07 | Se verificó la correspondencia entre el dashboard y la sección «Mis Postas» utilizando la misma cuenta. | [Enlace a captura / commit] | [Nombre] |
+| WEB-08 | Se realizaron ajustes de accesibilidad y adaptación de la interfaz mediante pruebas complementarias. | [Enlace a captura / commit] | [Nombre] |
+| MOB-01 | Se corrigió el encabezado de inicio para mostrar el nombre de la madre en lugar de un valor genérico. | [Enlace a captura / commit] | [Nombre] |
+| MOB-02 | Se actualizaron los datos de las postas y la presentación de las distancias correspondientes. | [Enlace a captura / commit] | [Nombre] |
+| MOB-03 | Se revisaron los cálculos nutricionales para garantizar la precisión de los valores de hierro mostrados. | [Enlace a captura / commit] | [Nombre] |
+| MOB-04 | Se aclararon las reglas de gestión de hijos y acceso para madres y otros cuidadores. | [Enlace a captura / commit] | [Nombre] |
+| MOB-05 | Se conservó el comportamiento del botón «Confirmar Dosis» deshabilitado hasta que exista un tratamiento activo. | [Enlace a captura / commit] | [Nombre] |
+| MOB-06 | Se realizaron pruebas complementarias de accesibilidad, permisos y funcionamiento de la aplicación en Android. | [Enlace a captura / commit] | [Nombre] |
