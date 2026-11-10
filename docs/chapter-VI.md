@@ -1393,10 +1393,37 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 #### 6.4.2.1. Información del grupo auditor
 
-| Campo | Dato |
-|-------|------|
-| Startup auditora | [Nombre] |
-| Integrantes | [Nombres] |
+**Auditoría UX – Evaluación de experiencia de usuario de Ferova Platform**
+
+| Campo | Detalle |
+|---|---|
+| Startup auditora | Aether System |
+| Producto del equipo auditor | KairoLabs |
+| Responsable de auditoría | Dhilsen Mallqui Vilca |
+| Integrantes | Sebastián Víctor André Díaz Mendoza, Carlo Patricio Ramírez Escalante y Rodrigo Oblitas Alcalde |
+| Cliente | SANUVI – Grupo 1 |
+
+**SITIO Y APLICACIONES A EVALUAR**
+
+Ferova Platform – Plataforma digital para el seguimiento y tratamiento de la anemia infantil, compuesta por una landing page, una aplicación web para el personal de salud (FerovaClinic) y una aplicación móvil Android para madres (FerovaFamily).
+
+**TAREAS EVALUADAS**
+
+El alcance de esta evaluación incluyó la inspección visual de las siguientes plataformas:
+
+1. Landing page de Ferova.
+2. Interfaz de acceso a FerovaClinic.
+3. Dashboard de coordinación y administración.
+4. Gestión de postas de salud.
+5. Gestión y seguimiento de pacientes.
+6. Historial médico y controles de hemoglobina.
+7. Interfaz de inicio de FerovaFamily.
+8. Selección y gestión de hijos.
+9. Registro y confirmación de dosis.
+10. Registro nutricional de alimentos.
+11. Búsqueda de establecimientos de salud.
+
+La evaluación se realizó mediante capturas de las plataformas en ejecución compartidas por el equipo auditado.
 
 #### 6.4.2.2. Cronograma de auditoría recibida
 
