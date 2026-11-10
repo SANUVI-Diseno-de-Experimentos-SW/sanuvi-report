@@ -1393,27 +1393,123 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 #### 6.4.2.1. Información del grupo auditor
 
-| Campo | Dato |
-|-------|------|
-| Startup auditora | [Nombre] |
-| Integrantes | [Nombres] |
+**Auditoría UX – Evaluación de experiencia de usuario de Ferova Platform**
+
+| Campo | Detalle |
+|---|---|
+| Startup auditora | Aether System |
+| Producto del equipo auditor | KairoLabs |
+| Responsable de auditoría | Dhilsen Mallqui Vilca |
+| Integrantes | Sebastián Víctor André Díaz Mendoza, Carlo Patricio Ramírez Escalante y Rodrigo Oblitas Alcalde |
+| Cliente | SANUVI – Grupo 1 |
+
+**SITIO Y APLICACIONES A EVALUAR**
+
+Ferova Platform – Plataforma digital para el seguimiento y tratamiento de la anemia infantil, compuesta por una landing page, una aplicación web para el personal de salud (FerovaClinic) y una aplicación móvil Android para madres (FerovaFamily).
+
+**TAREAS EVALUADAS**
+
+El alcance de esta evaluación incluyó la inspección visual de las siguientes plataformas:
+
+1. Landing page de Ferova.
+2. Interfaz de acceso a FerovaClinic.
+3. Dashboard de coordinación y administración.
+4. Gestión de postas de salud.
+5. Gestión y seguimiento de pacientes.
+6. Historial médico y controles de hemoglobina.
+7. Interfaz de inicio de FerovaFamily.
+8. Selección y gestión de hijos.
+9. Registro y confirmación de dosis.
+10. Registro nutricional de alimentos.
+11. Búsqueda de establecimientos de salud.
+
+La evaluación se realizó mediante capturas de las plataformas en ejecución compartidas por el equipo auditado.
 
 #### 6.4.2.2. Cronograma de auditoría recibida
 
 | Fecha | Actividad | Participantes | Duración |
-|-------|-----------|---------------|----------|
-| [DD/MM/AAAA] | [Actividad] | [Nombres] | [hh:mm] |
+|---|---|---|---|
+| 09/11/2026 | Inspección visual de la landing page, aplicación web y aplicación móvil Android; revisión de los flujos y hallazgos observados. | Dhilsen Mallqui Vilca | 01:30 h |
 
 #### 6.4.2.3. Contenido de auditoría recibida
 
+#### ESCALA DE SEVERIDAD
+
+Los hallazgos identificados durante la auditoría UX serán clasificados tomando en cuenta la siguiente escala de severidad:
+
+| Nivel | Descripción |
+|---|---|
+| 1 | **Problema superficial:** puede ser fácilmente superado por el usuario u ocurre con muy poca frecuencia. No necesita ser corregido a menos que exista disponibilidad de tiempo. |
+| 2 | **Problema menor:** puede ocurrir con mayor frecuencia o ser un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja. |
+| 3 | **Problema mayor:** ocurre frecuentemente o los usuarios no son capaces de resolverlo. Es importante que sea corregido y se le debe asignar una prioridad alta. |
+| 4 | **Problema muy grave:** error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
+
+#### TABLA RESUMEN
+
+A continuación, se presentan los hallazgos identificados por el equipo auditor Aether System durante la evaluación de las tres plataformas de Ferova: Landing Page, FerovaClinic y FerovaFamily.
+
+Los hallazgos se organizan según la plataforma evaluada, indicando su severidad, la heurística o principio de UX relacionado y la recomendación propuesta para su corrección.
+
+### 6.4.2.3. Contenido de auditoría recibida
+
+La auditoría UX realizada por Aether System identificó los siguientes hallazgos durante la evaluación de Ferova Platform:
+
+**Landing Page**
+
 | # | Problema | Escala de severidad | Heurística / Principio violado | Recomendación |
-|---|----------|---------------------|--------------------------------|---------------|
-| 1 | [Problema] | [1-4] | [Heurística] | [Recomendación] |
+|---|---|---:|---|---|
+| LP-01 | Cifras de abandono del tratamiento y reducción de abandonos sin fuentes ni contexto suficiente. | 3 | Consistencia, credibilidad y visibilidad de la fuente. | Especificar las fuentes, población y periodo de las cifras. Sustentar los resultados o presentarlos como objetivos. |
+| LP-02 | El mensaje «Vence la anemia con cada dosis» puede interpretarse como una promesa de resultado clínico garantizado. | 3 | Correspondencia con el mundo real y lenguaje claro. | Reformular el mensaje para comunicar el apoyo a la adherencia sin garantizar resultados clínicos. |
+| LP-03 | La página incluye cuidadores y gestantes como público objetivo, aunque el acceso móvil reportado está habilitado únicamente para madres. | 2 | Consistencia entre plataformas y correspondencia con el mundo real. | Aclarar quiénes pueden registrarse y utilizar FerovaFamily. |
+| LP-04 | La promesa de respuesta de teleconsulta en menos de 24 horas no especifica horarios ni condiciones del servicio. | 2 | Expectativas claras y visibilidad de las condiciones del servicio. | Definir el plazo de respuesta, horarios y mecanismos de contingencia. |
+| LP-05 | Se utiliza la etiqueta «Sistema Oficial de Vigilancia y Control de Anemia Infantil» sin evidencia de autorización institucional. | 3 | Credibilidad, transparencia y correspondencia con el contexto. | Confirmar la autorización institucional o retirar la denominación de sistema oficial. |
+| LP-06 | Se indica que el registro del perfil de la madre y del hijo toma menos de dos minutos sin evidencia de medición. | 1 | Expectativas claras y credibilidad. | Validar el tiempo mediante pruebas con usuarios o eliminar la promesa temporal. |
+
+**Aplicación Web – FerovaClinic**
+
+| # | Problema | Escala de severidad | Heurística / Principio violado | Recomendación |
+|---|---|---:|---|---|
+| WEB-01 | El acceso se identifica como «Portal del Paciente», aunque se describen funcionalidades para enfermería y administración. | 2 | Correspondencia con el sistema real y consistencia. | Confirmar si los distintos roles comparten el acceso y aclarar el destino de cada perfil. |
+| WEB-02 | Los saludos y etiquetas de perfil muestran valores genéricos como «string string». | 2 | Correspondencia con el mundo real y confianza. | Reemplazar los valores de prueba por datos válidos y establecer un texto alternativo. |
+| WEB-03 | El dashboard muestra 0% de adherencia cuando no existen pacientes o mediciones disponibles. | 3 | Visibilidad del estado y comunicación de datos. | Mostrar «Sin datos» o «No disponible» cuando no exista información suficiente para calcular la métrica. |
+| WEB-04 | Algunas etiquetas de la interfaz permanecen en inglés, como «Filter facilities…» y «ASSIGNED PERSONNEL». | 1 | Consistencia y estándares. | Traducir las etiquetas al español y revisar las demás vistas. |
+| WEB-05 | Se muestran simultáneamente «Cargando pacientes…» y «0 registros disponibles», lo que puede generar confusión durante la carga. | 2 | Visibilidad del estado y prevención de errores. | Mantener el estado de carga hasta recibir una respuesta definitiva y luego mostrar el estado vacío correspondiente. |
+| WEB-06 | En la pantalla de acceso aparece un documento de identidad completo, cuyo origen no está confirmado. | 3 | Privacidad, minimización de datos y confianza. | Utilizar cuentas de prueba y ocultar los documentos de identidad y datos personales reales. |
+| WEB-07 | El dashboard indica que no existen postas asignadas, mientras que «Mis Postas» muestra una instalación. No se confirmó si corresponden a la misma cuenta. | 2 | Consistencia de datos y visibilidad del estado. | Comparar ambas vistas con la misma cuenta y verificar la coherencia de los conteos. |
+| WEB-08 | No se ha podido confirmar la adaptación móvil, legibilidad, contraste, foco ni validaciones mediante teclado. | 2 | Accesibilidad y prevención y recuperación de errores. | Realizar pruebas con teclado, dispositivos móviles y ampliación de pantalla. |
+
+**Aplicación Móvil – FerovaFamily**
+
+| # | Problema | Escala de severidad | Heurística / Principio violado | Recomendación |
+|---|---|---:|---|---|
+| MOB-01 | El encabezado de inicio muestra «¡Hola string!» en lugar del nombre de la madre. | 2 | Correspondencia con el mundo real, prevención de errores y confianza. | Mostrar el nombre del perfil y establecer un texto alternativo cuando no esté disponible. |
+| MOB-02 | La ficha de una posta presenta valores genéricos como «string» y una distancia de «0,0 km». | 3 | Correspondencia con el mundo real, visibilidad del estado y confianza. | Mostrar información real del establecimiento y calcular la distancia según la ubicación autorizada. |
+| MOB-03 | El resumen nutricional muestra 0,0 mg de hierro para una porción cuyo cálculo proporcional sería aproximadamente 0,41 mg. | 3 | Correspondencia con el mundo real, precisión de datos y comunicación clara. | Validar las fórmulas con el responsable nutricional y diferenciar el hierro total del hierro absorbido. |
+| MOB-04 | La aplicación permite seleccionar más de un niño, pero no queda clara la política de acceso para madres y otros cuidadores. | 2 | Consistencia y correspondencia con el modelo de usuario. | Confirmar y documentar las reglas para registrar hijos, añadir cuidadores o transferir cuentas. |
+| MOB-05 | El botón «Confirmar Dosis» aparece deshabilitado mientras el tratamiento no ha sido activado por la enfermera. | — | Visibilidad del estado y prevención de errores. | Mantener el mensaje y el botón deshabilitado hasta que exista un tratamiento activo. |
+| MOB-06 | No se ha podido verificar la adaptación a distintos tamaños, accesibilidad táctil, mensajes de error, permisos de ubicación ni funcionamiento sin conexión. | 2 | Accesibilidad, control del usuario y prevención y recuperación de errores. | Probar los flujos completos en Android, incluyendo estados de carga, error, permisos denegados y confirmación de acciones. |
 
 #### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
 
 | # Hallazgo | Modificación realizada | Evidencia (commit / captura) | Responsable |
-|------------|------------------------|------------------------------|-------------|
-| 1 | [Modificación] | [enlace] | [Nombre] |
-
-<!-- COMPLETAR -->
+|---|---|---|---|
+| LP-01 | Se actualizaron las cifras de la landing page, incorporando las fuentes y el contexto correspondiente. | [Enlace a captura / commit] | [Nombre] |
+| LP-02 | Se reformuló el mensaje principal para evitar promesas de resultados clínicos garantizados. | [Enlace a captura / commit] | [Nombre] |
+| LP-03 | Se aclaró el público objetivo y las condiciones de acceso a FerovaFamily. | [Enlace a captura / commit] | [Nombre] |
+| LP-04 | Se precisaron las condiciones y los plazos de respuesta del servicio de teleconsulta. | [Enlace a captura / commit] | [Nombre] |
+| LP-05 | Se revisó la denominación institucional y se retiró cualquier afirmación oficial sin autorización acreditada. | [Enlace a captura / commit] | [Nombre] |
+| LP-06 | Se revisó la afirmación sobre el tiempo de registro para evitar presentar tiempos no validados. | [Enlace a captura / commit] | [Nombre] |
+| WEB-01 | Se revisó el nombre del acceso para que corresponda con los perfiles de enfermería y administración. | [Enlace a captura / commit] | [Nombre] |
+| WEB-02 | Se reemplazaron los valores genéricos de los saludos y perfiles por información válida. | [Enlace a captura / commit] | [Nombre] |
+| WEB-03 | Se corrigió la presentación de la adherencia para mostrar un estado sin datos cuando no existen registros suficientes. | [Enlace a captura / commit] | [Nombre] |
+| WEB-04 | Se tradujeron al español las etiquetas de interfaz que permanecían en inglés. | [Enlace a captura / commit] | [Nombre] |
+| WEB-05 | Se ajustó la visualización de los estados de carga y ausencia de registros para evitar mensajes simultáneos. | [Enlace a captura / commit] | [Nombre] |
+| WEB-06 | Se sustituyeron los datos personales visibles por información de prueba y se protegieron los documentos de identidad. | [Enlace a captura / commit] | [Nombre] |
+| WEB-07 | Se verificó la correspondencia entre el dashboard y la sección «Mis Postas» utilizando la misma cuenta. | [Enlace a captura / commit] | [Nombre] |
+| WEB-08 | Se realizaron ajustes de accesibilidad y adaptación de la interfaz mediante pruebas complementarias. | [Enlace a captura / commit] | [Nombre] |
+| MOB-01 | Se corrigió el encabezado de inicio para mostrar el nombre de la madre en lugar de un valor genérico. | [Enlace a captura / commit] | [Nombre] |
+| MOB-02 | Se actualizaron los datos de las postas y la presentación de las distancias correspondientes. | [Enlace a captura / commit] | [Nombre] |
+| MOB-03 | Se revisaron los cálculos nutricionales para garantizar la precisión de los valores de hierro mostrados. | [Enlace a captura / commit] | [Nombre] |
+| MOB-04 | Se aclararon las reglas de gestión de hijos y acceso para madres y otros cuidadores. | [Enlace a captura / commit] | [Nombre] |
+| MOB-05 | Se conservó el comportamiento del botón «Confirmar Dosis» deshabilitado hasta que exista un tratamiento activo. | [Enlace a captura / commit] | [Nombre] |
+| MOB-06 | Se realizaron pruebas complementarias de accesibilidad, permisos y funcionamiento de la aplicación en Android. | [Enlace a captura / commit] | [Nombre] |
