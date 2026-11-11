@@ -1075,29 +1075,71 @@ Se evidencia la ejecución del test de descarga de la aplicación móvil Ferova 
 
 **ST-WEB-01: Login Nurse Valid**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-FerovaClinic/ST-WEB-01_LoginNurseValid.png" width=700>
+</div>
+
+<br>
+
 Se evidencia la ejecución del test de inicio de sesión válido para el personal de enfermería, verificando que las credenciales ingresadas sean aceptadas y que el usuario pueda acceder correctamente a la plataforma FerovaClinic. La prueba finalizó satisfactoriamente, sin errores.
 
 **ST-WEB-02: Login Admin Valid**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-FerovaClinic/ST-WEB-02_LoginAdminValid.png" width=700>
+</div>
+
+<br>
 
 Se evidencia la ejecución del test de inicio de sesión válido para el administrador, verificando el acceso a la plataforma mediante sus credenciales correspondientes y la disponibilidad de las funcionalidades asignadas a dicho rol. La prueba finalizó satisfactoriamente, sin errores.
 
 **ST-WEB-03: View Patients By Mother**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-FerovaClinic/ST-WEB-03_ViewPatientsByMother.png" width=700>
+</div>
+
+<br>
+
 Se evidencia la ejecución del test de visualización de pacientes asociados a una madre o titular, verificando la búsqueda mediante el documento de identidad y la presentación de los pacientes registrados. La prueba finalizó satisfactoriamente, sin errores.
 
 **ST-WEB-04: Register Healthy Facility**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-FerovaClinic/ST-WEB-04_RegisterHealthyFacility.png" width=700>
+</div>
+
+<br>
 
 Se evidencia la ejecución del test de registro de un establecimiento de salud, verificando el ingreso de información general, selección del distrito, dirección, teléfono de contacto, ubicación geográfica, especialidades y disponibilidad. La prueba finalizó satisfactoriamente, sin errores.
 
 **ST-WEB-05: Register Medical Record**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-FerovaClinic/ST-WEB-05_RegisterMedicalRecord.png" width=700>
+</div>
+
+<br>
+
 Se evidencia la ejecución del test de registro del historial médico de un paciente, verificando el ingreso de peso, altura, motivo de consulta, observaciones, antecedentes y síntomas reportados. La prueba finalizó satisfactoriamente, sin errores.
 
 **ST-WEB-06: Register Hemoglobin Control**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-FerovaClinic/ST-WEB-06_RegisterDoses.png" width=700>
+</div>
+
+<br>
+
 Se evidencia la ejecución del test de registro del control de hemoglobina, verificando la selección del paciente y el ingreso del valor correspondiente para su seguimiento clínico. La prueba se ejecutó mediante Selenium IDE.
 
 **ST-WEB-07: View Patients For Discharge**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-FerovaClinic/ST-WEB-07_ViewPatientsForDischarge.png" width=700>
+</div>
+
+<br>
 
 Se evidencia la ejecución del test de visualización de pacientes disponibles para el proceso de alta, verificando la presentación de la cartera activa, los nombres de los pacientes y el estado de sus tratamientos. La prueba finalizó satisfactoriamente, sin errores.
 
