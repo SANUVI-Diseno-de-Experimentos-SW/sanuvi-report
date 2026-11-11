@@ -1038,7 +1038,7 @@ Para el backend desarrollado en C# y .NET se utilizará Postman y Swagger, con e
 | API-08 | Registro de Cita Médica | POST | Verificar la programación de una cita médica mediante el envío del identificador del establecimiento de salud, paciente, fecha y hora. | 201 Created – Cita médica reservada exitosamente. | Passed |
 | API-09 | Cancelación de Cita Médica | PUT | Verificar la cancelación de una cita médica previamente programada mediante el identificador de la cita. | 200 OK – Cita médica cancelada exitosamente. | Passed |
 | API-10 | Envío de Consulta al Personal Médico | POST | Verificar la creación de una consulta mediante el identificador del paciente y el mensaje inicial enviado por la madre o cuidadora. | 201 Created – Consulta creada exitosamente. | Passed |
-| API-11 | Envío de Mensajes | POST | Verificar el envío de un mensaje dentro de una consulta existente mediante su identificador y el contenido del mensaje. | 200 OK – Mensaje enviado exitosamente. | Aprobado |
+| API-11 | Envío de Mensajes | POST | Verificar el envío de un mensaje dentro de una consulta existente mediante su identificador y el contenido del mensaje. | 200 OK – Mensaje enviado exitosamente. | Passed |
 | API-12 | Consulta del Historial de Chat | GET | Verificar la recuperación de los mensajes intercambiados entre la madre o cuidadora y el personal de salud dentro de una consulta. | 200 OK – Historial de conversación obtenido exitosamente. | Passed |
 
 #### Selenium IDE Tests for Landing Page
@@ -1155,6 +1155,55 @@ Se evidencia la ejecución del test de registro del control de hemoglobina, veri
 
 Se evidencia la ejecución del test de visualización de pacientes disponibles para el proceso de alta, verificando la presentación de la cartera activa, los nombres de los pacientes y el estado de sus tratamientos. La prueba finalizó satisfactoriamente, sin errores.
 
+#### Postman API Tests
+
+**API-01: Login – Valid Credentials**
+
+Se evidencia la ejecución de la prueba de autenticación de usuarios mediante el envío de credenciales válidas (DNI y contraseña) al endpoint correspondiente. Se verificó que el servicio respondiera correctamente con un código HTTP 200 OK y generara un token JWT para permitir el acceso a los recursos protegidos de la aplicación.
+
+**API-02: Login – Invalid Credentials**
+
+Se evidencia la ejecución de la prueba de autenticación con credenciales incorrectas, verificando que el servicio rechace el acceso del usuario. La API respondió con el código HTTP 401 Unauthorized y el mensaje de credenciales inválidas, confirmando el correcto manejo de intentos de inicio de sesión no autorizados.
+
+**API-03: Register Patient**
+
+Se evidencia la ejecución de la prueba de registro de pacientes mediante el envío de información personal, incluyendo nombres, apellidos, fecha de nacimiento, género, peso, altura e identificador de la madre. La API respondió con el código HTTP 201 Created, confirmando que el paciente fue registrado exitosamente.
+
+**API-04: Start Treatment**
+
+Se evidencia la ejecución de la prueba de inicio de tratamiento para un paciente, enviando información correspondiente al suplemento, cantidad, horario de dosificación y duración del tratamiento. La API respondió con el código HTTP 201 Created, confirmando la creación del tratamiento y la generación de las dosis programadas.
+
+**API-05: Confirm Treatment Dose**
+
+Se evidencia la ejecución de la prueba de confirmación de una dosis correspondiente a un tratamiento activo. Se verificó el envío del identificador del paciente y la actualización del estado de la dosis a CONFIRMED, obteniendo una respuesta HTTP 200 OK y reflejando la actualización de los indicadores de adherencia.
+
+**API-06: Search Foods**
+
+Se evidencia la ejecución de la prueba de búsqueda de alimentos mediante el envío de un parámetro de consulta para localizar alimentos específicos. Se verificó que la API devolviera una lista de resultados con información nutricional, contenido de hierro por cada 100 gramos y clasificación según su capacidad de absorción. La solicitud finalizó satisfactoriamente con un código HTTP 200 OK.
+
+**API-07: Register Food Consumption**
+
+Se evidencia la ejecución de la prueba de registro de consumo de alimentos para un paciente, enviando el identificador del paciente, el alimento seleccionado y la cantidad consumida. La API respondió con el código HTTP 201 Created, confirmando el registro del alimento y el cálculo del hierro absorbido.
+
+**API-08: Book Medical Appointment**
+
+Se evidencia la ejecución de la prueba de programación de una cita médica mediante el envío del identificador del establecimiento de salud, identificador del paciente, fecha y hora de atención. La API respondió con el código HTTP 201 Created, confirmando que la cita médica fue reservada exitosamente.
+
+**API-09: Cancel Medical Appointment**
+
+Se evidencia la ejecución de la prueba de cancelación de una cita médica previamente registrada, enviando el identificador correspondiente a la cita. Se verificó que el servicio procesara correctamente la solicitud y devolviera el código HTTP 200 OK, confirmando la cancelación de la cita médica.
+
+**API-10: Create Medical Consultation**
+
+Se evidencia la ejecución de la prueba de creación de una consulta entre la madre o cuidadora y el personal de salud, mediante el envío del identificador del paciente y el contenido del mensaje inicial. La API respondió con el código HTTP 201 Created, confirmando la creación de la consulta y la generación de su identificador.
+
+**API-11: Send Chat Message**
+
+Se evidencia la ejecución de la prueba de envío de mensajes dentro de una consulta existente, mediante el identificador de la consulta y el contenido del mensaje. La API respondió con el código HTTP 200 OK, confirmando que el mensaje fue enviado exitosamente.
+
+**API-12: Retrieve Chat History**
+
+Se evidencia la ejecución de la prueba de consulta del historial de mensajes de una conversación mediante el identificador de la consulta. Se verificó que el servicio devolviera los mensajes intercambiados entre la madre o cuidadora y el personal de enfermería, incluyendo el identificador del remitente, rol, contenido y fecha de envío. La solicitud finalizó satisfactoriamente con un código HTTP 200 OK.
 
 ## 6.2. Static testing & Verification
 
