@@ -1021,6 +1021,13 @@ Para el backend desarrollado en C# y .NET se utilizará Postman y Swagger, con e
 | ST-LP-02 | Landing Page | Validar navegación del menú principal | Selenium IDE | Los enlaces del menú permiten acceder correctamente a las secciones correspondientes. | Passed |
 | ST-LP-03 | Landing Page | Validar redirección del Call To Action | Selenium IDE | El botón de acceso para personal de salud redirige correctamente hacia Ferova Clinic. | Passed |
 | ST-LP-04 | Landing Page | Validar descarga de APK | Selenium IDE | El botón permite iniciar la descarga del archivo Ferova_Family.apk. | Passed |
+| ST-WEB-01 | FerovaClinic | Inicio de sesión válido como enfermera | Selenium IDE | El personal de enfermería inicia sesión correctamente y accede a su panel correspondiente. | Passed |
+| ST-WEB-02 | FerovaClinic | Inicio de sesión válido como administrador | Selenium IDE | El administrador inicia sesión correctamente y accede a las funcionalidades de administración. | Passed |
+| ST-WEB-03 | FerovaClinic | Visualizar pacientes por madre | Selenium IDE | Se muestran los pacientes asociados a la madre o titular ingresado. | Passed |
+| ST-WEB-04 | FerovaClinic | Registrar establecimiento de salud (posta) | Selenium IDE | Se completa el registro del establecimiento de salud mediante los pasos del formulario. | Passed |
+| ST-WEB-05 | FerovaClinic | Registrar historial médico | Selenium IDE | Se registra el historial médico del paciente, incluyendo datos de consulta, observaciones, antecedentes y síntomas. | Passed |
+| ST-WEB-06 | FerovaClinic | Registrar control de hemoglobina | Selenium IDE | Se registra el valor de hemoglobina del paciente y se incorpora a su seguimiento clínico. | Passed |
+| ST-WEB-07 | FerovaClinic | Visualizar pacientes para dar de alta | Selenium IDE | Se muestra la cartera de pacientes activos que pueden iniciar el proceso de alta. | Passed |
 
 #### Selenium IDE Tests for Landing Page
 
@@ -1063,6 +1070,78 @@ Se evidencia la ejecución del test del botón Call To Action, correspondiente a
 <br>
 
 Se evidencia la ejecución del test de descarga de la aplicación móvil Ferova Family. Se verificó la interacción con el botón de descarga mediante el atributo `download="Ferova_Family.apk"` y se incorporó una pausa de cinco segundos para permitir el procesamiento de la descarga. Selenium IDE registró la ejecución satisfactoria de los comandos configurados.
+
+#### Selenium IDE Tests for FerovaClinic
+
+**ST-WEB-01: Login Nurse Valid**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-FerovaClinic/ST-WEB-01_LoginNurseValid.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución del test de inicio de sesión válido para el personal de enfermería, verificando que las credenciales ingresadas sean aceptadas y que el usuario pueda acceder correctamente a la plataforma FerovaClinic. La prueba finalizó satisfactoriamente, sin errores.
+
+**ST-WEB-02: Login Admin Valid**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-FerovaClinic/ST-WEB-02_LoginAdminValid.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución del test de inicio de sesión válido para el administrador, verificando el acceso a la plataforma mediante sus credenciales correspondientes y la disponibilidad de las funcionalidades asignadas a dicho rol. La prueba finalizó satisfactoriamente, sin errores.
+
+**ST-WEB-03: View Patients By Mother**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-FerovaClinic/ST-WEB-03_ViewPatientsByMother.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución del test de visualización de pacientes asociados a una madre o titular, verificando la búsqueda mediante el documento de identidad y la presentación de los pacientes registrados. La prueba finalizó satisfactoriamente, sin errores.
+
+**ST-WEB-04: Register Healthy Facility**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-FerovaClinic/ST-WEB-04_RegisterHealthyFacility.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución del test de registro de un establecimiento de salud, verificando el ingreso de información general, selección del distrito, dirección, teléfono de contacto, ubicación geográfica, especialidades y disponibilidad. La prueba finalizó satisfactoriamente, sin errores.
+
+**ST-WEB-05: Register Medical Record**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-FerovaClinic/ST-WEB-05_RegisterMedicalRecord.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución del test de registro del historial médico de un paciente, verificando el ingreso de peso, altura, motivo de consulta, observaciones, antecedentes y síntomas reportados. La prueba finalizó satisfactoriamente, sin errores.
+
+**ST-WEB-06: Register Hemoglobin Control**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-FerovaClinic/ST-WEB-06_RegisterDoses.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución del test de registro del control de hemoglobina, verificando la selección del paciente y el ingreso del valor correspondiente para su seguimiento clínico. La prueba se ejecutó mediante Selenium IDE.
+
+**ST-WEB-07: View Patients For Discharge**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-FerovaClinic/ST-WEB-07_ViewPatientsForDischarge.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución del test de visualización de pacientes disponibles para el proceso de alta, verificando la presentación de la cartera activa, los nombres de los pacientes y el estado de sus tratamientos. La prueba finalizó satisfactoriamente, sin errores.
 
 
 ## 6.2. Static testing & Verification
