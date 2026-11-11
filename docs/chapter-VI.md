@@ -1021,6 +1021,13 @@ Para el backend desarrollado en C# y .NET se utilizará Postman y Swagger, con e
 | ST-LP-02 | Landing Page | Validar navegación del menú principal | Selenium IDE | Los enlaces del menú permiten acceder correctamente a las secciones correspondientes. | Passed |
 | ST-LP-03 | Landing Page | Validar redirección del Call To Action | Selenium IDE | El botón de acceso para personal de salud redirige correctamente hacia Ferova Clinic. | Passed |
 | ST-LP-04 | Landing Page | Validar descarga de APK | Selenium IDE | El botón permite iniciar la descarga del archivo Ferova_Family.apk. | Passed |
+| ST-WEB-01 | FerovaClinic | Inicio de sesión válido como enfermera | Selenium IDE | El personal de enfermería inicia sesión correctamente y accede a su panel correspondiente. | Passed |
+| ST-WEB-02 | FerovaClinic | Inicio de sesión válido como administrador | Selenium IDE | El administrador inicia sesión correctamente y accede a las funcionalidades de administración. | Passed |
+| ST-WEB-03 | FerovaClinic | Visualizar pacientes por madre | Selenium IDE | Se muestran los pacientes asociados a la madre o titular ingresado. | Passed |
+| ST-WEB-04 | FerovaClinic | Registrar establecimiento de salud (posta) | Selenium IDE | Se completa el registro del establecimiento de salud mediante los pasos del formulario. | Passed |
+| ST-WEB-05 | FerovaClinic | Registrar historial médico | Selenium IDE | Se registra el historial médico del paciente, incluyendo datos de consulta, observaciones, antecedentes y síntomas. | Passed |
+| ST-WEB-06 | FerovaClinic | Registrar control de hemoglobina | Selenium IDE | Se registra el valor de hemoglobina del paciente y se incorpora a su seguimiento clínico. | Passed |
+| ST-WEB-07 | FerovaClinic | Visualizar pacientes para dar de alta | Selenium IDE | Se muestra la cartera de pacientes activos que pueden iniciar el proceso de alta. | Passed |
 
 #### Selenium IDE Tests for Landing Page
 
