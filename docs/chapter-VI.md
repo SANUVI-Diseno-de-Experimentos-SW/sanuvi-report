@@ -1159,49 +1159,127 @@ Se evidencia la ejecución del test de visualización de pacientes disponibles p
 
 **API-01: Login – Valid Credentials**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-01-Valid-Credentials.png" width=700>
+</div>
+
+<br>
+
 Se evidencia la ejecución de la prueba de autenticación de usuarios mediante el envío de credenciales válidas (DNI y contraseña) al endpoint correspondiente. Se verificó que el servicio respondiera correctamente con un código HTTP 200 OK y generara un token JWT para permitir el acceso a los recursos protegidos de la aplicación.
 
 **API-02: Login – Invalid Credentials**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-02-Invalid-Credentials.png" width=700>
+</div>
+
+<br>
 
 Se evidencia la ejecución de la prueba de autenticación con credenciales incorrectas, verificando que el servicio rechace el acceso del usuario. La API respondió con el código HTTP 401 Unauthorized y el mensaje de credenciales inválidas, confirmando el correcto manejo de intentos de inicio de sesión no autorizados.
 
 **API-03: Register Patient**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-03-Register-Patient.png" width=700>
+</div>
+
+<br>
+
 Se evidencia la ejecución de la prueba de registro de pacientes mediante el envío de información personal, incluyendo nombres, apellidos, fecha de nacimiento, género, peso, altura e identificador de la madre. La API respondió con el código HTTP 201 Created, confirmando que el paciente fue registrado exitosamente.
 
 **API-04: Start Treatment**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-04-Start-Treatment.png" width=700>
+</div>
+
+<br>
 
 Se evidencia la ejecución de la prueba de inicio de tratamiento para un paciente, enviando información correspondiente al suplemento, cantidad, horario de dosificación y duración del tratamiento. La API respondió con el código HTTP 201 Created, confirmando la creación del tratamiento y la generación de las dosis programadas.
 
 **API-05: Confirm Treatment Dose**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-05-Confirm-Doses.png" width=700>
+</div>
+
+<br>
+
 Se evidencia la ejecución de la prueba de confirmación de una dosis correspondiente a un tratamiento activo. Se verificó el envío del identificador del paciente y la actualización del estado de la dosis a CONFIRMED, obteniendo una respuesta HTTP 200 OK y reflejando la actualización de los indicadores de adherencia.
 
 **API-06: Search Foods**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-06-SearchFood.png" width=700>
+</div>
+
+<br>
 
 Se evidencia la ejecución de la prueba de búsqueda de alimentos mediante el envío de un parámetro de consulta para localizar alimentos específicos. Se verificó que la API devolviera una lista de resultados con información nutricional, contenido de hierro por cada 100 gramos y clasificación según su capacidad de absorción. La solicitud finalizó satisfactoriamente con un código HTTP 200 OK.
 
 **API-07: Register Food Consumption**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-07-RegisterFood.png" width=700>
+</div>
+
+<br>
+
 Se evidencia la ejecución de la prueba de registro de consumo de alimentos para un paciente, enviando el identificador del paciente, el alimento seleccionado y la cantidad consumida. La API respondió con el código HTTP 201 Created, confirmando el registro del alimento y el cálculo del hierro absorbido.
 
 **API-08: Book Medical Appointment**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-08-RegisterAppoitment.png" width=700>
+</div>
+
+<br>
+
 
 Se evidencia la ejecución de la prueba de programación de una cita médica mediante el envío del identificador del establecimiento de salud, identificador del paciente, fecha y hora de atención. La API respondió con el código HTTP 201 Created, confirmando que la cita médica fue reservada exitosamente.
 
 **API-09: Cancel Medical Appointment**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-09-AppoitmentCancel.png" width=700>
+</div>
+
+<br>
+
+
 Se evidencia la ejecución de la prueba de cancelación de una cita médica previamente registrada, enviando el identificador correspondiente a la cita. Se verificó que el servicio procesara correctamente la solicitud y devolviera el código HTTP 200 OK, confirmando la cancelación de la cita médica.
 
 **API-10: Create Medical Consultation**
+
+
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-10-SendConsultationToDoctor.png" width=700>
+</div>
+
+<br>
+
 
 Se evidencia la ejecución de la prueba de creación de una consulta entre la madre o cuidadora y el personal de salud, mediante el envío del identificador del paciente y el contenido del mensaje inicial. La API respondió con el código HTTP 201 Created, confirmando la creación de la consulta y la generación de su identificador.
 
 **API-11: Send Chat Message**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-11-SendMessage.png" width=700>
+</div>
+
+<br>
+
+
 Se evidencia la ejecución de la prueba de envío de mensajes dentro de una consulta existente, mediante el identificador de la consulta y el contenido del mensaje. La API respondió con el código HTTP 200 OK, confirmando que el mensaje fue enviado exitosamente.
 
 **API-12: Retrieve Chat History**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-12-Chat.png" width=700>
+</div>
+
+<br>
+
 
 Se evidencia la ejecución de la prueba de consulta del historial de mensajes de una conversación mediante el identificador de la consulta. Se verificó que el servicio devolviera los mensajes intercambiados entre la madre o cuidadora y el personal de enfermería, incluyendo el identificador del remitente, rol, contenido y fecha de envío. La solicitud finalizó satisfactoriamente con un código HTTP 200 OK.
 
