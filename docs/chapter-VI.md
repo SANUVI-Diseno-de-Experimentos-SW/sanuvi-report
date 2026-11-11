@@ -1287,11 +1287,128 @@ Se evidencia la ejecución de la prueba de consulta del historial de mensajes de
 
 ### 6.2.1. Static Code Analysis
 
+El análisis estático de código constituye una práctica importante dentro del proceso de verificación y validación de software, ya que permite identificar defectos, inconsistencias, problemas de calidad y posibles vulnerabilidades sin necesidad de ejecutar el programa. Este análisis complementa las pruebas dinámicas al detectar problemas durante las etapas de desarrollo, reduciendo el costo y el esfuerzo de corrección.
+
+En el proyecto Ferova, se establecen estándares de codificación para los diferentes componentes de la solución: la aplicación web FerovaClinic, desarrollada con Angular y TypeScript; la aplicación móvil FerovaFamily, desarrollada con Kotlin; y el servicio backend REST API, implementado con C# y ASP.NET Core. Asimismo, se consideran convenciones para los archivos de pruebas de comportamiento escritos en Gherkin y para la gestión del código fuente mediante Git y GitHub.
+
+La verificación estática se aborda mediante dos aspectos complementarios. En la sección 6.2.1.1 se describen los estándares y convenciones de codificación establecidos para cada tecnología. En la sección 6.2.1.2 se presentan las herramientas y los resultados del análisis de calidad del código.
+
+
 #### 6.2.1.1. Coding standard & Code conventions
 
-> Reglas y linters configurados por repositorio, y evidencia de su ejecución.
+Para garantizar la legibilidad, consistencia y mantenibilidad del código fuente, el equipo de Ferova establece las siguientes convenciones de codificación para cada componente de la solución. Los identificadores de código (variables, métodos, clases, componentes y archivos) se escriben en inglés, mientras que los textos presentados a los usuarios se mantienen en español.
 
-<!-- COMPLETAR -->
+#### Angular / TypeScript — FerovaClinic
+
+Se siguen las convenciones oficiales de Angular y la guía de estilo de TypeScript:
+
+- Los componentes, servicios, directivas y módulos utilizan nombres descriptivos siguiendo el formato `PascalCase` para las clases.
+- Los nombres de variables, métodos y funciones utilizan `camelCase` (e.g., `patientList`, `registerPatient()`).
+- Los nombres de constantes utilizan `UPPER_SNAKE_CASE` cuando representan valores globales inmutables (e.g., `API_BASE_URL`).
+- Los archivos de componentes siguen la convención `kebab-case` (e.g., `patient-list.component.ts`).
+- Se utiliza `const` para variables que no necesitan reasignación y `let` cuando el valor puede cambiar. Se evita el uso de `var`.
+- Se emplea la programación basada en componentes para mantener una estructura modular y reutilizable.
+- Los servicios centralizan la comunicación con la API REST y la lógica compartida entre componentes.
+- Se utilizan interfaces y tipos de TypeScript para definir la estructura de los datos.
+- Se aplican mecanismos de tipado para reducir errores relacionados con valores y propiedades incompatibles.
+- Se mantiene una separación entre componentes, servicios, modelos y demás responsabilidades de la aplicación.
+
+Herramienta de análisis: ESLint y las herramientas de análisis de TypeScript, según la configuración del proyecto.
+
+#### Kotlin / Android — FerovaFamily
+
+Se siguen las convenciones oficiales de Kotlin y las recomendaciones de desarrollo para Android:
+
+- Los nombres de clases, interfaces y objetos utilizan `PascalCase` (e.g., `PatientRepository`, `TreatmentViewModel`).
+- Las variables, propiedades y funciones utilizan `camelCase` (e.g., `patientName`, `registerDose()`).
+- Los nombres de constantes utilizan `UPPER_SNAKE_CASE` cuando corresponda (e.g., `API_BASE_URL`).
+- Los nombres de paquetes se escriben en minúsculas y siguen una estructura jerárquica.
+- Se utiliza `val` para declarar variables inmutables y `var` cuando se requiere modificar su valor.
+- Se prioriza el uso de funciones y clases reutilizables para evitar la duplicación de código.
+- Se emplean corrutinas de Kotlin para gestionar operaciones asíncronas cuando corresponde.
+- Se mantiene una separación de responsabilidades entre Activities, Fragments, ViewModels, repositorios y servicios, según la arquitectura implementada.
+- Se utilizan modelos de datos (`data class`) para representar la información de pacientes, tratamientos y controles.
+- Se aprovechan las características de seguridad de tipos y nulabilidad de Kotlin para reducir errores durante el desarrollo.
+- Se mantiene una separación entre la interfaz de usuario, la lógica de negocio y el acceso a datos.
+
+Herramienta de análisis: Kotlin Compiler y Android Lint, según la configuración del proyecto.
+
+#### C# / ASP.NET Core — Backend REST API
+
+Se siguen las convenciones de codificación de Microsoft para C# y las recomendaciones de desarrollo de ASP.NET Core:
+
+- Las clases, métodos, propiedades e interfaces utilizan `PascalCase` (e.g., `PatientService`, `RegisterPatient`).
+- Las variables locales y parámetros utilizan `camelCase` (e.g., `patientId`, `treatmentDuration`).
+- Los campos privados utilizan el prefijo `_` seguido de `camelCase` (e.g., `_patientRepository`).
+- Las interfaces utilizan el prefijo `I` (e.g., `IPatientService`, `ITreatmentRepository`).
+- Los nombres de los controladores finalizan con el sufijo `Controller` (e.g., `PatientController`).
+- Los endpoints se organizan de acuerdo con los recursos y responsabilidades de cada módulo.
+- Los métodos de los controladores utilizan los atributos HTTP correspondientes (`[HttpGet]`, `[HttpPost]`, `[HttpPut]`, `[HttpDelete]`).
+- Se emplean DTOs para definir los datos de entrada y salida de los servicios.
+- Se utiliza inyección de dependencias para facilitar la modularidad y el mantenimiento del backend.
+- Se implementa el manejo centralizado de excepciones y respuestas HTTP.
+- Se prioriza la separación de responsabilidades entre controladores, servicios y acceso a datos.
+
+Herramienta de análisis: Roslyn Analyzers y .NET Code Analysis, según la configuración del proyecto.
+
+#### Gherkin — Archivos `.feature` (BDD)
+
+Se siguen las convenciones de Gherkin para la definición de pruebas de comportamiento:
+
+- Cada archivo `.feature` describe una funcionalidad o flujo de negocio específico.
+- Los títulos de `Feature` y `Scenario` son descriptivos y se redactan en inglés o español de manera consistente con la documentación del proyecto.
+- Se utilizan correctamente las palabras clave:
+  - `Feature`: funcionalidad que se desea verificar.
+  - `Scenario`: situación específica de prueba.
+  - `Given`: contexto o estado inicial.
+  - `When`: acción o evento que desencadena el comportamiento.
+  - `Then`: resultado esperado y verificable.
+  - `And / But`: extensión de los pasos anteriores.
+- Los escenarios describen el comportamiento funcional y evitan depender de detalles específicos de la interfaz.
+- Se consideran escenarios positivos, negativos y alternativos para verificar diferentes condiciones.
+- Se reutilizan pasos comunes para evitar duplicación entre escenarios.
+- Los archivos `.feature` utilizan nombres descriptivos en formato `kebab-case` (e.g., `patient-management.feature`, `treatment-tracking.feature`).
+
+#### Conventional Commits & GitFlow
+
+El equipo utiliza convenciones para mantener un historial de cambios organizado y facilitar el seguimiento de las modificaciones realizadas en los repositorios de Ferova.
+
+El formato de los mensajes de commit es:
+
+`<type>(<scope>): <description>`
+
+| Tipo | Uso |
+|---|---|
+| `feat` | Implementación de una nueva funcionalidad. |
+| `fix` | Corrección de errores o defectos. |
+| `docs` | Modificaciones en la documentación. |
+| `style` | Cambios de formato sin modificar la lógica. |
+| `refactor` | Reestructuración del código sin agregar funcionalidades. |
+| `test` | Adición o modificación de pruebas. |
+| `chore` | Tareas de mantenimiento y configuración. |
+| `ci` | Modificaciones en los procesos de integración continua. |
+
+Ejemplos aplicados al proyecto:
+
+```text
+feat(patients): add patient registration endpoint
+feat(treatment): implement dose confirmation
+fix(auth): correct user authentication validation
+test(gherkin): add patient management scenarios
+docs(api): update REST API documentation
+```
+
+Para la organización del código fuente se consideran las siguientes convenciones de ramas:
+
+| Rama | Propósito |
+|---|---|
+| `main` | Código estable destinado a producción. |
+| `develop` | Integración de funcionalidades en desarrollo. |
+| `feature/<name>` | Desarrollo de nuevas funcionalidades. |
+| `release/<version>` | Preparación de versiones para su publicación. |
+| `hotfix/<description>` | Corrección de errores críticos. |
+
+La gestión del código fuente se realiza mediante Git y GitHub, permitiendo mantener el historial de cambios, integrar funcionalidades y facilitar la colaboración entre los integrantes del equipo.
 
 #### 6.2.1.2. Code Quality & Code Security
 
