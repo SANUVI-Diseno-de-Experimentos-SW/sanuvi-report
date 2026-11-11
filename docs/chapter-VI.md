@@ -1028,6 +1028,18 @@ Para el backend desarrollado en C# y .NET se utilizará Postman y Swagger, con e
 | ST-WEB-05 | FerovaClinic | Registrar historial médico | Selenium IDE | Se registra el historial médico del paciente, incluyendo datos de consulta, observaciones, antecedentes y síntomas. | Passed |
 | ST-WEB-06 | FerovaClinic | Registrar control de hemoglobina | Selenium IDE | Se registra el valor de hemoglobina del paciente y se incorpora a su seguimiento clínico. | Passed |
 | ST-WEB-07 | FerovaClinic | Visualizar pacientes para dar de alta | Selenium IDE | Se muestra la cartera de pacientes activos que pueden iniciar el proceso de alta. | Passed |
+| API-01 | Inicio de Sesión – Credenciales Válidas | POST | Verificar la autenticación de un usuario mediante el envío de un DNI y una contraseña válidos. | 200 OK – Autenticación exitosa y generación de token JWT. | Passed |
+| API-02 | Inicio de Sesión – Credenciales Inválidas | POST | Verificar el rechazo del inicio de sesión cuando se proporcionan credenciales incorrectas. | 401 Unauthorized – Credenciales inválidas. | Passed |
+| API-03 | Registro de Paciente | POST | Verificar el registro de un nuevo paciente mediante el envío de sus datos personales y el identificador de su madre o titular. | 201 Created – Paciente registrado exitosamente. | Passed |
+| API-04 | Inicio de Tratamiento | POST | Verificar el inicio de un tratamiento mediante el envío del identificador del paciente, nombre del suplemento, cantidad, horario de dosificación y duración. | 201 Created – Tratamiento iniciado exitosamente. | Passed |
+| API-05 | Confirmación de Dosis | POST | Verificar la confirmación de una dosis programada asociada a un tratamiento activo del paciente. | 200 OK – Dosis confirmada exitosamente y actualización de la adherencia. | Passed |
+| API-06 | Búsqueda de Alimentos | GET | Verificar la búsqueda de alimentos mediante un texto de consulta para obtener información nutricional relacionada con su contenido de hierro. | 200 OK – Lista de alimentos coincidentes obtenida exitosamente. | Passed |
+| API-07 | Registro de Consumo de Alimentos | POST | Verificar el registro de un alimento consumido por el paciente, especificando su identificador y cantidad. | 201 Created – Alimento registrado exitosamente y cálculo del hierro absorbido. | Passed |
+| API-08 | Registro de Cita Médica | POST | Verificar la programación de una cita médica mediante el envío del identificador del establecimiento de salud, paciente, fecha y hora. | 201 Created – Cita médica reservada exitosamente. | Passed |
+| API-09 | Cancelación de Cita Médica | PUT | Verificar la cancelación de una cita médica previamente programada mediante el identificador de la cita. | 200 OK – Cita médica cancelada exitosamente. | Passed |
+| API-10 | Envío de Consulta al Personal Médico | POST | Verificar la creación de una consulta mediante el identificador del paciente y el mensaje inicial enviado por la madre o cuidadora. | 201 Created – Consulta creada exitosamente. | Passed |
+| API-11 | Envío de Mensajes | POST | Verificar el envío de un mensaje dentro de una consulta existente mediante su identificador y el contenido del mensaje. | 200 OK – Mensaje enviado exitosamente. | Aprobado |
+| API-12 | Consulta del Historial de Chat | GET | Verificar la recuperación de los mensajes intercambiados entre la madre o cuidadora y el personal de salud dentro de una consulta. | 200 OK – Historial de conversación obtenido exitosamente. | Passed |
 
 #### Selenium IDE Tests for Landing Page
 
