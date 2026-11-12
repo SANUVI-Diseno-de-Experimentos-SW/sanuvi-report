@@ -662,11 +662,151 @@ Las herramientas seleccionadas para el monitoreo de Ferova son las siguientes:
 
 ### 7.4.2. Monitoring Pipeline Components
 
-> Componentes de recolección de datos instrumentados en los productos, dashboards y métricas técnicas y de negocio observadas.
+El pipeline de monitoreo de Ferova está compuesto por los mecanismos y herramientas encargados de supervisar el estado de los componentes de la plataforma después de cada despliegue. Su objetivo es verificar la disponibilidad de los servicios publicados, revisar los resultados de las ejecuciones de los workflows y facilitar la identificación de errores durante la operación de la aplicación.
 
-<img src="../assets/img/chapter-VII/monitoring-dashboard.png" alt="Dashboard de monitoreo">
+Este proceso complementa las etapas de Continuous Integration, Continuous Delivery y Continuous Deployment, ya que permite comprobar el estado de las versiones publicadas y mantener la trazabilidad de los posibles incidentes.
 
-<!-- COMPLETAR -->
+#### 1. Monitoring Sources
+
+El monitoreo comienza con la recopilación de información desde los principales componentes desplegados de Ferova:
+
+- **Frontend Web Application:** desplegada mediante Azure Static Web Apps. Se supervisa mediante la verificación de su URL pública, el acceso a la aplicación y el historial de implementaciones.
+- **Backend REST API:** desplegado en Railway. Se supervisa mediante el estado del servicio, el historial de despliegues y los registros de ejecución.
+- **Mobile Application:** FerovaFamily se distribuye mediante Firebase App Distribution, permitiendo realizar el seguimiento de las versiones compartidas con los testers autorizados y recibir sus comentarios durante las pruebas.
+- **CI/CD Workflows:** ejecutados mediante GitHub Actions. Se revisan sus resultados para identificar ejecuciones exitosas o fallidas durante los procesos de compilación y despliegue.
+
+#### 2. Backend Monitoring Component
+
+El componente de monitoreo del backend permite verificar que el servicio REST API desplegado en Railway se encuentre activo y pueda atender las solicitudes de los clientes.
+
+Para ello, se utilizan las siguientes fuentes de información:
+
+- Estado del servicio en Railway.
+- Historial de implementaciones.
+- Registros de ejecución (logs).
+- Errores relacionados con el inicio de la aplicación.
+- Problemas de configuración o conexión con la base de datos.
+
+**Estado del servicio Backend en Railway**
+
+La figura muestra el servicio WebApplication1 desplegado en Railway con estado Online, evidenciando que el backend se encuentra activo en el entorno de producción.
+
+[Insertar captura del servicio Backend en Railway]
+
+#### 3. Frontend Availability Check Component
+
+El componente de disponibilidad del frontend permite comprobar que FerovaClinic se encuentre accesible para los usuarios desde su dirección pública de Azure Static Web Apps.
+
+Esta verificación considera:
+
+- Acceso correcto a la URL pública.
+- Disponibilidad de la aplicación web.
+- Carga inicial de la interfaz.
+- Acceso a la página de inicio de sesión.
+- Ausencia de errores visibles que impidan utilizar la aplicación.
+
+**Frontend Web Application publicado en Azure**
+
+La figura muestra FerovaClinic publicada en Azure Static Web Apps, permitiendo comprobar que la aplicación web se encuentra disponible en producción.
+
+[Insertar captura de FerovaClinic en producción]
+
+#### 4. Log Review Component
+
+El componente de revisión de logs permite analizar los eventos generados durante la ejecución de los servicios y los workflows.
+
+En Ferova, los registros se revisan principalmente desde:
+
+- **Railway:** para identificar errores de ejecución del backend, problemas de conexión y fallos durante el inicio del servicio.
+- **GitHub Actions:** para revisar los resultados de los workflows, los pasos ejecutados y los errores producidos durante la compilación o el despliegue.
+- **Azure Static Web Apps:** para consultar el historial de implementaciones y detectar posibles fallos durante la publicación del frontend.
+
+Los registros permiten identificar problemas técnicos y relacionarlos con una implementación o ejecución específica.
+
+**Logs e historial de despliegues del Backend**
+
+[Insertar captura de los logs o historial de despliegues de Railway]
+
+#### 5. Basic Metrics Component
+
+El componente de métricas básicas permite realizar un seguimiento del estado de los productos desplegados mediante indicadores obtenidos de las herramientas utilizadas.
+
+| Métrica | Fuente | Propósito |
+|---|---|---|
+| Disponibilidad del backend | Railway | Confirmar que el servicio se encuentre activo. |
+| Disponibilidad del frontend | Azure Static Web Apps | Verificar que FerovaClinic esté publicada y accesible. |
+| Resultado de workflows | GitHub Actions | Identificar ejecuciones exitosas o fallidas. |
+| Historial de despliegues | Railway / Azure | Consultar el estado de las implementaciones. |
+| Versiones móviles distribuidas | Firebase App Distribution | Identificar las versiones disponibles para los testers. |
+| Incidencias reportadas | Firebase App Distribution | Revisar los comentarios y problemas comunicados durante las pruebas móviles. |
+
+Estas métricas permiten realizar una supervisión básica de la disponibilidad y estabilidad de los componentes sin requerir una plataforma APM adicional.
+
+#### 6. Post-Deployment Verification Component
+
+Después de cada despliegue, el equipo realiza una verificación para comprobar que los componentes publicados funcionen correctamente.
+
+La verificación posterior al despliegue incluye:
+
+1. Confirmar que FerovaClinic responda desde su URL pública de Azure Static Web Apps.
+2. Comprobar que el backend se encuentre activo en Railway.
+3. Revisar el historial y resultado del despliegue correspondiente.
+4. Verificar el acceso a la documentación Swagger de la API.
+5. Comprobar el funcionamiento de las principales operaciones de la aplicación.
+6. Revisar que FerovaFamily pueda instalarse y ejecutarse desde la versión distribuida mediante Firebase App Distribution.
+
+Esta práctica permite comprobar el funcionamiento de los productos después de su publicación y detectar posibles problemas antes de considerar estable una versión.
+
+#### 7. CI/CD Workflow Monitoring Component
+
+El monitoreo de los procesos de integración y despliegue se realiza mediante GitHub Actions, que permite consultar las ejecuciones de los workflows configurados en los repositorios del backend y frontend.
+
+Los workflows permiten revisar:
+
+- La ejecución de los pasos de preparación del entorno.
+- La instalación o restauración de dependencias.
+- La compilación de los proyectos.
+- El resultado de cada ejecución.
+- Los errores registrados durante el proceso.
+
+**Ejecución de los workflows de integración continua**
+
+[Insertar captura del workflow exitoso del Backend]
+
+[Insertar captura del workflow exitoso del Frontend]
+
+Las ejecuciones permiten mantener la trazabilidad de los cambios realizados y verificar que los procesos automatizados finalicen correctamente.
+
+#### 8. Incident Review Component
+
+Cuando se identifica un problema durante el monitoreo, el equipo revisa la incidencia para determinar el componente afectado y aplicar una corrección.
+
+El proceso de revisión comprende:
+
+1. Identificar el problema mediante los logs, el estado del servicio o el resultado de un workflow.
+2. Determinar si el componente afectado corresponde al frontend, backend o aplicación móvil.
+3. Revisar los registros y la implementación relacionada.
+4. Identificar la posible causa del problema.
+5. Aplicar la corrección correspondiente.
+6. Ejecutar nuevamente las validaciones necesarias.
+7. Verificar que el componente afectado funcione correctamente.
+
+Este proceso permite mantener la trazabilidad de los problemas identificados y facilita la corrección de errores durante el mantenimiento de la plataforma.
+
+#### 9. Monitoring Pipeline Summary
+
+El pipeline de monitoreo de Ferova se resume de la siguiente manera:
+
+1. Se publica una nueva versión de uno de los componentes de la plataforma.
+2. Railway y Azure Static Web Apps permiten consultar el estado de los servicios desplegados.
+3. GitHub Actions registra los resultados de los workflows de integración y despliegue.
+4. Se verifica que el backend y frontend se encuentren disponibles.
+5. Se revisan los logs y el historial de implementaciones.
+6. Se verifica la disponibilidad de las versiones móviles distribuidas mediante Firebase App Distribution.
+7. Si se identifica un problema, se revisan los registros y se aplica la corrección correspondiente.
+8. Se realizan nuevamente las verificaciones para comprobar el funcionamiento de la versión corregida.
+
+De esta manera, los componentes del Monitoring Pipeline permiten mantener visibilidad sobre el estado de FerovaClinic, el Backend REST API y FerovaFamily, facilitando la detección de errores y la supervisión de las versiones publicadas.
 
 ### 7.4.3. Alerting Pipeline Components
 
