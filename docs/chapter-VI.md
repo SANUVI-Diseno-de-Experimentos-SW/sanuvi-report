@@ -1856,41 +1856,105 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
 | Resumen        |         |
 
 
-<!-- COMPLETAR: repetir por cada entrevista -->
 
 ### 6.3.3. Evaluaciones según heurísticas
 
-> Evaluación heurística UX (Nielsen) por aplicación, con cabecera del formato indicado en el statement, tabla de severidad y lista de hallazgos.
+Se realizó una evaluación heurística UX basada en las 10 heurísticas de usabilidad de Jakob Nielsen para las aplicaciones FerovaFamily y FerovaClinic. La evaluación permitió identificar problemas de usabilidad relacionados con la presentación de información, consistencia, prevención de errores, visibilidad del estado de las funcionalidades y facilidad de interacción.
 
-**UX Heuristics & Principles Evaluation**
+#### 6.3.3.1. Evaluación heurística UX – FerovaFamily
+
+##### UX Heuristics & Principles Evaluation
 
 | Campo | Dato |
-|-------|------|
+|---|---|
 | Carrera | Ingeniería de Software |
 | Curso | Diseño de Experimentos de Ingeniería de Software |
-| Sección | [Sección] |
-| Profesor | [Docente] |
-| Auditor | [Nombre] |
-| Fecha | [DD/MM/AAAA] |
-| Nombre de App | Ferova |
-| Tareas evaluadas | [lista] |
+| Sección | 9082 |
+| Profesor | Juan Fernando Ysen Paiba |
+| Auditor | Vitaly Baca Camargo |
+| Fecha | 12/11/2026 |
+| Nombre de App | FerovaFamily |
+| Tareas evaluadas | Consultar inicio, confirmar dosis diaria, registrar alimentos en el diario nutricional, buscar postas cercanas, reservar citas y enviar consultas médicas. |
 
-**Escala de severidad**
+##### Escala de severidad
 
 | Nivel | Descripción |
-|-------|-------------|
-| 1 | Problema superficial |
-| 2 | Problema menor |
-| 3 | Problema mayor |
-| 4 | Problema catastrófico |
+|---|---|
+| 1 | **Problema superficial:** Detalle visual o de presentación que no afecta el uso de la aplicación ni impide completar las tareas. |
+| 2 | **Problema menor:** Dificultad que puede generar confusión o incomodidad al usuario, pero que permite completar la tarea sin mayores inconvenientes. |
+| 3 | **Problema mayor:** Dificultad que afecta significativamente la experiencia de uso y puede retrasar o dificultar la realización de una tarea importante. |
+| 4 | **Problema catastrófico:** Error crítico que impide completar una tarea esencial o puede provocar consecuencias graves debido a información incorrecta o acciones equivocadas. |
 
-**Hallazgos**
+##### Hallazgos
 
 | # | Problema | Escala de severidad | Heurística / Principio violado | Recomendación |
-|---|----------|---------------------|--------------------------------|---------------|
-| 1 | [Problema] | [1-4] | [Heurística] | [Recomendación] |
+|---|---|---|---|---|
+| 1 | En el diario nutricional, el valor de hierro absorbido aparece como "0.81 /mg", presentando una disposición incorrecta de la unidad de medida. | 2 | 8. Estética y diseño minimalista. | Corregir la presentación de la unidad para mostrar el valor como "0.81 mg" y mantener un formato uniforme en los indicadores nutricionales. |
+| 2 | En la pantalla de postas cercanas, los dos establecimientos muestran exactamente la misma distancia de 34.0 km, lo que puede generar dudas sobre la precisión de la información. | 3 | 1. Visibilidad del estado del sistema. | Mostrar la distancia real calculada individualmente para cada establecimiento y actualizarla según la ubicación del usuario. |
+| 3 | En la pantalla de reserva de citas, algunos días del calendario aparecen en gris, pero no se explica claramente si corresponden a fechas no disponibles, pasadas o días sin atención. | 2 | 2. Correspondencia entre el sistema y el mundo real. | Incorporar una leyenda que diferencie las fechas disponibles, no disponibles y pasadas mediante colores o indicadores. |
+| 4 | En la sección de citas, aparece el texto "string" en la información de la próxima cita y en el historial, evidenciando la visualización de un valor de prueba o no reemplazado. | 3 | 9. Ayudar a reconocer, diagnosticar y recuperarse de errores. | Reemplazar los valores no válidos por información real y establecer mensajes alternativos cuando un dato no esté disponible. |
+| 5 | En la sección de consultas, los botones "Escribir Consulta" y "Espera la asignación" presentan diferentes estados, pero no se explica qué debe hacer el usuario cuando el paciente todavía no tiene una enfermera asignada. | 2 | 10. Ayuda y documentación. | Incorporar una breve explicación sobre el proceso de asignación y cómo proceder para iniciar una consulta. |
+| 6 | En el inicio, el apartado de logros y nutrición aparece parcialmente visible, sin que se identifique claramente la información que contiene en la captura. | 2 | 8. Estética y diseño minimalista. | Mejorar la distribución y jerarquía visual de las tarjetas para que su contenido y finalidad sean fácilmente identificables. |
 
-<!-- COMPLETAR -->
+---
+
+#### 6.3.3.2. Evaluación heurística UX – FerovaClinic
+
+##### UX Heuristics & Principles Evaluation
+
+| Campo | Dato |
+|---|---|
+| Carrera | Ingeniería de Software |
+| Curso | Diseño de Experimentos de Ingeniería de Software |
+| Sección | 9082 |
+| Profesor | Juan Fernando Ysen Paiba |
+| Auditor | Vitaly Baca Camargo |
+| Fecha | 12/11/2026 |
+| Nombre de App | FerovaClinic |
+| Tareas evaluadas | Consultar agenda de citas, gestionar pacientes, asignar pacientes a la cartera, configurar tratamientos, registrar controles de hemoglobina, consultar historiales clínicos, gestionar consultas y administrar establecimientos de salud. |
+
+##### Escala de severidad
+
+| Nivel | Descripción |
+|---|---|
+| 1 | **Problema superficial:** Detalle visual o de presentación que no afecta el uso de la aplicación ni impide completar las tareas. |
+| 2 | **Problema menor:** Dificultad que puede generar confusión o incomodidad al usuario, pero que permite completar la tarea sin mayores inconvenientes. |
+| 3 | **Problema mayor:** Dificultad que afecta significativamente la experiencia de uso y puede retrasar o dificultar la realización de una tarea importante. |
+| 4 | **Problema catastrófico:** Error crítico que impide completar una tarea esencial o puede provocar consecuencias graves debido a información incorrecta o acciones equivocadas. |
+
+##### Hallazgos
+
+| # | Problema | Escala de severidad | Heurística / Principio violado | Recomendación |
+|---|---|---|---|---|
+| 1 | En la agenda de citas se muestra el texto "string" en los campos de próxima atención y hora programada, en lugar de presentar información válida. | 3 | 9. Ayudar a reconocer, diagnosticar y recuperarse de errores. | Validar los datos recibidos y evitar mostrar valores de prueba. Cuando no exista información, presentar un mensaje como "Sin horario registrado". |
+| 2 | Algunas interfaces presentan textos en inglés, como "CONFIRMED", "Assigned Personnel" y "Filter facilities", mientras que el resto de la aplicación utiliza español. | 2 | 4. Consistencia y estándares. | Unificar el idioma de todos los componentes, etiquetas, estados y mensajes de la aplicación. |
+| 3 | En la configuración del tratamiento se muestra una fecha de finalización correspondiente al año 2024, aunque el resto de las pantallas presenta información de noviembre de 2026. | 3 | 1. Visibilidad del estado del sistema. | Calcular automáticamente las fechas a partir de la fecha de inicio y duración del tratamiento, evitando mostrar fechas desactualizadas. |
+| 4 | En la pantalla de historial clínico se observa un valor de hemoglobina de 30 g/dL, que resulta incompatible con los valores habituales de referencia y podría generar una interpretación clínica incorrecta. | 4 | 5. Prevención de errores. | Implementar validaciones de rango, advertencias para valores atípicos y confirmación antes de guardar resultados clínicos. |
+| 5 | En el formulario de nuevo control se muestran datos demográficos y clínicos que parecen inconsistentes, como un paciente de 21 años dentro de un módulo de seguimiento pediátrico. | 3 | 5. Prevención de errores. | Validar la edad y los datos del paciente antes de permitir el registro de controles dentro del seguimiento pediátrico. |
+| 6 | En la pantalla de agenda de citas se presentan campos sin información válida, lo que dificulta identificar correctamente el horario de atención programado. | 2 | 1. Visibilidad del estado del sistema. | Mostrar información completa de la cita y utilizar indicadores como "Horario pendiente" cuando todavía no se haya registrado. |
+| 7 | En la pantalla de dar de alta pacientes, los botones de acción aparecen habilitados para pacientes que ya tienen el estado "Tratamiento Completo", sin explicar las consecuencias de ejecutar esta acción. | 2 | 5. Prevención de errores. | Incorporar una confirmación antes de dar de alta al paciente, indicando las consecuencias de retirarlo de la cartera activa. |
+| 8 | En el mapa de calor, los indicadores de riesgo se representan mediante colores, pero no se visualizan valores o porcentajes específicos de adherencia para cada sector sanitario. | 2 | 1. Visibilidad del estado del sistema. | Incorporar información detallada al seleccionar cada sector, incluyendo porcentaje de adherencia, cantidad de pacientes y nivel de riesgo. |
+| 9 | En el formulario de registro de una nueva posta se utiliza un procedimiento de cuatro pasos, pero no se identifican claramente los campos obligatorios mediante una explicación uniforme en todas las etapas. | 2 | 6. Reconocimiento antes que recuerdo. | Mantener etiquetas visibles, señalar todos los campos obligatorios y proporcionar indicaciones claras para completar cada etapa. |
+| 10 | En la configuración del tratamiento se presentan indicaciones de dosificación que podrían interpretarse como recomendaciones automáticas, sin que se visualice claramente su validación por el profesional de salud. | 3 | 5. Prevención de errores. | Diferenciar las referencias informativas de las indicaciones médicas y solicitar la validación del profesional antes de activar el tratamiento. |
+
+---
+
+#### 6.3.3.3. Resumen de resultados
+
+| Aplicación | Hallazgos identificados | Severidad máxima |
+|---|---:|---|
+| FerovaFamily (móvil) | 6 | 3 - Problema mayor |
+| FerovaClinic (web) | 10 | 4 - Problema catastrófico |
+| **Total** | **16** | **4 - Problema catastrófico** |
+
+#### 6.3.3.4. Observaciones generales
+
+La evaluación heurística permitió identificar oportunidades de mejora en ambas aplicaciones.
+
+En FerovaFamily, los principales problemas están relacionados con la presentación de información, consistencia de los datos y claridad de los estados de las citas y consultas.
+
+Por otro lado, en FerovaClinic se identificaron problemas relacionados con la visualización de información clínica, consistencia del idioma, validación de datos y claridad de los estados de los procesos administrativos y médicos.
+
 
 ## 6.4. Auditoría de Experiencias de Usuario
 
