@@ -133,11 +133,11 @@ Durante este avance del trabajo, se desarrollaron los siguientes puntos del repo
 
 ### Commits por integrante
 
-**Baca Camargo, Vitaly Arturo (`Mr-code-star`)**: 86 commits
-**Apaza Bocanegra, Elizabeth Noelia (`Elizabeth-Apaza`)**: 29 commits
-**Damián Pereira, Luis Alberto (`luisdamian8`)**: 6 commits
-**Peñaranda Caldas,Gabriel Augusto (`gapc2124`)**: 3 commits
-**Quijandria Araneda, Vicente (`vquijandria`)**: 
+**Baca Camargo, Vitaly Arturo (`Mr-code-star`)**: 86 commits<br>
+**Apaza Bocanegra, Elizabeth Noelia (`Elizabeth-Apaza`)**: 29 commits<br>
+**Damián Pereira, Luis Alberto (`luisdamian8`)**: 6 commits<br>
+**Peñaranda Caldas,Gabriel Augusto (`gapc2124`)**: 3 commits<br>
+**Quijandria Araneda, Vicente (`vquijandria`)**: 0 commits
 
 </div>
 
