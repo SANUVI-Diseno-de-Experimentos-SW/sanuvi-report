@@ -1,36 +1,180 @@
 # Capítulo VII: DevOps Practices
 
-> Este capítulo documenta el pipeline de DevOps implementado para los productos que forman parte de la plataforma **Ferova**. El pipeline es el soporte sobre el cual se ejecutan los experimentos descritos en el Capítulo VIII.
-
-<img src="../assets/img/chapter-VII/pipeline-overview.png" alt="Vista general del pipeline DevOps">
-
 ## 7.1. Continuous Integration
 
-### 7.1.1. Tools and Practices
+La integración continua (CI) de Ferova se implementó mediante GitHub Actions, configurando flujos de trabajo independientes para el backend y el frontend. Estos procesos permiten verificar automáticamente la compilación de cada aplicación cuando se realizan cambios en sus respectivos repositorios.
 
-> Herramientas seleccionadas (por ejemplo, GitHub Actions), justificación de la elección y prácticas adoptadas: trunk-based / GitFlow, protección de ramas, ejecución automática de pruebas en cada Pull Request, revisión obligatoria y política de merge.
+#### 7.1.1. Tools and Practices
+
+
+Para implementar la integración continua se seleccionaron herramientas que permiten automatizar la validación del código fuente y verificar la compilación de los componentes de FerovaClinic.
 
 | Herramienta | Propósito | Justificación |
-|-------------|-----------|---------------|
-| [Herramienta] | [Propósito] | [Justificación] |
+|---|---|---|
+| GitHub Actions | Automatizar los procesos de integración continua. | Permite ejecutar workflows directamente desde los repositorios de GitHub. |
+| .NET 9 SDK | Restaurar dependencias y compilar el backend. | Permite verificar la compilación de la solución ASP.NET Core. |
+| Node.js 24 | Proporcionar el entorno de ejecución del frontend. | Es necesario para gestionar las dependencias y ejecutar Angular CLI. |
+| npm | Gestionar las dependencias del frontend. | Permite instalar las dependencias de forma reproducible mediante npm ci. |
+| Angular CLI | Compilar la aplicación frontend. | Permite verificar la generación de los archivos de compilación de Angular. |
 
-<!-- COMPLETAR -->
+##### Prácticas adoptadas
+
+- **Automatización por eventos:** los workflows se ejecutan ante eventos `push` y `pull_request`.
+- **Separación de pipelines:** se implementó un workflow independiente para cada repositorio.
+- **Control de versiones:** los archivos de configuración se almacenan en la carpeta `.github/workflows`.
+- **Validación de compilación:** cada ejecución verifica que las aplicaciones puedan compilarse correctamente.
+- **Rama de trabajo:** se utilizó la rama `ci-pipeline` para incorporar y verificar las configuraciones de integración continua.
+
 
 ### 7.1.2. Build & Test Suite Pipeline Components
 
-> Componentes del pipeline de build y pruebas: triggers, jobs, steps, artefactos generados y criterios de fallo. Incluir el archivo de workflow y la evidencia de ejecución.
+Se implementaron dos pipelines independientes para automatizar la validación de compilación de Ferova. Cada pipeline contiene un job con diferentes pasos de configuración, instalación o restauración de dependencias y compilación.
+
+
+#### A. Backend CI Pipeline
+
+El pipeline del backend se configuró mediante el archivo `backend-ci.yml`, ubicado en `.github/workflows` del repositorio WebApplication1.
+
+##### Configuración del workflow
+
+El siguiente código define los eventos que activan el pipeline, el entorno de ejecución y los pasos necesarios para compilar la solución backend.
 
 ```yaml
-# .github/workflows/ci.yml
+name: Ferova Backend CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build Backend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 9
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore WebApplication1.sln
+
+      - name: Build solution
+        run: dotnet build WebApplication1.sln --configuration Release --no-restore
 ```
 
-<img src="../assets/img/chapter-VII/ci-run.png" alt="Ejecución del pipeline de CI">
+
+##### Componentes del pipeline
 
 | Componente | Descripción | Trigger | Resultado esperado |
-|------------|-------------|---------|--------------------|
-| [Job] | [Descripción] | [push / pull_request] | [Resultado] |
+|---|---|---|---|
+| Build Backend | Job encargado de compilar el backend. | push / pull_request | Compilación exitosa. |
+| Checkout repository | Descarga el código fuente. | Inicio del job | Repositorio disponible. |
+| Setup .NET 9 | Configura el entorno .NET 9. | Durante el job | SDK disponible. |
+| Restore dependencies | Restaura las dependencias de la solución. | Durante el job | Dependencias restauradas. |
+| Build solution | Compila la solución en configuración Release. | Durante el job | Compilación sin errores. |
 
-<!-- COMPLETAR -->
+
+##### Evidencias de ejecución del Backend CI
+
+**Figura 7.1. Configuración del workflow Backend CI.**
+
+
+**Figura 7.2. Workflow Backend CI registrado en GitHub Actions.**
+
+
+**Figura 7.3. Resultado de ejecución del pipeline Backend CI.**
+
+
+**Figura 7.4. Detalle de los pasos ejecutados en el Backend CI.**
+
+#### B. Frontend CI Pipeline
+
+El pipeline del frontend se configuró mediante el archivo `frontend-ci.yml`, ubicado en `.github/workflows` del repositorio ferova-clinic-web.
+
+##### Configuración del workflow
+
+El siguiente código establece los eventos que activan el pipeline, configura Node.js 24, instala las dependencias y ejecuta la compilación de la aplicación Angular.
+
+```yaml
+name: FerovaClinic Frontend CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build Frontend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Angular application
+        run: npm run build
+```
+
+##### Componentes del pipeline
+
+| Componente | Descripción | Trigger | Resultado esperado |
+|---|---|---|---|
+| Build Frontend | Job encargado de compilar el frontend. | push / pull_request | Compilación exitosa. |
+| Checkout repository | Descarga el código fuente. | Inicio del job | Repositorio disponible. |
+| Setup Node.js 24 | Configura el entorno Node.js. | Durante el job | Entorno disponible. |
+| Install dependencies | Instala las dependencias mediante npm ci. | Durante el job | Dependencias instaladas. |
+| Build Angular application | Ejecuta npm run build. | Durante el job | Aplicación Angular compilada. |
+
+##### Evidencias de ejecución del Frontend CI
+
+**Figura 7.5. Configuración del workflow Frontend CI.**
+
+
+**Figura 7.6. Workflows registrados en GitHub Actions del frontend.**
+
+
+**Figura 7.7. Resultado de ejecución del pipeline Frontend CI.**
+
+
+**Figura 7.8. Detalle de los pasos ejecutados en el Frontend CI.**
+
+
+##### C. Criterios de ejecución y fallo
+
+Los pipelines consideran los siguientes criterios para determinar el resultado de cada ejecución:
+
+| Criterio | Condición | Resultado |
+|---|---|---|
+| Restauración de dependencias del backend | `dotnet restore` finaliza correctamente. | Continúa la compilación. |
+| Compilación del backend | `dotnet build` termina sin errores. | Job exitoso. |
+| Instalación de dependencias del frontend | `npm ci` finaliza correctamente. | Continúa la compilación. |
+| Compilación del frontend | `npm run build` termina correctamente. | Job exitoso. |
+| Error durante la ejecución | Un comando termina con un código de salida distinto de cero. | Job fallido. |
+
+##### Resultado de la implementación
+
+La implementación de los pipelines de integración continua permitió automatizar la validación de compilación de los componentes backend y frontend de Ferova. Las ejecuciones realizadas en GitHub Actions finalizaron satisfactoriamente en la rama `ci-pipeline`, verificando que ambas aplicaciones pueden compilarse correctamente en sus respectivos entornos de ejecución.
+
 
 ## 7.2. Continuous Delivery
 
