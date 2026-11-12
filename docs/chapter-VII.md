@@ -265,8 +265,15 @@ Para el Frontend, Azure Static Web Apps utiliza el workflow `azure-static-web-ap
 
 **Figura 7.9. Configuración del servicio Backend en Railway.**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/Continuous Delivery/Configuración del servicio Backend en Railway.png" width=500>
+</div>
 
 **Figura 8.0. Configuración del workflow de despliegue del Frontend mediante Azure Static Web Apps.**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Continuous Delivery/Configuración del workflow de despliegue del Frontend mediante Azure Static Web Apps.png" width=500>
+</div>
 
 
 ##### 2. Deployment Environments & Triggers
@@ -300,14 +307,29 @@ El despliegue del Backend se realiza mediante Railway, utilizando Dockerfile com
 
 **Figura 8.1. Historial de despliegues del Backend en Railway.**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/Continuous Delivery/Historial de despliegues del Backend en Railway.png" width=500>
+</div>
+
 
 **Figura 8.2. Configuración del Dockerfile utilizado para construir el Backend.**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/Continuous Delivery/Configuración del Dockerfile utilizado para construir el Backend.png" width=500>
+</div>
 
 **Figura 8.3. Variables de entorno configuradas en Railway.**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/Continuous Delivery/Variables de entorno configuradas en Railway.png" width=500>
+</div>
+
 
 **Figura 8.4. Verificación de la API mediante Swagger UI.**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Continuous Delivery/Verificación de la API mediante Swagger UI.png" width=500>
+</div>
 
 
 ##### 4. Frontend Deployment Stage (Azure Static Web Apps)
@@ -328,17 +350,35 @@ El despliegue del Frontend se realiza mediante Azure Static Web Apps, plataforma
 
 **Figura 8.5. Recurso FerovaWeb configurado en Azure.**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/Continuous Delivery/Recurso FerovaWeb configurado en Azure.png" width=500>
+</div>
 
 **Figura 8.6. Integración del recurso Azure con GitHub.**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Continuous Delivery/Integración del recurso Azure con GitHub.png" width=500>
+</div>
 
 
 **Figura 8.7. Historial de implementaciones del Frontend.**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/Continuous Delivery/Historial de implementaciones del Frontend.png" width=500>
+</div>
 
 **Figura 8.8. Ejecución exitosa del workflow de despliegue.**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/Continuous Delivery/Ejecución exitosa del workflow de despliegue.png" width=500>
+</div>
+
 
 **Figura 8.9. Aplicación FerovaClinic publicada en producción.**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Continuous Delivery/Aplicación FerovaClinic publicada en producción.png" width=500>
+</div>
 
 
 ##### 5. Deployment Pipeline Summary
