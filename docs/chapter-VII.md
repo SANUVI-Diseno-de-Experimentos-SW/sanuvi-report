@@ -403,10 +403,38 @@ Las verificaciones realizadas confirmaron que el servicio Backend se encuentra O
 
 ## 7.3. Continuous Deployment
 
+El proceso de Continuous Deployment (Despliegue Continuo) de Ferova tiene como objetivo facilitar la publicación de nuevas versiones de los componentes de la plataforma en sus respectivos entornos de producción y distribución. Para ello, se utilizan servicios de alojamiento en la nube y herramientas de distribución que permiten poner las aplicaciones a disposición de sus usuarios.
+
+A diferencia de Continuous Delivery, documentado en la sección 7.2, esta etapa se centra en la publicación de las versiones construidas y en la disponibilidad de los componentes para su utilización.
+
+
 ### 7.3.1. Tools and Practices
 
-<!-- COMPLETAR -->
+**Herramientas (Tools)**
 
+- **GitHub Actions:** Plataforma de integración y automatización utilizada para ejecutar workflows asociados a los repositorios del proyecto. Permite gestionar procesos de construcción y despliegue del frontend y ejecutar tareas automatizadas durante el ciclo de desarrollo.
+
+- **Railway:** Plataforma de alojamiento en la nube utilizada para desplegar el Backend REST API de Ferova. Permite construir y ejecutar la aplicación mediante Dockerfile, administrar variables de entorno y mantener disponible el servicio mediante una URL pública.
+
+- **Azure Static Web Apps:** Servicio de alojamiento utilizado para publicar la aplicación web FerovaClinic. Se encuentra integrado con GitHub y utiliza un workflow de GitHub Actions para gestionar la construcción y publicación de los archivos de la aplicación Angular.
+
+- **Firebase App Distribution:** Servicio utilizado para distribuir versiones de prueba de la aplicación móvil FerovaFamily. Permite cargar el archivo APK y facilitar su acceso a los testers autorizados mediante invitaciones y enlaces de distribución.
+
+- **Docker:** Tecnología de contenedorización utilizada para empaquetar el Backend en una imagen reproducible, facilitando su ejecución en Railway.
+
+**Prácticas (Practices)**
+
+- **Despliegue de aplicaciones web:** Se utilizan plataformas de alojamiento independientes para publicar el Backend y el Frontend, permitiendo que cada componente tenga su propio proceso de despliegue.
+
+- **Integración con repositorios:** Los servicios de Railway y Azure se encuentran conectados a sus respectivos repositorios de GitHub para facilitar la actualización de las aplicaciones a partir de los cambios incorporados al código fuente.
+
+- **Gestión de variables de entorno:** Las credenciales y parámetros de configuración del Backend se administran mediante variables de entorno en Railway, evitando incorporarlos directamente al código fuente.
+
+- **Distribución de versiones móviles:** FerovaFamily utiliza Firebase App Distribution para compartir los APK de prueba con los testers autorizados y facilitar la validación de nuevas versiones.
+
+- **Verificación posterior al despliegue:** Se comprueba la disponibilidad del Backend mediante su API y Swagger UI, la accesibilidad del Frontend mediante su dirección pública y la correcta distribución del APK móvil.
+
+  
 ### 7.3.2. Production Deployment Pipeline Components
 
 > Despliegue automatizado a producción: estrategia de release (blue-green, canary, rolling), versionado, rollback y evidencia de ejecución.
