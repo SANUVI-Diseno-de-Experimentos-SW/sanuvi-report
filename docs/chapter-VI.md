@@ -1546,11 +1546,34 @@ A continuación, se presentan los resultados obtenidos mediante el análisis est
 
 *Figura 3. Incidencias identificadas en el backend.*
 
+---
+
+##### 3. Resultados del Análisis Frontend
+
+A continuación, se presentan los resultados obtenidos mediante el análisis estático del código fuente del frontend de FerovaClinic, desarrollado con Angular y TypeScript. La evaluación se realizó utilizando SonarQube Community Build, después de completar satisfactoriamente el proceso de compilación del proyecto.
+
+- **Code Quality (Calidad del Código):** El análisis permitió evaluar la mantenibilidad, confiabilidad y duplicación del código fuente, considerando aproximadamente 20 mil líneas de código. SonarQube identificó 420 incidencias relacionadas con la mantenibilidad, obteniendo una calificación de nivel A. Asimismo, se registró una densidad de duplicación del 0.2 %, equivalente a 41 líneas duplicadas, distribuidas en 2 bloques y 2 archivos. Este resultado evidencia un bajo nivel de repetición de código en el frontend.
+
+- **Code Security (Seguridad del Código):** El análisis no identificó incidencias abiertas relacionadas con la seguridad, obteniendo una calificación de nivel A y registrando 0 Security Hotspots. Sin embargo, este resultado debe interpretarse considerando las limitaciones de SonarQube Community Build, que no realiza un análisis completo de determinadas vulnerabilidades críticas, como inyecciones SQL y ataques XSS.
+
+- **Reliability (Confiabilidad):** Se identificaron 151 incidencias relacionadas con la confiabilidad del código, obteniendo una calificación de nivel D. Entre los hallazgos se encuentra una incidencia de severidad alta relacionada con la utilización de una función de comparación basada en `String.localeCompare` para garantizar el ordenamiento alfabético de los elementos. También se identificaron observaciones de severidad media relacionadas con el manejo de promesas asíncronas, incluyendo la necesidad de implementar mecanismos de captura de errores mediante `.catch()` o control equivalente.
+
+- **Maintainability (Mantenibilidad):** Se registraron 420 incidencias relacionadas con la mantenibilidad, obteniendo una calificación de nivel A. Entre los hallazgos se identificaron recomendaciones de accesibilidad en los componentes de interfaz, como la incorporación de atributos `id` y su asociación con etiquetas en los campos de entrada. Estas observaciones permiten identificar oportunidades de mejora en la organización, legibilidad y mantenimiento del código frontend.
+
+- **Overall Results (Resultados Generales):** El proyecto obtuvo el estado *Passed* en el Quality Gate de SonarQube. Asimismo, se registró una cobertura de pruebas del 0.0 %, debido a que no se proporcionó información de cobertura automatizada durante el análisis. El porcentaje de duplicación fue del 0.2 %, calculado sobre aproximadamente 25 mil líneas consideradas por la herramienta. En conjunto, los resultados permiten identificar oportunidades de mejora principalmente en la confiabilidad y mantenibilidad del código fuente.
+
+*Figura 1. Resumen general del análisis estático del frontend.*
+
+*Figura 2. Incidencia de severidad alta identificada en el frontend.*
+
+*Figura 3. Medición de duplicación del código frontend.*
+
+*Figura 4. Incidencias de severidad media del frontend.*
+
+*Figura 5. Evaluación de riesgos y deuda técnica del frontend.*
 
 
 ### 6.2.2. Reviews
-
-
 
 ## 6.3. Validation Interviews
 
