@@ -614,15 +614,51 @@ De esta manera, se dispone de mecanismos diferenciados para la publicación de l
 
 ## 7.4. Continuous Monitoring
 
+Esta sección documenta las herramientas y prácticas utilizadas para supervisar el funcionamiento de la plataforma Ferova después de cada despliegue. El monitoreo continuo permite verificar la disponibilidad de los servicios publicados, identificar errores durante la ejecución y realizar un seguimiento de las versiones distribuidas.
+
+En Ferova, el monitoreo comprende los siguientes componentes: el Backend REST API desplegado en Railway, la aplicación web FerovaClinic publicada mediante Azure Static Web Apps y la aplicación móvil FerovaFamily distribuida a través de Firebase App Distribution. Asimismo, GitHub Actions permite consultar el resultado de los procesos automatizados de integración y despliegue.
+
 ### 7.4.1. Tools and Practices
 
-> Herramientas de monitoreo, observabilidad y analítica de producto seleccionadas, y su relación con las métricas de negocio definidas en la sección 8.2.2.
+Para la etapa de *Continuous Monitoring* (Monitoreo Continuo) de Ferova, se utilizan herramientas que permiten supervisar la disponibilidad de los servicios desplegados, revisar los registros de ejecución y realizar el seguimiento de las versiones publicadas. Estas herramientas complementan las prácticas de integración, entrega y despliegue continuo documentadas en las secciones anteriores, facilitando la identificación de errores y la verificación del estado de los componentes de la plataforma.
+
+**Herramientas (Tools)**
+
+Las herramientas seleccionadas para el monitoreo de Ferova son las siguientes:
 
 | Herramienta | Tipo (APM / logs / analytics / uptime) | Producto monitoreado |
-|-------------|----------------------------------------|----------------------|
-| [Herramienta] | [Tipo] | [Producto] |
+|---|---|---|
+| Railway | Logs / Uptime | Backend REST API |
+| Azure Static Web Apps | Uptime / Deployment Monitoring | FerovaClinic (Frontend Web) |
+| GitHub Actions | Logs / Workflow Monitoring | Backend y Frontend |
+| Firebase App Distribution | Release Monitoring | FerovaFamily (Aplicación móvil) |
 
-<!-- COMPLETAR -->
+**Descripción de las herramientas**
+
+- **Railway:** Se utiliza para supervisar el estado del servicio Backend REST API. Permite consultar el historial de despliegues, revisar los registros de ejecución e identificar errores relacionados con el arranque de la aplicación o la configuración del servicio.
+
+- **Azure Static Web Apps:** Permite verificar la disponibilidad de FerovaClinic en producción y consultar el historial de implementaciones realizadas mediante la integración con GitHub Actions.
+
+- **GitHub Actions:** Permite supervisar las ejecuciones de los workflows de integración y despliegue continuo. Mediante sus registros se pueden identificar ejecuciones exitosas o fallidas, revisar los pasos ejecutados y relacionar los resultados con los commits correspondientes.
+
+- **Firebase App Distribution:** Se utiliza para distribuir versiones de FerovaFamily a testers autorizados. Permite realizar el seguimiento de las versiones distribuidas y facilitar la validación de nuevas compilaciones durante las pruebas móviles.
+
+**Prácticas (Practices)**
+
+- **Verificación posterior al despliegue:** Después de cada despliegue, se comprueba que el frontend y el backend se encuentren disponibles. También se verifica que la versión móvil distribuida pueda ser instalada y probada por los testers autorizados.
+
+- **Monitoreo de disponibilidad:** Se revisa que las URL públicas del frontend y del backend respondan correctamente, verificando el acceso a los servicios publicados.
+
+- **Revisión de logs:** Se consultan los registros de Railway y GitHub Actions para identificar errores de ejecución, problemas de configuración o fallos durante los procesos de despliegue.
+
+- **Seguimiento de implementaciones:** Se revisa el historial de despliegues de Azure Static Web Apps y Railway para mantener la trazabilidad de las versiones publicadas y sus respectivos resultados.
+
+- **Seguimiento de versiones móviles:** Se verifica la distribución de las versiones de FerovaFamily mediante Firebase App Distribution, asegurando que los testers autorizados puedan acceder a las compilaciones disponibles.
+
+- **Gestión de incidencias:** Cuando se identifica un error, se registra el componente afectado y se revisan los logs correspondientes para determinar su posible causa y aplicar las correcciones necesarias.
+
+- **Mejora continua:** Los resultados obtenidos durante el monitoreo se utilizan para corregir errores, ajustar las configuraciones y mejorar los procesos de integración, entrega y despliegue de la plataforma Ferova.
+
 
 ### 7.4.2. Monitoring Pipeline Components
 
