@@ -2,7 +2,7 @@
 
 ## 7.1. Continuous Integration
 
-La integración continua (CI) de Ferova se implementó mediante GitHub Actions, configurando flujos de trabajo independientes para el backend y el frontend. Estos procesos permiten verificar automáticamente la compilación de cada aplicación cuando se realizan cambios en sus respectivos repositorios.
+La integración continua (CI) de FerovaClinic se implementó mediante GitHub Actions, configurando flujos de trabajo independientes para el backend y el frontend. Estos procesos permiten verificar automáticamente la compilación de cada aplicación cuando se realizan cambios en sus respectivos repositorios.
 
 #### 7.1.1. Tools and Practices
 
@@ -246,7 +246,7 @@ Para implementar la entrega continua de Ferova se utilizaron las siguientes herr
 
 ### 7.2.2. Stages Deployment Pipeline Components
 
-El proceso de entrega continua de FerovaClinic está compuesto por dos flujos de despliegue independientes: uno para el Backend, alojado en Railway, y otro para el Frontend, publicado mediante Azure Static Web Apps. Ambos servicios se encuentran integrados con sus respectivos repositorios de GitHub, permitiendo gestionar la construcción y publicación de las aplicaciones en sus entornos de producción.
+El proceso de entrega continua de Ferova está compuesto por dos flujos de despliegue independientes: uno para el Backend, alojado en Railway, y otro para el Frontend, publicado mediante Azure Static Web Apps. Ambos servicios se encuentran integrados con sus respectivos repositorios de GitHub, permitiendo gestionar la construcción y publicación de las aplicaciones en sus entornos de producción.
 
 ##### 1. Pipeline Definition & Deployment Configuration
 
@@ -278,7 +278,7 @@ Para el Frontend, Azure Static Web Apps utiliza el workflow `azure-static-web-ap
 
 ##### 2. Deployment Environments & Triggers
 
-Los componentes de FerovaClinic cuentan con despliegues independientes en sus respectivas plataformas. La siguiente tabla resume los ambientes y mecanismos de entrega identificados.
+Los componentes de Ferova cuentan con despliegues independientes en sus respectivas plataformas. La siguiente tabla resume los ambientes y mecanismos de entrega identificados.
 
 | Ambiente | Servicio | Trigger | Aprobación requerida |
 |---|---|---|---|
