@@ -7,7 +7,7 @@ La integración continua (CI) de Ferova se implementó mediante GitHub Actions, 
 #### 7.1.1. Tools and Practices
 
 
-Para implementar la integración continua se seleccionaron herramientas que permiten automatizar la validación del código fuente y verificar la compilación de los componentes de FerovaClinic.
+Para implementar la integración continua se seleccionaron herramientas que permiten automatizar la validación del código fuente y verificar la compilación de los componentes de Ferova.
 
 | Herramienta | Propósito | Justificación |
 |---|---|---|
@@ -211,13 +211,40 @@ La implementación de los pipelines de integración continua permitió automatiz
 
 ## 7.2. Continuous Delivery
 
+La entrega continua (Continuous Delivery) de Ferova comprende los procesos utilizados para preparar, publicar y mantener disponibles sus componentes de software en entornos de producción. Para ello, se utilizan plataformas de despliegue independientes para el backend y el frontend, integradas con sus respectivos repositorios de GitHub.
+
+El backend se despliega mediante Railway, utilizando Dockerfile como mecanismo de construcción de la aplicación. Por otro lado, el frontend se publica mediante Azure Static Web Apps, plataforma que utiliza un workflow de GitHub Actions para gestionar su construcción y despliegue.
+
 ### 7.2.1. Tools and Practices
 
-<!-- COMPLETAR -->
+##### Herramientas (Tools)
+
+Para implementar la entrega continua de Ferova se utilizaron las siguientes herramientas:
+
+| Herramienta | Propósito | Justificación |
+|---|---|---|
+| GitHub | Gestionar los repositorios y versiones del código fuente. | Permite mantener el código del backend y frontend integrado con las plataformas de despliegue. |
+| Railway | Alojar y desplegar el backend de Ferova. | Proporciona infraestructura en la nube para ejecutar la API desarrollada con ASP.NET Core y .NET 9. |
+| Docker | Construir y empaquetar el backend mediante un contenedor. | Permite definir el entorno de construcción y ejecución de la aplicación mediante un Dockerfile. |
+| Azure Static Web Apps | Alojar y publicar el frontend. | Permite desplegar la aplicación web desarrollada con Angular y proporcionar una dirección pública de acceso. |
+| GitHub Actions | Automatizar el workflow de despliegue del frontend. | Facilita la ejecución de los procesos de construcción y publicación mediante la integración con Azure Static Web Apps. |
+
+##### Prácticas (Practices)
+
+
+- **Separación de componentes (Independent Deployment):** el backend y frontend cuentan con repositorios y plataformas de despliegue independientes, permitiendo gestionar la publicación de cada componente por separado.
+
+- **Construcción mediante contenedores (Containerized Build):** el backend utiliza un Dockerfile configurado en Railway para construir la aplicación antes de ejecutarla en la infraestructura de alojamiento.
+
+- **Integración con repositorios (GitHub Integration):** Railway y Azure Static Web Apps se encuentran vinculados con sus respectivos repositorios de GitHub, permitiendo gestionar las implementaciones a partir del código versionado.
+
+- **Gestión de variables de entorno (Environment Configuration):** Railway utiliza variables de entorno para configurar parámetros de ejecución del backend, incluyendo la conexión con MongoDB, autenticación JWT y el servicio de correo electrónico Resend.
+
+- **Verificación de despliegue (Deployment Verification):** se comprueba que los servicios publicados se encuentren disponibles mediante sus respectivas direcciones públicas. En el backend, se utiliza Swagger UI para consultar la API; en el frontend, se verifica el acceso a la aplicación Ferova.
+
+
 
 ### 7.2.2. Stages Deployment Pipeline Components
-
-> Etapas del pipeline hacia los ambientes intermedios (dev, test, staging), aprobaciones y gestión de configuración/secretos por ambiente.
 
 ```yaml
 # .github/workflows/cd-staging.yml
