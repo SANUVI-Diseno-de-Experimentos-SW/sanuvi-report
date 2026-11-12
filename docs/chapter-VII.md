@@ -822,13 +822,107 @@ De esta manera, los componentes del Monitoring Pipeline permiten mantener visibi
 
 ### 7.4.3. Alerting Pipeline Components
 
-> Reglas de alerta, umbrales, severidades y destinatarios.
+El pipeline de alertas de Ferova está compuesto por los mecanismos que permiten identificar problemas durante la ejecución de los servicios, los procesos de despliegue y las pruebas de las aplicaciones. Su objetivo es convertir los eventos detectados durante el monitoreo en incidencias que puedan ser revisadas y atendidas por el equipo de desarrollo.
 
-| Alerta | Condición / umbral | Severidad | Destinatario |
-|--------|--------------------|-----------|--------------|
-| [Alerta] | [Condición] | [Severidad] | [Rol] |
+Las alertas se identifican a partir de los resultados de GitHub Actions, los registros de Railway, el historial de implementaciones de Azure Static Web Apps y los reportes recibidos durante la distribución de FerovaFamily mediante Firebase App Distribution.
 
-<!-- COMPLETAR -->
+#### 1. Alert Sources
+
+Las alertas pueden originarse desde los principales servicios y herramientas utilizados en la plataforma Ferova:
+
+- **GitHub Actions:** permite identificar fallos durante la compilación y ejecución de los workflows del backend y frontend. Una ejecución con estado `failure` indica que alguno de los pasos del proceso requiere revisión.
+- **Railway:** permite detectar problemas relacionados con el estado del backend, errores durante el inicio del servicio y fallos registrados en los logs.
+- **Azure Static Web Apps:** permite identificar implementaciones fallidas y problemas relacionados con la publicación o disponibilidad de FerovaClinic.
+- **Firebase App Distribution:** permite recibir comentarios de los testers autorizados sobre errores o comportamientos inesperados en FerovaFamily.
+- **Backend REST API:** los errores en las solicitudes y respuestas de los endpoints pueden evidenciar problemas funcionales o técnicos que requieren atención.
+
+#### 2. Alert Rules Component
+
+El componente de reglas de alerta establece las condiciones que permiten identificar cuándo un evento debe tratarse como una incidencia y requiere una revisión por parte del equipo.
+
+| Regla | Condición | Tipo de alerta |
+|---|---|---|
+| Fallo del workflow | GitHub Actions termina una ejecución con estado `failure`. | Técnica |
+| Backend no disponible | El servicio en Railway presenta errores o no se encuentra activo. | Técnica |
+| Fallo de implementación del frontend | Azure Static Web Apps registra una implementación fallida. | Técnica |
+| Error de API | Los endpoints del backend presentan errores durante su utilización. | Técnica / funcional |
+| Error de configuración | Se detectan problemas relacionados con variables de entorno o conexiones del servicio. | Técnica |
+| Error móvil reportado | Un tester comunica un fallo durante las pruebas de FerovaFamily. | Técnica / funcional |
+
+Estas reglas funcionan como criterios para reconocer incidencias durante la supervisión de los componentes. Su identificación puede realizarse mediante los estados de las plataformas, sus registros y la revisión de los reportes recibidos.
+
+#### 3. Severity Classification Component
+
+Cada incidencia se clasifica según el impacto que puede generar sobre la disponibilidad de los servicios y el funcionamiento de las aplicaciones. Esta clasificación permite establecer prioridades para su atención.
+
+| Nivel de severidad | Descripción | Ejemplo |
+|---|---|---|
+| Crítica | Un servicio principal deja de estar disponible e impide utilizar una parte esencial de la plataforma. | El Backend REST API no responde y FerovaClinic no puede consultar información. |
+| Alta | Una funcionalidad principal presenta errores que afectan las operaciones de los usuarios. | El personal de salud no puede registrar controles de hemoglobina. |
+| Media | Una funcionalidad secundaria presenta errores, pero el resto de la aplicación continúa disponible. | Un reporte o indicador no se muestra correctamente. |
+| Baja | Se presenta un problema visual o menor que no impide utilizar las funcionalidades principales. | Un elemento de interfaz presenta una visualización incorrecta. |
+
+Esta clasificación permite priorizar las incidencias según su impacto y determinar cuáles requieren atención inmediata.
+
+#### 4. Alert Processing Component
+
+Cuando se identifica una alerta, el equipo realiza una revisión para determinar su origen, el componente afectado y las acciones necesarias para resolverla.
+
+El procesamiento de alertas de Ferova sigue el siguiente flujo:
+
+1. Se identifica el evento mediante GitHub Actions, Railway, Azure Static Web Apps o los reportes de Firebase App Distribution.
+2. Se determina el componente afectado: frontend, backend o aplicación móvil.
+3. Se revisan los logs, el historial de implementaciones y los resultados de los workflows.
+4. Se establece el nivel de severidad de la incidencia.
+5. Se identifica la posible causa del problema.
+6. Se asigna la corrección al integrante responsable.
+7. Se realiza el cambio correspondiente y se ejecutan las validaciones necesarias.
+8. Se comprueba nuevamente el funcionamiento del componente afectado.
+
+Este procedimiento permite atender las incidencias de manera ordenada y mantener la trazabilidad de las correcciones realizadas.
+
+#### 5. Escalation Component
+
+El componente de escalamiento establece las situaciones en las que una incidencia requiere mayor prioridad o una intervención adicional del equipo de desarrollo.
+
+Una incidencia debe escalarse cuando:
+
+- El backend continúa sin estar disponible después de una revisión o nuevo despliegue.
+- Una implementación del frontend presenta fallos que impiden acceder a FerovaClinic.
+- Un error en un endpoint afecta una operación principal de la plataforma.
+- Una versión de FerovaFamily presenta un error que impide completar una funcionalidad importante.
+- El mismo problema vuelve a presentarse después de aplicar una corrección.
+- Una incidencia afecta la integridad o disponibilidad de la información gestionada.
+
+Cuando una incidencia requiere escalamiento, el equipo revisa los cambios recientes, identifica la causa del problema, implementa una corrección y vuelve a validar el componente afectado antes de considerar resuelta la incidencia.
+
+#### 6. Technical Alert Examples
+
+A continuación, se presentan ejemplos de incidencias técnicas y funcionales que pueden identificarse durante el monitoreo de Ferova.
+
+| Evento | Alerta identificada | Acción |
+|---|---|---|
+| Fallo del workflow de backend | Error durante la compilación del backend. | Revisar los logs y corregir el código o las dependencias. |
+| Backend no disponible en Railway | Servicio REST API fuera de servicio. | Revisar el estado del servicio y sus registros de ejecución. |
+| Implementación fallida en Azure | FerovaClinic no se actualiza correctamente. | Revisar el workflow y la configuración de publicación. |
+| Error en un endpoint | Una operación de la API devuelve una respuesta inesperada. | Revisar el endpoint y realizar pruebas funcionales. |
+| Error reportado por un tester | Fallo durante el uso de FerovaFamily. | Reproducir el problema y corregir la funcionalidad afectada. |
+
+#### 7. Alerting Pipeline Summary
+
+El pipeline de alertas de Ferova puede resumirse de la siguiente manera:
+
+1. Se produce un evento durante la ejecución o utilización de uno de los componentes de la plataforma.
+2. Las herramientas de monitoreo permiten identificar el problema.
+3. Se determina el tipo y nivel de severidad de la incidencia.
+4. El equipo revisa los registros y resultados relacionados.
+5. Se identifica el componente afectado y la posible causa.
+6. Se define y aplica la corrección correspondiente.
+7. Se ejecutan nuevamente las validaciones de integración y despliegue cuando corresponda.
+8. Se verifica que el componente funcione correctamente y se da por resuelta la incidencia.
+
+De esta manera, los componentes del Alerting Pipeline permiten que Ferova transforme los problemas identificados durante el monitoreo en incidencias que puedan ser analizadas y corregidas, contribuyendo a mantener la disponibilidad y estabilidad de FerovaClinic, el Backend REST API y FerovaFamily.
+
 
 ### 7.4.4. Notification Pipeline Components
 
