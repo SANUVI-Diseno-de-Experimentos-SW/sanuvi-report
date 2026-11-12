@@ -298,16 +298,16 @@ El despliegue del Backend se realiza mediante Railway, utilizando Dockerfile com
 
 5. **Deployment Verification:** se verifica que el servicio se encuentre Online y que la API REST esté disponible mediante Swagger UI.
 
-**Figura 7.X. Historial de despliegues del Backend en Railway.**
+**Figura 8.1. Historial de despliegues del Backend en Railway.**
 
 
-**Figura 7.X. Configuración del Dockerfile utilizado para construir el Backend.**
+**Figura 8.2. Configuración del Dockerfile utilizado para construir el Backend.**
 
 
-**Figura 7.X. Variables de entorno configuradas en Railway.**
+**Figura 8.3. Variables de entorno configuradas en Railway.**
 
 
-**Figura 7.X. Verificación de la API mediante Swagger UI.**
+**Figura 8.4. Verificación de la API mediante Swagger UI.**
 
 
 ##### 4. Frontend Deployment Stage (Azure Static Web Apps)
@@ -326,19 +326,19 @@ El despliegue del Frontend se realiza mediante Azure Static Web Apps, plataforma
 
 5. **Deployment Verification:** se verifica el resultado de la ejecución del workflow y la disponibilidad de la aplicación FerovaClinic desde el navegador.
 
-**Figura 7.X. Recurso FerovaWeb configurado en Azure.**
+**Figura 8.5. Recurso FerovaWeb configurado en Azure.**
 
 
-**Figura 7.X. Integración del recurso Azure con GitHub.**
+**Figura 8.6. Integración del recurso Azure con GitHub.**
 
 
-**Figura 7.X. Historial de implementaciones del Frontend.**
+**Figura 8.7. Historial de implementaciones del Frontend.**
 
 
-**Figura 7.X. Ejecución exitosa del workflow de despliegue.**
+**Figura 8.8. Ejecución exitosa del workflow de despliegue.**
 
 
-**Figura 7.X. Aplicación FerovaClinic publicada en producción.**
+**Figura 8.9. Aplicación FerovaClinic publicada en producción.**
 
 
 ##### 5. Deployment Pipeline Summary
