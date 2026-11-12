@@ -1412,26 +1412,71 @@ La gestión del código fuente se realiza mediante Git y GitHub, permitiendo man
 
 #### 6.2.1.2. Code Quality & Code Security
 
-> Resultados del análisis estático (por ejemplo, SonarQube / SonarCloud, CodeQL): bugs, code smells, vulnerabilidades, cobertura y duplicación.
+Se realizó el análisis estático del código fuente del backend de FerovaClinic mediante SonarQube Community Build, utilizando SonarScanner for .NET. El análisis procesó 344 archivos y permitió evaluar diferentes aspectos relacionados con la calidad, mantenibilidad, confiabilidad y seguridad del código.
 
-<img src="../assets/img/chapter-VI/static-analysis.png" alt="Reporte de análisis estático">
+Como resultado, el proyecto obtuvo un **Quality Gate: Passed**, cumpliendo las condiciones establecidas para su aprobación. En cuanto a las métricas generales, se identificaron 11 incidencias de seguridad, 11 incidencias de confiabilidad y 391 incidencias de mantenibilidad (Code Smells), obteniendo calificaciones C, D y A, respectivamente. Asimismo, se registró un porcentaje de duplicación de código del 3.4% y una cobertura de pruebas del 0.0%.
 
-| Métrica | Valor | Umbral definido |
-|---------|-------|-----------------|
-| Bugs | | |
-| Vulnerabilities | | |
-| Security Hotspots | | |
-| Code Smells | | |
-| Coverage | | |
-| Duplications | | |
+Estos resultados permitieron identificar oportunidades de mejora en el código fuente y evaluar su estado de calidad mediante reglas automatizadas. Cabe señalar que la cobertura de pruebas no fue reportada en este análisis y que la edición utilizada presenta limitaciones en el análisis de seguridad avanzado.
 
-<!-- COMPLETAR -->
+##### 1. Configuration of Static Code Analysis Environment
+
+**Paso 1. Creación del proyecto local en SonarQube**
+
+
+
+Se accedió a SonarQube y se seleccionó la opción Create a local project para registrar el backend de Ferova. Se estableció ferovaclinic-backend como nombre del proyecto y como clave de identificación, mientras que la rama principal se configuró como main.
+
+**Paso 2. Selección del método de análisis**
+
+
+Se seleccionó la creación de un proyecto local, ya que el análisis se realizaría directamente desde el entorno de desarrollo. Este método permitió analizar el código fuente almacenado en el equipo sin necesidad de configurar una integración con GitHub u otra plataforma DevOps.
+
+**Paso 3. Configuración del proyecto y generación del token**
+
+
+Una vez creado el proyecto, SonarQube solicitó generar un token de acceso asociado a ferovaclinic-backend. Este token permite autenticar las solicitudes del analizador y autorizar el envío de los resultados al servidor SonarQube.
+
+**Paso 4. Selección de la tecnología del proyecto**
+
+
+En la configuración del análisis se seleccionó la tecnología .NET, correspondiente al backend desarrollado con C# y ASP.NET Core. Posteriormente, se identificó el framework utilizado como .NET Core, lo que permitió obtener las instrucciones específicas para ejecutar SonarScanner en el proyecto.
+
+**Paso 5. Instalación y configuración de SonarScanner**
+
+
+
+Se verificó la instalación global de SonarScanner para .NET mediante la herramienta de línea de comandos de .NET. Esta herramienta permite establecer la conexión entre el proyecto backend y el servidor SonarQube para realizar el análisis estático del código fuente.
+
+
+**Paso 6. Configuración de las credenciales de análisis**
+
+Se configuró el token de autenticación mediante una variable de entorno de la terminal. De esta manera, se evitó escribir directamente las credenciales en los comandos de ejecución y se preparó el entorno para iniciar el análisis del proyecto.
+
+**Paso 7. Inicio del análisis estático**
+
+Se ejecutó el comando dotnet sonarscanner begin, indicando la clave del proyecto ferovaclinic-backend, la dirección local del servidor SonarQube (http://localhost:9000) y el token de autenticación. Este comando inició el proceso de análisis y preparó los componentes necesarios para recopilar información del código fuente durante la compilación.
+
+**Paso 8. Compilación del backend**
+
+Se ejecutó el comando dotnet build sobre la solución WebApplication1.sln para compilar el backend durante el proceso de análisis. La compilación finalizó correctamente, aunque se identificaron 411 advertencias. Estos resultados fueron recopilados por SonarScanner para su posterior procesamiento.
+
+**Paso 9. Finalización y envío del análisis**
+
+Se ejecutó el comando dotnet sonarscanner end para finalizar el análisis y enviar los resultados recopilados al servidor SonarQube. En la consola se mostró el mensaje ANALYSIS SUCCESSFUL, confirmando que el informe fue procesado y enviado correctamente.
+
+**Paso 10. Acceso al proyecto analizado**
+
+Finalmente, se accedió al proyecto ferovaclinic-backend desde la interfaz web de SonarQube para consultar los resultados del análisis estático. Esta etapa permite revisar los indicadores de calidad, los problemas detectados y las posibles vulnerabilidades identificadas en el código fuente.
+
+---
+
+##### 2. Resultados del Análisis Backend
+
+
 
 ### 6.2.2. Reviews
 
-> Evidencia de revisiones de código (Pull Requests con comentarios, checklist de revisión y acuerdos del equipo).
 
-<!-- COMPLETAR -->
 
 ## 6.3. Validation Interviews
 
