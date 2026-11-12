@@ -459,9 +459,25 @@ El Backend de Ferova está desarrollado con ASP.NET Core y se encuentra alojado 
 
 **Figura 9.0. Servicio Backend desplegado en Railway.**
 
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Servicio Backend desplegado en Railway.png" width=500>
+</div>
+
+
 **Figura 9.1. Historial de despliegues del Backend en Railway.**
 
+
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Historial de despliegues del Backend en Railway.png" width=500>
+</div>
+
+
 **Figura 9.2. API REST de FerovaClinic disponible mediante Swagger UI.**
+
+
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/API REST de FerovaClinic disponible mediante Swagger UI.png" width=500>
+</div>
 
 ##### 2. Frontend Production Deployment Stage
 
@@ -481,14 +497,33 @@ La aplicación web FerovaClinic está desarrollada con Angular y se encuentra pu
 
 **Figura 9.3. Recurso FerovaWeb configurado en Azure.**
 
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Recurso FerovaWeb configurado en Azure.png" width=500>
+</div>
+
 **Figura 9.4. Integración del recurso Azure con GitHub.**
+
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Integración del recurso Azure con GitHub.png" width=500>
+</div>
 
 **Figura 9.5. Historial de implementaciones del Frontend.**
 
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Historial de implementaciones del Frontend.png" width=500>
+</div>
+
 **Figura 9.6. Ejecución exitosa del workflow de despliegue.**
+
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Ejecución exitosa del workflow de despliegue.png" width=500>
+</div>
 
 **Figura 9.7. Aplicación FerovaClinic publicada en producción.**
 
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Aplicación FerovaClinic publicada en producción.png" width=500>
+</div>
 
 #####  3. Mobile Release Distribution Stage – FerovaFamily
 
@@ -508,11 +543,29 @@ La aplicación móvil FerovaFamily está desarrollada con Flutter y utiliza Fire
 
 **Figura 9.8. Proyecto FerovaFamily configurado en Firebase.**
 
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Proyecto FerovaFamily configurado en Firebase.png" width=500>
+</div>
+
 **Figura 9.9. Versión APK de FerovaFamily registrada en Firebase App Distribution.**
+
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Versión APK de FerovaFamily registrada en Firebase App Distribution.png" width=500>
+</div>
 
 **Figura 10.1. Distribución de FerovaFamily a los testers autorizados.**
 
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Distribución de FerovaFamily a los testers autorizados.png" width=500>
+</div>
+
 **Figura 10.2. Aplicación FerovaFamily instalada en un dispositivo Android.**
+
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Aplicación FerovaFamily instalada en un dispositivo Android.jpg" width=200>
+</div>
+
+
 
 ##### 4. Post-Deployment Verification Stage
 
