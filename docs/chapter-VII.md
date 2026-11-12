@@ -246,16 +246,120 @@ Para implementar la entrega continua de Ferova se utilizaron las siguientes herr
 
 ### 7.2.2. Stages Deployment Pipeline Components
 
-```yaml
-# .github/workflows/cd-staging.yml
-```
+El proceso de entrega continua de FerovaClinic está compuesto por dos flujos de despliegue independientes: uno para el Backend, alojado en Railway, y otro para el Frontend, publicado mediante Azure Static Web Apps. Ambos servicios se encuentran integrados con sus respectivos repositorios de GitHub, permitiendo gestionar la construcción y publicación de las aplicaciones en sus entornos de producción.
+
+##### 1. Pipeline Definition & Deployment Configuration
+
+La configuración de entrega continua se realiza mediante las plataformas Railway y Azure Static Web Apps, las cuales se encuentran conectadas a los repositorios de GitHub de cada componente.
+
+Para el Backend, Railway utiliza un archivo `Dockerfile` ubicado en la raíz del repositorio `WebApplication1`, mediante el cual construye la aplicación ASP.NET Core antes de ejecutarla en producción.
+
+Para el Frontend, Azure Static Web Apps utiliza el workflow `azure-static-web-apps-proud-wave-064ec0610.yml`, asociado al repositorio `ferova-clinic-web` y a la rama `main`.
+
+**Configuraciones utilizadas:**
+
+| Componente | Archivo de configuración | Plataforma |
+|---|---|---|
+| Backend | `Dockerfile` | Railway |
+| Frontend | `azure-static-web-apps-proud-wave-064ec0610.yml` | Azure Static Web Apps |
+
+**Figura 7.X. Configuración del servicio Backend en Railway.**
+
+
+**Figura 7.X. Configuración del workflow de despliegue del Frontend.**
+
+
+##### 2. Deployment Environments & Triggers
+
+Los componentes de FerovaClinic cuentan con despliegues independientes en sus respectivas plataformas. La siguiente tabla resume los ambientes y mecanismos de entrega identificados.
 
 | Ambiente | Servicio | Trigger | Aprobación requerida |
-|----------|----------|---------|----------------------|
-| Development | | | |
-| Staging | | | |
+|---|---|---|---|
+| Production | Backend - Railway (`WebApplication1`) | Actualización del repositorio conectado a GitHub. | No se evidencia aprobación manual. |
+| Production | Frontend - Azure Static Web Apps (`FerovaWeb`) | Ejecución del workflow de GitHub Actions. | No se evidencia aprobación manual. |
 
-<!-- COMPLETAR -->
+El backend se encuentra desplegado en el entorno `production` de Railway. Por su parte, el frontend utiliza el recurso `FerovaWeb` de Azure Static Web Apps, configurado con la rama `main` como origen del código.
+
+No se consideran ambientes Development o Staging dentro de esta configuración de entrega, debido a que las evidencias disponibles corresponden a los servicios publicados en producción.
+
+##### 3. Backend Deployment Stage (Railway)
+
+El despliegue del Backend se realiza mediante Railway, utilizando Dockerfile como mecanismo de construcción de la aplicación.
+
+**Etapas del proceso:**
+
+1. **Repository Integration:** el código fuente del backend se encuentra alojado en GitHub y conectado al servicio `WebApplication1` de Railway.
+
+2. **Docker Build:** Railway utiliza el Dockerfile del repositorio para construir la imagen de la aplicación y preparar el entorno de ejecución.
+
+3. **Environment Configuration:** se utilizan variables de entorno para configurar parámetros necesarios para el funcionamiento del backend, incluyendo JWT, MongoDB y el servicio de correo electrónico Resend.
+
+4. **Production Deployment:** Railway ejecuta la aplicación construida dentro del entorno `production` y proporciona una dirección pública para acceder al servicio.
+
+5. **Deployment Verification:** se verifica que el servicio se encuentre Online y que la API REST esté disponible mediante Swagger UI.
+
+**Figura 7.X. Historial de despliegues del Backend en Railway.**
+
+
+**Figura 7.X. Configuración del Dockerfile utilizado para construir el Backend.**
+
+
+**Figura 7.X. Variables de entorno configuradas en Railway.**
+
+
+**Figura 7.X. Verificación de la API mediante Swagger UI.**
+
+
+##### 4. Frontend Deployment Stage (Azure Static Web Apps)
+
+El despliegue del Frontend se realiza mediante Azure Static Web Apps, plataforma integrada con GitHub Actions para automatizar la construcción y publicación de la aplicación Angular.
+
+**Etapas del proceso:**
+
+1. **Repository Integration:** el recurso `FerovaWeb` se encuentra conectado al repositorio de GitHub del frontend, utilizando la rama `main` como origen del código.
+
+2. **Workflow Execution:** Azure utiliza el archivo `azure-static-web-apps-proud-wave-064ec0610.yml` para ejecutar el proceso de construcción y despliegue.
+
+3. **Application Build:** el workflow ejecuta la acción de despliegue de Azure Static Web Apps, que procesa la aplicación y sus archivos de salida.
+
+4. **Production Deployment:** los archivos generados se publican mediante Azure Static Web Apps, proporcionando una dirección web pública.
+
+5. **Deployment Verification:** se verifica el resultado de la ejecución del workflow y la disponibilidad de la aplicación FerovaClinic desde el navegador.
+
+**Figura 7.X. Recurso FerovaWeb configurado en Azure.**
+
+
+**Figura 7.X. Integración del recurso Azure con GitHub.**
+
+
+**Figura 7.X. Historial de implementaciones del Frontend.**
+
+
+**Figura 7.X. Ejecución exitosa del workflow de despliegue.**
+
+
+**Figura 7.X. Aplicación FerovaClinic publicada en producción.**
+
+
+##### 5. Deployment Pipeline Summary
+
+La siguiente tabla resume las etapas y resultados del proceso de entrega continua implementado para los componentes de FerovaClinic.
+
+| Componente | Etapa | Herramienta | Resultado esperado |
+|---|---|---|---|
+| Backend | Integración del repositorio | GitHub | Código fuente disponible. |
+| Backend | Construcción de la aplicación | Dockerfile / Railway | Imagen de aplicación construida. |
+| Backend | Despliegue | Railway | Servicio disponible en producción. |
+| Backend | Verificación | Swagger UI | API REST accesible. |
+| Frontend | Integración del repositorio | GitHub | Código fuente disponible. |
+| Frontend | Construcción y publicación | Azure Static Web Apps | Aplicación publicada. |
+| Frontend | Verificación | Navegador web | Aplicación accesible. |
+
+##### Resultado de la implementación
+
+La implementación de los procesos de Continuous Delivery permitió publicar los componentes de FerovaClinic en plataformas de alojamiento independientes. El Backend se encuentra desplegado en Railway mediante una construcción basada en Dockerfile, mientras que el Frontend se publica mediante Azure Static Web Apps utilizando la integración con GitHub Actions.
+
+Las verificaciones realizadas confirmaron que el servicio Backend se encuentra Online y que la API está disponible mediante Swagger UI. Asimismo, el Frontend cuenta con una ejecución exitosa de despliegue y se encuentra accesible mediante su dirección pública en Azure.
 
 ## 7.3. Continuous Deployment
 
