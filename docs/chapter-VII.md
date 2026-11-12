@@ -579,9 +579,23 @@ Las verificaciones consideradas son las siguientes:
 
 **Figura 10.3. Verificación de disponibilidad del Backend.**
 
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Verificación de disponibilidad del Backend.png" width=500>
+</div>
+
+
 **Figura 10.4. Verificación de FerovaClinic en producción.**
 
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Verificación de FerovaClinic en producción.png" width=500>
+</div>
+
+
 **Figura 10.5. Verificación de instalación de FerovaFamily en Android.**
+
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Verificación de instalación de FerovaFamily en Android.jpeg" width=200>
+</div>
 
 ##### Resumen del proceso de despliegue
 
