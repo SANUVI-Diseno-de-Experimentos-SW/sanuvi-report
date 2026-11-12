@@ -1562,13 +1562,33 @@ A continuación, se presentan los resultados obtenidos mediante el análisis est
 
 - **Overall Results (Resultados Generales):** El proyecto obtuvo el estado *Passed* en el Quality Gate de SonarQube. Asimismo, se registró una cobertura de pruebas del 0.0 %, debido a que no se proporcionó información de cobertura automatizada durante el análisis. El porcentaje de duplicación fue del 0.2 %, calculado sobre aproximadamente 25 mil líneas consideradas por la herramienta. En conjunto, los resultados permiten identificar oportunidades de mejora principalmente en la confiabilidad y mantenibilidad del código fuente.
 
+<div align="center">
+    <img src="../assets/img/chapter-VI/Frontend-Analytics/31.png" width=500>
+</div>
+
 *Figura 1. Resumen general del análisis estático del frontend.*
+
+<div align="center">
+    <img src="../assets/img/chapter-VI/Frontend-Analytics/32.png" width=500>
+</div>
 
 *Figura 2. Incidencia de severidad alta identificada en el frontend.*
 
+<div align="center">
+    <img src="../assets/img/chapter-VI/Frontend-Analytics/33.png" width=500>
+</div>
+
 *Figura 3. Medición de duplicación del código frontend.*
 
+<div align="center">
+    <img src="../assets/img/chapter-VI/Frontend-Analytics/35.png" width=500>
+</div>
+
 *Figura 4. Incidencias de severidad media del frontend.*
+
+<div align="center">
+    <img src="../assets/img/chapter-VI/Frontend-Analytics/34.png" width=500>
+</div>
 
 *Figura 5. Evaluación de riesgos y deuda técnica del frontend.*
 
