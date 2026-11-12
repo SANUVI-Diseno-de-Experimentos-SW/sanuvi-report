@@ -403,21 +403,214 @@ Las verificaciones realizadas confirmaron que el servicio Backend se encuentra O
 
 ## 7.3. Continuous Deployment
 
+El proceso de Continuous Deployment (Despliegue Continuo) de Ferova tiene como objetivo facilitar la publicación de nuevas versiones de los componentes de la plataforma en sus respectivos entornos de producción y distribución. Para ello, se utilizan servicios de alojamiento en la nube y herramientas de distribución que permiten poner las aplicaciones a disposición de sus usuarios.
+
+A diferencia de Continuous Delivery, documentado en la sección 7.2, esta etapa se centra en la publicación de las versiones construidas y en la disponibilidad de los componentes para su utilización.
+
+
 ### 7.3.1. Tools and Practices
 
-<!-- COMPLETAR -->
+**Herramientas (Tools)**
 
+- **GitHub Actions:** Plataforma de integración y automatización utilizada para ejecutar workflows asociados a los repositorios del proyecto. Permite gestionar procesos de construcción y despliegue del frontend y ejecutar tareas automatizadas durante el ciclo de desarrollo.
+
+- **Railway:** Plataforma de alojamiento en la nube utilizada para desplegar el Backend REST API de Ferova. Permite construir y ejecutar la aplicación mediante Dockerfile, administrar variables de entorno y mantener disponible el servicio mediante una URL pública.
+
+- **Azure Static Web Apps:** Servicio de alojamiento utilizado para publicar la aplicación web FerovaClinic. Se encuentra integrado con GitHub y utiliza un workflow de GitHub Actions para gestionar la construcción y publicación de los archivos de la aplicación Angular.
+
+- **Firebase App Distribution:** Servicio utilizado para distribuir versiones de prueba de la aplicación móvil FerovaFamily. Permite cargar el archivo APK y facilitar su acceso a los testers autorizados mediante invitaciones y enlaces de distribución.
+
+- **Docker:** Tecnología de contenedorización utilizada para empaquetar el Backend en una imagen reproducible, facilitando su ejecución en Railway.
+
+**Prácticas (Practices)**
+
+- **Despliegue de aplicaciones web:** Se utilizan plataformas de alojamiento independientes para publicar el Backend y el Frontend, permitiendo que cada componente tenga su propio proceso de despliegue.
+
+- **Integración con repositorios:** Los servicios de Railway y Azure se encuentran conectados a sus respectivos repositorios de GitHub para facilitar la actualización de las aplicaciones a partir de los cambios incorporados al código fuente.
+
+- **Gestión de variables de entorno:** Las credenciales y parámetros de configuración del Backend se administran mediante variables de entorno en Railway, evitando incorporarlos directamente al código fuente.
+
+- **Distribución de versiones móviles:** FerovaFamily utiliza Firebase App Distribution para compartir los APK de prueba con los testers autorizados y facilitar la validación de nuevas versiones.
+
+- **Verificación posterior al despliegue:** Se comprueba la disponibilidad del Backend mediante su API y Swagger UI, la accesibilidad del Frontend mediante su dirección pública y la correcta distribución del APK móvil.
+
+  
 ### 7.3.2. Production Deployment Pipeline Components
 
-> Despliegue automatizado a producción: estrategia de release (blue-green, canary, rolling), versionado, rollback y evidencia de ejecución.
+El proceso de despliegue de Ferova comprende tres componentes principales: el Backend REST API, la aplicación web FerovaClinic y la aplicación móvil FerovaFamily. Cada componente utiliza una plataforma de publicación acorde con sus características tecnológicas.
 
-```yaml
-# .github/workflows/cd-production.yml
-```
+A continuación, se describen las etapas correspondientes a cada proceso de despliegue.
 
-<img src="../assets/img/chapter-VII/cd-production-run.png" alt="Despliegue a producción">
+#####  1. Backend Production Deployment Stage
 
-<!-- COMPLETAR -->
+El Backend de Ferova está desarrollado con ASP.NET Core y se encuentra alojado en Railway. La plataforma utiliza el archivo `Dockerfile` del repositorio para construir la imagen de la aplicación y ejecutar el servicio en el entorno de producción.
+
+**Etapas del proceso:**
+
+1. **Repository Integration:** el repositorio `WebApplication1` se encuentra conectado al servicio Backend de Railway mediante la integración con GitHub.
+
+2. **Docker Image Build:** Railway utiliza el archivo `Dockerfile` para construir la imagen que contiene la aplicación y sus dependencias necesarias para la ejecución.
+
+3. **Environment Configuration:** se administran las variables de entorno requeridas para el funcionamiento del servicio, incluyendo parámetros de autenticación, conexión a MongoDB y configuración del servicio de correo electrónico Resend.
+
+4. **Production Deployment:** Railway ejecuta la imagen construida y publica el Backend en su entorno de producción, proporcionando una dirección URL de acceso.
+
+5. **Deployment Verification:** se verifica el estado del servicio y la disponibilidad de los endpoints mediante Swagger UI.
+
+**Figura 9.0. Servicio Backend desplegado en Railway.**
+
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Servicio Backend desplegado en Railway.png" width=500>
+</div>
+
+
+**Figura 9.1. Historial de despliegues del Backend en Railway.**
+
+
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Historial de despliegues del Backend en Railway.png" width=500>
+</div>
+
+
+**Figura 9.2. API REST de FerovaClinic disponible mediante Swagger UI.**
+
+
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/API REST de FerovaClinic disponible mediante Swagger UI.png" width=500>
+</div>
+
+##### 2. Frontend Production Deployment Stage
+
+La aplicación web FerovaClinic está desarrollada con Angular y se encuentra publicada mediante Azure Static Web Apps. La integración con GitHub Actions permite ejecutar el workflow encargado de construir y desplegar la aplicación.
+
+**Etapas del proceso:**
+
+1. **Repository Integration:** el recurso `FerovaWeb` de Azure Static Web Apps se encuentra conectado al repositorio GitHub del frontend, utilizando la rama `main` como origen del código.
+
+2. **Workflow Execution:** GitHub Actions ejecuta el archivo `azure-static-web-apps-proud-wave-064ec0610.yml`, encargado de gestionar el proceso de publicación.
+
+3. **Application Build:** se procesan los archivos del proyecto Angular para generar los recursos estáticos necesarios para su publicación.
+
+4. **Production Deployment:** Azure Static Web Apps publica los archivos generados y proporciona una dirección URL pública para acceder a FerovaClinic.
+
+5. **Deployment Verification:** se comprueba el resultado de la ejecución del workflow y se accede a la aplicación desde el navegador para verificar su disponibilidad.
+
+**Figura 9.3. Recurso FerovaWeb configurado en Azure.**
+
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Recurso FerovaWeb configurado en Azure.png" width=500>
+</div>
+
+**Figura 9.4. Integración del recurso Azure con GitHub.**
+
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Integración del recurso Azure con GitHub.png" width=500>
+</div>
+
+**Figura 9.5. Historial de implementaciones del Frontend.**
+
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Historial de implementaciones del Frontend.png" width=500>
+</div>
+
+**Figura 9.6. Ejecución exitosa del workflow de despliegue.**
+
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Ejecución exitosa del workflow de despliegue.png" width=500>
+</div>
+
+**Figura 9.7. Aplicación FerovaClinic publicada en producción.**
+
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Aplicación FerovaClinic publicada en producción.png" width=500>
+</div>
+
+#####  3. Mobile Release Distribution Stage – FerovaFamily
+
+La aplicación móvil FerovaFamily está desarrollada con Flutter y utiliza Firebase App Distribution como plataforma para distribuir versiones de prueba en formato APK. Este servicio facilita la entrega de nuevas versiones a los testers autorizados, permitiendo validar la aplicación antes de su publicación definitiva.
+
+**Etapas del proceso:**
+
+1. **Application Build:** se genera el archivo APK de FerovaFamily mediante el proceso de compilación de Flutter, utilizando la configuración correspondiente para obtener una versión de distribución.
+
+2. **APK Preparation:** se prepara el archivo APK generado para su distribución, verificando que corresponda a la versión que se desea entregar a los testers.
+
+3. **Firebase App Distribution:** se carga el APK en Firebase App Distribution, donde se registra la versión y se configura su disponibilidad para los testers autorizados.
+
+4. **Tester Notification:** Firebase facilita la distribución de la versión mediante invitaciones y notificaciones a los testers registrados.
+
+5. **Installation and Verification:** los testers pueden acceder al APK, instalar la aplicación FerovaFamily en sus dispositivos Android y comprobar su funcionamiento.
+
+**Figura 9.8. Proyecto FerovaFamily configurado en Firebase.**
+
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Proyecto FerovaFamily configurado en Firebase.png" width=500>
+</div>
+
+**Figura 9.9. Versión APK de FerovaFamily registrada en Firebase App Distribution.**
+
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Versión APK de FerovaFamily registrada en Firebase App Distribution.png" width=500>
+</div>
+
+**Figura 10.1. Distribución de FerovaFamily a los testers autorizados.**
+
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Distribución de FerovaFamily a los testers autorizados.png" width=500>
+</div>
+
+**Figura 10.2. Aplicación FerovaFamily instalada en un dispositivo Android.**
+
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Aplicación FerovaFamily instalada en un dispositivo Android.jpg" width=200>
+</div>
+
+
+
+##### 4. Post-Deployment Verification Stage
+
+Después de la publicación de los componentes, se realizan comprobaciones para verificar que los servicios se encuentren disponibles y que las aplicaciones puedan utilizarse correctamente.
+
+Las verificaciones consideradas son las siguientes:
+
+- **Backend:** comprobar que el servicio de Railway se encuentre activo y que los endpoints de la API REST respondan correctamente mediante Swagger UI.
+- **Frontend:** acceder a la dirección pública de Azure Static Web Apps y comprobar que la aplicación FerovaClinic cargue correctamente.
+- **Mobile:** verificar que el APK de FerovaFamily se encuentre disponible en Firebase App Distribution y que pueda instalarse y ejecutarse en un dispositivo Android.
+
+**Figura 10.3. Verificación de disponibilidad del Backend.**
+
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Verificación de disponibilidad del Backend.png" width=500>
+</div>
+
+
+**Figura 10.4. Verificación de FerovaClinic en producción.**
+
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Verificación de FerovaClinic en producción.png" width=500>
+</div>
+
+
+**Figura 10.5. Verificación de instalación de FerovaFamily en Android.**
+
+<div align="center">
+<img src="../assets/img/chapter-VII/Production Deployment Pipeline Components/Verificación de instalación de FerovaFamily en Android.jpeg" width=200>
+</div>
+
+##### Resumen del proceso de despliegue
+
+| Componente | Plataforma | Artefacto publicado | Resultado |
+|---|---|---|---|
+| Backend | Railway | Imagen Docker | API REST disponible en producción. |
+| Frontend | Azure Static Web Apps | Archivos estáticos de Angular | Aplicación web disponible en producción. |
+| FerovaFamily | Firebase App Distribution | Archivo APK | Versión móvil disponible para testers autorizados. |
+
+**Resultado de la implementación**
+
+La implementación de los mecanismos de despliegue y distribución permite publicar los componentes de Ferova en plataformas independientes. El Backend se encuentra alojado en Railway, la aplicación web FerovaClinic está publicada mediante Azure Static Web Apps y la aplicación móvil FerovaFamily utiliza Firebase App Distribution para compartir sus versiones APK con los testers autorizados.
+
+De esta manera, se dispone de mecanismos diferenciados para la publicación de los servicios web y la distribución de la aplicación móvil, facilitando el acceso y la validación de los componentes de la plataforma.
+
 
 ## 7.4. Continuous Monitoring
 
