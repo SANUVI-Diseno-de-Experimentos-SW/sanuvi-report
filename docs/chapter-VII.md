@@ -263,10 +263,10 @@ Para el Frontend, Azure Static Web Apps utiliza el workflow `azure-static-web-ap
 | Backend | `Dockerfile` | Railway |
 | Frontend | `azure-static-web-apps-proud-wave-064ec0610.yml` | Azure Static Web Apps |
 
-**Figura 7.X. Configuración del servicio Backend en Railway.**
+**Figura 7.9. Configuración del servicio Backend en Railway.**
 
 
-**Figura 7.X. Configuración del workflow de despliegue del Frontend.**
+**Figura 8.0. Configuración del workflow de despliegue del Frontend mediante Azure Static Web Apps.**
 
 
 ##### 2. Deployment Environments & Triggers
