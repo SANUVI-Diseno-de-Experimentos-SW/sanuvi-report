@@ -118,14 +118,14 @@ Durante este avance del trabajo, se desarrollaron los siguientes puntos del repo
 
 <div class="toc">
 
-**Carátula e información esencial**
-**Registro de versiones y Project Report Collaboration Insights**
-**Capítulo I: Introducción**
-**Capítulo II: Requirements Elicitation & Analysis**
-**Capítulo III: Requirements Specification**
-**Capítulo IV: Product Design**
-**Capítulo V: Product Implementation**
-**Conclusiones**
+**Carátula e información esencial**<br>
+**Registro de versiones y Project Report Collaboration Insights**<br>
+**Capítulo I: Introducción**<br>
+**Capítulo II: Requirements Elicitation & Analysis**<br>
+**Capítulo III: Requirements Specification**<br>
+**Capítulo IV: Product Design**<br>
+**Capítulo V: Product Implementation**<br>
+**Conclusiones**<br><br>
 
 <div align="center">
   <img src="assets/img/introduction/ollaboration-av1.png">
