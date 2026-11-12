@@ -86,14 +86,31 @@ jobs:
 
 **Figura 7.1. Configuración del workflow Backend CI.**
 
+<div align="center">
+<img src="../assets/img/chapter-VII/CI pipeline/1.1 Backend.png" width=500>
+</div>
+
 
 **Figura 7.2. Workflow Backend CI registrado en GitHub Actions.**
+
+<div align="center">
+<img src="../assets/img/chapter-VII/CI pipeline/1.2 Backend.png" width=500>
+</div>
 
 
 **Figura 7.3. Resultado de ejecución del pipeline Backend CI.**
 
+<div align="center">
+<img src="../assets/img/chapter-VII/CI pipeline/1.3 Backend.png" width=500>
+</div>
+
 
 **Figura 7.4. Detalle de los pasos ejecutados en el Backend CI.**
+
+<div align="center">
+<img src="../assets/img/chapter-VII/CI pipeline/1.4 Backend.png" width=500>
+</div>
+
 
 #### B. Frontend CI Pipeline
 
@@ -149,14 +166,30 @@ jobs:
 
 **Figura 7.5. Configuración del workflow Frontend CI.**
 
+<div align="center">
+<img src="../assets/img/chapter-VII/CI pipeline/2.1 Frontend.png" width=500>
+</div>
+
 
 **Figura 7.6. Workflows registrados en GitHub Actions del frontend.**
+
+<div align="center">
+<img src="../assets/img/chapter-VII/CI pipeline/2.2 Frontend.png" width=500>
+</div>
 
 
 **Figura 7.7. Resultado de ejecución del pipeline Frontend CI.**
 
+<div align="center">
+<img src="../assets/img/chapter-VII/CI pipeline/2.3 Frontend.png" width=500>
+</div>
+
 
 **Figura 7.8. Detalle de los pasos ejecutados en el Frontend CI.**
+
+<div align="center">
+<img src="../assets/img/chapter-VII/CI pipeline/2.4 Frontend.png" width=500>
+</div>
 
 
 ##### C. Criterios de ejecución y fallo
