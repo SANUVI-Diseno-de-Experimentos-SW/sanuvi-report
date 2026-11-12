@@ -1422,27 +1422,45 @@ Estos resultados permitieron identificar oportunidades de mejora en el código f
 
 **Paso 1. Creación del proyecto local en SonarQube**
 
-
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/3.png" width=500>
+</div>
 
 Se accedió a SonarQube y se seleccionó la opción Create a local project para registrar el backend de Ferova. Se estableció ferovaclinic-backend como nombre del proyecto y como clave de identificación, mientras que la rama principal se configuró como main.
 
 **Paso 2. Selección del método de análisis**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/5.png" width=500>
+</div>
 
 Se seleccionó la creación de un proyecto local, ya que el análisis se realizaría directamente desde el entorno de desarrollo. Este método permitió analizar el código fuente almacenado en el equipo sin necesidad de configurar una integración con GitHub u otra plataforma DevOps.
 
 **Paso 3. Configuración del proyecto y generación del token**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/6.png" width=500>
+</div>
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/7.png" width=500>
+</div>
 
 Una vez creado el proyecto, SonarQube solicitó generar un token de acceso asociado a ferovaclinic-backend. Este token permite autenticar las solicitudes del analizador y autorizar el envío de los resultados al servidor SonarQube.
 
 **Paso 4. Selección de la tecnología del proyecto**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/8.png" width=500>
+</div>
 
 En la configuración del análisis se seleccionó la tecnología .NET, correspondiente al backend desarrollado con C# y ASP.NET Core. Posteriormente, se identificó el framework utilizado como .NET Core, lo que permitió obtener las instrucciones específicas para ejecutar SonarScanner en el proyecto.
 
 **Paso 5. Instalación y configuración de SonarScanner**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/9.png" width=500>
+</div>
 
 
 Se verificó la instalación global de SonarScanner para .NET mediante la herramienta de línea de comandos de .NET. Esta herramienta permite establecer la conexión entre el proyecto backend y el servidor SonarQube para realizar el análisis estático del código fuente.
@@ -1450,21 +1468,45 @@ Se verificó la instalación global de SonarScanner para .NET mediante la herram
 
 **Paso 6. Configuración de las credenciales de análisis**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/10.png" width=500>
+</div>
+
 Se configuró el token de autenticación mediante una variable de entorno de la terminal. De esta manera, se evitó escribir directamente las credenciales en los comandos de ejecución y se preparó el entorno para iniciar el análisis del proyecto.
 
 **Paso 7. Inicio del análisis estático**
 
-Se ejecutó el comando dotnet sonarscanner begin, indicando la clave del proyecto ferovaclinic-backend, la dirección local del servidor SonarQube (http://localhost:9000) y el token de autenticación. Este comando inició el proceso de análisis y preparó los componentes necesarios para recopilar información del código fuente durante la compilación.
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/11.png" width=500>
+</div>
+
+Se ejecutó el comando dotnet sonarscanner begin, indicando la clave del proyecto ferovaclinic-backend, la dirección local del servidor SonarQube y el token de autenticación. Este comando inició el proceso de análisis y preparó los componentes necesarios para recopilar información del código fuente durante la compilación.
 
 **Paso 8. Compilación del backend**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/12.png" width=500>
+</div>
 
 Se ejecutó el comando dotnet build sobre la solución WebApplication1.sln para compilar el backend durante el proceso de análisis. La compilación finalizó correctamente, aunque se identificaron 411 advertencias. Estos resultados fueron recopilados por SonarScanner para su posterior procesamiento.
 
 **Paso 9. Finalización y envío del análisis**
 
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/13.png" width=500>
+</div>
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/16.png" width=500>
+</div>
+
 Se ejecutó el comando dotnet sonarscanner end para finalizar el análisis y enviar los resultados recopilados al servidor SonarQube. En la consola se mostró el mensaje ANALYSIS SUCCESSFUL, confirmando que el informe fue procesado y enviado correctamente.
 
 **Paso 10. Acceso al proyecto analizado**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/14.png" width=500>
+</div>
 
 Finalmente, se accedió al proyecto ferovaclinic-backend desde la interfaz web de SonarQube para consultar los resultados del análisis estático. Esta etapa permite revisar los indicadores de calidad, los problemas detectados y las posibles vulnerabilidades identificadas en el código fuente.
 
