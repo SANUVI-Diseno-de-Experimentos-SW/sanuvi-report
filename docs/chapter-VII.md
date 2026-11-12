@@ -926,8 +926,137 @@ De esta manera, los componentes del Alerting Pipeline permiten que Ferova transf
 
 ### 7.4.4. Notification Pipeline Components
 
-> Canales de notificación (correo, Slack/Discord, push), formato de los mensajes y evidencia de notificaciones recibidas.
+El pipeline de notificaciones de Ferova está compuesto por los mecanismos utilizados para comunicar eventos importantes relacionados con la integración, despliegue y funcionamiento de los componentes de la plataforma. Su objetivo es garantizar que el equipo de desarrollo y los testers reciban información sobre los resultados de las implementaciones, errores identificados y nuevas versiones disponibles para validación.
 
-<img src="../assets/img/chapter-VII/notification-evidence.png" alt="Evidencia de notificaciones">
+En el contexto del proyecto, las notificaciones se dividen en dos grupos: notificaciones técnicas, dirigidas al equipo de desarrollo para informar sobre el estado de los workflows y servicios desplegados, y notificaciones de distribución, dirigidas a los testers autorizados para comunicar la disponibilidad de nuevas versiones de FerovaFamily.
 
-<!-- COMPLETAR -->
+#### 1. Notification Sources
+
+Las notificaciones se originan desde las principales herramientas y componentes de la plataforma Ferova:
+
+- **GitHub Actions:** permite consultar los resultados de los workflows de integración, compilación, despliegue y monitoreo. Las ejecuciones registran su estado y permiten identificar procesos exitosos o fallidos.
+- **Railway:** proporciona información sobre el estado del backend, los despliegues realizados y los eventos registrados durante la ejecución del servicio.
+- **Azure Static Web Apps:** permite consultar el historial y resultado de las implementaciones de FerovaClinic, así como acceder a la aplicación publicada.
+- **Firebase App Distribution:** comunica a los testers autorizados la disponibilidad de nuevas versiones de FerovaFamily para su instalación y validación.
+- **FerovaClinic y FerovaFamily:** presentan mensajes y alertas dentro de sus interfaces para informar sobre eventos relacionados con las operaciones realizadas por sus usuarios.
+
+#### 2. Notification Trigger Component
+
+El componente de activadores establece los eventos que generan información relevante para los destinatarios.
+
+| Activador | Tipo | Destinatario |
+|---|---|---|
+| Finalización de un workflow de CI | Técnico | Equipo de desarrollo |
+| Fallo de compilación o despliegue | Técnico | Equipo de desarrollo |
+| Nueva implementación del backend | Técnico | Equipo de desarrollo |
+| Nueva implementación de FerovaClinic | Técnico | Equipo de desarrollo |
+| Nueva versión móvil disponible | Distribución | Testers autorizados |
+| Reporte de error durante las pruebas móviles | Técnico / funcional | Equipo de desarrollo |
+| Alerta funcional dentro de la aplicación | Funcional | Usuario correspondiente |
+
+Estos activadores permiten identificar cuándo debe comunicarse un evento y qué destinatario necesita conocer la información.
+
+#### 3. Notification Channel Component
+
+El componente de canales determina el medio mediante el cual se consulta o comunica cada evento.
+
+| Tipo de notificación | Destinatario | Canal |
+|---|---|---|
+| Resultado de workflow | Equipo de desarrollo | GitHub Actions |
+| Fallo de despliegue del backend | Equipo de desarrollo | Railway |
+| Resultado de implementación del frontend | Equipo de desarrollo | Azure Static Web Apps |
+| Nueva versión móvil disponible | Testers autorizados | Firebase App Distribution |
+| Reporte de error móvil | Equipo de desarrollo | Feedback de testers |
+| Alerta funcional | Usuario correspondiente | Interfaz de FerovaClinic o FerovaFamily |
+
+La selección del canal permite mantener la información organizada según el componente involucrado y el destinatario correspondiente.
+
+#### 4. Notification Message Component
+
+Cada notificación debe proporcionar información suficiente para que el destinatario comprenda el evento y pueda realizar una acción cuando sea necesario.
+
+Una notificación técnica debe considerar:
+
+- Tipo de evento.
+- Componente afectado.
+- Fecha y hora del evento.
+- Estado del proceso o servicio.
+- Descripción del problema, cuando corresponda.
+- Identificador del workflow, commit o despliegue relacionado.
+- Acción recomendada.
+
+Ejemplo de notificación técnica:
+
+    Evento: Fallo en la compilación del backend.
+    Componente afectado: Backend REST API.
+    Plataforma: GitHub Actions.
+    Estado: Failure.
+    Acción recomendada: Revisar los registros del workflow
+    e identificar el paso que produjo el error.
+
+Ejemplo de notificación de distribución:
+
+    Evento: Nueva versión de FerovaFamily disponible.
+    Plataforma: Firebase App Distribution.
+    Destinatario: Testers autorizados.
+    Acción recomendada: Instalar la versión publicada
+    y realizar las pruebas correspondientes.
+
+#### 5. Team-Facing Notification Component
+
+Las notificaciones dirigidas al equipo de desarrollo permiten mantener el seguimiento de las actividades técnicas y facilitar la atención de incidencias durante el ciclo de vida de la plataforma.
+
+Los principales eventos que requieren revisión son:
+
+- Compilación fallida del backend o frontend.
+- Error durante la ejecución de un workflow.
+- Despliegue fallido en Railway.
+- Implementación fallida en Azure Static Web Apps.
+- Problemas de disponibilidad del backend.
+- Errores identificados durante las pruebas funcionales.
+- Reportes de fallos recibidos durante las pruebas de FerovaFamily.
+
+La revisión de estos eventos permite identificar los componentes afectados, determinar las posibles causas y aplicar las correcciones necesarias.
+
+#### 6. Tester Notification Component
+
+La distribución de FerovaFamily utiliza Firebase App Distribution como canal para comunicar la disponibilidad de versiones de prueba a los testers autorizados.
+
+Este componente permite:
+
+- Compartir nuevas versiones de la aplicación móvil.
+- Identificar las versiones disponibles para pruebas.
+- Gestionar los grupos de testers autorizados.
+- Facilitar la instalación de las versiones distribuidas.
+- Recopilar comentarios relacionados con errores o comportamientos inesperados.
+
+De esta manera, los testers pueden validar las nuevas versiones de FerovaFamily y proporcionar retroalimentación al equipo de desarrollo antes de una publicación formal.
+
+#### 7. Notification Validation Component
+
+Después de generar o comunicar una notificación, se debe verificar que la información esté disponible para el destinatario correspondiente.
+
+El proceso de validación incluye:
+
+1. Comprobar que el evento haya sido registrado por la herramienta correspondiente.
+2. Verificar que el resultado del workflow o despliegue pueda consultarse.
+3. Confirmar que la versión móvil esté disponible para los testers autorizados.
+4. Revisar que los mensajes presentados en las aplicaciones correspondan al evento generado.
+5. Comprobar que la información comunicada permita identificar la acción necesaria.
+
+Este proceso permite mantener la confiabilidad de los canales de comunicación y evitar que los eventos importantes pasen desapercibidos.
+
+#### 8. Notification Pipeline Summary
+
+El pipeline de notificaciones de Ferova puede resumirse de la siguiente manera:
+
+1. Se produce un evento técnico o funcional en uno de los componentes de la plataforma.
+2. La herramienta correspondiente registra el evento o resultado.
+3. Se identifica el tipo de notificación y el destinatario.
+4. Se consulta o comunica la información mediante el canal correspondiente.
+5. El equipo de desarrollo o los testers reciben la información disponible.
+6. Se revisa el evento y se realiza la acción necesaria.
+7. Se valida la corrección o el resultado de la actividad.
+8. Se mantiene el seguimiento del evento hasta su resolución.
+
+En conclusión, los componentes del Notification Pipeline permiten organizar la comunicación de eventos importantes en Ferova, facilitando el seguimiento de las implementaciones, la distribución de versiones móviles y la atención de incidencias durante el desarrollo y mantenimiento de FerovaClinic, el Backend REST API y FerovaFamily.
