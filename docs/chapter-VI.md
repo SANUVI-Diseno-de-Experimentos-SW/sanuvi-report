@@ -1514,6 +1514,38 @@ Finalmente, se accedió al proyecto ferovaclinic-backend desde la interfaz web d
 
 ##### 2. Resultados del Análisis Backend
 
+A continuación, se presentan los resultados obtenidos mediante el análisis estático del código fuente del backend de FerovaClinic, realizado con SonarQube Community Build después de completar satisfactoriamente el proceso de compilación y análisis.
+
+- **Code Quality (Calidad del Código):** El análisis permitió evaluar la mantenibilidad, confiabilidad y estructura del código fuente, considerando un total aproximado de 16 mil líneas de código. SonarQube identificó 391 incidencias relacionadas con la mantenibilidad, obteniendo una calificación de nivel A. Asimismo, se registró una densidad de duplicación del 3.4 %, lo que permite identificar oportunidades para reducir la repetición de código y mejorar su organización.
+
+- **Code Security (Seguridad del Código):** Se identificaron 11 incidencias relacionadas con la seguridad, con una calificación de nivel C. Entre los hallazgos se encuentran recomendaciones asociadas con la configuración de políticas CORS y el uso de mecanismos criptográficamente seguros para la generación de números aleatorios. Aunque el análisis registró 0 Security Hotspots, este resultado debe interpretarse considerando que SonarQube Community Build presenta limitaciones en el análisis de determinadas vulnerabilidades de seguridad.
+
+- **Reliability (Confiabilidad):** Se detectaron 11 incidencias relacionadas con la confiabilidad del código, obteniendo una calificación de nivel D. Entre los hallazgos identificados se encuentran recomendaciones sobre el manejo de operaciones asíncronas y la cancelación de solicitudes mediante mecanismos como `CancellationToken`. Estos resultados representan oportunidades de mejora para fortalecer el comportamiento y la estabilidad de los componentes del backend.
+
+- **Overall Results (Resultados Generales):** El proyecto registró 413 incidencias abiertas, distribuidas en 7 de severidad alta, 276 de severidad media, 75 de severidad baja y 55 informativas. El esfuerzo estimado para atenderlas fue de 8 días y 3 horas. Asimismo, la cobertura de pruebas registrada fue de 0.0 %, por lo que no se contó con información de cobertura automatizada durante este análisis. El Quality Gate obtuvo el estado *Passed*, de acuerdo con los criterios de calidad configurados en SonarQube.
+
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Backend-Analytics/21.png" width=500>
+</div>
+
+*Figura 1. Resumen general del análisis estático del backend.*
+
+
+
+<div align="center">
+    <img src="../assets/img/chapter-VI/Backend-Analytics/23.png" width=500>
+</div>
+
+*Figura 2. Medición de duplicación del código fuente*
+
+
+<div align="center">
+    <img src="../assets/img/chapter-VI/Backend-Analytics/22.png" width=500>
+</div>
+
+*Figura 3. Incidencias identificadas en el backend.*
+
 
 
 ### 6.2.2. Reviews
