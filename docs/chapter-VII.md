@@ -691,7 +691,10 @@ Para ello, se utilizan las siguientes fuentes de información:
 
 La figura muestra el servicio WebApplication1 desplegado en Railway con estado Online, evidenciando que el backend se encuentra activo en el entorno de producción.
 
-[Insertar captura del servicio Backend en Railway]
+<div align="center">
+<img src="../assets/img/chapter-VII/Monitoring Pipeline Components/Backend en Railway.png" width=500>
+</div>
+
 
 #### 3. Frontend Availability Check Component
 
@@ -709,7 +712,10 @@ Esta verificación considera:
 
 La figura muestra FerovaClinic publicada en Azure Static Web Apps, permitiendo comprobar que la aplicación web se encuentra disponible en producción.
 
-[Insertar captura de FerovaClinic en producción]
+<div align="center">
+<img src="../assets/img/chapter-VII/Monitoring Pipeline Components/FerovaClinic en producción.png" width=500>
+</div>
+
 
 #### 4. Log Review Component
 
@@ -725,7 +731,9 @@ Los registros permiten identificar problemas técnicos y relacionarlos con una i
 
 **Logs e historial de despliegues del Backend**
 
-[Insertar captura de los logs o historial de despliegues de Railway]
+<div align="center">
+<img src="../assets/img/chapter-VII/Monitoring Pipeline Components/historial de despliegues de Railway.png" width=500>
+</div>
 
 #### 5. Basic Metrics Component
 
@@ -771,9 +779,13 @@ Los workflows permiten revisar:
 
 **Ejecución de los workflows de integración continua**
 
-[Insertar captura del workflow exitoso del Backend]
+<div align="center">
+<img src="../assets/img/chapter-VII/Monitoring Pipeline Components/workflow exitoso del Backend.png" width=500>
+</div>
 
-[Insertar captura del workflow exitoso del Frontend]
+<div align="center">
+<img src="../assets/img/chapter-VII/Monitoring Pipeline Components/workflow exitoso del Frontend.png" width=500>
+</div>
 
 Las ejecuciones permiten mantener la trazabilidad de los cambios realizados y verificar que los procesos automatizados finalicen correctamente.
 
