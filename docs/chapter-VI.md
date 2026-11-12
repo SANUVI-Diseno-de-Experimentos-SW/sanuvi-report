@@ -1595,6 +1595,43 @@ A continuación, se presentan los resultados obtenidos mediante el análisis est
 
 ### 6.2.2. Reviews
 
+En FerovaClinic, las revisiones de código constituyen una práctica importante para garantizar la calidad del software antes de integrar nuevos cambios en las ramas principales del repositorio. Este proceso permite verificar que las funcionalidades implementadas cumplan con los requisitos establecidos, identificar posibles errores y mantener una estructura de código organizada tanto en el backend como en el frontend.
+
+El proyecto utiliza GitHub como plataforma de control de versiones, permitiendo que los integrantes trabajen sobre ramas específicas según las funcionalidades asignadas y posteriormente integren sus modificaciones mediante un proceso de revisión. Asimismo, se emplea SonarQube para complementar la evaluación del código mediante análisis estático, identificando incidencias relacionadas con la seguridad, confiabilidad, mantenibilidad y duplicación.
+
+**Tipos de Revisiones**
+
+**Revisión de código por pares:**
+
+Consiste en que un integrante del equipo revise el código desarrollado por otro compañero antes de integrarlo a la rama correspondiente. Durante esta revisión se verifica que los nombres de clases, métodos, variables y archivos sean claros, que se respete la estructura del proyecto y que los cambios no afecten otros módulos o funcionalidades existentes.
+
+**Revisión técnica:**
+
+Al finalizar una actividad o sprint, se revisan las funcionalidades implementadas para comprobar que cumplan con los objetivos y criterios de aceptación establecidos. En FerovaClinic, esta revisión comprende los módulos de autenticación y gestión de usuarios, administración de pacientes, seguimiento del tratamiento, control de hemoglobina, gestión de citas, comunicación y generación de reportes, considerando tanto los servicios del backend como las interfaces del frontend.
+
+**Revisión automática o asistida:**
+
+El proyecto utiliza SonarQube Community Build para realizar el análisis estático del código fuente del backend y frontend. Esta herramienta permite identificar incidencias de seguridad, confiabilidad y mantenibilidad, así como detectar duplicaciones y oportunidades de mejora en la calidad del código. Adicionalmente, se verifica que ambos componentes compilen correctamente mediante los procesos de compilación de .NET y Angular antes de considerar los cambios como finalizados.
+
+**Proceso de Revisión**
+
+El proceso inicia cuando un desarrollador trabaja en una rama específica del proyecto y realiza los cambios correspondientes en el backend o frontend. Posteriormente, verifica que el componente modificado compile correctamente y que las funcionalidades implementadas mantengan el comportamiento esperado. Una vez realizadas estas comprobaciones, los cambios se suben al repositorio de GitHub para su revisión antes de integrarlos en la rama principal o de desarrollo.
+
+Durante la revisión se consideran los siguientes aspectos:
+
+- Que el código esté ubicado en el módulo y capa correspondiente.
+- Que los nombres de clases, métodos, variables y archivos sean claros y descriptivos.
+- Que se mantenga la separación de responsabilidades entre las capas de la aplicación.
+- Que no exista duplicación innecesaria de código.
+- Que los endpoints del backend cuenten con validaciones y manejo adecuado de respuestas.
+- Que las rutas protegidas respeten los mecanismos de autenticación y autorización.
+- Que el frontend mantenga una correcta organización de componentes, servicios, rutas e interceptores.
+- Que las funcionalidades implementadas cumplan con los criterios de aceptación establecidos.
+- Que los cambios no afecten el funcionamiento de módulos previamente desarrollados.
+- Que los resultados del análisis estático permitan identificar y evaluar posibles incidencias en el código.
+
+Si durante la revisión se identifican errores u oportunidades de mejora, se comunican las observaciones al desarrollador responsable para que realice las correcciones correspondientes. Posteriormente, los cambios vuelven a ser revisados y, una vez que cumplen con los criterios establecidos, pueden integrarse en la rama correspondiente.
+
 ## 6.3. Validation Interviews
 
 ### 6.3.1. Diseño de Entrevistas
