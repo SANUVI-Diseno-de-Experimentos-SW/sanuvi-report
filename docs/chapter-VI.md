@@ -1287,34 +1287,350 @@ Se evidencia la ejecución de la prueba de consulta del historial de mensajes de
 
 ### 6.2.1. Static Code Analysis
 
+El análisis estático de código constituye una práctica importante dentro del proceso de verificación y validación de software, ya que permite identificar defectos, inconsistencias, problemas de calidad y posibles vulnerabilidades sin necesidad de ejecutar el programa. Este análisis complementa las pruebas dinámicas al detectar problemas durante las etapas de desarrollo, reduciendo el costo y el esfuerzo de corrección.
+
+En el proyecto Ferova, se establecen estándares de codificación para los diferentes componentes de la solución: la aplicación web FerovaClinic, desarrollada con Angular y TypeScript; la aplicación móvil FerovaFamily, desarrollada con Kotlin; y el servicio backend REST API, implementado con C# y ASP.NET Core. Asimismo, se consideran convenciones para los archivos de pruebas de comportamiento escritos en Gherkin y para la gestión del código fuente mediante Git y GitHub.
+
+La verificación estática se aborda mediante dos aspectos complementarios. En la sección 6.2.1.1 se describen los estándares y convenciones de codificación establecidos para cada tecnología. En la sección 6.2.1.2 se presentan las herramientas y los resultados del análisis de calidad del código.
+
+
 #### 6.2.1.1. Coding standard & Code conventions
 
-> Reglas y linters configurados por repositorio, y evidencia de su ejecución.
+Para garantizar la legibilidad, consistencia y mantenibilidad del código fuente, el equipo de Ferova establece las siguientes convenciones de codificación para cada componente de la solución. Los identificadores de código (variables, métodos, clases, componentes y archivos) se escriben en inglés, mientras que los textos presentados a los usuarios se mantienen en español.
 
-<!-- COMPLETAR -->
+#### Angular / TypeScript — FerovaClinic
+
+Se siguen las convenciones oficiales de Angular y la guía de estilo de TypeScript:
+
+- Los componentes, servicios, directivas y módulos utilizan nombres descriptivos siguiendo el formato `PascalCase` para las clases.
+- Los nombres de variables, métodos y funciones utilizan `camelCase` (e.g., `patientList`, `registerPatient()`).
+- Los nombres de constantes utilizan `UPPER_SNAKE_CASE` cuando representan valores globales inmutables (e.g., `API_BASE_URL`).
+- Los archivos de componentes siguen la convención `kebab-case` (e.g., `patient-list.component.ts`).
+- Se utiliza `const` para variables que no necesitan reasignación y `let` cuando el valor puede cambiar. Se evita el uso de `var`.
+- Se emplea la programación basada en componentes para mantener una estructura modular y reutilizable.
+- Los servicios centralizan la comunicación con la API REST y la lógica compartida entre componentes.
+- Se utilizan interfaces y tipos de TypeScript para definir la estructura de los datos.
+- Se aplican mecanismos de tipado para reducir errores relacionados con valores y propiedades incompatibles.
+- Se mantiene una separación entre componentes, servicios, modelos y demás responsabilidades de la aplicación.
+
+Herramienta de análisis: ESLint y las herramientas de análisis de TypeScript, según la configuración del proyecto.
+
+#### Kotlin / Android — FerovaFamily
+
+Se siguen las convenciones oficiales de Kotlin y las recomendaciones de desarrollo para Android:
+
+- Los nombres de clases, interfaces y objetos utilizan `PascalCase` (e.g., `PatientRepository`, `TreatmentViewModel`).
+- Las variables, propiedades y funciones utilizan `camelCase` (e.g., `patientName`, `registerDose()`).
+- Los nombres de constantes utilizan `UPPER_SNAKE_CASE` cuando corresponda (e.g., `API_BASE_URL`).
+- Los nombres de paquetes se escriben en minúsculas y siguen una estructura jerárquica.
+- Se utiliza `val` para declarar variables inmutables y `var` cuando se requiere modificar su valor.
+- Se prioriza el uso de funciones y clases reutilizables para evitar la duplicación de código.
+- Se emplean corrutinas de Kotlin para gestionar operaciones asíncronas cuando corresponde.
+- Se mantiene una separación de responsabilidades entre Activities, Fragments, ViewModels, repositorios y servicios, según la arquitectura implementada.
+- Se utilizan modelos de datos (`data class`) para representar la información de pacientes, tratamientos y controles.
+- Se aprovechan las características de seguridad de tipos y nulabilidad de Kotlin para reducir errores durante el desarrollo.
+- Se mantiene una separación entre la interfaz de usuario, la lógica de negocio y el acceso a datos.
+
+Herramienta de análisis: Kotlin Compiler y Android Lint, según la configuración del proyecto.
+
+#### C# / ASP.NET Core — Backend REST API
+
+Se siguen las convenciones de codificación de Microsoft para C# y las recomendaciones de desarrollo de ASP.NET Core:
+
+- Las clases, métodos, propiedades e interfaces utilizan `PascalCase` (e.g., `PatientService`, `RegisterPatient`).
+- Las variables locales y parámetros utilizan `camelCase` (e.g., `patientId`, `treatmentDuration`).
+- Los campos privados utilizan el prefijo `_` seguido de `camelCase` (e.g., `_patientRepository`).
+- Las interfaces utilizan el prefijo `I` (e.g., `IPatientService`, `ITreatmentRepository`).
+- Los nombres de los controladores finalizan con el sufijo `Controller` (e.g., `PatientController`).
+- Los endpoints se organizan de acuerdo con los recursos y responsabilidades de cada módulo.
+- Los métodos de los controladores utilizan los atributos HTTP correspondientes (`[HttpGet]`, `[HttpPost]`, `[HttpPut]`, `[HttpDelete]`).
+- Se emplean DTOs para definir los datos de entrada y salida de los servicios.
+- Se utiliza inyección de dependencias para facilitar la modularidad y el mantenimiento del backend.
+- Se implementa el manejo centralizado de excepciones y respuestas HTTP.
+- Se prioriza la separación de responsabilidades entre controladores, servicios y acceso a datos.
+
+Herramienta de análisis: Roslyn Analyzers y .NET Code Analysis, según la configuración del proyecto.
+
+#### Gherkin — Archivos `.feature` (BDD)
+
+Se siguen las convenciones de Gherkin para la definición de pruebas de comportamiento:
+
+- Cada archivo `.feature` describe una funcionalidad o flujo de negocio específico.
+- Los títulos de `Feature` y `Scenario` son descriptivos y se redactan en inglés o español de manera consistente con la documentación del proyecto.
+- Se utilizan correctamente las palabras clave:
+  - `Feature`: funcionalidad que se desea verificar.
+  - `Scenario`: situación específica de prueba.
+  - `Given`: contexto o estado inicial.
+  - `When`: acción o evento que desencadena el comportamiento.
+  - `Then`: resultado esperado y verificable.
+  - `And / But`: extensión de los pasos anteriores.
+- Los escenarios describen el comportamiento funcional y evitan depender de detalles específicos de la interfaz.
+- Se consideran escenarios positivos, negativos y alternativos para verificar diferentes condiciones.
+- Se reutilizan pasos comunes para evitar duplicación entre escenarios.
+- Los archivos `.feature` utilizan nombres descriptivos en formato `kebab-case` (e.g., `patient-management.feature`, `treatment-tracking.feature`).
+
+#### Conventional Commits & GitFlow
+
+El equipo utiliza convenciones para mantener un historial de cambios organizado y facilitar el seguimiento de las modificaciones realizadas en los repositorios de Ferova.
+
+El formato de los mensajes de commit es:
+
+`<type>(<scope>): <description>`
+
+| Tipo | Uso |
+|---|---|
+| `feat` | Implementación de una nueva funcionalidad. |
+| `fix` | Corrección de errores o defectos. |
+| `docs` | Modificaciones en la documentación. |
+| `style` | Cambios de formato sin modificar la lógica. |
+| `refactor` | Reestructuración del código sin agregar funcionalidades. |
+| `test` | Adición o modificación de pruebas. |
+| `chore` | Tareas de mantenimiento y configuración. |
+| `ci` | Modificaciones en los procesos de integración continua. |
+
+Ejemplos aplicados al proyecto:
+
+```text
+feat(patients): add patient registration endpoint
+feat(treatment): implement dose confirmation
+fix(auth): correct user authentication validation
+test(gherkin): add patient management scenarios
+docs(api): update REST API documentation
+```
+
+Para la organización del código fuente se consideran las siguientes convenciones de ramas:
+
+| Rama | Propósito |
+|---|---|
+| `main` | Código estable destinado a producción. |
+| `develop` | Integración de funcionalidades en desarrollo. |
+| `feature/<name>` | Desarrollo de nuevas funcionalidades. |
+| `release/<version>` | Preparación de versiones para su publicación. |
+| `hotfix/<description>` | Corrección de errores críticos. |
+
+La gestión del código fuente se realiza mediante Git y GitHub, permitiendo mantener el historial de cambios, integrar funcionalidades y facilitar la colaboración entre los integrantes del equipo.
 
 #### 6.2.1.2. Code Quality & Code Security
 
-> Resultados del análisis estático (por ejemplo, SonarQube / SonarCloud, CodeQL): bugs, code smells, vulnerabilidades, cobertura y duplicación.
+Se realizó el análisis estático del código fuente del backend de FerovaClinic mediante SonarQube Community Build, utilizando SonarScanner for .NET. El análisis procesó 344 archivos y permitió evaluar diferentes aspectos relacionados con la calidad, mantenibilidad, confiabilidad y seguridad del código.
 
-<img src="../assets/img/chapter-VI/static-analysis.png" alt="Reporte de análisis estático">
+Como resultado, el proyecto obtuvo un **Quality Gate: Passed**, cumpliendo las condiciones establecidas para su aprobación. En cuanto a las métricas generales, se identificaron 11 incidencias de seguridad, 11 incidencias de confiabilidad y 391 incidencias de mantenibilidad (Code Smells), obteniendo calificaciones C, D y A, respectivamente. Asimismo, se registró un porcentaje de duplicación de código del 3.4% y una cobertura de pruebas del 0.0%.
 
-| Métrica | Valor | Umbral definido |
-|---------|-------|-----------------|
-| Bugs | | |
-| Vulnerabilities | | |
-| Security Hotspots | | |
-| Code Smells | | |
-| Coverage | | |
-| Duplications | | |
+Estos resultados permitieron identificar oportunidades de mejora en el código fuente y evaluar su estado de calidad mediante reglas automatizadas. Cabe señalar que la cobertura de pruebas no fue reportada en este análisis y que la edición utilizada presenta limitaciones en el análisis de seguridad avanzado.
 
-<!-- COMPLETAR -->
+##### 1. Configuration of Static Code Analysis Environment
+
+**Paso 1. Creación del proyecto local en SonarQube**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/3.png" width=500>
+</div>
+
+Se accedió a SonarQube y se seleccionó la opción Create a local project para registrar el backend de Ferova. Se estableció ferovaclinic-backend como nombre del proyecto y como clave de identificación, mientras que la rama principal se configuró como main.
+
+**Paso 2. Selección del método de análisis**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/5.png" width=500>
+</div>
+
+Se seleccionó la creación de un proyecto local, ya que el análisis se realizaría directamente desde el entorno de desarrollo. Este método permitió analizar el código fuente almacenado en el equipo sin necesidad de configurar una integración con GitHub u otra plataforma DevOps.
+
+**Paso 3. Configuración del proyecto y generación del token**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/6.png" width=500>
+</div>
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/7.png" width=500>
+</div>
+
+Una vez creado el proyecto, SonarQube solicitó generar un token de acceso asociado a ferovaclinic-backend. Este token permite autenticar las solicitudes del analizador y autorizar el envío de los resultados al servidor SonarQube.
+
+**Paso 4. Selección de la tecnología del proyecto**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/8.png" width=500>
+</div>
+
+En la configuración del análisis se seleccionó la tecnología .NET, correspondiente al backend desarrollado con C# y ASP.NET Core. Posteriormente, se identificó el framework utilizado como .NET Core, lo que permitió obtener las instrucciones específicas para ejecutar SonarScanner en el proyecto.
+
+**Paso 5. Instalación y configuración de SonarScanner**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/9.png" width=500>
+</div>
+
+
+Se verificó la instalación global de SonarScanner para .NET mediante la herramienta de línea de comandos de .NET. Esta herramienta permite establecer la conexión entre el proyecto backend y el servidor SonarQube para realizar el análisis estático del código fuente.
+
+
+**Paso 6. Configuración de las credenciales de análisis**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/10.png" width=500>
+</div>
+
+Se configuró el token de autenticación mediante una variable de entorno de la terminal. De esta manera, se evitó escribir directamente las credenciales en los comandos de ejecución y se preparó el entorno para iniciar el análisis del proyecto.
+
+**Paso 7. Inicio del análisis estático**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/11.png" width=500>
+</div>
+
+Se ejecutó el comando dotnet sonarscanner begin, indicando la clave del proyecto ferovaclinic-backend, la dirección local del servidor SonarQube y el token de autenticación. Este comando inició el proceso de análisis y preparó los componentes necesarios para recopilar información del código fuente durante la compilación.
+
+**Paso 8. Compilación del backend**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/12.png" width=500>
+</div>
+
+Se ejecutó el comando dotnet build sobre la solución WebApplication1.sln para compilar el backend durante el proceso de análisis. La compilación finalizó correctamente, aunque se identificaron 411 advertencias. Estos resultados fueron recopilados por SonarScanner para su posterior procesamiento.
+
+**Paso 9. Finalización y envío del análisis**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/13.png" width=500>
+</div>
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/16.png" width=500>
+</div>
+
+Se ejecutó el comando dotnet sonarscanner end para finalizar el análisis y enviar los resultados recopilados al servidor SonarQube. En la consola se mostró el mensaje ANALYSIS SUCCESSFUL, confirmando que el informe fue procesado y enviado correctamente.
+
+**Paso 10. Acceso al proyecto analizado**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/14.png" width=500>
+</div>
+
+Finalmente, se accedió al proyecto ferovaclinic-backend desde la interfaz web de SonarQube para consultar los resultados del análisis estático. Esta etapa permite revisar los indicadores de calidad, los problemas detectados y las posibles vulnerabilidades identificadas en el código fuente.
+
+---
+
+##### 2. Resultados del Análisis Backend
+
+A continuación, se presentan los resultados obtenidos mediante el análisis estático del código fuente del backend de FerovaClinic, realizado con SonarQube Community Build después de completar satisfactoriamente el proceso de compilación y análisis.
+
+- **Code Quality (Calidad del Código):** El análisis permitió evaluar la mantenibilidad, confiabilidad y estructura del código fuente, considerando un total aproximado de 16 mil líneas de código. SonarQube identificó 391 incidencias relacionadas con la mantenibilidad, obteniendo una calificación de nivel A. Asimismo, se registró una densidad de duplicación del 3.4 %, lo que permite identificar oportunidades para reducir la repetición de código y mejorar su organización.
+
+- **Code Security (Seguridad del Código):** Se identificaron 11 incidencias relacionadas con la seguridad, con una calificación de nivel C. Entre los hallazgos se encuentran recomendaciones asociadas con la configuración de políticas CORS y el uso de mecanismos criptográficamente seguros para la generación de números aleatorios. Aunque el análisis registró 0 Security Hotspots, este resultado debe interpretarse considerando que SonarQube Community Build presenta limitaciones en el análisis de determinadas vulnerabilidades de seguridad.
+
+- **Reliability (Confiabilidad):** Se detectaron 11 incidencias relacionadas con la confiabilidad del código, obteniendo una calificación de nivel D. Entre los hallazgos identificados se encuentran recomendaciones sobre el manejo de operaciones asíncronas y la cancelación de solicitudes mediante mecanismos como `CancellationToken`. Estos resultados representan oportunidades de mejora para fortalecer el comportamiento y la estabilidad de los componentes del backend.
+
+- **Overall Results (Resultados Generales):** El proyecto registró 413 incidencias abiertas, distribuidas en 7 de severidad alta, 276 de severidad media, 75 de severidad baja y 55 informativas. El esfuerzo estimado para atenderlas fue de 8 días y 3 horas. Asimismo, la cobertura de pruebas registrada fue de 0.0 %, por lo que no se contó con información de cobertura automatizada durante este análisis. El Quality Gate obtuvo el estado *Passed*, de acuerdo con los criterios de calidad configurados en SonarQube.
+
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Backend-Analytics/21.png" width=500>
+</div>
+
+*Figura 1. Resumen general del análisis estático del backend.*
+
+
+
+<div align="center">
+    <img src="../assets/img/chapter-VI/Backend-Analytics/23.png" width=500>
+</div>
+
+*Figura 2. Medición de duplicación del código fuente*
+
+
+<div align="center">
+    <img src="../assets/img/chapter-VI/Backend-Analytics/22.png" width=500>
+</div>
+
+*Figura 3. Incidencias identificadas en el backend.*
+
+---
+
+##### 3. Resultados del Análisis Frontend
+
+A continuación, se presentan los resultados obtenidos mediante el análisis estático del código fuente del frontend de FerovaClinic, desarrollado con Angular y TypeScript. La evaluación se realizó utilizando SonarQube Community Build, después de completar satisfactoriamente el proceso de compilación del proyecto.
+
+- **Code Quality (Calidad del Código):** El análisis permitió evaluar la mantenibilidad, confiabilidad y duplicación del código fuente, considerando aproximadamente 20 mil líneas de código. SonarQube identificó 420 incidencias relacionadas con la mantenibilidad, obteniendo una calificación de nivel A. Asimismo, se registró una densidad de duplicación del 0.2 %, equivalente a 41 líneas duplicadas, distribuidas en 2 bloques y 2 archivos. Este resultado evidencia un bajo nivel de repetición de código en el frontend.
+
+- **Code Security (Seguridad del Código):** El análisis no identificó incidencias abiertas relacionadas con la seguridad, obteniendo una calificación de nivel A y registrando 0 Security Hotspots. Sin embargo, este resultado debe interpretarse considerando las limitaciones de SonarQube Community Build, que no realiza un análisis completo de determinadas vulnerabilidades críticas, como inyecciones SQL y ataques XSS.
+
+- **Reliability (Confiabilidad):** Se identificaron 151 incidencias relacionadas con la confiabilidad del código, obteniendo una calificación de nivel D. Entre los hallazgos se encuentra una incidencia de severidad alta relacionada con la utilización de una función de comparación basada en `String.localeCompare` para garantizar el ordenamiento alfabético de los elementos. También se identificaron observaciones de severidad media relacionadas con el manejo de promesas asíncronas, incluyendo la necesidad de implementar mecanismos de captura de errores mediante `.catch()` o control equivalente.
+
+- **Maintainability (Mantenibilidad):** Se registraron 420 incidencias relacionadas con la mantenibilidad, obteniendo una calificación de nivel A. Entre los hallazgos se identificaron recomendaciones de accesibilidad en los componentes de interfaz, como la incorporación de atributos `id` y su asociación con etiquetas en los campos de entrada. Estas observaciones permiten identificar oportunidades de mejora en la organización, legibilidad y mantenimiento del código frontend.
+
+- **Overall Results (Resultados Generales):** El proyecto obtuvo el estado *Passed* en el Quality Gate de SonarQube. Asimismo, se registró una cobertura de pruebas del 0.0 %, debido a que no se proporcionó información de cobertura automatizada durante el análisis. El porcentaje de duplicación fue del 0.2 %, calculado sobre aproximadamente 25 mil líneas consideradas por la herramienta. En conjunto, los resultados permiten identificar oportunidades de mejora principalmente en la confiabilidad y mantenibilidad del código fuente.
+
+<div align="center">
+    <img src="../assets/img/chapter-VI/Frontend-Analytics/31.png" width=500>
+</div>
+
+*Figura 1. Resumen general del análisis estático del frontend.*
+
+<div align="center">
+    <img src="../assets/img/chapter-VI/Frontend-Analytics/32.png" width=500>
+</div>
+
+*Figura 2. Incidencia de severidad alta identificada en el frontend.*
+
+<div align="center">
+    <img src="../assets/img/chapter-VI/Frontend-Analytics/33.png" width=500>
+</div>
+
+*Figura 3. Medición de duplicación del código frontend.*
+
+<div align="center">
+    <img src="../assets/img/chapter-VI/Frontend-Analytics/35.png" width=500>
+</div>
+
+*Figura 4. Incidencias de severidad media del frontend.*
+
+<div align="center">
+    <img src="../assets/img/chapter-VI/Frontend-Analytics/34.png" width=500>
+</div>
+
+*Figura 5. Evaluación de riesgos y deuda técnica del frontend.*
+
 
 ### 6.2.2. Reviews
 
-> Evidencia de revisiones de código (Pull Requests con comentarios, checklist de revisión y acuerdos del equipo).
+En FerovaClinic, las revisiones de código constituyen una práctica importante para garantizar la calidad del software antes de integrar nuevos cambios en las ramas principales del repositorio. Este proceso permite verificar que las funcionalidades implementadas cumplan con los requisitos establecidos, identificar posibles errores y mantener una estructura de código organizada tanto en el backend como en el frontend.
 
-<!-- COMPLETAR -->
+El proyecto utiliza GitHub como plataforma de control de versiones, permitiendo que los integrantes trabajen sobre ramas específicas según las funcionalidades asignadas y posteriormente integren sus modificaciones mediante un proceso de revisión. Asimismo, se emplea SonarQube para complementar la evaluación del código mediante análisis estático, identificando incidencias relacionadas con la seguridad, confiabilidad, mantenibilidad y duplicación.
+
+**Tipos de Revisiones**
+
+**Revisión de código por pares:**
+
+Consiste en que un integrante del equipo revise el código desarrollado por otro compañero antes de integrarlo a la rama correspondiente. Durante esta revisión se verifica que los nombres de clases, métodos, variables y archivos sean claros, que se respete la estructura del proyecto y que los cambios no afecten otros módulos o funcionalidades existentes.
+
+**Revisión técnica:**
+
+Al finalizar una actividad o sprint, se revisan las funcionalidades implementadas para comprobar que cumplan con los objetivos y criterios de aceptación establecidos. En FerovaClinic, esta revisión comprende los módulos de autenticación y gestión de usuarios, administración de pacientes, seguimiento del tratamiento, control de hemoglobina, gestión de citas, comunicación y generación de reportes, considerando tanto los servicios del backend como las interfaces del frontend.
+
+**Revisión automática o asistida:**
+
+El proyecto utiliza SonarQube Community Build para realizar el análisis estático del código fuente del backend y frontend. Esta herramienta permite identificar incidencias de seguridad, confiabilidad y mantenibilidad, así como detectar duplicaciones y oportunidades de mejora en la calidad del código. Adicionalmente, se verifica que ambos componentes compilen correctamente mediante los procesos de compilación de .NET y Angular antes de considerar los cambios como finalizados.
+
+**Proceso de Revisión**
+
+El proceso inicia cuando un desarrollador trabaja en una rama específica del proyecto y realiza los cambios correspondientes en el backend o frontend. Posteriormente, verifica que el componente modificado compile correctamente y que las funcionalidades implementadas mantengan el comportamiento esperado. Una vez realizadas estas comprobaciones, los cambios se suben al repositorio de GitHub para su revisión antes de integrarlos en la rama principal o de desarrollo.
+
+Durante la revisión se consideran los siguientes aspectos:
+
+- Que el código esté ubicado en el módulo y capa correspondiente.
+- Que los nombres de clases, métodos, variables y archivos sean claros y descriptivos.
+- Que se mantenga la separación de responsabilidades entre las capas de la aplicación.
+- Que no exista duplicación innecesaria de código.
+- Que los endpoints del backend cuenten con validaciones y manejo adecuado de respuestas.
+- Que las rutas protegidas respeten los mecanismos de autenticación y autorización.
+- Que el frontend mantenga una correcta organización de componentes, servicios, rutas e interceptores.
+- Que las funcionalidades implementadas cumplan con los criterios de aceptación establecidos.
+- Que los cambios no afecten el funcionamiento de módulos previamente desarrollados.
+- Que los resultados del análisis estático permitan identificar y evaluar posibles incidencias en el código.
+
+Si durante la revisión se identifican errores u oportunidades de mejora, se comunican las observaciones al desarrollador responsable para que realice las correcciones correspondientes. Posteriormente, los cambios vuelven a ser revisados y, una vez que cumplen con los criterios establecidos, pueden integrarse en la rama correspondiente.
 
 ## 6.3. Validation Interviews
 
