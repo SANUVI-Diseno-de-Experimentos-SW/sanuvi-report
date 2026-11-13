@@ -952,86 +952,685 @@ Background:
   Scenario: Una madre solo accede a las funciones de madre
     Given el usuario ha iniciado sesión con el rol "Mother"
     Then el usuario solo tiene acceso a:
-      | Módulo permitido          | Funcionalidad                                                  |
+      | Módulo permitido          | Funcionalidad                                                   |
       | Gestión de pacientes      | Registrar paciente, ver mis pacientes, evolución de hemoglobina |
-      | Diario nutricional        | Registrar alimento, ver diario de hoy, ver historial           |
+      | Diario nutricional        | Registrar alimento, ver diario de hoy, ver historial            |
       | Seguimiento de tratamiento | Confirmar dosis, ver dosis de hoy, ver historial de dosis      |
-      | Citas                     | Reservar y cancelar citas, ver postas cercanas, próxima cita   |
+      | Citas                     | Reservar y cancelar citas, ver postas cercanas, próxima cita    |
     And no puede acceder a:
       | Módulo restringido        | Funcionalidad                                                  |
       | Historia clínica          | Crear y consultar historias clínicas                           |
       | Control de hemoglobina    | Registrar controles                                            |
       | Gestión de pacientes      | Asignarse pacientes, dar de alta, buscar madres                |
-      | Seguimiento de tratamiento | Iniciar, completar o abandonar tratamientos, ver riesgo        |
+      | Seguimiento de tratamiento | Iniciar, completar o abandonar tratamientos, ver riesgo       |
       | Citas                     | Ver la agenda de la enfermera                                  |
       | Postas de salud           | Registrar postas y asignar enfermeras                          |
 
   Scenario: Una enfermera solo accede a las funciones de enfermera
     Given el usuario ha iniciado sesión con el rol "Nurse"
     Then el usuario solo tiene acceso a:
-      | Módulo permitido          | Funcionalidad                                                         |
+      | Módulo permitido          | Funcionalidad                                                            |
       | Gestión de pacientes      | Asignarse pacientes, buscar madres, ver pacientes asignados, dar de alta |
-      | Historia clínica          | Crear y consultar historias clínicas de sus pacientes                 |
-      | Control de hemoglobina    | Registrar controles y consultar el historial                          |
-      | Seguimiento de tratamiento | Iniciar, completar y abandonar tratamientos, ver riesgo               |
-      | Citas                     | Ver la agenda de citas de su posta                                    |
+      | Historia clínica          | Crear y consultar historias clínicas de sus pacientes                    |
+      | Control de hemoglobina    | Registrar controles y consultar el historial                             |
+      | Seguimiento de tratamiento | Iniciar, completar y abandonar tratamientos, ver riesgo                 |
+      | Citas                     | Ver la agenda de citas de su posta                                       |
     And no puede acceder a:
       | Módulo restringido        | Funcionalidad                                                  |
       | Gestión de pacientes      | Registrar pacientes, ver "mis pacientes" de una madre          |
       | Diario nutricional        | Registrar alimento, ver diario e historial                     |
-      | Seguimiento de tratamiento | Confirmar dosis, ver dosis de hoy e historial de dosis         |
+      | Seguimiento de tratamiento | Confirmar dosis, ver dosis de hoy e historial de dosis        |
       | Citas                     | Reservar o cancelar citas, ver postas cercanas, próxima cita   |
       | Postas de salud           | Registrar postas y asignar enfermeras                          |
 
   Scenario: Un administrador gestiona las postas de salud
     Given el usuario ha iniciado sesión con el rol "Admin"
     Then el usuario tiene acceso a:
-      | Módulo permitido | Funcionalidad                                                  |
+      | Módulo permitido | Funcionalidad                                                      |
       | Postas de salud  | Registrar postas, consultar distritos, asignar enfermeras a postas |
     And ni una madre ni una enfermera pueden usar esas funciones
 
 ```
 
-<!-- COMPLETAR -->
-
 ### 6.1.4. Core System Tests
 
-> Pruebas de sistema / aceptación end-to-end sobre el producto desplegado.
+En esta sección se presentan las pruebas de sistema realizadas sobre los principales productos de la solución, con el objetivo de verificar su correcto funcionamiento de manera integral desde la perspectiva del usuario final. Estas pruebas permiten validar la ejecución de las funcionalidades implementadas, la navegación entre los diferentes módulos, la interacción con los servicios backend y el comportamiento de las aplicaciones ante operaciones exitosas y escenarios alternativos.
 
-<!-- COMPLETAR -->
+Para esta entrega, las pruebas de sistema se realizaron sobre cuatro productos principales: Landing Page desarrollada con HTML, CSS y JavaScript y desplegada en GitHub Pages; aplicación web desarrollada con Angular; backend desarrollado con C# y .NET, ambos desplegados en sus respectivos entornos; y aplicación móvil desarrollada con Kotlin, ejecutada en un dispositivo Android físico.
+
+Las pruebas consideran los flujos funcionales de cada producto, verificando la interacción entre las interfaces de usuario y los servicios de la API, así como el procesamiento de las operaciones y la respuesta obtenida durante su ejecución.
+
+#### Testing Strategy
+
+La estrategia de pruebas de sistema se definió de acuerdo con las características y tecnologías de cada producto desarrollado. Para la Landing Page y la aplicación web Angular se utilizará Selenium IDE, permitiendo automatizar y reproducir flujos de navegación e interacción con las interfaces desde el navegador.
+
+Para el backend desarrollado en C# y .NET se utilizará Postman y Swagger, con el propósito de ejecutar solicitudes HTTP y verificar las respuestas de los endpoints, la autenticación, el acceso a recursos protegidos y el procesamiento de las operaciones. Finalmente, para la aplicación móvil desarrollada en Kotlin se realizarán pruebas manuales documentadas sobre un dispositivo Android físico, verificando la ejecución de sus principales funcionalidades y la interacción con los servicios backend.
+
+| Producto | Entorno | Herramienta | Tipo de prueba | Propósito |
+|---|---|---|---|---|
+| Landing Page | GitHub Pages | Selenium IDE | Web System Test | Validar carga, navegación, botones, enlaces y visualización del contenido público. |
+| Web Application | Entorno desplegado | Selenium IDE | Web UI System Test | Validar autenticación, navegación, gestión de pacientes, tratamientos y funcionalidades disponibles según el rol. |
+| Backend API | Entorno desplegado | Postman / Swagger | API System Test | Validar autenticación, autorización, endpoints, operaciones CRUD, persistencia de datos y manejo de errores. |
+| Mobile Application | Dispositivo Android | Prueba manual documentada | Mobile System Test | Validar inicio de sesión, navegación, funcionalidades de seguimiento del tratamiento e interacción con la API. |
+
+#### System Test Cases
+
+| ID | Producto | Escenario | Herramienta | Resultado esperado | Estado |
+|---|---|---|---|---|---|
+| ST-LP-01 | Landing Page | Cargar la página pública | Selenium IDE | El sitio carga correctamente y muestra la sección principal. | Passed |
+| ST-LP-02 | Landing Page | Validar navegación del menú principal | Selenium IDE | Los enlaces del menú permiten acceder correctamente a las secciones correspondientes. | Passed |
+| ST-LP-03 | Landing Page | Validar redirección del Call To Action | Selenium IDE | El botón de acceso para personal de salud redirige correctamente hacia Ferova Clinic. | Passed |
+| ST-LP-04 | Landing Page | Validar descarga de APK | Selenium IDE | El botón permite iniciar la descarga del archivo Ferova_Family.apk. | Passed |
+| ST-WEB-01 | FerovaClinic | Inicio de sesión válido como enfermera | Selenium IDE | El personal de enfermería inicia sesión correctamente y accede a su panel correspondiente. | Passed |
+| ST-WEB-02 | FerovaClinic | Inicio de sesión válido como administrador | Selenium IDE | El administrador inicia sesión correctamente y accede a las funcionalidades de administración. | Passed |
+| ST-WEB-03 | FerovaClinic | Visualizar pacientes por madre | Selenium IDE | Se muestran los pacientes asociados a la madre o titular ingresado. | Passed |
+| ST-WEB-04 | FerovaClinic | Registrar establecimiento de salud (posta) | Selenium IDE | Se completa el registro del establecimiento de salud mediante los pasos del formulario. | Passed |
+| ST-WEB-05 | FerovaClinic | Registrar historial médico | Selenium IDE | Se registra el historial médico del paciente, incluyendo datos de consulta, observaciones, antecedentes y síntomas. | Passed |
+| ST-WEB-06 | FerovaClinic | Registrar control de hemoglobina | Selenium IDE | Se registra el valor de hemoglobina del paciente y se incorpora a su seguimiento clínico. | Passed |
+| ST-WEB-07 | FerovaClinic | Visualizar pacientes para dar de alta | Selenium IDE | Se muestra la cartera de pacientes activos que pueden iniciar el proceso de alta. | Passed |
+| API-01 | Inicio de Sesión – Credenciales Válidas | POST | Verificar la autenticación de un usuario mediante el envío de un DNI y una contraseña válidos. | 200 OK – Autenticación exitosa y generación de token JWT. | Passed |
+| API-02 | Inicio de Sesión – Credenciales Inválidas | POST | Verificar el rechazo del inicio de sesión cuando se proporcionan credenciales incorrectas. | 401 Unauthorized – Credenciales inválidas. | Passed |
+| API-03 | Registro de Paciente | POST | Verificar el registro de un nuevo paciente mediante el envío de sus datos personales y el identificador de su madre o titular. | 201 Created – Paciente registrado exitosamente. | Passed |
+| API-04 | Inicio de Tratamiento | POST | Verificar el inicio de un tratamiento mediante el envío del identificador del paciente, nombre del suplemento, cantidad, horario de dosificación y duración. | 201 Created – Tratamiento iniciado exitosamente. | Passed |
+| API-05 | Confirmación de Dosis | POST | Verificar la confirmación de una dosis programada asociada a un tratamiento activo del paciente. | 200 OK – Dosis confirmada exitosamente y actualización de la adherencia. | Passed |
+| API-06 | Búsqueda de Alimentos | GET | Verificar la búsqueda de alimentos mediante un texto de consulta para obtener información nutricional relacionada con su contenido de hierro. | 200 OK – Lista de alimentos coincidentes obtenida exitosamente. | Passed |
+| API-07 | Registro de Consumo de Alimentos | POST | Verificar el registro de un alimento consumido por el paciente, especificando su identificador y cantidad. | 201 Created – Alimento registrado exitosamente y cálculo del hierro absorbido. | Passed |
+| API-08 | Registro de Cita Médica | POST | Verificar la programación de una cita médica mediante el envío del identificador del establecimiento de salud, paciente, fecha y hora. | 201 Created – Cita médica reservada exitosamente. | Passed |
+| API-09 | Cancelación de Cita Médica | PUT | Verificar la cancelación de una cita médica previamente programada mediante el identificador de la cita. | 200 OK – Cita médica cancelada exitosamente. | Passed |
+| API-10 | Envío de Consulta al Personal Médico | POST | Verificar la creación de una consulta mediante el identificador del paciente y el mensaje inicial enviado por la madre o cuidadora. | 201 Created – Consulta creada exitosamente. | Passed |
+| API-11 | Envío de Mensajes | POST | Verificar el envío de un mensaje dentro de una consulta existente mediante su identificador y el contenido del mensaje. | 200 OK – Mensaje enviado exitosamente. | Passed |
+| API-12 | Consulta del Historial de Chat | GET | Verificar la recuperación de los mensajes intercambiados entre la madre o cuidadora y el personal de salud dentro de una consulta. | 200 OK – Historial de conversación obtenido exitosamente. | Passed |
+
+#### Selenium IDE Tests for Landing Page
+
+**ST-LP-01: Load Landing Page**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-LP-WEB-MOBILE/ST-LP-01_LoadLandingPage.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución del test de carga de la Landing Page, verificando que la página pública desplegada en GitHub Pages se abra correctamente y que el navegador establezca las dimensiones de visualización configuradas. La prueba finalizó satisfactoriamente, sin errores.
+
+**ST-LP-02: Navigation Menu**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-LP-WEB-MOBILE/ST-LP-02_NavigationMenu.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución del test de navegación del menú principal, verificando que los enlaces «El problema», «Funcionalidades», «Para quién» y «Cómo funciona» respondan correctamente al hacer clic y permitan acceder a las respectivas secciones de la Landing Page. La prueba finalizó satisfactoriamente.
+
+**ST-LP-03: Call To Action**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-LP-WEB-MOBILE/ST-LP-03_CallToAction.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución del test del botón Call To Action, correspondiente al acceso del personal de salud. Se verificó que el botón redirija correctamente al usuario hacia la aplicación web Ferova Clinic, desplegada en Azure Static Web Apps. La prueba finalizó satisfactoriamente.
+
+**ST-LP-04: Download APK**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-LP-WEB-MOBILE/ST-LP-04_DownloadAPK.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución del test de descarga de la aplicación móvil Ferova Family. Se verificó la interacción con el botón de descarga mediante el atributo `download="Ferova_Family.apk"` y se incorporó una pausa de cinco segundos para permitir el procesamiento de la descarga. Selenium IDE registró la ejecución satisfactoria de los comandos configurados.
+
+#### Selenium IDE Tests for FerovaClinic
+
+**ST-WEB-01: Login Nurse Valid**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-FerovaClinic/ST-WEB-01_LoginNurseValid.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución del test de inicio de sesión válido para el personal de enfermería, verificando que las credenciales ingresadas sean aceptadas y que el usuario pueda acceder correctamente a la plataforma FerovaClinic. La prueba finalizó satisfactoriamente, sin errores.
+
+**ST-WEB-02: Login Admin Valid**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-FerovaClinic/ST-WEB-02_LoginAdminValid.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución del test de inicio de sesión válido para el administrador, verificando el acceso a la plataforma mediante sus credenciales correspondientes y la disponibilidad de las funcionalidades asignadas a dicho rol. La prueba finalizó satisfactoriamente, sin errores.
+
+**ST-WEB-03: View Patients By Mother**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-FerovaClinic/ST-WEB-03_ViewPatientsByMother.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución del test de visualización de pacientes asociados a una madre o titular, verificando la búsqueda mediante el documento de identidad y la presentación de los pacientes registrados. La prueba finalizó satisfactoriamente, sin errores.
+
+**ST-WEB-04: Register Healthy Facility**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-FerovaClinic/ST-WEB-04_RegisterHealthyFacility.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución del test de registro de un establecimiento de salud, verificando el ingreso de información general, selección del distrito, dirección, teléfono de contacto, ubicación geográfica, especialidades y disponibilidad. La prueba finalizó satisfactoriamente, sin errores.
+
+**ST-WEB-05: Register Medical Record**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-FerovaClinic/ST-WEB-05_RegisterMedicalRecord.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución del test de registro del historial médico de un paciente, verificando el ingreso de peso, altura, motivo de consulta, observaciones, antecedentes y síntomas reportados. La prueba finalizó satisfactoriamente, sin errores.
+
+**ST-WEB-06: Register Hemoglobin Control**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-FerovaClinic/ST-WEB-06_RegisterDoses.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución del test de registro del control de hemoglobina, verificando la selección del paciente y el ingreso del valor correspondiente para su seguimiento clínico. La prueba se ejecutó mediante Selenium IDE.
+
+**ST-WEB-07: View Patients For Discharge**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Test-Frontend-FerovaClinic/ST-WEB-07_ViewPatientsForDischarge.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución del test de visualización de pacientes disponibles para el proceso de alta, verificando la presentación de la cartera activa, los nombres de los pacientes y el estado de sus tratamientos. La prueba finalizó satisfactoriamente, sin errores.
+
+#### Postman API Tests
+
+**API-01: Login – Valid Credentials**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-01-Valid-Credentials.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución de la prueba de autenticación de usuarios mediante el envío de credenciales válidas (DNI y contraseña) al endpoint correspondiente. Se verificó que el servicio respondiera correctamente con un código HTTP 200 OK y generara un token JWT para permitir el acceso a los recursos protegidos de la aplicación.
+
+**API-02: Login – Invalid Credentials**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-02-Invalid-Credentials.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución de la prueba de autenticación con credenciales incorrectas, verificando que el servicio rechace el acceso del usuario. La API respondió con el código HTTP 401 Unauthorized y el mensaje de credenciales inválidas, confirmando el correcto manejo de intentos de inicio de sesión no autorizados.
+
+**API-03: Register Patient**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-03-Register-Patient.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución de la prueba de registro de pacientes mediante el envío de información personal, incluyendo nombres, apellidos, fecha de nacimiento, género, peso, altura e identificador de la madre. La API respondió con el código HTTP 201 Created, confirmando que el paciente fue registrado exitosamente.
+
+**API-04: Start Treatment**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-04-Start-Treatment.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución de la prueba de inicio de tratamiento para un paciente, enviando información correspondiente al suplemento, cantidad, horario de dosificación y duración del tratamiento. La API respondió con el código HTTP 201 Created, confirmando la creación del tratamiento y la generación de las dosis programadas.
+
+**API-05: Confirm Treatment Dose**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-05-Confirm-Doses.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución de la prueba de confirmación de una dosis correspondiente a un tratamiento activo. Se verificó el envío del identificador del paciente y la actualización del estado de la dosis a CONFIRMED, obteniendo una respuesta HTTP 200 OK y reflejando la actualización de los indicadores de adherencia.
+
+**API-06: Search Foods**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-06-SearchFood.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución de la prueba de búsqueda de alimentos mediante el envío de un parámetro de consulta para localizar alimentos específicos. Se verificó que la API devolviera una lista de resultados con información nutricional, contenido de hierro por cada 100 gramos y clasificación según su capacidad de absorción. La solicitud finalizó satisfactoriamente con un código HTTP 200 OK.
+
+**API-07: Register Food Consumption**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-07-RegisterFood.png" width=700>
+</div>
+
+<br>
+
+Se evidencia la ejecución de la prueba de registro de consumo de alimentos para un paciente, enviando el identificador del paciente, el alimento seleccionado y la cantidad consumida. La API respondió con el código HTTP 201 Created, confirmando el registro del alimento y el cálculo del hierro absorbido.
+
+**API-08: Book Medical Appointment**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-08-RegisterAppoitment.png" width=700>
+</div>
+
+<br>
+
+
+Se evidencia la ejecución de la prueba de programación de una cita médica mediante el envío del identificador del establecimiento de salud, identificador del paciente, fecha y hora de atención. La API respondió con el código HTTP 201 Created, confirmando que la cita médica fue reservada exitosamente.
+
+**API-09: Cancel Medical Appointment**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-09-AppoitmentCancel.png" width=700>
+</div>
+
+<br>
+
+
+Se evidencia la ejecución de la prueba de cancelación de una cita médica previamente registrada, enviando el identificador correspondiente a la cita. Se verificó que el servicio procesara correctamente la solicitud y devolviera el código HTTP 200 OK, confirmando la cancelación de la cita médica.
+
+**API-10: Create Medical Consultation**
+
+
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-10-SendConsultationToDoctor.png" width=700>
+</div>
+
+<br>
+
+
+Se evidencia la ejecución de la prueba de creación de una consulta entre la madre o cuidadora y el personal de salud, mediante el envío del identificador del paciente y el contenido del mensaje inicial. La API respondió con el código HTTP 201 Created, confirmando la creación de la consulta y la generación de su identificador.
+
+**API-11: Send Chat Message**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-11-SendMessage.png" width=700>
+</div>
+
+<br>
+
+
+Se evidencia la ejecución de la prueba de envío de mensajes dentro de una consulta existente, mediante el identificador de la consulta y el contenido del mensaje. La API respondió con el código HTTP 200 OK, confirmando que el mensaje fue enviado exitosamente.
+
+**API-12: Retrieve Chat History**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/API/API-12-Chat.png" width=700>
+</div>
+
+<br>
+
+
+Se evidencia la ejecución de la prueba de consulta del historial de mensajes de una conversación mediante el identificador de la consulta. Se verificó que el servicio devolviera los mensajes intercambiados entre la madre o cuidadora y el personal de enfermería, incluyendo el identificador del remitente, rol, contenido y fecha de envío. La solicitud finalizó satisfactoriamente con un código HTTP 200 OK.
 
 ## 6.2. Static testing & Verification
 
 ### 6.2.1. Static Code Analysis
 
+El análisis estático de código constituye una práctica importante dentro del proceso de verificación y validación de software, ya que permite identificar defectos, inconsistencias, problemas de calidad y posibles vulnerabilidades sin necesidad de ejecutar el programa. Este análisis complementa las pruebas dinámicas al detectar problemas durante las etapas de desarrollo, reduciendo el costo y el esfuerzo de corrección.
+
+En el proyecto Ferova, se establecen estándares de codificación para los diferentes componentes de la solución: la aplicación web FerovaClinic, desarrollada con Angular y TypeScript; la aplicación móvil FerovaFamily, desarrollada con Kotlin; y el servicio backend REST API, implementado con C# y ASP.NET Core. Asimismo, se consideran convenciones para los archivos de pruebas de comportamiento escritos en Gherkin y para la gestión del código fuente mediante Git y GitHub.
+
+La verificación estática se aborda mediante dos aspectos complementarios. En la sección 6.2.1.1 se describen los estándares y convenciones de codificación establecidos para cada tecnología. En la sección 6.2.1.2 se presentan las herramientas y los resultados del análisis de calidad del código.
+
+
 #### 6.2.1.1. Coding standard & Code conventions
 
-> Reglas y linters configurados por repositorio, y evidencia de su ejecución.
+Para garantizar la legibilidad, consistencia y mantenibilidad del código fuente, el equipo de Ferova establece las siguientes convenciones de codificación para cada componente de la solución. Los identificadores de código (variables, métodos, clases, componentes y archivos) se escriben en inglés, mientras que los textos presentados a los usuarios se mantienen en español.
 
-<!-- COMPLETAR -->
+#### Angular / TypeScript — FerovaClinic
+
+Se siguen las convenciones oficiales de Angular y la guía de estilo de TypeScript:
+
+- Los componentes, servicios, directivas y módulos utilizan nombres descriptivos siguiendo el formato `PascalCase` para las clases.
+- Los nombres de variables, métodos y funciones utilizan `camelCase` (e.g., `patientList`, `registerPatient()`).
+- Los nombres de constantes utilizan `UPPER_SNAKE_CASE` cuando representan valores globales inmutables (e.g., `API_BASE_URL`).
+- Los archivos de componentes siguen la convención `kebab-case` (e.g., `patient-list.component.ts`).
+- Se utiliza `const` para variables que no necesitan reasignación y `let` cuando el valor puede cambiar. Se evita el uso de `var`.
+- Se emplea la programación basada en componentes para mantener una estructura modular y reutilizable.
+- Los servicios centralizan la comunicación con la API REST y la lógica compartida entre componentes.
+- Se utilizan interfaces y tipos de TypeScript para definir la estructura de los datos.
+- Se aplican mecanismos de tipado para reducir errores relacionados con valores y propiedades incompatibles.
+- Se mantiene una separación entre componentes, servicios, modelos y demás responsabilidades de la aplicación.
+
+Herramienta de análisis: ESLint y las herramientas de análisis de TypeScript, según la configuración del proyecto.
+
+#### Kotlin / Android — FerovaFamily
+
+Se siguen las convenciones oficiales de Kotlin y las recomendaciones de desarrollo para Android:
+
+- Los nombres de clases, interfaces y objetos utilizan `PascalCase` (e.g., `PatientRepository`, `TreatmentViewModel`).
+- Las variables, propiedades y funciones utilizan `camelCase` (e.g., `patientName`, `registerDose()`).
+- Los nombres de constantes utilizan `UPPER_SNAKE_CASE` cuando corresponda (e.g., `API_BASE_URL`).
+- Los nombres de paquetes se escriben en minúsculas y siguen una estructura jerárquica.
+- Se utiliza `val` para declarar variables inmutables y `var` cuando se requiere modificar su valor.
+- Se prioriza el uso de funciones y clases reutilizables para evitar la duplicación de código.
+- Se emplean corrutinas de Kotlin para gestionar operaciones asíncronas cuando corresponde.
+- Se mantiene una separación de responsabilidades entre Activities, Fragments, ViewModels, repositorios y servicios, según la arquitectura implementada.
+- Se utilizan modelos de datos (`data class`) para representar la información de pacientes, tratamientos y controles.
+- Se aprovechan las características de seguridad de tipos y nulabilidad de Kotlin para reducir errores durante el desarrollo.
+- Se mantiene una separación entre la interfaz de usuario, la lógica de negocio y el acceso a datos.
+
+Herramienta de análisis: Kotlin Compiler y Android Lint, según la configuración del proyecto.
+
+#### C# / ASP.NET Core — Backend REST API
+
+Se siguen las convenciones de codificación de Microsoft para C# y las recomendaciones de desarrollo de ASP.NET Core:
+
+- Las clases, métodos, propiedades e interfaces utilizan `PascalCase` (e.g., `PatientService`, `RegisterPatient`).
+- Las variables locales y parámetros utilizan `camelCase` (e.g., `patientId`, `treatmentDuration`).
+- Los campos privados utilizan el prefijo `_` seguido de `camelCase` (e.g., `_patientRepository`).
+- Las interfaces utilizan el prefijo `I` (e.g., `IPatientService`, `ITreatmentRepository`).
+- Los nombres de los controladores finalizan con el sufijo `Controller` (e.g., `PatientController`).
+- Los endpoints se organizan de acuerdo con los recursos y responsabilidades de cada módulo.
+- Los métodos de los controladores utilizan los atributos HTTP correspondientes (`[HttpGet]`, `[HttpPost]`, `[HttpPut]`, `[HttpDelete]`).
+- Se emplean DTOs para definir los datos de entrada y salida de los servicios.
+- Se utiliza inyección de dependencias para facilitar la modularidad y el mantenimiento del backend.
+- Se implementa el manejo centralizado de excepciones y respuestas HTTP.
+- Se prioriza la separación de responsabilidades entre controladores, servicios y acceso a datos.
+
+Herramienta de análisis: Roslyn Analyzers y .NET Code Analysis, según la configuración del proyecto.
+
+#### Gherkin — Archivos `.feature` (BDD)
+
+Se siguen las convenciones de Gherkin para la definición de pruebas de comportamiento:
+
+- Cada archivo `.feature` describe una funcionalidad o flujo de negocio específico.
+- Los títulos de `Feature` y `Scenario` son descriptivos y se redactan en inglés o español de manera consistente con la documentación del proyecto.
+- Se utilizan correctamente las palabras clave:
+  - `Feature`: funcionalidad que se desea verificar.
+  - `Scenario`: situación específica de prueba.
+  - `Given`: contexto o estado inicial.
+  - `When`: acción o evento que desencadena el comportamiento.
+  - `Then`: resultado esperado y verificable.
+  - `And / But`: extensión de los pasos anteriores.
+- Los escenarios describen el comportamiento funcional y evitan depender de detalles específicos de la interfaz.
+- Se consideran escenarios positivos, negativos y alternativos para verificar diferentes condiciones.
+- Se reutilizan pasos comunes para evitar duplicación entre escenarios.
+- Los archivos `.feature` utilizan nombres descriptivos en formato `kebab-case` (e.g., `patient-management.feature`, `treatment-tracking.feature`).
+
+#### Conventional Commits & GitFlow
+
+El equipo utiliza convenciones para mantener un historial de cambios organizado y facilitar el seguimiento de las modificaciones realizadas en los repositorios de Ferova.
+
+El formato de los mensajes de commit es:
+
+`<type>(<scope>): <description>`
+
+| Tipo | Uso |
+|---|---|
+| `feat` | Implementación de una nueva funcionalidad. |
+| `fix` | Corrección de errores o defectos. |
+| `docs` | Modificaciones en la documentación. |
+| `style` | Cambios de formato sin modificar la lógica. |
+| `refactor` | Reestructuración del código sin agregar funcionalidades. |
+| `test` | Adición o modificación de pruebas. |
+| `chore` | Tareas de mantenimiento y configuración. |
+| `ci` | Modificaciones en los procesos de integración continua. |
+
+Ejemplos aplicados al proyecto:
+
+```text
+feat(patients): add patient registration endpoint
+feat(treatment): implement dose confirmation
+fix(auth): correct user authentication validation
+test(gherkin): add patient management scenarios
+docs(api): update REST API documentation
+```
+
+Para la organización del código fuente se consideran las siguientes convenciones de ramas:
+
+| Rama | Propósito |
+|---|---|
+| `main` | Código estable destinado a producción. |
+| `develop` | Integración de funcionalidades en desarrollo. |
+| `feature/<name>` | Desarrollo de nuevas funcionalidades. |
+| `release/<version>` | Preparación de versiones para su publicación. |
+| `hotfix/<description>` | Corrección de errores críticos. |
+
+La gestión del código fuente se realiza mediante Git y GitHub, permitiendo mantener el historial de cambios, integrar funcionalidades y facilitar la colaboración entre los integrantes del equipo.
 
 #### 6.2.1.2. Code Quality & Code Security
 
-> Resultados del análisis estático (por ejemplo, SonarQube / SonarCloud, CodeQL): bugs, code smells, vulnerabilidades, cobertura y duplicación.
+Se realizó el análisis estático del código fuente del backend de FerovaClinic mediante SonarQube Community Build, utilizando SonarScanner for .NET. El análisis procesó 344 archivos y permitió evaluar diferentes aspectos relacionados con la calidad, mantenibilidad, confiabilidad y seguridad del código.
 
-<img src="../assets/img/chapter-VI/static-analysis.png" alt="Reporte de análisis estático">
+Como resultado, el proyecto obtuvo un **Quality Gate: Passed**, cumpliendo las condiciones establecidas para su aprobación. En cuanto a las métricas generales, se identificaron 11 incidencias de seguridad, 11 incidencias de confiabilidad y 391 incidencias de mantenibilidad (Code Smells), obteniendo calificaciones C, D y A, respectivamente. Asimismo, se registró un porcentaje de duplicación de código del 3.4% y una cobertura de pruebas del 0.0%.
 
-| Métrica | Valor | Umbral definido |
-|---------|-------|-----------------|
-| Bugs | | |
-| Vulnerabilities | | |
-| Security Hotspots | | |
-| Code Smells | | |
-| Coverage | | |
-| Duplications | | |
+Estos resultados permitieron identificar oportunidades de mejora en el código fuente y evaluar su estado de calidad mediante reglas automatizadas. Cabe señalar que la cobertura de pruebas no fue reportada en este análisis y que la edición utilizada presenta limitaciones en el análisis de seguridad avanzado.
 
-<!-- COMPLETAR -->
+##### 1. Configuration of Static Code Analysis Environment
+
+**Paso 1. Creación del proyecto local en SonarQube**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/3.png" width=500>
+</div>
+
+Se accedió a SonarQube y se seleccionó la opción Create a local project para registrar el backend de Ferova. Se estableció ferovaclinic-backend como nombre del proyecto y como clave de identificación, mientras que la rama principal se configuró como main.
+
+**Paso 2. Selección del método de análisis**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/5.png" width=500>
+</div>
+
+Se seleccionó la creación de un proyecto local, ya que el análisis se realizaría directamente desde el entorno de desarrollo. Este método permitió analizar el código fuente almacenado en el equipo sin necesidad de configurar una integración con GitHub u otra plataforma DevOps.
+
+**Paso 3. Configuración del proyecto y generación del token**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/6.png" width=500>
+</div>
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/7.png" width=500>
+</div>
+
+Una vez creado el proyecto, SonarQube solicitó generar un token de acceso asociado a ferovaclinic-backend. Este token permite autenticar las solicitudes del analizador y autorizar el envío de los resultados al servidor SonarQube.
+
+**Paso 4. Selección de la tecnología del proyecto**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/8.png" width=500>
+</div>
+
+En la configuración del análisis se seleccionó la tecnología .NET, correspondiente al backend desarrollado con C# y ASP.NET Core. Posteriormente, se identificó el framework utilizado como .NET Core, lo que permitió obtener las instrucciones específicas para ejecutar SonarScanner en el proyecto.
+
+**Paso 5. Instalación y configuración de SonarScanner**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/9.png" width=500>
+</div>
+
+
+Se verificó la instalación global de SonarScanner para .NET mediante la herramienta de línea de comandos de .NET. Esta herramienta permite establecer la conexión entre el proyecto backend y el servidor SonarQube para realizar el análisis estático del código fuente.
+
+
+**Paso 6. Configuración de las credenciales de análisis**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/10.png" width=500>
+</div>
+
+Se configuró el token de autenticación mediante una variable de entorno de la terminal. De esta manera, se evitó escribir directamente las credenciales en los comandos de ejecución y se preparó el entorno para iniciar el análisis del proyecto.
+
+**Paso 7. Inicio del análisis estático**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/11.png" width=500>
+</div>
+
+Se ejecutó el comando dotnet sonarscanner begin, indicando la clave del proyecto ferovaclinic-backend, la dirección local del servidor SonarQube y el token de autenticación. Este comando inició el proceso de análisis y preparó los componentes necesarios para recopilar información del código fuente durante la compilación.
+
+**Paso 8. Compilación del backend**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/12.png" width=500>
+</div>
+
+Se ejecutó el comando dotnet build sobre la solución WebApplication1.sln para compilar el backend durante el proceso de análisis. La compilación finalizó correctamente, aunque se identificaron 411 advertencias. Estos resultados fueron recopilados por SonarScanner para su posterior procesamiento.
+
+**Paso 9. Finalización y envío del análisis**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/13.png" width=500>
+</div>
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/16.png" width=500>
+</div>
+
+Se ejecutó el comando dotnet sonarscanner end para finalizar el análisis y enviar los resultados recopilados al servidor SonarQube. En la consola se mostró el mensaje ANALYSIS SUCCESSFUL, confirmando que el informe fue procesado y enviado correctamente.
+
+**Paso 10. Acceso al proyecto analizado**
+
+<div align="center">
+<img src="../assets/img/chapter-VI/SonarQube-Step/14.png" width=500>
+</div>
+
+Finalmente, se accedió al proyecto ferovaclinic-backend desde la interfaz web de SonarQube para consultar los resultados del análisis estático. Esta etapa permite revisar los indicadores de calidad, los problemas detectados y las posibles vulnerabilidades identificadas en el código fuente.
+
+---
+
+##### 2. Resultados del Análisis Backend
+
+A continuación, se presentan los resultados obtenidos mediante el análisis estático del código fuente del backend de FerovaClinic, realizado con SonarQube Community Build después de completar satisfactoriamente el proceso de compilación y análisis.
+
+- **Code Quality (Calidad del Código):** El análisis permitió evaluar la mantenibilidad, confiabilidad y estructura del código fuente, considerando un total aproximado de 16 mil líneas de código. SonarQube identificó 391 incidencias relacionadas con la mantenibilidad, obteniendo una calificación de nivel A. Asimismo, se registró una densidad de duplicación del 3.4 %, lo que permite identificar oportunidades para reducir la repetición de código y mejorar su organización.
+
+- **Code Security (Seguridad del Código):** Se identificaron 11 incidencias relacionadas con la seguridad, con una calificación de nivel C. Entre los hallazgos se encuentran recomendaciones asociadas con la configuración de políticas CORS y el uso de mecanismos criptográficamente seguros para la generación de números aleatorios. Aunque el análisis registró 0 Security Hotspots, este resultado debe interpretarse considerando que SonarQube Community Build presenta limitaciones en el análisis de determinadas vulnerabilidades de seguridad.
+
+- **Reliability (Confiabilidad):** Se detectaron 11 incidencias relacionadas con la confiabilidad del código, obteniendo una calificación de nivel D. Entre los hallazgos identificados se encuentran recomendaciones sobre el manejo de operaciones asíncronas y la cancelación de solicitudes mediante mecanismos como `CancellationToken`. Estos resultados representan oportunidades de mejora para fortalecer el comportamiento y la estabilidad de los componentes del backend.
+
+- **Overall Results (Resultados Generales):** El proyecto registró 413 incidencias abiertas, distribuidas en 7 de severidad alta, 276 de severidad media, 75 de severidad baja y 55 informativas. El esfuerzo estimado para atenderlas fue de 8 días y 3 horas. Asimismo, la cobertura de pruebas registrada fue de 0.0 %, por lo que no se contó con información de cobertura automatizada durante este análisis. El Quality Gate obtuvo el estado *Passed*, de acuerdo con los criterios de calidad configurados en SonarQube.
+
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Backend-Analytics/21.png" width=500>
+</div>
+
+*Figura 1. Resumen general del análisis estático del backend.*
+
+
+
+<div align="center">
+    <img src="../assets/img/chapter-VI/Backend-Analytics/23.png" width=500>
+</div>
+
+*Figura 2. Medición de duplicación del código fuente*
+
+
+<div align="center">
+    <img src="../assets/img/chapter-VI/Backend-Analytics/22.png" width=500>
+</div>
+
+*Figura 3. Incidencias identificadas en el backend.*
+
+---
+
+##### 3. Resultados del Análisis Frontend
+
+A continuación, se presentan los resultados obtenidos mediante el análisis estático del código fuente del frontend de FerovaClinic, desarrollado con Angular y TypeScript. La evaluación se realizó utilizando SonarQube Community Build, después de completar satisfactoriamente el proceso de compilación del proyecto.
+
+- **Code Quality (Calidad del Código):** El análisis permitió evaluar la mantenibilidad, confiabilidad y duplicación del código fuente, considerando aproximadamente 20 mil líneas de código. SonarQube identificó 420 incidencias relacionadas con la mantenibilidad, obteniendo una calificación de nivel A. Asimismo, se registró una densidad de duplicación del 0.2 %, equivalente a 41 líneas duplicadas, distribuidas en 2 bloques y 2 archivos. Este resultado evidencia un bajo nivel de repetición de código en el frontend.
+
+- **Code Security (Seguridad del Código):** El análisis no identificó incidencias abiertas relacionadas con la seguridad, obteniendo una calificación de nivel A y registrando 0 Security Hotspots. Sin embargo, este resultado debe interpretarse considerando las limitaciones de SonarQube Community Build, que no realiza un análisis completo de determinadas vulnerabilidades críticas, como inyecciones SQL y ataques XSS.
+
+- **Reliability (Confiabilidad):** Se identificaron 151 incidencias relacionadas con la confiabilidad del código, obteniendo una calificación de nivel D. Entre los hallazgos se encuentra una incidencia de severidad alta relacionada con la utilización de una función de comparación basada en `String.localeCompare` para garantizar el ordenamiento alfabético de los elementos. También se identificaron observaciones de severidad media relacionadas con el manejo de promesas asíncronas, incluyendo la necesidad de implementar mecanismos de captura de errores mediante `.catch()` o control equivalente.
+
+- **Maintainability (Mantenibilidad):** Se registraron 420 incidencias relacionadas con la mantenibilidad, obteniendo una calificación de nivel A. Entre los hallazgos se identificaron recomendaciones de accesibilidad en los componentes de interfaz, como la incorporación de atributos `id` y su asociación con etiquetas en los campos de entrada. Estas observaciones permiten identificar oportunidades de mejora en la organización, legibilidad y mantenimiento del código frontend.
+
+- **Overall Results (Resultados Generales):** El proyecto obtuvo el estado *Passed* en el Quality Gate de SonarQube. Asimismo, se registró una cobertura de pruebas del 0.0 %, debido a que no se proporcionó información de cobertura automatizada durante el análisis. El porcentaje de duplicación fue del 0.2 %, calculado sobre aproximadamente 25 mil líneas consideradas por la herramienta. En conjunto, los resultados permiten identificar oportunidades de mejora principalmente en la confiabilidad y mantenibilidad del código fuente.
+
+<div align="center">
+    <img src="../assets/img/chapter-VI/Frontend-Analytics/31.png" width=500>
+</div>
+
+*Figura 1. Resumen general del análisis estático del frontend.*
+
+<div align="center">
+    <img src="../assets/img/chapter-VI/Frontend-Analytics/32.png" width=500>
+</div>
+
+*Figura 2. Incidencia de severidad alta identificada en el frontend.*
+
+<div align="center">
+    <img src="../assets/img/chapter-VI/Frontend-Analytics/33.png" width=500>
+</div>
+
+*Figura 3. Medición de duplicación del código frontend.*
+
+<div align="center">
+    <img src="../assets/img/chapter-VI/Frontend-Analytics/35.png" width=500>
+</div>
+
+*Figura 4. Incidencias de severidad media del frontend.*
+
+<div align="center">
+    <img src="../assets/img/chapter-VI/Frontend-Analytics/34.png" width=500>
+</div>
+
+*Figura 5. Evaluación de riesgos y deuda técnica del frontend.*
+
 
 ### 6.2.2. Reviews
 
-> Evidencia de revisiones de código (Pull Requests con comentarios, checklist de revisión y acuerdos del equipo).
+En FerovaClinic, las revisiones de código constituyen una práctica importante para garantizar la calidad del software antes de integrar nuevos cambios en las ramas principales del repositorio. Este proceso permite verificar que las funcionalidades implementadas cumplan con los requisitos establecidos, identificar posibles errores y mantener una estructura de código organizada tanto en el backend como en el frontend.
 
-<!-- COMPLETAR -->
+El proyecto utiliza GitHub como plataforma de control de versiones, permitiendo que los integrantes trabajen sobre ramas específicas según las funcionalidades asignadas y posteriormente integren sus modificaciones mediante un proceso de revisión. Asimismo, se emplea SonarQube para complementar la evaluación del código mediante análisis estático, identificando incidencias relacionadas con la seguridad, confiabilidad, mantenibilidad y duplicación.
+
+**Tipos de Revisiones**
+
+**Revisión de código por pares:**
+
+Consiste en que un integrante del equipo revise el código desarrollado por otro compañero antes de integrarlo a la rama correspondiente. Durante esta revisión se verifica que los nombres de clases, métodos, variables y archivos sean claros, que se respete la estructura del proyecto y que los cambios no afecten otros módulos o funcionalidades existentes.
+
+**Revisión técnica:**
+
+Al finalizar una actividad o sprint, se revisan las funcionalidades implementadas para comprobar que cumplan con los objetivos y criterios de aceptación establecidos. En FerovaClinic, esta revisión comprende los módulos de autenticación y gestión de usuarios, administración de pacientes, seguimiento del tratamiento, control de hemoglobina, gestión de citas, comunicación y generación de reportes, considerando tanto los servicios del backend como las interfaces del frontend.
+
+**Revisión automática o asistida:**
+
+El proyecto utiliza SonarQube Community Build para realizar el análisis estático del código fuente del backend y frontend. Esta herramienta permite identificar incidencias de seguridad, confiabilidad y mantenibilidad, así como detectar duplicaciones y oportunidades de mejora en la calidad del código. Adicionalmente, se verifica que ambos componentes compilen correctamente mediante los procesos de compilación de .NET y Angular antes de considerar los cambios como finalizados.
+
+**Proceso de Revisión**
+
+El proceso inicia cuando un desarrollador trabaja en una rama específica del proyecto y realiza los cambios correspondientes en el backend o frontend. Posteriormente, verifica que el componente modificado compile correctamente y que las funcionalidades implementadas mantengan el comportamiento esperado. Una vez realizadas estas comprobaciones, los cambios se suben al repositorio de GitHub para su revisión antes de integrarlos en la rama principal o de desarrollo.
+
+Durante la revisión se consideran los siguientes aspectos:
+
+- Que el código esté ubicado en el módulo y capa correspondiente.
+- Que los nombres de clases, métodos, variables y archivos sean claros y descriptivos.
+- Que se mantenga la separación de responsabilidades entre las capas de la aplicación.
+- Que no exista duplicación innecesaria de código.
+- Que los endpoints del backend cuenten con validaciones y manejo adecuado de respuestas.
+- Que las rutas protegidas respeten los mecanismos de autenticación y autorización.
+- Que el frontend mantenga una correcta organización de componentes, servicios, rutas e interceptores.
+- Que las funcionalidades implementadas cumplan con los criterios de aceptación establecidos.
+- Que los cambios no afecten el funcionamiento de módulos previamente desarrollados.
+- Que los resultados del análisis estático permitan identificar y evaluar posibles incidencias en el código.
+
+Si durante la revisión se identifican errores u oportunidades de mejora, se comunican las observaciones al desarrollador responsable para que realice las correcciones correspondientes. Posteriormente, los cambios vuelven a ser revisados y, una vez que cumplen con los criterios establecidos, pueden integrarse en la rama correspondiente.
 
 ## 6.3. Validation Interviews
 
@@ -1257,41 +1856,105 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
 | Resumen        |         |
 
 
-<!-- COMPLETAR: repetir por cada entrevista -->
 
 ### 6.3.3. Evaluaciones según heurísticas
 
-> Evaluación heurística UX (Nielsen) por aplicación, con cabecera del formato indicado en el statement, tabla de severidad y lista de hallazgos.
+Se realizó una evaluación heurística UX basada en las 10 heurísticas de usabilidad de Jakob Nielsen para las aplicaciones FerovaFamily y FerovaClinic. La evaluación permitió identificar problemas de usabilidad relacionados con la presentación de información, consistencia, prevención de errores, visibilidad del estado de las funcionalidades y facilidad de interacción.
 
-**UX Heuristics & Principles Evaluation**
+#### 6.3.3.1. Evaluación heurística UX – FerovaFamily
+
+##### UX Heuristics & Principles Evaluation
 
 | Campo | Dato |
-|-------|------|
+|---|---|
 | Carrera | Ingeniería de Software |
 | Curso | Diseño de Experimentos de Ingeniería de Software |
-| Sección | [Sección] |
-| Profesor | [Docente] |
-| Auditor | [Nombre] |
-| Fecha | [DD/MM/AAAA] |
-| Nombre de App | Ferova |
-| Tareas evaluadas | [lista] |
+| Sección | 9082 |
+| Profesor | Juan Fernando Ysen Paiba |
+| Auditor | Vitaly Baca Camargo |
+| Fecha | 12/11/2026 |
+| Nombre de App | FerovaFamily |
+| Tareas evaluadas | Consultar inicio, confirmar dosis diaria, registrar alimentos en el diario nutricional, buscar postas cercanas, reservar citas y enviar consultas médicas. |
 
-**Escala de severidad**
+##### Escala de severidad
 
 | Nivel | Descripción |
-|-------|-------------|
-| 1 | Problema superficial |
-| 2 | Problema menor |
-| 3 | Problema mayor |
-| 4 | Problema catastrófico |
+|---|---|
+| 1 | **Problema superficial:** Detalle visual o de presentación que no afecta el uso de la aplicación ni impide completar las tareas. |
+| 2 | **Problema menor:** Dificultad que puede generar confusión o incomodidad al usuario, pero que permite completar la tarea sin mayores inconvenientes. |
+| 3 | **Problema mayor:** Dificultad que afecta significativamente la experiencia de uso y puede retrasar o dificultar la realización de una tarea importante. |
+| 4 | **Problema catastrófico:** Error crítico que impide completar una tarea esencial o puede provocar consecuencias graves debido a información incorrecta o acciones equivocadas. |
 
-**Hallazgos**
+##### Hallazgos
 
 | # | Problema | Escala de severidad | Heurística / Principio violado | Recomendación |
-|---|----------|---------------------|--------------------------------|---------------|
-| 1 | [Problema] | [1-4] | [Heurística] | [Recomendación] |
+|---|---|---|---|---|
+| 1 | En el diario nutricional, el valor de hierro absorbido aparece como "0.81 /mg", presentando una disposición incorrecta de la unidad de medida. | 2 | 8. Estética y diseño minimalista. | Corregir la presentación de la unidad para mostrar el valor como "0.81 mg" y mantener un formato uniforme en los indicadores nutricionales. |
+| 2 | En la pantalla de postas cercanas, los dos establecimientos muestran exactamente la misma distancia de 34.0 km, lo que puede generar dudas sobre la precisión de la información. | 3 | 1. Visibilidad del estado del sistema. | Mostrar la distancia real calculada individualmente para cada establecimiento y actualizarla según la ubicación del usuario. |
+| 3 | En la pantalla de reserva de citas, algunos días del calendario aparecen en gris, pero no se explica claramente si corresponden a fechas no disponibles, pasadas o días sin atención. | 2 | 2. Correspondencia entre el sistema y el mundo real. | Incorporar una leyenda que diferencie las fechas disponibles, no disponibles y pasadas mediante colores o indicadores. |
+| 4 | En la sección de citas, aparece el texto "string" en la información de la próxima cita y en el historial, evidenciando la visualización de un valor de prueba o no reemplazado. | 3 | 9. Ayudar a reconocer, diagnosticar y recuperarse de errores. | Reemplazar los valores no válidos por información real y establecer mensajes alternativos cuando un dato no esté disponible. |
+| 5 | En la sección de consultas, los botones "Escribir Consulta" y "Espera la asignación" presentan diferentes estados, pero no se explica qué debe hacer el usuario cuando el paciente todavía no tiene una enfermera asignada. | 2 | 10. Ayuda y documentación. | Incorporar una breve explicación sobre el proceso de asignación y cómo proceder para iniciar una consulta. |
+| 6 | En el inicio, el apartado de logros y nutrición aparece parcialmente visible, sin que se identifique claramente la información que contiene en la captura. | 2 | 8. Estética y diseño minimalista. | Mejorar la distribución y jerarquía visual de las tarjetas para que su contenido y finalidad sean fácilmente identificables. |
 
-<!-- COMPLETAR -->
+---
+
+#### 6.3.3.2. Evaluación heurística UX – FerovaClinic
+
+##### UX Heuristics & Principles Evaluation
+
+| Campo | Dato |
+|---|---|
+| Carrera | Ingeniería de Software |
+| Curso | Diseño de Experimentos de Ingeniería de Software |
+| Sección | 9082 |
+| Profesor | Juan Fernando Ysen Paiba |
+| Auditor | Vitaly Baca Camargo |
+| Fecha | 12/11/2026 |
+| Nombre de App | FerovaClinic |
+| Tareas evaluadas | Consultar agenda de citas, gestionar pacientes, asignar pacientes a la cartera, configurar tratamientos, registrar controles de hemoglobina, consultar historiales clínicos, gestionar consultas y administrar establecimientos de salud. |
+
+##### Escala de severidad
+
+| Nivel | Descripción |
+|---|---|
+| 1 | **Problema superficial:** Detalle visual o de presentación que no afecta el uso de la aplicación ni impide completar las tareas. |
+| 2 | **Problema menor:** Dificultad que puede generar confusión o incomodidad al usuario, pero que permite completar la tarea sin mayores inconvenientes. |
+| 3 | **Problema mayor:** Dificultad que afecta significativamente la experiencia de uso y puede retrasar o dificultar la realización de una tarea importante. |
+| 4 | **Problema catastrófico:** Error crítico que impide completar una tarea esencial o puede provocar consecuencias graves debido a información incorrecta o acciones equivocadas. |
+
+##### Hallazgos
+
+| # | Problema | Escala de severidad | Heurística / Principio violado | Recomendación |
+|---|---|---|---|---|
+| 1 | En la agenda de citas se muestra el texto "string" en los campos de próxima atención y hora programada, en lugar de presentar información válida. | 3 | 9. Ayudar a reconocer, diagnosticar y recuperarse de errores. | Validar los datos recibidos y evitar mostrar valores de prueba. Cuando no exista información, presentar un mensaje como "Sin horario registrado". |
+| 2 | Algunas interfaces presentan textos en inglés, como "CONFIRMED", "Assigned Personnel" y "Filter facilities", mientras que el resto de la aplicación utiliza español. | 2 | 4. Consistencia y estándares. | Unificar el idioma de todos los componentes, etiquetas, estados y mensajes de la aplicación. |
+| 3 | En la configuración del tratamiento se muestra una fecha de finalización correspondiente al año 2024, aunque el resto de las pantallas presenta información de noviembre de 2026. | 3 | 1. Visibilidad del estado del sistema. | Calcular automáticamente las fechas a partir de la fecha de inicio y duración del tratamiento, evitando mostrar fechas desactualizadas. |
+| 4 | En la pantalla de historial clínico se observa un valor de hemoglobina de 30 g/dL, que resulta incompatible con los valores habituales de referencia y podría generar una interpretación clínica incorrecta. | 4 | 5. Prevención de errores. | Implementar validaciones de rango, advertencias para valores atípicos y confirmación antes de guardar resultados clínicos. |
+| 5 | En el formulario de nuevo control se muestran datos demográficos y clínicos que parecen inconsistentes, como un paciente de 21 años dentro de un módulo de seguimiento pediátrico. | 3 | 5. Prevención de errores. | Validar la edad y los datos del paciente antes de permitir el registro de controles dentro del seguimiento pediátrico. |
+| 6 | En la pantalla de agenda de citas se presentan campos sin información válida, lo que dificulta identificar correctamente el horario de atención programado. | 2 | 1. Visibilidad del estado del sistema. | Mostrar información completa de la cita y utilizar indicadores como "Horario pendiente" cuando todavía no se haya registrado. |
+| 7 | En la pantalla de dar de alta pacientes, los botones de acción aparecen habilitados para pacientes que ya tienen el estado "Tratamiento Completo", sin explicar las consecuencias de ejecutar esta acción. | 2 | 5. Prevención de errores. | Incorporar una confirmación antes de dar de alta al paciente, indicando las consecuencias de retirarlo de la cartera activa. |
+| 8 | En el mapa de calor, los indicadores de riesgo se representan mediante colores, pero no se visualizan valores o porcentajes específicos de adherencia para cada sector sanitario. | 2 | 1. Visibilidad del estado del sistema. | Incorporar información detallada al seleccionar cada sector, incluyendo porcentaje de adherencia, cantidad de pacientes y nivel de riesgo. |
+| 9 | En el formulario de registro de una nueva posta se utiliza un procedimiento de cuatro pasos, pero no se identifican claramente los campos obligatorios mediante una explicación uniforme en todas las etapas. | 2 | 6. Reconocimiento antes que recuerdo. | Mantener etiquetas visibles, señalar todos los campos obligatorios y proporcionar indicaciones claras para completar cada etapa. |
+| 10 | En la configuración del tratamiento se presentan indicaciones de dosificación que podrían interpretarse como recomendaciones automáticas, sin que se visualice claramente su validación por el profesional de salud. | 3 | 5. Prevención de errores. | Diferenciar las referencias informativas de las indicaciones médicas y solicitar la validación del profesional antes de activar el tratamiento. |
+
+---
+
+#### 6.3.3.3. Resumen de resultados
+
+| Aplicación | Hallazgos identificados | Severidad máxima |
+|---|---:|---|
+| FerovaFamily (móvil) | 6 | 3 - Problema mayor |
+| FerovaClinic (web) | 10 | 4 - Problema catastrófico |
+| **Total** | **16** | **4 - Problema catastrófico** |
+
+#### 6.3.3.4. Observaciones generales
+
+La evaluación heurística permitió identificar oportunidades de mejora en ambas aplicaciones.
+
+En FerovaFamily, los principales problemas están relacionados con la presentación de información, consistencia de los datos y claridad de los estados de las citas y consultas.
+
+Por otro lado, en FerovaClinic se identificaron problemas relacionados con la visualización de información clínica, consistencia del idioma, validación de datos y claridad de los estados de los procesos administrativos y médicos.
+
 
 ## 6.4. Auditoría de Experiencias de Usuario
 
@@ -1300,51 +1963,457 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
 #### 6.4.1.1. Información del grupo auditado
 
 | Campo | Dato |
-|-------|------|
-| Startup auditada | [Nombre] |
-| Producto | [Nombre] |
-| Integrantes | [Nombres] |
-| Repositorio / despliegue | [URL] |
+|---|---|
+| Startup auditada | RichStudent |
+| Producto | UPC-X |
+| Integrantes | Gilbert Alonso Huarcaya Matias, Luis Manuel Espinoza Navarrete, Eduardo Jose Cossar Sanchez, Manuel Alejandro Molina Vásquez, Mathias Javier Murillo   |
+| Repositorio / despliegue |  |
+
+### TAREAS A EVALUAR
+
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas de la plataforma UPC-X, considerando su aplicación web y móvil:
+
+1. Inicio de sesión mediante correo institucional y código de verificación.
+2. Registro de una cuenta nueva con correo institucional (@upc.edu.pe).
+3. Exploración y búsqueda de publicaciones mediante filtros por sede y categoría.
+4. Publicación y administración de avisos de productos o servicios.
+5. Gestión de publicaciones guardadas (favoritos).
+6. Visualización del detalle de una publicación y contacto con el vendedor.
+7. Gestión de conversaciones y coordinación entre estudiantes.
+8. Propuesta y aceptación de acuerdos de encuentro dentro del campus.
+9. Envío de evidencias de pago y confirmación de entrega.
+10. Visualización y gestión del perfil de usuario, reputación e historial de transacciones.
+
+**No están incluidas en esta versión de la evaluación las siguientes tareas:**
+
+1. Procesamiento o validación directa de pagos mediante Yape o Plin.
+2. Gestión de pagos o suscripciones Premium.
+3. Pruebas de carga, seguridad o rendimiento sobre la API.
+4. Evaluación de funcionalidades administrativas internas de la plataforma.
+5. Funcionalidades que no se encuentren disponibles en las versiones web y móvil proporcionadas para la auditoría.
 
 #### 6.4.1.2. Cronograma de auditoría realizada
 
 | Fecha | Actividad | Participantes | Duración |
-|-------|-----------|---------------|----------|
-| [DD/MM/AAAA] | [Actividad] | [Nombres] | [hh:mm] |
+|---|---|---|---|
+| 10/11/2026 | Envío de solicitud de información al equipo RichStudent | Vitaly Arturo Baca Camargo | 00:15 |
+| 11/11/2026 | Recepción y revisión de información del proyecto UPC-X | Vitaly Arturo Baca Camargo | 00:30 |
+| 12/11/2026 | Evaluación de usabilidad de la aplicación web | Vitaly Arturo Baca Camargo | 01:30 |
+| 13/11/2026 | Identificación y clasificación de problemas encontrados | Vitaly Arturo Baca Camargo | 01:00 |
+| 14/11/2026 | Elaboración del informe de auditoría | Vitaly Arturo Baca Camargo | 01:30 |
+| 15/11/2026 | Revisión y entrega del informe de auditoría | Vitaly Arturo Baca Camargo | 00:30 |
 
 #### 6.4.1.3. Contenido de auditoría realizada
 
-| # | Problema | Escala de severidad | Heurística / Principio violado | Recomendación |
-|---|----------|---------------------|--------------------------------|---------------|
-| 1 | [Problema] | [1-4] | [Heurística] | [Recomendación] |
+##### Escala de severidad
 
-<!-- COMPLETAR -->
+Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
+
+| Nivel | Descripción |
+|:---:|---|
+| 1 | Problema cosmético que no afecta significativamente la experiencia. |
+| 2 | Problema menor que puede generar confusión o incomodidad. |
+| 3 | Problema importante que dificulta la realización de una tarea. |
+| 4 | Problema crítico que impide completar una tarea o provoca errores graves. |
+
+##### TABLA RESUMEN
+
+| # | Problema | Escala de severidad | Heurística / Principio violado | Recomendación |
+|---:|---|:---:|---|---|
+| 1 | Los filtros del marketplace desaparecen al desplazarse hacia abajo por los productos, obligando al usuario a regresar a la parte superior para modificarlos. | 3 | Flexibilidad y eficiencia de uso (H7). | Implementar un panel de filtros lateral fijo (*sticky*) o un botón flotante que permita acceder a los filtros sin interrumpir la navegación por los productos. |
+| 2 | El buscador y los filtros del marketplace no presentan una diferenciación visual suficientemente clara, dificultando la comprensión de sus funciones. | 2 | Correspondencia entre el sistema y el mundo real (H2). | Diferenciar visualmente el buscador de los filtros, agrupando estos últimos en una sección independiente y utilizando etiquetas e iconografía claras. |
+| 3 | En la vista de conversación con el vendedor, el contenido del chat y los datos del producto tienen dimensiones reducidas, dificultando la lectura y comprensión de la información. | 3 | Diseño estético y minimalista (H8). | Ampliar el área de conversación, mejorar el tamaño de los textos y reorganizar la información del producto para facilitar su lectura y consulta. |
+| 4 | Los selectores de fecha y hora para proponer un encuentro presentan una apariencia visual antigua y poco intuitiva, especialmente al utilizar el calendario desplegable. | 2 | Consistencia y estándares (H4). | Implementar componentes modernos de selección de fecha y hora, con una interfaz visual uniforme, controles claros y una navegación sencilla. |
+| 5 | La opción «Cerrar sesión» aparece duplicada en el menú lateral y en la sección principal del perfil, generando redundancia en las acciones disponibles. | 2 | Consistencia y estándares (H4). | Mantener una única opción para cerrar sesión, preferentemente en el menú lateral, evitando duplicaciones innecesarias. |
+| 6 | La sección «Acuerdos anteriores» presenta información poco organizada, dificultando identificar rápidamente el estado del acuerdo, el motivo de cancelación y los pasos realizados. | 3 | Reconocimiento antes que recuerdo (H6). | Rediseñar cada acuerdo mediante tarjetas estructuradas que destaquen el estado, precio, fecha, punto de encuentro y motivo de cancelación. Incorporar una línea de tiempo visual para representar los pasos del acuerdo. |
+| 7 | En el centro de ayuda, las preguntas frecuentes permiten mantener varias respuestas abiertas simultáneamente, provocando acumulación de contenido y dificultando la navegación. | 2 | Diseño estético y minimalista (H8). | Implementar un comportamiento de acordeón exclusivo (*single accordion*), donde al abrir una pregunta se cierre automáticamente la respuesta anterior. |
+| 8 | El correo electrónico de contacto del centro de ayuda no presenta una integración visual suficientemente clara como enlace de contacto, aunque dispone de un vínculo. | 2 | Visibilidad del estado del sistema (H1). | Presentar el correo como un elemento interactivo claramente identificable, manteniendo su hipervínculo y agregando una acción visible para abrir la aplicación de correo. |
+| 9 | En la versión móvil del marketplace, el saludo «Hola, Vitaly» aparece demasiado cerca de la parte superior de la pantalla, generando una distribución visual poco equilibrada. | 2 | Diseño estético y minimalista (H8). | Incrementar el espaciado superior del contenido, respetar las áreas seguras del dispositivo y mejorar la distribución vertical del encabezado. |
+| 10 | La vista móvil «Gestionar cierre» presenta los acuerdos anteriores y sus respectivos pasos mediante bloques de texto poco diferenciados, dificultando la comprensión de la información. | 3 | Reconocimiento antes que recuerdo (H6). | Reorganizar la información en tarjetas con jerarquía visual, etiquetas de estado, iconografía y una línea de tiempo que permita identificar fácilmente cada etapa del acuerdo. |
+| 11 | En la publicación de avisos desde dispositivos móviles, la opción para agregar fotografías únicamente permite seleccionar imágenes de la galería, sin ofrecer directamente la posibilidad de tomar una fotografía del producto. | 3 | Flexibilidad y eficiencia de uso (H7). | Incorporar dos opciones claramente diferenciadas: «Tomar fotografía» y «Seleccionar de galería», solicitando los permisos de cámara correspondientes cuando sea necesario. |
+| 12 | La ventana emergente «Perfil del vendedor» presenta información de reputación poco clara, ya que muestra al vendedor como «QA Equipo 1», pero posteriormente aparece una reseña identificada como «QA Equipo 2», generando confusión sobre la identidad del vendedor y el autor de la valoración. | 3 | Consistencia y estándares (H4). | Reorganizar la información del perfil y diferenciar claramente los datos del vendedor de las reseñas recibidas. Mostrar el nombre del autor de cada reseña mediante una etiqueta identificativa y asegurar que las valoraciones correspondan al perfil consultado. |
+| 13 | La sección "Mi reputación" presenta las estadísticas de intercambios, opiniones positivas, ventas completadas y avisos activos como texto simple, sin una jerarquía visual clara. Además, existe demasiado espacio vacío y no se muestra una representación visual de la calificación del usuario. | 2 | H8: Estética y diseño minimalista. H1: Visibilidad del estado del sistema. | Rediseñar la sección mediante tarjetas individuales para cada indicador, incorporando iconos, cifras destacadas y una representación visual mediante estrellas para la calificación. Cuando no existan reseñas, mostrar un estado vacío ilustrado y un mensaje explicativo. |
+| 14 | Durante la selección de fotografías del aviso, la imagen se muestra con un recorte y ampliación excesivos dentro del espacio asignado, impidiendo visualizar correctamente el producto completo. Además, no se ofrecen controles para ajustar el encuadre de la fotografía. | 3 | H7: Flexibilidad y eficiencia de uso. H8: Estética y diseño minimalista. | Incorporar herramientas para ajustar el encuadre, ampliar, reducir y posicionar la fotografía. Permitir visualizar la imagen completa antes de confirmar su selección. |
+| 15 | Los botones de gestión de la publicación presentan una distribución desordenada, tamaños desiguales y textos divididos en varias líneas, dificultando la identificación de las acciones. Además, algunas opciones como «Retirar aviso» y «Marcar como vendido» pueden generar confusión sobre sus consecuencias. | 3 | Estética y diseño minimalista (Heurística 8) y Prevención de errores (Heurística 5). | Reorganizar las acciones según su importancia, mantener botones de dimensiones uniformes y agrupar las opciones secundarias en un menú desplegable. Asimismo, incorporar mensajes de confirmación para las acciones que modifican el estado de la publicación. |
+| 16 | El campo «Precio en soles» no establece un límite máximo para el importe ingresado, permitiendo registrar cantidades excesivamente elevadas que podrían generar publicaciones con precios irreales o errores al momento de publicar el aviso. | 3 | Prevención de errores (Heurística 5). | Establecer un importe máximo permitido para el precio, validar que el valor ingresado se encuentre dentro del rango establecido y mostrar un mensaje de advertencia cuando se supere dicho límite. |
+| 17 | Los mensajes del chat presentan el mismo color y alineación, sin una diferenciación visual clara entre los mensajes enviados y recibidos por los participantes, dificultando identificar quién intervino en la conversación. | 3 | Visibilidad del estado del sistema (Heurística 1) y Consistencia y estándares (Heurística 4). | Diferenciar los mensajes mediante colores, alineaciones y estilos de burbuja según el emisor, permitiendo reconocer rápidamente los mensajes propios y los del otro participante. |
+
+##### RECOMENDACIONES
+
+#### Problema n°1: Pérdida de visibilidad de los filtros al desplazarse en el marketplace
+
+**Severidad:** 3 | **Heurística violada:** Flexibilidad y eficiencia de uso (H7)
+
+**Problema:** Los filtros del marketplace desaparecen al desplazarse hacia abajo por el catálogo de productos, obligando al usuario a regresar manualmente hasta la parte superior de la página cada vez que desea modificar o aplicar un nuevo criterio de filtrado.
+
+
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/1.png" width=700>
+</div>
+
+**Recomendación:** Implementar un panel de filtros lateral fijo (*sticky*) o un botón de acción flotante que permita acceder y modificar los filtros en cualquier momento sin interrumpir la navegación por los productos.
+
+---
+
+#### Problema n°2: Falta de diferenciación visual entre el buscador y los filtros
+
+**Severidad:** 2 | **Heurística violada:** Correspondencia entre el sistema y el mundo real (H2)
+
+**Problema:** El buscador principal y los controles de filtrado del marketplace no presentan una separación ni diferenciación visual suficientemente clara en la interfaz, lo que dificulta al usuario distinguir rápidamente el alcance y la función de cada herramienta.
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/2.png" width=700>
+</div>
+
+
+**Recomendación:** Diferenciar visualmente la barra de búsqueda de los filtros de categoría o atributos, agrupando estos últimos en un contenedor o sección independiente y utilizando etiquetas descriptivas e iconografía clara.
+
+---
+
+#### Problema n°3: Dimensiones reducidas en el chat y datos del producto en la vista de conversación
+
+**Severidad:** 3 | **Heurística violada:** Diseño estético y minimalista (H8)
+
+**Problema:** En la vista de conversación con el vendedor, tanto el contenedor del chat como el resumen con los datos del producto presentan dimensiones muy reducidas, dificultando la lectura cómoda de los mensajes y la consulta de los detalles del artículo.
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/3.png" width=700>
+</div>
+
+
+**Recomendación:** Ampliar el área destinada a la ventana de conversación, incrementar el tamaño tipográfico de los textos y reorganizar la tarjeta informativa del producto para facilitar su lectura y consulta rápida.
+
+---
+
+#### Problema n°4: Apariencia desactualizada y poco intuitiva en selectores de fecha y hora
+
+**Severidad:** 2 | **Heurística violada:** Consistencia y estándares (H4)
+
+**Problema:** Los selectores de fecha y hora utilizados para proponer un encuentro presentan una apariencia visual antigua y poco intuitiva, especialmente al interactuar con el calendario desplegable, rompiendo con la línea gráfica del resto de la plataforma.
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/4.png" width=700>
+</div>
+
+
+**Recomendación:** Implementar componentes modernos y estandarizados de selección de fecha y hora (*date/time pickers*), manteniendo una interfaz visual uniforme con el sistema de diseño, controles claros y una navegación sencilla.
+
+---
+
+#### Problema n°5: Duplicidad de la opción «Cerrar sesión» en menú lateral y perfil
+
+**Severidad:** 2 | **Heurística violada:** Consistencia y estándares (H4)
+
+**Problema:** La acción «Cerrar sesión» aparece duplicada simultáneamente en el menú de navegación lateral y dentro del área principal de la sección de perfil, generando redundancia innecesaria en las acciones disponibles de la cuenta.
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/5.png" width=700>
+</div>
+
+
+**Recomendación:** Mantener una única ubicación estándar para la acción de cerrar sesión, preferentemente al final del menú lateral de navegación o en el menú de usuario superior, eliminando duplicaciones en el contenido central.
+
+---
+
+#### Problema n°6: Desorganización de la información en la sección «Acuerdos anteriores»
+
+**Severidad:** 3 | **Heurística violada:** Reconocimiento antes que recuerdo (H6)
+
+**Problema:** La sección «Acuerdos anteriores» muestra los datos de forma plana y poco estructurada, lo que dificulta al usuario identificar de un vistazo el estado final del acuerdo, el motivo de cancelación y la secuencia de pasos realizados.
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/6.png" width=700>
+</div>
+
+**Recomendación:** Rediseñar cada registro mediante tarjetas estructuradas que destaquen mediante insignias (*badges*) el estado, precio, fecha, punto de encuentro y motivo de cancelación, incorporando además una línea de tiempo visual (*stepper*) para representar los pasos completados del acuerdo.
+
+---
+
+#### Problema n°7: Acumulación de respuestas abiertas simultáneamente en preguntas frecuentes
+
+**Severidad:** 2 | **Heurística violada:** Diseño estético y minimalista (H8)
+
+**Problema:** En la sección del centro de ayuda, el listado de preguntas frecuentes permite mantener múltiples respuestas desplegadas al mismo tiempo, provocando una acumulación excesiva de texto en pantalla y alargando innecesariamente el desplazamiento vertical.
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/7.png" width=700>
+</div>
+
+**Recomendación:** Implementar un comportamiento de acordeón exclusivo (*single accordion*), de modo que al desplegar una nueva pregunta se contraiga automáticamente la respuesta que se encontraba abierta previamente.
+
+---
+
+#### Problema n°8: Falta de affordance visual en el enlace de correo de contacto del centro de ayuda
+
+**Severidad:** 2 | **Heurística violada:** Visibilidad del estado del sistema (H1)
+
+**Problema:** En el centro de ayuda, la dirección de correo electrónico de soporte no presenta señales visuales claras (como color distintivo, subrayado o botón) que indiquen que se trata de un enlace interactivo, pese a contar internamente con el hipervínculo mailto:.
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/8.png" width=700>
+</div>
+
+
+**Recomendación:** Presentar el correo electrónico como un elemento interactivo claramente identificable mediante color de enlace, iconografía de sobre o botón de acción secundaria que indique explícitamente la apertura del cliente de correo o la opción de copiar la dirección.
+
+---
+
+#### Problema n°9: Espaciado superior insuficiente en el saludo de la versión móvil
+
+**Severidad:** 2 | **Heurística violada:** Diseño estético y minimalista (H8)
+
+**Problema:** En la vista móvil del marketplace, el encabezado de bienvenida «Hola, Vitaly» se posiciona demasiado pegado al borde superior del contenedor, generando una composición visual apretada y poco equilibrada.
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/9.png" width=200>
+</div>
+
+**Recomendación:** Incrementar el margen o espaciado interno superior (*padding-top*) del contenedor principal, respetando las áreas seguras (*safe areas*) del dispositivo móvil y mejorando la respiración visual del encabezado.
+
+---
+
+#### Problema n°10: Bloques de texto poco diferenciados en la vista móvil «Gestionar cierre»
+
+**Severidad:** 3 | **Heurística violada:** Reconocimiento antes que recuerdo (H6)
+
+**Problema:** En la versión móvil de la vista «Gestionar cierre», los acuerdos anteriores y el historial de sus respectivos pasos se presentan como bloques continuos de texto sin jerarquía ni separación clara, dificultando el escaneo rápido de la información en pantallas pequeñas.
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/10.jpg" width=200>
+</div>
+
+**Recomendación:** Reorganizar la información en tarjetas individuales con jerarquía tipográfica clara, etiquetas de estado con código de color, iconografía de apoyo y una línea de tiempo compacta que permita identificar fácilmente cada etapa del acuerdo en móvil.
+
+---
+
+#### Problema n°11: Ausencia de opción para tomar fotografías directamente desde la cámara en móvil
+
+**Severidad:** 3 | **Heurística violada:** Flexibilidad y eficiencia de uso (H7)
+
+**Problema:** Durante el flujo de publicación de avisos desde dispositivos móviles, el control para agregar imágenes únicamente abre el selector de archivos de la galería, impidiendo al usuario capturar una fotografía del producto en el momento con la cámara de su teléfono.
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/11.jpg" width=200>
+</div>
+
+**Recomendación:** Incorporar un menú de selección o dos acciones claramente diferenciadas al subir imágenes en móvil: «Tomar fotografía» (invocando la cámara con los permisos correspondientes) y «Seleccionar de la galería».
+
+---
+
+#### Problema n°12: Confusión de identidad entre vendedor y autor de reseña en «Perfil del vendedor»
+
+**Severidad:** 3 | **Heurística violada:** Consistencia y estándares (H4)
+
+**Problema:** La ventana emergente «Perfil del vendedor» muestra información ambigua sobre la reputación: encabeza la vista identificando al vendedor como «QA Equipo 1», pero en el listado inferior muestra una reseña asociada a «QA Equipo 2» sin especificar quién es el evaluador y quién el evaluado.
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/12.png" width=700>
+</div>
+
+
+**Recomendación:** Reestructurar el modal diferenciando visualmente la cabecera con los datos del vendedor respecto a la sección de comentarios recibidos. Incluir etiquetas explícitas (ej. «Reseña escrita por: [Nombre del comprador]») y validar que las valoraciones listadas correspondan efectivamente al vendedor consultado.
+
+---
+
+#### Problema n°13: Falta de jerarquía visual y representación gráfica en «Mi reputación»
+
+**Severidad:** 2 | **Heurística violada:** Diseño estético y minimalista (H8) / Visibilidad del estado del sistema (H1)
+
+**Problema:** La sección «Mi reputación» presenta las métricas de intercambios, opiniones positivas, ventas completadas y avisos activos como líneas de texto simple sin jerarquía visual, dejando grandes espacios vacíos y omitiendo una representación gráfica de la calificación promedio del usuario.
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/13.png" width=700>
+</div>
+
+**Recomendación:** Rediseñar el panel utilizando tarjetas de resumen (*KPI cards*) para cada indicador con iconos e indicadores numéricos destacados, además de incorporar una visualización mediante estrellas para la calificación general. En caso de no contar con reseñas, mostrar un estado vacío (*empty state*) ilustrado con un mensaje orientativo.
+
+---
+
+#### Problema n°14: Recorte excesivo y falta de controles de ajuste al seleccionar fotografías
+
+**Severidad:** 3 | **Heurística violada:** Flexibilidad y eficiencia de uso (H7) / Diseño estético y minimalista (H8)
+
+**Problema:** Al cargar fotografías para un aviso, la previsualización aplica un recorte (*crop*) y zoom automático excesivo dentro del marco asignado, cortando partes importantes del producto y sin ofrecer controles para que el usuario ajuste el encuadre.
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/14.png" width=700>
+</div>
+
+
+**Recomendación:** Integrar un componente de edición básica al subir imágenes que permita ajustar el encuadre, ampliar, reducir (*zoom in/out*) y reposicionar la fotografía, garantizando una vista previa fiel a cómo se publicará el anuncio.
+
+---
+
+#### Problema n°15: Distribución desordenada y ambigüedad en los botones de gestión de la publicación
+
+**Severidad:** 3 | **Heurística violada:** Diseño estético y minimalista (H8) / Prevención de errores (H5)
+
+**Problema:** Los botones de acción para gestionar una publicación presentan una alineación desordenada, tamaños desiguales y etiquetas de texto partidas en múltiples líneas. Además, acciones críticas como «Retirar aviso» y «Marcar como vendido» carecen de diferenciación y explicación sobre sus consecuencias.
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/15.png" width=700>
+</div>
+
+
+**Recomendación:** Estandarizar el tamaño y alineación de los botones priorizando la acción principal, agrupar las acciones secundarias o destructivas en un menú desplegable («Más opciones») e implementar modales de confirmación que expliquen el impacto de retirar o marcar como vendido un aviso antes de ejecutar la acción.
+
+---
+
+#### Problema n°16: Falta de validación de límite máximo en el campo «Precio en soles»
+
+**Severidad:** 3 | **Heurística violada:** Prevención de errores (H5)
+
+**Problema:** El campo numérico «Precio en soles» del formulario de publicación no cuenta con un tope máximo ni validación de longitud, permitiendo ingresar cifras desproporcionadas o irreales que pueden generar errores de visualización o distorsionar el catálogo.
+
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/16.png" width=700>
+</div>
+
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/16.1.jpg" width=200>
+</div>
+
+**Recomendación:** Definir e implementar una validación de importe máximo razonable tanto en el *frontend* como en el *backend*, restringiendo la cantidad de dígitos permitidos y mostrando un mensaje de advertencia en línea cuando el monto ingresado supere el límite establecido.
+
+---
+
+#### Problema n°17: Ausencia de diferenciación visual entre mensajes enviados y recibidos en el chat
+
+**Severidad:** 3 | **Heurística violada:** Visibilidad del estado del sistema (H1) / Consistencia y estándares (H4)
+
+**Problema:** En la interfaz de mensajería, todas las burbujas de texto utilizan exactamente el mismo color de fondo y se alinean del mismo lado del contenedor, impidiendo distinguir rápidamente cuáles mensajes fueron enviados por el usuario actual y cuáles pertenecen al interlocutor.
+
+<div align="center">
+<img src="../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/17.jpg" width=200>
+</div>
+
+
+**Recomendación:** Aplicar el estándar convencional de interfaces de chat: alinear los mensajes propios a la derecha con un color de acento diferenciador, y posicionar los mensajes recibidos a la izquierda con un tono neutro, facilitando el seguimiento inmediato de la conversación.
 
 ### 6.4.2. Auditoría recibida
 
 #### 6.4.2.1. Información del grupo auditor
 
-| Campo | Dato |
-|-------|------|
-| Startup auditora | [Nombre] |
-| Integrantes | [Nombres] |
+**Auditoría UX – Evaluación de experiencia de usuario de Ferova Platform**
+
+| Campo | Detalle |
+|---|---|
+| Startup auditora | Aether System |
+| Producto del equipo auditor | KairoLabs |
+| Responsable de auditoría | Dhilsen Mallqui Vilca |
+| Integrantes | Sebastián Víctor André Díaz Mendoza, Carlo Patricio Ramírez Escalante y Rodrigo Oblitas Alcalde |
+| Cliente | SANUVI – Grupo 1 |
+
+**SITIO Y APLICACIONES A EVALUAR**
+
+Ferova Platform – Plataforma digital para el seguimiento y tratamiento de la anemia infantil, compuesta por una landing page, una aplicación web para el personal de salud (FerovaClinic) y una aplicación móvil Android para madres (FerovaFamily).
+
+**TAREAS EVALUADAS**
+
+El alcance de esta evaluación incluyó la inspección visual de las siguientes plataformas:
+
+1. Landing page de Ferova.
+2. Interfaz de acceso a FerovaClinic.
+3. Dashboard de coordinación y administración.
+4. Gestión de postas de salud.
+5. Gestión y seguimiento de pacientes.
+6. Historial médico y controles de hemoglobina.
+7. Interfaz de inicio de FerovaFamily.
+8. Selección y gestión de hijos.
+9. Registro y confirmación de dosis.
+10. Registro nutricional de alimentos.
+11. Búsqueda de establecimientos de salud.
+
+La evaluación se realizó mediante capturas de las plataformas en ejecución compartidas por el equipo auditado.
 
 #### 6.4.2.2. Cronograma de auditoría recibida
 
 | Fecha | Actividad | Participantes | Duración |
-|-------|-----------|---------------|----------|
-| [DD/MM/AAAA] | [Actividad] | [Nombres] | [hh:mm] |
+|---|---|---|---|
+| 09/11/2026 | Inspección visual de la landing page, aplicación web y aplicación móvil Android; revisión de los flujos y hallazgos observados. | Dhilsen Mallqui Vilca | 01:30 h |
 
 #### 6.4.2.3. Contenido de auditoría recibida
 
+#### ESCALA DE SEVERIDAD
+
+Los hallazgos identificados durante la auditoría UX serán clasificados tomando en cuenta la siguiente escala de severidad:
+
+| Nivel | Descripción |
+|---|---|
+| 1 | **Problema superficial:** puede ser fácilmente superado por el usuario u ocurre con muy poca frecuencia. No necesita ser corregido a menos que exista disponibilidad de tiempo. |
+| 2 | **Problema menor:** puede ocurrir con mayor frecuencia o ser un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja. |
+| 3 | **Problema mayor:** ocurre frecuentemente o los usuarios no son capaces de resolverlo. Es importante que sea corregido y se le debe asignar una prioridad alta. |
+| 4 | **Problema muy grave:** error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
+
+#### TABLA RESUMEN
+
+A continuación, se presentan los hallazgos identificados por el equipo auditor Aether System durante la evaluación de las tres plataformas de Ferova: Landing Page, FerovaClinic y FerovaFamily.
+
+Los hallazgos se organizan según la plataforma evaluada, indicando su severidad, la heurística o principio de UX relacionado y la recomendación propuesta para su corrección.
+
+### 6.4.2.3. Contenido de auditoría recibida
+
+La auditoría UX realizada por Aether System identificó los siguientes hallazgos durante la evaluación de Ferova Platform:
+
+**Landing Page**
+
 | # | Problema | Escala de severidad | Heurística / Principio violado | Recomendación |
-|---|----------|---------------------|--------------------------------|---------------|
-| 1 | [Problema] | [1-4] | [Heurística] | [Recomendación] |
+|---|---|---:|---|---|
+| LP-01 | Cifras de abandono del tratamiento y reducción de abandonos sin fuentes ni contexto suficiente. | 3 | Consistencia, credibilidad y visibilidad de la fuente. | Especificar las fuentes, población y periodo de las cifras. Sustentar los resultados o presentarlos como objetivos. |
+| LP-02 | El mensaje «Vence la anemia con cada dosis» puede interpretarse como una promesa de resultado clínico garantizado. | 3 | Correspondencia con el mundo real y lenguaje claro. | Reformular el mensaje para comunicar el apoyo a la adherencia sin garantizar resultados clínicos. |
+| LP-03 | La página incluye cuidadores y gestantes como público objetivo, aunque el acceso móvil reportado está habilitado únicamente para madres. | 2 | Consistencia entre plataformas y correspondencia con el mundo real. | Aclarar quiénes pueden registrarse y utilizar FerovaFamily. |
+| LP-04 | La promesa de respuesta de teleconsulta en menos de 24 horas no especifica horarios ni condiciones del servicio. | 2 | Expectativas claras y visibilidad de las condiciones del servicio. | Definir el plazo de respuesta, horarios y mecanismos de contingencia. |
+| LP-05 | Se utiliza la etiqueta «Sistema Oficial de Vigilancia y Control de Anemia Infantil» sin evidencia de autorización institucional. | 3 | Credibilidad, transparencia y correspondencia con el contexto. | Confirmar la autorización institucional o retirar la denominación de sistema oficial. |
+| LP-06 | Se indica que el registro del perfil de la madre y del hijo toma menos de dos minutos sin evidencia de medición. | 1 | Expectativas claras y credibilidad. | Validar el tiempo mediante pruebas con usuarios o eliminar la promesa temporal. |
+
+**Aplicación Web – FerovaClinic**
+
+| # | Problema | Escala de severidad | Heurística / Principio violado | Recomendación |
+|---|---|---:|---|---|
+| WEB-01 | El acceso se identifica como «Portal del Paciente», aunque se describen funcionalidades para enfermería y administración. | 2 | Correspondencia con el sistema real y consistencia. | Confirmar si los distintos roles comparten el acceso y aclarar el destino de cada perfil. |
+| WEB-02 | Los saludos y etiquetas de perfil muestran valores genéricos como «string string». | 2 | Correspondencia con el mundo real y confianza. | Reemplazar los valores de prueba por datos válidos y establecer un texto alternativo. |
+| WEB-03 | El dashboard muestra 0% de adherencia cuando no existen pacientes o mediciones disponibles. | 3 | Visibilidad del estado y comunicación de datos. | Mostrar «Sin datos» o «No disponible» cuando no exista información suficiente para calcular la métrica. |
+| WEB-04 | Algunas etiquetas de la interfaz permanecen en inglés, como «Filter facilities…» y «ASSIGNED PERSONNEL». | 1 | Consistencia y estándares. | Traducir las etiquetas al español y revisar las demás vistas. |
+| WEB-05 | Se muestran simultáneamente «Cargando pacientes…» y «0 registros disponibles», lo que puede generar confusión durante la carga. | 2 | Visibilidad del estado y prevención de errores. | Mantener el estado de carga hasta recibir una respuesta definitiva y luego mostrar el estado vacío correspondiente. |
+| WEB-06 | En la pantalla de acceso aparece un documento de identidad completo, cuyo origen no está confirmado. | 3 | Privacidad, minimización de datos y confianza. | Utilizar cuentas de prueba y ocultar los documentos de identidad y datos personales reales. |
+| WEB-07 | El dashboard indica que no existen postas asignadas, mientras que «Mis Postas» muestra una instalación. No se confirmó si corresponden a la misma cuenta. | 2 | Consistencia de datos y visibilidad del estado. | Comparar ambas vistas con la misma cuenta y verificar la coherencia de los conteos. |
+| WEB-08 | No se ha podido confirmar la adaptación móvil, legibilidad, contraste, foco ni validaciones mediante teclado. | 2 | Accesibilidad y prevención y recuperación de errores. | Realizar pruebas con teclado, dispositivos móviles y ampliación de pantalla. |
+
+**Aplicación Móvil – FerovaFamily**
+
+| # | Problema | Escala de severidad | Heurística / Principio violado | Recomendación |
+|---|---|---:|---|---|
+| MOB-01 | El encabezado de inicio muestra «¡Hola string!» en lugar del nombre de la madre. | 2 | Correspondencia con el mundo real, prevención de errores y confianza. | Mostrar el nombre del perfil y establecer un texto alternativo cuando no esté disponible. |
+| MOB-02 | La ficha de una posta presenta valores genéricos como «string» y una distancia de «0,0 km». | 3 | Correspondencia con el mundo real, visibilidad del estado y confianza. | Mostrar información real del establecimiento y calcular la distancia según la ubicación autorizada. |
+| MOB-03 | El resumen nutricional muestra 0,0 mg de hierro para una porción cuyo cálculo proporcional sería aproximadamente 0,41 mg. | 3 | Correspondencia con el mundo real, precisión de datos y comunicación clara. | Validar las fórmulas con el responsable nutricional y diferenciar el hierro total del hierro absorbido. |
+| MOB-04 | La aplicación permite seleccionar más de un niño, pero no queda clara la política de acceso para madres y otros cuidadores. | 2 | Consistencia y correspondencia con el modelo de usuario. | Confirmar y documentar las reglas para registrar hijos, añadir cuidadores o transferir cuentas. |
+| MOB-05 | El botón «Confirmar Dosis» aparece deshabilitado mientras el tratamiento no ha sido activado por la enfermera. | — | Visibilidad del estado y prevención de errores. | Mantener el mensaje y el botón deshabilitado hasta que exista un tratamiento activo. |
+| MOB-06 | No se ha podido verificar la adaptación a distintos tamaños, accesibilidad táctil, mensajes de error, permisos de ubicación ni funcionamiento sin conexión. | 2 | Accesibilidad, control del usuario y prevención y recuperación de errores. | Probar los flujos completos en Android, incluyendo estados de carga, error, permisos denegados y confirmación de acciones. |
 
 #### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
 
 | # Hallazgo | Modificación realizada | Evidencia (commit / captura) | Responsable |
-|------------|------------------------|------------------------------|-------------|
-| 1 | [Modificación] | [enlace] | [Nombre] |
-
-<!-- COMPLETAR -->
+|---|---|---|---|
+| LP-01 | Se actualizaron las cifras de la landing page, incorporando las fuentes y el contexto correspondiente. | [Enlace a captura / commit] | [Nombre] |
+| LP-02 | Se reformuló el mensaje principal para evitar promesas de resultados clínicos garantizados. | [Enlace a captura / commit] | [Nombre] |
+| LP-03 | Se aclaró el público objetivo y las condiciones de acceso a FerovaFamily. | [Enlace a captura / commit] | [Nombre] |
+| LP-04 | Se precisaron las condiciones y los plazos de respuesta del servicio de teleconsulta. | [Enlace a captura / commit] | [Nombre] |
+| LP-05 | Se revisó la denominación institucional y se retiró cualquier afirmación oficial sin autorización acreditada. | [Enlace a captura / commit] | [Nombre] |
+| LP-06 | Se revisó la afirmación sobre el tiempo de registro para evitar presentar tiempos no validados. | [Enlace a captura / commit] | [Nombre] |
+| WEB-01 | Se revisó el nombre del acceso para que corresponda con los perfiles de enfermería y administración. | [Enlace a captura / commit] | [Nombre] |
+| WEB-02 | Se reemplazaron los valores genéricos de los saludos y perfiles por información válida. | [Enlace a captura / commit] | [Nombre] |
+| WEB-03 | Se corrigió la presentación de la adherencia para mostrar un estado sin datos cuando no existen registros suficientes. | [Enlace a captura / commit] | [Nombre] |
+| WEB-04 | Se tradujeron al español las etiquetas de interfaz que permanecían en inglés. | [Enlace a captura / commit] | [Nombre] |
+| WEB-05 | Se ajustó la visualización de los estados de carga y ausencia de registros para evitar mensajes simultáneos. | [Enlace a captura / commit] | [Nombre] |
+| WEB-06 | Se sustituyeron los datos personales visibles por información de prueba y se protegieron los documentos de identidad. | [Enlace a captura / commit] | [Nombre] |
+| WEB-07 | Se verificó la correspondencia entre el dashboard y la sección «Mis Postas» utilizando la misma cuenta. | [Enlace a captura / commit] | [Nombre] |
+| WEB-08 | Se realizaron ajustes de accesibilidad y adaptación de la interfaz mediante pruebas complementarias. | [Enlace a captura / commit] | [Nombre] |
+| MOB-01 | Se corrigió el encabezado de inicio para mostrar el nombre de la madre en lugar de un valor genérico. | [Enlace a captura / commit] | [Nombre] |
+| MOB-02 | Se actualizaron los datos de las postas y la presentación de las distancias correspondientes. | [Enlace a captura / commit] | [Nombre] |
+| MOB-03 | Se revisaron los cálculos nutricionales para garantizar la precisión de los valores de hierro mostrados. | [Enlace a captura / commit] | [Nombre] |
+| MOB-04 | Se aclararon las reglas de gestión de hijos y acceso para madres y otros cuidadores. | [Enlace a captura / commit] | [Nombre] |
+| MOB-05 | Se conservó el comportamiento del botón «Confirmar Dosis» deshabilitado hasta que exista un tratamiento activo. | [Enlace a captura / commit] | [Nombre] |
+| MOB-06 | Se realizaron pruebas complementarias de accesibilidad, permisos y funcionamiento de la aplicación en Android. | [Enlace a captura / commit] | [Nombre] |

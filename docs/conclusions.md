@@ -32,23 +32,53 @@ El diseño de Ferova permitió transformar los hallazgos de la investigación en
 
 En el caso de FerovaFamily, la navegación se organizó mediante secciones como Inicio, Diario, Citas y Consultas, mientras que FerovaClinic organiza sus funcionalidades mediante secciones como Inicio, Pacientes, Consultas e Historial. Esta organización busca facilitar el acceso a las funciones principales según las actividades que realiza cada tipo de usuario.
 
-**Sobre el diseño UI/UX**
+**Sobre el diseño UI/UX de Ferova**
 
-El proceso de diseño UI/UX permitió representar los principales flujos de interacción mediante wireframes, user flows, wireflows y prototipos de las aplicaciones. Los diseños se orientaron a facilitar tareas como el registro de pacientes, confirmación de dosis, registro de alimentos, consulta del historial nutricional, gestión de citas, consulta del progreso y comunicación con el personal de salud.
+El proceso de diseño UI/UX permitió representar los principales flujos de interacción mediante wireframes, user flows, wireflows y prototipos. La organización de las interfaces consideró las responsabilidades de cada segmento, procurando facilitar el acceso a las funcionalidades principales de FerovaFamily y FerovaClinic.
 
-Asimismo, la arquitectura de información se estructuró considerando las necesidades de cada segmento y se incorporaron mecanismos de búsqueda y navegación para facilitar el acceso a pacientes, alimentos, consultas, historiales y otros elementos de la plataforma.
+Esta etapa permitió establecer una estructura de navegación coherente con las actividades de los apoderados y del personal de salud, proporcionando una base para la implementación de las aplicaciones.
 
-**Sobre la arquitectura de software**
+**Sobre la arquitectura y el desarrollo de software**
 
-La definición de la arquitectura permitió organizar Ferova mediante diferentes componentes y contextos delimitados según las responsabilidades funcionales de la plataforma. Entre ellos se encuentran Identity and Management, Patient Management, Treatment Tracking, Health Facility, Communication Management, Analytics Reporting, Achievements & Rewards y Nutritional Diary.
+La definición de la arquitectura permitió organizar Ferova mediante componentes y contextos delimitados según las responsabilidades funcionales de la plataforma. Asimismo, la implementación de los servicios REST permitió integrar las operaciones necesarias para la gestión de pacientes, seguimiento del tratamiento, controles de hemoglobina, comunicación y generación de indicadores.
 
-Esta separación permite distribuir las responsabilidades de la solución y establecer relaciones entre los diferentes contextos, por ejemplo, entre la gestión de pacientes y el seguimiento del tratamiento, así como entre el seguimiento y la generación de indicadores. De esta manera, la arquitectura propuesta proporciona una estructura organizada para soportar las funcionalidades definidas durante las etapas de análisis y diseño.
+El desarrollo de FerovaClinic y FerovaFamily permitió trasladar los requerimientos definidos durante las etapas de análisis y diseño a aplicaciones funcionales dirigidas a sus respectivos usuarios. La integración entre las aplicaciones y el backend constituye una parte fundamental de la solución, ya que permite centralizar y consultar la información relacionada con el seguimiento de los pacientes.
 
 **Sobre el producto desarrollado**
 
 El trabajo realizado permitió establecer una solución digital que integra las necesidades de los dos segmentos identificados dentro de una misma plataforma. FerovaFamily proporciona herramientas para que los apoderados puedan registrar y consultar información relacionada con sus pacientes, mientras que FerovaClinic proporciona al personal de salud funcionalidades orientadas a la gestión y seguimiento de los pacientes.
 
 En conjunto, la solución busca centralizar información relacionada con el tratamiento, facilitar el seguimiento de las actividades asociadas y mejorar la comunicación entre los apoderados y el personal de salud. De esta manera, el producto propuesto responde a las necesidades identificadas durante las etapas de investigación y análisis, manteniendo como eje principal el seguimiento del tratamiento de la anemia.
+
+**Sobre el análisis estático y la calidad del código**
+
+La incorporación de SonarQube permitió realizar análisis estáticos del código fuente del backend y frontend, identificando problemas relacionados con seguridad, confiabilidad y mantenibilidad. Los resultados obtenidos facilitaron la identificación de aspectos que requieren atención y proporcionaron indicadores para evaluar el estado del código desarrollado.
+
+Ambos proyectos alcanzaron el estado de Quality Gate Passed en los análisis realizados. Sin embargo, los resultados también evidenciaron oportunidades de mejora, especialmente en los problemas de confiabilidad y en la ausencia de cobertura de pruebas reportada. Por ello, el análisis estático constituye una herramienta de apoyo para mantener y mejorar progresivamente la calidad del software.
+
+**Sobre la implementación de prácticas DevOps**
+
+La implementación de prácticas DevOps permitió organizar los procesos de integración, entrega, despliegue y monitoreo de los componentes de Ferova. Mediante GitHub Actions se establecieron workflows para automatizar actividades de compilación y validación del código, mientras que las plataformas de alojamiento permitieron publicar los componentes de la solución.
+
+El backend se desplegó en Railway, mientras que FerovaClinic se publicó mediante Azure Static Web Apps. Por su parte, FerovaFamily utiliza Firebase App Distribution para compartir versiones de prueba con testers autorizados. Esta distribución de responsabilidades permitió establecer mecanismos diferenciados para la publicación y validación de cada componente.
+
+**Sobre Continuous Integration y Continuous Delivery**
+
+Las prácticas de Continuous Integration permitieron automatizar la compilación de los proyectos y detectar errores durante el proceso de integración. Asimismo, Continuous Delivery permitió organizar la preparación de versiones y los procesos de despliegue hacia los entornos correspondientes.
+
+La separación de estos procesos contribuyó a mejorar la trazabilidad de los cambios y a establecer una secuencia de trabajo más ordenada para la publicación de nuevas versiones. Además, el uso de workflows permitió consultar los resultados de las ejecuciones y reconocer los procesos que requieren correcciones.
+
+**Sobre Continuous Deployment y Continuous Monitoring**
+
+La automatización de los despliegues permitió establecer mecanismos para publicar las versiones de los componentes de Ferova en sus respectivos entornos productivos. Complementariamente, las prácticas de Continuous Monitoring permitieron verificar la disponibilidad de los servicios, revisar los registros de ejecución y consultar los resultados de los workflows.
+
+La incorporación de verificaciones de disponibilidad, revisión de logs y seguimiento de eventos proporciona mecanismos para identificar posibles fallos posteriores al despliegue. Asimismo, la distribución de versiones móviles mediante Firebase App Distribution facilita la validación de FerovaFamily por parte de testers autorizados.
+
+**Sobre la gestión de alertas y notificaciones**
+
+La definición de componentes de alertas y notificaciones permitió organizar los eventos relevantes según su origen, tipo, canal y destinatario. Se identificaron mecanismos para consultar los fallos de GitHub Actions, revisar los eventos del backend en Railway, verificar las implementaciones de Azure y distribuir versiones móviles mediante Firebase App Distribution.
+
+Esta organización facilita la identificación y seguimiento de incidencias técnicas y permite diferenciar los eventos dirigidos al equipo de desarrollo de aquellos relacionados con la validación de versiones por parte de los testers. La consolidación de mecanismos de comunicación y seguimiento constituye una oportunidad para fortalecer la respuesta ante incidentes.
 
 </div>
 

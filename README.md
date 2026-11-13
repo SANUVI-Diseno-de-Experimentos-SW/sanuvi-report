@@ -50,20 +50,26 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 
 | Versión | Fecha | Autor | Descripción de modificación |
 |---------|-------|-------|-----------------------------|
-| 1.0 | [05/09/2026] | Quijandria Araneda, Vicente | Se creó la estructura base del informe según el Final Project Statement del curso 1ASI0732. |
-| 1.1 | [06/09/2026] | Baca Camargo, Vitaly Arturo  | Avance del Capítulo I con definición de Startup Profile, 5W+2H y estructura general. Se añadieron y corrigieron perfiles del equipo.  |
-| 1.2 | [07/09/2026] | Baca Camargo, Vitaly Arturo  | Incorporación de Lean UX Canvas, assumptions y outcomes y ajustes al Lean UX Canvas, definición de segmentos objetivo y consolidación de contenido del Capítulo I.  |
-| 1.3 | [08/09/2026] | Baca Camargo, Vitaly Arturo, Peñaranda Caldas, Gabriel Augusto, Apaza bocanegra, Elizabeth Noelia y Quijandria Araneda, Vicente | Incorporación de Entrevistas por cada segmento y análisis de entrevistas  |
-| 1.4 | [10/09/2026] | Baca Camargo, Vitaly Arturo | Incorporación de Needfinding y creacion de las User Personas |
-| 1.5 | [11/09/2026] | Baca Camargo, Vitaly Arturo | Incorporación de Ubiquitous Language|
-| 1.6 | [15/09/2026] | Baca Camargo, Vitaly Arturo, Damián Pereira, Luis Alberto | Incorpacion de Analisis Competitivo y Estrategias y tacticas contra los competidores|
-| 1.7 | [18/09/2026] | Baca Camargo, Vitaly Arturo|  Avance del Capítulo III  To-Be Scenario Mapping, User Stories, Product Backlog y Impact Mapping |
-| 1.8 | [20/09/2026] | Baca Camargo, Vitaly Arturo|  Avance del Mobile Applications Wireframes, Mobile Applications Wireflow Diagrams, Mobile Applications Mock-ups,  Mobile Applications User Flow Diagrams y Mobile Applications Prototyping |
-| 1.9 | [21/09/2026] | Quijandria Araneda, Vicente | Avance Organization Systems, Labeling Systems, SEO Tags and Meta Tags, Searching Systems y Navigation Systems  |
-| 2.0 | [22/09/2026] | Baca Camargo Vitaly Arturo | Avance Domain-Driven Software Architecture, Software Object-Oriented Design y Database Design  |
-| 2.1 | [23/09/2026] | Damián Pereira, Luis Alberto | Avance Landing Page Wireframe y Software Object-Oriented Design y Landing Page Mock-up  |
-| 2.2 | [24/09/2026] | Peñaranda Caldas, Gabriel Augusto | Avance Style Guidelines  |
-| 2.3 | [28/09/2026] | Apaza bocanegra, Elizabeth Noelia | Avance Web Applications Wireframes, Web Applications Wireflow Diagrams, Web Applications Mock-ups, Web Applications User Flow Diagrams y Web Applications Prototyping   |
+| 1.0 | 05/09/2026 | Quijandria Araneda, Vicente | Se creó la estructura base del informe según el Final Project Statement del curso 1ASI0732. |
+| 1.1 | 06/09/2026 | Baca Camargo, Vitaly Arturo  | Avance del Capítulo I con definición de Startup Profile, 5W+2H y estructura general. Se añadieron y corrigieron perfiles del equipo.  |
+| 1.2 | 07/09/2026 | Baca Camargo, Vitaly Arturo  | Incorporación de Lean UX Canvas, assumptions y outcomes y ajustes al Lean UX Canvas, definición de segmentos objetivo y consolidación de contenido del Capítulo I.  |
+| 1.3 | 08/09/2026 | Baca Camargo, Vitaly Arturo, Peñaranda Caldas, Gabriel Augusto, Apaza bocanegra, Elizabeth Noelia y Quijandria Araneda, Vicente | Incorporación de Entrevistas por cada segmento y análisis de entrevistas  |
+| 1.4 | 10/09/2026 | Baca Camargo, Vitaly Arturo | Incorporación de Needfinding y creacion de las User Personas |
+| 1.5 | 11/09/2026 | Baca Camargo, Vitaly Arturo | Incorporación de Ubiquitous Language|
+| 1.6 | 15/09/2026 | Baca Camargo, Vitaly Arturo, Damián Pereira, Luis Alberto | Incorpacion de Analisis Competitivo y Estrategias y tacticas contra los competidores|
+| 1.7 | 18/09/2026 | Baca Camargo, Vitaly Arturo|  Avance del Capítulo III  To-Be Scenario Mapping, User Stories, Product Backlog y Impact Mapping |
+| 1.8 | 20/09/2026 | Baca Camargo, Vitaly Arturo|  Avance del Mobile Applications Wireframes, Mobile Applications Wireflow Diagrams, Mobile Applications Mock-ups,  Mobile Applications User Flow Diagrams y Mobile Applications Prototyping |
+| 1.9 | 21/09/2026 | Quijandria Araneda, Vicente | Avance Organization Systems, Labeling Systems, SEO Tags and Meta Tags, Searching Systems y Navigation Systems  |
+| 2.0 | 22/09/2026 | Baca Camargo Vitaly Arturo | Avance Domain-Driven Software Architecture, Software Object-Oriented Design y Database Design  |
+| 2.1 | 23/09/2026 | Damián Pereira, Luis Alberto | Avance Landing Page Wireframe y Software Object-Oriented Design y Landing Page Mock-up  |
+| 2.2 | 24/09/2026 | Peñaranda Caldas, Gabriel Augusto | Avance Style Guidelines  |
+| 2.3 | 28/09/2026 | Apaza bocanegra, Elizabeth Noelia | Avance Web Applications Wireframes, Web Applications Wireflow Diagrams, Web Applications Mock-ups, Web Applications User Flow Diagrams y Web Applications Prototyping   |
+| 2.4 | 10/11/2026 | Baca Camargo, Vitaly Arturo | Incorporación de los avances del análisis estático de código mediante SonarQube y documentación de los resultados de calidad del software. |
+| 2.5 | 10/11/2026 | Quijandría Araneda, Vicente | Incorporación de los avances relacionados con las pruebas de software, testing y validación de funcionalidades de la aplicación. |
+| 2.6 | 11/11/2026 | Peñaranda Caldas, Gabriel Augusto | Documentación del despliegue del backend mediante Railway y revisión de la configuración de servicios y variables de entorno. |
+| 2.7 | 11/11/2026 | Apaza Bocanegra, Elizabeth Noelia | Documentación del despliegue del frontend mediante Azure Static Web Apps e integración con GitHub Actions. |
+| 2.8 | 12/11/2026 | Damián Pereira, Luis Alberto | Documentación de la distribución de la aplicación móvil FerovaFamily mediante Firebase App Distribution para su validación por testers. |
+| 2.9 | 12/11/2026 | Baca Camargo, Vitaly Arturo | Consolidación de la documentación de prácticas DevOps, incluyendo integración continua, despliegue, monitoreo, alertas y notificaciones del proyecto. |
 </div>
 </div>
 
@@ -73,9 +79,15 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 
 <div class="chapter">
 
-**Link de la organización en GitHub:** <br>https://github.com/SANUVI-Diseno-de-Experimentos-SW
-**Link del repositorio del Informe:** <br>https://github.com/SANUVI-Diseno-de-Experimentos-SW/sanuvi-report
-**Links de los repositorios de producto:** <br>**Landing Page:**<br>https://github.com/SANUVI-Diseno-de-Experimentos-SW/ferova-landing-page<br>**Api RESTFUL:**<br>https://github.com/SANUVI-Diseno-de-Experimentos-SW/ferova-landing-page<br>**Mobile Application:**<br>https://github.com/SANUVI-Diseno-de-Experimentos-SW/ferova-mobile-android<br>El repositorio del informe se gestiona aplicando **GitFlow** y **Conventional Commits**. Las ramas de trabajo se derivan de `develop` y se integran a través de Pull Requests:
+
+**Organización en GitHub:** [SANUVI-Diseno-de-Experimentos-SW](https://github.com/SANUVI-Diseno-de-Experimentos-SW)
+
+| Componente | Repositorio |
+|------------|-------------|
+| **Informe** | [sanuvi-report](https://github.com/SANUVI-Diseno-de-Experimentos-SW/sanuvi-report) |
+| **Landing Page** | [ferova-landing-page](https://github.com/SANUVI-Diseno-de-Experimentos-SW/ferova-landing-page) |
+| **API RESTful** | [ferova-landing-page](https://github.com/SANUVI-Diseno-de-Experimentos-SW/ferova-landing-page) |
+| **Mobile Application** | [ferova-mobile-android](https://github.com/SANUVI-Diseno-de-Experimentos-SW/ferova-mobile-android) |
 
 ```
 main
@@ -118,14 +130,14 @@ Durante este avance del trabajo, se desarrollaron los siguientes puntos del repo
 
 <div class="toc">
 
-**Carátula e información esencial**
-**Registro de versiones y Project Report Collaboration Insights**
-**Capítulo I: Introducción**
-**Capítulo II: Requirements Elicitation & Analysis**
-**Capítulo III: Requirements Specification**
-**Capítulo IV: Product Design**
-**Capítulo V: Product Implementation**
-**Conclusiones**
+**Carátula e información esencial**<br>
+**Registro de versiones y Project Report Collaboration Insights**<br>
+**Capítulo I: Introducción**<br>
+**Capítulo II: Requirements Elicitation & Analysis**<br>
+**Capítulo III: Requirements Specification**<br>
+**Capítulo IV: Product Design**<br>
+**Capítulo V: Product Implementation**<br>
+**Conclusiones**<br><br>
 
 <div align="center">
   <img src="assets/img/introduction/ollaboration-av1.png">
@@ -133,11 +145,11 @@ Durante este avance del trabajo, se desarrollaron los siguientes puntos del repo
 
 ### Commits por integrante
 
-**Baca Camargo, Vitaly Arturo (`Mr-code-star`)**: 86 commits
-**Apaza Bocanegra, Elizabeth Noelia (`Elizabeth-Apaza`)**: 29 commits
-**Damián Pereira, Luis Alberto (`luisdamian8`)**: 6 commits
-**Peñaranda Caldas,Gabriel Augusto (`gapc2124`)**: 3 commits
-**Quijandria Araneda, Vicente (`vquijandria`)**: 
+**Baca Camargo, Vitaly Arturo (`Mr-code-star`)**: 86 commits<br>
+**Apaza Bocanegra, Elizabeth Noelia (`Elizabeth-Apaza`)**: 29 commits<br>
+**Damián Pereira, Luis Alberto (`luisdamian8`)**: 6 commits<br>
+**Peñaranda Caldas,Gabriel Augusto (`gapc2124`)**: 3 commits<br>
+**Quijandria Araneda, Vicente (`vquijandria`)**: 0 commits
 
 </div>
 
@@ -397,5 +409,5 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 |---------------------|---------------------|--------------|
-| **4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software** | **Baca Camargo, Vitaly Arturo**<br><br>**AV1:** Ejerció ética profesional al documentar fielmente el registro de entrevistas a proveedores, asegurando la honestidad de los hallazgos recopilados. Mantuvo la integridad y rigor del informe final al redactar las Conclusiones y recomendaciones del proyecto.<br><br>**AV2:** Demostró liderazgo ético y profesional al revisar y validar el To-Be Product Backlog y las To-Be User Stories, asegurando la calidad, coherencia y cumplimiento de los estándares definidos por el equipo. | *[Pendiente completar]* |
-| **4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales** | **Baca Camargo, Vitaly Arturo**<br><br>**AV1:** Consolidó el impacto del proyecto mediante la redacción de las Conclusiones y el diseño inicial (Landing Page Mock-up), evaluando cómo la solución final resuelve el problema social/económico planteado.<br><br>**AV2:** Tomó decisiones estratégicas utilizando el Impact Mapping y el levantamiento de User Stories para asegurar que las funcionalidades del Sprint/Product Backlog generen un impacto real y positivo en el flujo de negocio y en los usuarios finales. | *[Pendiente completar]* |
+| **4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software** | **Baca Camargo, Vitaly Arturo**<br><br>**AV1:** Ejerció ética profesional al documentar fielmente el registro de entrevistas a proveedores, asegurando la honestidad de los hallazgos recopilados. Mantuvo la integridad y rigor del informe final al redactar las Conclusiones y recomendaciones del proyecto.<br><br>**TB1:** Demostró liderazgo ético y profesional al revisar y validar el To-Be Product Backlog y las To-Be User Stories, asegurando la calidad, coherencia y cumplimiento de los estándares definidos por el equipo.<br><br>**AV2:** Realizó el análisis estático del código mediante SonarQube, identificando problemas de seguridad, confiabilidad y mantenibilidad para contribuir a la calidad del software.<br><br>**Quijandría Araneda, Vicente (AV2):** Participó en la revisión de los procesos de testing y validación de la aplicación, considerando la importancia de entregar funcionalidades confiables.<br><br>**Peñaranda Caldas, Gabriel Augusto (AV2):** Participó en la configuración y revisión del despliegue del backend en Railway, considerando la correcta gestión de variables de entorno y servicios.<br><br>**Apaza Bocanegra, Elizabeth Noelia (AV2):** Participó en la configuración y validación de la publicación del frontend mediante Azure Static Web Apps y GitHub Actions.<br><br>**Damián Pereira, Luis Alberto (AV2):** Participó en la distribución de la aplicación móvil FerovaFamily mediante Firebase App Distribution para facilitar su validación por testers autorizados. | **AV1:** El equipo actuó con honestidad e integridad al documentar los hallazgos de las entrevistas y formular conclusiones y recomendaciones fieles a la información recopilada.<br><br>**TB1:** El equipo aseguró la calidad y coherencia del producto al revisar y validar el backlog y las historias de usuario según los estándares definidos.<br><br>**AV2:** El equipo demostró responsabilidad ética y profesional al implementar prácticas orientadas a mejorar la calidad, seguridad y confiabilidad de FerovaClinic y FerovaFamily. Asimismo, se consideró la protección de credenciales, la validación de los despliegues y la detección de posibles errores antes de entregar nuevas versiones. |
+| **4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales** | **Baca Camargo, Vitaly Arturo**<br><br>**AV1:** Consolidó el impacto del proyecto mediante la redacción de las Conclusiones y el diseño inicial (Landing Page Mock-up), evaluando cómo la solución final resuelve el problema social/económico planteado.<br><br>**TB1:** Tomó decisiones estratégicas utilizando el Impact Mapping y el levantamiento de User Stories para asegurar que las funcionalidades del Sprint/Product Backlog generen un impacto real y positivo en el flujo de negocio y en los usuarios finales.<br><br>**AV2:** Analizó los resultados de SonarQube y utilizó sus métricas para identificar oportunidades de mejora en la calidad y mantenibilidad del código.<br><br>**Quijandría Araneda, Vicente (AV2):** Colaboró en la evaluación de las pruebas realizadas, identificando aspectos que podían afectar la experiencia y confiabilidad de los usuarios.<br><br>**Peñaranda Caldas, Gabriel Augusto (AV2):** Participó en la evaluación del despliegue del backend en Railway, considerando la disponibilidad del servicio y el uso de infraestructura en la nube.<br><br>**Apaza Bocanegra, Elizabeth Noelia (AV2):** Participó en la publicación del frontend mediante Azure, evaluando la disponibilidad de la aplicación web para el personal de salud.<br><br>**Damián Pereira, Luis Alberto (AV2):** Participó en la distribución de FerovaFamily mediante Firebase App Distribution, facilitando las pruebas de la aplicación móvil con usuarios autorizados. | **AV1:** El equipo evaluó el impacto social y económico de la solución, y reflejó en las conclusiones y el diseño inicial cómo esta responde al problema planteado.<br><br>**TB1:** El equipo priorizó funcionalidades mediante Impact Mapping y User Stories, buscando que el producto genere un impacto positivo en el negocio y en los usuarios finales.<br><br>**AV2:** El equipo tomó decisiones técnicas considerando la disponibilidad, calidad y accesibilidad de la plataforma. Estas acciones contribuyen al objetivo social del proyecto, al facilitar herramientas digitales para el seguimiento de la anemia infantil y la coordinación entre las familias y el personal de salud. Además, el uso de servicios en la nube permitió aprovechar infraestructura existente para implementar y mantener la solución. |
