@@ -50,20 +50,26 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 
 | Versión | Fecha | Autor | Descripción de modificación |
 |---------|-------|-------|-----------------------------|
-| 1.0 | [05/09/2026] | Quijandria Araneda, Vicente | Se creó la estructura base del informe según el Final Project Statement del curso 1ASI0732. |
-| 1.1 | [06/09/2026] | Baca Camargo, Vitaly Arturo  | Avance del Capítulo I con definición de Startup Profile, 5W+2H y estructura general. Se añadieron y corrigieron perfiles del equipo.  |
-| 1.2 | [07/09/2026] | Baca Camargo, Vitaly Arturo  | Incorporación de Lean UX Canvas, assumptions y outcomes y ajustes al Lean UX Canvas, definición de segmentos objetivo y consolidación de contenido del Capítulo I.  |
-| 1.3 | [08/09/2026] | Baca Camargo, Vitaly Arturo, Peñaranda Caldas, Gabriel Augusto, Apaza bocanegra, Elizabeth Noelia y Quijandria Araneda, Vicente | Incorporación de Entrevistas por cada segmento y análisis de entrevistas  |
-| 1.4 | [10/09/2026] | Baca Camargo, Vitaly Arturo | Incorporación de Needfinding y creacion de las User Personas |
-| 1.5 | [11/09/2026] | Baca Camargo, Vitaly Arturo | Incorporación de Ubiquitous Language|
-| 1.6 | [15/09/2026] | Baca Camargo, Vitaly Arturo, Damián Pereira, Luis Alberto | Incorpacion de Analisis Competitivo y Estrategias y tacticas contra los competidores|
-| 1.7 | [18/09/2026] | Baca Camargo, Vitaly Arturo|  Avance del Capítulo III  To-Be Scenario Mapping, User Stories, Product Backlog y Impact Mapping |
-| 1.8 | [20/09/2026] | Baca Camargo, Vitaly Arturo|  Avance del Mobile Applications Wireframes, Mobile Applications Wireflow Diagrams, Mobile Applications Mock-ups,  Mobile Applications User Flow Diagrams y Mobile Applications Prototyping |
-| 1.9 | [21/09/2026] | Quijandria Araneda, Vicente | Avance Organization Systems, Labeling Systems, SEO Tags and Meta Tags, Searching Systems y Navigation Systems  |
-| 2.0 | [22/09/2026] | Baca Camargo Vitaly Arturo | Avance Domain-Driven Software Architecture, Software Object-Oriented Design y Database Design  |
-| 2.1 | [23/09/2026] | Damián Pereira, Luis Alberto | Avance Landing Page Wireframe y Software Object-Oriented Design y Landing Page Mock-up  |
-| 2.2 | [24/09/2026] | Peñaranda Caldas, Gabriel Augusto | Avance Style Guidelines  |
-| 2.3 | [28/09/2026] | Apaza bocanegra, Elizabeth Noelia | Avance Web Applications Wireframes, Web Applications Wireflow Diagrams, Web Applications Mock-ups, Web Applications User Flow Diagrams y Web Applications Prototyping   |
+| 1.0 | 05/09/2026 | Quijandria Araneda, Vicente | Se creó la estructura base del informe según el Final Project Statement del curso 1ASI0732. |
+| 1.1 | 06/09/2026 | Baca Camargo, Vitaly Arturo  | Avance del Capítulo I con definición de Startup Profile, 5W+2H y estructura general. Se añadieron y corrigieron perfiles del equipo.  |
+| 1.2 | 07/09/2026 | Baca Camargo, Vitaly Arturo  | Incorporación de Lean UX Canvas, assumptions y outcomes y ajustes al Lean UX Canvas, definición de segmentos objetivo y consolidación de contenido del Capítulo I.  |
+| 1.3 | 08/09/2026 | Baca Camargo, Vitaly Arturo, Peñaranda Caldas, Gabriel Augusto, Apaza bocanegra, Elizabeth Noelia y Quijandria Araneda, Vicente | Incorporación de Entrevistas por cada segmento y análisis de entrevistas  |
+| 1.4 | 10/09/2026 | Baca Camargo, Vitaly Arturo | Incorporación de Needfinding y creacion de las User Personas |
+| 1.5 | 11/09/2026 | Baca Camargo, Vitaly Arturo | Incorporación de Ubiquitous Language|
+| 1.6 | 15/09/2026 | Baca Camargo, Vitaly Arturo, Damián Pereira, Luis Alberto | Incorpacion de Analisis Competitivo y Estrategias y tacticas contra los competidores|
+| 1.7 | 18/09/2026 | Baca Camargo, Vitaly Arturo|  Avance del Capítulo III  To-Be Scenario Mapping, User Stories, Product Backlog y Impact Mapping |
+| 1.8 | 20/09/2026 | Baca Camargo, Vitaly Arturo|  Avance del Mobile Applications Wireframes, Mobile Applications Wireflow Diagrams, Mobile Applications Mock-ups,  Mobile Applications User Flow Diagrams y Mobile Applications Prototyping |
+| 1.9 | 21/09/2026 | Quijandria Araneda, Vicente | Avance Organization Systems, Labeling Systems, SEO Tags and Meta Tags, Searching Systems y Navigation Systems  |
+| 2.0 | 22/09/2026 | Baca Camargo Vitaly Arturo | Avance Domain-Driven Software Architecture, Software Object-Oriented Design y Database Design  |
+| 2.1 | 23/09/2026 | Damián Pereira, Luis Alberto | Avance Landing Page Wireframe y Software Object-Oriented Design y Landing Page Mock-up  |
+| 2.2 | 24/09/2026 | Peñaranda Caldas, Gabriel Augusto | Avance Style Guidelines  |
+| 2.3 | 28/09/2026 | Apaza bocanegra, Elizabeth Noelia | Avance Web Applications Wireframes, Web Applications Wireflow Diagrams, Web Applications Mock-ups, Web Applications User Flow Diagrams y Web Applications Prototyping   |
+| 2.4 | 10/11/2026 | Baca Camargo, Vitaly Arturo | Incorporación de los avances del análisis estático de código mediante SonarQube y documentación de los resultados de calidad del software. |
+| 2.5 | 10/11/2026 | Quijandría Araneda, Vicente | Incorporación de los avances relacionados con las pruebas de software, testing y validación de funcionalidades de la aplicación. |
+| 2.6 | 11/11/2026 | Peñaranda Caldas, Gabriel Augusto | Documentación del despliegue del backend mediante Railway y revisión de la configuración de servicios y variables de entorno. |
+| 2.7 | 11/11/2026 | Apaza Bocanegra, Elizabeth Noelia | Documentación del despliegue del frontend mediante Azure Static Web Apps e integración con GitHub Actions. |
+| 2.8 | 12/11/2026 | Damián Pereira, Luis Alberto | Documentación de la distribución de la aplicación móvil FerovaFamily mediante Firebase App Distribution para su validación por testers. |
+| 2.9 | 12/11/2026 | Baca Camargo, Vitaly Arturo | Consolidación de la documentación de prácticas DevOps, incluyendo integración continua, despliegue, monitoreo, alertas y notificaciones del proyecto. |
 </div>
 </div>
 
@@ -73,9 +79,15 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 
 <div class="chapter">
 
-**Link de la organización en GitHub:** <br>https://github.com/SANUVI-Diseno-de-Experimentos-SW
-**Link del repositorio del Informe:** <br>https://github.com/SANUVI-Diseno-de-Experimentos-SW/sanuvi-report
-**Links de los repositorios de producto:** <br>**Landing Page:**<br>https://github.com/SANUVI-Diseno-de-Experimentos-SW/ferova-landing-page<br>**Api RESTFUL:**<br>https://github.com/SANUVI-Diseno-de-Experimentos-SW/ferova-landing-page<br>**Mobile Application:**<br>https://github.com/SANUVI-Diseno-de-Experimentos-SW/ferova-mobile-android<br>El repositorio del informe se gestiona aplicando **GitFlow** y **Conventional Commits**. Las ramas de trabajo se derivan de `develop` y se integran a través de Pull Requests:
+
+**Organización en GitHub:** [SANUVI-Diseno-de-Experimentos-SW](https://github.com/SANUVI-Diseno-de-Experimentos-SW)
+
+| Componente | Repositorio |
+|------------|-------------|
+| **Informe** | [sanuvi-report](https://github.com/SANUVI-Diseno-de-Experimentos-SW/sanuvi-report) |
+| **Landing Page** | [ferova-landing-page](https://github.com/SANUVI-Diseno-de-Experimentos-SW/ferova-landing-page) |
+| **API RESTful** | [ferova-landing-page](https://github.com/SANUVI-Diseno-de-Experimentos-SW/ferova-landing-page) |
+| **Mobile Application** | [ferova-mobile-android](https://github.com/SANUVI-Diseno-de-Experimentos-SW/ferova-mobile-android) |
 
 ```
 main
