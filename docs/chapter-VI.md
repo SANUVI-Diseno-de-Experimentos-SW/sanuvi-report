@@ -1,3 +1,5 @@
+<div style="page-break-after: always;"></div>
+
 # Capítulo VI: Product Verification & Validation
 
 ## 6.1. Testing Suites & Validation
@@ -14,6 +16,8 @@ Se validó la entidad `User` asegurando la correcta asignación de roles y la in
 <img src="../assets/img/chapter-VI/test-unit/UserTest.png">
 </div>
 
+<div style="page-break-after: always;"></div>
+
 #### Nutrition Diary Bounded Context Unit Tests
 
 Se realizaron pruebas sobre el agregado `NutritionalDiary` `FoodEntry` y `FoodItem`.
@@ -23,6 +27,8 @@ Se realizaron pruebas sobre el agregado `NutritionalDiary` `FoodEntry` y `FoodIt
 <img src="../assets/img/chapter-VI/test-unit/FoodEntryTest.png">
 <img src="../assets/img/chapter-VI/test-unit/FoodItemTest.png">
 </div>
+
+<div style="page-break-after: always;"></div>
 
 #### Patient Management Bounded Context Unit Tests
 
@@ -34,6 +40,8 @@ Se validaron las entidades `Patient` `Control` y `MedicalRecord`.
 <img src="../assets/img/chapter-VI/test-unit/MedicalRecordTest.png">
 </div>
 
+<div style="page-break-after: always;"></div>
+
 #### Treatment Tracking Bounded Context Unit Tests
 
 Se validaron las entidades `Treatment` y `DailyDose`.
@@ -43,6 +51,8 @@ Se validaron las entidades `Treatment` y `DailyDose`.
 <img src="../assets/img/chapter-VI/test-unit/DailyDoseTest.png">
 </div>
 
+<div style="page-break-after: always;"></div>
+
 #### Healthy Facility Bounded Context Unit Tests
 
 Se validaron las entidades `HealthFacility` y `Appointment`.
@@ -51,6 +61,8 @@ Se validaron las entidades `HealthFacility` y `Appointment`.
 <img src="../assets/img/chapter-VI/test-unit/HealthFacilityTest.png">
 <img src="../assets/img/chapter-VI/test-unit/AppointmentTest.png">
 </div>
+
+<div style="page-break-after: always;"></div>
 
 ### 6.1.2. Core Integration Tests
 
@@ -66,6 +78,8 @@ El módulo IAM (Identity and Access Management) comprende las pruebas de integra
 | `StaffRegistrationIntegrationTests` | `register/staff`, `users/email/{email}`, `login` | 7 |
 | `PasswordResetIntegrationTests` | `password/request-code`, `password/verify-code`, `password/reset` | 5 |
 
+
+<div style="page-break-after: always;"></div>
 
 ##### Prueba 1 — Flujo de autenticación (IAM)
 
@@ -86,6 +100,9 @@ Valida la comunicación entre un cliente HTTP y los endpoints REST del módulo I
 <img src="../assets/img/chapter-VI/Test-integration/Iam/AuthenticationTest.png">
 </div>
 
+<div style="page-break-after: always;"></div>
+
+
 ##### Prueba 2 — Registro de personal (staff)
 
 **Clase:** `StaffRegistrationIntegrationTests`
@@ -100,11 +117,15 @@ Valida el alta de personal de salud (enfermera y administrador) y comprueba que 
 | DNI duplicado | `POST /api/users/register/staff` | `400 Bad Request` |
 | Inicio de sesión del personal registrado | `POST /api/users/login` | `200 OK` + token JWT |
 
+<div style="page-break-after: always;"></div>
+
 <div align="center">
 <img src="../assets/img/chapter-VI/Test-integration/Iam/StaffRegistrationIntegrationTest.png">
 </div>
 
 **Hallazgo detectado por la prueba:** al registrar personal con un DNI duplicado, la API respondía `500 Internal Server Error` porque el controlador solo capturaba `ArgumentException` y no `InvalidOperationException`. Se corrigió para devolver `400 Bad Request`, igual que el registro de madres.
+
+<div style="page-break-after: always;"></div>
 
 ##### Prueba 3 — Recuperación de contraseña
 
@@ -128,6 +149,8 @@ Valida los casos de error del flujo de recuperación de contraseña en sus tres 
 
 ---
 
+<div style="page-break-after: always;"></div>
+
 ### Core Integration Tests — Nutrition Diary
 
 Para el módulo Nutrition Diary se implementó la clase de prueba `NutritiondiaryintegrationTests`. Los casos utilizan `HttpClient` y `MongoWebApplicationFactory` para validar la interacción con los endpoints REST, incluyendo la seguridad, las validaciones de datos y las consultas de información nutricional.
@@ -135,6 +158,8 @@ Para el módulo Nutrition Diary se implementó la clase de prueba `Nutritiondiar
 | Clase | Endpoints cubiertos | Casos |
 | --- | --- | --- |
 | `NutritiondiaryintegrationTests` | `food-entry`, `today/{patientId}`, `history/{patientId}`, `foods/search`, `foods/{foodItemId}` | 17 |
+
+<div style="page-break-after: always;"></div>
 
 ##### Prueba 1 — Seguridad y autorización (Nutrition Diary)
 
@@ -152,9 +177,13 @@ Valida los mecanismos de autenticación y autorización de los endpoints destina
 | Consulta del historial con token de personal de salud | `GET /api/nutritional-diary/history/{patientId}` | `403 Forbidden` |
 | Token de madre con claim `motherId` | `GET /api/nutritional-diary/history/{patientId}` | No devuelve `401 Unauthorized`, `403 Forbidden` ni el mensaje `Mother ID no encontrado` |
 
+<div style="page-break-after: always;"></div>
+
 <div align="center">
 <img src="../assets/img/chapter-VI/Test-integration/NutritionDiary/NutritionTest.png">
 </div>
+
+<div style="page-break-after: always;"></div>
 
 ##### Prueba 2 — Validación del registro de consumo de alimentos
 
@@ -167,6 +196,8 @@ Comprueba las validaciones del endpoint de registro de consumo de alimentos, ver
 | Registro con campos obligatorios faltantes | `POST /api/nutritional-diary/food-entry` | `400 Bad Request` + mensaje `Faltan campos requeridos` |
 | Registro con cantidad negativa | `POST /api/nutritional-diary/food-entry` | `400 Bad Request` |
 
+<div style="page-break-after: always;"></div>
+
 ##### Prueba 3 — Consulta diaria e historial de pacientes
 
 **Clase:** `NutritiondiaryintegrationTests`
@@ -177,6 +208,8 @@ Valida el comportamiento de los endpoints de consulta diaria e historial cuando 
 | --- | --- | --- |
 | Consulta diaria de paciente inexistente o no asociado | `GET /api/nutritional-diary/today/{patientId}` | `400 Bad Request` |
 | Consulta del historial de paciente inexistente o no asociado | `GET /api/nutritional-diary/history/{patientId}` | `400 Bad Request` |
+
+<div style="page-break-after: always;"></div>
 
 ##### Prueba 4 — Búsqueda de alimentos
 
@@ -191,6 +224,8 @@ Verifica el comportamiento del endpoint público de búsqueda de alimentos. Comp
 | Búsqueda sin el parámetro `text` | `GET /api/nutritional-diary/foods/search` | `400 Bad Request` |
 | Búsqueda válida de alimentos (`arroz`) | `GET /api/nutritional-diary/foods/search?text=arroz` | `200 OK`, sin token de autenticación |
 
+<div style="page-break-after: always;"></div>
+
 ##### Prueba 5 — Consulta de detalles de alimentos
 
 **Clase:** `NutritiondiaryintegrationTests`
@@ -202,6 +237,8 @@ Comprueba la respuesta de la API cuando se solicitan los detalles de un alimento
 | Consulta con identificador inexistente en formato ObjectId | `GET /api/nutritional-diary/foods/{foodItemId}` | `400 Bad Request` |
 | Consulta con identificador inexistente en formato de texto | `GET /api/nutritional-diary/foods/{foodItemId}` | `400 Bad Request` |
 
+<div style="page-break-after: always;"></div>
+
 <div align="center">
 <img src="../assets/img/chapter-VI/Test-integration/NutritionDiary/NutritionTest.png">
 </div>
@@ -209,6 +246,8 @@ Comprueba la respuesta de la API cuando se solicitan los detalles de un alimento
 **Alcance:** las pruebas de esta clase se concentran en seguridad, validaciones y consultas. No se incluyen escenarios de registro exitoso de consumo de alimentos ni consultas exitosas de información diaria e historial. Asimismo, el endpoint de alimentos por categoría (`foods/category/{category}`) está definido en `NutritionDiaryApi.cs`, pero no cuenta con casos de prueba en esta clase.
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 ### Core Integration Tests — Patient Management
 
@@ -219,6 +258,8 @@ Cada escenario de prueba prepara sus propios datos mediante la API, creando madr
 | `MedicalRecordAndHemoglobinTests` | `medical-record`, `{patientId}/medical-record`, `hemoglobin-control`, `medical-record/{id}/controls`, `{patientId}/hemoglobin-evolution`, `discharge` | 15 |
 | `PatientManagementSecurityTests` | `register`, `assign-nurse`, `medical-record`, `hemoglobin-control`, `discharge`, `my-patients`, `nurse`, `mother/{motherId}`, `mother/search/{term}`, `{id}` y endpoints relacionados | 28 |
 | `PatientRegistrationAndAssignmentTests` | `register`, `my-patients`, `assign-nurse`, `mother/{motherId}`, `nurse`, `{id}`, `mother/search/{term}` | 14 |
+
+<div style="page-break-after: always;"></div>
 
 ##### Prueba 1 — Historia clínica y control de hemoglobina
 
@@ -244,11 +285,15 @@ Valida la creación y consulta de historias clínicas, el registro y consulta de
 | Dar de alta sin identificador de paciente | `PUT /api/patients/discharge` | `400 Bad Request` |
 | Dar de alta a un paciente asignado a otra enfermera | `PUT /api/patients/discharge` | `400 Bad Request` |
 
+<div style="page-break-after: always;"></div>
+
 <div align="center">
 <img src="../assets/img/chapter-VI/Test-integration/PatientManagement/MedicalRecordAndHemoglobinTests.png">
 </div>
 
 **Alcance:** las pruebas de alta del paciente cubren únicamente escenarios de error relacionados con la ausencia del identificador y la asignación a otra enfermera. El flujo exitoso de alta no está cubierto porque depende de las reglas de negocio establecidas para el alta del paciente.
+
+<div style="page-break-after: always;"></div>
 
 ##### Prueba 2 — Seguridad y autorización de Patient Management
 
@@ -264,11 +309,15 @@ Valida que los endpoints del módulo requieran autenticación y que el acceso es
 | Verificación del claim `motherId` | `GET /api/patients/my-patients` | `200 OK`, sin el mensaje `Mother ID no encontrado` |
 | Verificación del claim `nurseId` | `GET /api/patients/nurse` | `200 OK`, sin el mensaje `Nurse ID no encontrado` |
 
+<div style="page-break-after: always;"></div>
+
 <div align="center">
 <img src="../assets/img/chapter-VI/Test-integration/PatientManagement/PatientManagementSecurityTests.png">
 </div>
 
 **Alcance:** se verifican 28 ejecuciones relacionadas con la autenticación, la autorización por roles y la presencia de los claims necesarios para identificar a madres y enfermeras.
+
+<div style="page-break-after: always;"></div>
 
 ##### Prueba 3 — Registro y asignación de pacientes
 
@@ -293,6 +342,8 @@ Valida el registro de pacientes por parte de las madres, la asociación del paci
 | Consultar información básica de un paciente inexistente | `GET /api/patients/{id}` | `404 Not Found` o `400 Bad Request` |
 | Buscar una madre por DNI existente | `GET /api/patients/mother/search/{term}` | `200 OK` + información de la madre |
 
+<div style="page-break-after: always;"></div>
+
 <div align="center">
 <img src="../assets/img/chapter-VI/Test-integration/PatientManagement/PatientRegistrationAndAssignmentTests.png">
 </div>
@@ -300,6 +351,8 @@ Valida el registro de pacientes por parte de las madres, la asociación del paci
 **Alcance:** los casos cubren los flujos principales de registro, asignación y consulta, además de las validaciones de error y las respuestas para listas vacías. La prueba de registro con peso negativo espera `400 Bad Request`, por lo que el resultado depende de que la validación correspondiente esté implementada en el dominio.
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 ### Core Integration Tests — Treatment Tracking
 
@@ -313,6 +366,8 @@ Las pruebas validan el inicio y la gestión del tratamiento, el seguimiento de l
 | `RiskTests` | `risk-overview`, `risk/{riskLevel}/patients` | 4 |
 | `TreatmentLifecycleTests` | `treatments`, `treatments/complete`, `treatments/abandon`, `nurses/treatments` | 18 |
 | `TreatmentSecurityTests` | Endpoints de tratamientos, dosis, consultas de riesgo y tratamientos de enfermeras | 18 |
+
+<div style="page-break-after: always;"></div>
 
 ##### Prueba 1 — Registro y seguimiento de dosis
 
@@ -332,11 +387,15 @@ Valida la consulta de la dosis correspondiente al día, la confirmación de la t
 | Consultar historial después de confirmar una dosis | `GET /api/treatment-tracking/patients/{id}/dose-history` | `200 OK` + estado de dosis `CONFIRM` |
 | Consultar historial de un paciente de otra madre | `GET /api/treatment-tracking/patients/{id}/dose-history` | `400 Bad Request` |
 
+<div style="page-break-after: always;"></div>
+
 <div align="center">
 <img src="../assets/img/chapter-VI/Test-integration/TreatmentTracking/DosesTest.png">
 </div>
 
 **Alcance:** se validan nueve escenarios relacionados con la consulta y confirmación de dosis. El caso de confirmación depende de las reglas temporales que aplique la API para permitir registrar una toma. La prueba de historial de otro paciente verifica también que no se exponga información perteneciente a otra madre.
+
+<div style="page-break-after: always;"></div>
 
 ##### Prueba 2 — Clasificación y consulta de pacientes por riesgo
 
@@ -351,11 +410,15 @@ Valida los endpoints destinados a las enfermeras para consultar el resumen de pa
 | Consultar pacientes con nivel de riesgo válido | `GET /api/treatment-tracking/risk/{riskLevel}/patients` | `200 OK` |
 | Consultar pacientes con nivel de riesgo inválido | `GET /api/treatment-tracking/risk/{riskLevel}/patients` | `400 Bad Request` |
 
+<div style="page-break-after: always;"></div>
+
 <div align="center">
 <img src="../assets/img/chapter-VI/Test-integration/TreatmentTracking/RiskTests.png">
 </div>
 
 **Alcance:** las cuatro pruebas verifican las consultas de riesgo y la validación del nivel proporcionado. El nivel válido utilizado en las pruebas es `HIGH`, definido en `TreatmentTrackingApi.cs`.
+
+<div style="page-break-after: always;"></div>
 
 ##### Prueba 3 — Ciclo de vida del tratamiento
 
@@ -384,11 +447,15 @@ Valida el inicio de tratamientos para pacientes asignados a una enfermera, la co
 | Abandonar tratamiento inexistente | `PUT /api/treatment-tracking/treatments/abandon` | `400 Bad Request` |
 | Abandonar tratamiento asignado a otra enfermera | `PUT /api/treatment-tracking/treatments/abandon` | `400 Bad Request` |
 
+<div style="page-break-after: always;"></div>
+
 <div align="center">
 <img src="../assets/img/chapter-VI/Test-integration/TreatmentTracking/TreatmentLifecycleTests.png">
 </div>
 
 **Alcance:** las pruebas cubren el inicio, la consulta, el filtrado, la finalización y el abandono de tratamientos. Se incluyen escenarios de éxito y error para validar la asignación del paciente, los datos obligatorios, la duración y los permisos de acceso. La lista de tratamientos se comprueba después de completar o abandonar un tratamiento para verificar que deje de aparecer entre los activos.
+
+<div style="page-break-after: always;"></div>
 
 ##### Prueba 4 — Seguridad y autorización de Treatment Tracking
 
@@ -401,6 +468,8 @@ Valida que los endpoints protegidos requieran un token de autenticación y que l
 | Acceso a endpoints protegidos sin token (9 escenarios) | Inicio, confirmación, finalización y abandono de tratamientos; dosis diaria, historial, resumen de riesgo, lista de tratamientos y pacientes por riesgo | `401 Unauthorized` |
 | Acceso con rol incorrecto (9 escenarios) | Operaciones exclusivas de enfermería con token de madre y consultas o confirmación de dosis con token de enfermera | `403 Forbidden` |
 
+<div style="page-break-after: always;"></div>
+
 <div align="center">
 <img src="../assets/img/chapter-VI/Test-integration/TreatmentTracking/TreatmentSecurityTests.png">
 </div>
@@ -408,6 +477,8 @@ Valida que los endpoints protegidos requieran un token de autenticación y que l
 **Alcance:** se ejecutaron 18 casos relacionados con la autenticación y autorización del módulo, distribuidos en nueve escenarios sin token y nueve escenarios con un rol incorrecto. Estas pruebas verifican la separación de permisos entre madres y enfermeras para los endpoints de seguimiento del tratamiento.
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 ### Core Integration Tests — Healthy Facility
 
@@ -420,6 +491,8 @@ Para este módulo se implementaron tres clases de prueba: `HealthFacilityRegistr
 | `HealthFacilityRegistrationTests` | Registro de postas, asignación de enfermeras, consulta de postas y búsqueda de postas cercanas | 17 |
 | `HealthFacilitySecurityTests` | Registro y asignación de postas, citas, búsqueda de postas cercanas y consultas de agenda | 17 |
 | `AppointmentTests` | Reserva y cancelación de citas, historial de citas del paciente, agenda de enfermería y próxima cita | 23 |
+
+<div style="page-break-after: always;"></div>
 
 ##### Prueba 1 — Registro de postas y asignación de enfermeras
 
@@ -446,11 +519,15 @@ Valida el registro de postas de salud por parte del administrador, la asignació
 | Buscar postas cercanas sin pacientes registrados | `GET /api/health-facilities/nearby?lat={lat}&lng={lng}` | `400 Bad Request` |
 | Buscar postas cercanas a una ubicación con una posta registrada | `GET /api/health-facilities/nearby?lat={lat}&lng={lng}` | `200 OK` + la posta cercana en los resultados |
 
+<div style="page-break-after: always;"></div>
+
 <div align="center">
 <img src="../assets/img/chapter-VI/Test-integration/HealthyFacilities/HealthFacilityRegistrationTests.png">
 </div>
 
 **Alcance:** se verifican 17 casos de prueba, incluyendo seis escenarios de campos obligatorios, la asignación de enfermeras y las consultas públicas y geográficas. Las pruebas también comprueban que cada posta admita una sola enfermera y que una enfermera no pueda asignarse a otra posta si ya pertenece a una.
+
+<div style="page-break-after: always;"></div>
 
 ##### Prueba 2 — Seguridad y autorización de Healthy Facility
 
@@ -464,11 +541,15 @@ Valida la protección de los endpoints según el rol del usuario. Comprueba que 
 | Acceso a endpoints con rol incorrecto (9 escenarios) | Registro y asignación de postas, reserva y cancelación de citas, búsqueda de postas cercanas y consultas de agenda | `403 Forbidden` |
 | Verificar el claim `nurseId` en el token de enfermera | Token JWT generado para el rol `Nurse` | El claim `nurseId` está presente y no está vacío |
 
+<div style="page-break-after: always;"></div>
+
 <div align="center">
 <img src="../assets/img/chapter-VI/Test-integration/HealthyFacilities/HealthFacilitySecurityTests.png">
 </div>
 
 **Alcance:** se ejecutaron 17 casos relacionados con la seguridad, distribuidos en siete escenarios sin token, nueve escenarios con rol incorrecto y una validación del claim de enfermera. Los resultados permiten verificar la separación de permisos entre los roles `Admin`, `Nurse` y `Mother`.
+
+<div style="page-break-after: always;"></div>
 
 ##### Prueba 3 — Reserva, cancelación y consulta de citas
 
@@ -498,6 +579,8 @@ Valida el ciclo de vida de las citas médicas desde la reserva por parte de una 
 | Consultar próxima cita después de reservar | `GET /api/health-facilities/appointments/mother/next` | `200 OK` + información de la cita |
 | Consultar próxima cita después de cancelar | `GET /api/health-facilities/appointments/mother/next` | `404 Not Found` |
 
+<div style="page-break-after: always;"></div>
+
 <div align="center">
 <img src="../assets/img/chapter-VI/Test-integration/HealthyFacilities/AppointmentTests.png">
 </div>
@@ -506,6 +589,7 @@ Valida el ciclo de vida de las citas médicas desde la reserva por parte de una 
 
 **Observación:** la prueba de reutilización del horario cancelado comprueba que la API permita reservar nuevamente ese horario. Esto es importante porque un horario liberado después de una cancelación no debería permanecer bloqueado para futuras reservas.
 
+<div style="page-break-after: always;"></div>
 
 ### 6.1.3. Core Behavior-Driven Development
 
@@ -548,6 +632,7 @@ Scenario: Información inválida del paciente
   Then el sistema muestra "Ingresar datos para el registro del paciente"
 
 ```
+<div style="page-break-after: always;"></div>
 
 #### Feature 2: Gestion del Diario Nutricional
 
@@ -581,6 +666,8 @@ Scenario Resumen Nutricional
       | Alimentos de Hoy         |
   
 ```
+
+<div style="page-break-after: always;"></div>
 
 #### Feature 3: Gestion de Postas Medicas
 
@@ -624,6 +711,8 @@ Scenario: Consulta de postas cercanas
 
 ```
 
+<div style="page-break-after: always;"></div>
+
 #### Feature 4: Gestion de Citas
 
 ```gherkin
@@ -657,6 +746,8 @@ Scenario: Horario ocupado
     Then debe mostrarse un mensaje indicando que el horario no está disponible
     And no debe registrarse la cita.
 ```
+
+<div style="page-break-after: always;"></div>
 
 #### Feature 5: Gestion de Historial Medico
 
@@ -720,6 +811,8 @@ Feature: Gestión del Historial Médico
 
 ```
 
+<div style="page-break-after: always;"></div>
+
 #### Feature 6: Registro del control de hemoglobina
 
 ```gherkin
@@ -771,6 +864,8 @@ Feature: Registro del control de hemoglobina
 
 ```
 
+<div style="page-break-after: always;"></div>
+
 #### Feature 7: Gestión de Tratamientos
 
 ```gherkin
@@ -821,6 +916,8 @@ Scenario: Registrar abandono de tratamiento
 
 ```
 
+<div style="page-break-after: always;"></div>
+
 #### Feature 8: Registro del cumplimiento de dosis
 
 ```gherkin
@@ -854,6 +951,8 @@ Then el sistema debe informar que no existe un tratamiento activo para registrar
 
 ```
 
+<div style="page-break-after: always;"></div>
+
 #### Feature 9: Registro del cumplimiento de dosis
 
 ```gherkin
@@ -882,6 +981,8 @@ Feature: Dar de Alta a un Paciente
     And el estado del paciente no sufre modificaciones
 
 ```
+
+<div style="page-break-after: always;"></div>
 
 #### Feature 10: Autenticación y Seguridad
 
@@ -923,6 +1024,8 @@ Scenario: Registro exitoso
     And redirige a la página de inicio de sesión
     And limpia datos sensibles del navegador
 ```
+
+<div style="page-break-after: always;"></div>
 
 #### Feature 11: Gestion de Roles
 
@@ -992,6 +1095,8 @@ Background:
 
 ```
 
+<div style="page-break-after: always;"></div>
+
 ### 6.1.4. Core System Tests
 
 En esta sección se presentan las pruebas de sistema realizadas sobre los principales productos de la solución, con el objetivo de verificar su correcto funcionamiento de manera integral desde la perspectiva del usuario final. Estas pruebas permiten validar la ejecución de las funcionalidades implementadas, la navegación entre los diferentes módulos, la interacción con los servicios backend y el comportamiento de las aplicaciones ante operaciones exitosas y escenarios alternativos.
@@ -1006,12 +1111,16 @@ La estrategia de pruebas de sistema se definió de acuerdo con las característi
 
 Para el backend desarrollado en C# y .NET se utilizará Postman y Swagger, con el propósito de ejecutar solicitudes HTTP y verificar las respuestas de los endpoints, la autenticación, el acceso a recursos protegidos y el procesamiento de las operaciones. Finalmente, para la aplicación móvil desarrollada en Kotlin se realizarán pruebas manuales documentadas sobre un dispositivo Android físico, verificando la ejecución de sus principales funcionalidades y la interacción con los servicios backend.
 
+<div style="page-break-after: always;"></div>
+
 | Producto | Entorno | Herramienta | Tipo de prueba | Propósito |
 |---|---|---|---|---|
 | Landing Page | GitHub Pages | Selenium IDE | Web System Test | Validar carga, navegación, botones, enlaces y visualización del contenido público. |
 | Web Application | Entorno desplegado | Selenium IDE | Web UI System Test | Validar autenticación, navegación, gestión de pacientes, tratamientos y funcionalidades disponibles según el rol. |
 | Backend API | Entorno desplegado | Postman / Swagger | API System Test | Validar autenticación, autorización, endpoints, operaciones CRUD, persistencia de datos y manejo de errores. |
 | Mobile Application | Dispositivo Android | Prueba manual documentada | Mobile System Test | Validar inicio de sesión, navegación, funcionalidades de seguimiento del tratamiento e interacción con la API. |
+
+<div style="page-break-after: always;"></div>
 
 #### System Test Cases
 
@@ -1041,6 +1150,8 @@ Para el backend desarrollado en C# y .NET se utilizará Postman y Swagger, con e
 | API-11 | Envío de Mensajes | POST | Verificar el envío de un mensaje dentro de una consulta existente mediante su identificador y el contenido del mensaje. | 200 OK – Mensaje enviado exitosamente. | Passed |
 | API-12 | Consulta del Historial de Chat | GET | Verificar la recuperación de los mensajes intercambiados entre la madre o cuidadora y el personal de salud dentro de una consulta. | 200 OK – Historial de conversación obtenido exitosamente. | Passed |
 
+<div style="page-break-after: always;"></div>
+
 #### Selenium IDE Tests for Landing Page
 
 **ST-LP-01: Load Landing Page**
@@ -1053,6 +1164,8 @@ Para el backend desarrollado en C# y .NET se utilizará Postman y Swagger, con e
 
 Se evidencia la ejecución del test de carga de la Landing Page, verificando que la página pública desplegada en GitHub Pages se abra correctamente y que el navegador establezca las dimensiones de visualización configuradas. La prueba finalizó satisfactoriamente, sin errores.
 
+<div style="page-break-after: always;"></div>
+
 **ST-LP-02: Navigation Menu**
 
 <div align="center">
@@ -1062,6 +1175,8 @@ Se evidencia la ejecución del test de carga de la Landing Page, verificando que
 <br>
 
 Se evidencia la ejecución del test de navegación del menú principal, verificando que los enlaces «El problema», «Funcionalidades», «Para quién» y «Cómo funciona» respondan correctamente al hacer clic y permitan acceder a las respectivas secciones de la Landing Page. La prueba finalizó satisfactoriamente.
+
+<div style="page-break-after: always;"></div>
 
 **ST-LP-03: Call To Action**
 
@@ -1073,6 +1188,8 @@ Se evidencia la ejecución del test de navegación del menú principal, verifica
 
 Se evidencia la ejecución del test del botón Call To Action, correspondiente al acceso del personal de salud. Se verificó que el botón redirija correctamente al usuario hacia la aplicación web Ferova Clinic, desplegada en Azure Static Web Apps. La prueba finalizó satisfactoriamente.
 
+<div style="page-break-after: always;"></div>
+
 **ST-LP-04: Download APK**
 
 <div align="center">
@@ -1082,6 +1199,8 @@ Se evidencia la ejecución del test del botón Call To Action, correspondiente a
 <br>
 
 Se evidencia la ejecución del test de descarga de la aplicación móvil Ferova Family. Se verificó la interacción con el botón de descarga mediante el atributo `download="Ferova_Family.apk"` y se incorporó una pausa de cinco segundos para permitir el procesamiento de la descarga. Selenium IDE registró la ejecución satisfactoria de los comandos configurados.
+
+<div style="page-break-after: always;"></div>
 
 #### Selenium IDE Tests for FerovaClinic
 
@@ -1095,6 +1214,9 @@ Se evidencia la ejecución del test de descarga de la aplicación móvil Ferova 
 
 Se evidencia la ejecución del test de inicio de sesión válido para el personal de enfermería, verificando que las credenciales ingresadas sean aceptadas y que el usuario pueda acceder correctamente a la plataforma FerovaClinic. La prueba finalizó satisfactoriamente, sin errores.
 
+<div style="page-break-after: always;"></div>
+
+
 **ST-WEB-02: Login Admin Valid**
 
 <div align="center">
@@ -1104,6 +1226,8 @@ Se evidencia la ejecución del test de inicio de sesión válido para el persona
 <br>
 
 Se evidencia la ejecución del test de inicio de sesión válido para el administrador, verificando el acceso a la plataforma mediante sus credenciales correspondientes y la disponibilidad de las funcionalidades asignadas a dicho rol. La prueba finalizó satisfactoriamente, sin errores.
+
+<div style="page-break-after: always;"></div>
 
 **ST-WEB-03: View Patients By Mother**
 
@@ -1115,6 +1239,9 @@ Se evidencia la ejecución del test de inicio de sesión válido para el adminis
 
 Se evidencia la ejecución del test de visualización de pacientes asociados a una madre o titular, verificando la búsqueda mediante el documento de identidad y la presentación de los pacientes registrados. La prueba finalizó satisfactoriamente, sin errores.
 
+<div style="page-break-after: always;"></div>
+
+
 **ST-WEB-04: Register Healthy Facility**
 
 <div align="center">
@@ -1124,6 +1251,8 @@ Se evidencia la ejecución del test de visualización de pacientes asociados a u
 <br>
 
 Se evidencia la ejecución del test de registro de un establecimiento de salud, verificando el ingreso de información general, selección del distrito, dirección, teléfono de contacto, ubicación geográfica, especialidades y disponibilidad. La prueba finalizó satisfactoriamente, sin errores.
+
+<div style="page-break-after: always;"></div>
 
 **ST-WEB-05: Register Medical Record**
 
@@ -1135,6 +1264,8 @@ Se evidencia la ejecución del test de registro de un establecimiento de salud, 
 
 Se evidencia la ejecución del test de registro del historial médico de un paciente, verificando el ingreso de peso, altura, motivo de consulta, observaciones, antecedentes y síntomas reportados. La prueba finalizó satisfactoriamente, sin errores.
 
+<div style="page-break-after: always;"></div>
+
 **ST-WEB-06: Register Hemoglobin Control**
 
 <div align="center">
@@ -1145,6 +1276,8 @@ Se evidencia la ejecución del test de registro del historial médico de un paci
 
 Se evidencia la ejecución del test de registro del control de hemoglobina, verificando la selección del paciente y el ingreso del valor correspondiente para su seguimiento clínico. La prueba se ejecutó mediante Selenium IDE.
 
+<div style="page-break-after: always;"></div>
+
 **ST-WEB-07: View Patients For Discharge**
 
 <div align="center">
@@ -1154,6 +1287,8 @@ Se evidencia la ejecución del test de registro del control de hemoglobina, veri
 <br>
 
 Se evidencia la ejecución del test de visualización de pacientes disponibles para el proceso de alta, verificando la presentación de la cartera activa, los nombres de los pacientes y el estado de sus tratamientos. La prueba finalizó satisfactoriamente, sin errores.
+
+<div style="page-break-after: always;"></div>
 
 #### Postman API Tests
 
@@ -1167,6 +1302,8 @@ Se evidencia la ejecución del test de visualización de pacientes disponibles p
 
 Se evidencia la ejecución de la prueba de autenticación de usuarios mediante el envío de credenciales válidas (DNI y contraseña) al endpoint correspondiente. Se verificó que el servicio respondiera correctamente con un código HTTP 200 OK y generara un token JWT para permitir el acceso a los recursos protegidos de la aplicación.
 
+<div style="page-break-after: always;"></div>
+
 **API-02: Login – Invalid Credentials**
 
 <div align="center">
@@ -1176,6 +1313,8 @@ Se evidencia la ejecución de la prueba de autenticación de usuarios mediante e
 <br>
 
 Se evidencia la ejecución de la prueba de autenticación con credenciales incorrectas, verificando que el servicio rechace el acceso del usuario. La API respondió con el código HTTP 401 Unauthorized y el mensaje de credenciales inválidas, confirmando el correcto manejo de intentos de inicio de sesión no autorizados.
+
+<div style="page-break-after: always;"></div>
 
 **API-03: Register Patient**
 
@@ -1187,6 +1326,9 @@ Se evidencia la ejecución de la prueba de autenticación con credenciales incor
 
 Se evidencia la ejecución de la prueba de registro de pacientes mediante el envío de información personal, incluyendo nombres, apellidos, fecha de nacimiento, género, peso, altura e identificador de la madre. La API respondió con el código HTTP 201 Created, confirmando que el paciente fue registrado exitosamente.
 
+<div style="page-break-after: always;"></div>
+
+
 **API-04: Start Treatment**
 
 <div align="center">
@@ -1196,6 +1338,8 @@ Se evidencia la ejecución de la prueba de registro de pacientes mediante el env
 <br>
 
 Se evidencia la ejecución de la prueba de inicio de tratamiento para un paciente, enviando información correspondiente al suplemento, cantidad, horario de dosificación y duración del tratamiento. La API respondió con el código HTTP 201 Created, confirmando la creación del tratamiento y la generación de las dosis programadas.
+
+<div style="page-break-after: always;"></div>
 
 **API-05: Confirm Treatment Dose**
 
@@ -1207,6 +1351,8 @@ Se evidencia la ejecución de la prueba de inicio de tratamiento para un pacient
 
 Se evidencia la ejecución de la prueba de confirmación de una dosis correspondiente a un tratamiento activo. Se verificó el envío del identificador del paciente y la actualización del estado de la dosis a CONFIRMED, obteniendo una respuesta HTTP 200 OK y reflejando la actualización de los indicadores de adherencia.
 
+<div style="page-break-after: always;"></div>
+
 **API-06: Search Foods**
 
 <div align="center">
@@ -1217,6 +1363,8 @@ Se evidencia la ejecución de la prueba de confirmación de una dosis correspond
 
 Se evidencia la ejecución de la prueba de búsqueda de alimentos mediante el envío de un parámetro de consulta para localizar alimentos específicos. Se verificó que la API devolviera una lista de resultados con información nutricional, contenido de hierro por cada 100 gramos y clasificación según su capacidad de absorción. La solicitud finalizó satisfactoriamente con un código HTTP 200 OK.
 
+<div style="page-break-after: always;"></div>
+
 **API-07: Register Food Consumption**
 
 <div align="center">
@@ -1226,6 +1374,8 @@ Se evidencia la ejecución de la prueba de búsqueda de alimentos mediante el en
 <br>
 
 Se evidencia la ejecución de la prueba de registro de consumo de alimentos para un paciente, enviando el identificador del paciente, el alimento seleccionado y la cantidad consumida. La API respondió con el código HTTP 201 Created, confirmando el registro del alimento y el cálculo del hierro absorbido.
+
+<div style="page-break-after: always;"></div>
 
 **API-08: Book Medical Appointment**
 
@@ -1238,6 +1388,8 @@ Se evidencia la ejecución de la prueba de registro de consumo de alimentos para
 
 Se evidencia la ejecución de la prueba de programación de una cita médica mediante el envío del identificador del establecimiento de salud, identificador del paciente, fecha y hora de atención. La API respondió con el código HTTP 201 Created, confirmando que la cita médica fue reservada exitosamente.
 
+<div style="page-break-after: always;"></div>
+
 **API-09: Cancel Medical Appointment**
 
 <div align="center">
@@ -1248,6 +1400,8 @@ Se evidencia la ejecución de la prueba de programación de una cita médica med
 
 
 Se evidencia la ejecución de la prueba de cancelación de una cita médica previamente registrada, enviando el identificador correspondiente a la cita. Se verificó que el servicio procesara correctamente la solicitud y devolviera el código HTTP 200 OK, confirmando la cancelación de la cita médica.
+
+<div style="page-break-after: always;"></div>
 
 **API-10: Create Medical Consultation**
 
@@ -1261,6 +1415,8 @@ Se evidencia la ejecución de la prueba de cancelación de una cita médica prev
 
 Se evidencia la ejecución de la prueba de creación de una consulta entre la madre o cuidadora y el personal de salud, mediante el envío del identificador del paciente y el contenido del mensaje inicial. La API respondió con el código HTTP 201 Created, confirmando la creación de la consulta y la generación de su identificador.
 
+<div style="page-break-after: always;"></div>
+
 **API-11: Send Chat Message**
 
 <div align="center">
@@ -1271,6 +1427,8 @@ Se evidencia la ejecución de la prueba de creación de una consulta entre la ma
 
 
 Se evidencia la ejecución de la prueba de envío de mensajes dentro de una consulta existente, mediante el identificador de la consulta y el contenido del mensaje. La API respondió con el código HTTP 200 OK, confirmando que el mensaje fue enviado exitosamente.
+
+<div style="page-break-after: always;"></div>
 
 **API-12: Retrieve Chat History**
 
@@ -1283,6 +1441,8 @@ Se evidencia la ejecución de la prueba de envío de mensajes dentro de una cons
 
 Se evidencia la ejecución de la prueba de consulta del historial de mensajes de una conversación mediante el identificador de la consulta. Se verificó que el servicio devolviera los mensajes intercambiados entre la madre o cuidadora y el personal de enfermería, incluyendo el identificador del remitente, rol, contenido y fecha de envío. La solicitud finalizó satisfactoriamente con un código HTTP 200 OK.
 
+<div style="page-break-after: always;"></div>
+
 ## 6.2. Static testing & Verification
 
 ### 6.2.1. Static Code Analysis
@@ -1293,10 +1453,13 @@ En el proyecto Ferova, se establecen estándares de codificación para los difer
 
 La verificación estática se aborda mediante dos aspectos complementarios. En la sección 6.2.1.1 se describen los estándares y convenciones de codificación establecidos para cada tecnología. En la sección 6.2.1.2 se presentan las herramientas y los resultados del análisis de calidad del código.
 
+<div style="page-break-after: always;"></div>
 
 #### 6.2.1.1. Coding standard & Code conventions
 
 Para garantizar la legibilidad, consistencia y mantenibilidad del código fuente, el equipo de Ferova establece las siguientes convenciones de codificación para cada componente de la solución. Los identificadores de código (variables, métodos, clases, componentes y archivos) se escriben en inglés, mientras que los textos presentados a los usuarios se mantienen en español.
+
+<div style="page-break-after: always;"></div>
 
 #### Angular / TypeScript — FerovaClinic
 
@@ -1314,6 +1477,8 @@ Se siguen las convenciones oficiales de Angular y la guía de estilo de TypeScri
 - Se mantiene una separación entre componentes, servicios, modelos y demás responsabilidades de la aplicación.
 
 Herramienta de análisis: ESLint y las herramientas de análisis de TypeScript, según la configuración del proyecto.
+
+<div style="page-break-after: always;"></div>
 
 #### Kotlin / Android — FerovaFamily
 
@@ -1333,6 +1498,8 @@ Se siguen las convenciones oficiales de Kotlin y las recomendaciones de desarrol
 
 Herramienta de análisis: Kotlin Compiler y Android Lint, según la configuración del proyecto.
 
+<div style="page-break-after: always;"></div>
+
 #### C# / ASP.NET Core — Backend REST API
 
 Se siguen las convenciones de codificación de Microsoft para C# y las recomendaciones de desarrollo de ASP.NET Core:
@@ -1351,6 +1518,8 @@ Se siguen las convenciones de codificación de Microsoft para C# y las recomenda
 
 Herramienta de análisis: Roslyn Analyzers y .NET Code Analysis, según la configuración del proyecto.
 
+<div style="page-break-after: always;"></div>
+
 #### Gherkin — Archivos `.feature` (BDD)
 
 Se siguen las convenciones de Gherkin para la definición de pruebas de comportamiento:
@@ -1368,6 +1537,8 @@ Se siguen las convenciones de Gherkin para la definición de pruebas de comporta
 - Se consideran escenarios positivos, negativos y alternativos para verificar diferentes condiciones.
 - Se reutilizan pasos comunes para evitar duplicación entre escenarios.
 - Los archivos `.feature` utilizan nombres descriptivos en formato `kebab-case` (e.g., `patient-management.feature`, `treatment-tracking.feature`).
+
+<div style="page-break-after: always;"></div>
 
 #### Conventional Commits & GitFlow
 
@@ -1398,6 +1569,8 @@ test(gherkin): add patient management scenarios
 docs(api): update REST API documentation
 ```
 
+<div style="page-break-after: always;"></div>
+
 Para la organización del código fuente se consideran las siguientes convenciones de ramas:
 
 | Rama | Propósito |
@@ -1410,6 +1583,8 @@ Para la organización del código fuente se consideran las siguientes convencion
 
 La gestión del código fuente se realiza mediante Git y GitHub, permitiendo mantener el historial de cambios, integrar funcionalidades y facilitar la colaboración entre los integrantes del equipo.
 
+<div style="page-break-after: always;"></div>
+
 #### 6.2.1.2. Code Quality & Code Security
 
 Se realizó el análisis estático del código fuente del backend de FerovaClinic mediante SonarQube Community Build, utilizando SonarScanner for .NET. El análisis procesó 344 archivos y permitió evaluar diferentes aspectos relacionados con la calidad, mantenibilidad, confiabilidad y seguridad del código.
@@ -1417,6 +1592,8 @@ Se realizó el análisis estático del código fuente del backend de FerovaClini
 Como resultado, el proyecto obtuvo un **Quality Gate: Passed**, cumpliendo las condiciones establecidas para su aprobación. En cuanto a las métricas generales, se identificaron 11 incidencias de seguridad, 11 incidencias de confiabilidad y 391 incidencias de mantenibilidad (Code Smells), obteniendo calificaciones C, D y A, respectivamente. Asimismo, se registró un porcentaje de duplicación de código del 3.4% y una cobertura de pruebas del 0.0%.
 
 Estos resultados permitieron identificar oportunidades de mejora en el código fuente y evaluar su estado de calidad mediante reglas automatizadas. Cabe señalar que la cobertura de pruebas no fue reportada en este análisis y que la edición utilizada presenta limitaciones en el análisis de seguridad avanzado.
+
+<div style="page-break-after: always;"></div>
 
 ##### 1. Configuration of Static Code Analysis Environment
 
@@ -1428,6 +1605,8 @@ Estos resultados permitieron identificar oportunidades de mejora en el código f
 
 Se accedió a SonarQube y se seleccionó la opción Create a local project para registrar el backend de Ferova. Se estableció ferovaclinic-backend como nombre del proyecto y como clave de identificación, mientras que la rama principal se configuró como main.
 
+<div style="page-break-after: always;"></div>
+
 **Paso 2. Selección del método de análisis**
 
 <div align="center">
@@ -1435,6 +1614,8 @@ Se accedió a SonarQube y se seleccionó la opción Create a local project para 
 </div>
 
 Se seleccionó la creación de un proyecto local, ya que el análisis se realizaría directamente desde el entorno de desarrollo. Este método permitió analizar el código fuente almacenado en el equipo sin necesidad de configurar una integración con GitHub u otra plataforma DevOps.
+
+<div style="page-break-after: always;"></div>
 
 **Paso 3. Configuración del proyecto y generación del token**
 
@@ -1448,6 +1629,8 @@ Se seleccionó la creación de un proyecto local, ya que el análisis se realiza
 
 Una vez creado el proyecto, SonarQube solicitó generar un token de acceso asociado a ferovaclinic-backend. Este token permite autenticar las solicitudes del analizador y autorizar el envío de los resultados al servidor SonarQube.
 
+<div style="page-break-after: always;"></div>
+
 **Paso 4. Selección de la tecnología del proyecto**
 
 <div align="center">
@@ -1455,6 +1638,8 @@ Una vez creado el proyecto, SonarQube solicitó generar un token de acceso asoci
 </div>
 
 En la configuración del análisis se seleccionó la tecnología .NET, correspondiente al backend desarrollado con C# y ASP.NET Core. Posteriormente, se identificó el framework utilizado como .NET Core, lo que permitió obtener las instrucciones específicas para ejecutar SonarScanner en el proyecto.
+
+<div style="page-break-after: always;"></div>
 
 **Paso 5. Instalación y configuración de SonarScanner**
 
@@ -1465,6 +1650,7 @@ En la configuración del análisis se seleccionó la tecnología .NET, correspon
 
 Se verificó la instalación global de SonarScanner para .NET mediante la herramienta de línea de comandos de .NET. Esta herramienta permite establecer la conexión entre el proyecto backend y el servidor SonarQube para realizar el análisis estático del código fuente.
 
+<div style="page-break-after: always;"></div>
 
 **Paso 6. Configuración de las credenciales de análisis**
 
@@ -1474,6 +1660,8 @@ Se verificó la instalación global de SonarScanner para .NET mediante la herram
 
 Se configuró el token de autenticación mediante una variable de entorno de la terminal. De esta manera, se evitó escribir directamente las credenciales en los comandos de ejecución y se preparó el entorno para iniciar el análisis del proyecto.
 
+<div style="page-break-after: always;"></div>
+
 **Paso 7. Inicio del análisis estático**
 
 <div align="center">
@@ -1482,6 +1670,8 @@ Se configuró el token de autenticación mediante una variable de entorno de la 
 
 Se ejecutó el comando dotnet sonarscanner begin, indicando la clave del proyecto ferovaclinic-backend, la dirección local del servidor SonarQube y el token de autenticación. Este comando inició el proceso de análisis y preparó los componentes necesarios para recopilar información del código fuente durante la compilación.
 
+<div style="page-break-after: always;"></div>
+
 **Paso 8. Compilación del backend**
 
 <div align="center">
@@ -1489,6 +1679,8 @@ Se ejecutó el comando dotnet sonarscanner begin, indicando la clave del proyect
 </div>
 
 Se ejecutó el comando dotnet build sobre la solución WebApplication1.sln para compilar el backend durante el proceso de análisis. La compilación finalizó correctamente, aunque se identificaron 411 advertencias. Estos resultados fueron recopilados por SonarScanner para su posterior procesamiento.
+
+<div style="page-break-after: always;"></div>
 
 **Paso 9. Finalización y envío del análisis**
 
@@ -1502,6 +1694,8 @@ Se ejecutó el comando dotnet build sobre la solución WebApplication1.sln para 
 
 Se ejecutó el comando dotnet sonarscanner end para finalizar el análisis y enviar los resultados recopilados al servidor SonarQube. En la consola se mostró el mensaje ANALYSIS SUCCESSFUL, confirmando que el informe fue procesado y enviado correctamente.
 
+<div style="page-break-after: always;"></div>
+
 **Paso 10. Acceso al proyecto analizado**
 
 <div align="center">
@@ -1511,6 +1705,8 @@ Se ejecutó el comando dotnet sonarscanner end para finalizar el análisis y env
 Finalmente, se accedió al proyecto ferovaclinic-backend desde la interfaz web de SonarQube para consultar los resultados del análisis estático. Esta etapa permite revisar los indicadores de calidad, los problemas detectados y las posibles vulnerabilidades identificadas en el código fuente.
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 ##### 2. Resultados del Análisis Backend
 
@@ -1524,6 +1720,7 @@ A continuación, se presentan los resultados obtenidos mediante el análisis est
 
 - **Overall Results (Resultados Generales):** El proyecto registró 413 incidencias abiertas, distribuidas en 7 de severidad alta, 276 de severidad media, 75 de severidad baja y 55 informativas. El esfuerzo estimado para atenderlas fue de 8 días y 3 horas. Asimismo, la cobertura de pruebas registrada fue de 0.0 %, por lo que no se contó con información de cobertura automatizada durante este análisis. El Quality Gate obtuvo el estado *Passed*, de acuerdo con los criterios de calidad configurados en SonarQube.
 
+<div style="page-break-after: always;"></div>
 
 <div align="center">
 <img src="../assets/img/chapter-VI/Backend-Analytics/21.png" width=500>
@@ -1532,13 +1729,13 @@ A continuación, se presentan los resultados obtenidos mediante el análisis est
 *Figura 1. Resumen general del análisis estático del backend.*
 
 
-
 <div align="center">
     <img src="../assets/img/chapter-VI/Backend-Analytics/23.png" width=500>
 </div>
 
 *Figura 2. Medición de duplicación del código fuente*
 
+<div style="page-break-after: always;"></div>
 
 <div align="center">
     <img src="../assets/img/chapter-VI/Backend-Analytics/22.png" width=500>
@@ -1547,6 +1744,8 @@ A continuación, se presentan los resultados obtenidos mediante el análisis est
 *Figura 3. Incidencias identificadas en el backend.*
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 ##### 3. Resultados del Análisis Frontend
 
@@ -1562,6 +1761,8 @@ A continuación, se presentan los resultados obtenidos mediante el análisis est
 
 - **Overall Results (Resultados Generales):** El proyecto obtuvo el estado *Passed* en el Quality Gate de SonarQube. Asimismo, se registró una cobertura de pruebas del 0.0 %, debido a que no se proporcionó información de cobertura automatizada durante el análisis. El porcentaje de duplicación fue del 0.2 %, calculado sobre aproximadamente 25 mil líneas consideradas por la herramienta. En conjunto, los resultados permiten identificar oportunidades de mejora principalmente en la confiabilidad y mantenibilidad del código fuente.
 
+<div style="page-break-after: always;"></div>
+
 <div align="center">
     <img src="../assets/img/chapter-VI/Frontend-Analytics/31.png" width=500>
 </div>
@@ -1574,11 +1775,14 @@ A continuación, se presentan los resultados obtenidos mediante el análisis est
 
 *Figura 2. Incidencia de severidad alta identificada en el frontend.*
 
+<div style="page-break-after: always;"></div>
+
 <div align="center">
     <img src="../assets/img/chapter-VI/Frontend-Analytics/33.png" width=500>
 </div>
 
 *Figura 3. Medición de duplicación del código frontend.*
+
 
 <div align="center">
     <img src="../assets/img/chapter-VI/Frontend-Analytics/35.png" width=500>
@@ -1586,12 +1790,15 @@ A continuación, se presentan los resultados obtenidos mediante el análisis est
 
 *Figura 4. Incidencias de severidad media del frontend.*
 
+<div style="page-break-after: always;"></div>
+
 <div align="center">
     <img src="../assets/img/chapter-VI/Frontend-Analytics/34.png" width=500>
 </div>
 
 *Figura 5. Evaluación de riesgos y deuda técnica del frontend.*
 
+<div style="page-break-after: always;"></div>
 
 ### 6.2.2. Reviews
 
@@ -1613,6 +1820,8 @@ Al finalizar una actividad o sprint, se revisan las funcionalidades implementada
 
 El proyecto utiliza SonarQube Community Build para realizar el análisis estático del código fuente del backend y frontend. Esta herramienta permite identificar incidencias de seguridad, confiabilidad y mantenibilidad, así como detectar duplicaciones y oportunidades de mejora en la calidad del código. Adicionalmente, se verifica que ambos componentes compilen correctamente mediante los procesos de compilación de .NET y Angular antes de considerar los cambios como finalizados.
 
+<div style="page-break-after: always;"></div>
+
 **Proceso de Revisión**
 
 El proceso inicia cuando un desarrollador trabaja en una rama específica del proyecto y realiza los cambios correspondientes en el backend o frontend. Posteriormente, verifica que el componente modificado compile correctamente y que las funcionalidades implementadas mantengan el comportamiento esperado. Una vez realizadas estas comprobaciones, los cambios se suben al repositorio de GitHub para su revisión antes de integrarlos en la rama principal o de desarrollo.
@@ -1632,11 +1841,15 @@ Durante la revisión se consideran los siguientes aspectos:
 
 Si durante la revisión se identifican errores u oportunidades de mejora, se comunican las observaciones al desarrollador responsable para que realice las correcciones correspondientes. Posteriormente, los cambios vuelven a ser revisados y, una vez que cumplen con los criterios establecidos, pueden integrarse en la rama correspondiente.
 
+<div style="page-break-after: always;"></div>
+
 ## 6.3. Validation Interviews
 
 ### 6.3.1. Diseño de Entrevistas
 
 En esta sección se establece, para cada segmento objetivo, los elementos considerados durante la sesión de validación, incluyendo las aplicaciones móviles desarrolladas.
+
+<div style="page-break-after: always;"></div>
 
 #### Segmento 1: Madres y cuidadores de niños con anemia
 
@@ -1653,7 +1866,6 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
 * Utilidad general de la aplicación.
 
 ---
-
 #### 1. Experiencia de usuario (UX) general
 
 * En general, ¿cómo te sentiste usando la aplicación? 
@@ -1677,6 +1889,8 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
 * ¿Los datos solicitados fueron claros y fáciles de completar? 
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 #### 4. Confirmación de dosis
 
@@ -1725,6 +1939,8 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
 * ¿Recomendarías Ferova Family a otras madres? ¿Por qué?
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 #### Segmento 2: Personal de salud (Enfermeros/as y Nutricionistas)
 
@@ -1806,6 +2022,8 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
 
 ---
 
+<div style="page-break-after: always;"></div>
+
 #### 8. Chat con las madres
 
 * ¿Qué opinas del flujo de mensajes entre madres y enfermeros?
@@ -1825,6 +2043,7 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
 * Del 1 al 5, ¿qué tan fácil te pareció utilizar la aplicación en general?
 * 
 
+<div style="page-break-after: always;"></div>
 
 ### 6.3.2. Registro de Entrevistas
 
@@ -1857,6 +2076,8 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
 
 
 
+<div style="page-break-after: always;"></div>
+
 ### 6.3.3. Evaluaciones según heurísticas
 
 Se realizó una evaluación heurística UX basada en las 10 heurísticas de usabilidad de Jakob Nielsen para las aplicaciones FerovaFamily y FerovaClinic. La evaluación permitió identificar problemas de usabilidad relacionados con la presentación de información, consistencia, prevención de errores, visibilidad del estado de las funcionalidades y facilidad de interacción.
@@ -1885,6 +2106,8 @@ Se realizó una evaluación heurística UX basada en las 10 heurísticas de usab
 | 3 | **Problema mayor:** Dificultad que afecta significativamente la experiencia de uso y puede retrasar o dificultar la realización de una tarea importante. |
 | 4 | **Problema catastrófico:** Error crítico que impide completar una tarea esencial o puede provocar consecuencias graves debido a información incorrecta o acciones equivocadas. |
 
+<div style="page-break-after: always;"></div>
+
 ##### Hallazgos
 
 | # | Problema | Escala de severidad | Heurística / Principio violado | Recomendación |
@@ -1897,6 +2120,8 @@ Se realizó una evaluación heurística UX basada en las 10 heurísticas de usab
 | 6 | En el inicio, el apartado de logros y nutrición aparece parcialmente visible, sin que se identifique claramente la información que contiene en la captura. | 2 | 8. Estética y diseño minimalista. | Mejorar la distribución y jerarquía visual de las tarjetas para que su contenido y finalidad sean fácilmente identificables. |
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 #### 6.3.3.2. Evaluación heurística UX – FerovaClinic
 
@@ -1922,6 +2147,8 @@ Se realizó una evaluación heurística UX basada en las 10 heurísticas de usab
 | 3 | **Problema mayor:** Dificultad que afecta significativamente la experiencia de uso y puede retrasar o dificultar la realización de una tarea importante. |
 | 4 | **Problema catastrófico:** Error crítico que impide completar una tarea esencial o puede provocar consecuencias graves debido a información incorrecta o acciones equivocadas. |
 
+<div style="page-break-after: always;"></div>
+
 ##### Hallazgos
 
 | # | Problema | Escala de severidad | Heurística / Principio violado | Recomendación |
@@ -1939,6 +2166,8 @@ Se realizó una evaluación heurística UX basada en las 10 heurísticas de usab
 
 ---
 
+<div style="page-break-after: always;"></div>
+
 #### 6.3.3.3. Resumen de resultados
 
 | Aplicación | Hallazgos identificados | Severidad máxima |
@@ -1946,6 +2175,8 @@ Se realizó una evaluación heurística UX basada en las 10 heurísticas de usab
 | FerovaFamily (móvil) | 6 | 3 - Problema mayor |
 | FerovaClinic (web) | 10 | 4 - Problema catastrófico |
 | **Total** | **16** | **4 - Problema catastrófico** |
+
+<div style="page-break-after: always;"></div>
 
 #### 6.3.3.4. Observaciones generales
 
@@ -1955,6 +2186,7 @@ En FerovaFamily, los principales problemas están relacionados con la presentaci
 
 Por otro lado, en FerovaClinic se identificaron problemas relacionados con la visualización de información clínica, consistencia del idioma, validación de datos y claridad de los estados de los procesos administrativos y médicos.
 
+<div style="page-break-after: always;"></div>
 
 ## 6.4. Auditoría de Experiencias de Usuario
 
@@ -1968,6 +2200,8 @@ Por otro lado, en FerovaClinic se identificaron problemas relacionados con la vi
 | Producto | UPC-X |
 | Integrantes | Gilbert Alonso Huarcaya Matias, Luis Manuel Espinoza Navarrete, Eduardo Jose Cossar Sanchez, Manuel Alejandro Molina Vásquez, Mathias Javier Murillo   |
 | Repositorio / despliegue |  |
+
+<div style="page-break-after: always;"></div>
 
 ### TAREAS A EVALUAR
 
@@ -1992,6 +2226,8 @@ El alcance de esta evaluación incluye la revisión de la usabilidad de las sigu
 4. Evaluación de funcionalidades administrativas internas de la plataforma.
 5. Funcionalidades que no se encuentren disponibles en las versiones web y móvil proporcionadas para la auditoría.
 
+<div style="page-break-after: always;"></div>
+
 #### 6.4.1.2. Cronograma de auditoría realizada
 
 | Fecha | Actividad | Participantes | Duración |
@@ -2002,6 +2238,8 @@ El alcance de esta evaluación incluye la revisión de la usabilidad de las sigu
 | 13/11/2026 | Identificación y clasificación de problemas encontrados | Vitaly Arturo Baca Camargo | 01:00 |
 | 14/11/2026 | Elaboración del informe de auditoría | Vitaly Arturo Baca Camargo | 01:30 |
 | 15/11/2026 | Revisión y entrega del informe de auditoría | Vitaly Arturo Baca Camargo | 00:30 |
+
+<div style="page-break-after: always;"></div>
 
 #### 6.4.1.3. Contenido de auditoría realizada
 
@@ -2015,6 +2253,8 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 | 2 | Problema menor que puede generar confusión o incomodidad. |
 | 3 | Problema importante que dificulta la realización de una tarea. |
 | 4 | Problema crítico que impide completar una tarea o provoca errores graves. |
+
+<div style="page-break-after: always;"></div>
 
 ##### TABLA RESUMEN
 
@@ -2038,6 +2278,8 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 | 16 | El campo «Precio en soles» no establece un límite máximo para el importe ingresado, permitiendo registrar cantidades excesivamente elevadas que podrían generar publicaciones con precios irreales o errores al momento de publicar el aviso. | 3 | Prevención de errores (Heurística 5). | Establecer un importe máximo permitido para el precio, validar que el valor ingresado se encuentre dentro del rango establecido y mostrar un mensaje de advertencia cuando se supere dicho límite. |
 | 17 | Los mensajes del chat presentan el mismo color y alineación, sin una diferenciación visual clara entre los mensajes enviados y recibidos por los participantes, dificultando identificar quién intervino en la conversación. | 3 | Visibilidad del estado del sistema (Heurística 1) y Consistencia y estándares (Heurística 4). | Diferenciar los mensajes mediante colores, alineaciones y estilos de burbuja según el emisor, permitiendo reconocer rápidamente los mensajes propios y los del otro participante. |
 
+<div style="page-break-after: always;"></div>
+
 ##### RECOMENDACIONES
 
 #### Problema n°1: Pérdida de visibilidad de los filtros al desplazarse en el marketplace
@@ -2056,6 +2298,9 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 ---
 
+<div style="page-break-after: always;"></div>
+
+
 #### Problema n°2: Falta de diferenciación visual entre el buscador y los filtros
 
 **Severidad:** 2 | **Heurística violada:** Correspondencia entre el sistema y el mundo real (H2)
@@ -2070,6 +2315,8 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 **Recomendación:** Diferenciar visualmente la barra de búsqueda de los filtros de categoría o atributos, agrupando estos últimos en un contenedor o sección independiente y utilizando etiquetas descriptivas e iconografía clara.
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 #### Problema n°3: Dimensiones reducidas en el chat y datos del producto en la vista de conversación
 
@@ -2086,6 +2333,9 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 ---
 
+<div style="page-break-after: always;"></div>
+
+
 #### Problema n°4: Apariencia desactualizada y poco intuitiva en selectores de fecha y hora
 
 **Severidad:** 2 | **Heurística violada:** Consistencia y estándares (H4)
@@ -2100,6 +2350,8 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 **Recomendación:** Implementar componentes modernos y estandarizados de selección de fecha y hora (*date/time pickers*), manteniendo una interfaz visual uniforme con el sistema de diseño, controles claros y una navegación sencilla.
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 #### Problema n°5: Duplicidad de la opción «Cerrar sesión» en menú lateral y perfil
 
@@ -2116,6 +2368,9 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 ---
 
+<div style="page-break-after: always;"></div>
+
+
 #### Problema n°6: Desorganización de la información en la sección «Acuerdos anteriores»
 
 **Severidad:** 3 | **Heurística violada:** Reconocimiento antes que recuerdo (H6)
@@ -2130,6 +2385,8 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 ---
 
+<div style="page-break-after: always;"></div>
+
 #### Problema n°7: Acumulación de respuestas abiertas simultáneamente en preguntas frecuentes
 
 **Severidad:** 2 | **Heurística violada:** Diseño estético y minimalista (H8)
@@ -2143,6 +2400,8 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 **Recomendación:** Implementar un comportamiento de acordeón exclusivo (*single accordion*), de modo que al desplegar una nueva pregunta se contraiga automáticamente la respuesta que se encontraba abierta previamente.
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 #### Problema n°8: Falta de affordance visual en el enlace de correo de contacto del centro de ayuda
 
@@ -2159,6 +2418,8 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 ---
 
+<div style="page-break-after: always;"></div>
+
 #### Problema n°9: Espaciado superior insuficiente en el saludo de la versión móvil
 
 **Severidad:** 2 | **Heurística violada:** Diseño estético y minimalista (H8)
@@ -2172,6 +2433,9 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 **Recomendación:** Incrementar el margen o espaciado interno superior (*padding-top*) del contenedor principal, respetando las áreas seguras (*safe areas*) del dispositivo móvil y mejorando la respiración visual del encabezado.
 
 ---
+
+<div style="page-break-after: always;"></div>
+
 
 #### Problema n°10: Bloques de texto poco diferenciados en la vista móvil «Gestionar cierre»
 
@@ -2187,6 +2451,8 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 ---
 
+<div style="page-break-after: always;"></div>
+
 #### Problema n°11: Ausencia de opción para tomar fotografías directamente desde la cámara en móvil
 
 **Severidad:** 3 | **Heurística violada:** Flexibilidad y eficiencia de uso (H7)
@@ -2200,6 +2466,8 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 **Recomendación:** Incorporar un menú de selección o dos acciones claramente diferenciadas al subir imágenes en móvil: «Tomar fotografía» (invocando la cámara con los permisos correspondientes) y «Seleccionar de la galería».
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 #### Problema n°12: Confusión de identidad entre vendedor y autor de reseña en «Perfil del vendedor»
 
@@ -2216,6 +2484,8 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 ---
 
+<div style="page-break-after: always;"></div>
+
 #### Problema n°13: Falta de jerarquía visual y representación gráfica en «Mi reputación»
 
 **Severidad:** 2 | **Heurística violada:** Diseño estético y minimalista (H8) / Visibilidad del estado del sistema (H1)
@@ -2229,6 +2499,8 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 **Recomendación:** Rediseñar el panel utilizando tarjetas de resumen (*KPI cards*) para cada indicador con iconos e indicadores numéricos destacados, además de incorporar una visualización mediante estrellas para la calificación general. En caso de no contar con reseñas, mostrar un estado vacío (*empty state*) ilustrado con un mensaje orientativo.
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 #### Problema n°14: Recorte excesivo y falta de controles de ajuste al seleccionar fotografías
 
@@ -2245,6 +2517,8 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 ---
 
+<div style="page-break-after: always;"></div>
+
 #### Problema n°15: Distribución desordenada y ambigüedad en los botones de gestión de la publicación
 
 **Severidad:** 3 | **Heurística violada:** Diseño estético y minimalista (H8) / Prevención de errores (H5)
@@ -2259,6 +2533,8 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 **Recomendación:** Estandarizar el tamaño y alineación de los botones priorizando la acción principal, agrupar las acciones secundarias o destructivas en un menú desplegable («Más opciones») e implementar modales de confirmación que expliquen el impacto de retirar o marcar como vendido un aviso antes de ejecutar la acción.
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 #### Problema n°16: Falta de validación de límite máximo en el campo «Precio en soles»
 
@@ -2276,9 +2552,13 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 <img src="../assets/img/chapter-VI/Auditoria-Grupo-%20UPC-X/16.1.jpg" width=200>
 </div>
 
+<div style="page-break-after: always;"></div>
+
 **Recomendación:** Definir e implementar una validación de importe máximo razonable tanto en el *frontend* como en el *backend*, restringiendo la cantidad de dígitos permitidos y mostrando un mensaje de advertencia en línea cuando el monto ingresado supere el límite establecido.
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 #### Problema n°17: Ausencia de diferenciación visual entre mensajes enviados y recibidos en el chat
 
@@ -2292,6 +2572,8 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 
 **Recomendación:** Aplicar el estándar convencional de interfaces de chat: alinear los mensajes propios a la derecha con un color de acento diferenciador, y posicionar los mensajes recibidos a la izquierda con un tono neutro, facilitando el seguimiento inmediato de la conversación.
+
+<div style="page-break-after: always;"></div>
 
 ### 6.4.2. Auditoría recibida
 
@@ -2311,6 +2593,8 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 Ferova Platform – Plataforma digital para el seguimiento y tratamiento de la anemia infantil, compuesta por una landing page, una aplicación web para el personal de salud (FerovaClinic) y una aplicación móvil Android para madres (FerovaFamily).
 
+<div style="page-break-after: always;"></div>
+
 **TAREAS EVALUADAS**
 
 El alcance de esta evaluación incluyó la inspección visual de las siguientes plataformas:
@@ -2329,11 +2613,15 @@ El alcance de esta evaluación incluyó la inspección visual de las siguientes 
 
 La evaluación se realizó mediante capturas de las plataformas en ejecución compartidas por el equipo auditado.
 
+<div style="page-break-after: always;"></div>
+
 #### 6.4.2.2. Cronograma de auditoría recibida
 
 | Fecha | Actividad | Participantes | Duración |
 |---|---|---|---|
 | 09/11/2026 | Inspección visual de la landing page, aplicación web y aplicación móvil Android; revisión de los flujos y hallazgos observados. | Dhilsen Mallqui Vilca | 01:30 h |
+
+<div style="page-break-after: always;"></div>
 
 #### 6.4.2.3. Contenido de auditoría recibida
 
@@ -2348,11 +2636,15 @@ Los hallazgos identificados durante la auditoría UX serán clasificados tomando
 | 3 | **Problema mayor:** ocurre frecuentemente o los usuarios no son capaces de resolverlo. Es importante que sea corregido y se le debe asignar una prioridad alta. |
 | 4 | **Problema muy grave:** error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
 
+<div style="page-break-after: always;"></div>
+
 #### TABLA RESUMEN
 
 A continuación, se presentan los hallazgos identificados por el equipo auditor Aether System durante la evaluación de las tres plataformas de Ferova: Landing Page, FerovaClinic y FerovaFamily.
 
 Los hallazgos se organizan según la plataforma evaluada, indicando su severidad, la heurística o principio de UX relacionado y la recomendación propuesta para su corrección.
+
+<div style="page-break-after: always;"></div>
 
 ### 6.4.2.3. Contenido de auditoría recibida
 
@@ -2369,6 +2661,8 @@ La auditoría UX realizada por Aether System identificó los siguientes hallazgo
 | LP-05 | Se utiliza la etiqueta «Sistema Oficial de Vigilancia y Control de Anemia Infantil» sin evidencia de autorización institucional. | 3 | Credibilidad, transparencia y correspondencia con el contexto. | Confirmar la autorización institucional o retirar la denominación de sistema oficial. |
 | LP-06 | Se indica que el registro del perfil de la madre y del hijo toma menos de dos minutos sin evidencia de medición. | 1 | Expectativas claras y credibilidad. | Validar el tiempo mediante pruebas con usuarios o eliminar la promesa temporal. |
 
+<div style="page-break-after: always;"></div>
+
 **Aplicación Web – FerovaClinic**
 
 | # | Problema | Escala de severidad | Heurística / Principio violado | Recomendación |
@@ -2382,6 +2676,8 @@ La auditoría UX realizada por Aether System identificó los siguientes hallazgo
 | WEB-07 | El dashboard indica que no existen postas asignadas, mientras que «Mis Postas» muestra una instalación. No se confirmó si corresponden a la misma cuenta. | 2 | Consistencia de datos y visibilidad del estado. | Comparar ambas vistas con la misma cuenta y verificar la coherencia de los conteos. |
 | WEB-08 | No se ha podido confirmar la adaptación móvil, legibilidad, contraste, foco ni validaciones mediante teclado. | 2 | Accesibilidad y prevención y recuperación de errores. | Realizar pruebas con teclado, dispositivos móviles y ampliación de pantalla. |
 
+<div style="page-break-after: always;"></div>
+
 **Aplicación Móvil – FerovaFamily**
 
 | # | Problema | Escala de severidad | Heurística / Principio violado | Recomendación |
@@ -2392,6 +2688,8 @@ La auditoría UX realizada por Aether System identificó los siguientes hallazgo
 | MOB-04 | La aplicación permite seleccionar más de un niño, pero no queda clara la política de acceso para madres y otros cuidadores. | 2 | Consistencia y correspondencia con el modelo de usuario. | Confirmar y documentar las reglas para registrar hijos, añadir cuidadores o transferir cuentas. |
 | MOB-05 | El botón «Confirmar Dosis» aparece deshabilitado mientras el tratamiento no ha sido activado por la enfermera. | — | Visibilidad del estado y prevención de errores. | Mantener el mensaje y el botón deshabilitado hasta que exista un tratamiento activo. |
 | MOB-06 | No se ha podido verificar la adaptación a distintos tamaños, accesibilidad táctil, mensajes de error, permisos de ubicación ni funcionamiento sin conexión. | 2 | Accesibilidad, control del usuario y prevención y recuperación de errores. | Probar los flujos completos en Android, incluyendo estados de carga, error, permisos denegados y confirmación de acciones. |
+
+<div style="page-break-after: always;"></div>
 
 #### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
 
