@@ -159,7 +159,18 @@ Durante este avance del trabajo, se desarrollaron los siguientes puntos del repo
 
 ### Entrega AV2
 
-<div style="page-break-after: always;"></div>
+<div align="center">
+  <img src="assets/img/introduction/AV2.png">
+</div>
+
+la captura de GitHub Pulse correspondiente al periodo del 12 de octubre al 12 de noviembre de 2026, donde se muestran los pull requests, commits, archivos modificados y principales colaboradores del repositorio.
+
+Commits por integrante
+- Baca Camargo, Vitaly Arturo (Mr-code-star): 83 commits
+- Damián Pereira, Luis Alberto (luisdamian8): 6 commits
+- Apaza Bocanegra, Elizabeth Noelia (Elizabeth-Apaza): 1 commit
+- Peñaranda Caldas, Gabriel Augusto (gapc2124): 0 commits
+- Quijandría Araneda, Vicente (vquijandria): 0 commits
 
 ### Entrega TB2
 
