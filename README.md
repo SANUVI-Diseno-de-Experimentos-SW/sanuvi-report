@@ -64,12 +64,10 @@ Esta sección resume las modificaciones relevantes realizadas al informe durante
 | 2.1 | 23/09/2026 | Damián Pereira, Luis Alberto | Avance Landing Page Wireframe y Software Object-Oriented Design y Landing Page Mock-up  |
 | 2.2 | 24/09/2026 | Peñaranda Caldas, Gabriel Augusto | Avance Style Guidelines  |
 | 2.3 | 28/09/2026 | Apaza bocanegra, Elizabeth Noelia | Avance Web Applications Wireframes, Web Applications Wireflow Diagrams, Web Applications Mock-ups, Web Applications User Flow Diagrams y Web Applications Prototyping   |
-| 2.4 | 10/11/2026 | Baca Camargo, Vitaly Arturo | Incorporación de los avances del análisis estático de código mediante SonarQube y documentación de los resultados de calidad del software. |
-| 2.5 | 10/11/2026 | Quijandría Araneda, Vicente | Incorporación de los avances relacionados con las pruebas de software, testing y validación de funcionalidades de la aplicación. |
-| 2.6 | 11/11/2026 | Peñaranda Caldas, Gabriel Augusto | Documentación del despliegue del backend mediante Railway y revisión de la configuración de servicios y variables de entorno. |
-| 2.7 | 11/11/2026 | Apaza Bocanegra, Elizabeth Noelia | Documentación del despliegue del frontend mediante Azure Static Web Apps e integración con GitHub Actions. |
-| 2.8 | 12/11/2026 | Damián Pereira, Luis Alberto | Documentación de la distribución de la aplicación móvil FerovaFamily mediante Firebase App Distribution para su validación por testers. |
-| 2.9 | 12/11/2026 | Baca Camargo, Vitaly Arturo | Consolidación de la documentación de prácticas DevOps, incluyendo integración continua, despliegue, monitoreo, alertas y notificaciones del proyecto. |
+| 2.4 | 10/11/2026 | Baca Camargo, Vitaly Arturo | Actualización de las conclusiones y recomendaciones del proyecto Ferova, así como avances en la implementación de funcionalidades y documentación del informe. |
+| 2.5 | 10/11/2026 | Damián Pereira, Luis Alberto | Incorporación de ajustes y mejoras en los componentes del proyecto, contribuyendo a la implementación y consolidación de los entregables de AV2. |
+| 2.6 | 10/11/2026 | Apaza Bocanegra, Elizabeth Noelia | Actualización de los componentes del proyecto y colaboración en los ajustes correspondientes a los entregables de AV2. |
+| 2.7 | 12/11/2026 | Baca Camargo, Vitaly Arturo | Consolidación de los avances de implementación, documentación y revisión de los entregables correspondientes a AV2. |
 </div>
 </div>
 
