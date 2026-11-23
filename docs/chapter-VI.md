@@ -2051,14 +2051,16 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
 
 | Campo | Dato |
 |-------|------|
-| Nombres y apellidos | [Nombre] |
-| Edad | [Edad] |
-| Distrito | [Distrito] |
-| Evidencia | [Evidencia] |
-| Fecha | [DD/MM/AAAA] |
-| Timing | [inicio] — duración [mm:ss] |
-| Enlace del video | [URL] |
-| Resumen        |         |
+| Nombres y apellidos | Alessandro Daniel Bravo Castillo |
+| Edad | 28 |
+| Distrito | Pueblo Libre |
+| Evidencia | <div align="center">
+    <img src="../assets/img/chapter-VI/entrevista-validacion/alessandroBravo.png" width=500>
+</div> |
+| Fecha | 13/11/2026 |
+| Timing | 00:00 min - 07:18 min |
+| Enlace del video | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c197_upc_edu_pe/IQChxmaoukCjR6N-wEq8OX8mAfCxA7ytYOLjMqR6jgtVTPg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=wmJfQH](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c197_upc_edu_pe/IQChxmaoukCjR6N-wEq8OX8mAfCxA7ytYOLjMqR6jgtVTPg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=wmJfQH) |
+| Resumen        |    Alessandro Daniel Bravo Castillo validó la aplicación Ferova Familia destacando una experiencia general muy cómoda, intuitiva y ágil, con un diseño visual atractivo cuyos colores y tipografía facilitan la atención y navegación. Valoró positivamente la organización del registro de pacientes, la utilidad del diario nutricional para llevar un historial diario de alimentos, la precisión del mapa de postas cercanas para primeras visitas y el chat directo con el enfermero, el cual le genera mayor confianza al eliminar intermediarios. La función que más le gustó fue la confirmación de dosis por la trazabilidad que ofrece al tratamiento. Aunque mencionó una ligera indecisión personal al reservar citas al momento de elegir médico y horario, aclaró que el flujo fue intuitivo y logró completarlo sin ayuda. Finalmente, no detectó fallos ni funciones faltantes y confirmó que recomendaría la aplicación a otros padres que aún gestionan los tratamientos en papel o Excel.     |
 
 
 **Segmento 2: Personal de salud (Enfermeros/as y Nutricionistas**
