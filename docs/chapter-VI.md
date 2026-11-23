@@ -1845,7 +1845,7 @@ Si durante la revisión se identifican errores u oportunidades de mejora, se com
 
 ## 6.3. Validation Interviews
 
-### 6.3.1. Diseño de Entrevistas
+### 6.3.1. Diseño de s
 
 En esta sección se establece, para cada segmento objetivo, los elementos considerados durante la sesión de validación, incluyendo las aplicaciones móviles desarrolladas.
 
@@ -2054,9 +2054,7 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
 | Nombres y apellidos | Alessandro Daniel Bravo Castillo |
 | Edad | 28 |
 | Distrito | Pueblo Libre |
-| Evidencia | <div align="center">
-    <img src="../assets/img/chapter-VI/entrevista-validacion/alessandroBravo.png" width=500>
-</div> |
+| Evidencia | <div align="center"><img src="../assets/img/chapter-VI/entrevista-validacion/alessandroBravo.png" width="500"></div> |
 | Fecha | 13/11/2026 |
 | Timing | 00:00 min - 07:18 min |
 | Enlace del video | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c197_upc_edu_pe/IQChxmaoukCjR6N-wEq8OX8mAfCxA7ytYOLjMqR6jgtVTPg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=wmJfQH](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c197_upc_edu_pe/IQChxmaoukCjR6N-wEq8OX8mAfCxA7ytYOLjMqR6jgtVTPg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=wmJfQH) |
