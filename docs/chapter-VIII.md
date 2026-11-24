@@ -110,26 +110,83 @@ Para transformar el material bruto de `8.1.2` en preguntas investigables, el equ
 
 > Artefacto clave que sustenta el proceso XDPD. Solo puede referenciar métricas definidas en la sección **8.2.2 Domain Business Metrics**.
 
-**Experiment Card EC-01**
+A continuación se documentan las **4 Experiment Cards (`EC-01` a `EC-04`)** correspondientes a las preguntas priorizadas del backlog (`8.1.4`), alineadas con el principio *Simplest, Useful Thing* y con los identificadores de métricas `M-01` a `M-08` que se formalizan en la sección **8.2.2 Domain Business Metrics**.
+
+#### Experiment Card EC-01
 
 *Lado frontal*
 
 | Campo | Contenido |
 |-------|-----------|
-| Question | [Pregunta del backlog] |
-| Why | [Motivación] |
-| Hypothesis (si aplica) | [Hipótesis de trabajo] |
-| What — Simplest Useful Thing | [La cosa más simple y útil a construir/hacer] |
+| Question | `Q-01`: ¿Mostrar en el inicio de *FerovaFamily* la racha diaria, el avance porcentual hacia ≥ 75 % y la última hemoglobina incrementa la tasa diaria de confirmación de dosis y la adherencia semanal frente a la pantalla actual? |
+| Why | Validar la propuesta de valor central de adherencia terapéutica alineada con la NTS N.° 213-MINSA/DGIESP-2024 (≥ 75 %) en cuidadores reales antes de ampliar funciones móviles (`ID-01`, `AS-01`). |
+| Hypothesis (si aplica) | Las madres/cuidadores que visualizan en el inicio de *FerovaFamily* su racha activa, el avance porcentual hacia ≥ 75 % y el último registro de hemoglobina alcanzarán una mayor tasa diaria de confirmación de dosis (`M-01`) y una mayor tasa de adherencia adecuada semanal (`M-02`) frente a la vista actual sin dichos indicadores. |
+| What — Simplest Useful Thing | Tarjeta resumen liviana en el inicio de *FerovaFamily* consumiendo los endpoints existentes (`/today-dose`, `/achievement`, `/hemoglobin-evolution`) para mostrar únicamente días de racha activa, porcentaje hacia la meta del 75 % y última hemoglobina registrada. |
 
 *Lado posterior*
 
 | Campo | Contenido |
 |-------|-----------|
-| Measures | [Métricas de 8.2.2 referenciadas] |
-| Conditions | Experimental: [descripción] · Control: [descripción] |
-| Scale | [Tamaño de muestra, duración] |
+| Measures | `M-01` (*Daily Dose Confirmation Rate*, métrica primaria) y `M-02` (*Weekly Adequate Adherence Rate ≥ 75 %*, métrica secundaria) — definidas en `8.2.2`. |
+| Conditions | Experimental: *FerovaFamily* con tarjeta resumen visible en el inicio (racha activa, avance hacia 75 % y última hemoglobina) · Control: versión actual de *FerovaFamily* con registro estándar de dosis diaria sin tarjeta de progreso ni hemoglobina en el inicio. |
+| Scale | 20 madres/cuidadores del Segmento 1 (*María López*), asignados equitativamente (10 Experimental / 10 Control), durante 14 días continuos. |
 
-<!-- COMPLETAR: repetir por cada experimento -->
+#### Experiment Card EC-02
+
+*Lado frontal*
+
+| Campo | Contenido |
+|-------|-----------|
+| Question | `Q-02`: ¿Incorporar porcentajes explícitos, etiqueta `"Sin datos"` en `/heatmap` y alertas por valores atípicos de edad/hemoglobina en *FerovaClinic* reduce el tiempo de identificación de pacientes de alto riesgo y la tasa de error en el control clínico frente a la vista actual? |
+| Why | Mitigar el riesgo clínico y los hallazgos heurísticos de severidad máxima 4 y de auditoría UX (`6.3.3`, `WEB-01`–`WEB-08`) en *FerovaClinic*, evitando demoras en triaje y errores de registro asistencial (`ID-02`, `AS-02`). |
+| Hypothesis (si aplica) | El personal/evaluadores clínicos que trabajen sobre *FerovaClinic* con porcentajes explícitos, etiqueta `"Sin datos"` en `/heatmap` y alertas no bloqueantes ante valores atípicos de edad o hemoglobina reducirán el tiempo para identificar pacientes de alto riesgo (`M-03`) y la tasa de error al ingresar controles clínicos (`M-04`) frente a la vista actual. |
+| What — Simplest Useful Thing | Versión experimental acotada sobre `/heatmap`, `/risk-overview` y `/hemoglobin-control` en *FerovaClinic* añadiendo etiquetas numéricas `%` / `"Sin datos"` en las celdas del mapa de calor y advertencias visuales inmediatas ante rangos clínicos atípicos de edad o hemoglobina. |
+
+*Lado posterior*
+
+| Campo | Contenido |
+|-------|-----------|
+| Measures | `M-03` (*High-Risk Patient Identification Time*, métrica co-primaria) y `M-04` (*Clinical Control Entry Error Rate*, métrica co-primaria) — definidas en `8.2.2`. |
+| Conditions | Experimental: *FerovaClinic* con porcentajes explícitos, etiqueta `"Sin datos"` en `/heatmap` y alertas preventivas por valores atípicos en `/hemoglobin-control` · Control: versión actual de *FerovaClinic* con codificación únicamente por color y formulario sin alertas de rango atípico. |
+| Scale | 12 evaluadores de salud/clínicos del Segmento 2 (*Carlos Rojas*), divididos en 6 Experimental / 6 Control, realizando 5 tareas clínicas estandarizadas cada uno en un periodo de 7 días. |
+
+#### Experiment Card EC-03
+
+*Lado frontal*
+
+| Campo | Contenido |
+|-------|-----------|
+| Question | `Q-04`: ¿Cómo comprenden e interactúan las madres/cuidadores con el diario nutricional (**NutriHierro**) al registrar alimentos ricos en hierro e interpretar la diferencia entre hierro total y hierro absorbido? |
+| Why | Resolver la brecha de conocimiento `KG-01` sobre comprensión nutricional y fricciones de registro antes de proponer cambios de diseño en el diario alimentario. |
+| Hypothesis (si aplica) | No aplica — pregunta **Exploratoria** orientada a observar comportamientos, dudas conceptuales y puntos de fricción sin imponer una hipótesis previa. |
+| What — Simplest Useful Thing | Prueba de usabilidad moderada en voz alta (*think-aloud usability test*) sobre el módulo **NutriHierro** actual de *FerovaFamily*, mediante un guion breve de 3 tareas (buscar un alimento, registrar una ingesta y explicar la lectura entre hierro total y hierro absorbido). |
+
+*Lado posterior*
+
+| Campo | Contenido |
+|-------|-----------|
+| Measures | `M-05` (*Nutritional Entry Task Completion Rate*) y `M-06` (*Nutritional Summary Comprehension Rate*) — definidas en `8.2.2`. |
+| Conditions | Experimental: sesión observacional moderada en protocolo *think-aloud* sobre el módulo **NutriHierro** actual · Control: no aplica (diseño exploratorio de grupo único sin división Experimental vs. Control). |
+| Scale | 8–10 madres/cuidadores del Segmento 1, en sesiones individuales de 15 minutos, ejecutadas durante 7 días. |
+
+#### Experiment Card EC-04
+
+*Lado frontal*
+
+| Campo | Contenido |
+|-------|-----------|
+| Question | `Q-03`: ¿Presentar cifras citadas de INS/MINSA y botones *CTA* diferenciados por rol (*FerovaFamily* vs. *FerovaClinic*) en la Landing Page incrementa la tasa de clics (*CTR*) y la redirección correcta según el segmento? |
+| Why | Atender los hallazgos `LP-01`–`LP-06` (Cap. VI `6.4.2`) en la puerta de entrada pública de Ferova para validar credibilidad institucional y evitar que madres y personal de salud ingresen al portal incorrecto (`ID-04`, `CL-03`). |
+| Hypothesis (si aplica) | Los visitantes que acceden a la Landing Page con cifras epidemiológicas citadas del INS/MINSA y botones *CTA* diferenciados por rol obtendrán un mayor *CTR* en los llamados a la acción (`M-07`) y una mayor tasa de redirección correcta según su segmento (`M-08`) en comparación con la Landing Page actual. |
+| What — Simplest Useful Thing | Variante B ligera de la sección principal de la Landing Page desplegada en GitHub Pages, incorporando únicamente las fuentes oficiales citadas (INS/MINSA) y dos *CTAs* explícitos por segmento (*FerovaFamily* vs. *FerovaClinic*) con medición de clics. |
+
+*Lado posterior*
+
+| Campo | Contenido |
+|-------|-----------|
+| Measures | `M-07` (*Landing Page CTA Click-Through Rate — CTR*, métrica primaria) y `M-08` (*Role-Specific Access Redirection Rate*, métrica secundaria) — definidas en `8.2.2`. |
+| Conditions | Experimental (Variante B): Landing Page con cifras citadas de INS/MINSA y *CTAs* diferenciados por rol · Control (Variante A): Landing Page actual sin respaldo estadístico citado ni diferenciación explícita de rol en el llamado a la acción. |
+| Scale | Mínimo 100 sesiones únicas distribuidas al 50/50 entre Variante A (Control) y Variante B (Experimental), durante 10 días. |
 
 ## 8.2. Experiment Design
 
