@@ -236,26 +236,6 @@
 
 <img src="../assets/img/chapter-VIII/collaboration-insights.png" alt="Team Collaboration Insights">
 
-<!-- COMPLETAR -->
-
-### 8.3.4. To-Be Validation Interviews
-
-#### 8.3.4.1. Diseño de Entrevistas
-
-<!-- COMPLETAR -->
-
-#### 8.3.4.2. Registro de Entrevistas
-
-| Campo | Dato |
-|-------|------|
-| Nombres y apellidos | [Nombre] |
-| Edad | [Edad] |
-| Distrito | [Distrito] |
-| Fecha | [DD/MM/AAAA] |
-| Timing | [inicio] — duración [mm:ss] |
-| Enlace del video | [URL] |
-
-*Resumen:* <!-- COMPLETAR -->
 
 ## 8.4. Experiment Aftermath & Analysis
 
