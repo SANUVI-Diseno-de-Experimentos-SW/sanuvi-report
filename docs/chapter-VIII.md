@@ -2,13 +2,9 @@
 
 ## 8.1. Experiment Planning
 
-> Esta fase toma material bruto (ideas, suposiciones, afirmaciones) para descubrir las premisas subyacentes, preparar preguntas listas para el experimento, establecer la motivación para buscar una respuesta y organizar un backlog priorizado de preguntas.
-
 Para cerrar la brecha entre la entrega funcional de **Ferova** y la validación empírica con usuarios reales, el equipo de **SANUVI** adopta el ciclo **Experiment-Driven Product Development (XDPD)** (*premise → question → hypothesis → experiment → analysis → decision*), guiado por los principios *Simplest, Useful Thing*, *Strong opinions, loosely held* y *Be data informed*.
 
 ### 8.1.1. As-Is Summary
-
-> Recolección inicial del material bruto que constituye el punto de partida del trabajo, enfocada en **generar preguntas**, no en generar soluciones. Resume el estado actual de la plataforma Ferova al cierre del Capítulo V.
 
 #### Estado técnico y funcional de la plataforma Ferova
 
@@ -72,8 +68,6 @@ Para estructurar la planificación experimental sin partir de soluciones preconc
 
 ### 8.1.3. Experiment-Ready Questions
 
-> Dos tipos: **Belief-led** (prueban una creencia o premisa) y **Exploratorias** (recopilan conocimiento donde no hay creencias previas). Se aplica la técnica de las *Cinco W's y una H* para descubrir premisas ocultas o crear nuevas preguntas exploratorias.
-
 Para transformar el material bruto de `8.1.2` en preguntas investigables, el equipo aplicó la técnica **5W+H** (*What, Who, When, Where, Why, How*): en preguntas **Belief-led** permitió explicitar premisas ocultas detrás de cada suposición antes de formular hipótesis, mientras que en preguntas **Exploratorias** acotó quién, cuándo, dónde y cómo observar fenómenos sin supuestos previos.
 
 | ID | Pregunta | Tipo (Belief-led / Exploratoria) | Material bruto de origen | Premisa oculta descubierta (5W1H) |
@@ -88,8 +82,6 @@ Para transformar el material bruto de `8.1.2` en preguntas investigables, el equ
 | Q-08 | ¿Los puntos y medallas de gamificación en `/achievement` logran por sí solos sostener la retención semanal de las madres/cuidadores más allá de las dos primeras semanas de uso? | Belief-led | ID-01, AS-03 | *When / Why / Who:* Se asume que los incentivos lúdicos mantienen el compromiso familiar tras la semana 2 de tratamiento, incluso sin intervención directa o refuerzo clínico de enfermería. |
 
 ### 8.1.4. Question Backlog
-
-> Lista **priorizada de preguntas** para la investigación, no de características o soluciones. Cada pregunta captura su motivación ("por qué") y se puntúa según **Confianza, Riesgo, Impacto e Interés**. En caso de empate, se prioriza la pregunta con **mayor Riesgo**.
 
 **Estructura del backlog:** [x] Broad · [ ] Deep — **Justificación:** Ferova se encuentra en una etapa inicial de validación empírica con incertidumbre distribuida en sus cuatro componentes y en ambos segmentos de usuarios (adherencia diaria y diario nutricional en *FerovaFamily*, interpretación clínica y validaciones en *FerovaClinic*, y confianza/enrutamiento en la *Landing Page*). Una estructura **Broad** permite reducir simultáneamente los riesgos más altos en todo el ecosistema antes de profundizar (*Deep*) en un único flujo en ciclos posteriores.
 
@@ -107,8 +99,6 @@ Para transformar el material bruto de `8.1.2` en preguntas investigables, el equ
 | 8 | Q-08 | ¿Los puntos y medallas de gamificación en `/achievement` logran por sí solos sostener la retención semanal de las madres/cuidadores más allá de las dos primeras semanas de uso? | Verifica si la gamificación genera retención sostenible tras la novedad inicial (`AS-03`) o requiere refuerzo clínico de enfermería. | 3 | 3 | 3 | 3 | 12 |
 
 ### 8.1.5. Experiment Cards
-
-> Artefacto clave que sustenta el proceso XDPD. Solo puede referenciar métricas definidas en la sección **8.2.2 Domain Business Metrics**.
 
 A continuación se documentan las **4 Experiment Cards (`EC-01` a `EC-04`)** correspondientes a las preguntas priorizadas del backlog (`8.1.4`), alineadas con el principio *Simplest, Useful Thing* y con los identificadores de métricas `M-01` a `M-08` que se formalizan en la sección **8.2.2 Domain Business Metrics**.
 
