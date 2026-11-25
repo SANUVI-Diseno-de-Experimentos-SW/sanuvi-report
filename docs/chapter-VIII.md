@@ -320,31 +320,75 @@ Asimismo, se establecen criterios de inclusión y exclusión para seleccionar pa
 
 ### 8.2.5. Scale Calculations and Decisions
 
-> La escala se basa en la **Certeza** (probabilidad de error aceptable) y la **Precisión** (granularidad del cambio a detectar). La certeza se define con el **Poder Estadístico** (evita errores Tipo II) y el **Nivel de Significación** (previene errores Tipo I); la precisión se representa con el **Efecto Mínimo Detectable (MDE)**.
+La escala de los experimentos de Ferova se establece considerando la certeza estadística y la precisión necesaria para identificar cambios en las métricas de negocio definidas en la sección 8.2.2. Para ello, se consideran el nivel de significación (α), el poder estadístico (1-β) y el efecto mínimo detectable (MDE), con el propósito de determinar si las mejoras propuestas generan resultados relevantes frente a las condiciones actuales de la plataforma.
+
+Debido a que Ferova se encuentra en una etapa inicial de validación y no dispone de datos históricos suficientes para establecer valores de referencia (*baseline*) ni estimar la variabilidad de todas las métricas, los tamaños de muestra se mantienen de acuerdo con las *Experiment Cards* de la sección 8.1.5. En consecuencia, los resultados tendrán un carácter exploratorio y comparativo, sin asumir que las muestras establecidas garantizan por sí solas significación estadística.
 
 | Experiment Card | Baseline | MDE | Nivel de significación (α) | Poder estadístico (1-β) | Tamaño de muestra por condición | Duración estimada |
-|-----------------|----------|-----|----------------------------|-------------------------|--------------------------------|-------------------|
-| EC-01 | [valor] | [%] | 0.05 | [0.80 – 0.95] | [n] | [días] |
+|---|---|---|---|---|---|---|
+| **EC-01: FerovaFamily** | Por determinar mediante la versión actual de la aplicación. | Por determinar a partir de los datos iniciales de confirmación de dosis y adherencia semanal. | 0.05 (referencial) | 0.80 (objetivo de diseño) | 10 participantes en control / 10 en experimental. | 14 días |
+| **EC-02: FerovaClinic** | Por determinar mediante las tareas clínicas realizadas con la versión actual. | Por determinar a partir de los tiempos de identificación y errores de registro observados. | 0.05 (referencial) | 0.80 (objetivo de diseño) | 6 participantes en control / 6 en experimental. | 7 días |
+| **EC-03: Landing Page** | Por determinar mediante la tasa de clics y redirecciones de la versión actual. | Por determinar a partir de la tasa inicial de interacción y redirección correcta. | 0.05 (referencial) | 0.80 (objetivo de diseño) | 50 sesiones en control / 50 en experimental. | 10 días |
 
-**Cálculo y justificación**
+#### Cálculo y justificación
 
-<!-- COMPLETAR: mostrar el cálculo del tamaño de muestra, la herramienta utilizada y por qué los datos son representativos del grupo de interés -->
+**Experimento 01: EC-01 – Impacto de los Indicadores de Progreso en la Adherencia Terapéutica**
+
+El experimento considera una muestra de 20 madres o cuidadores del Segmento 1, distribuidos equitativamente entre el grupo de control y el grupo experimental. La evaluación tendrá una duración de 14 días continuos.
+
+La comparación se realizará mediante las métricas M-01 (*Daily Dose Confirmation Rate*) y M-02 (*Weekly Adequate Adherence Rate ≥ 75 %*). El grupo de control utilizará la versión actual de FerovaFamily, mientras que el grupo experimental tendrá disponible la tarjeta resumen con indicadores de progreso.
+
+El tamaño de muestra se conserva según lo establecido en la Experiment Card EC-01. Debido a que no se cuenta con una tasa histórica de confirmación de dosis ni con una estimación previa de la variabilidad de la adherencia, el MDE deberá establecerse después de obtener los primeros datos de referencia. Por tanto, los resultados permitirán identificar tendencias y diferencias observadas entre ambos grupos, sin asegurar potencia estadística suficiente.
+
+**Experimento 02: EC-02 – Efectividad de las Mejoras Visuales y Alertas Preventivas en FerovaClinic**
+
+El experimento contempla la participación de 12 evaluadores del Segmento 2 (personal de salud), distribuidos en dos grupos de seis participantes. Cada participante ejecutará cinco tareas clínicas estandarizadas durante un periodo de siete días.
+
+La evaluación se realizará mediante M-03 (*High-Risk Patient Identification Time*) y M-04 (*Clinical Control Entry Error Rate*). Se comparará el desempeño de los participantes que utilizan la versión actual de FerovaClinic con aquellos que utilizan la versión experimental, que incorpora porcentajes explícitos, la etiqueta "Sin datos" y alertas preventivas.
+
+El tamaño de muestra responde a la planificación establecida en la Experiment Card EC-02. Debido al número reducido de evaluadores y a la ausencia de mediciones históricas de tiempo y errores, los resultados se interpretarán principalmente como evidencia exploratoria sobre la eficiencia y facilidad de uso de las mejoras propuestas. El MDE se determinará posteriormente a partir de los resultados iniciales de las tareas.
+
+**Experimento 03: EC-03 – Influencia de la Información Sanitaria y los Accesos Diferenciados en la Landing Page**
+
+El experimento considera un mínimo de 100 sesiones únicas, distribuidas equitativamente entre la variante de control (A) y la variante experimental (B), durante un periodo de diez días.
+
+La evaluación utilizará las métricas M-07 (*Landing Page CTA Click-Through Rate*) y M-08 (*Role-Specific Access Redirection Rate*). La variante A corresponde a la Landing Page actual, mientras que la variante B incorpora cifras epidemiológicas respaldadas por fuentes oficiales del INS/MINSA y botones CTA diferenciados según el segmento de usuario.
+
+La distribución de 50 sesiones por variante permite realizar una comparación inicial de las tasas de interacción y redirección. Sin embargo, al no disponer de una tasa de conversión histórica, no es posible determinar previamente el MDE ni asegurar un poder estadístico del 80 %. Por ello, los resultados se utilizarán para identificar diferencias preliminares y orientar decisiones sobre futuras mejoras de la página de entrada.
+
+#### Decisiones sobre la escala experimental
+
+A partir de las características de los tres experimentos, se establecen las siguientes decisiones:
+
+- **EC-01:** Mantener 20 participantes durante 14 días, priorizando la observación del comportamiento de confirmación de dosis y adherencia semanal.
+- **EC-02:** Mantener 12 evaluadores durante 7 días, priorizando la identificación de dificultades y errores en las tareas clínicas.
+- **EC-03:** Mantener un mínimo de 100 sesiones únicas durante 10 días, permitiendo comparar la interacción y redirección entre las dos variantes de la Landing Page.
+
+En los tres experimentos, los valores definitivos del *baseline* y del MDE deberán establecerse a partir de mediciones iniciales. Si los resultados muestran diferencias relevantes, pero la muestra no permite confirmar su significación estadística, será necesario ampliar la evaluación antes de tomar decisiones definitivas sobre la efectividad de las intervenciones.
 
 ### 8.2.6. Methods Selection
 
-> El método debe ser el **Simplest Useful Thing** para alcanzar el tamaño de muestra y las condiciones necesarias. Se distingue el **objeto de investigación** (la pregunta o hipótesis) del **método** (la técnica, por ejemplo una prueba A/B). No se ejecutan simultáneamente dos o más experimentos sobre el mismo tema que puedan exponer a un solo usuario a ambos, y se considera la ética de **no causar daño**.
+La selección de métodos para los experimentos de Ferova se basa en el principio *Simplest Useful Thing*, priorizando técnicas que permitan obtener evidencia suficiente para evaluar las hipótesis planteadas sin implementar mecanismos de seguimiento o procedimientos innecesariamente complejos.
+
+Para cada experimento se diferencia el objeto de investigación, correspondiente a la pregunta o hipótesis que se busca comprobar, del método seleccionado, que representa la técnica utilizada para recopilar y analizar la evidencia. Asimismo, se consideran los posibles riesgos de solapamiento entre participantes y las medidas éticas necesarias para evitar daños, proteger la información y garantizar una evaluación responsable.
 
 | Experiment Card | Objeto de investigación | Método seleccionado | Justificación (Simplest Useful Thing) | Riesgo de solapamiento | Consideración ética |
-|-----------------|-------------------------|---------------------|---------------------------------------|------------------------|---------------------|
-| EC-01 | [Pregunta / hipótesis] | [A/B test, fake door, usability test, …] | [Justificación] | [Cómo se evita] | [Cómo se evita el daño] |
+|---|---|---|---|---|---|
+| **EC-01: FerovaFamily** | Comprobar si la tarjeta resumen con la racha activa, el progreso hacia el 75 % y el último valor de hemoglobina incrementa la confirmación diaria de dosis y la adherencia semanal adecuada (M-01 y M-02). | Prueba A/B con grupo experimental y grupo de control durante 14 días. | Permite comparar directamente la versión actual de FerovaFamily con la versión que incorpora los indicadores de progreso, utilizando los registros de confirmación de dosis y adherencia ya contemplados en la aplicación. | Evitar que un mismo cuidador participe en ambos grupos o utilice ambas versiones durante el experimento, ya que podría alterar los resultados de la comparación. | Solicitar consentimiento informado a los cuidadores, proteger los datos personales y clínicos de los menores y utilizar la información únicamente para fines de evaluación. La participación no debe modificar ni interrumpir el tratamiento médico. |
+| **EC-02: FerovaClinic** | Determinar si los porcentajes explícitos, la etiqueta "Sin datos" y las alertas preventivas reducen el tiempo de identificación de pacientes de alto riesgo y los errores de registro clínico (M-03 y M-04). | Prueba de usabilidad controlada con tareas clínicas estandarizadas y comparación entre grupo experimental y grupo de control. | Permite observar directamente el desempeño del personal de salud en cinco tareas clínicas, registrando el tiempo de identificación y los errores sin requerir una implementación compleja de analítica adicional. | Evitar que los participantes de un grupo reciban instrucciones o conozcan anticipadamente las mejoras de la otra versión antes de completar las tareas. | Solicitar consentimiento a los evaluadores y utilizar casos clínicos simulados o datos anonimizados. Las pruebas no deben intervenir en la atención de pacientes reales ni utilizarse para tomar decisiones clínicas. |
+| **EC-03: Landing Page** | Evaluar si las cifras oficiales del INS/MINSA y los botones CTA diferenciados incrementan la tasa de clics y las redirecciones correctas según el segmento de usuario (M-07 y M-08). | Prueba A/B de la Landing Page, comparando la Variante A (control) y la Variante B (experimental). | Permite comparar dos versiones de la página de entrada y medir directamente los clics en los botones CTA y las redirecciones realizadas, sin modificar los demás componentes de Ferova. | Evitar que una misma sesión sea contabilizada en ambas variantes y controlar las sesiones duplicadas para no alterar la comparación de resultados. | Utilizar únicamente información de interacción necesaria para el experimento, evitar recopilar datos personales innecesarios y presentar cifras sanitarias respaldadas por fuentes oficiales para no inducir a error a los visitantes. |
 
-**Calendario de experimentos (evita solapamiento)**
+#### Calendario de experimentos (evita solapamiento)
+
+Para evitar interferencias entre las evaluaciones, los experimentos se organizarán de manera secuencial, respetando la duración establecida en cada *Experiment Card*. El siguiente calendario representa una planificación relativa, cuyos días de inicio podrán convertirse en fechas concretas cuando se defina el cronograma de ejecución.
 
 | Experimento | Inicio | Fin | Segmento expuesto |
-|-------------|--------|-----|-------------------|
-| EC-01 | [fecha] | [fecha] | [segmento] |
+|---|---|---|---|
+| **EC-01: FerovaFamily** | Día 1 | Día 14 | Segmento 1: Madres/cuidadores (20 participantes). |
+| **EC-02: FerovaClinic** | Día 15 | Día 21 | Segmento 2: Personal de salud (12 evaluadores). |
+| **EC-03: Landing Page** | Día 22 | Día 31 | Visitantes de la Landing Page: madres/cuidadores y personal de salud (mínimo 100 sesiones). |
 
-<!-- COMPLETAR -->
+La ejecución secuencial permite organizar los recursos del equipo SANUVI y reducir posibles interferencias entre las pruebas. Cada experimento conservará sus propias condiciones de control y experimentales, así como sus métricas y criterios de evaluación. De esta manera, los resultados obtenidos podrán analizarse de forma independiente antes de tomar decisiones sobre futuras mejoras de Ferova.
 
 ### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
 
