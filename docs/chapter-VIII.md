@@ -547,15 +547,34 @@ Además, se observaron eventos automáticos como `user_engagement` y `first_open
 
 ### 8.2.8. Web and Mobile Tracking Plan
 
-> Plan de instrumentación de los componentes de recolección de datos en los productos que forman parte del alcance del experimento.
+El plan de instrumentación establece los eventos que serán recopilados en los componentes web y móvil de Ferova, especificando las condiciones que generan su registro, las propiedades asociadas, las métricas que alimentan y los responsables de su seguimiento. Su finalidad es organizar la recolección de datos para evaluar la interacción de los usuarios con las funcionalidades comprendidas en el alcance del experimento.
+
+#### Plan de instrumentación de eventos
 
 | Evento | Plataforma (Web / Mobile) | Trigger | Propiedades | Métrica que alimenta | Responsable |
-|--------|---------------------------|---------|-------------|----------------------|-------------|
-| `[event_name]` | [Web / Mobile] | [Cuándo se dispara] | [prop1, prop2] | [M-0x] | [Nombre] |
+|---|---|---|---|---|---|
+| `dose_confirmed` | Mobile (FerovaFamily) | Cuando el usuario confirma una dosis del tratamiento. | Evento, fecha de registro. | Número de dosis confirmadas. | Equipo de desarrollo móvil. |
+| `adherence_progress_viewed` | Mobile (FerovaFamily) | Cuando el usuario accede a la sección de progreso de adherencia. | Evento, fecha de visualización. | Número de visualizaciones del progreso de adherencia. | Equipo de desarrollo móvil. |
+| `hemoglobin_evolution_viewed` | Mobile (FerovaFamily) | Cuando el usuario accede a la sección de evolución de hemoglobina. | Evento, fecha de visualización. | Número de visualizaciones de la evolución de hemoglobina. | Equipo de desarrollo móvil. |
+| `streak_viewed` | Mobile (FerovaFamily) | Cuando el usuario visualiza la información de su racha de cumplimiento. | Evento, fecha de visualización. | Número de visualizaciones de las rachas de cumplimiento. | Equipo de desarrollo móvil. |
+| Navegación entre secciones | Web (FerovaClinic) | Cuando el personal de salud accede a las secciones principales de la plataforma. | Sección consultada, fecha de acceso. | Número de accesos por sección. | Equipo de desarrollo web. |
+| Acceso al Dashboard | Web (FerovaClinic) | Cuando el personal de salud ingresa al Dashboard principal. | Fecha de acceso, tipo de plataforma. | Número de accesos al Dashboard. | Equipo de desarrollo web. |
 
-**Consideraciones de privacidad y consentimiento**
+**Nota:** Los cuatro primeros eventos corresponden a eventos personalizados implementados y verificados mediante Firebase Analytics DebugView. Los eventos de navegación y acceso al Dashboard se proponen como parte del plan de seguimiento web; no deben considerarse implementados hasta contar con su instrumentación y validación.
 
-<!-- COMPLETAR -->
+#### Consideraciones de privacidad y consentimiento
+
+La recolección de datos debe realizarse respetando la privacidad de madres, cuidadores y personal de salud. Por ello, los eventos deben limitarse a información necesaria para analizar el uso de las funcionalidades de Ferova, evitando incluir datos personales identificables o información clínica sensible en los parámetros enviados a las herramientas de analítica.
+
+Asimismo, se debe considerar lo siguiente:
+
+- No enviar nombres, números de DNI, datos de contacto ni identificadores clínicos de los pacientes como propiedades de los eventos.
+- Registrar únicamente información relacionada con las interacciones y el uso de las funcionalidades de la aplicación.
+- Restringir el acceso a las herramientas de analítica al personal autorizado del proyecto.
+- Informar a los usuarios sobre la recopilación y finalidad del uso de datos, de acuerdo con las políticas de privacidad y los requisitos de consentimiento aplicables.
+- Utilizar la información recopilada con fines de evaluación y mejora de la experiencia de uso de Ferova.
+
+De esta manera, el plan de seguimiento establece una estructura para recopilar y analizar información de los componentes web y móvil, permitiendo relacionar las interacciones de los usuarios con las métricas definidas para evaluar los resultados del experimento.
 
 ## 8.3. Experimentation
 
