@@ -257,15 +257,52 @@ Estas métricas permitirán comparar los resultados obtenidos entre los grupos e
 
 - **Técnica de recolección:** Registro de los clics en los botones CTA y verificación de las URL de destino, identificando si cada visitante accede al componente correspondiente al perfil seleccionado.
 - **Meta deseada:** Incrementar la tasa de redirección correcta en la variante experimental respecto a la variante de control durante el periodo de evaluación.
+  
 ### 8.2.3. Measures
 
-> Criterios seleccionados para recopilar la evidencia que responderá la pregunta principal y detectará evidencia secundaria. Se usan **solo las medidas necesarias durante el tiempo justo**, para minimizar costos y riesgos.
+En esta sección se definen los criterios específicos que permitirán recopilar la evidencia necesaria para responder las preguntas de investigación (*Experiment-Ready Questions*) establecidas en la sección 8.1.3 y comprobar las hipótesis planteadas en la sección 8.2.1. Para ello, se distingue entre la **evidencia principal (Primary Measure)**, que permite evaluar directamente el resultado esperado de cada experimento, y la **evidencia secundaria (Secondary Measure)**, que proporciona información complementaria sobre el comportamiento y las dificultades de los participantes durante la interacción con la plataforma.
 
-| Experiment Card | Medida primaria | Medidas secundarias | Guardrail metrics | Ventana de medición |
-|-----------------|-----------------|---------------------|-------------------|---------------------|
-| EC-01 | [M-0x] | [M-0y, M-0z] | [M-0w] | [días] |
+Adicionalmente, la recopilación de evidencia se regirá por el principio de **economía de rastreo (*economy of tracking*)**. Esto significa que el equipo SANUVI recopilará únicamente los datos necesarios durante el periodo establecido para cada experimento, evitando el seguimiento de eventos que no contribuyan a responder las preguntas de investigación. De esta manera, se busca reducir el procesamiento innecesario de información y limitar la recopilación de datos personales de los participantes.
 
-<!-- COMPLETAR -->
+A continuación, se detallan las medidas estructuradas para cada uno de los experimentos planificados:
+
+**Experimento 01: Impacto de los Indicadores de Progreso en la Adherencia Terapéutica**
+
+- **Evidencia Principal (Primary Measure):**
+  - Tasa diaria de confirmación de dosis (M-01): porcentaje de dosis programadas que son confirmadas por las madres o cuidadores en FerovaFamily.
+  - Tasa de adherencia semanal adecuada (M-02): porcentaje de participantes que alcanzan una adherencia igual o superior al 75 % durante el periodo semanal de tratamiento.
+
+- **Evidencia Secundaria (Secondary Measure):**
+  - Frecuencia de consulta de la tarjeta resumen que muestra la racha activa, el progreso porcentual y el último valor de hemoglobina.
+  - Observación de dificultades o dudas expresadas por los participantes al interpretar los indicadores de progreso durante el uso de la aplicación.
+
+- **Principio de Economía:** La recopilación de datos se limitará a los registros de dosis programadas y confirmadas, así como a los valores necesarios para calcular la adherencia semanal. El seguimiento se realizará exclusivamente durante los 14 días establecidos para el experimento, considerando a los 20 participantes distribuidos entre el grupo experimental y el grupo de control. No se recopilarán datos de navegación ajenos a la evaluación de los indicadores de progreso.
+
+**Experimento 02: Efectividad de las Mejoras Visuales y Alertas Preventivas en FerovaClinic**
+
+- **Evidencia Principal (Primary Measure):**
+  - Tiempo de identificación de pacientes de alto riesgo (M-03): tiempo transcurrido desde el inicio de una tarea clínica hasta que el participante identifica correctamente al paciente correspondiente.
+  - Tasa de errores en el registro de controles clínicos (M-04): porcentaje de registros que presentan errores durante el ingreso de información clínica evaluada.
+
+- **Evidencia Secundaria (Secondary Measure):**
+  - Cantidad de interpretaciones incorrectas de las etiquetas porcentuales y de la categoría "Sin datos" en el mapa de calor.
+  - Observación de dificultades al interpretar las alertas preventivas relacionadas con valores atípicos de edad o hemoglobina.
+  - Comentarios y dudas expresados por los participantes durante la ejecución de las tareas clínicas estandarizadas.
+
+- **Principio de Economía:** La recopilación de evidencia se realizará mediante la observación de las cinco tareas clínicas estandarizadas ejecutadas por cada uno de los 12 participantes, distribuidos entre el grupo experimental y el grupo de control. El registro se limitará al tiempo de identificación, los errores cometidos y las dificultades observadas durante el periodo de evaluación de siete días. No se realizará seguimiento de actividades ajenas a las tareas establecidas para el experimento.
+
+**Experimento 03: Influencia de la Información Sanitaria y los Accesos Diferenciados en la Landing Page**
+
+- **Evidencia Principal (Primary Measure):**
+  - Tasa de clics de los botones de acceso (M-07): porcentaje de sesiones únicas en las que los visitantes interactúan con alguno de los botones CTA de la Landing Page.
+  - Tasa de redirección correcta según el segmento de usuario (M-08): porcentaje de redirecciones que conducen correctamente al componente correspondiente, ya sea FerovaFamily o FerovaClinic.
+
+- **Evidencia Secundaria (Secondary Measure):**
+  - Distribución de clics entre los botones de acceso dirigidos a madres/cuidadores y personal de salud.
+  - Cantidad de redirecciones incorrectas o intentos de acceso al componente que no corresponde al segmento seleccionado.
+  - Observación de dificultades de los visitantes para identificar el acceso correspondiente a su perfil.
+
+- **Principio de Economía:** El seguimiento de eventos se limitará a las interacciones con los botones CTA y a la verificación de sus respectivas URL de destino. La recopilación se realizará durante los 10 días de evaluación, considerando un mínimo de 100 sesiones únicas distribuidas equitativamente entre la variante experimental y la variante de control. No se rastrearán otras interacciones de navegación que no estén relacionadas con la evaluación de los accesos diferenciados.
 
 ### 8.2.4. Conditions
 
