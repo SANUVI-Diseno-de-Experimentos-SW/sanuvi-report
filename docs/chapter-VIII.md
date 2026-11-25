@@ -640,27 +640,132 @@ De esta manera, el plan de seguimiento establece una estructura para recopilar y
 
 ### 8.4.1. Analysis and Interpretation of Results
 
-> Resultados observados por experimento, contraste con la hipótesis nula, significancia alcanzada y decisión de producto (persevere / pivot / abandon).
+Se realiza el análisis de los resultados de los tres experimentos definidos en la sección 8.1.5, comparando las condiciones de control y experimentales mediante las métricas establecidas en la sección 8.2.2 (Domain Business Metrics).
 
-| Experiment Card | Medida | Control | Experimental | Diferencia | p-value | ¿Se rechaza H₀? | Decisión |
-|-----------------|--------|---------|--------------|------------|---------|-----------------|----------|
-| EC-01 | [M-0x] | [valor] | [valor] | [Δ] | [p] | [Sí / No] | [Decisión] |
+Para evaluar las diferencias se considera un nivel de significancia estadística de α = 0.05.
 
-<img src="../assets/img/chapter-VIII/results-analysis.png" alt="Análisis de resultados">
+#### Experiment Card EC-01: FerovaFamily
 
-**Interpretación y aprendizajes**
+**Objetivo:** Evaluar si la incorporación de una tarjeta de progreso en la pantalla de inicio de FerovaFamily mejora la confirmación diaria de dosis y la adherencia semanal de los cuidadores.
 
-<!-- COMPLETAR -->
+**Resultados:**
+
+| Medida                               | Control | Experimental | Diferencia |
+| ------------------------------------ | ------: | -----------: | ---------: |
+| M-01: Daily Dose Confirmation Rate   |    60 % |         80 % |     +20 pp |
+| M-02: Weekly Adequate Adherence Rate |    40 % |         70 % |     +30 pp |
+
+**Análisis estadístico:**
+
+| Medida | p-value | ¿Se rechaza H₀? |
+| ------ | ------: | --------------- |
+| M-01   |  0.0004 | Sí              |
+| M-02   |   0.370 | No              |
+
+**Interpretación:**
+
+Los resultados muestran que el grupo experimental obtuvo una mayor tasa de confirmación diaria de dosis y adherencia semanal respecto al grupo de control. La métrica M-01 presenta una diferencia estadísticamente significativa, mientras que M-02 no alcanza el nivel de significancia establecido.
+
+**Decisión: PERSEVERE.**
+
+Se propone continuar con la tarjeta de progreso de FerovaFamily, manteniendo sus indicadores de racha diaria, avance hacia el 75 % y última hemoglobina registrada. Se recomienda ampliar la evaluación de la adherencia semanal para obtener mayor evidencia.
+
+#### Experiment Card EC-02: FerovaClinic
+
+**Objetivo:** Evaluar si la incorporación de porcentajes explícitos, etiquetas de disponibilidad de datos y alertas preventivas mejora la identificación de pacientes de alto riesgo y reduce los errores de registro clínico.
+
+**Resultados:**
+
+| Medida                                      |     Control | Experimental |   Diferencia |
+| ------------------------------------------- | ----------: | -----------: | -----------: |
+| M-03: High-Risk Patient Identification Time | 95 segundos |  70 segundos | -25 segundos |
+| M-04: Clinical Control Entry Error Rate     |        30 % |         10 % |       -20 pp |
+
+**Análisis estadístico:**
+
+| Medida |  p-value | ¿Se rechaza H₀? |
+| ------ | -------: | --------------- |
+| M-03   | 0.000001 | Sí              |
+| M-04   |    0.104 | No              |
+
+**Interpretación:**
+
+Los resultados indican que la versión experimental de FerovaClinic permitió reducir el tiempo de identificación de pacientes de alto riesgo y la tasa de errores en el registro de controles clínicos. La métrica M-03 presenta una diferencia estadísticamente significativa, mientras que M-04 muestra una mejora que todavía no alcanza significancia estadística.
+
+**Decisión: PERSEVERE.**
+
+Se propone continuar con las mejoras visuales del mapa de calor, la identificación explícita de datos faltantes y las alertas preventivas en el registro de hemoglobina. Se recomienda ampliar las pruebas para evaluar la reducción de errores clínicos.
+
+#### Experiment Card EC-03: Landing Page
+
+**Objetivo:** Evaluar si la incorporación de cifras institucionales citadas del INS/MINSA y botones CTA diferenciados para FerovaFamily y FerovaClinic incrementa la tasa de clics y la redirección correcta de los visitantes.
+
+**Resultados:**
+
+| Medida                                      | Control | Experimental | Diferencia |
+| ------------------------------------------- | ------: | -----------: | ---------: |
+| M-07: Landing Page CTA Click-Through Rate   |    20 % |         36 % |     +16 pp |
+| M-08: Role-Specific Access Redirection Rate |    70 % |       94.4 % |   +24.4 pp |
+
+**Análisis estadístico:**
+
+| Medida | p-value | ¿Se rechaza H₀? |
+| ------ | ------: | --------------- |
+| M-07   |   0.118 | No              |
+| M-08   |   0.116 | No              |
+
+**Interpretación:**
+
+Los resultados muestran que la variante experimental obtuvo mayores porcentajes de clics y redirecciones correctas en comparación con la versión de control. Sin embargo, las diferencias no alcanzan significancia estadística con el nivel establecido de 0.05.
+
+**Decisión: PIVOT.**
+
+Se propone modificar y optimizar los llamados a la acción de la Landing Page, reforzando la diferenciación visual entre los segmentos de madres/cuidadores y personal de salud. Posteriormente, se recomienda realizar una nueva evaluación para comprobar el impacto de los cambios.
+
+### Resumen general de resultados
+
+| Experiment Card     | Resultado principal                                                        | Decisión  |
+| ------------------- | -------------------------------------------------------------------------- | --------- |
+| EC-01: FerovaFamily | Mejora en la confirmación diaria de dosis.                                 | PERSEVERE |
+| EC-02: FerovaClinic | Reducción del tiempo de identificación de pacientes de riesgo.             | PERSEVERE |
+| EC-03: Landing Page | Incremento de CTR y redirecciones correctas sin significancia estadística. | PIVOT     |
+
+### Conclusión general
+
+El análisis de los resultados permite identificar oportunidades de mejora en los tres componentes de Ferova. En FerovaFamily, se destaca el potencial de la tarjeta de progreso para fortalecer el seguimiento del tratamiento. En FerovaClinic, las mejoras visuales y las alertas preventivas contribuyen a facilitar la identificación de pacientes de riesgo y reducir errores de registro. Finalmente, en la Landing Page, se identifica la necesidad de optimizar los llamados a la acción para mejorar la conversión de visitantes.
+
+En consecuencia, se plantea continuar con las propuestas de FerovaFamily y FerovaClinic, mientras que la Landing Page requiere ajustes adicionales antes de una nueva evaluación. Estas decisiones son preliminares y deberán validarse mediante experimentos con datos reales.
+
 
 ### 8.4.2. Re-scored and Re-prioritized Question Backlog
 
-> Backlog de preguntas re-puntuado tras la evidencia obtenida, incluyendo nuevas preguntas surgidas de los experimentos.
+El backlog de preguntas se vuelve a puntuar y priorizar considerando los resultados obtenidos en los experimentos EC-01, EC-02 y EC-03. Esta revisión permite actualizar el nivel de confianza del equipo, identificar las preguntas que requieren mayor investigación y añadir nuevas preguntas surgidas durante el análisis experimental.
+
+**Criterio de puntuación:** Se mantiene la escala de 1 a 5 para cada dimensión. En **Confianza**, un puntaje bajo representa mayor desconocimiento y, por tanto, mayor prioridad mediante `(6 − Confianza)`. Se conserva la fórmula:
+
+`Puntaje total = (6 − Confianza) + Riesgo + Impacto + Interés`
+
+Los cambios de puntuación son preliminares y se basan en los resultados de la sección 8.4.1, por lo que deberán validarse con datos reales.
 
 | Prioridad | ID | Pregunta | Confianza | Riesgo | Impacto | Interés | Puntaje | Cambio vs. 8.1.4 | Motivo del cambio |
-|-----------|----|----------|-----------|--------|---------|---------|---------|-------------------|-------------------|
-| 1 | Q-0x | [Pregunta] | | | | | | [↑ / ↓ / nueva] | [Motivo] |
+|-----------|----|----------|----------:|-------:|--------:|--------:|--------:|-------------------|-------------------|
+| 1 | Q-01 | ¿Mostrar en el inicio de *FerovaFamily* la racha diaria, el avance porcentual hacia ≥ 75 % y la última hemoglobina incrementa la tasa diaria de confirmación de dosis y la adherencia semanal frente a la pantalla actual? | 3 | 5 | 5 | 5 | **18** | ↑ Se mantiene en el primer lugar | La métrica M-01 presentó una mejora estadísticamente significativa. Sin embargo, M-02 requiere mayor validación. |
+| 2 | Q-02 | ¿Incorporar porcentajes explícitos, etiqueta `"Sin datos"` en `/heatmap` y alertas por valores atípicos de edad/hemoglobina en *FerovaClinic* reduce el tiempo de identificación de pacientes de alto riesgo y la tasa de error en el control clínico frente a la vista actual? | 3 | 5 | 5 | 4 | **17** | ↑ Se mantiene entre las primeras posiciones | La reducción del tiempo de identificación de pacientes de alto riesgo fue significativa, aunque la reducción de errores todavía requiere evidencia adicional. |
+| 3 | Q-09 | ¿Qué ajustes en el contenido, jerarquía visual y diferenciación de los botones CTA de la Landing Page permiten incrementar significativamente la conversión y la redirección correcta según el segmento de usuario? | 1 | 4 | 5 | 5 | **17** | Nueva | Surge del experimento EC-03, debido a que las mejoras observadas en CTR y redirección correcta no alcanzaron significancia estadística. |
+| 4 | Q-03 | ¿Presentar cifras citadas de INS/MINSA y botones CTA diferenciados por rol (*FerovaFamily* vs. *FerovaClinic*) en la Landing Page incrementa la tasa de clics (CTR) y la redirección correcta según el segmento? | 2 | 4 | 4 | 4 | **16** | ↓ Baja una posición | La variante experimental mostró mejores porcentajes, pero no se obtuvo evidencia estadística suficiente para confirmar el efecto. |
+| 5 | Q-05 | ¿Incluir una leyenda visual de disponibilidad en el calendario y una guía breve de asignación de enfermera/horario en *FerovaFamily* disminuye la indecisión percibida y aumenta la tasa de finalización al reservar citas? | 3 | 4 | 4 | 4 | **15** | = Sin cambio | Continúa pendiente de validación mediante pruebas específicas del flujo de reserva de citas. |
+| 6 | Q-07 | ¿Dónde se concentran los principales cuellos de botella operativos que enfrenta el personal de salud al ejecutar de extremo a extremo el registro de paciente, control de hemoglobina y seguimiento en *FerovaClinic*? | 2 | 3 | 4 | 3 | **14** | = Sin cambio | Se mantiene como pregunta exploratoria debido a que todavía se requiere evidencia directa del personal de salud. |
+| 7 | Q-06 | ¿En qué franjas del día y por qué motivos reales del entorno familiar omiten los cuidadores las dosis diarias de sulfato ferroso durante el tratamiento? | 1 | 2 | 3 | 3 | **13** | = Sin cambio | Continúa pendiente de investigación para identificar las causas reales de omisión de dosis. |
+| 8 | Q-08 | ¿Los puntos y medallas de gamificación en `/achievement` logran por sí solos sostener la retención semanal de las madres/cuidadores más allá de las dos primeras semanas de uso? | 3 | 3 | 3 | 3 | **12** | = Sin cambio | No fue abordada directamente por los experimentos ejecutados y requiere una evaluación longitudinal de retención. |
 
-<!-- COMPLETAR -->
+**Interpretación de la repriorización:**
+
+- **Q-01 y Q-02:** mantienen las primeras posiciones porque sus experimentos mostraron mejoras relevantes en las métricas principales, aunque todavía existen métricas secundarias que necesitan mayor validación.
+- **Q-09:** se incorpora como nueva pregunta de investigación para profundizar en los elementos de conversión de la Landing Page, debido a que EC-03 no permitió confirmar estadísticamente las mejoras observadas.
+- **Q-03:** permanece en el backlog, pero pierde una posición relativa porque los resultados no proporcionaron evidencia estadística suficiente.
+- **Q-05, Q-06, Q-07 y Q-08:** conservan sus posiciones al no haber sido evaluadas directamente en los experimentos analizados.
+
+**Resultado:** El backlog actualizado mantiene un enfoque **Broad**, ya que continúa distribuyendo la investigación entre los componentes de FerovaFamily, FerovaClinic y la Landing Page. Las preguntas con mayor incertidumbre y riesgo se mantienen como prioridad para los siguientes ciclos de experimentación.
 
 ## 8.5. Continuous Learning
 
