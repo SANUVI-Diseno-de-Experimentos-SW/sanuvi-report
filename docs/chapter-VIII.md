@@ -392,13 +392,55 @@ La ejecución secuencial permite organizar los recursos del equipo SANUVI y redu
 
 ### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
 
-> Preparación analítica basada en la selección de medidas, asegurando **economía en el rastreo de datos** y que las métricas elegidas permitan detectar diferencias o cambios precisos.
+Previo a la ejecución de los experimentos con usuarios, se realizó una evaluación técnica de los componentes web de Ferova con el propósito de validar su rendimiento, accesibilidad, buenas prácticas y optimización. Para ello, se utilizó **Google Lighthouse**, herramienta que permite analizar la calidad técnica de las interfaces web mediante indicadores estandarizados.
 
-| Goal | KPI | Métrica (ID de 8.2.2) | Dimensión de análisis | Herramienta |
-|------|-----|------------------------|-----------------------|-------------|
-| [Goal] | [KPI] | [M-0x] | [segmento / plataforma] | [Herramienta] |
+La evaluación comprende dos componentes principales: la **Landing Page de Ferova**, que constituye el punto de entrada para madres, cuidadores y personal de salud, y **FerovaClinic**, la aplicación web destinada al personal de salud para la gestión y el seguimiento clínico de los pacientes.
 
-<!-- COMPLETAR -->
+A través de estas auditorías se busca identificar posibles problemas de rendimiento, accesibilidad y calidad técnica que puedan afectar la experiencia de los usuarios. Los resultados obtenidos servirán como línea base para reconocer oportunidades de mejora y orientar las decisiones de optimización antes de la validación experimental de la plataforma.
+
+**Pantalla: Landing Page de Ferova**
+
+**Resultados generales de Google Lighthouse:**
+
+La auditoría obtuvo los siguientes resultados: 97 en Performance, 92 en Accessibility, 100 en Best Practices y 91 en SEO. Estos valores reflejan un desempeño técnico favorable de la Landing Page, aunque también permiten identificar aspectos específicos que requieren atención.
+
+**Performance (97):** La Landing Page obtuvo una puntuación de 97, correspondiente a un rendimiento alto. El First Contentful Paint (FCP) registró 0.9 segundos y el Largest Contentful Paint (LCP) alcanzó 1.0 segundo, lo que evidencia una carga rápida del contenido principal. Asimismo, el Total Blocking Time (TBT) fue de 0 ms, el Cumulative Layout Shift (CLS) de 0.001 y el Speed Index de 1.0 segundo. Estos resultados muestran una experiencia de carga fluida y una adecuada estabilidad visual.
+
+**Accessibility (92):** La puntuación de accesibilidad fue de 92. A pesar del resultado favorable, Lighthouse identificó una deficiencia en la relación de contraste entre los colores del fondo y del primer plano. Este hallazgo representa una oportunidad de mejora en la legibilidad de los contenidos, especialmente para visitantes con dificultades de percepción visual. Por ello, se recomienda revisar las combinaciones de colores utilizadas en los textos y elementos interactivos.
+
+**Best Practices (100):** La Landing Page alcanzó una puntuación de 100, obteniendo el máximo resultado en esta categoría. Las auditorías de buenas prácticas evaluadas por Lighthouse fueron satisfactorias, lo que refleja un cumplimiento favorable de los criterios técnicos considerados por la herramienta.
+
+**SEO (91):** La página obtuvo una puntuación de 91. No obstante, Lighthouse identificó la ausencia de una meta descripción en el documento HTML. Esta observación representa una oportunidad de mejora para proporcionar a los motores de búsqueda una descripción clara del contenido y propósito de Ferova.
+
+**Conclusión de la evaluación técnica:** Los resultados obtenidos muestran que la Landing Page presenta un rendimiento elevado, una buena estabilidad visual y un cumplimiento favorable de las buenas prácticas evaluadas. Sin embargo, se identificaron dos aspectos que deben mejorarse: el contraste de colores para fortalecer la accesibilidad y la incorporación de una meta descripción para optimizar el SEO. Estas observaciones servirán como referencia técnica para futuras mejoras de la página antes de ejecutar el experimento EC-03, relacionado con la información sanitaria y los accesos diferenciados por segmento.
+
+**Pantalla: Inicio de sesión de FerovaClinic**
+
+Para evaluar la calidad técnica de la aplicación web FerovaClinic, se ejecutó una auditoría mediante Google Lighthouse sobre la pantalla de inicio de sesión. La evaluación obtuvo una puntuación de **78 en Performance, 96 en Accessibility, 78 en Best Practices y 83 en SEO**.
+
+**Performance (78):** La aplicación obtuvo una puntuación de 78. El First Contentful Paint (FCP) registró 1.5 segundos y el Largest Contentful Paint (LCP) alcanzó 2.3 segundos. Asimismo, el Total Blocking Time (TBT) fue de 50 ms, el Cumulative Layout Shift (CLS) fue de 0 y el Speed Index registró 2.5 segundos. Estos resultados muestran una estabilidad visual adecuada, aunque existen oportunidades para optimizar la velocidad de presentación del contenido.
+
+**Accessibility (96):** La puntuación de accesibilidad fue de 96. No obstante, Lighthouse identificó que los elementos de encabezado no siguen un orden jerárquico secuencial y que el documento no cuenta con un *landmark* principal. Se recomienda mejorar la estructura semántica de la interfaz para facilitar la navegación y comprensión del contenido mediante tecnologías de asistencia.
+
+**Best Practices (78):** La aplicación obtuvo 78 puntos. Lighthouse identificó 27 solicitudes de recursos inseguros, debido a que algunos recursos se solicitan mediante HTTP, así como la ausencia de redirección del tráfico HTTP hacia HTTPS. Estos hallazgos representan aspectos prioritarios de mejora, ya que pueden comprometer la seguridad de las comunicaciones y la integridad de los recursos cargados en la aplicación.
+
+**SEO (83):** La puntuación obtenida fue de 83. Se identificó la ausencia de una meta descripción y un archivo `robots.txt` no válido, que presenta 14 errores. Debido a que la pantalla evaluada corresponde al inicio de sesión de una aplicación privada, la indexación por motores de búsqueda no constituye un objetivo principal. Por ello, se debe priorizar la configuración adecuada del acceso a las rutas públicas y privadas.
+
+**Conclusión de la evaluación técnica:** Los resultados de Lighthouse muestran que FerovaClinic presenta una buena puntuación de accesibilidad y una estabilidad visual adecuada en su pantalla de inicio de sesión. Sin embargo, se identificaron oportunidades de mejora en el rendimiento, la estructura semántica y, principalmente, en la seguridad de las solicitudes de recursos. Estos hallazgos constituyen una línea base técnica para orientar futuras optimizaciones de la aplicación web.
+
+**Pantalla: Dashboard de FerovaClinic**
+
+Se realizó una auditoría técnica del Dashboard de FerovaClinic mediante Google Lighthouse, accediendo a la ruta autenticada `/nurse/home`. A diferencia de la evaluación de la pantalla de inicio de sesión, esta prueba permitió analizar directamente la interfaz principal utilizada por el personal de salud.
+
+**Performance:** En la captura se observa una auditoría aprobada de un total de una evaluación visible (1/1). Sin embargo, no se dispone del puntaje global ni del detalle de las métricas de rendimiento, por lo que estos valores deberán verificarse en el informe completo.
+
+**Accessibility (16/18):** Lighthouse registró 16 auditorías aprobadas de un total de 18. Entre los hallazgos identificados se encuentra una relación de contraste insuficiente entre los colores del fondo y del primer plano. Esta condición representa una oportunidad de mejora para facilitar la lectura de los indicadores clínicos, tarjetas informativas y demás elementos del Dashboard.
+
+**Best Practices (4/4):** Se aprobaron las cuatro auditorías mostradas por Lighthouse. Asimismo, la herramienta identificó las bibliotecas JavaScript utilizadas en la aplicación, sin mostrar advertencias en esta categoría dentro de los resultados presentados.
+
+**SEO (3/5):** Se aprobaron tres de las cinco auditorías evaluadas. Entre los aspectos pendientes se identificó la ausencia de una meta descripción. Debido a que el Dashboard corresponde a una sección privada de FerovaClinic, la optimización para su indexación pública no constituye una prioridad funcional.
+
+**Conclusión de la evaluación técnica:** Los resultados del Dashboard muestran un cumplimiento favorable de las buenas prácticas evaluadas y oportunidades de mejora en accesibilidad y SEO. La principal observación corresponde al contraste insuficiente entre colores, que debe revisarse para favorecer la legibilidad de la información clínica. Estos hallazgos permiten establecer una referencia técnica de la interfaz principal de FerovaClinic antes de continuar con las evaluaciones experimentales.
 
 ### 8.2.8. Web and Mobile Tracking Plan
 
