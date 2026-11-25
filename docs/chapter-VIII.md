@@ -160,13 +160,25 @@ A continuación se documentan las **3 Experiment Cards (`EC-01` a `EC-03`)** cor
 
 ### 8.2.1. Hypotheses
 
-> Cada hipótesis debe ser **falsificable, testeable y medible**, y emparejarse con una **Hipótesis Nula**. Las hipótesis se **prueban** (tested), no se "validan" ni se demuestran verdaderas.
+En esta fase se transforman las premisas identificadas durante la planificación experimental en declaraciones específicas, comprobables y medibles. Siguiendo el método científico aplicado al desarrollo de software, cada experimento presenta una **Hipótesis de Trabajo (H1)**, que plantea el resultado esperado al implementar una mejora, y una **Hipótesis Nula (H0)**, que establece que dicha intervención no generará cambios significativos en los resultados observados.
 
-| ID | Experiment Card | Hipótesis de trabajo (H₁) | Hipótesis nula (H₀) | Medidas esperadas |
-|----|-----------------|---------------------------|---------------------|-------------------|
-| H-01 | EC-01 | [Si … entonces …] | [No habrá diferencia …] | [Métrica y magnitud esperada] |
+**Experimento 01: Impacto de los Indicadores de Progreso en la Adherencia Terapéutica**
 
-<!-- COMPLETAR -->
+- **Hipótesis de Trabajo (H1):** Creemos que mostrar una tarjeta resumen en la pantalla principal de FerovaFamily, que incluya la racha activa, el avance porcentual hacia la meta de adherencia del 75 % y el último valor de hemoglobina registrado, permitirá incrementar la participación de las madres y cuidadores en el seguimiento del tratamiento. Esta mejora se evidenciará mediante un aumento en la tasa diaria de confirmación de dosis (M-01) y en la tasa de adherencia semanal adecuada igual o superior al 75 % (M-02), en comparación con la versión actual de la aplicación, bajo condiciones de uso durante 14 días por parte de 20 madres/cuidadores distribuidos en dos grupos: experimental y control.
+
+- **Hipótesis Nula (H0):** La incorporación de la tarjeta resumen con indicadores de progreso en FerovaFamily no producirá diferencias significativas en la tasa diaria de confirmación de dosis (M-01) ni en la tasa de adherencia semanal adecuada (M-02). Los resultados observados se mantendrán similares a los obtenidos con la versión actual de la aplicación, sin que la intervención genere una mejora medible en el seguimiento del tratamiento.
+
+**Experimento 02: Efectividad de las Mejoras Visuales y Alertas Preventivas en FerovaClinic**
+
+- **Hipótesis de Trabajo (H1):** Creemos que incorporar porcentajes explícitos y la etiqueta "Sin datos" en el mapa de calor, junto con alertas preventivas ante valores atípicos de edad o hemoglobina, permitirá al personal de salud identificar con mayor rapidez a los pacientes de alto riesgo y reducir los errores durante el registro de controles clínicos. Esta mejora se evidenciará mediante una reducción del tiempo de identificación de pacientes de alto riesgo (M-03) y de la tasa de errores en el registro de controles clínicos (M-04), en comparación con la versión actual de FerovaClinic, bajo condiciones de evaluación con 12 participantes del segmento de personal de salud, quienes realizarán cinco tareas clínicas estandarizadas durante un periodo de siete días.
+
+- **Hipótesis Nula (H0):** La incorporación de porcentajes explícitos, etiquetas de datos faltantes y alertas preventivas en FerovaClinic no producirá diferencias significativas en el tiempo de identificación de pacientes de alto riesgo (M-03) ni en la tasa de errores de registro clínico (M-04). El desempeño de los participantes se mantendrá similar al obtenido con la versión actual del portal, sin mejoras medibles atribuibles a los cambios implementados.
+
+**Experimento 03: Influencia de la Información Sanitaria y los Accesos Diferenciados en la Landing Page**
+
+- **Hipótesis de Trabajo (H1):** Creemos que incorporar cifras epidemiológicas respaldadas por fuentes oficiales del INS/MINSA y botones de acceso diferenciados para madres/cuidadores y personal de salud en la Landing Page incrementará la interacción de los visitantes y facilitará su ingreso al componente correspondiente según su segmento. Esta mejora se evidenciará mediante un aumento en la tasa de clics de los botones de acceso (M-07) y en la tasa de redirección correcta según el perfil del usuario (M-08), en comparación con la versión actual de la Landing Page, bajo condiciones de evaluación con un mínimo de 100 sesiones únicas distribuidas equitativamente entre la variante experimental y la variante de control durante 10 días.
+
+- **Hipótesis Nula (H0):** La incorporación de cifras epidemiológicas oficiales y botones de acceso diferenciados por segmento en la Landing Page no producirá diferencias significativas en la tasa de clics de los botones de acceso (M-07) ni en la tasa de redirección correcta según el perfil del usuario (M-08). El comportamiento de los visitantes se mantendrá similar al registrado con la versión actual de la Landing Page, sin mejoras medibles atribuibles a la intervención.
 
 ### 8.2.2. Domain Business Metrics
 
