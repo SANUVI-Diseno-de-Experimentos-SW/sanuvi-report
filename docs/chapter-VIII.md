@@ -182,14 +182,81 @@ En esta fase se transforman las premisas identificadas durante la planificación
 
 ### 8.2.2. Domain Business Metrics
 
-> Todas las métricas relevantes del dominio de negocio que serán utilizadas para evaluar los experimentos. **No se permiten métricas ad-hoc o no definidas previamente en esta sección.**
+El objetivo de esta sección es establecer métricas de negocio concretas, estandarizadas y medibles que permitan evaluar los resultados de los experimentos de Ferova. Cada métrica se encuentra vinculada directamente con las hipótesis planteadas en la sección 8.2.1 y con las medidas definidas en las *Experiment Cards* de la sección 8.1.5.
 
-| ID | Métrica | Objetivo de negocio asociado | Fórmula de cálculo | Técnica de recolección | Meta deseada |
-|----|---------|------------------------------|--------------------|------------------------|--------------|
-| M-01 | [Métrica] | [Objetivo] | [Fórmula] | [Evento de tracking / consulta] | [Meta] |
+Estas métricas permitirán comparar los resultados obtenidos entre los grupos experimentales y de control, identificando si las mejoras propuestas generan cambios en la adherencia terapéutica, la eficiencia del seguimiento clínico y la interacción de los usuarios con la plataforma. De esta manera, se evita utilizar indicadores aislados que no contribuyan a la toma de decisiones del equipo SANUVI.
 
-<!-- COMPLETAR -->
+**1. Tasa de Confirmación Diaria de Dosis (Daily Dose Confirmation Rate - DDCR)**
 
+- **Descripción:** Mide el porcentaje de dosis programadas que son confirmadas diariamente por las madres o cuidadores en FerovaFamily. Permite evaluar si la visualización de la racha activa, el progreso porcentual y el último registro de hemoglobina favorece el cumplimiento del tratamiento.
+- **Fórmula de cálculo:**
+
+  \[
+  M\text{-}01 = \frac{\text{Dosis confirmadas}}{\text{Total de dosis programadas}} \times 100
+  \]
+
+- **Técnica de recolección:** Registro de las confirmaciones de dosis realizadas en FerovaFamily, mediante los datos almacenados por el backend y asociados a cada usuario durante el periodo experimental.
+- **Meta deseada:** Obtener una tasa de confirmación diaria superior en el grupo experimental respecto al grupo de control durante los 14 días de evaluación.
+
+**2. Tasa de Adherencia Semanal Adecuada (Weekly Adequate Adherence Rate - WAAR)**
+
+- **Descripción:** Mide el porcentaje de madres o cuidadores que alcanzan una adherencia igual o superior al 75 % durante el periodo semanal de tratamiento, tomando como referencia la NTS N.° 213-MINSA/DGIESP-2024.
+- **Fórmula de cálculo:**
+
+  \[
+  M\text{-}02 = \frac{\text{Cuidadores con adherencia semanal } \geq 75\%}{\text{Total de cuidadores evaluados}} \times 100
+  \]
+
+- **Técnica de recolección:** Análisis de los registros de dosis programadas y confirmadas en FerovaFamily, calculando el porcentaje de adherencia semanal de cada participante.
+- **Meta deseada:** Incrementar la proporción de cuidadores que alcanzan una adherencia semanal igual o superior al 75 % en el grupo experimental respecto al grupo de control.
+
+**3. Tiempo de Identificación de Pacientes de Alto Riesgo (High-Risk Patient Identification Time - HRPIT)**
+
+- **Descripción:** Mide el tiempo que necesita el personal de salud para identificar correctamente a un paciente de alto riesgo utilizando FerovaClinic. Permite evaluar si los porcentajes explícitos y la etiqueta "Sin datos" en el mapa de calor facilitan la interpretación de la información clínica.
+- **Fórmula de cálculo:**
+
+  \[
+  M\text{-}03 = \frac{\text{Suma de tiempos de identificación}}{\text{Total de tareas evaluadas}}
+  \]
+
+- **Técnica de recolección:** Pruebas de usabilidad con tareas clínicas estandarizadas, registrando el tiempo transcurrido desde el inicio de cada tarea hasta la identificación correcta del paciente de alto riesgo.
+- **Meta deseada:** Reducir el tiempo promedio de identificación de pacientes de alto riesgo en el grupo experimental respecto al grupo de control.
+
+**4. Tasa de Errores en el Registro de Controles Clínicos (Clinical Control Entry Error Rate - CCEER)**
+
+- **Descripción:** Determina el porcentaje de errores cometidos durante el ingreso de controles clínicos en FerovaClinic, especialmente al registrar información relacionada con la edad y los valores de hemoglobina. Permite evaluar la utilidad de las alertas preventivas ante valores atípicos.
+- **Fórmula de cálculo:**
+
+  \[
+  M\text{-}04 = \frac{\text{Registros con errores}}{\text{Total de registros realizados}} \times 100
+  \]
+
+- **Técnica de recolección:** Observación de las cinco tareas clínicas estandarizadas realizadas por cada participante, registrando los errores detectados durante el ingreso de controles de hemoglobina y otros datos clínicos evaluados.
+- **Meta deseada:** Reducir la tasa de errores de registro clínico en el grupo experimental respecto al grupo de control.
+
+**5. Tasa de Clics en los Botones de Acceso de la Landing Page (Landing Page CTA Click-Through Rate - CTR)**
+
+- **Descripción:** Mide el porcentaje de sesiones únicas en las que los visitantes interactúan con alguno de los botones de acceso (*Call to Action* o CTA) de la Landing Page. Permite evaluar si la incorporación de cifras epidemiológicas respaldadas por fuentes oficiales del INS/MINSA y la diferenciación de accesos por segmento incrementan la interacción de los visitantes.
+- **Fórmula de cálculo:**
+
+  \[
+  M\text{-}07 = \frac{\text{Sesiones únicas con al menos un clic en CTA}}{\text{Total de sesiones únicas}} \times 100
+  \]
+
+- **Técnica de recolección:** Registro de eventos de clic en los botones CTA de la Landing Page, diferenciando los accesos dirigidos a FerovaFamily y FerovaClinic durante la comparación entre la variante experimental y la variante de control.
+- **Meta deseada:** Obtener una tasa de clics superior en la variante experimental respecto a la variante de control durante los 10 días de evaluación.
+
+**6. Tasa de Redirección Correcta según el Segmento de Usuario (Role-Specific Access Redirection Rate - RSARR)**
+
+- **Descripción:** Mide el porcentaje de visitantes que, después de seleccionar un botón de acceso en la Landing Page, son dirigidos correctamente al componente correspondiente a su segmento: FerovaFamily para madres/cuidadores y FerovaClinic para personal de salud.
+- **Fórmula de cálculo:**
+
+  \[
+  M\text{-}08 = \frac{\text{Redirecciones correctas según el segmento}}{\text{Total de redirecciones realizadas}} \times 100
+  \]
+
+- **Técnica de recolección:** Registro de los clics en los botones CTA y verificación de las URL de destino, identificando si cada visitante accede al componente correspondiente al perfil seleccionado.
+- **Meta deseada:** Incrementar la tasa de redirección correcta en la variante experimental respecto a la variante de control durante el periodo de evaluación.
 ### 8.2.3. Measures
 
 > Criterios seleccionados para recopilar la evidencia que responderá la pregunta principal y detectará evidencia secundaria. Se usan **solo las medidas necesarias durante el tiempo justo**, para minimizar costos y riesgos.
