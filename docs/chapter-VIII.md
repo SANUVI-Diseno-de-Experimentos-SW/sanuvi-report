@@ -739,13 +739,33 @@ En consecuencia, se plantea continuar con las propuestas de FerovaFamily y Ferov
 
 ### 8.4.2. Re-scored and Re-prioritized Question Backlog
 
-> Backlog de preguntas re-puntuado tras la evidencia obtenida, incluyendo nuevas preguntas surgidas de los experimentos.
+El backlog de preguntas se vuelve a puntuar y priorizar considerando los resultados obtenidos en los experimentos EC-01, EC-02 y EC-03. Esta revisión permite actualizar el nivel de confianza del equipo, identificar las preguntas que requieren mayor investigación y añadir nuevas preguntas surgidas durante el análisis experimental.
+
+**Criterio de puntuación:** Se mantiene la escala de 1 a 5 para cada dimensión. En **Confianza**, un puntaje bajo representa mayor desconocimiento y, por tanto, mayor prioridad mediante `(6 − Confianza)`. Se conserva la fórmula:
+
+`Puntaje total = (6 − Confianza) + Riesgo + Impacto + Interés`
+
+Los cambios de puntuación son preliminares y se basan en los resultados de la sección 8.4.1, por lo que deberán validarse con datos reales.
 
 | Prioridad | ID | Pregunta | Confianza | Riesgo | Impacto | Interés | Puntaje | Cambio vs. 8.1.4 | Motivo del cambio |
-|-----------|----|----------|-----------|--------|---------|---------|---------|-------------------|-------------------|
-| 1 | Q-0x | [Pregunta] | | | | | | [↑ / ↓ / nueva] | [Motivo] |
+|-----------|----|----------|----------:|-------:|--------:|--------:|--------:|-------------------|-------------------|
+| 1 | Q-01 | ¿Mostrar en el inicio de *FerovaFamily* la racha diaria, el avance porcentual hacia ≥ 75 % y la última hemoglobina incrementa la tasa diaria de confirmación de dosis y la adherencia semanal frente a la pantalla actual? | 3 | 5 | 5 | 5 | **18** | ↑ Se mantiene en el primer lugar | La métrica M-01 presentó una mejora estadísticamente significativa. Sin embargo, M-02 requiere mayor validación. |
+| 2 | Q-02 | ¿Incorporar porcentajes explícitos, etiqueta `"Sin datos"` en `/heatmap` y alertas por valores atípicos de edad/hemoglobina en *FerovaClinic* reduce el tiempo de identificación de pacientes de alto riesgo y la tasa de error en el control clínico frente a la vista actual? | 3 | 5 | 5 | 4 | **17** | ↑ Se mantiene entre las primeras posiciones | La reducción del tiempo de identificación de pacientes de alto riesgo fue significativa, aunque la reducción de errores todavía requiere evidencia adicional. |
+| 3 | Q-09 | ¿Qué ajustes en el contenido, jerarquía visual y diferenciación de los botones CTA de la Landing Page permiten incrementar significativamente la conversión y la redirección correcta según el segmento de usuario? | 1 | 4 | 5 | 5 | **17** | Nueva | Surge del experimento EC-03, debido a que las mejoras observadas en CTR y redirección correcta no alcanzaron significancia estadística. |
+| 4 | Q-03 | ¿Presentar cifras citadas de INS/MINSA y botones CTA diferenciados por rol (*FerovaFamily* vs. *FerovaClinic*) en la Landing Page incrementa la tasa de clics (CTR) y la redirección correcta según el segmento? | 2 | 4 | 4 | 4 | **16** | ↓ Baja una posición | La variante experimental mostró mejores porcentajes, pero no se obtuvo evidencia estadística suficiente para confirmar el efecto. |
+| 5 | Q-05 | ¿Incluir una leyenda visual de disponibilidad en el calendario y una guía breve de asignación de enfermera/horario en *FerovaFamily* disminuye la indecisión percibida y aumenta la tasa de finalización al reservar citas? | 3 | 4 | 4 | 4 | **15** | = Sin cambio | Continúa pendiente de validación mediante pruebas específicas del flujo de reserva de citas. |
+| 6 | Q-07 | ¿Dónde se concentran los principales cuellos de botella operativos que enfrenta el personal de salud al ejecutar de extremo a extremo el registro de paciente, control de hemoglobina y seguimiento en *FerovaClinic*? | 2 | 3 | 4 | 3 | **14** | = Sin cambio | Se mantiene como pregunta exploratoria debido a que todavía se requiere evidencia directa del personal de salud. |
+| 7 | Q-06 | ¿En qué franjas del día y por qué motivos reales del entorno familiar omiten los cuidadores las dosis diarias de sulfato ferroso durante el tratamiento? | 1 | 2 | 3 | 3 | **13** | = Sin cambio | Continúa pendiente de investigación para identificar las causas reales de omisión de dosis. |
+| 8 | Q-08 | ¿Los puntos y medallas de gamificación en `/achievement` logran por sí solos sostener la retención semanal de las madres/cuidadores más allá de las dos primeras semanas de uso? | 3 | 3 | 3 | 3 | **12** | = Sin cambio | No fue abordada directamente por los experimentos ejecutados y requiere una evaluación longitudinal de retención. |
 
-<!-- COMPLETAR -->
+**Interpretación de la repriorización:**
+
+- **Q-01 y Q-02:** mantienen las primeras posiciones porque sus experimentos mostraron mejoras relevantes en las métricas principales, aunque todavía existen métricas secundarias que necesitan mayor validación.
+- **Q-09:** se incorpora como nueva pregunta de investigación para profundizar en los elementos de conversión de la Landing Page, debido a que EC-03 no permitió confirmar estadísticamente las mejoras observadas.
+- **Q-03:** permanece en el backlog, pero pierde una posición relativa porque los resultados no proporcionaron evidencia estadística suficiente.
+- **Q-05, Q-06, Q-07 y Q-08:** conservan sus posiciones al no haber sido evaluadas directamente en los experimentos analizados.
+
+**Resultado:** El backlog actualizado mantiene un enfoque **Broad**, ya que continúa distribuyendo la investigación entre los componentes de FerovaFamily, FerovaClinic y la Landing Page. Las preguntas con mayor incertidumbre y riesgo se mantienen como prioridad para los siguientes ciclos de experimentación.
 
 ## 8.5. Continuous Learning
 
