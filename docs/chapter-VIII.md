@@ -404,11 +404,28 @@ A través de estas auditorías se busca identificar posibles problemas de rendim
 
 La auditoría obtuvo los siguientes resultados: 97 en Performance, 92 en Accessibility, 100 en Best Practices y 91 en SEO. Estos valores reflejan un desempeño técnico favorable de la Landing Page, aunque también permiten identificar aspectos específicos que requieren atención.
 
+<div align="center">
+<img src="../assets/img/chapter-VIII/LP/Performance-LP.png">
+</div>
+
+
 **Performance (97):** La Landing Page obtuvo una puntuación de 97, correspondiente a un rendimiento alto. El First Contentful Paint (FCP) registró 0.9 segundos y el Largest Contentful Paint (LCP) alcanzó 1.0 segundo, lo que evidencia una carga rápida del contenido principal. Asimismo, el Total Blocking Time (TBT) fue de 0 ms, el Cumulative Layout Shift (CLS) de 0.001 y el Speed Index de 1.0 segundo. Estos resultados muestran una experiencia de carga fluida y una adecuada estabilidad visual.
+
+<div align="center">
+<img src="../assets/img/chapter-VIII/LP/Accesibility-LP.png">
+</div>
 
 **Accessibility (92):** La puntuación de accesibilidad fue de 92. A pesar del resultado favorable, Lighthouse identificó una deficiencia en la relación de contraste entre los colores del fondo y del primer plano. Este hallazgo representa una oportunidad de mejora en la legibilidad de los contenidos, especialmente para visitantes con dificultades de percepción visual. Por ello, se recomienda revisar las combinaciones de colores utilizadas en los textos y elementos interactivos.
 
+<div align="center">
+<img src="../assets/img/chapter-VIII/LP/Best-Practices-LP.png">
+</div>
+
 **Best Practices (100):** La Landing Page alcanzó una puntuación de 100, obteniendo el máximo resultado en esta categoría. Las auditorías de buenas prácticas evaluadas por Lighthouse fueron satisfactorias, lo que refleja un cumplimiento favorable de los criterios técnicos considerados por la herramienta.
+
+<div align="center">
+<img src="../assets/img/chapter-VIII/LP/SEO-LP.png">
+</div>
 
 **SEO (91):** La página obtuvo una puntuación de 91. No obstante, Lighthouse identificó la ausencia de una meta descripción en el documento HTML. Esta observación representa una oportunidad de mejora para proporcionar a los motores de búsqueda una descripción clara del contenido y propósito de Ferova.
 
@@ -418,11 +435,27 @@ La auditoría obtuvo los siguientes resultados: 97 en Performance, 92 en Accessi
 
 Para evaluar la calidad técnica de la aplicación web FerovaClinic, se ejecutó una auditoría mediante Google Lighthouse sobre la pantalla de inicio de sesión. La evaluación obtuvo una puntuación de **78 en Performance, 96 en Accessibility, 78 en Best Practices y 83 en SEO**.
 
+<div align="center">
+<img src="../assets/img/chapter-VIII/W/P-W-H.png">
+</div>
+
 **Performance (78):** La aplicación obtuvo una puntuación de 78. El First Contentful Paint (FCP) registró 1.5 segundos y el Largest Contentful Paint (LCP) alcanzó 2.3 segundos. Asimismo, el Total Blocking Time (TBT) fue de 50 ms, el Cumulative Layout Shift (CLS) fue de 0 y el Speed Index registró 2.5 segundos. Estos resultados muestran una estabilidad visual adecuada, aunque existen oportunidades para optimizar la velocidad de presentación del contenido.
+
+<div align="center">
+<img src="../assets/img/chapter-VIII/W/A-W-H.png">
+</div>
 
 **Accessibility (96):** La puntuación de accesibilidad fue de 96. No obstante, Lighthouse identificó que los elementos de encabezado no siguen un orden jerárquico secuencial y que el documento no cuenta con un *landmark* principal. Se recomienda mejorar la estructura semántica de la interfaz para facilitar la navegación y comprensión del contenido mediante tecnologías de asistencia.
 
+<div align="center">
+<img src="../assets/img/chapter-VIII/W/BP-W-H.png">
+</div>
+
 **Best Practices (78):** La aplicación obtuvo 78 puntos. Lighthouse identificó 27 solicitudes de recursos inseguros, debido a que algunos recursos se solicitan mediante HTTP, así como la ausencia de redirección del tráfico HTTP hacia HTTPS. Estos hallazgos representan aspectos prioritarios de mejora, ya que pueden comprometer la seguridad de las comunicaciones y la integridad de los recursos cargados en la aplicación.
+
+<div align="center">
+<img src="../assets/img/chapter-VIII/W/S-W-H.png">
+</div>
 
 **SEO (83):** La puntuación obtenida fue de 83. Se identificó la ausencia de una meta descripción y un archivo `robots.txt` no válido, que presenta 14 errores. Debido a que la pantalla evaluada corresponde al inicio de sesión de una aplicación privada, la indexación por motores de búsqueda no constituye un objetivo principal. Por ello, se debe priorizar la configuración adecuada del acceso a las rutas públicas y privadas.
 
@@ -432,11 +465,19 @@ Para evaluar la calidad técnica de la aplicación web FerovaClinic, se ejecutó
 
 Se realizó una auditoría técnica del Dashboard de FerovaClinic mediante Google Lighthouse, accediendo a la ruta autenticada `/nurse/home`. A diferencia de la evaluación de la pantalla de inicio de sesión, esta prueba permitió analizar directamente la interfaz principal utilizada por el personal de salud.
 
+<div align="center">
+<img src="../assets/img/chapter-VIII/W/W-INICIO.png">
+</div>
+
 **Performance:** En la captura se observa una auditoría aprobada de un total de una evaluación visible (1/1). Sin embargo, no se dispone del puntaje global ni del detalle de las métricas de rendimiento, por lo que estos valores deberán verificarse en el informe completo.
 
 **Accessibility (16/18):** Lighthouse registró 16 auditorías aprobadas de un total de 18. Entre los hallazgos identificados se encuentra una relación de contraste insuficiente entre los colores del fondo y del primer plano. Esta condición representa una oportunidad de mejora para facilitar la lectura de los indicadores clínicos, tarjetas informativas y demás elementos del Dashboard.
 
 **Best Practices (4/4):** Se aprobaron las cuatro auditorías mostradas por Lighthouse. Asimismo, la herramienta identificó las bibliotecas JavaScript utilizadas en la aplicación, sin mostrar advertencias en esta categoría dentro de los resultados presentados.
+
+<div align="center">
+<img src="../assets/img/chapter-VIII/W/W-INICIO-SEO-B.png">
+</div>
 
 **SEO (3/5):** Se aprobaron tres de las cinco auditorías evaluadas. Entre los aspectos pendientes se identificó la ausencia de una meta descripción. Debido a que el Dashboard corresponde a una sección privada de FerovaClinic, la optimización para su indexación pública no constituye una prioridad funcional.
 
