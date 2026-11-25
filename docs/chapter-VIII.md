@@ -489,13 +489,37 @@ Se integró Firebase Analytics en la aplicación móvil Ferova Family, desarroll
 
 **Registro de la aplicación en Firebase**
 
+<div align="center">
+<img src="../assets/img/chapter-VIII/Movil/1.png">
+</div>
+
+<div align="center">
+<img src="../assets/img/chapter-VIII/Movil/2.png">
+</div>
+
 Se registró la aplicación Android en el proyecto Firebase `ferova-family-68bb1`, utilizando el identificador de paquete `com.example.pe.edu.upc.ferova_mobile_android`. Posteriormente, se descargó el archivo `google-services.json` y se incorporó al módulo `app` del proyecto Android.
 
 **Configuración de las dependencias**
 
+<div align="center">
+<img src="../assets/img/chapter-VIII/Movil/3.png">
+</div>
+
+<div align="center">
+<img src="../assets/img/chapter-VIII/Movil/4-1.png">
+</div>
+
+<div align="center">
+<img src="../assets/img/chapter-VIII/Movil/4-2.png">
+</div>
+
 Se agregó el plugin de Google Services en el archivo `build.gradle.kts` del proyecto y se habilitó en el módulo de la aplicación. Asimismo, se incorporaron las dependencias correspondientes a Firebase Analytics mediante Firebase BoM, permitiendo utilizar sus funcionalidades para el registro de eventos.
 
 **Implementación del registro de eventos**
+
+<div align="center">
+<img src="../assets/img/chapter-VIII/Movil/12.png">
+</div>
 
 Se creó la clase `FirebaseAnalyticsManager.kt`, encargada de centralizar el registro de eventos personalizados mediante Firebase Analytics. Se implementaron los siguientes eventos:
 
@@ -507,6 +531,10 @@ Se creó la clase `FirebaseAnalyticsManager.kt`, encargada de centralizar el reg
 Los eventos se vincularon con las acciones correspondientes dentro de la aplicación móvil.
 
 **Validación mediante Firebase DebugView**
+
+<div align="center">
+<img src="../assets/img/chapter-VIII/Movil/6.png">
+</div>
 
 Para comprobar el funcionamiento de la integración, se habilitó el modo de depuración de Firebase Analytics en el dispositivo Android conectado. Luego, se ejecutó la aplicación y se accedió a la sección de progreso y medallas.
 
