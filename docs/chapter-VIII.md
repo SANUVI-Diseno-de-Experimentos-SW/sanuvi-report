@@ -473,15 +473,49 @@ Se realizó una auditoría técnica del Dashboard de FerovaClinic mediante Googl
 
 **Accessibility (16/18):** Lighthouse registró 16 auditorías aprobadas de un total de 18. Entre los hallazgos identificados se encuentra una relación de contraste insuficiente entre los colores del fondo y del primer plano. Esta condición representa una oportunidad de mejora para facilitar la lectura de los indicadores clínicos, tarjetas informativas y demás elementos del Dashboard.
 
-**Best Practices (4/4):** Se aprobaron las cuatro auditorías mostradas por Lighthouse. Asimismo, la herramienta identificó las bibliotecas JavaScript utilizadas en la aplicación, sin mostrar advertencias en esta categoría dentro de los resultados presentados.
-
 <div align="center">
 <img src="../assets/img/chapter-VIII/W/W-INICIO-SEO-B.png">
 </div>
 
+**Best Practices (4/4):** Se aprobaron las cuatro auditorías mostradas por Lighthouse. Asimismo, la herramienta identificó las bibliotecas JavaScript utilizadas en la aplicación, sin mostrar advertencias en esta categoría dentro de los resultados presentados.
+
 **SEO (3/5):** Se aprobaron tres de las cinco auditorías evaluadas. Entre los aspectos pendientes se identificó la ausencia de una meta descripción. Debido a que el Dashboard corresponde a una sección privada de FerovaClinic, la optimización para su indexación pública no constituye una prioridad funcional.
 
 **Conclusión de la evaluación técnica:** Los resultados del Dashboard muestran un cumplimiento favorable de las buenas prácticas evaluadas y oportunidades de mejora en accesibilidad y SEO. La principal observación corresponde al contraste insuficiente entre colores, que debe revisarse para favorecer la legibilidad de la información clínica. Estos hallazgos permiten establecer una referencia técnica de la interfaz principal de FerovaClinic antes de continuar con las evaluaciones experimentales.
+
+**Aplicación móvil: FerovaFamily**
+
+Se integró Firebase Analytics en la aplicación móvil Ferova Family, desarrollada en Kotlin con Jetpack Compose, con el propósito de registrar y analizar las interacciones de los usuarios dentro de la aplicación.
+
+**Registro de la aplicación en Firebase**
+
+Se registró la aplicación Android en el proyecto Firebase `ferova-family-68bb1`, utilizando el identificador de paquete `com.example.pe.edu.upc.ferova_mobile_android`. Posteriormente, se descargó el archivo `google-services.json` y se incorporó al módulo `app` del proyecto Android.
+
+**Configuración de las dependencias**
+
+Se agregó el plugin de Google Services en el archivo `build.gradle.kts` del proyecto y se habilitó en el módulo de la aplicación. Asimismo, se incorporaron las dependencias correspondientes a Firebase Analytics mediante Firebase BoM, permitiendo utilizar sus funcionalidades para el registro de eventos.
+
+**Implementación del registro de eventos**
+
+Se creó la clase `FirebaseAnalyticsManager.kt`, encargada de centralizar el registro de eventos personalizados mediante Firebase Analytics. Se implementaron los siguientes eventos:
+
+- `dose_confirmed`: registra la confirmación de una dosis del tratamiento.
+- `adherence_progress_viewed`: registra la consulta del progreso de adherencia.
+- `hemoglobin_evolution_viewed`: registra la visualización de la evolución de hemoglobina.
+- `streak_viewed`: registra la visualización de la racha de cumplimiento.
+
+Los eventos se vincularon con las acciones correspondientes dentro de la aplicación móvil.
+
+**Validación mediante Firebase DebugView**
+
+Para comprobar el funcionamiento de la integración, se habilitó el modo de depuración de Firebase Analytics en el dispositivo Android conectado. Luego, se ejecutó la aplicación y se accedió a la sección de progreso y medallas.
+
+Mediante Firebase Console, en la sección Analytics – DebugView, se verificó la recepción de los eventos personalizados. En los resultados observados se registraron dos apariciones de cada uno de los siguientes eventos: `adherence_progress_viewed`, `hemoglobin_evolution_viewed` y `streak_viewed`.
+
+Además, se observaron eventos automáticos como `user_engagement` y `first_open_time`, generados por Firebase Analytics.
+
+**Resultado:** La validación permitió comprobar que Firebase Analytics recibe correctamente los eventos personalizados asociados a la consulta del progreso de adherencia, la evolución de hemoglobina y las rachas de cumplimiento. Esto permite recopilar información sobre el uso de las funcionalidades de seguimiento de la aplicación Ferova Family.
+
 
 ### 8.2.8. Web and Mobile Tracking Plan
 
