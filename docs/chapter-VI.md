@@ -2065,14 +2065,14 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
 
 | Campo | Dato |
 |-------|------|
-| Nombres y apellidos | [Nombre] |
-| Edad | [Edad] |
-| Distrito | [Distrito] |
-| Evidencia | [Evidencia] |
-| Fecha | [DD/MM/AAAA] |
-| Timing | [inicio] — duración [mm:ss] |
-| Enlace del video | [URL] |
-| Resumen        |         |
+| Nombres y apellidos | Hugo Rojas Olivera |
+| Edad | 72 |
+| Distrito | La Molina |
+| Evidencia | <div align="center"><img src="../assets/img/chapter-VI/entrevista-validacion/hugoRojas.jpg" width="500"></div> |
+| Fecha | 25/11/2026 |
+| Timing | 00:00 min - 05:54 min |
+| Enlace del video | [https://shorturl.at/JvP9s](https://shorturl.at/JvP9s) |
+| Resumen        | Hugo Rojas Olivera, director ejecutivo de un hospital de emergencias y pediatra, indicó que el principal problema actual es el seguimiento: tras el control de hemoglobina se pierde el contacto con las familias y los recordatorios por WhatsApp se hacen de forma manual. Valoró la vista con porcentajes, el mapa de calor y la etiqueta «Sin datos» de Ferova Clinic, así como las alertas por valores atípicos, porque permiten identificar rápido a los pacientes de riesgo, y sugirió añadir alertas de controles atrasados y exportar la lista de pacientes. Consideró que la racha diaria de Ferova Family motiva a las madres y que ver su adherencia en Ferova Clinic permitiría actuar antes. Señaló que la adopción requiere integración con la historia clínica electrónica, estandarización y consentimiento informado, y calificó con 4 de 5 la probabilidad de un piloto en un servicio pequeño. |
 
 
 
