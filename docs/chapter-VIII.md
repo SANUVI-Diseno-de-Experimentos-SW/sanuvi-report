@@ -1213,7 +1213,59 @@ El Sprint 2 involucró a los cinco integrantes de SANUVI, con tareas repartidas 
 
 La combinación de ramas por *feature*, *pull requests* hacia `develop` e integración continua permitió que cada variante experimental llegara a los participantes por el pipeline del capítulo VII, y que la evidencia de colaboración de cada integrante pueda contrastarse con los analíticos de GitHub.
 
+### 8.3.4. To-Be Validation Interviews
 
+> Las entrevistas de validación *To-Be* complementan la medición cuantitativa de los experimentos del Sprint 2 (`EC-01` a `EC-03`, historias `US-TB01` a `US-TB05`), permitiendo contrastar la percepción real de valor, la comprensión de las mejoras implementadas y las condiciones de adopción familiar y clínica en ambos segmentos.
+
+#### 8.3.4.1. Diseño de Entrevistas
+
+A diferencia del diseño exploratorio inicial de la sección `6.3.1` (enfocado en validar la línea base *As-Is*), estas sesiones se diseñaron para evaluar los incrementos **To-Be** priorizados en `8.3.1` y `8.3.2`, su articulación entre *FerovaFamily* y *FerovaClinic*, y la identificación de ajustes necesarios para el ciclo de retroalimentación (`8.4`).
+
+##### Segmento 1: Madres y cuidadores de niños con anemia (`EC-01` / `US-TB01` y `EC-03` / `US-TB04`–`US-TB05`)
+
+**Elementos To-Be a validar**
+
+* Claridad visual y efecto motivacional de la tarjeta resumen de progreso en el inicio de *FerovaFamily* (racha diaria activa, avance porcentual hacia la meta ≥ 75 % según la NTS N.° 213-MINSA/DGIESP-2024 y última hemoglobina — `US-TB01`).
+* Continuidad y facilidad de la confirmación diaria de dosis (`M-01`, `M-02`) como eje de trazabilidad del tratamiento.
+* Experiencia en los flujos de soporte que sostienen la retención familiar: diario nutricional, reserva de citas (vinculada a `Q-05`), mapa de postas cercanas y chat directo con el enfermero.
+* Claridad de las cifras oficiales INS/MINSA y botones *CTA* diferenciados por rol en la Landing Page (`US-TB04`, `US-TB05`).
+
+**Guía de preguntas To-Be**
+
+1. **Tarjeta resumen de progreso y motivación de adherencia (`US-TB01`):**
+   * ¿Qué te transmite la tarjeta inicial con tu racha diaria, el avance porcentual hacia la meta del 75 % y el último control de hemoglobina?
+   * ¿Visualizar ese progreso desde el inicio te motiva a sostener el seguimiento diario sin generar sobrecarga visual?
+2. **Flujo de confirmación diaria de dosis (`M-01` / `M-02`):**
+   * ¿Te queda claro cómo confirmar la dosis del día y consultar la trazabilidad del tratamiento?
+   * ¿Qué ventaja percibes frente a llevar el control del suplemento en papel o en hojas de cálculo?
+3. **Flujos complementarios y detección de fricciones (`Q-05` y soporte):**
+   * ¿Qué te pareció el registro diario de alimentos en el diario nutricional, la precisión del mapa de postas cercanas y la comunicación directa mediante el chat con enfermería?
+   * Al reservar una cita médica, ¿qué tan fácil o dudoso te resultó elegir especialista y horario disponible?
+4. **Acceso por rol en Landing Page (`EC-03`) y valoración final:**
+   * Desde la Landing Page, ¿identificas con claridad el respaldo institucional (INS/MINSA) y qué botón de acceso corresponde a *FerovaFamily*?
+   * ¿Cuál fue la funcionalidad más valiosa del flujo y qué mejorarías o recomendarías a otras familias?
+
+##### Segmento 2: Personal de salud — Enfermeros/as, Nutricionistas y Pediatría (`EC-02` / `US-TB02`–`US-TB03` y articulación con `EC-01`)
+
+**Elementos To-Be a validar**
+
+* Rapidez y precisión clínica al interpretar porcentajes explícitos de adherencia y la etiqueta `"Sin datos"` en `/heatmap` y `/risk-overview` (`US-TB02`, `M-03`).
+* Utilidad clínica de las alertas preventivas no bloqueantes ante valores atípicos de edad o hemoglobina en `/hemoglobin-control` (`US-TB03`, `M-04`).
+* Impacto operativo de articular la racha diaria de *FerovaFamily* (`US-TB01`) con la visibilidad temprana en *FerovaClinic* para prevenir abandonos tras el control de hemoglobina.
+* Requisitos institucionales y viabilidad práctica para ejecutar un piloto en un establecimiento de salud.
+
+**Guía de preguntas To-Be**
+
+1. **Lectura de riesgo con porcentajes y etiqueta `"Sin datos"` (`US-TB02` / `M-03`):**
+   * ¿La incorporación de porcentajes explícitos, mapa de calor y la etiqueta `"Sin datos"` en *FerovaClinic* te permite identificar con mayor rapidez a los pacientes en alto riesgo frente a una tabla convencional?
+   * ¿Queda clara la diferencia entre un paciente con baja adherencia y un caso sin registros cargados?
+2. **Alertas preventivas no bloqueantes (`US-TB03` / `M-04`):**
+   * ¿Las advertencias ante valores atípicos de edad o hemoglobina ayudan a reducir errores de registro sin interrumpir el flujo de atención?
+3. **Articulación clínica con la adherencia de *FerovaFamily* (`US-TB01`):**
+   * ¿En qué medida la racha diaria de *FerovaFamily* motiva a las madres y te permite intervenir de manera oportuna desde *FerovaClinic* frente a los recordatorios manuales actuales?
+4. **Adopción institucional y viabilidad de piloto:**
+   * ¿Qué funcionalidades adicionales priorizarías (p. ej., alertas de controles atrasados o exportación de listados) y qué requisitos normativos o técnicos (historia clínica electrónica, estandarización, consentimiento informado) son indispensables para adoptar Ferova?
+   * Del 1 al 5, ¿qué tan viable consideras ejecutar un piloto en un servicio pequeño?
 
 ## 8.4. Experiment Aftermath & Analysis
 
