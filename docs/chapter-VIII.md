@@ -1267,6 +1267,34 @@ A diferencia del diseño exploratorio inicial de la sección `6.3.1` (enfocado e
    * ¿Qué funcionalidades adicionales priorizarías (p. ej., alertas de controles atrasados o exportación de listados) y qué requisitos normativos o técnicos (historia clínica electrónica, estandarización, consentimiento informado) son indispensables para adoptar Ferova?
    * Del 1 al 5, ¿qué tan viable consideras ejecutar un piloto en un servicio pequeño?
 
+#### 8.3.4.2. Registro de Entrevistas
+
+**Segmento 1: Madres y cuidadores de niños con anemia**
+
+| Campo | Dato |
+|-------|------|
+| Nombres y apellidos | Alessandro Daniel Bravo Castillo |
+| Edad | 28 |
+| Distrito | Pueblo Libre |
+| Evidencia | <div align="center"><img src="../assets/img/chapter-VI/entrevista-validacion/alessandroBravo.png" width="500"></div> |
+| Fecha | 13/11/2026 |
+| Timing | 00:00 min - 07:18 min |
+| Enlace del video | [https://shorturl.at/NLMdJ](https://shorturl.at/NLMdJ) |
+| Resumen (orientado al To-Be) | Desde el enfoque **To-Be**, la sesión con **Alessandro Daniel Bravo Castillo** respaldó la dirección experimental de *FerovaFamily* (`EC-01` / `US-TB01`): el entrevistado señaló la **confirmación de dosis** como la funcionalidad más valiosa gracias a la trazabilidad que aporta al tratamiento, validando la pertinencia de destacar la racha activa, el avance hacia la meta de ≥ 75 % y la última hemoglobina desde el inicio para reforzar las métricas `M-01` y `M-02`. Destacó una experiencia general cómoda, intuitiva y ágil (completada sin ayuda, con colores y tipografía claros), junto con el valor conjunto del registro de pacientes, el diario nutricional, el mapa preciso de postas cercanas para primeras visitas y el chat directo con enfermería sin intermediarios. Como hallazgo accionable para futuros ciclos *To-Be*, mencionó una ligera indecisión personal al elegir médico y horario durante la reserva de citas (pese a completar el flujo), evidencia cualitativa que respalda mantener `Q-05` priorizada en el *Question Backlog* (`8.1.4` y `8.4.2`). No detectó fallos ni funciones ausentes y confirmó que recomendaría la plataforma a padres que aún controlan tratamientos en papel o Excel. |
+
+**Segmento 2: Personal de salud (Enfermeros/as, Nutricionistas y Pediatría)**
+
+| Campo | Dato |
+|-------|------|
+| Nombres y apellidos | Hugo Rojas Olivera |
+| Edad | 72 |
+| Distrito | La Molina |
+| Evidencia | <div align="center"><img src="../assets/img/chapter-VI/entrevista-validacion/hugoRojas.jpg" width="500"></div> |
+| Fecha | 25/11/2026 |
+| Timing | 00:00 min - 05:54 min |
+| Enlace del video | [https://shorturl.at/JvP9s](https://shorturl.at/JvP9s) |
+| Resumen (orientado al To-Be) | Desde el enfoque **To-Be**, el Dr. **Hugo Rojas Olivera** (pediatra y director ejecutivo de un hospital de emergencias) validó directamente los incrementos del Sprint 2 en *FerovaClinic* (`EC-02`) y su articulación con *FerovaFamily* (`EC-01`). Partiendo del problema clínico actual —pérdida de seguimiento tras el control de hemoglobina y recordatorios manuales por WhatsApp—, confirmó que los **porcentajes explícitos, el mapa de calor y la etiqueta `"Sin datos"`** (`US-TB02`) junto con las **alertas por valores atípicos** (`US-TB03`) agilizan la identificación temprana de pacientes en riesgo (`M-03`, `M-04`). Asimismo, valoró positivamente que la **racha diaria** de *FerovaFamily* (`US-TB01`) motive a las madres y que reflejar su adherencia en *FerovaClinic* permita actuar antes desde el establecimiento de salud. Como insumos de evolución *To-Be* posterior al experimento, sugirió incorporar **alertas de controles atrasados** y **exportación de la lista de pacientes**, señaló que la adopción institucional exige integración con la historia clínica electrónica (HCE), estandarización y consentimiento informado, y calificó con **4 de 5** la probabilidad de un piloto en un servicio pequeño. |
+
 ## 8.4. Experiment Aftermath & Analysis
 
 ### 8.4.1. Analysis and Interpretation of Results
