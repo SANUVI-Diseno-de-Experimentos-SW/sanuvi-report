@@ -885,52 +885,334 @@ Las preguntas `Q-05` a `Q-08` del *Question Backlog* no cuentan con historias To
 
 ### 8.3.2. To-Be Product Backlog
 
-| # Orden | User Story ID | Título | Descripción | Story Points |
-|---------|---------------|--------|-------------|--------------|
-| 1 | US-TB01 | [Título] | **Como** … **quiero** … **para** … | [SP] |
+El siguiente backlog prioriza las cinco historias To-Be derivadas de los experimentos planificados. El orden se determina por el puntaje total del *Question Backlog* de la sección 8.1.4: `Q-01` (19 pts) > `Q-02` (18 pts) > `Q-03` (16 pts). Dentro de una misma pregunta, se prioriza la historia que habilita la métrica principal de su *Experiment Card*. Las estimaciones de esfuerzo en *Story Points* siguen la escala de Fibonacci (1/2/3/5/8) utilizada en el *Product Backlog* del capítulo III. El backlog totaliza **18 Story Points**.
 
-<!-- COMPLETAR -->
+| # Orden | User Story ID | Título | Descripción | Experiment Card vinculada | Story Points |
+|---------|---------------|--------|-------------|---------------------------|--------------|
+| 1 | US-TB01 | Tarjeta resumen de progreso del tratamiento en el inicio de FerovaFamily | Como madre o cuidador, quiero ver en el inicio de FerovaFamily mi racha activa, el avance hacia la meta del 75 % y la última hemoglobina, para conocer cómo va el tratamiento y mantener la confirmación diaria de dosis. | EC-01 — `Q-01` (puntaje 19) | 5 |
+| 2 | US-TB02 | Porcentajes explícitos y etiqueta "Sin datos" en el mapa de calor de FerovaClinic | Como profesional de salud, quiero ver porcentajes explícitos y la etiqueta "Sin datos" en el mapa de calor, para identificar con rapidez los casos de alto riesgo sin confundir datos ausentes con baja adherencia. | EC-02 — `Q-02` (puntaje 18) | 3 |
+| 3 | US-TB03 | Alertas preventivas ante valores atípicos de edad o hemoglobina en el control clínico | Como profesional de salud, quiero recibir una advertencia cuando la edad o la hemoglobina ingresadas sean atípicas, para corregir errores de digitación antes de guardar el control clínico sin interrumpir la atención. | EC-02 — `Q-02` (puntaje 18) | 5 |
+| 4 | US-TB04 | Cifras epidemiológicas con fuente oficial INS/MINSA en la Landing Page | Como visitante de la Landing Page, quiero ver cifras de anemia infantil respaldadas por fuentes oficiales del INS/MINSA, para confiar en la información y comprender la magnitud del problema. | EC-03 — `Q-03` (puntaje 16) | 2 |
+| 5 | US-TB05 | Botones de acceso (CTA) diferenciados por rol en la Landing Page | Como visitante, quiero encontrar botones de acceso diferenciados para madres/cuidadores y personal de salud, para ingresar directamente a FerovaFamily o FerovaClinic según mi rol. | EC-03 — `Q-03` (puntaje 16) | 3 |
 
 ### 8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle
 
-> Ejecución de los experimentos aplicando el pipeline implementado en el Capítulo VII, incorporando los componentes de recolección de datos definidos en 8.2.8.
+La ejecución de los experimentos se apoya en el pipeline implementado en el capítulo VII y en los componentes de recolección de datos definidos en 8.2.8. Cada historia To-Be se desarrolla en una rama `feature/*` siguiendo GitFlow, se integra mediante *pull request* a `develop` y se publica a través de la plataforma de despliegue de su componente, de modo que cada variante experimental llega a los participantes por el mismo camino que una versión regular de Ferova.
+
+| Experiment Card | Componente | Integración y entrega (capítulo VII) | Medición | Ventana (8.2.6) |
+|---|---|---|---|---|
+| **EC-01** | FerovaFamily (Kotlin + Jetpack Compose) | Distribución del APK a los testers mediante Firebase App Distribution | Firebase Analytics (eventos de 8.2.8) y registros de dosis almacenados por el backend (`M-01`, `M-02`) | Día 1 a 14 |
+| **EC-02** | FerovaClinic (Angular + TypeScript) | CI con `frontend-ci.yml` y despliegue en Azure Static Web Apps | Observación de las 5 tareas clínicas por evaluador: tiempos y errores (`M-03`, `M-04`) | Día 15 a 21 |
+| **EC-03** | Landing Page | Publicación en GitHub Pages | Registro de clics en los CTA y verificación de la URL de destino (`M-07`, `M-08`) | Día 22 a 31 |
+| Transversal | Backend (.NET 9 + MongoDB) | CI con `backend-ci.yml` y despliegue con Dockerfile en Railway | Fuente de datos de dosis, logros, hemoglobina y riesgo | Todo el periodo |
+
+Se mantienen las reglas de 8.2.6 y 8.2.8: los experimentos se ejecutan de forma secuencial para evitar solapamientos, la recolección se limita a los eventos estrictamente necesarios durante la ventana de cada experimento (economía de rastreo) y no se envían nombres, DNI ni datos clínicos identificables a las herramientas de analítica.
 
 #### 8.3.3.1. To-Be Sprint Backlogs
 
-**Sprint n**
+##### Sprint Backlog 2
+
+El presente *Sprint Backlog* corresponde al sprint de experimentación To-Be de Ferova. Su objetivo es implementar lo mínimo necesario para ejecutar las tres *Experiment Cards*: la tarjeta resumen de progreso en FerovaFamily, los porcentajes, la etiqueta "Sin datos" y las alertas preventivas en FerovaClinic, y la variante B de la Landing Page, junto con la medición definida en 8.2.8.
+
+**Board Screenshot:**
+
+<img src="../assets/img/chapter-VIII/to-be-sprint-backlog-2.png" alt="Board del Sprint Backlog 2" width="600px">
+
+**Board URL:** [completar enlace del tablero]
 
 | Campo | Valor |
 |-------|-------|
+| Sprint # | Sprint 2 |
 | Date | [YYYY-MM-DD] |
-| Sprint n Goal | [Objetivo, vinculado a un Experiment Card] |
-| Sprint n Velocity | [Story Points] |
-| Sum of Story Points | [Story Points] |
+| Sprint 2 Goal | Implementar el *Simplest Useful Thing* de `EC-01`, `EC-02` y `EC-03` y su medición mínima, de modo que los tres experimentos puedan ejecutarse en el calendario de 8.2.6. |
+| Sprint 2 Velocity | 18 Story Points (todas las historias completadas) |
+| Sum of Story Points | 18 |
+| Sum of Estimation (Hours) | 94 |
 
-| User Story ID | Title | Task ID | Task Title | Description | Estimation (h) | Assigned To | Status |
-|---------------|-------|---------|------------|-------------|----------------|-------------|--------|
-| US-TB01 | [Título] | T01 | [Título] | [Descripción] | [h] | [Nombre] | Done |
+| User Story Id | User Story Title | Work-Item / Task Id | Work-Item / Task Title | Description | Estimation (Hours) | Assigned To | Status |
+| ------------- | ---------------- | ------------------- | ---------------------- | ----------- | -----------------: | ----------- | ------ |
+| US-TB01 | Tarjeta resumen de progreso del tratamiento en el inicio de FerovaFamily | T-TB01-01 | Definir reglas de cálculo de la tarjeta | Definir qué se muestra y cómo se calcula: días de racha activa, porcentaje de avance hacia la meta de adherencia del 75 % (NTS N.° 213-MINSA/DGIESP-2024) y último valor de hemoglobina. | 3 | Vitaly A. Baca | Done |
+| US-TB01 | Tarjeta resumen de progreso del tratamiento en el inicio de FerovaFamily | T-TB01-02 | Diseñar la tarjeta en Jetpack Compose | Maquetar la tarjeta resumen del inicio siguiendo la guía de estilo móvil del capítulo IV, cuidando que no genere sobrecarga visual. | 4 | Vitaly A. Baca | Done |
+| US-TB01 | Tarjeta resumen de progreso del tratamiento en el inicio de FerovaFamily | T-TB01-03 | Consumir los endpoints existentes | Integrar la tarjeta con los endpoints de dosis del día, logros y evolución de hemoglobina, sin crear nuevos servicios. | 8 | Vicente Quijandria | Done |
+| US-TB01 | Tarjeta resumen de progreso del tratamiento en el inicio de FerovaFamily | T-TB01-04 | Manejar estados vacíos y de error | Mostrar "sin registro" cuando no hay control de hemoglobina y un estado de error controlado si falla la consulta. | 3 | Vicente Quijandria | Done |
+| US-TB01 | Tarjeta resumen de progreso del tratamiento en el inicio de FerovaFamily | T-TB01-05 | Asignar grupos experimental y de control | Implementar la regla que muestra la tarjeta solo a los 10 cuidadores del grupo experimental y mantiene la versión actual para los 10 del grupo de control. | 4 | Vitaly A. Baca | Done |
+| US-TB01 | Tarjeta resumen de progreso del tratamiento en el inicio de FerovaFamily | T-TB01-06 | Registrar eventos analíticos | Implementar en <code>FirebaseAnalyticsManager.kt</code> los eventos <code>dose_confirmed</code>, <code>adherence_progress_viewed</code>, <code>hemoglobin_evolution_viewed</code> y <code>streak_viewed</code>, sin datos personales. | 4 | Vicente Quijandria | Done |
+| US-TB01 | Tarjeta resumen de progreso del tratamiento en el inicio de FerovaFamily | T-TB01-07 | Validar eventos y distribuir la versión | Verificar la recepción de eventos en Firebase DebugView y distribuir el APK a los testers mediante Firebase App Distribution. | 3 | Gabriel A. Peñaranda | Done |
+| US-TB02 | Porcentajes explícitos y etiqueta "Sin datos" en el mapa de calor de FerovaClinic | T-TB02-01 | Definir la presentación del porcentaje y de "Sin datos" | Establecer el formato del porcentaje de adherencia y el criterio para mostrar "Sin datos" cuando no existen registros. | 3 | Vitaly A. Baca | Done |
+| US-TB02 | Porcentajes explícitos y etiqueta "Sin datos" en el mapa de calor de FerovaClinic | T-TB02-02 | Mostrar porcentajes en el mapa de calor | Incorporar el porcentaje de adherencia en cada elemento del mapa de calor (<code>/heatmap</code>) a partir de los datos que ya entrega la API. | 6 | Elizabeth N. Apaza | Done |
+| US-TB02 | Porcentajes explícitos y etiqueta "Sin datos" en el mapa de calor de FerovaClinic | T-TB02-03 | Implementar la etiqueta "Sin datos" | Diferenciar visualmente la ausencia de datos de la baja adherencia y verificar el contraste de las etiquetas. | 4 | Elizabeth N. Apaza | Done |
+| US-TB02 | Porcentajes explícitos y etiqueta "Sin datos" en el mapa de calor de FerovaClinic | T-TB02-04 | Mantener la versión de control | Habilitar un indicador que active la versión experimental solo para los 6 evaluadores asignados y conserve la vista actual (solo color) para los otros 6. | 3 | Vitaly A. Baca | Done |
+| US-TB02 | Porcentajes explícitos y etiqueta "Sin datos" en el mapa de calor de FerovaClinic | T-TB02-05 | Preparar las tareas clínicas estandarizadas | Elaborar las 5 tareas clínicas, los casos simulados o anonimizados y la hoja de registro de tiempos y errores. | 4 | Luis A. Damián | Done |
+| US-TB03 | Alertas preventivas ante valores atípicos de edad o hemoglobina en el control clínico | T-TB03-01 | Definir rangos de referencia para las alertas | Establecer, con el criterio clínico del equipo, qué valores de edad y hemoglobina se consideran atípicos sin contradecir la validación de 0 a 30 g/dL de la API. | 3 | Vicente Quijandria | Done |
+| US-TB03 | Alertas preventivas ante valores atípicos de edad o hemoglobina en el control clínico | T-TB03-02 | Implementar advertencia por hemoglobina atípica | Agregar la validación preventiva en el formulario de <code>/hemoglobin-control</code>. | 5 | Elizabeth N. Apaza | Done |
+| US-TB03 | Alertas preventivas ante valores atípicos de edad o hemoglobina en el control clínico | T-TB03-03 | Implementar advertencia por edad atípica | Agregar la validación preventiva de la edad en el formulario del control clínico. | 3 | Elizabeth N. Apaza | Done |
+| US-TB03 | Alertas preventivas ante valores atípicos de edad o hemoglobina en el control clínico | T-TB03-04 | Asegurar el carácter no bloqueante | Permitir confirmar y guardar el registro tras mostrar la advertencia y mantener sin cambios la versión de control. | 3 | Gabriel A. Peñaranda | Done |
+| US-TB03 | Alertas preventivas ante valores atípicos de edad o hemoglobina en el control clínico | T-TB03-05 | Probar los escenarios de alerta | Validar la alerta con valor atípico, la ausencia de alerta con valor esperado, el guardado tras confirmar y el rechazo de la API fuera de 0 a 30 g/dL. | 3 | Luis A. Damián | Done |
+| US-TB04 | Cifras epidemiológicas con fuente oficial INS/MINSA en la Landing Page | T-TB04-01 | Seleccionar y verificar cifras oficiales | Seleccionar cifras de anemia infantil de publicaciones del INS/MINSA y registrar la fuente exacta de cada una. | 3 | Luis A. Damián | Done |
+| US-TB04 | Cifras epidemiológicas con fuente oficial INS/MINSA en la Landing Page | T-TB04-02 | Incorporar la sección de cifras en la Variante B | Maquetar la sección con cada cifra y su fuente citada, manteniendo el diseño responsive. | 4 | Luis A. Damián | Done |
+| US-TB04 | Cifras epidemiológicas con fuente oficial INS/MINSA en la Landing Page | T-TB04-03 | Verificar las variantes y el diseño responsive | Comprobar que la Variante A no muestra cifras y que las demás secciones no cambian en ninguna variante. | 2 | Elizabeth N. Apaza | Done |
+| US-TB05 | Botones de acceso (CTA) diferenciados por rol en la Landing Page | T-TB05-01 | Diseñar los CTA diferenciados | Definir texto, color y ubicación de los dos botones de acceso (madres/cuidadores y personal de salud). | 3 | Vitaly A. Baca | Done |
+| US-TB05 | Botones de acceso (CTA) diferenciados por rol en la Landing Page | T-TB05-02 | Implementar los CTA y sus URL de destino | Implementar ambos botones y enlazarlos con el acceso a FerovaFamily y a FerovaClinic. | 4 | Luis A. Damián | Done |
+| US-TB05 | Botones de acceso (CTA) diferenciados por rol en la Landing Page | T-TB05-03 | Distribuir las sesiones entre Variante A y B | Implementar la distribución equitativa 50/50 de sesiones únicas y evitar que una misma sesión se cuente en ambas variantes. | 5 | Gabriel A. Peñaranda | Done |
+| US-TB05 | Botones de acceso (CTA) diferenciados por rol en la Landing Page | T-TB05-04 | Registrar clics y destino | Registrar el clic en cada CTA y la URL de destino para calcular M-07 y M-08, sin datos personales. | 4 | Gabriel A. Peñaranda | Done |
+| US-TB05 | Botones de acceso (CTA) diferenciados por rol en la Landing Page | T-TB05-05 | Desplegar y verificar las variantes | Publicar la Landing Page en GitHub Pages y verificar el acceso a ambas variantes y a sus destinos. | 3 | Gabriel A. Peñaranda | Done |
 
-<!-- COMPLETAR -->
+**Resumen de esfuerzo por historia:**
+
+| User Story Id | Story Points | Horas estimadas | Tareas |
+|---|---:|---:|---:|
+| US-TB01 | 5 | 29 | 7 |
+| US-TB02 | 3 | 20 | 5 |
+| US-TB03 | 5 | 17 | 5 |
+| US-TB04 | 2 | 9 | 3 |
+| US-TB05 | 3 | 19 | 5 |
+| **Total** | **18** | **94** | **25** |
 
 #### 8.3.3.2. Implemented To-Be Landing Page Evidence
 
-<!-- COMPLETAR -->
+A diferencia de otras fases, en el ciclo de experimentación To-Be la Landing Page sí requirió modificaciones: `EC-03` compara la versión actual (Variante A, control) con una Variante B que incorpora cifras epidemiológicas con fuente oficial del INS/MINSA y botones de acceso diferenciados por rol. Las historias implementadas son `US-TB04` y `US-TB05`. El resto de secciones de la página (hero, funcionalidades, segmentos, "Cómo funciona" y testimonios) se mantuvo sin cambios.
+
+##### Landing Page Repository Evidence
+
+| Repository | Branch | Commit Id | Commit Message | Committed on (Date) |
+| :--- | :--- | :--- | :--- | :--- |
+| ferova-landing-page | `feature/ec-03-landing-variant-b` | [completar] | feat(landing): add INS/MINSA figures with cited sources (US-TB04) | [completar] |
+| ferova-landing-page | `feature/ec-03-landing-variant-b` | [completar] | feat(landing): add role-specific CTAs for FerovaFamily and FerovaClinic (US-TB05) | [completar] |
+| ferova-landing-page | `feature/ec-03-landing-variant-b` | [completar] | feat(landing): split unique sessions between variants A and B and log CTA clicks | [completar] |
+
+##### Implemented Landing Page Feature by To-Be User Story
+
+| User Story | Elemento implementado | Descripción |
+| :--- | :--- | :--- |
+| US-TB04 | Sección de cifras con fuente citada | Cifras epidemiológicas sobre anemia infantil provenientes de publicaciones del INS/MINSA, cada una con su fuente visible. Solo se muestra en la Variante B. |
+| US-TB05 | CTA diferenciados por rol | Dos botones de acceso con textos distintos: uno para madres/cuidadores (FerovaFamily) y otro para personal de salud (FerovaClinic). Solo se muestran en la Variante B. |
+| US-TB05 | Distribución de variantes | Asignación equitativa 50/50 de sesiones únicas entre las Variantes A y B, evitando que una misma sesión se cuente en ambas. |
+| US-TB05 | Registro de interacción | Registro del clic en cada CTA y de la URL de destino, para calcular `M-07` y `M-08` sin recolectar datos personales. |
+
+##### Variantes del experimento EC-03
+
+| Aspecto | Variante A (control) | Variante B (experimental) |
+| :--- | :--- | :--- |
+| Respaldo estadístico | Sin cifras epidemiológicas citadas | Cifras con fuente oficial del INS/MINSA |
+| Llamado a la acción | Sin diferenciación explícita por rol | Dos CTA diferenciados: FerovaFamily y FerovaClinic |
+| Distribución | 50 % de las sesiones únicas | 50 % de las sesiones únicas |
+| Métricas | `M-07`, `M-08` | `M-07`, `M-08` |
+
+##### Deployment Evidence
+
+La Landing Page permanece desplegada en GitHub Pages. **Link de despliegue:** [completar URL de GitHub Pages]
+
+<img src="../assets/img/chapter-VIII/to-be-landing/variante-a-control.png" width="700px" alt="Landing Page Variante A (control)">
+
+*Variante A (control): versión actual de la Landing Page.*
+
+<img src="../assets/img/chapter-VIII/to-be-landing/variante-b-experimental.png" width="700px" alt="Landing Page Variante B (experimental)">
+
+*Variante B (experimental): cifras con fuente INS/MINSA y botones de acceso diferenciados por rol.*
+
+**Línea base técnica (8.2.7).** Antes del experimento, la auditoría con Google Lighthouse de la Landing Page obtuvo 97 en *Performance*, 92 en *Accessibility*, 100 en *Best Practices* y 91 en *SEO*, con dos observaciones abiertas: contraste insuficiente entre fondo y primer plano, y ausencia de meta descripción. Dado que la Variante B agrega texto y botones nuevos, su diseño debe respetar el contraste mínimo para no empeorar la observación de accesibilidad.
+
+##### Summary of Implemented To-Be Landing Page Support
+
+| To-Be User Story | Landing Page Evidence | Experiment Supported |
+| :--- | :--- | :--- |
+| US-TB04 — Cifras epidemiológicas con fuente oficial | Sección de cifras con fuente citada en la Variante B | EC-03 — Influencia de la información sanitaria y los accesos diferenciados |
+| US-TB05 — CTA diferenciados por rol | Botones de acceso por segmento, distribución A/B y registro de clics | EC-03 — Influencia de la información sanitaria y los accesos diferenciados |
 
 #### 8.3.3.3. Implemented To-Be Frontend-Web Application Evidence
 
-<!-- COMPLETAR -->
+En esta sección se presenta la evidencia de implementación de FerovaClinic correspondiente al Sprint Backlog 2. De las cinco historias To-Be, `US-TB02` y `US-TB03` tienen alcance en la aplicación web Angular: `US-TB01` pertenece a FerovaFamily y `US-TB04` y `US-TB05` a la Landing Page. El objetivo fue habilitar, para el grupo experimental de `EC-02`, los porcentajes explícitos y la etiqueta "Sin datos" en el mapa de calor, y las alertas preventivas en el registro del control de hemoglobina, manteniendo la versión actual para el grupo de control.
+
+##### Frontend Repository Evidence
+
+| Repository | Branch | Commit Id | Commit Message | Committed on (Date) |
+| :--- | :--- | :--- | :--- | :--- |
+| FerovaClinic (frontend web) | `feature/ec-02-heatmap-labels` | [completar] | feat(heatmap): show explicit adherence percentages and "Sin datos" label (US-TB02) | [completar] |
+| FerovaClinic (frontend web) | `feature/ec-02-hemoglobin-alerts` | [completar] | feat(hemoglobin): add non-blocking alerts for atypical age and hemoglobin values (US-TB03) | [completar] |
+
+##### Implemented Frontend Feature by To-Be User Story
+
+###### US-TB02 — Porcentajes explícitos y etiqueta "Sin datos" en el mapa de calor
+
+| Elemento | Descripción |
+| :--- | :--- |
+| Porcentaje de adherencia | Cada elemento del mapa de calor (`/heatmap`) muestra su porcentaje de adherencia, que la API ya entrega junto con las coordenadas y el nivel de riesgo, además de la codificación por color. |
+| Etiqueta "Sin datos" | Los elementos sin registros se identifican con una etiqueta explícita, diferenciada de la baja adherencia, para evitar la ambigüedad detectada en la evaluación heurística (`6.3.3`) y en la auditoría UX (`6.4.2`). |
+| Resumen de riesgo | La vista `/risk-overview` se mantiene como apoyo para la tarea de identificar pacientes de alto riesgo (`M-03`). |
+| Indicador de experimento | Un indicador activa la versión experimental solo para los 6 evaluadores del grupo experimental; los otros 6 acceden a la vista actual (solo color). |
+
+###### US-TB03 — Alertas preventivas ante valores atípicos de edad o hemoglobina
+
+| Elemento | Descripción |
+| :--- | :--- |
+| Advertencia por hemoglobina atípica | El formulario de `/hemoglobin-control` muestra una advertencia visual cuando el valor ingresado se aleja de los rangos esperados, aunque siga dentro del rango que acepta la API (0 a 30 g/dL). |
+| Advertencia por edad atípica | El formulario muestra una advertencia visual cuando la edad ingresada se aleja de los rangos esperados. |
+| Carácter no bloqueante | El profesional puede confirmar el valor y guardar el control; la advertencia no interrumpe la atención. |
+| Validación del backend | El rechazo de valores fuera de 0 a 30 g/dL permanece en la API, independiente de la advertencia preventiva. |
+
+Estos cambios permiten contrastar las hipótesis de `EC-02`: que los porcentajes explícitos y la etiqueta "Sin datos" reducen el tiempo de identificación de pacientes de alto riesgo (`M-03`) y que las alertas preventivas reducen los errores de registro clínico (`M-04`).
+
+##### Evidencia Funcional
+
+**Grupo experimental** — mapa de calor con porcentajes explícitos y etiqueta "Sin datos":
+
+<img src="../assets/img/chapter-VIII/to-be-frontend-web/heatmap-experimental.png" width="700px" alt="Mapa de calor con porcentajes y etiqueta Sin datos para el grupo experimental">
+
+**Grupo de control** — mapa de calor actual, con codificación solo por color:
+
+<img src="../assets/img/chapter-VIII/to-be-frontend-web/heatmap-control.png" width="700px" alt="Mapa de calor solo por color para el grupo de control">
+
+**Grupo experimental** — advertencia preventiva por valor atípico en el control de hemoglobina:
+
+<img src="../assets/img/chapter-VIII/to-be-frontend-web/hemoglobin-alert.png" width="700px" alt="Advertencia por valor atipico en el formulario de control de hemoglobina">
+
+##### Deployment Evidence
+
+FerovaClinic se publica en Azure Static Web Apps mediante el *workflow* de GitHub Actions `azure-static-web-apps-proud-wave-064ec0610.yml`, y el *workflow* `frontend-ci.yml` verifica la compilación de la aplicación Angular en cada `push` y `pull_request` (secciones 7.1 y 7.3). Los cambios del sprint se integran a `develop` y, tras validarse, siguen este mismo flujo.
+
+**Línea base técnica (8.2.7).** La auditoría con Lighthouse de la pantalla de inicio de sesión obtuvo 78 en *Performance*, 96 en *Accessibility*, 78 en *Best Practices* y 83 en *SEO*. En el *Dashboard* (`/nurse/home`) se aprobaron 16 de 18 auditorías de accesibilidad, con contraste insuficiente entre fondo y primer plano como hallazgo principal. Por ello, los porcentajes y las etiquetas nuevas del mapa de calor deben verificar su contraste (`T-TB02-03`).
+
+##### Summary of Implemented To-Be Frontend-Web Support
+
+| To-Be User Story | Frontend Evidence | Experiment Supported |
+| :--- | :--- | :--- |
+| US-TB02 — Porcentajes y "Sin datos" en el mapa de calor | Porcentaje por elemento y etiqueta "Sin datos", activados por indicador de experimento | EC-02 — Efectividad de las mejoras visuales y alertas preventivas (`M-03`) |
+| US-TB03 — Alertas por valores atípicos | Advertencias no bloqueantes de edad y hemoglobina en `/hemoglobin-control` | EC-02 — Efectividad de las mejoras visuales y alertas preventivas (`M-04`) |
 
 #### 8.3.3.4. Implemented To-Be Native-Mobile Application Evidence
 
-<!-- COMPLETAR -->
+En esta sección se presenta la evidencia de implementación de FerovaFamily (Kotlin + Jetpack Compose) correspondiente a `US-TB01`, la historia que da soporte a `EC-01`. El objetivo fue que las madres y cuidadores del grupo experimental vean, en la pantalla de inicio, una tarjeta resumen con la racha activa, el avance hacia la meta del 75 % y la última hemoglobina, mientras el grupo de control conserva la versión actual.
+
+##### Mobile Repository Evidence
+
+| Repository | Branch | Commit Id | Commit Message | Committed on (Date) |
+| :--- | :--- | :--- | :--- | :--- |
+| ferova-mobile-android | `feature/ec-01-progress-card` | [completar] | feat(home): add progress summary card with streak, 75 % goal and last hemoglobin (US-TB01) | [completar] |
+| ferova-mobile-android | `feature/ec-01-progress-card` | [completar] | feat(analytics): track adherence, streak and hemoglobin views with Firebase Analytics | [completar] |
+
+##### Implemented Mobile Feature by To-Be User Story
+
+###### US-TB01 — Tarjeta resumen de progreso del tratamiento en el inicio
+
+| Elemento | Descripción |
+| :--- | :--- |
+| Tarjeta resumen | Tarjeta en la pantalla de inicio con tres datos: días de racha activa, porcentaje de avance hacia la meta de adherencia del 75 % (NTS N.° 213-MINSA/DGIESP-2024) y último valor de hemoglobina registrado. |
+| Fuente de datos | Los endpoints existentes de dosis del día, logros y evolución de hemoglobina; no se crearon servicios nuevos. |
+| Estados vacíos | Si el paciente no tiene control de hemoglobina, la tarjeta indica que no existe registro y mantiene visibles los otros indicadores. |
+| Grupos del experimento | La tarjeta se muestra a los 10 cuidadores del grupo experimental; los otros 10 usan la versión actual. |
+| Eventos de analítica | `FirebaseAnalyticsManager.kt` centraliza el registro de `dose_confirmed`, `adherence_progress_viewed`, `hemoglobin_evolution_viewed` y `streak_viewed`, sin datos personales. |
+
+##### Analytics Evidence
+
+La integración de Firebase Analytics en el proyecto `ferova-family-68bb1` y la recepción de eventos se documentaron en 8.2.7: en Firebase DebugView se registraron dos apariciones de cada uno de los eventos `adherence_progress_viewed`, `hemoglobin_evolution_viewed` y `streak_viewed`, además de los eventos automáticos `user_engagement` y `first_open_time`. El evento `dose_confirmed` está implementado y su recepción se verifica durante la ventana de 14 días de `EC-01`. Conforme a la economía de rastreo, estos eventos solo se consideran durante esa ventana.
+
+##### Evidencia Funcional
+
+**Grupo experimental** — pantalla de inicio con la tarjeta resumen:
+
+<img src="../assets/img/chapter-VIII/to-be-mobile/home-progress-card.png" width="250px" alt="Pantalla de inicio de FerovaFamily con tarjeta resumen de progreso">
+
+**Grupo de control** — pantalla de inicio actual, sin tarjeta resumen:
+
+<img src="../assets/img/chapter-VIII/to-be-mobile/home-control.png" width="250px" alt="Pantalla de inicio de FerovaFamily sin tarjeta resumen">
+
+**Paciente sin control de hemoglobina** — tarjeta con estado vacío:
+
+<img src="../assets/img/chapter-VIII/to-be-mobile/home-empty-hemoglobin.png" width="250px" alt="Tarjeta resumen sin registro de hemoglobina">
+
+##### Deployment Evidence
+
+La versión experimental se distribuye a los participantes mediante Firebase App Distribution, el mismo mecanismo descrito en la sección 7.3 para compartir los APK de prueba de FerovaFamily con los testers autorizados.
+
+##### Summary of Implemented To-Be Native-Mobile Support
+
+| To-Be User Story | Mobile Evidence | Experiment Supported |
+| :--- | :--- | :--- |
+| US-TB01 — Tarjeta resumen de progreso | Tarjeta en el inicio, estados vacíos, grupos experimental/control y eventos de Firebase Analytics | EC-01 — Impacto de los indicadores de progreso en la adherencia (`M-01`, `M-02`) |
 
 #### 8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence
 
-<!-- COMPLETAR -->
+Siguiendo el principio *Simplest Useful Thing*, las tres *Experiment Cards* se diseñaron reutilizando la API RESTful del capítulo V. Por ello, el Sprint Backlog 2 no requirió nuevos endpoints: el backend sostiene los experimentos como fuente de datos y de medición. Esta sección documenta qué endpoints existentes consume cada historia To-Be y cómo se verifica el servicio desplegado.
+
+##### Backend Repository Evidence
+
+| Repository | Branch | Commit Id | Commit Message | Committed on (Date) |
+| :--- | :--- | :--- | :--- | :--- |
+| WebApplication1 | `main` | - | *Sin modificaciones funcionales para este Sprint (reutilización de la API del capítulo V)* | - |
+
+##### Existing Backend Support by To-Be User Story
+
+| To-Be User Story | Method | Endpoint (capítulo III) | Uso en el experimento |
+| :--- | :--- | :--- | :--- |
+| US-TB01 | GET | `/patients/:patientId/today-dose` | Dosis del día y su estado. |
+| US-TB01 | GET | `/patients/:patientId/achievement` | Puntos, racha actual y mejor racha para la tarjeta. |
+| US-TB01 | GET | `/{patientId}/hemoglobin-evolution` | Último valor de hemoglobina registrado. |
+| US-TB01 | POST | `/doses/confirm` | Confirmación de dosis, base de `M-01`. |
+| US-TB01 | GET | `/patients/:patientId/dose-history` | Historial de dosis para calcular la adherencia semanal (`M-02`). |
+| US-TB02 | GET | `/heatmap` | Coordenadas, nivel de riesgo y porcentaje de adherencia por elemento del mapa. |
+| US-TB02 | GET | `/risk-overview` | Cantidad de pacientes en nivel `HIGH`, `MEDIUM` y `LOW`. |
+| US-TB02 | GET | `/risk/:riskLevel/patients` | Pacientes por nivel de riesgo, para la tarea de identificación. |
+| US-TB03 | POST | `/hemoglobin-control` | Registro del control; la API valida el rango de 0 a 30 g/dL y determina el estado de anemia. |
+| US-TB04, US-TB05 | - | - | No usan la API: la Landing Page es un sitio estático. |
+
+Las rutas se muestran como en la especificación del capítulo III y en la documentación Swagger del capítulo V. La advertencia por valores atípicos de `US-TB03` se resuelve en la interfaz y complementa, sin reemplazar, la validación existente de la API.
+
+Los datos de `M-01` y `M-02` se calculan a partir de los registros de dosis programadas y confirmadas que el backend almacena en MongoDB para cada participante (8.2.2).
+
+##### Backend Deployment Evidence
+
+El backend (ASP.NET Core, .NET 9) permanece desplegado en Railway mediante Dockerfile, y el *workflow* `backend-ci.yml` verifica su compilación en cada `push` y `pull_request` (secciones 7.1 y 7.3). La disponibilidad del servicio y de sus endpoints se comprueba mediante Swagger UI.
+
+**Link de despliegue del backend:** https://webapplication1-production-3774.up.railway.app
+
+<img src="../assets/img/chapter-VIII/to-be-backend/swagger-endpoints-reused.png" width="800px" alt="Swagger UI con los endpoints reutilizados por los experimentos">
+
+##### Summary of To-Be RESTful API Support
+
+| To-Be User Story | Backend Evidence | Experiment Supported |
+| :--- | :--- | :--- |
+| US-TB01 — Tarjeta resumen de progreso | Endpoints de dosis, logros, evolución de hemoglobina y confirmación de dosis | EC-01 (`M-01`, `M-02`) |
+| US-TB02 — Mapa de calor | Endpoints de mapa de calor y de riesgo | EC-02 (`M-03`) |
+| US-TB03 — Alertas por valores atípicos | Endpoint de control de hemoglobina con su validación de rango | EC-02 (`M-04`) |
+| US-TB04, US-TB05 — Landing Page | Sin dependencia del backend | EC-03 (`M-07`, `M-08`) |
 
 #### 8.3.3.6. Team Collaboration Insights
 
+Para el desarrollo del Sprint Backlog 2 (sprint de experimentación To-Be), la implementación se distribuyó en los repositorios de la Landing Page (`ferova-landing-page`), FerovaClinic (frontend web), FerovaFamily (`ferova-mobile-android`) y el backend (`WebApplication1`), utilizando **GitHub** como plataforma de control de versiones bajo **GitFlow**, con ramas `feature/*` por historia y mensajes de commit con el formato `<type>(<scope>): <description>` de la sección 6.2.1.1. Los cambios se validan con los *workflows* de integración continua del capítulo VII antes de integrarse a `develop`.
+
+La participación en el Sprint se distribuyó, según el *Sprint Backlog 2*, de la siguiente manera:
+
+| Integrante | Horas estimadas | Aporte principal |
+| :--- | ---: | :--- |
+| Vitaly A. Baca | 20 | Reglas de cálculo, diseño y grupos experimental/control de la tarjeta de progreso (`US-TB01`); criterio del porcentaje y de "Sin datos" e indicador de versión (`US-TB02`); diseño de los CTA (`US-TB05`). |
+| Vicente Quijandria | 18 | Integración de la tarjeta con los endpoints existentes, estados vacíos y eventos de Firebase Analytics (`US-TB01`); rangos de referencia de las alertas (`US-TB03`). |
+| Gabriel A. Peñaranda | 18 | Validación de eventos y distribución del APK (`US-TB01`); carácter no bloqueante de las alertas (`US-TB03`); distribución A/B, registro de clics y despliegue de la Landing Page (`US-TB05`). |
+| Elizabeth N. Apaza | 20 | Mapa de calor con porcentajes y "Sin datos" (`US-TB02`); advertencias de edad y hemoglobina (`US-TB03`); verificación de variantes y diseño responsive (`US-TB04`). |
+| Luis A. Damián | 18 | Tareas clínicas estandarizadas y pruebas de alertas (`US-TB02`, `US-TB03`); cifras oficiales y CTA de la Landing Page (`US-TB04`, `US-TB05`). |
+| **Total** | **94** | |
+
+##### Analíticas de Colaboración (GitHub Insights)
+
 <img src="../assets/img/chapter-VIII/collaboration-insights.png" alt="Team Collaboration Insights">
+
+*Captura de Insights → Contributors de los repositorios del Sprint 2 (`ferova-landing-page`, FerovaClinic, `ferova-mobile-android` y `WebApplication1`) y del repositorio del informe (`sanuvi-report`).*
+
+##### Control de Versiones por Componente (Repositorios)
+
+| Repository | Branch | Commit Id | Commit Message | Committed on (Date) |
+| :--- | :--- | :--- | :--- | :--- |
+| **ferova-landing-page** | `feature/ec-03-landing-variant-b` | [completar] | feat(landing): add role-specific CTAs for FerovaFamily and FerovaClinic (US-TB05) | [completar] |
+| **FerovaClinic (frontend web)** | `feature/ec-02-heatmap-labels` | [completar] | feat(heatmap): show explicit adherence percentages and "Sin datos" label (US-TB02) | [completar] |
+| **FerovaClinic (frontend web)** | `feature/ec-02-hemoglobin-alerts` | [completar] | feat(hemoglobin): add non-blocking alerts for atypical age and hemoglobin values (US-TB03) | [completar] |
+| **ferova-mobile-android** | `feature/ec-01-progress-card` | [completar] | feat(home): add progress summary card with streak, 75 % goal and last hemoglobin (US-TB01) | [completar] |
+| **WebApplication1** | `main` | - | *Sin modificaciones funcionales para este Sprint (reutilización de la API)* | - |
+
+##### Interpretación de la Colaboración y Dinámica de Equipo
+
+El Sprint 2 involucró a los cinco integrantes de SANUVI, con tareas repartidas entre móvil, web, Landing Page y verificación. La carga se organizó por afinidad con el componente: quienes trabajaron la tarjeta de progreso y la analítica móvil concentraron `EC-01`; el frontend web y el diseño de interfaz se orientaron a `EC-02`; y la Landing Page y su distribución A/B se resolvieron entre diseño, contenido y despliegue para `EC-03`. Al reutilizar la API existente, el backend no fue un cuello de botella y el equipo pudo concentrarse en la interfaz y en la medición.
+
+La combinación de ramas por *feature*, *pull requests* hacia `develop` e integración continua permitió que cada variante experimental llegara a los participantes por el pipeline del capítulo VII, y que la evidencia de colaboración de cada integrante pueda contrastarse con los analíticos de GitHub.
+
 
 
 ## 8.4. Experiment Aftermath & Analysis
