@@ -580,11 +580,308 @@ De esta manera, el plan de seguimiento establece una estructura para recopilar y
 
 ### 8.3.1. To-Be User Stories
 
-| ID | Título | Descripción | Criterios de Aceptación | Epic ID | Experiment Card |
-|----|--------|-------------|--------------------------|---------|-----------------|
-| US-TB01 | [Título] | **Como** … **quiero** … **para** … | **Dado que** … **Cuando** … **Entonces** … | EP0x | EC-01 |
+Las siguientes historias de usuario amplían el catálogo establecido en el capítulo III (historias `US-01` a `US-32` e historias técnicas `TS`). Cada historia representa la funcionalidad mínima que debe implementarse como *Simplest Useful Thing* para ejecutar una de las *Experiment Cards* definidas en 8.1.5 y diseñadas en 8.2. Para no confundirlas con el catálogo original, los identificadores utilizan el prefijo `US-TB` (*To-Be*), y cada historia se vincula con las epics del capítulo III, con su *Experiment Card* y con las métricas de 8.2.2 que permite medir.
 
-<!-- COMPLETAR -->
+| Experiment Card | Pregunta | Componente | Historias To-Be | Métricas |
+|---|---|---|---|---|
+| **EC-01** | `Q-01` | FerovaFamily (móvil) | `US-TB01` | `M-01`, `M-02` |
+| **EC-02** | `Q-02` | FerovaClinic (web) | `US-TB02`, `US-TB03` | `M-03`, `M-04` |
+| **EC-03** | `Q-03` | Landing Page | `US-TB04`, `US-TB05` | `M-07`, `M-08` |
+
+Las preguntas `Q-05` a `Q-08` del *Question Backlog* no cuentan con historias To-Be en este ciclo, pues el alcance de la experimentación se limita a las tres tarjetas priorizadas en 8.1.4.
+
+<table border="1" cellpadding="8" cellspacing="0" width="100%" style="margin-bottom:18px;">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+    <tr>
+      <td>US-TB01</td>
+      <td>Madre o cuidador (Segmento 1)</td>
+      <td>High</td>
+      <td>EP-05 / EP-07</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Title</strong></td>
+      <td colspan="3">Tarjeta resumen de progreso del tratamiento en el inicio de FerovaFamily</td>
+    </tr>
+    <tr>
+      <td><strong>Experiment Card</strong></td>
+      <td colspan="3">EC-01 (Q-01) — mide M-01, M-02</td>
+    </tr>
+    <tr>
+      <td colspan="4" align="left"><strong>Description</strong><br/>
+      Como madre o cuidador, quiero ver en la pantalla de inicio de FerovaFamily mi racha activa, el avance porcentual hacia la meta de adherencia del 75 % y el último valor de hemoglobina de mi hijo, para conocer de inmediato cómo va el tratamiento y mantener la confirmación diaria de dosis.</td>
+    </tr>
+    <tr>
+      <td colspan="4" align="left"><strong>Acceptance Criteria</strong>
+        <ul>
+          <li><strong>Escenario 1: Visualización de la tarjeta en el grupo experimental.</strong><br/>
+          Dado que la madre pertenece al grupo experimental y el paciente tiene un tratamiento activo,<br/>
+          cuando accede a la pantalla de inicio,<br/>
+          entonces el sistema muestra una tarjeta con los días de racha activa, el porcentaje de avance hacia la meta del 75 % y el último valor de hemoglobina registrado.</li>
+          <li><strong>Escenario 2: Reutilización de los datos existentes.</strong><br/>
+          Dado que la tarjeta resumen está visible,<br/>
+          cuando la aplicación carga su contenido,<br/>
+          entonces obtiene la información desde los endpoints existentes de dosis del día, logros y evolución de hemoglobina, sin pedir a la madre ningún registro adicional.</li>
+          <li><strong>Escenario 3: Paciente sin control de hemoglobina.</strong><br/>
+          Dado que el paciente aún no tiene un control de hemoglobina registrado,<br/>
+          cuando se muestra la tarjeta,<br/>
+          entonces el campo de hemoglobina indica que no existe registro y los demás indicadores se visualizan con normalidad.</li>
+          <li><strong>Escenario 4: Continuidad del registro de dosis.</strong><br/>
+          Dado que la tarjeta resumen está visible,<br/>
+          cuando la madre confirma la dosis del día,<br/>
+          entonces la confirmación se registra con el flujo habitual y la racha y el avance reflejan el nuevo estado.</li>
+          <li><strong>Escenario 5: Versión sin tarjeta para el grupo de control.</strong><br/>
+          Dado que la madre pertenece al grupo de control,<br/>
+          cuando accede a la pantalla de inicio,<br/>
+          entonces visualiza la versión actual con el registro estándar de dosis diaria y sin la tarjeta resumen.</li>
+          <li><strong>Escenario 6: Registro de eventos de medición sin datos personales.</strong><br/>
+          Dado que la madre consulta el progreso de adherencia, la racha o la evolución de hemoglobina,<br/>
+          cuando se muestra la información,<br/>
+          entonces se registran los eventos <code>adherence_progress_viewed</code>, <code>streak_viewed</code> y <code>hemoglobin_evolution_viewed</code> (y <code>dose_confirmed</code> al confirmar una dosis), sin incluir nombres, DNI ni datos clínicos identificables.</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="8" cellspacing="0" width="100%" style="margin-bottom:18px;">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+    <tr>
+      <td>US-TB02</td>
+      <td>Personal de salud (Segmento 2)</td>
+      <td>High</td>
+      <td>EP-09</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Title</strong></td>
+      <td colspan="3">Porcentajes explícitos y etiqueta "Sin datos" en el mapa de calor de FerovaClinic</td>
+    </tr>
+    <tr>
+      <td><strong>Experiment Card</strong></td>
+      <td colspan="3">EC-02 (Q-02) — mide M-03</td>
+    </tr>
+    <tr>
+      <td colspan="4" align="left"><strong>Description</strong><br/>
+      Como profesional de salud, quiero ver el porcentaje de adherencia de cada elemento del mapa de calor y una etiqueta explícita "Sin datos" cuando no existe información, para identificar con rapidez los casos de alto riesgo sin confundir la ausencia de datos con una baja adherencia.</td>
+    </tr>
+    <tr>
+      <td colspan="4" align="left"><strong>Acceptance Criteria</strong>
+        <ul>
+          <li><strong>Escenario 1: Porcentaje explícito en el mapa de calor.</strong><br/>
+          Dado que el personal de salud accede al mapa de calor de adherencia,<br/>
+          cuando se carga la vista,<br/>
+          entonces cada elemento con información muestra su porcentaje de adherencia además de su codificación por color.</li>
+          <li><strong>Escenario 2: Etiqueta "Sin datos".</strong><br/>
+          Dado que un elemento del mapa no cuenta con registros de adherencia,<br/>
+          cuando se carga la vista,<br/>
+          entonces se muestra la etiqueta "Sin datos" y no un porcentaje ni un color que pueda interpretarse como baja adherencia.</li>
+          <li><strong>Escenario 3: Identificación de pacientes de alto riesgo.</strong><br/>
+          Dado que el evaluador realiza una tarea clínica de identificación,<br/>
+          cuando consulta el mapa de calor y el resumen de riesgo,<br/>
+          entonces puede identificar los casos de alto riesgo a partir de los porcentajes y las etiquetas, sin depender únicamente del color.</li>
+          <li><strong>Escenario 4: Legibilidad de las etiquetas.</strong><br/>
+          Dado que el mapa de calor muestra porcentajes y etiquetas,<br/>
+          cuando el usuario los observa sobre el fondo del mapa,<br/>
+          entonces el texto mantiene un contraste suficiente para leerse con claridad.</li>
+          <li><strong>Escenario 5: La funcionalidad existente no se ve afectada.</strong><br/>
+          Dado que las mejoras visuales están activas,<br/>
+          cuando el usuario filtra por nivel de riesgo o navega a otras secciones,<br/>
+          entonces estas acciones operan con normalidad.</li>
+          <li><strong>Escenario 6: Versión de control (solo color).</strong><br/>
+          Dado que el participante pertenece al grupo de control,<br/>
+          cuando accede al mapa de calor,<br/>
+          entonces visualiza la versión actual con codificación por color, sin porcentajes explícitos ni etiqueta "Sin datos".</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="8" cellspacing="0" width="100%" style="margin-bottom:18px;">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+    <tr>
+      <td>US-TB03</td>
+      <td>Personal de salud (Segmento 2)</td>
+      <td>High</td>
+      <td>EP-04</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Title</strong></td>
+      <td colspan="3">Alertas preventivas ante valores atípicos de edad o hemoglobina en el control clínico</td>
+    </tr>
+    <tr>
+      <td><strong>Experiment Card</strong></td>
+      <td colspan="3">EC-02 (Q-02) — mide M-04</td>
+    </tr>
+    <tr>
+      <td colspan="4" align="left"><strong>Description</strong><br/>
+      Como profesional de salud, quiero recibir una advertencia inmediata cuando la edad o el valor de hemoglobina que ingreso en un control clínico sea atípico, para corregir errores de digitación antes de guardar el registro sin interrumpir mi atención.</td>
+    </tr>
+    <tr>
+      <td colspan="4" align="left"><strong>Acceptance Criteria</strong>
+        <ul>
+          <li><strong>Escenario 1: Advertencia por hemoglobina atípica.</strong><br/>
+          Dado que el profesional registra un control de hemoglobina,<br/>
+          cuando el valor ingresado se aleja de los rangos esperados aunque aún se encuentre dentro del rango que acepta el sistema (0 a 30 g/dL),<br/>
+          entonces el formulario muestra una advertencia visual indicando que el valor es atípico y sugiere revisarlo.</li>
+          <li><strong>Escenario 2: Advertencia por edad atípica.</strong><br/>
+          Dado que el profesional ingresa la edad del paciente en el control clínico,<br/>
+          cuando el valor se aleja de los rangos esperados,<br/>
+          entonces el formulario muestra una advertencia visual indicando que la edad es atípica.</li>
+          <li><strong>Escenario 3: Alerta no bloqueante.</strong><br/>
+          Dado que el formulario muestra una advertencia,<br/>
+          cuando el profesional confirma que el valor ingresado es correcto,<br/>
+          entonces el sistema permite guardar el control sin bloquear el flujo de atención.</li>
+          <li><strong>Escenario 4: Sin alerta para valores esperados.</strong><br/>
+          Dado que el valor ingresado se encuentra dentro de los rangos esperados,<br/>
+          cuando el profesional completa el campo,<br/>
+          entonces no se muestra ninguna advertencia.</li>
+          <li><strong>Escenario 5: Las validaciones existentes se mantienen.</strong><br/>
+          Dado que la API valida que la hemoglobina esté entre 0 y 30 g/dL,<br/>
+          cuando el profesional intenta guardar un valor fuera de ese rango,<br/>
+          entonces el registro sigue siendo rechazado, con independencia de las advertencias preventivas.</li>
+          <li><strong>Escenario 6: Versión de control sin alertas.</strong><br/>
+          Dado que el participante pertenece al grupo de control,<br/>
+          cuando registra un control de hemoglobina,<br/>
+          entonces el formulario se comporta como en la versión actual, sin advertencias por valores atípicos.</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="8" cellspacing="0" width="100%" style="margin-bottom:18px;">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+    <tr>
+      <td>US-TB04</td>
+      <td>Visitante de la Landing Page</td>
+      <td>Medium</td>
+      <td>EP-01</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Title</strong></td>
+      <td colspan="3">Cifras epidemiológicas con fuente oficial INS/MINSA en la Landing Page</td>
+    </tr>
+    <tr>
+      <td><strong>Experiment Card</strong></td>
+      <td colspan="3">EC-03 (Q-03) — mide M-07</td>
+    </tr>
+    <tr>
+      <td colspan="4" align="left"><strong>Description</strong><br/>
+      Como visitante de la Landing Page, quiero ver cifras sobre la anemia infantil respaldadas por fuentes oficiales del INS/MINSA, para confiar en la información y comprender la magnitud del problema que Ferova busca atender.</td>
+    </tr>
+    <tr>
+      <td colspan="4" align="left"><strong>Acceptance Criteria</strong>
+        <ul>
+          <li><strong>Escenario 1: Visualización de cifras con fuente citada (Variante B).</strong><br/>
+          Dado que el visitante accede a la Variante B de la Landing Page,<br/>
+          cuando recorre la sección de problemática,<br/>
+          entonces visualiza cifras epidemiológicas sobre anemia infantil acompañadas de su fuente oficial.</li>
+          <li><strong>Escenario 2: Trazabilidad de la fuente.</strong><br/>
+          Dado que una cifra se muestra en la página,<br/>
+          cuando el visitante la consulta,<br/>
+          entonces puede identificar la institución y la publicación de la que proviene, y no se muestra ninguna cifra sin fuente.</li>
+          <li><strong>Escenario 3: Variante A sin cifras citadas.</strong><br/>
+          Dado que el visitante accede a la Variante A (control),<br/>
+          cuando recorre la página,<br/>
+          entonces visualiza la versión actual, sin cifras epidemiológicas citadas.</li>
+          <li><strong>Escenario 4: Las secciones existentes se mantienen.</strong><br/>
+          Dado que la Variante B incorpora las cifras,<br/>
+          cuando se visualiza en distintos tamaños de pantalla,<br/>
+          entonces las secciones de funcionalidades, segmentos, flujo de uso y testimonios conservan su contenido y su diseño responsive.</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="8" cellspacing="0" width="100%" style="margin-bottom:18px;">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+    <tr>
+      <td>US-TB05</td>
+      <td>Visitante de la Landing Page</td>
+      <td>High</td>
+      <td>EP-01</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Title</strong></td>
+      <td colspan="3">Botones de acceso (CTA) diferenciados por rol en la Landing Page</td>
+    </tr>
+    <tr>
+      <td><strong>Experiment Card</strong></td>
+      <td colspan="3">EC-03 (Q-03) — mide M-07, M-08</td>
+    </tr>
+    <tr>
+      <td colspan="4" align="left"><strong>Description</strong><br/>
+      Como visitante de la Landing Page, quiero encontrar botones de acceso claramente diferenciados para madres/cuidadores y para personal de salud, para ingresar directamente a FerovaFamily o a FerovaClinic según mi rol sin confundirme.</td>
+    </tr>
+    <tr>
+      <td colspan="4" align="left"><strong>Acceptance Criteria</strong>
+        <ul>
+          <li><strong>Escenario 1: Visualización de CTA diferenciados (Variante B).</strong><br/>
+          Dado que el visitante accede a la Variante B,<br/>
+          cuando observa los llamados a la acción,<br/>
+          entonces encuentra un botón dirigido a madres/cuidadores (FerovaFamily) y otro dirigido a personal de salud (FerovaClinic), con textos distintos y fácilmente reconocibles.</li>
+          <li><strong>Escenario 2: Redirección correcta según el rol.</strong><br/>
+          Dado que el visitante selecciona el botón correspondiente a su rol,<br/>
+          cuando hace clic,<br/>
+          entonces es dirigido al acceso de FerovaFamily (madres/cuidadores) o de FerovaClinic (personal de salud) según el botón elegido.</li>
+          <li><strong>Escenario 3: Variante A sin diferenciación explícita.</strong><br/>
+          Dado que el visitante accede a la Variante A (control),<br/>
+          cuando observa los llamados a la acción,<br/>
+          entonces visualiza la versión actual, sin diferenciación explícita de los accesos por rol.</li>
+          <li><strong>Escenario 4: Distribución equitativa de las sesiones.</strong><br/>
+          Dado que una sesión única ingresa a la Landing Page durante los 10 días del experimento,<br/>
+          cuando el sistema asigna la variante,<br/>
+          entonces la sesión queda asociada a una sola variante y la distribución entre A y B se mantiene equitativa (50 % / 50 %).</li>
+          <li><strong>Escenario 5: Registro mínimo de la interacción.</strong><br/>
+          Dado que el visitante hace clic en un botón de acceso,<br/>
+          cuando se registra la interacción,<br/>
+          entonces se guardan únicamente la variante, el botón y la URL de destino, sin datos personales.</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ### 8.3.2. To-Be Product Backlog
 
