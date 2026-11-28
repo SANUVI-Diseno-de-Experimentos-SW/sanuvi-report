@@ -1215,8 +1215,6 @@ La combinación de ramas por *feature*, *pull requests* hacia `develop` e integr
 
 ### 8.3.4. To-Be Validation Interviews
 
-> Las entrevistas de validación *To-Be* complementan la medición cuantitativa de los experimentos del Sprint 2 (`EC-01` a `EC-03`, historias `US-TB01` a `US-TB05`), permitiendo contrastar la percepción real de valor, la comprensión de las mejoras implementadas y las condiciones de adopción familiar y clínica en ambos segmentos.
-
 #### 8.3.4.1. Diseño de Entrevistas
 
 A diferencia del diseño exploratorio inicial de la sección `6.3.1` (enfocado en validar la línea base *As-Is*), estas sesiones se diseñaron para evaluar los incrementos **To-Be** priorizados en `8.3.1` y `8.3.2`, su articulación entre *FerovaFamily* y *FerovaClinic*, y la identificación de ajustes necesarios para el ciclo de retroalimentación (`8.4`).
